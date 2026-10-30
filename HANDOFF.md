@@ -30,3 +30,14 @@ At the end of each substantive session, record:
 - the next bounded task.
 
 Do not claim empirical validation from unit tests or synthetic fixtures. Do not change the frozen strategy, launch a nested Kilo workflow, or enable live trading.
+
+
+## Bootstrap verification — 2026-10-30
+
+- Latest source workflow copied from `takenthatusernameis-collab/Quantitative-Research-Prompt-EMA-hourly-continuation-`, source workflow blob `e364e841c85cc5c8a2d075a56929650394604c98`.
+- Workflow installed at `.github/workflows/main.yml`; commit `a01cead6d9d1cab60d4eee7550f64665cb3acdcf`.
+- Generic controller helper and four regression tests were added before the workflow file so its diagnostics/test path has its declared dependencies.
+- GitHub Actions push validation run [41089458210](https://github.com/takenthatusernameis-collab/NQ-ORB/actions/runs/41089458210): **success**. Controller test step: success. Completed-run diagnostics collector: success. Diagnostics ledger persistence: success. Diagnostics-only activation verification: success. Kilo worker: intentionally skipped because this was a workflow-file push.
+- The diagnostics collector initialized `research_state/workflow_run_diagnostics.jsonl`; it currently contains no prior runs for this new repository.
+- Post-validation default-branch head observed: `96151444616cf8307678d9a8ef0582c74a960ded`.
+- No backtest or market-data evaluation has been run. The next task remains the free-data feasibility audit, especially the 1-minute-or-better evidence needed to verify the 15:55 ET flatten.
