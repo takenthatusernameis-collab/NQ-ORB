@@ -1,0 +1,22 @@
+{
+  "trade_count": 60,
+  "completed_trades": 60,
+  "wins": 42,
+  "losses": 18,
+  "breakeven": 0,
+  "win_rate": 0.7,
+  "gross_pnl": -7662.0,
+  "net_pnl": -31637.98,
+  "total_costs": 23975.98,
+  "avg_r": -0.043097036501193314,
+  "avg_win_r": 0.37748475878872123,
+  "avg_loss_r": -1.0244545588443272,
+  "expectancy_r": -0.043097036501193314,
+  "expectancy_usd": -527.2996666666667,
+  "profit_factor": 0.491672798902303,
+  "max_drawdown_usd": 37491.8,
+  "long_trades": 33,
+  "short_trades": 27,
+  "long_net_pnl": -17601.84,
+  "short_net_pnl": -14036.140000000001
+}
