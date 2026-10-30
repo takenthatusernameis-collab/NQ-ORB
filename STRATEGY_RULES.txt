@@ -1,0 +1,126 @@
+NQ ORB — OPENING RANGE BREAKOUT RULES
+Version: 1.0
+Specification status: User-specified research baseline; not yet backtested or validated.
+Strategy family: Nasdaq-100 futures opening-range breakout.
+Showcase instrument: Micro E-mini Nasdaq-100 futures (MNQ).
+All clock times: America/New_York (ET), with daylight-saving transitions handled correctly.
+
+1. CORE STRATEGY
+
+1.1 Opening range
+- Use 15-minute bars.
+- Build the opening range from the first 15-minute bar(s) after the 09:30 ET New York cash open.
+- MNQ showcase preset: one bar, 09:30:00–09:45:00 ET.
+- Opening-range high = highest high in the selected opening-range bar(s).
+- Opening-range low = lowest low in the selected opening-range bar(s).
+- Do not include pre-open bars or bars after 09:45 ET in the one-bar preset range.
+
+1.2 Breakout signal
+- After the opening range is complete, evaluate subsequent 15-minute bars in chronological order.
+- Long breakout: the first eligible bar that closes strictly above the opening-range high.
+- Short breakout: the first eligible bar that closes strictly below the opening-range low.
+- A wick beyond the range without a close beyond it is not a breakout signal.
+- The baseline is first-breakout-only: evaluate the first post-range closing breach. If either regime filter fails on that breakout bar, do not substitute a later breakout bar that day.
+- Both long and short directions are enabled. At most one trade may be entered per trading day.
+
+1.3 Regime filters — BOTH MUST AGREE
+A breakout is eligible only when both filters pass on the breakout bar:
+A. Relative volume (RVOL):
+   - RVOL = breakout-bar volume / average volume of the preceding 20 completed 15-minute bars.
+   - Exclude the current breakout bar from the average.
+   - MNQ preset threshold: RVOL >= 1.0.
+B. Volatility:
+   - ATR percentage = ATR(14) / breakout-bar close × 100.
+   - Use 15-minute bars and Wilder's ATR smoothing for the baseline.
+   - MNQ preset floor: 0.10%.
+   - MNQ preset ceiling: 0.60%.
+   - Both bounds are inclusive.
+- A breakout is rejected if either RVOL or ATR percentage is outside its allowed condition.
+
+2. STOPS AND TARGETS
+
+2.1 General stop choices
+- The strategy may use either:
+  A. the far side of the opening range (long stop at range low; short stop at range high); or
+  B. an ATR-multiple stop.
+- An optional maximum stop-distance cap in index points may be configured.
+- Record the selected stop method and all stop parameters for every test.
+
+2.2 MNQ showcase stop
+- Stop method: ATR multiple.
+- ATR length: 14 periods on 15-minute bars, using Wilder's smoothing.
+- Long stop: entry price minus 0.4 × ATR(14) measured on the breakout signal bar.
+- Short stop: entry price plus 0.4 × ATR(14) measured on the breakout signal bar.
+- Stop-distance point cap: none.
+- The far-side-of-range stop is not active in this preset.
+
+2.3 Target
+- Target distance = 0.4 × the initial entry-to-stop distance.
+- Long target is above entry; short target is below entry.
+- The 0.4 target multiple means a 0.4:1 reward-to-risk ratio (0.4R). Do not reinterpret it as 4.0R or 0.4 × ATR.
+- Do not add trailing stops, scale-outs, or discretionary exits to the baseline.
+
+3. POSITION SIZING — MNQ SHOWCASE
+
+- Fixed planned stop-risk budget: USD 3,000 per trade.
+- MNQ contract multiplier: USD 2 per one full Nasdaq-100 index point per contract.
+- Minimum outright tick: 0.25 index points; tick value: USD 0.50 per MNQ contract.
+- Initial contracts = floor(3,000 / (stop distance in index points × 2)).
+- Round prices to valid ticks without improving the modeled fill.
+- If the computed position size is less than one contract, skip the trade.
+- The 3,000 USD amount is the planned price-to-stop risk before transaction costs. Report fees and slippage separately and also report all-in loss at the stop.
+- Do not use NQ's USD 20-per-point multiplier for MNQ sizing.
+
+Official contract references checked 2026-10-30:
+MNQ: https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.html
+NQ:  https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html
+
+4. SESSION AND TRADE LIFECYCLE
+
+- No new entries from 15:00 ET onward. A breakout bar closing at or after 15:00 ET is ineligible.
+- Flatten any open position at 15:55 ET.
+- Only one trade per trading day, across both directions.
+- Do not hold a position beyond the 15:55 ET forced flatten.
+- Use the correct New York local date and daylight-saving rules when assigning a session.
+
+5. MNQ 15-MINUTE SHOWCASE PRESET — COMPLETE
+
+Instrument: MNQ
+Signal bars: 15 minutes
+Opening-range bars: 1
+Opening range: 09:30–09:45 ET
+Stop method: ATR multiple
+ATR length: 14
+Stop ATR multiple: 0.4
+Stop point cap: none
+Target multiple of initial stop distance: 0.4
+Sizing method: fixed dollar risk
+Fixed planned stop-risk budget: USD 3,000
+RVOL lookback: 20 preceding completed 15-minute bars
+RVOL minimum: 1.0
+ATR percentage length: 14
+ATR percentage minimum: 0.10%
+ATR percentage maximum: 0.60%
+New-entry cutoff: 15:00 ET (no new signals at or after this time)
+Forced flatten: 15:55 ET
+Long trades: enabled
+Short trades: enabled
+Maximum trades per trading day: 1
+
+6. EXECUTION AND BACKTEST CONVENTIONS THAT MUST BE EXPLICIT
+
+The signal is known only after the breakout bar closes. Use next-15-minute-bar open as the primary executable entry assumption, with realistic adverse slippage. Also report signal-close execution as a separate sensitivity only; never mix the two assumptions.
+
+Use 1-minute-or-better data for stop/target event ordering and the 15:55 ET forced flatten where available. Fifteen-minute OHLC bars cannot establish the exact 15:55 price or the order of multiple intrabar touches. If only 15-minute data can be sourced, clearly label the 15:55 exit and intrabar ordering as unverified; do not manufacture an exact fill.
+
+If the same 1-minute bar touches both stop and target and no finer event sequence is available, resolve the ambiguity adversely (stop first). Include commissions, exchange/clearing fees, and slippage in net performance. Report the fee and slippage assumptions per contract and per side.
+
+Use continuous futures carefully. Record the exact data symbol, contract month, roll method, adjustment method, data source, retrieval date, timezone, missing-bar policy, and file hashes. Do not let back-adjusted historical prices become simulated executable fills. Do not silently bridge roll gaps or mix contracts in the same volume average.
+
+7. RESEARCH INTERPRETATION
+
+- This file is the authoritative frozen baseline. Any change to an entry, filter, stop, target, sizing, time, direction, or trade-frequency rule is a separately versioned experiment and must not overwrite this specification.
+- Report gross and net results separately.
+- The 0.4R target has a theoretical pre-cost break-even win rate of 1 / (1 + 0.4) = 71.43%, assuming a full 1R loss and full 0.4R win. Costs and execution shortfall increase the required win rate.
+- Do not describe a strategy as profitable without reproducible, cost-aware, out-of-sample evidence.
+- This specification authorizes research and historical simulation only, not live trading.
