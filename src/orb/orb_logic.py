@@ -26,6 +26,13 @@ class ORBConfig:
     risk_usd = 3000.0
     mnq_multiplier = 2.0
     max_trades_per_day = 1
+    # Contract microstructure
+    tick_size = 0.25
+    # Execution costs (per side). Commission and exchange/clearing fees are
+    # flat per-side amounts; slippage is per-contract per-side.
+    commission_per_side = 2.25
+    fee_per_side = 0.62
+    slippage_ticks = 1
 
 class ORBStrategy:
     def __init__(self, config: ORBConfig = None):
