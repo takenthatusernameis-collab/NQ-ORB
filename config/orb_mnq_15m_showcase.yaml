@@ -1,0 +1,77 @@
+# NQ ORB — MNQ 15-minute showcase preset (frozen)
+# Authoritative spec: STRATEGY_RULES.txt v1.0
+
+instrument:
+  symbol: MNQ
+  exchange: CME
+  multiplier: 2.0  # USD per index point
+  tick_size: 0.25
+  tick_value: 0.5
+
+time:
+  tz: America/New_York
+  open_rth: "09:30"
+  or_end: "09:45"  # 1-bar OR 09:30-09:45
+  no_new_entry_after: "15:00"
+  forced_flatten: "15:55"
+
+bars:
+  signal_timeframe: "15min"
+  or_bars: 1
+  use_rth: true
+
+opening_range:
+  bars: 1
+  start: "09:30"
+  end: "09:45"
+
+breakout:
+  first_only: true
+  both_directions: true
+  max_trades_per_day: 1
+  require_close_beyond: true
+
+filters:
+  rvol:
+    lookback_bars: 20
+    min: 1.0
+    exclude_breakout_bar: true
+  atr:
+    length: 14
+    method: wilder
+    timeframe: "15min"
+    min_pct: 0.10
+    max_pct: 0.60
+
+stop:
+  method: atr
+  atr_length: 14
+  atr_method: wilder
+  atr_multiple: 0.4
+  point_cap: null
+
+target:
+  multiple_of_stop: 0.4  # 0.4R
+
+sizing:
+  method: fixed_dollar_risk
+  risk_usd: 3000.0
+  round_down_contracts: true
+  min_contracts: 1
+
+entry:
+  mode_primary: next_bar_open  # use next 15min bar open
+  mode_sensitivity: signal_close  # report separately
+
+execution:
+  use_1min_for_flatten_and_ordering: true
+  slippage_per_side_ticks: 1  # configurable
+  commission_per_side_usd: 2.25  # configurable placeholder
+  fee_per_side_usd: 0.62  # configurable placeholder
+  stop_first_on_ambiguous: true
+
+costs:
+  commission_per_side: 2.25
+  exchange_clearing_per_side: 0.62
+  slippage_ticks: 1
+  slippage_usd_per_contract_per_side: 0.5  # 1 tick * 0.5
