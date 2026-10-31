@@ -47,3 +47,20 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 5. **Update handoff** with full evidence.
 
 Do not change frozen rules, buy data, add credentials, or enable live trading.
+
+## Completed work (verification session 2026-10-31)
+- Re-verified raw data hashes: MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99.
+- Ran full test suite: `python -m pytest tests -q` -> 45 passed.
+- Baseline metrics (cost-aware, sample 2026-01-20..2026-04-15): 60 trades, WR 70%, gross -$7,662.00, net -$31,637.98, avg R -0.043, expectancy -$527.30/trade, PF 0.492, max DD $37,491.80, longs 33 (-$17,601.84), shorts 27 (-$14,036.14). Artifacts: artifacts/trades_full.json, artifacts/metrics.json.
+- Data coverage search: no additional free longer MNQ 1min/15min source located beyond axb0306/cme-futures-ohlc in this session; documented in data/FEASIBILITY_REPORT.md. History remains ~3 months, insufficient for walk-forward/OOS.
+
+## Unresolved blockers
+- History depth ~3 months only; no multi-year free MNQ 1min/15min found.
+- Continuous contract/roll adjustment method still undocumented.
+- No chronological train/val/test splits yet due to sample size.
+
+## Next bounded task
+1. Search additional free MNQ sources (Kaggle MNQ 1min, other public repos) and document provenance/hashes; do not purchase.
+2. Implement chronological split reporting on available sample and cost sensitivity.
+3. Add deterministic tests for DST transitions, contract rolls, ambiguous intrabar touches, cutoff/flatten.
+4. Update FEASIBILITY_REPORT and HANDOFF with evidence.
