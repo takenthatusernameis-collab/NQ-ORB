@@ -1,22 +1,131 @@
 {
   "trade_count": 688,
   "completed_trades": 688,
+  "count": 688,
   "wins": 446,
   "losses": 242,
-  "breakeven": 0,
   "win_rate": 0.6482558139534884,
   "gross_pnl": -140899.0,
   "net_pnl": -626525.96,
-  "total_costs": 485626.96,
+  "costs": 485626.96,
   "avg_r": -0.0684171461926271,
-  "avg_win_r": 0.3595493680495068,
-  "avg_loss_r": -1.042550450039008,
-  "expectancy_r": -0.0684171461926271,
   "expectancy_usd": -910.6481976744185,
   "profit_factor": 0.2270900414265039,
-  "max_drawdown_usd": 626994.5599999998,
   "long_trades": 359,
   "short_trades": 329,
-  "long_net_pnl": -287054.04000000004,
-  "short_net_pnl": -339471.92
+  "max_drawdown_usd": 626994.5599999998,
+  "chronological_splits": {
+    "train": {
+      "count": 412,
+      "wins": 246,
+      "losses": 166,
+      "win_rate": 0.5970873786407767,
+      "gross_pnl": -124466.5,
+      "net_pnl": -448765.02,
+      "costs": 324298.52,
+      "avg_r": -0.10097692190354508,
+      "expectancy_usd": -1089.2354854368932,
+      "profit_factor": 0.15761301629883073,
+      "long_trades": 217,
+      "short_trades": 195
+    },
+    "val": {
+      "count": 137,
+      "wins": 105,
+      "losses": 32,
+      "win_rate": 0.7664233576642335,
+      "gross_pnl": 15712.5,
+      "net_pnl": -66243.22,
+      "costs": 81955.72,
+      "avg_r": 0.03847253831964551,
+      "expectancy_usd": -483.52715328467156,
+      "profit_factor": 0.4362577572489354,
+      "long_trades": 69,
+      "short_trades": 68
+    },
+    "test": {
+      "count": 139,
+      "wins": 95,
+      "losses": 44,
+      "win_rate": 0.6834532374100719,
+      "gross_pnl": -32145.0,
+      "net_pnl": -111517.72,
+      "costs": 79372.72,
+      "avg_r": -0.07726073745365693,
+      "expectancy_usd": -802.2857553956835,
+      "profit_factor": 0.30462317812162104,
+      "long_trades": 73,
+      "short_trades": 66
+    },
+    "date_range": {
+      "start": "2022-11-16",
+      "end": "2025-11-12",
+      "n_days": 688
+    }
+  },
+  "cost_sensitivity": [
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 0.8,
+      "net_pnl": -487098.5680000006
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.0,
+      "net_pnl": -584223.9599999996
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.2,
+      "net_pnl": -681349.3519999988
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 0.8,
+      "net_pnl": -529400.5680000006
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.0,
+      "net_pnl": -626525.9599999998
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.2,
+      "net_pnl": -723651.3519999988
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 0.8,
+      "net_pnl": -571702.5680000004
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.0,
+      "net_pnl": -668827.9599999996
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.2,
+      "net_pnl": -765953.3519999987
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 0.8,
+      "net_pnl": -614004.5679999996
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.0,
+      "net_pnl": -711129.9599999994
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.2,
+      "net_pnl": -808255.3519999986
+    }
+  ],
+  "data_source": "kaggle",
+  "data_file_15m": "raw/MNQ_15min_frontmonth.csv",
+  "data_file_1m": "raw/MNQ_1min_frontmonth.csv"
 }
