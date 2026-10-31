@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Data / artifacts (raw data never committed; artifacts kept in-tree for auditability)
+raw/
+
+# Tooling / caches
+.cache/
+.kilocode/
+.opencode/
+*.log

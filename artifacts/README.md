@@ -12,15 +12,6 @@ Canonical backtest outputs. All runs use the frozen `STRATEGY_RULES.txt` v1.0 /
 | `trades_kaggle.json` | Kaggle front-month | Per-trade ledger (688 trades) |
 | `metrics_kaggle.json` | Kaggle | Full required-metric set |
 
-## Freshly reproduced verification copies
-
-The `_verify` files are re-runs produced from the same raw CSVs to demonstrate
-reproducibility. Core metric fields (`trade_count`, `win_rate`, `gross/net P&L`,
-`costs`, `avg_r`, `expectancy`, `profit_factor`, `max_drawdown`, `Sharpe`,
-`Sortino`, `exposure`, cost grid, signal-close sensitivity) and the per-trade
-ledgers are byte-identical to canonical on every re-run. The non-`_verify`
-files remain canonical.
-
 ## Canonical refresh (2026-10-31)
 
 The canonical `metrics_axb0306.json` / `metrics_kaggle.json` were regenerated
@@ -29,14 +20,16 @@ fields are unchanged from the previously stored values; the refresh adds
 breakdown fields that the engine now emits (`long_short_split`, per-split
 long/short breakdowns inside `chronological_splits`). Trade ledgers
 (`trades_axb0306.json`, `trades_kaggle.json`) were already byte-identical and
-were not modified. Verification copies retained.
+were not modified.
 
-| File | Re-run of |
-|------|-----------|
-| `trades_axb0306_verify.json` | `trades_axb0306.json` |
-| `metrics_axb0306_verify.json` | `metrics_axb0306.json` |
-| `trades_kaggle_verify.json` | `trades_kaggle.json` |
-| `metrics_kaggle_verify.json` | `metrics_kaggle.json` |
+## Verification copies removed (2026-10-31ba)
+
+The `_verify` / `_session_verify` / `metrics_verify_*` / `trades_verify_*` files
+were transient re-run copies used to demonstrate reproducibility. They have been
+deleted so the canonical files are unambiguous. Reproducibility is
+re-established on demand by re-running
+`src/orb/runner.py --source <axb0306|kaggle> --prefix <name>` and comparing to
+the canonical artifacts (see INITIAL_TASK_FOR_NEXT_AGENT.md).
 
 ## Historical (retained, not canonical)
 

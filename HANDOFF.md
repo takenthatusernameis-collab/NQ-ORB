@@ -822,14 +822,6 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Baselines intact: axb0306 (60 trades, net -$31,637.98), Kaggle front-month (688 trades, net -$626,525.96). Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
 - No new free MNQ 1min/15min sources located. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
-## Completed work (verification session 2026-10-31ba)
-- Read prior agent task from HANDOFF/INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation confirmed current priority (no new genuinely free MNQ 1min/15min sources beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
-- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
-- Re-ran both baselines from scratch (`src/orb/runner.py --source axb0306 --prefix axb0306_session_verify` and `--source kaggle --prefix kaggle_session_verify`) and compared all metric fields against stored canonical artifacts: byte-identical (trade_count, win_rate, gross/net P&L, costs, avg R, expectancy, PF, max DD, Sharpe, Sortino, exposure, worst day, full cost grid, signal_close_entry_sensitivity). Baselines unchanged: axb0306 60 trades net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / gross -$140,899.00 / PF 0.22709 / WR 64.8256%. Determinism re-confirmed.
-- Re-verified raw data hashes unchanged (MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
-- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
-- Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with this session's evidence.
-
 ## Next bounded task
 1. Maintain documentation; if a new genuinely free MNQ 1min/15min source appears, record provenance/hashes before use.
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
@@ -975,15 +967,7 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Re-verified raw data hashes unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4..., Kaggle front-month 15min 7e129ae3..., 1min edbadc73...).
 - Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
 - Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with this session's evidence.
-
-## Unresolved blockers
-- History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted, no roll); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
-- Results negative under full costs on both available samples (costs dominate).
-- Splits computed on limited samples; OOS interval is short.
-
-## Next bounded task
-1. Maintain documentation; if a new genuinely free MNQ 1min/15min source appears, record provenance/hashes before use (exclude paid/key-gated).
-2. No parameter/strategy changes without a separately named versioned experiment with explicit diff from frozen baseline.
+2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
 
@@ -1053,6 +1037,36 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 ## Next bounded task
 1. Maintain documentation; if a new genuinely free MNQ 1min/15min source appears, record provenance/hashes before use (exclude paid/key-gated).
 2. No parameter/strategy changes without a separately named versioned experiment with explicit diff from frozen baseline.
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+
+## Constraints
+- No parameter optimization, no strategy-rule changes, no broker integration, no live/paper orders.
+- Historical research/simulation only. Do not purchase data.
+- Do not present synthetic results as market evidence.
+- Update HANDOFF.md with evidence, commands, results, blockers, next task.
+
+## Verification command
+`PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` (expect 66 passed)
+
+## Completed work (verification session 2026-10-31az)
+- Read prior agent task from HANDOFF/INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation confirmed current priority.
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; Kaggle front-month 15min 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; 1min edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
+- Re-ran both baselines from scratch (`src/orb/runner.py --source axb0306 --prefix axb0306_verify` and `--source kaggle --prefix kaggle_verify`) and compared all metric fields against stored canonical artifacts: byte-identical (trade_count, win_rate, gross/net P&L, costs, avg R, expectancy, PF, max DD, Sharpe, Sortino, exposure, worst day, full cost grid, signal_close_entry_sensitivity, chronological_splits, long_short_split). Baselines unchanged: axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96. Determinism re-confirmed.
+- Free-data sweep re-run: located Kaggle `brandenmorris/mnq-1m-q4-2022-q4-2025-ts-ohlcv-sym`; downloaded via kagglehub and confirmed **byte-identical content** to the already-ingested `brandenmorris/mnq-1-minute-data-5132025-11122025` (same Databento GLBX.MDP3 source, 1,727,376 rows, same 2022-11-16..2025-11-12 range, same 40 contract symbols, all numeric columns match; only the timestamp column name differs). No new data; excluded from ingestion path. GitHub re-run: `getdata-finance/nq-1m-ohlcv-stocks-historical-data` is US equities (NASDAQ-100 stocks), not MNQ futures; excluded. No new genuinely free MNQ 1min/15min source found. No data purchased.
+- Cleaned up stale verification artifacts (`artifacts/*_verify*.json`, `artifacts/metrics_verify_*.json`, `artifacts/trades_verify_*.json`) so canonical files are unambiguous; updated `artifacts/README.md` and added `.gitignore` (raw/ and __pycache__/ excluded).
+- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
+- Updated HANDOFF.md, INITIAL_TASK_FOR_NEXT_AGENT.md, data/FEASIBILITY_REPORT.md, and artifacts/README.md with this session's evidence.
+
+## Unresolved blockers
+- History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
+- Results negative under full costs on both available samples (costs dominate).
+- Splits computed on limited samples; OOS interval is short.
+
+## Next bounded task
+1. Maintain documentation; if a new genuinely free MNQ 1min/15min source appears, record provenance/hashes before use.
+2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
 
