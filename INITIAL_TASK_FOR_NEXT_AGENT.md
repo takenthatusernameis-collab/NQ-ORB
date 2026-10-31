@@ -20,3 +20,5 @@ Read HANDOFF.md first. Current priority: maintenance/documentation only (no new 
 - Frozen baseline: STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged.
 - Preserve evidence; update FEASIBILITY_REPORT.md if new provenance appears.
 - Next bounded task: maintain documentation; record provenance/hashes for any genuinely free MNQ 1min/15min source before use; no parameter/strategy changes without a separately versioned experiment.
+EOF
+echo done
