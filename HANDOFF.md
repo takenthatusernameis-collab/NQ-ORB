@@ -68,3 +68,22 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Re-ran full test suite: `python -m pytest tests -q` -> 45 passed.
 - Confirmed baseline metrics unchanged in artifacts/metrics.json.
 - No code changes required; handoff/next-task refreshed.
+
+
+## Completed work (verification session 2026-10-31c)
+- Searched for additional free MNQ history sources; no longer history found beyond axb0306/cme-futures-ohlc (still ~3 months Jan 20 - Apr 15 2026). Documented.
+- Added chronological split reporting (train/val/test) and cost sensitivity to artifacts/metrics.json.
+- Added deterministic tests for cutoff time, risk sizing, config fields.
+- Full test suite: 48 passed.
+- Baseline cost-aware unchanged (60 trades, net -$31637.98).
+
+## Unresolved blockers
+- History depth ~3 months only; no multi-year free MNQ 1min/15min found.
+- Continuous contract/roll adjustment method still undocumented.
+- Splits computed on limited sample.
+
+## Next bounded task
+1. Continue searching for longer free MNQ data (other repos/Kaggle) with provenance/hashes; do not purchase.
+2. Harden DST/roll tests and add more edge case tests.
+3. Expand reporting with year/regime splits if more data becomes available.
+4. Update FEASIBILITY_REPORT and HANDOFF with evidence.

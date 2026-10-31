@@ -3,7 +3,7 @@
 Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before making changes.
 
 ## Current state
-- Free-data feasibility done (axb0306/cme-futures-ohlc MNQ 1min/15min, 2026-01-20 to 2026-04-15). 15:55 flatten implemented with 1min data and stop-first on ambiguity. Full execution engine with costs/slippage in place. Baseline cost-aware run done (60 trades on sample) - see `data/FEASIBILITY_REPORT.md`, `artifacts/trades_full.json`, `artifacts/metrics.json`. Tests pass (45 tests). Hashes verified.
+- Free-data feasibility done (axb0306/cme-futures-ohlc MNQ 1min/15min, 2026-01-20 to 2026-04-15). 15:55 flatten implemented with 1min data and stop-first on ambiguity. Full execution engine with costs/slippage in place. Baseline cost-aware run done (60 trades on sample) - see `data/FEASIBILITY_REPORT.md`, `artifacts/trades_full.json`, `artifacts/metrics.json`. Splits and cost sensitivity added. Tests pass (48 tests). Hashes verified.
 
 ## Priority tasks
 1. **Data coverage**: Find longer free MNQ history. Try other public repos, Kaggle (check MNQ specifically), or other legitimate free sources. Record provenance/hashes for any new data. Do not purchase data.

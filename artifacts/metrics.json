@@ -18,5 +18,101 @@
   "long_trades": 33,
   "short_trades": 27,
   "long_net_pnl": -17601.84,
-  "short_net_pnl": -14036.140000000001
+  "short_net_pnl": -14036.140000000001,
+  "chronological_splits": {
+    "train": {
+      "count": 36,
+      "wins": 30,
+      "losses": 6,
+      "win_rate": 0.8333333333333334,
+      "gross_pnl": 15418.5,
+      "net_pnl": 1229.22,
+      "costs": 14189.28
+    },
+    "val": {
+      "count": 12,
+      "wins": 6,
+      "losses": 6,
+      "win_rate": 0.5,
+      "gross_pnl": -11491.5,
+      "net_pnl": -15894.08,
+      "costs": 4402.58
+    },
+    "test": {
+      "count": 12,
+      "wins": 6,
+      "losses": 6,
+      "win_rate": 0.5,
+      "gross_pnl": -11589.0,
+      "net_pnl": -16973.12,
+      "costs": 5384.12
+    },
+    "date_range": {
+      "start": "2026-01-21",
+      "end": "2026-04-15",
+      "n_days": 60
+    }
+  },
+  "cost_sensitivity": [
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 0.8,
+      "net_pnl": -17252.391999999996
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.0,
+      "net_pnl": -19649.99
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.2,
+      "net_pnl": -22047.588000000003
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 0.8,
+      "net_pnl": -26842.78400000001
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.0,
+      "net_pnl": -31637.98
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.2,
+      "net_pnl": -36433.17600000001
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 0.8,
+      "net_pnl": -36433.17600000001
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.0,
+      "net_pnl": -43625.97000000001
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.2,
+      "net_pnl": -50818.763999999996
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 0.8,
+      "net_pnl": -46023.568000000014
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.0,
+      "net_pnl": -55613.96
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.2,
+      "net_pnl": -65204.351999999984
+    }
+  ]
 }

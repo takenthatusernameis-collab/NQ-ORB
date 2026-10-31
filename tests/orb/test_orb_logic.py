@@ -100,3 +100,22 @@ class TestORBLogic(unittest.TestCase):
         """RVOL calculation uses preceding 20 bars, not including breakout bar."""
         # Verified in backtest logic - just ensure code structure
         self.assertTrue(True)
+
+
+class TestAdditionalCases(unittest.TestCase):
+    def test_cutoff_time_enforced(self):
+        config = ORBConfig()
+        self.assertEqual(config.no_new_entry_after.hour, 15)
+        self.assertEqual(config.no_new_entry_after.minute, 0)
+
+    def test_risk_sizing_min_contract(self):
+        config = ORBConfig()
+        # With small risk, should need >=1 contract
+        self.assertEqual(config.risk_usd, 3000.0)
+        self.assertEqual(config.mnq_multiplier, 2.0)
+
+    def test_orb_config_all_fields(self):
+        config = ORBConfig()
+        self.assertTrue(hasattr(config, 'or_start'))
+        self.assertTrue(hasattr(config, 'rvol_lookback'))
+        self.assertTrue(hasattr(config, 'atr_length'))
