@@ -22,4 +22,3 @@ Maintenance/documentation. Free-data search re-evaluated MarketParquet and histo
 
 ## Verification command
 `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` (expect 66 passed)
-EOF
