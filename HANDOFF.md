@@ -197,6 +197,15 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
 
+
+## Completed work (verification session 2026-10-31r)
+- Read prior agent task from HANDOFF; maintenance/documentation confirmed current priority (no new free MNQ 1min/15min sources found).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 63 passed.
+- Re-verified canonical baselines against stored artifacts: axb0306 60 trades net -$31,637.98 / gross -$7,662.00 / PF 0.492 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / gross -$140,899.00 / PF 0.227 / WR 64.83%. Field-by-field match to artifacts/metrics_axb0306.json and artifacts/metrics_kaggle.json. Determinism confirmed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; Kaggle front-month raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
+- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration.
+- Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with this session's evidence.
+
 ## Constraints
 - No parameter optimization, no strategy-rule changes, no broker integration, no live/paper orders.
 - Historical research/simulation only. Do not purchase data or use paid/proprietary services.
