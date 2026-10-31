@@ -37,6 +37,13 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 - Splits computed on limited samples; OOS interval is short.
 - axb0306 roll/adjustment method undocumented.
 
+## Completed work (this session 2026-10-31t)
+- Read prior agent task from HANDOFF and INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation priority confirmed.
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99).
+- Verified baselines intact: axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96 (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json).
+- No new free MNQ 1min/15min sources beyond axb0306 and Kaggle front-month; Yahoo daily only. No data purchased, no code/strategy changes, frozen baseline preserved.
+
 ## Next bounded task
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
