@@ -2,7 +2,7 @@
 
 Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before making changes.
 
-## Current state (steady state, session 2026-10-31k verified)
+## Current state (steady state, session 2026-10-31l verified)
 - Frozen baseline preserved: `STRATEGY_RULES.txt` v1.0 and `config/orb_mnq_15m_showcase.yaml` unchanged. No parameter/strategy changes.
 - Free-data feasibility complete. Sources:
   - axb0306/cme-futures-ohlc: MNQ 1min/15min 2026-01-20..2026-04-15, single-contract MNQ.M26, no roll, no back-adjustment (roll method documented in data/FEASIBILITY_REPORT.md).

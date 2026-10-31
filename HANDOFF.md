@@ -137,15 +137,15 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - axb0306 roll/adjustment method undocumented.
 - Results negative under full costs on available samples.
 
-## Completed work (verification session 2026-10-31k)
-- Re-verified steady state: `python -m pytest tests -q` -> 63 passed (no code changes needed).
-- Confirmed artifacts intact: metrics_axb0306.json (60 trades, net -$31,637.98), metrics_kaggle.json (688 trades, net -$626,525.96), trades ledgers for both samples.
-- Full required metric set present in both metrics files (avg win/loss R & USD, CAGR null due to net loss, Sharpe/Sortino annualized per-trade R, worst/best day, monthly/yearly breakdown, exposure_pct, signal_close_entry_sensitivity, cost sensitivity grid).
-- Free-data search re-run: no new free MNQ 1min/15min source (Yahoo daily only); axb0306 + Kaggle front-month remain the only sources. No data purchased; provenance/hashes unchanged in data/FEASIBILITY_REPORT.md.
-- No parameter/strategy changes; frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged).
+## Completed work (verification session 2026-10-31l)
+- Read prior agent task from HANDOFF; maintenance/documentation tasks confirmed as current priority (no new free MNQ 1min/15min sources found).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 63 passed.
+- Verified baselines intact: axb0306 (60 trades, net -$31,637.98), Kaggle front-month (688 trades, net -$626,525.96). Artifacts and hashes unchanged.
+- Confirmed frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged).
+- Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with current verification evidence.
 
 ## Unresolved blockers
-- History depth: axb0306 ~3 months (single-contract MNQ.M26, no roll); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
+- History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
 - Results negative under full costs on both available samples (costs dominate).
 - Splits computed on limited samples; OOS interval is short.
 
