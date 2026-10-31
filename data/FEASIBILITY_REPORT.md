@@ -171,3 +171,8 @@ of the exact 0.4R formula — the residual is tick rounding, as required by the 
 - MarketParquet (marketparquet.com): PAID ("From $79"), not free. Excluded per no-purchase policy.
 - historicalfuturesdata.com: PAID (pricing page present), not free. Excluded.
 - No new free MNQ 1-min/15-min source located. Existing free sources remain axb0306 (~3 months) and Kaggle front-month (~3 years, unadjusted).
+
+## Free-data search update (2026-10-31bc)
+- Databento GLBX.MDP3 MNQ catalog (https://databento.com/catalog/cme/GLBX.MDP3/futures/MNQ): coverage 2019-04-14→present with OHLCV-1m/1m schemas — the deepest MNQ source found. **Not free without credentials**: the historical API requires an API key (`DATABENTO_API_KEY`, 32-char `db-` key obtained on signup) and consumes paid credits at $/GB beyond the $125 signup credit; the `dbn-cache` CLI (`azizuysal/dbn-cache`) also requires the key. The Kaggle brandenmorris dump already used is the same GLBX.MDP3 dataset. Excluded from the free-data path; no download performed; no API key requested or stored.
+- FinzData (finzdata.com/futures/mnq): MNQ intraday 1-min/5-min/15-min from 2019-05-05 is a **$49 one-time purchase**; only the last 30 days of daily bars are free. Excluded per no-purchase policy.
+- Portara, FirstRate Data, Yahoo Finance re-checked: paid / daily-only. No new genuinely free MNQ 1min/15min source located. No data purchased; no credentials added.
