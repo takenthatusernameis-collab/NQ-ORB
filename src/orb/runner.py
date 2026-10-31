@@ -61,6 +61,16 @@ def compute_metrics(trades):
     if len(completed) == 0:
         return metrics
     metrics.update(_summarize(completed))
+
+    # Long/short split: full metric set per direction (pooled metrics above are
+    # not sufficient on their own; AGENTS.md requires long/short splits).
+    long_trades = [t for t in completed if t.get('direction') == 'long']
+    short_trades = [t for t in completed if t.get('direction') == 'short']
+    metrics['long_short_split'] = {
+        'long': _summarize(long_trades),
+        'short': _summarize(short_trades),
+    }
+
     # max drawdown
     equity = 0.0
     peak = 0.0
@@ -86,6 +96,12 @@ def compute_metrics(trades):
             "train": _summarize(train),
             "val": _summarize(val),
             "test": _summarize(test),
+            "train_long_short": _summarize([t for t in train if t.get('direction') == 'long']),
+            "train_short_short": _summarize([t for t in train if t.get('direction') == 'short']),
+            "val_long_short": _summarize([t for t in val if t.get('direction') == 'long']),
+            "val_short_short": _summarize([t for t in val if t.get('direction') == 'short']),
+            "test_long_short": _summarize([t for t in test if t.get('direction') == 'long']),
+            "test_short_short": _summarize([t for t in test if t.get('direction') == 'short']),
             "date_range": {
                 "start": str(min(t['date'] for t in completed)),
                 "end": str(max(t['date'] for t in completed)),
