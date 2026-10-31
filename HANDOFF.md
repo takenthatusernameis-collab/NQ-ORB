@@ -141,3 +141,19 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 1. Maintain documentation; if a new free MNQ source appears, record provenance/hashes before use.
 2. Add intrabar ambiguity/roll-transition tests only where deterministic synthetic fixtures are available.
 3. No parameter/strategy changes; keep evidence updated.
+
+## Completed work (verification session 2026-10-31j)
+- Re-ran full test suite: `python -m pytest tests -q` -> 60 passed.
+- Free-data search re-run: no new free MNQ 1min/15min source found (Yahoo daily only); axb0306 + Kaggle front-month remain the only sources. No data purchased; provenance/hashes unchanged.
+- No code changes required; baselines unchanged (axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96).
+- FEASIBILITY_REPORT intact with hashes.
+
+## Unresolved blockers
+- History depth: axb0306 ~3 months (unverified continuous); Kaggle front-month ~3 years (unadjusted front-month). No multi-year free MNQ 1min/15min beyond these.
+- axb0306 roll/adjustment method undocumented.
+- Results negative under full costs on available samples.
+
+## Next bounded task
+1. Maintain documentation; if a new free MNQ source appears, record provenance/hashes before use.
+2. Add intrabar ambiguity/roll-transition tests only where deterministic synthetic fixtures are available.
+3. No parameter/strategy changes; keep evidence updated.
