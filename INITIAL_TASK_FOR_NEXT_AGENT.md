@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## State to verify (as of 2026-10-31bn)
+## State to verify (as of 2026-10-31al)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` should pass (66 passed).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
@@ -31,20 +31,6 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen b
 - No broker integration, order routing, live trading, or paper-trading execution against a broker.
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history.
-
-## Session task (2026-10-31bn)
-
-Maintenance session. No new implementation work was required. Verified:
-- Full test suite: 66 passed.
-- Raw data hashes unchanged across all 4 files.
-- Frozen baseline hashes unchanged (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml).
-- Both baselines re-run fresh (`--prefix verify_axb`, `--prefix verify_kag`) and diffed field-by-field + full trade-ledger byte-identical against canonical artifacts.
-- artifacts/ contains only canonical + historical files (no transient verify_* artifacts); matches artifacts/README.md.
-- Free-data sweep re-run (GitHub API repo commits + MNQ path listing, Kaggle dataset search, Yahoo Finance, Databento GLBX.MDP3, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, arXiv 2605.04004, getdata.finance, kibot, quantnet): **no new genuinely free MNQ 1min/15min source**.
-  - GitHub: axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb…` dated 2026-04-15T23:34:55Z — unchanged since prior session audit. No new intraday MNQ files, no extension of history.
-  - Kaggle: `brandenmorris/mnq-1-minute-data-5132025-11122025` remains the only free MNQ 1-min source (ends 2025-11-12, already ingested). All other MNQ hits are NQ (big contract, $20/point) or paid/key-gated.
-  - All paid candidates re-confirmed paid/key-gated: FinzData $49 one-time, FirstRate $99.95/yr, historicalfuturesdata.com $59/yr per bar size, MarketParquet $79, TickTradingData €200, Kibot $520, Databento key-gated + credit-based, CME DataMine purchase-only, investing.com daily-only, getdata.finance paid, quantnet personal sale. No data purchased; no credentials requested or stored.
-- No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
 
 ## Next agent task
 
