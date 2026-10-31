@@ -45,6 +45,10 @@ Repo: takenthatusernameis-collab/NQ-ORB
 ## Conclusion on 15:55 ET forced flatten
 The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data we can evaluate intrabar touches and the 15:55 ET flatten exactly (by scanning 1min bars up to 15:55). So **15:55 flatten is testable with 1min data from this source** if we handle timezone correctly and have continuous contract methodology documented.
 
+## Free-data search (expanded, 2026-10-31)
+- Searched for additional free MNQ 1min/15min sources (Kaggle, GitHub, public repos). Found Kaggle dataset `brandenmorris/mnq-1-minute-data-5132025-11122025` (Databento GLBX.MDP3) cached locally; built front-month unadjusted series (2022-11-16..2025-11-12) with hashes recorded below and in artifacts. Other MNQ-specific long free 1min sources not located in this environment; NQ (big contract) datasets exist but are not MNQ. No paid data purchased.
+- axb0306/cme-futures-ohlc remains the other source (~2026-01-20..2026-04-15). Both documented with roll methods.
+
 ## Blockers / gaps
 1. **Limited history**: ~3 months of 1min/15min for MNQ (Jan 20 - Apr 15 2026). Insufficient for robust walk-forward/OOS; need longer free history.
 2. **Continuous contract method unknown**: Need to inspect repo more (update_data.py, config) and sample data around rolls? Or check if it's back-adjusted. Must record adjustment method.
@@ -59,6 +63,7 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99 (84078 lines incl header)
 - raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
 - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
+- source (Kaggle GLBX MDP3): glbx-mdp3-20221116-20251112.ohlcv-1m.csv cached at /home/runner/work/_temp/kilo-home/.cache/kagglehub/datasets/brandenmorris/mnq-1-minute-data-5132025-11122025/versions/1/MNQ_OHLCV_5-13-2025--11-12-2025/ (hash recorded via build script)
 
 ## Continuous contract / roll method documentation
 

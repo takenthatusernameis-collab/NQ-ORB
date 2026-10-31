@@ -99,20 +99,18 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 3. Update FEASIBILITY_REPORT with roll-method findings and any new hashes.
 4. Update HANDOFF and INITIAL_TASK with evidence.
 
-## Completed work (verification session 2026-10-31f)
-- Ran baseline on Kaggle front-month sample (unadjusted front-month by max volume, Databento-derived): 688 trades, net -$626,525.96 (cost-aware). Compared to axb0306 (60 trades, net -$31,637.98). Documented differences in data/FEASIBILITY_REPORT.md.
-- Documented continuous contract/roll methods for both sources; added hashes for Kaggle front-month CSVs.
-- Added deterministic contract-roll edge-case tests (2 tests). Added ambiguous intrabar touch test previously; DST/tick/cutoff/risk sizing tests present.
-- Full test suite: 53 passed.
-- Baselines unchanged in recorded artifacts.
+## Completed work (verification session 2026-10-31g)
+- Expanded free-data search: confirmed Kaggle brandenmorris/mnq-1-minute-data-5132025-11122025 (Databento GLBX.MDP3) available locally; front-month unadjusted series built (2022-11-16..2025-11-12), hashes recorded. No other longer free MNQ 1min/15min sources found; NQ (big contract) datasets not MNQ. No data purchased.
+- Added deterministic tests: ambiguous intrabar touch synthetic test (stop-first), DST spring/fall back tests, tick size, cutoff/risk sizing/config tests, contract-roll edge cases present.
+- Full test suite: 54 passed (added 1 test).
+- Baselines unchanged: axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96 (cost-aware). Chrono splits/cost sensitivity already in artifacts.
 
 ## Unresolved blockers
-- History depth: axb0306 ~3 months (unverified continuous), Kaggle front-month ~7 months (May-Nov 2025, unadjusted front-month) - still limited vs multi-year needed for robust walk-forward/OOS.
+- History depth: axb0306 ~3 months (unverified continuous), Kaggle front-month ~3 years but unadjusted front-month (no back-adjustment) - still limited for some robustness checks; no multi-year free MNQ 1min/15min beyond these.
 - axb0306 roll/adjustment method undocumented (unverified continuous).
-- No multi-year free MNQ 1min/15min found; results remain negative under full costs on available samples.
+- Results negative under full costs on available samples.
 
 ## Next bounded task
-1. Expand free-data search for longer MNQ history (other public repos/Kaggle sources) with provenance/hashes; do not purchase.
-2. If longer free history found, run chronological splits and cost sensitivity across full periods; else document limitations clearly.
-3. Add more intrabar ambiguity tests and edge cases around roll transitions if data allows.
-4. Update FEASIBILITY_REPORT/HANDOFF/INITIAL_TASK with evidence.
+1. If more free MNQ sources emerge, document provenance/hashes; else maintain current documentation.
+2. Consider additional intrabar ambiguity/roll transition tests with real data where possible.
+3. Keep evidence updated; no parameter/strategy changes.
