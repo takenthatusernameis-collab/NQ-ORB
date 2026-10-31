@@ -1,7 +1,7 @@
 # Initial Task for Next Agent — NQ ORB
 
 ## Current priority
-Maintenance/documentation. Free-data search re-evaluated MarketParquet and historicalfuturesdata.com — both are PAID (excluded). No new free MNQ 1min/15min source located. Existing free sources remain axb0306 (~3 months) and Kaggle front-month (~3 years, unadjusted). Do not change strategy rules or parameters.
+Maintenance/documentation. Free-data search re-checked MarketParquet (1-min is paid; only daily free), FirstRate Data (paid subscription), Portara (paid), Yahoo Finance (daily only), Kaggle (NQ only, not MNQ). No new genuinely free MNQ 1-min/15-min source located. Existing free sources remain axb0306 (~3 months) and Kaggle front-month (~3 years, unadjusted). Do not change strategy rules or parameters.
 
 ## Frozen baseline (do not modify)
 - STRATEGY_RULES.txt v1.0
