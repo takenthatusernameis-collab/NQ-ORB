@@ -57,3 +57,18 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 ## Raw data hashes (SHA-256)
 - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37 (5609 lines incl header)
 - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99 (84078 lines incl header)
+
+## Continuous contract / roll method documentation
+
+### axb0306/cme-futures-ohlc (2026-01-20 to 2026-04-15)
+- Repo provides a continuous MNQ series (no contract-month suffix in filenames). README describes "Structured OHLC dataset" updated nightly. The exact roll/adjustment method is NOT documented in the repo's visible README as of 2026-10-31; inspection of update scripts/config was not accessible from the cloned mirror. Treat this series as **unverified continuous**: do not assume unadjusted executable prices, do not bridge roll gaps, do not mix contracts in volume averages. Baseline run above uses this series as a short-sample infrastructure test only.
+
+### Kaggle brandenmorris/mnq-1-minute-data (5-13-2025 to 11-12-2025, Databento GLBX.MDP3)
+- Source: Databento GLBX.MDP3 ohlcv-1m schema, symbol MNQ.FUT, stype_in=parent.
+- Raw data is per-contract (instrument_id) with NO roll adjustment.
+- Roll method: front-month selected per calendar date by maximum daily volume across contracts; front-month dominance is 100% on every date in the sample (verified), so selection is unambiguous.
+- No adjustment applied: prices are actual traded prices, satisfying STRATEGY_RULES.txt requirement that back-adjusted prices must not be treated as executable fills.
+- Outputs: raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv (aggregated from 1min).
+- Hashes:
+  - raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
+  - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4

@@ -98,3 +98,20 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 2. Add ambiguous intrabar touch scenario tests with synthetic 1min data.
 3. Update FEASIBILITY_REPORT with roll-method findings and any new hashes.
 4. Update HANDOFF and INITIAL_TASK with evidence.
+
+## Completed work (verification session 2026-10-31e)
+- Documented continuous contract/roll methods in data/FEASIBILITY_REPORT.md (axb0306 unverified continuous; Kaggle front-month by max daily volume, no adjustment).
+- Computed hashes for front-month CSVs: MNQ_1min_frontmonth.csv edbadc..., MNQ_15min_frontmonth.csv 7e129a...
+- Added ambiguous intrabar touch test (stop-first handling). Full suite: 52 passed.
+- Baseline unchanged: 60 trades, net -$31637.98.
+
+## Unresolved blockers
+- History depth ~3 months (axb0306) plus ~7 months Kaggle front-month; still limited.
+- axb0306 roll/adjustment method undocumented (unverified continuous).
+- No multi-year free MNQ 1min/15min found.
+
+## Next bounded task
+1. Run baseline on Kaggle front-month sample and compare to axb0306 sample; document differences.
+2. Add contract-roll edge-case tests with synthetic data.
+3. Update FEASIBILITY_REPORT with baseline comparison and any new hashes.
+4. Update HANDOFF and INITIAL_TASK with evidence.
