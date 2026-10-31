@@ -233,6 +233,17 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 - No new free MNQ 1min/15min sources beyond axb0306 (~3 months, single-contract MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
 - Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
+## Completed work (this session 2026-10-31ad)
+- Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved (STRATEGY_RULES.txt v1.0 sha256 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml sha256 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; front-month 15min 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; front-month 1min edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
+- Re-ran both baselines fresh (`--prefix verify_axb`, `--prefix verify_kag`) and diffed all key fields (trade_count, win_rate, gross_pnl, net_pnl, profit_factor, max_drawdown_usd, count, wins, losses, costs, sharpe_r, sortino_r, exposure_pct, cost_sensitivity grid, long_short_split, chronological_splits) against canonical artifacts: byte-identical for both sources. Trade ledgers also byte-identical (60 and 688 trades).
+  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
+- Removed transient verify artifacts (`metrics_verify_*.json`, `trades_verify_*.json`); canonical files unambiguous, matching artifacts/README.md.
+- Free-data sweep re-run (GitHub API repo contents + commits, Kaggle, Yahoo Finance, Databento, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, arXiv): **no new genuinely free MNQ 1min/15min source**. axb0306/cme-futures-ohlc repo last commit is 2026-04-15 (unchanged since prior session audit); MNQ directory still contains only 1min/5min/15min/30min/1h/4h/daily/tick for 2026-01-20..2026-04-15 plus daily from 2025-03-24 — no new files, no extension of intraday history. All paid candidates re-confirmed paid/key-gated. No data purchased; no credentials requested or stored.
+- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no broker integration.
+
 ## Completed work (this session 2026-10-31ac)
 - Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved (STRATEGY_RULES.txt v1.0 sha256 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml sha256 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4).
 - Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
