@@ -2,7 +2,7 @@
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara/FinzData/Databento excluded as paid or key-gated).
 
-## Verification checklist (completed this session, 2026-10-31bc)
+## Verification checklist (completed this session, 2026-10-31)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
 2. Raw data hashes verified unchanged:
    - raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
@@ -12,8 +12,8 @@ Read HANDOFF.md first. Current priority: maintenance/documentation only (no new 
 3. Baselines re-run from scratch and all metric fields match canonical artifacts byte-identically:
    - axb0306 (60 trades, net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%)
    - Kaggle front-month (688 trades, net -$626,525.96 / gross -$140,899.00 / PF 0.22709 / WR 64.8256%). Determinism re-confirmed.
-4. Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy changes; no data purchased; no broker integration; no live/paper orders.
-5. Free-data search re-run (GitHub/Kaggle/Databento/FinzData/Portara/FirstRate/Yahoo): Databento GLBX.MDP3 MNQ catalog covers 2019-04-14→present but requires an API key and consumes paid credits ($/GB) beyond the $125 signup credit; dbn-cache CLI requires `DATABENTO_API_KEY`. FinzData MNQ intraday is $49 one-time (paid). No new genuinely free MNQ 1min/15min source located.
+4. Independent ledger integrity audit (both samples): zero exits past 15:55 ET forced-flatten; zero days with >1 trade; stop/target within 0.125 index points (<= half tick) of the exact 0.4R formula on 60/60 axb0306 and 688/688 Kaggle trades.
+5. Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy changes; no data purchased; no broker integration; no live/paper orders.
 
 Note: verify artifacts (artifacts/metrics_axb0306_verify.json, artifacts/metrics_kaggle_verify.json) contain additional train/val/test long/short split blocks not present in the older canonical snapshots; all core fields match exactly.
 
