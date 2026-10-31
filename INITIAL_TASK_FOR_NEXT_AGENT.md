@@ -79,3 +79,10 @@ Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before mak
 - History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
 - Results negative under full costs on both available samples (costs dominate).
 - Splits computed on limited samples; OOS interval is short.
+
+## Completed work (verification session 2026-10-31w)
+- Read prior agent task from HANDOFF; maintenance/documentation confirmed current priority (no new free MNQ 1min/15min sources found).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-verified canonical baselines against stored artifacts and from-scratch runs: axb0306 60 trades net -$31,637.98 / gross -$7,662.00 / PF 0.492 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / gross -$140,899.00 / PF 0.227 / WR 64.83%. Determinism confirmed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4..., Kaggle front-month 15min 7e129ae3..., 1min edbadc73...).
+- Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no broker integration.
