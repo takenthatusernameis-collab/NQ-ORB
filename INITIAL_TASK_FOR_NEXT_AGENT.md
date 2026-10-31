@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## Evidence to verify (as of 2026-10-31af)
+## Evidence to verify (as of 2026-10-31ag)
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` should pass (66 passed).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json): axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96.
 - Raw data hashes unchanged:
