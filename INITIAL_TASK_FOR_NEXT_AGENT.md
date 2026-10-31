@@ -1,8 +1,8 @@
-# Initial task for next agent (2026-10-31ay)
+# Initial task for next agent (2026-10-31az)
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
-## Verification checklist (completed this session, 2026-10-31ay)
+## Verification checklist (completed this session, 2026-10-31az)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
 2. Raw data hashes verified unchanged:
    - raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
