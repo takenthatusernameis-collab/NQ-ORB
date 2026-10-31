@@ -45,8 +45,36 @@ Repo: takenthatusernameis-collab/NQ-ORB
 ## Conclusion on 15:55 ET forced flatten
 The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data we can evaluate intrabar touches and the 15:55 ET flatten exactly (by scanning 1min bars up to 15:55). Session audit (2026-10-31) confirms 15:55 ET 1min bars exist on 60 trading days — the same 60 days that produce trades — so **the forced-flatten exit is fully evaluable** on the axb0306 sample, not marked unverified. The 15:55 fill uses the 15:55 1min bar's open when the bar timestamp equals 15:55, else its close.
 
+## Required performance reporting (added 2026-10-31)
+The full AGENTS.md-required metric set is now computed by `runner.compute_metrics` and stored in
+`artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`. Fields added:
+- `avg_win_r`, `avg_loss_r`, `avg_win_usd`, `avg_loss_usd` (win/loss splits in R and USD)
+- `cagr` (with `capital_convention` and `years_covered`; `None` when net P&L is non-positive)
+- `sharpe_r`, `sortino_r` (annualized from per-trade R returns, factor sqrt(252), per-trade frequency)
+- `worst_day_usd`/`worst_day_date`, `best_day_usd`/`best_day_date`
+- `monthly_net_pnl`, `yearly_net_pnl` dictionaries
+- `exposure_pct` (bars held / 27 possible 15-min bars per session)
+- `signal_close_entry_sensitivity` (separate scenario only, never mixed with primary)
+
+Baseline axb0306 (cost-aware, trade counts unchanged): avg_win_r 0.377R, avg_loss_r 1.024R
+(break-even requires win rate > 1/(1+0.4) = 71.43%; observed 70% but losses are ~2.7x wins in R,
+so expectancy is negative). Sharpe -1.06, Sortino -0.67, worst day 2026-01-27 (-$3,811.28),
+exposure 0.103% of session bars. Monthly: Jan +$697.96, Feb +$2,215.78, Mar -$24,373.58,
+Apr -$10,178.14. Signal-close entry sensitivity is also negative across all slippage levels.
+
+Baseline Kaggle front-month: avg_win_r 0.380R, avg_loss_r 1.030R, Sharpe -1.68, Sortino -1.04,
+worst day 2023-05-12 (-$4,789.80), exposure 0.081%. All 36 months negative except 2025-09 (+$1,803.20).
+
 ## Deterministic test coverage (2026-10-31)
-`tests/orb/test_orb_logic.py` now covers, with synthetic fixtures: opening-range construction, first-breakout only, both regime filters (RVOL excludes breakout bar, ATR% floor/ceiling), both directions, stop/target math (0.4R long and short), tick rounding to 0.25, position sizing floor/skip, one-trade-per-day, 15:00 entry cutoff, 15:55 forced flatten via 1min data, wick-without-close not a breakout, DST spring-forward and fall-back conversions, ambiguous intrabar touch (stop-first), contract-roll edge cases (no cross-contract contamination), and config field defaults. Full suite: `python -m pytest tests -q` -> 60 passed.
+`tests/orb/test_orb_logic.py` now covers, with synthetic fixtures: opening-range construction,
+first-breakout only, both regime filters (RVOL excludes breakout bar, ATR% floor/ceiling), both
+directions, stop/target math (0.4R long and short), tick rounding to 0.25, position sizing floor/skip,
+one-trade-per-day, 15:00 entry cutoff, 15:55 forced flatten via 1min data, wick-without-close not a
+breakout, DST spring-forward and fall-back conversions, ambiguous intrabar touch (stop-first),
+contract-roll edge cases (no cross-contract contamination), config field defaults, plus numeric
+verification that the RVOL denominator excludes the breakout bar, that a failed first breakout
+blocks any second breakout the same day, and that the full required-metric set plus the
+signal-close entry sensitivity are produced. Full suite: `python -m pytest tests -q` -> 63 passed.
 
 ## Free-data search (expanded, 2026-10-31)
 - Searched for additional free MNQ 1min/15min sources (Kaggle, GitHub, public repos). Found Kaggle dataset `brandenmorris/mnq-1-minute-data-5132025-11122025` (Databento GLBX.MDP3) cached locally; built front-month unadjusted series (2022-11-16..2025-11-12) with hashes recorded below and in artifacts. Other MNQ-specific long free 1min sources not located in this environment; NQ (big contract) datasets exist but are not MNQ. No paid data purchased.

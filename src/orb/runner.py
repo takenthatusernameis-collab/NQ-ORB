@@ -6,6 +6,8 @@ import os
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -44,6 +46,10 @@ def _summarize(sub_trades):
                           if sum(t['net_pnl'] for t in sub_trades if t['net_pnl'] < 0) < 0 else float('inf')),
         "long_trades": len([t for t in sub_trades if t['direction'] == 'long']),
         "short_trades": len([t for t in sub_trades if t['direction'] == 'short']),
+        "avg_win_r": (sum(r for r, t in zip(r_list, sub_trades) if t['net_pnl'] > 0) / len(wins)) if wins else 0.0,
+        "avg_loss_r": (abs(sum(r for r, t in zip(r_list, sub_trades) if t['net_pnl'] < 0)) / len(losses)) if losses else 0.0,
+        "avg_win_usd": (sum(t['net_pnl'] for t in wins) / len(wins)) if wins else 0.0,
+        "avg_loss_usd": (abs(sum(t['net_pnl'] for t in losses) / len(losses))) if losses else 0.0,
     }
 
 
@@ -87,6 +93,99 @@ def compute_metrics(trades):
             },
         }
 
+    # Return frequency for annualization: one trade per day at most, so use
+    # trading-day frequency. CAGR uses the calendar span of the sample.
+    trade_dates = sorted({t['date'] for t in completed})
+    if len(trade_dates) >= 2:
+        start_d = pd.to_datetime(min(trade_dates))
+        end_d = pd.to_datetime(max(trade_dates))
+        years = max((end_d - start_d).days / 365.25, 1e-6)
+        # Final equity relative to a $1 starting capital (capital convention: $1)
+        final_equity = 1.0 + (sum(t['net_pnl'] for t in completed) / 10000.0)
+        if final_equity > 0:
+            metrics['cagr'] = (final_equity ** (1.0 / years)) - 1.0
+        else:
+            metrics['cagr'] = None
+        metrics['capital_convention'] = 'synthetic $10,000 starting capital; CAGR = (final/initial)^(1/years)-1 on net P&L'
+        metrics['years_covered'] = years
+    else:
+        metrics['cagr'] = None
+        metrics['capital_convention'] = 'insufficient date span'
+
+    # Sharpe / Sortino on per-trade returns (trade-frequency annualization).
+    # Annualization factor: trades per year ≈ 252 trading days / avg trades per day.
+    # With max 1 trade/day this is ~252; report the factor used.
+    r_list_all = []
+    for t in completed:
+        rp = t.get('risk_points') or 0
+        if rp > 0 and t.get('direction') == 'long':
+            r_list_all.append((t['exit_price_fill'] - t['entry_price_fill']) / rp)
+        elif rp > 0 and t.get('direction') == 'short':
+            r_list_all.append((t['entry_price_fill'] - t['exit_price_fill']) / rp)
+        else:
+            r_list_all.append(0.0)
+    if len(r_list_all) >= 2:
+        mean_r = sum(r_list_all) / len(r_list_all)
+        var_r = sum((r - mean_r) ** 2 for r in r_list_all) / (len(r_list_all) - 1)
+        std_r = var_r ** 0.5
+        if std_r > 0:
+            metrics['sharpe_r'] = (mean_r / std_r) * (252.0 ** 0.5)
+        else:
+            metrics['sharpe_r'] = None
+        downside = [r for r in r_list_all if r < 0]
+        if len(downside) >= 1:
+            dd_var = sum((r - 0.0) ** 2 for r in downside) / len(downside)
+            dd_std = dd_var ** 0.5
+            metrics['sortino_r'] = (mean_r / dd_std) * (252.0 ** 0.5) if dd_std > 0 else None
+        else:
+            metrics['sortino_r'] = None
+        metrics['sharpe_sortino_note'] = (
+            'annualized from per-trade R returns with factor sqrt(252); '
+            'return frequency = per completed trade (max 1/day)'
+        )
+    else:
+        metrics['sharpe_r'] = None
+        metrics['sortino_r'] = None
+
+    # Worst day (largest single-day net loss) and best day
+    by_day = {}
+    for t in completed:
+        by_day[t['date']] = by_day.get(t['date'], 0.0) + (t['net_pnl'] or 0.0)
+    if by_day:
+        metrics['worst_day_usd'] = min(by_day.values())
+        metrics['best_day_usd'] = max(by_day.values())
+        metrics['worst_day_date'] = min(by_day, key=by_day.get)
+        metrics['best_day_date'] = max(by_day, key=by_day.get)
+
+    # Monthly / yearly breakdown
+    monthly = {}
+    yearly = {}
+    for t in completed:
+        m = str(t['date'])[:7]
+        y = str(t['date'])[:4]
+        monthly[m] = monthly.get(m, 0.0) + (t['net_pnl'] or 0.0)
+        yearly[y] = yearly.get(y, 0.0) + (t['net_pnl'] or 0.0)
+    metrics['monthly_net_pnl'] = dict(sorted(monthly.items()))
+    metrics['yearly_net_pnl'] = dict(sorted(yearly.items()))
+
+    # Exposure / time in market: count bars held per trade relative to day length.
+    exposure_bars = 0
+    total_bars = 0
+    for t in completed:
+        try:
+            entry_dt = pd.Timestamp(t['entry_bar_time'])
+            exit_dt = pd.Timestamp(t['exit_time']) if t.get('exit_time') else entry_dt
+            held = max((exit_dt - entry_dt).total_seconds() / 900.0, 0.0)  # 15-min bar units
+            exposure_bars += held
+            total_bars += 27.0  # 09:30-16:00 ET = 27 fifteen-minute bars
+        except Exception:
+            continue
+    if total_bars > 0:
+        metrics['exposure_pct'] = (exposure_bars / total_bars) * 100.0
+    else:
+        metrics['exposure_pct'] = None
+    metrics['exposure_note'] = 'bars held / 27 possible 15-min bars per session (09:30-16:00 ET)'
+
     # Cost sensitivity: vary slippage multiplier and commission+fee multiplier.
     # Slippage is embedded in the fill prices, so recompute gross PnL from the
     # stored raw entry/exit prices for each slippage scenario.
@@ -118,6 +217,40 @@ def compute_metrics(trades):
                 "net_pnl": net,
             })
     metrics['cost_sensitivity'] = sensitivity
+
+    # Signal-close entry sensitivity (separate scenario only, never mixed with primary).
+    # Primary uses next-bar-open; this recomputes using the breakout bar's close as the fill.
+    signal_close = []
+    for slip_mult in [0.5, 1.0, 1.5, 2.0]:
+        net = 0.0
+        gross = 0.0
+        for t in completed:
+            if t.get('exit_price') is None:
+                continue
+            slip = slip_mult * tick
+            entry_raw = t['entry_price_raw']  # this is the next-bar open in primary mode
+            # Signal-close scenario: fill at the breakout bar close instead.
+            sc_entry = t.get('breakout_close')
+            if sc_entry is None:
+                continue
+            if t['direction'] == 'long':
+                entry_fill = sc_entry + slip
+                exit_fill = t['exit_price'] - slip
+                g = (exit_fill - entry_fill) * 2.0 * t['contracts']
+            else:
+                entry_fill = sc_entry - slip
+                exit_fill = t['exit_price'] + slip
+                g = (entry_fill - exit_fill) * 2.0 * t['contracts']
+            gross += g
+            per_side_cost = (t['costs_total'] / (t['contracts'] * 2.0)) if t['contracts'] else 0.0
+            net += g - per_side_cost * t['contracts'] * 2.0
+        signal_close.append({"slip_mult": slip_mult, "gross_pnl": gross, "net_pnl": net})
+    metrics['signal_close_entry_sensitivity'] = signal_close
+    metrics['signal_close_note'] = (
+        'Separate sensitivity only: fills at breakout-bar close instead of next-bar open. '
+        'Not used for primary results.'
+    )
+
     return metrics
 
 

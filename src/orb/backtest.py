@@ -246,6 +246,7 @@ class BacktestEngine:
                     'date': str(trading_date),
                     'direction': direction,
                     'breakout_bar_time': str(bar['datetime_et']),
+                    'breakout_close': bar['close'],
                     'entry_bar_time': str(entry_bar['datetime_et']),
                     'entry_price_raw': entry_price_raw,
                     'entry_price_fill': entry_price_fill,

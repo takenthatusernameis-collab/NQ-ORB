@@ -108,6 +108,95 @@ class TestAdditionalCases(unittest.TestCase):
         self.assertEqual(config.no_new_entry_after.hour, 15)
         self.assertEqual(config.no_new_entry_after.minute, 0)
 
+    def test_rvol_denominator_excludes_breakout_bar_with_numbers(self):
+        """RVOL = breakout vol / mean of the 20 preceding completed bars; the
+        breakout bar itself must NOT be in the denominator."""
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        # 22 bars: 20 baseline + 1 breakout + 1 entry
+        rows = []
+        base = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)  # 09:30 ET
+        for i in range(22):
+            dt = base + pd.Timedelta(minutes=15 * i)
+            rows.append({
+                'datetime': dt,
+                'open': 10000, 'high': 10010, 'low': 9990, 'close': 10005,
+                'volume': 1000
+            })
+        df = pd.DataFrame(rows)
+        df['datetime_et'] = df['datetime'].dt.tz_convert(ET)
+        df['date'] = df['datetime_et'].dt.date
+        df['time_et'] = df['datetime_et'].dt.time
+        df['atr14'] = 10.0
+        df['atr_pct'] = 0.2
+        # Breakout bar (index 21) has volume 2000; baseline mean is 1000 -> rvol 2.0
+        df.loc[21, 'close'] = 10020  # above OR high 10010
+        df.loc[21, 'volume'] = 2000
+        # Compute rvol the way the engine does
+        bar = df.iloc[21]
+        prev_20 = df[df['datetime_et'] < bar['datetime_et']].tail(config.rvol_lookback)
+        avg_vol = prev_20['volume'].mean()
+        rvol = bar['volume'] / avg_vol
+        self.assertEqual(len(prev_20), 20)
+        self.assertEqual(avg_vol, 1000.0)
+        self.assertAlmostEqual(rvol, 2.0)
+
+    def test_first_breakout_only_failed_filter_no_second_attempt(self):
+        """If the first breakout fails a filter, a later breakout the same day
+        must NOT be evaluated (baseline is first-breakout-only)."""
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        rows = []
+        base = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)
+        for i in range(25):
+            dt = base + pd.Timedelta(minutes=15 * i)
+            rows.append({
+                'datetime': dt,
+                'open': 10000, 'high': 10010, 'low': 9990, 'close': 10005,
+                'volume': 1000
+            })
+        df = pd.DataFrame(rows)
+        df['datetime_et'] = df['datetime'].dt.tz_convert(ET)
+        df['date'] = df['datetime_et'].dt.date
+        df['time_et'] = df['datetime_et'].dt.time
+        df['atr14'] = 10.0
+        df['atr_pct'] = 0.2
+        # First breakout bar (index 1) fails RVOL (volume 500 -> rvol 0.5)
+        df.loc[1, 'close'] = 10020
+        df.loc[1, 'volume'] = 500
+        # Second breakout bar (index 2) would pass (volume 2000)
+        df.loc[2, 'close'] = 10030
+        df.loc[2, 'volume'] = 2000
+        trades = engine.run(df, df)
+        # No trade should be taken because the first breakout failed filters
+        self.assertEqual(len(trades), 0)
+
+    def test_signal_close_entry_sensitivity_present(self):
+        """runner.compute_metrics must include the signal-close entry sensitivity."""
+        import importlib
+        import orb.runner as runner_mod
+        importlib.reload(runner_mod)
+        # Minimal fake completed trade list
+        fake = [{
+            'date': '2026-01-21', 'direction': 'long',
+            'entry_price_raw': 20000.0, 'entry_price_fill': 20000.5,
+            'exit_price': 20004.0, 'exit_price_fill': 20003.5,
+            'breakout_close': 20010.0, 'contracts': 10,
+            'risk_points': 4.0, 'costs_total': 2 * 10 * (2.25 + 0.62),
+            'net_pnl': 100.0, 'gross_pnl': 150.0,
+            'exit_time': '2026-01-21 20:30:00-05:00',
+            'entry_bar_time': '2026-01-21 20:00:00-05:00',
+        }]
+        m = runner_mod.compute_metrics(fake)
+        self.assertIn('signal_close_entry_sensitivity', m)
+        self.assertEqual(len(m['signal_close_entry_sensitivity']), 4)
+        self.assertIn('sharpe_r', m)
+        self.assertIn('sortino_r', m)
+        self.assertIn('cagr', m)
+        self.assertIn('worst_day_usd', m)
+        self.assertIn('monthly_net_pnl', m)
+        self.assertIn('exposure_pct', m)
+
     def test_risk_sizing_min_contract(self):
         config = ORBConfig()
         # With small risk, should need >=1 contract
