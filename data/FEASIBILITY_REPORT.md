@@ -53,3 +53,7 @@ The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data
 
 ## Recommendation
 Proceed to implement infrastructure using this free source as a **test dataset** to validate logic, but **do not claim full empirical validation** due to limited history. Try to find longer free MNQ history (e.g. Topstep-style public samples, other GitHub repos, or Kaggle MNQ if exists). Document everything. Do not purchase data.
+
+## Raw data hashes (SHA-256)
+- raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37 (5609 lines incl header)
+- raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99 (84078 lines incl header)

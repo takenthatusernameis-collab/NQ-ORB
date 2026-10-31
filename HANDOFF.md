@@ -37,6 +37,8 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 - **15:55 flatten & intrabar ordering**: 1min data exists, but full simulation of stop/target fills with proper ordering/slippage/fees not yet implemented in engine (trades logged but exits not simulated). Mark as partially implemented.
 - **Reproducibility**: Trade ledger and metrics saved; need data hashes and full documentation of any new data sources.
 
+- **Data provenance**: Added SHA-256 hashes for raw CSVs to `data/FEASIBILITY_REPORT.md` (MNQ_15min.csv f417..., MNQ_1min.csv 1296...).
+
 ## Next bounded task
 1. **Extend data coverage**: Search for longer free MNQ history (other GitHub repos, Kaggle with MNQ, or alternative free sources). Document each attempt with provenance/hashes.
 2. **Harden execution**: Validate flatten at exactly 15:55, add more edge case handling, ensure no lookahead. Add tests for DST/rolls/ambiguous touches.
