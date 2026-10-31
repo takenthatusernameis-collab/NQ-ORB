@@ -1,4 +1,4 @@
-# Initial task for next agent (2026-10-31ap)
+# Initial task for next agent (2026-10-31aq)
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
