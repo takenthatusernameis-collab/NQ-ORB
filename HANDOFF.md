@@ -454,6 +454,14 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Baselines intact: axb0306 (60 trades, net -$31,637.98), Kaggle front-month (688 trades, net -$626,525.96). Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
 - No new free MNQ 1min/15min sources located. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
+## Completed work (verification session 2026-10-31am)
+- Read prior agent task from HANDOFF/INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation confirmed current priority (no new genuinely free MNQ 1min/15min sources beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-ran both baselines from scratch (`src/orb/runner.py --source axb0306 --prefix axb0306_verify` and `--source kaggle --prefix kaggle_verify`); all metric fields match canonical artifacts byte-identically (trade_count, win_rate, gross/net P&L, PF, max DD). axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96. Determinism re-confirmed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4..., Kaggle front-month 15min 7e129ae3..., 1min edbadc73...).
+- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
+- Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+
 ## Completed work (verification session 2026-10-31af2)
 - Read prior agent task from HANDOFF; maintenance/documentation confirmed current priority.
 - Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
