@@ -166,3 +166,8 @@ of the exact 0.4R formula — the residual is tick rounding, as required by the 
 - Kaggle front-month (2022-11-16..2025-11-12, unadjusted front-month by max volume, 1min+15min): 688 trades, 446W/242L (64.83%), gross -$140,899.00, net -$626,525.96, total costs $485,626.96, avg R -0.0684, expectancy -$910.65/trade, PF 0.227, max DD ~$626,994.56, longs 359 (-$287,054.04), shorts 329 (-$339,471.92). Artifacts: artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json.
 - Differences: Kaggle provides much longer history (3 years) and uses unadjusted front-month selection (cleaner for executable fills); axb0306 is shorter recent sample with unverified continuous series. Both show negative net performance under full costs with this preset on available samples; Kaggle has larger drawdowns in absolute terms due to more trades/longer period. No multi-year free MNQ 1min/15min coverage exists beyond these sources; history depth remains a blocker for robust walk-forward/OOS.
 - Note: Results are from short/limited free samples only; not proof of edge. Costs (commissions+fees $2.87/side, slippage 1 tick adverse) dominate in both cases.
+
+## Free-data search update (2026-10-31)
+- MarketParquet (marketparquet.com): PAID ("From $79"), not free. Excluded per no-purchase policy.
+- historicalfuturesdata.com: PAID (pricing page present), not free. Excluded.
+- No new free MNQ 1-min/15-min source located. Existing free sources remain axb0306 (~3 months) and Kaggle front-month (~3 years, unadjusted).
