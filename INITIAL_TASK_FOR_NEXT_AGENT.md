@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## State to verify (as of 2026-10-31bk)
+## State to verify (as of 2026-10-31be)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` should pass (66 passed).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json): axb0306 60 trades net -$31,637.98 / PF 0.492 / max DD $37,491.80 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.227 / max DD $626,994.56 / WR 64.83%.
@@ -29,3 +29,17 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen b
 - No broker integration, order routing, live trading, or paper-trading execution against a broker.
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history.
+
+## Session task (2026-10-31be)
+
+Maintenance session. No new implementation work was required. Verified:
+- Full test suite: 66 passed.
+- Raw data hashes unchanged across all 4 files.
+- Frozen baseline hashes unchanged (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml).
+- artifacts/ contains only canonical + historical files (no transient verify_* artifacts); matches artifacts/README.md.
+- No new free MNQ 1min/15min sources beyond axb0306 (~3 months, single-contract MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only.
+- No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+
+## Next agent task
+
+Continue maintenance/documentation. If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session.
