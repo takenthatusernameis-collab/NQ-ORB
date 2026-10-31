@@ -12,7 +12,7 @@ Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before mak
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD ~$626,994.56.
   - Both negative under full costs on available samples; costs dominate.
 - Required performance reporting complete in artifacts/metrics_axb0306.json and artifacts/metrics_kaggle.json: avg win/loss R & USD, CAGR (null, net loss), Sharpe/Sortino annualized per-trade R, worst/best day, monthly/yearly breakdown, exposure_pct, signal_close_entry_sensitivity, cost-sensitivity grid, chronological train/val/test splits.
-- Tests: `python -m pytest tests -q` -> 63 passed. Deterministic tests cover OR construction, first-breakout-only, both filters, both directions, stop/target (0.4R), tick rounding, sizing, one-trade-per-day, 15:00 cutoff, 15:55 flatten via 1min, wick-without-close, DST spring/fall, ambiguous intrabar touch (stop-first), contract-roll edge cases, config fields, RVOL denominator exclusion.
+- Tests: `python -m pytest tests -q` -> 66 passed. Deterministic tests cover OR construction, first-breakout-only, both filters, both directions, stop/target (0.4R), tick rounding, sizing, one-trade-per-day, 15:00 cutoff, 15:55 flatten via 1min, wick-without-close, DST spring/fall, ambiguous intrabar touch (stop-first), contract-roll edge cases, config fields, RVOL denominator exclusion.
 - Artifacts saved: trades + metrics ledgers for both samples in artifacts/. Raw data in raw/ with SHA-256 hashes in data/FEASIBILITY_REPORT.md.
 - Free-data search exhausted (GitHub/Kaggle/Yahoo daily only); no new free MNQ 1min/15min source beyond the two above. No data purchased.
 - Hashes verified unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4...).
