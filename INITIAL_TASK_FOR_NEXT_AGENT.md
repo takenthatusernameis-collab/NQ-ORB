@@ -1,6 +1,6 @@
 # Initial task for next agent (2026-10-31)
 
-Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara/FinzData/Databento excluded as paid or key-gated).
+Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid or key-gated).
 
 ## Verification checklist (completed this session, 2026-10-31)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
@@ -12,7 +12,7 @@ Read HANDOFF.md first. Current priority: maintenance/documentation only (no new 
 3. Baselines re-run from scratch and all metric fields match canonical artifacts byte-identically:
    - axb0306 (60 trades, net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%)
    - Kaggle front-month (688 trades, net -$626,525.96 / gross -$140,899.00 / PF 0.22709 / WR 64.8256%). Determinism re-confirmed.
-4. Independent ledger integrity audit (both samples): zero exits past 15:55 ET forced-flatten; zero days with >1 trade; stop/target within 0.125 index points (<= half tick) of the exact 0.4R formula on 60/60 axb0306 and 688/688 Kaggle trades.
+4. Independent ledger integrity audit (both samples, separate code path): zero exits past 15:55 ET forced-flatten; zero days with more than one trade; stop/target prices within 0.125 index points (<= half tick) of the exact 0.4R formula on 60/60 axb0306 and 688/688 Kaggle trades.
 5. Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy changes; no data purchased; no broker integration; no live/paper orders.
 
 Note: verify artifacts (artifacts/metrics_axb0306_verify.json, artifacts/metrics_kaggle_verify.json) contain additional train/val/test long/short split blocks not present in the older canonical snapshots; all core fields match exactly.
