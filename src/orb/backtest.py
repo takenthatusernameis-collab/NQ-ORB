@@ -113,8 +113,11 @@ class BacktestEngine:
                 if atr_pct < self.config.atr_min_pct or atr_pct > self.config.atr_max_pct:
                     break
 
-                # Eligible trade - entry on next 15min bar open
-                next_bars = df15[df15['datetime_et'] > bar['datetime_et']].copy()
+                # Eligible trade - entry on next 15min bar open.
+                # Constrain to the SAME trading date so a late breakout cannot
+                # silently roll its entry into the next session.
+                next_bars = df15[(df15['datetime_et'] > bar['datetime_et']) &
+                                  (df15['date'] == trading_date)].copy()
                 next_bars = next_bars.sort_values('datetime_et')
                 if len(next_bars) == 0:
                     break

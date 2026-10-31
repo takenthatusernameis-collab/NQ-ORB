@@ -440,3 +440,96 @@ class TestContractRollEdgeCases(unittest.TestCase):
         # This should not crash; roll handling is explicit/documented
         trades = engine.run(df)
         self.assertIsInstance(trades, list)
+
+
+class TestEntryBarSameSessionAndFlattenExit(unittest.TestCase):
+    """Binding tests for two correctness properties previously only weakly asserted."""
+
+    def _build_15m(self, n_bars, base_ts, or_high=20015, or_low=19985):
+        from datetime import timedelta
+        rows = []
+        for i in range(n_bars):
+            dt = base_ts + timedelta(minutes=15 * i)
+            rows.append({
+                'datetime': dt, 'open': 20000, 'high': or_high,
+                'low': or_low, 'close': 20005, 'volume': 2000,
+            })
+        df = pd.DataFrame(rows)
+        df['datetime_et'] = df['datetime'].dt.tz_convert(ET)
+        df['date'] = df['datetime_et'].dt.date
+        df['time_et'] = df['datetime_et'].dt.time
+        return df
+
+    def test_entry_bar_is_same_trading_date(self):
+        """A breakout bar late in the session must NOT roll its entry into the
+        next calendar date; the engine must constrain entry to the same day."""
+        from datetime import timedelta
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        # Day 1: 09:30 ET OR, breakout on the 15:00 ET bar (index 23) with
+        # passing filters; no later bar same day -> must be skipped, not entered
+        # on day 2.
+        base1 = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)  # 09:30 ET
+        df1 = self._build_15m(24, base1)
+        df1['atr14'] = 10.0
+        df1['atr_pct'] = 0.2
+        df1.loc[23, 'close'] = 20026  # breakout above OR high 20015
+        # Day 2: another full session
+        base2 = pd.Timestamp('2026-01-22 14:30:00', tz=UTC)
+        df2 = self._build_15m(24, base2)
+        df2['atr14'] = 10.0
+        df2['atr_pct'] = 0.2
+        df = pd.concat([df1, df2], ignore_index=True)
+        df['atr14'] = 10.0
+        df['atr_pct'] = 0.2
+        trades = engine.run(df, df)
+        self.assertEqual(len(trades), 0,
+                         msg=f"Expected no trade; got {[t['date'] for t in trades]}")
+
+    def test_entry_bar_same_day_when_available(self):
+        """When a same-day next bar exists, entry must land on the same date."""
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        base = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)
+        df = self._build_15m(30, base)
+        df['atr14'] = 10.0
+        df['atr_pct'] = 0.2
+        # Breakout on index 21 (14:45 ET, < 15:00 cutoff); 21 preceding bars
+        # satisfy the 20-bar RVOL lookback. Entry must be index 22 (15:00 ET),
+        # same trading date.
+        df.loc[21, 'close'] = 20020
+        trades = engine.run(df, df)
+        self.assertEqual(len(trades), 1)
+        self.assertEqual(trades[0]['date'], '2026-01-21')
+        self.assertTrue(trades[0]['entry_bar_time'].startswith('2026-01-21'))
+
+    def test_flatten_exit_never_past_1555(self):
+        """Every exit timestamp must be at or before 15:55 ET."""
+        from datetime import timedelta
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        base = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)
+        df = self._build_15m(30, base)
+        df['atr14'] = 10.0
+        df['atr_pct'] = 0.2
+        df.loc[21, 'close'] = 20020
+        # 1min bars spanning well past 15:55 ET, held inside the stop/target
+        # band (stop = entry - 0.4*ATR = 19996; target = entry + 0.4*4 = 20001.5)
+        # so the only exit is the forced flatten at 15:55.
+        rows1m = []
+        t = pd.Timestamp('2026-01-21 20:00:00', tz=UTC)  # 15:00 ET
+        for i in range(120):
+            rows1m.append({'datetime': t, 'open': 20000, 'high': 20001,
+                           'low': 19999, 'close': 20000, 'volume': 500})
+            t += timedelta(minutes=1)
+        df1m = pd.DataFrame(rows1m)
+        df1m['datetime_et'] = df1m['datetime'].dt.tz_convert(ET)
+        df1m['date'] = df1m['datetime_et'].dt.date
+        df1m['time_et'] = df1m['datetime_et'].dt.time
+        trades = engine.run(df, df1m)
+        for tr in trades:
+            self.assertIsNotNone(tr['exit_time'])
+            exit_et = pd.Timestamp(tr['exit_time']).tz_convert(ET)
+            self.assertLessEqual(exit_et.time(), config.forced_flatten,
+                                 msg=f"exit {tr['exit_time']} past 15:55")
+            self.assertEqual(tr['exit_reason'], 'flatten_1555')
