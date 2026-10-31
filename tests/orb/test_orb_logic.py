@@ -119,3 +119,19 @@ class TestAdditionalCases(unittest.TestCase):
         self.assertTrue(hasattr(config, 'or_start'))
         self.assertTrue(hasattr(config, 'rvol_lookback'))
         self.assertTrue(hasattr(config, 'atr_length'))
+
+    def test_dst_spring_forward_conversion(self):
+        # 2026-03-08 spring forward; 13:30 UTC should be 09:30 EDT (UTC-4)
+        dt = pd.Timestamp('2026-03-09T13:30:00', tz=UTC).tz_convert(ET)
+        self.assertEqual(dt.hour, 9)
+        self.assertEqual(dt.minute, 30)
+
+    def test_dst_fall_back_conversion(self):
+        # 2026-11-01 fall back; 14:30 UTC should be 09:30 EST (UTC-5)
+        dt = pd.Timestamp('2026-11-01T14:30:00', tz=UTC).tz_convert(ET)
+        self.assertEqual(dt.hour, 9)
+        self.assertEqual(dt.minute, 30)
+
+    def test_tick_size_valid(self):
+        config = ORBConfig()
+        self.assertEqual(config.tick_size, 0.25)

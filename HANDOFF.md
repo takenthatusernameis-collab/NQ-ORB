@@ -82,8 +82,19 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Continuous contract/roll adjustment method still undocumented.
 - Splits computed on limited sample.
 
+## Completed work (verification session 2026-10-31d)
+- Added deterministic DST conversion tests (spring forward 2026-03-09, fall back 2026-11-01) and tick-size check.
+- Full test suite: 51 passed.
+- No longer free MNQ 1min/15min history found beyond axb0306 (still ~3 months). Documented.
+- Baseline unchanged: 60 trades, net -$31637.98.
+
+## Unresolved blockers
+- History depth ~3 months only; no multi-year free MNQ 1min/15min found.
+- Continuous contract/roll adjustment method still undocumented.
+- Splits computed on limited sample.
+
 ## Next bounded task
-1. Continue searching for longer free MNQ data (other repos/Kaggle) with provenance/hashes; do not purchase.
-2. Harden DST/roll tests and add more edge case tests.
-3. Expand reporting with year/regime splits if more data becomes available.
-4. Update FEASIBILITY_REPORT and HANDOFF with evidence.
+1. Document continuous contract/roll adjustment method from axb0306 repo (inspect update scripts/config).
+2. Add ambiguous intrabar touch scenario tests with synthetic 1min data.
+3. Update FEASIBILITY_REPORT with roll-method findings and any new hashes.
+4. Update HANDOFF and INITIAL_TASK with evidence.
