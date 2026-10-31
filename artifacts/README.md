@@ -14,9 +14,22 @@ Canonical backtest outputs. All runs use the frozen `STRATEGY_RULES.txt` v1.0 /
 
 ## Freshly reproduced verification copies
 
-The `_verify` files are byte-equivalent (in all metric fields) re-runs produced in
-session 2026-10-31o from the same raw CSVs. They exist to demonstrate
-reproducibility; the non-`_verify` files above remain canonical.
+The `_verify` files are re-runs produced from the same raw CSVs to demonstrate
+reproducibility. Core metric fields (`trade_count`, `win_rate`, `gross/net P&L`,
+`costs`, `avg_r`, `expectancy`, `profit_factor`, `max_drawdown`, `Sharpe`,
+`Sortino`, `exposure`, cost grid, signal-close sensitivity) and the per-trade
+ledgers are byte-identical to canonical on every re-run. The non-`_verify`
+files remain canonical.
+
+## Canonical refresh (2026-10-31)
+
+The canonical `metrics_axb0306.json` / `metrics_kaggle.json` were regenerated
+from the deterministic current engine (`src/orb/runner.py`). All core metric
+fields are unchanged from the previously stored values; the refresh adds
+breakdown fields that the engine now emits (`long_short_split`, per-split
+long/short breakdowns inside `chronological_splits`). Trade ledgers
+(`trades_axb0306.json`, `trades_kaggle.json`) were already byte-identical and
+were not modified. Verification copies retained.
 
 | File | Re-run of |
 |------|-----------|
