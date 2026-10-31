@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Run ORB backtest on downloaded data."""
+import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -77,16 +79,22 @@ def compute_metrics(trades):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Run NQ ORB backtest")
+    parser.add_argument("--prefix", default="full", help="output filename prefix")
+    args = parser.parse_args()
+
     loader = DataLoader(data_dir="data")
 
     mnq_15m_paths = [
-        "raw/MNQ_15min.csv",
+        "raw/MNQ_15min_frontmonth.csv",  # Kaggle front-month, 2022-11..2025-11
+        "raw/MNQ_15min.csv",             # axb0306 sample, 2026-01..2026-04
         "data/MNQ_15min.csv",
         "../raw/MNQ_15min.csv",
     ]
 
     mnq_1m_paths = [
-        "raw/MNQ_1min.csv",
+        "raw/MNQ_1min_frontmonth.csv",   # Kaggle front-month, 2022-11..2025-11
+        "raw/MNQ_1min.csv",              # axb0306 sample, 2026-01..2026-04
         "data/MNQ_1min.csv",
     ]
 
@@ -126,13 +134,12 @@ def main():
     for k, v in metrics.items():
         print(f"{k}: {v}")
 
-    import json
     os.makedirs('artifacts', exist_ok=True)
-    with open('artifacts/trades_full.json', 'w') as f:
+    with open(f'artifacts/trades_{args.prefix}.json', 'w') as f:
         json.dump(trades, f, indent=2, default=str)
-    with open('artifacts/metrics.json', 'w') as f:
+    with open(f'artifacts/metrics_{args.prefix}.json', 'w') as f:
         json.dump(metrics, f, indent=2, default=str)
-    print("\nSaved to artifacts/trades_full.json and artifacts/metrics.json")
+    print(f"\nSaved to artifacts/trades_{args.prefix}.json and artifacts/metrics_{args.prefix}.json")
 
 
 if __name__ == '__main__':
