@@ -144,6 +144,12 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Confirmed frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged).
 - Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with current verification evidence.
 
+## Completed work (verification session 2026-10-31m)
+- Re-read prior agent task from HANDOFF; maintenance/documentation confirmed current priority.
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 63 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4...).
+- Baselines intact: axb0306 (60 trades, net -$31,637.98), Kaggle front-month (688 trades, net -$626,525.96). Frozen baseline preserved; no code/strategy changes. No new free MNQ 1min/15min sources found. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+
 ## Unresolved blockers
 - History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
 - Results negative under full costs on both available samples (costs dominate).

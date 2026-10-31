@@ -2,7 +2,7 @@
 
 Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before making changes.
 
-## Current state (steady state, session 2026-10-31l verified)
+## Current state (steady state, session 2026-10-31m verified)
 - Frozen baseline preserved: `STRATEGY_RULES.txt` v1.0 and `config/orb_mnq_15m_showcase.yaml` unchanged. No parameter/strategy changes.
 - Free-data feasibility complete. Sources:
   - axb0306/cme-futures-ohlc: MNQ 1min/15min 2026-01-20..2026-04-15, single-contract MNQ.M26, no roll, no back-adjustment (roll method documented in data/FEASIBILITY_REPORT.md).
@@ -15,6 +15,7 @@ Read `AGENTS.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, and `HANDOFF.md` before mak
 - Tests: `python -m pytest tests -q` -> 63 passed. Deterministic tests cover OR construction, first-breakout-only, both filters, both directions, stop/target (0.4R), tick rounding, sizing, one-trade-per-day, 15:00 cutoff, 15:55 flatten via 1min, wick-without-close, DST spring/fall, ambiguous intrabar touch (stop-first), contract-roll edge cases, config fields, RVOL denominator exclusion.
 - Artifacts saved: trades + metrics ledgers for both samples in artifacts/. Raw data in raw/ with SHA-256 hashes in data/FEASIBILITY_REPORT.md.
 - Free-data search exhausted (GitHub/Kaggle/Yahoo daily only); no new free MNQ 1min/15min source beyond the two above. No data purchased.
+- Hashes verified unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4...).
 
 ## Priority tasks (next bounded task)
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
