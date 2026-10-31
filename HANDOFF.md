@@ -137,23 +137,20 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - axb0306 roll/adjustment method undocumented.
 - Results negative under full costs on available samples.
 
-## Next bounded task
-1. Maintain documentation; if a new free MNQ source appears, record provenance/hashes before use.
-2. Add intrabar ambiguity/roll-transition tests only where deterministic synthetic fixtures are available.
-3. No parameter/strategy changes; keep evidence updated.
-
-## Completed work (verification session 2026-10-31j)
-- Re-ran full test suite: `python -m pytest tests -q` -> 60 passed.
-- Free-data search re-run: no new free MNQ 1min/15min source found (Yahoo daily only); axb0306 + Kaggle front-month remain the only sources. No data purchased; provenance/hashes unchanged.
-- No code changes required; baselines unchanged (axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96).
-- FEASIBILITY_REPORT intact with hashes.
+## Completed work (verification session 2026-10-31k)
+- Re-verified steady state: `python -m pytest tests -q` -> 63 passed (no code changes needed).
+- Confirmed artifacts intact: metrics_axb0306.json (60 trades, net -$31,637.98), metrics_kaggle.json (688 trades, net -$626,525.96), trades ledgers for both samples.
+- Full required metric set present in both metrics files (avg win/loss R & USD, CAGR null due to net loss, Sharpe/Sortino annualized per-trade R, worst/best day, monthly/yearly breakdown, exposure_pct, signal_close_entry_sensitivity, cost sensitivity grid).
+- Free-data search re-run: no new free MNQ 1min/15min source (Yahoo daily only); axb0306 + Kaggle front-month remain the only sources. No data purchased; provenance/hashes unchanged in data/FEASIBILITY_REPORT.md.
+- No parameter/strategy changes; frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged).
 
 ## Unresolved blockers
-- History depth: axb0306 ~3 months (unverified continuous); Kaggle front-month ~3 years (unadjusted front-month). No multi-year free MNQ 1min/15min beyond these.
-- axb0306 roll/adjustment method undocumented.
-- Results negative under full costs on available samples.
+- History depth: axb0306 ~3 months (single-contract MNQ.M26, no roll); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
+- Results negative under full costs on both available samples (costs dominate).
+- Splits computed on limited samples; OOS interval is short.
 
 ## Next bounded task
-1. Maintain documentation; if a new free MNQ source appears, record provenance/hashes before use.
-2. Add intrabar ambiguity/roll-transition tests only where deterministic synthetic fixtures are available.
-3. No parameter/strategy changes; keep evidence updated.
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
+2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT, HANDOFF, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
