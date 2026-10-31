@@ -1,16 +1,18 @@
-# Initial task for next agent (2026-10-31ba2)
+# Initial task for next agent (2026-10-31)
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
-## Verification checklist (completed this session, 2026-10-31ba2)
+## Verification checklist (completed this session, 2026-10-31)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
 2. Raw data hashes verified unchanged:
    - raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
    - raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
    - raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
    - raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
-3. Baselines intact: axb0306 (60 trades, net -$31,637.98), Kaggle front-month (688 trades, net -$626,525.96). Frozen baseline preserved; no code/strategy changes; no data purchased; no broker integration.
-4. No code/strategy/parameter changes; frozen baseline preserved; no data purchased; no broker integration; no live/paper orders.
+3. Baselines re-run from scratch and field-by-field match canonical artifacts:
+   - axb0306 (60 trades, net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%)
+   - Kaggle front-month (688 trades, net -$626,525.96 / gross -$140,899.00 / PF 0.22709 / WR 64.8256%). Determinism re-confirmed.
+4. Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy changes; no data purchased; no broker integration; no live/paper orders.
 
 ## Constraints
 - Follow AGENTS.md (historical/simulation only, no broker integration, no credentials, no paid data).
