@@ -1,6 +1,6 @@
-# Initial task for next agent (2026-10-31ak2)
+# Initial task for next agent (2026-10-31am)
 
-Read HANDOFF.md first. Current priority: maintenance/documentation only (no new free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
+Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
 ## Verification checklist
 1. Run full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` (expect 66 passed).
