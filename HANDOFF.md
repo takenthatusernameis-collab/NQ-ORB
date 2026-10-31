@@ -950,3 +950,32 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 
 ## Verification command
 `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` (expect 66 passed)
+
+
+## Completed work (verification session 2026-10-31an)
+- Read prior agent task from HANDOFF/INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation confirmed current priority (no new genuinely free MNQ 1min/15min sources beyond axb0306 and Kaggle front-month; Yahoo daily only; paid/key-gated sources excluded).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-ran both baselines from scratch (`src/orb/runner.py --source axb0306 --prefix axb0306_verify` and `--source kaggle --prefix kaggle_verify`); core metric fields match canonical artifacts byte-for-byte (trade_count, win_rate, gross/net P&L, costs, avg R, expectancy, PF, max DD, Sharpe, Sortino, exposure). Baselines unchanged: axb0306 60 trades net -$31,637.98 / PF 0.49167 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.22709 / WR 64.83%. Determinism re-confirmed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d..., MNQ_1min 129623f4..., Kaggle front-month 15min 7e129ae3..., 1min edbadc73...).
+- Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no data purchased; no broker integration; no live/paper orders.
+- Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with this session's evidence.
+
+## Unresolved blockers
+- History depth: axb0306 ~3 months (single-contract MNQ.M26, unadjusted, no roll); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these; insufficient for robust walk-forward/OOS.
+- Results negative under full costs on both available samples (costs dominate).
+- Splits computed on limited samples; OOS interval is short.
+
+## Next bounded task
+1. Maintain documentation; if a new genuinely free MNQ 1min/15min source appears, record provenance/hashes before use (exclude paid/key-gated).
+2. No parameter/strategy changes without a separately named versioned experiment with explicit diff from frozen baseline.
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+
+## Constraints
+- No parameter optimization, no strategy-rule changes, no broker integration, no live/paper orders.
+- Historical research/simulation only. Do not purchase data.
+- Do not present synthetic results as market evidence.
+- Update HANDOFF.md with evidence, commands, results, blockers, next task.
+
+## Verification command
+`PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` (expect 66 passed)
