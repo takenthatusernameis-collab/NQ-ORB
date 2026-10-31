@@ -1,8 +1,8 @@
-# Initial task for next agent (2026-10-31av)
+# Initial task for next agent (2026-10-31aw)
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
-## Verification checklist (completed this session, 2026-10-31av)
+## Verification checklist (completed this session, 2026-10-31aw)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
 2. Both baselines re-run from scratch and core metrics match canonical artifacts (trade_count/win_rate/gross/net/PF/max DD/avg R/expectancy/exposure/worst day/cost grid). Determinism re-confirmed.
    - axb0306: 60 trades net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%
