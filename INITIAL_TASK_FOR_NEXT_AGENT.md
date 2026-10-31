@@ -27,5 +27,5 @@ Date: 2026-10-31
 
 Complete the above maintenance, update `HANDOFF.md`, update this file, and leave evidence.
 
-## Session verification (2026-10-31r)
+## Session verification (2026-10-31bg)
 - Tests: 66 passed. Raw hashes verified unchanged. Baselines intact (axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96). Frozen baseline preserved; no code/strategy changes; no new free MNQ 1min/15min sources found.
