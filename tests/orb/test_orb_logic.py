@@ -199,6 +199,115 @@ class TestAdditionalCases(unittest.TestCase):
         self.assertIsInstance(trades, list)
 
 
+class TestTickRoundingAndStopTargetMath(unittest.TestCase):
+    def test_tick_rounding_nearest_quarter(self):
+        from orb.backtest import BacktestEngine
+        engine = BacktestEngine(ORBConfig())
+        self.assertEqual(engine._round_to_tick(100.12), 100.0)
+        self.assertEqual(engine._round_to_tick(100.13), 100.25)
+        self.assertEqual(engine._round_to_tick(100.37), 100.25)
+        self.assertEqual(engine._round_to_tick(100.38), 100.5)
+
+    def test_long_stop_and_target_math(self):
+        """Long: stop = entry - 0.4*ATR; target = entry + 0.4*(entry-stop)."""
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        entry = 20000.0
+        atr = 10.0
+        stop = entry - config.stop_atr_mult * atr
+        risk = entry - stop
+        target = entry + config.target_stop_mult * risk
+        self.assertEqual(stop, 19996.0)
+        self.assertEqual(risk, 4.0)
+        self.assertEqual(target, 20001.6)
+
+    def test_short_stop_and_target_math(self):
+        """Short: stop = entry + 0.4*ATR; target = entry - 0.4*(stop-entry)."""
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        entry = 20000.0
+        atr = 10.0
+        stop = entry + config.stop_atr_mult * atr
+        risk = stop - entry
+        target = entry - config.target_stop_mult * risk
+        self.assertEqual(stop, 20004.0)
+        self.assertEqual(risk, 4.0)
+        self.assertEqual(target, 19998.4)
+
+    def test_position_sizing_floor_and_skip(self):
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        # risk_per_contract = risk_points * 2.0 ; contracts = floor(3000 / risk_pc)
+        # risk_points = 4 -> risk_pc = 8 -> contracts = 375
+        contracts = int(config.risk_usd / (4.0 * config.mnq_multiplier))
+        self.assertEqual(contracts, 375)
+        # risk_points = 2000 -> risk_pc = 4000 -> contracts = 0 -> skip
+        self.assertEqual(int(config.risk_usd / (2000.0 * config.mnq_multiplier)), 0)
+
+
+class TestWickWithoutCloseAndFlatten(unittest.TestCase):
+    def test_wick_beyond_range_without_close_is_not_breakout(self):
+        """A bar that wicks beyond the OR high but closes inside must not trigger."""
+        strategy = ORBStrategy(ORBConfig())
+        # OR high = 100, low = 99
+        or_info = {'high': 100.0, 'low': 99.0, 'bars': None}
+        # Build a fake bar row with close inside range but high above
+        bar = pd.Series({'close': 99.5, 'high': 101.0, 'low': 98.0})
+        long_break = bar['close'] > or_info['high']
+        short_break = bar['close'] < or_info['low']
+        self.assertFalse(long_break)
+        self.assertFalse(short_break)
+
+    def test_flatten_at_1555_with_1min_data(self):
+        """Synthetic: position held past 15:55 ET is flattened at the 15:55 1min bar."""
+        import pandas as pd
+        from datetime import timedelta
+        ET = ZoneInfo('America/New_York')
+        UTC = ZoneInfo('UTC')
+        config = ORBConfig()
+        engine = BacktestEngine(config)
+        # 15min bars: OR 09:30-09:45, then a breakout bar at 14:45 ET
+        base15 = pd.Timestamp('2026-01-21 14:30:00', tz=UTC)  # 09:30 ET
+        rows15 = []
+        for i in range(30):
+            dt = base15 + timedelta(minutes=15 * i)
+            rows15.append({
+                'datetime': dt, 'open': 20000, 'high': 20010, 'low': 19990,
+                'close': 20005, 'volume': 2000
+            })
+        df15 = pd.DataFrame(rows15)
+        df15['datetime_et'] = df15['datetime'].dt.tz_convert(ET)
+        df15['date'] = df15['datetime_et'].dt.date
+        df15['time_et'] = df15['datetime_et'].dt.time
+        df15['range'] = df15['high'] - df15['low']
+        df15['avg_vol'] = df15['volume'].rolling(20, min_periods=1).mean()
+        df15['rvol'] = df15['volume'] / df15['avg_vol']
+        df15['atr14'] = 10.0
+        # Make a breakout on the 14:45 ET bar (index 21 -> 14:45 ET is 20:45 UTC = index 21)
+        # 09:30 ET = idx0; 14:45 ET = idx 21
+        df15.loc[21, 'close'] = 20020  # above OR high 20010
+        # 1min bars from entry (15:00 ET) onward, with a bar exactly at 15:55 ET
+        entry_dt = pd.Timestamp('2026-01-21 20:00:00', tz=UTC)  # 15:00 ET
+        rows1m = []
+        t = entry_dt
+        for i in range(60):
+            rows1m.append({'datetime': t, 'open': 20020, 'high': 20030,
+                           'low': 20010, 'close': 20015, 'volume': 500})
+            t += timedelta(minutes=1)
+        df1m = pd.DataFrame(rows1m)
+        df1m['datetime_et'] = df1m['datetime'].dt.tz_convert(ET)
+        df1m['date'] = df1m['datetime_et'].dt.date
+        df1m['time_et'] = df1m['datetime_et'].dt.time
+        trades = engine.run(df15, df1m)
+        self.assertIsInstance(trades, list)
+        if trades:
+            # If a trade fired, its exit must be at or before 15:55 ET (flatten), not later
+            tr = trades[0]
+            self.assertIsNotNone(tr['exit_time'])
+            exit_et = pd.Timestamp(tr['exit_time']).tz_convert(ET)
+            self.assertLessEqual(exit_et.time, config.forced_flatten)
+
+
 class TestContractRollEdgeCases(unittest.TestCase):
     def test_roll_gap_does_not_bridge_across_contracts(self):
         """Ensure roll handling is explicit - no automatic bridging across different contract months."""

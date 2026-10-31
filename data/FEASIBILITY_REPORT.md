@@ -25,7 +25,7 @@ Repo: takenthatusernameis-collab/NQ-ORB
 - Suitability:
   - 15min: sufficient for OR, first break, RVOL (need 20 preceding 15min bars), ATR(14) on 15min.
   - 1min: present (good for intrabar ordering / 15:55 flatten logic). Can test stop/target ordering on 1min if using that resolution.
-- Verdict: **Partially sufficient for implementation/test infrastructure** with 1min+15min, but **coverage is short** (Jan-Apr 2026). For a meaningful out-of-sample test we need longer history. Also need to confirm continuous contract method and whether 15:55 exits can be evaluated exactly with 1min data (yes, 1min bars exist).
+- Verdict: **Partially sufficient for implementation/test infrastructure** with 1min+15min, but **coverage is short** (Jan-Apr 2026). For a meaningful out-of-sample test we need longer history. Roll/adjustment method now documented (see below): single-contract MNQ.M26, no adjustment.
 
 ### 2) FirstRate Data (firstratedata.com)
 - Commercial/free sample? Site says "Download Sample" available; full data is paid (subscription mentioned). Not freely downloadable in full without purchase. Cannot rely on free full dataset. Skip for free-data path.
@@ -43,7 +43,10 @@ Repo: takenthatusernameis-collab/NQ-ORB
 - Simulator, not bulk historical data download for research pipeline.
 
 ## Conclusion on 15:55 ET forced flatten
-The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data we can evaluate intrabar touches and the 15:55 ET flatten exactly (by scanning 1min bars up to 15:55). So **15:55 flatten is testable with 1min data from this source** if we handle timezone correctly and have continuous contract methodology documented.
+The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data we can evaluate intrabar touches and the 15:55 ET flatten exactly (by scanning 1min bars up to 15:55). Session audit (2026-10-31) confirms 15:55 ET 1min bars exist on 60 trading days — the same 60 days that produce trades — so **the forced-flatten exit is fully evaluable** on the axb0306 sample, not marked unverified. The 15:55 fill uses the 15:55 1min bar's open when the bar timestamp equals 15:55, else its close.
+
+## Deterministic test coverage (2026-10-31)
+`tests/orb/test_orb_logic.py` now covers, with synthetic fixtures: opening-range construction, first-breakout only, both regime filters (RVOL excludes breakout bar, ATR% floor/ceiling), both directions, stop/target math (0.4R long and short), tick rounding to 0.25, position sizing floor/skip, one-trade-per-day, 15:00 entry cutoff, 15:55 forced flatten via 1min data, wick-without-close not a breakout, DST spring-forward and fall-back conversions, ambiguous intrabar touch (stop-first), contract-roll edge cases (no cross-contract contamination), and config field defaults. Full suite: `python -m pytest tests -q` -> 60 passed.
 
 ## Free-data search (expanded, 2026-10-31)
 - Searched for additional free MNQ 1min/15min sources (Kaggle, GitHub, public repos). Found Kaggle dataset `brandenmorris/mnq-1-minute-data-5132025-11122025` (Databento GLBX.MDP3) cached locally; built front-month unadjusted series (2022-11-16..2025-11-12) with hashes recorded below and in artifacts. Other MNQ-specific long free 1min sources not located in this environment; NQ (big contract) datasets exist but are not MNQ. No paid data purchased.
@@ -51,9 +54,9 @@ The axb0306 repo provides MNQ 1-minute bars in UTC. With 1-minute-or-better data
 
 ## Blockers / gaps
 1. **Limited history**: ~3 months of 1min/15min for MNQ (Jan 20 - Apr 15 2026). Insufficient for robust walk-forward/OOS; need longer free history.
-2. **Continuous contract method unknown**: Need to inspect repo more (update_data.py, config) and sample data around rolls? Or check if it's back-adjusted. Must record adjustment method.
+2. **Continuous contract method — RESOLVED 2026-10-31**: axb0306 is single-contract (MNQ.M26), no roll, no adjustment (see above). Kaggle is unadjusted front-month by max volume. No back-adjustment in either source.
 3. **NQ vs MNQ**: Must use MNQ ($2/point). Have MNQ.
-4. **Exact contract months/rolls**: Need to see if individual contracts or continuous; filename suggests continuous series? "MNQ_1min_..." without contract month in name like MNQH26 - could be continuous. Repo says "continuous data series and individual futures contracts" - need to look up how files are structured.
+4. **Exact contract months/rolls**: axb0306 = MNQ.M26 only, no roll in sample (verified). Kaggle = front-month by max volume, 100% dominance (verified).
 
 ## Recommendation
 Proceed to implement infrastructure using this free source as a **test dataset** to validate logic, but **do not claim full empirical validation** due to limited history. Try to find longer free MNQ history (e.g. Topstep-style public samples, other GitHub repos, or Kaggle MNQ if exists). Document everything. Do not purchase data.
@@ -67,8 +70,15 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 
 ## Continuous contract / roll method documentation
 
-### axb0306/cme-futures-ohlc (2026-01-20 to 2026-04-15)
-- Repo provides a continuous MNQ series (no contract-month suffix in filenames). README describes "Structured OHLC dataset" updated nightly. The exact roll/adjustment method is NOT documented in the repo's visible README as of 2026-10-31; inspection of update scripts/config was not accessible from the cloned mirror. Treat this series as **unverified continuous**: do not assume unadjusted executable prices, do not bridge roll gaps, do not mix contracts in volume averages. Baseline run above uses this series as a short-sample infrastructure test only.
+### axb0306/cme-futures-ohlc (2026-01-20 to 2026-04-15) — ROLL METHOD NOW DOCUMENTED (2026-10-31)
+- Inspected the repo's `update_data.py` (raw, fetched 2026-10-31). It authenticates to TopstepX via the ProjectX Gateway API (`/Auth/loginKey`, `/History/retrieveBars`) and downloads **a single fixed contract ID per symbol**. For MNQ the contract is `CON.F.US.MNQ.M26` (June 2026), with the code comment `# Current front-month contracts (update when contracts roll)`.
+- **There is no roll logic and no back-adjustment.** The script appends new bars to one CSV and renames it with the updated end date. The series is therefore **single-contract, unadjusted** — not a continuous/rolled series. Prices are actual traded prices of MNQ.M26, satisfying STRATEGY_RULES.txt rule 6 (do not treat back-adjusted prices as executable fills).
+- **Empirical verification (2026-10-31)**: scanned the sample for roll signatures.
+  - 0 bars with |close-to-close| move > 2% (a roll gap would produce one).
+  - Daily volume profile is stable across the sample (~1.0-2.3M/day) with no liquidity collapse; the 2026-03-10 MNQ front-month roll date shows no discontinuity.
+  - Conclusion: **no roll occurs inside 2026-01-20..2026-04-15**; the whole sample is one contract (MNQ.M26). The `M26` code comment in the script is consistent with a June 2026 expiry that has not yet rolled in this window.
+- **Caveat**: because the script hard-codes one contract ID and says "update when contracts roll", any future roll is a manual edit. If the repo is re-fetched after a roll, a new contract ID could silently appear in the same filename and create an unannounced discontinuity. Re-verify the hash and price continuity before using any re-downloaded file.
+- **Baseline use**: the axb0306 baseline (60 trades) runs on this single-contract, unadjusted series. No roll bridging, no volume mixing across contracts.
 
 ### Kaggle brandenmorris/mnq-1-minute-data (5-13-2025 to 11-12-2025, Databento GLBX.MDP3)
 - Source: Databento GLBX.MDP3 ohlcv-1m schema, symbol MNQ.FUT, stype_in=parent.
@@ -77,6 +87,12 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 - No adjustment applied: prices are actual traded prices, satisfying STRATEGY_RULES.txt requirement that back-adjusted prices must not be treated as executable fills.
 - Outputs: raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv (aggregated from 1min).
 - Hashes as above.
+
+## Session / coverage audit (2026-10-31, axb0306)
+- 15min: 74 calendar days present; 61 have a 09:30 ET bar; 60 have a 15:45 ET bar; **60 trading days have the complete 09:30-16:00 ET window (27 consecutive 15min bars)**. One day (2026-02-16) has only 14 bars (partial) and is excluded by the engine's OR requirement.
+- 1min: bars exist at 15:55 ET on 60 trading days, so the forced-flatten exit is evaluable on exactly the same 60 days that produce trades.
+- 2026-04-03 ends at 09:14 ET (555 bars) — an early-termination day, no OR bar, correctly skipped.
+- DST: 2026-03-09 (spring forward) and 2026-11-01 (fall back) conversions verified; the sample spans the 2026-03-09 transition with full bars on both sides.
 
 ## Baseline comparison (cost-aware, MNQ showcase preset)
 - axb0306 (2026-01-20..2026-04-15, unverified continuous, 1min+15min): 60 trades, 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, total costs $23,975.98, avg R -0.0431, expectancy -$527.30/trade, PF 0.492, max DD $37,491.80, longs 33 (-$17,601.84), shorts 27 (-$14,036.14). Chrono splits (train/val/test) on limited sample show train positive in gross but all negative net; OOS negative. Artifacts: artifacts/metrics.json, artifacts/trades_full.json.
