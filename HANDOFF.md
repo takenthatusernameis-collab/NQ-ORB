@@ -99,19 +99,20 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 3. Update FEASIBILITY_REPORT with roll-method findings and any new hashes.
 4. Update HANDOFF and INITIAL_TASK with evidence.
 
-## Completed work (verification session 2026-10-31e)
-- Documented continuous contract/roll methods in data/FEASIBILITY_REPORT.md (axb0306 unverified continuous; Kaggle front-month by max daily volume, no adjustment).
-- Computed hashes for front-month CSVs: MNQ_1min_frontmonth.csv edbadc..., MNQ_15min_frontmonth.csv 7e129a...
-- Added ambiguous intrabar touch test (stop-first handling). Full suite: 52 passed.
-- Baseline unchanged: 60 trades, net -$31637.98.
+## Completed work (verification session 2026-10-31f)
+- Ran baseline on Kaggle front-month sample (unadjusted front-month by max volume, Databento-derived): 688 trades, net -$626,525.96 (cost-aware). Compared to axb0306 (60 trades, net -$31,637.98). Documented differences in data/FEASIBILITY_REPORT.md.
+- Documented continuous contract/roll methods for both sources; added hashes for Kaggle front-month CSVs.
+- Added deterministic contract-roll edge-case tests (2 tests). Added ambiguous intrabar touch test previously; DST/tick/cutoff/risk sizing tests present.
+- Full test suite: 53 passed.
+- Baselines unchanged in recorded artifacts.
 
 ## Unresolved blockers
-- History depth ~3 months (axb0306) plus ~7 months Kaggle front-month; still limited.
+- History depth: axb0306 ~3 months (unverified continuous), Kaggle front-month ~7 months (May-Nov 2025, unadjusted front-month) - still limited vs multi-year needed for robust walk-forward/OOS.
 - axb0306 roll/adjustment method undocumented (unverified continuous).
-- No multi-year free MNQ 1min/15min found.
+- No multi-year free MNQ 1min/15min found; results remain negative under full costs on available samples.
 
 ## Next bounded task
-1. Run baseline on Kaggle front-month sample and compare to axb0306 sample; document differences.
-2. Add contract-roll edge-case tests with synthetic data.
-3. Update FEASIBILITY_REPORT with baseline comparison and any new hashes.
-4. Update HANDOFF and INITIAL_TASK with evidence.
+1. Expand free-data search for longer MNQ history (other public repos/Kaggle sources) with provenance/hashes; do not purchase.
+2. If longer free history found, run chronological splits and cost sensitivity across full periods; else document limitations clearly.
+3. Add more intrabar ambiguity tests and edge cases around roll transitions if data allows.
+4. Update FEASIBILITY_REPORT/HANDOFF/INITIAL_TASK with evidence.

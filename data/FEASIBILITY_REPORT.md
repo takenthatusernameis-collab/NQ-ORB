@@ -57,6 +57,8 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 ## Raw data hashes (SHA-256)
 - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37 (5609 lines incl header)
 - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99 (84078 lines incl header)
+- raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
+- raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
 
 ## Continuous contract / roll method documentation
 
@@ -69,6 +71,10 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 - Roll method: front-month selected per calendar date by maximum daily volume across contracts; front-month dominance is 100% on every date in the sample (verified), so selection is unambiguous.
 - No adjustment applied: prices are actual traded prices, satisfying STRATEGY_RULES.txt requirement that back-adjusted prices must not be treated as executable fills.
 - Outputs: raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv (aggregated from 1min).
-- Hashes:
-  - raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
-  - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
+- Hashes as above.
+
+## Baseline comparison (cost-aware, MNQ showcase preset)
+- axb0306 (2026-01-20..2026-04-15, unverified continuous, 1min+15min): 60 trades, 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, total costs $23,975.98, avg R -0.0431, expectancy -$527.30/trade, PF 0.492, max DD $37,491.80, longs 33 (-$17,601.84), shorts 27 (-$14,036.14). Chrono splits (train/val/test) on limited sample show train positive in gross but all negative net; OOS negative. Artifacts: artifacts/metrics.json, artifacts/trades_full.json.
+- Kaggle front-month (2022-11-16..2025-11-12, unadjusted front-month by max volume, 1min+15min): 688 trades, 446W/242L (64.83%), gross -$140,899.00, net -$626,525.96, total costs $485,626.96, avg R -0.0684, expectancy -$910.65/trade, PF 0.227, max DD ~$626,994.56, longs 359 (-$287,054.04), shorts 329 (-$339,471.92). Artifacts: artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json.
+- Differences: Kaggle provides much longer history (3 years) and uses unadjusted front-month selection (cleaner for executable fills); axb0306 is shorter recent sample with unverified continuous series. Both show negative net performance under full costs with this preset on available samples; Kaggle has larger drawdowns in absolute terms due to more trades/longer period. No multi-year free MNQ 1min/15min coverage exists beyond these sources; history depth remains a blocker for robust walk-forward/OOS.
+- Note: Results are from short/limited free samples only; not proof of edge. Costs (commissions+fees $2.87/side, slippage 1 tick adverse) dominate in both cases.
