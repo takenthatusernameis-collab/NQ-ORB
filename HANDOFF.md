@@ -1,7 +1,7 @@
 # NQ ORB — Durable Handoff
 Date initialized: 2026-10-30
 Repository: takenthatusernameis-collab/NQ-ORB
-Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemented. Baselines verified under full costs.
+Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemented. Baselines verified under full costs. Latest session 2026-10-31bn: maintenance + expanded free-data sweep complete, no new source.
 
 ## Initial authoritative state
 - `STRATEGY_RULES.txt` contains the user-specified NQ ORB rules and MNQ 15-minute showcase preset.
@@ -437,4 +437,20 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 - Removed transient verify artifacts; artifacts/ contains only canonical + historical files, matching artifacts/README.md.
 - Free-data sweep re-run (GitHub API repo commits + MNQ dir listing, Kaggle dataset search incl. tgtanalytics NQ, brandenmorris MNQ, tzamrik NQ session bars, youneseloiarm NQ, brtnsmth intraday, djjain21 NSE/MCX; Yahoo Finance; Databento GLBX.MDP3; FinzData; MarketParquet; historicalfuturesdata.com; Portara; FirstRate; TickTradingData; infoway.io; CME DataMine; investing.com; thinridge.io; arXiv 2605.04004; getdata.finance): **no new genuinely free MNQ 1min/15min source**. axb0306/cme-futures-ohlc last commit remains 2026-04-15 (unchanged since prior session audit); MNQ directory unchanged (1min/5min/15min/30min/1h/4h/daily/tick for 2026-01-20..2026-04-15 plus daily from 2025-03-24). All Kaggle MNQ hits are the already-ingested brandenmorris dump (ends 2025-11-12) or NQ (big contract, $20/point, excluded per STRATEGY_RULES.txt). All paid candidates re-confirmed paid/key-gated. No data purchased; no credentials requested or stored.
 - Frozen baseline preserved (STRATEGY_RULES.txt v1.0, config/orb_mnq_15m_showcase.yaml unchanged); no code/strategy/parameter changes; no broker integration.
+- Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
+
+## Completed work (this session 2026-10-31bn)
+- Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved (STRATEGY_RULES.txt v1.0 sha256 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml sha256 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; front-month 15min 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; front-month 1min edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
+- Re-verified frozen baseline hashes unchanged (STRATEGY_RULES.txt 6d3258c3…; config/orb_mnq_15m_showcase.yaml 2a6c5ff8…).
+- Re-ran both baselines fresh (`--prefix verify_axb`, `--prefix verify_kag`) and diffed all key fields + full trade ledgers against canonical artifacts: byte-identical for both sources.
+  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
+- Removed transient verify artifacts; artifacts/ contains only canonical + historical files, matching artifacts/README.md.
+- Free-data sweep re-run (GitHub API repo commits + MNQ path listing, Kaggle dataset search, Yahoo Finance, Databento GLBX.MDP3, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, arXiv 2605.04004, getdata.finance, kibot, quantnet): **no new genuinely free MNQ 1min/15min source**.
+  - GitHub: axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb…` dated 2026-04-15T23:34:55Z — unchanged since prior session audit; no new intraday MNQ files, no extension of history.
+  - Kaggle: `brandenmorris/mnq-1-minute-data-5132025-11122025` remains the only free MNQ 1-min source (ends 2025-11-12, already ingested). All other MNQ hits are NQ (big contract, $20/point) or paid/key-gated.
+  - All paid candidates re-confirmed paid/key-gated (FinzData $49 one-time, FirstRate $99.95/yr, historicalfuturesdata.com $59/yr per bar size, MarketParquet $79, TickTradingData €200, Kibot $520, Databento key-gated + credit-based, CME DataMine purchase-only, investing.com daily-only, getdata.finance paid, quantnet personal sale). No data purchased; no credentials requested or stored.
+- No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
 - Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
