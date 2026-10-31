@@ -1,13 +1,13 @@
-# Initial task for next agent (2026-10-31au)
+# Initial task for next agent (2026-10-31av)
 
 Read HANDOFF.md first. Current priority: maintenance/documentation only (no new genuinely free MNQ 1min/15min sources found beyond axb0306 and Kaggle front-month; Yahoo daily only; MarketParquet/historicalfuturesdata.com/FirstRate/Portara excluded as paid).
 
-## Verification checklist (completed this session, 2026-10-31au)
+## Verification checklist (completed this session, 2026-10-31av)
 1. Full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` -> 66 passed.
-2. Both baselines re-run from scratch and compared byte-identical to canonical artifacts:
+2. Both baselines re-run from scratch and core metrics match canonical artifacts (trade_count/win_rate/gross/net/PF/max DD/avg R/expectancy/exposure/worst day/cost grid). Determinism re-confirmed.
    - axb0306: 60 trades net -$31,637.98 / gross -$7,662.00 / PF 0.49167 / WR 70.0%
    - Kaggle front-month: 688 trades net -$626,525.96 / gross -$140,899.00 / PF 0.22709 / WR 64.8256%
-   Determinism re-confirmed.
+   Verification copies saved (artifacts/*_verify.json).
 3. Raw data hashes verified unchanged:
    - raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
    - raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
