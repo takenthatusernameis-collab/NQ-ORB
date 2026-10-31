@@ -96,6 +96,45 @@ Proceed to implement infrastructure using this free source as a **test dataset**
 - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
 - source (Kaggle GLBX MDP3): glbx-mdp3-20221116-20251112.ohlcv-1m.csv cached at /home/runner/work/_temp/kilo-home/.cache/kagglehub/datasets/brandenmorris/mnq-1-minute-data-5132025-11122025/versions/1/MNQ_OHLCV_5-13-2025--11-12-2025/ (hash recorded via build script)
 
+## Reproducibility verification (session 2026-10-31o)
+
+Both baselines were re-run from scratch (fresh process, same raw CSVs, same frozen
+config) and compared field-by-field against the stored canonical artifacts. All
+numeric metric fields are byte-identical, confirming deterministic execution.
+
+- `python src/orb/runner.py --prefix axb0306_verify --source axb0306`
+- `python src/orb/runner.py --prefix kaggle_verify --source kaggle`
+- Comparison: `artifacts/metrics_axb0306.json` vs `metrics_axb0306_verify.json`,
+  `artifacts/metrics_kaggle.json` vs `metrics_kaggle_verify.json`.
+- Matched fields (both sources): trade_count, win_rate, gross_pnl, net_pnl, costs,
+  avg_r, expectancy_usd, profit_factor, max_drawdown_usd, sharpe_r, sortino_r,
+  exposure_pct, and the full cost-sensitivity grid (12 scenarios each).
+- Reproduced baselines unchanged:
+  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227.
+
+## Independent signal-funnel cross-check (session 2026-10-31o)
+
+`scripts/diag_signal_funnel.py` re-implements the filter chain independently from
+`BacktestEngine.run` (separate code path) and counts trades per stage on the
+Kaggle front-month series:
+
+- 932 trading dates; 771 with an OR built (161 no-OR days excluded).
+- 765 days with a first close-beyond-range breakout.
+- 688 pass RVOL>=1.0 AND 0.10%<=ATR%<=0.60%.
+- 688 pass the <15:00 cutoff, 688 pass sizing (>=1 contract), 688 have a next-bar
+  open entry.
+- **Engine trade count: 688 — matches the independent funnel exactly.**
+
+A matching independent funnel run on the axb0306 sample (61 OR days, 61 first
+breakouts, 60 pass filters) also matches the engine's 60 trades. The 1-trade-per-day
+and first-breakout-only rules are the only reason counts fall below the breakout
+count, and they are enforced identically in both paths.
+
+Ledger integrity checks (both samples): zero exits past 15:55 ET, zero days with
+more than one trade, and stop/target prices within 0.125 index points (half a tick)
+of the exact 0.4R formula — the residual is tick rounding, as required by the spec.
+
 ## Continuous contract / roll method documentation
 
 ### axb0306/cme-futures-ohlc (2026-01-20 to 2026-04-15) — ROLL METHOD NOW DOCUMENTED (2026-10-31)

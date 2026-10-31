@@ -155,6 +155,14 @@ Do not change frozen rules, buy data, add credentials, or enable live trading.
 - Results negative under full costs on both available samples (costs dominate).
 - Splits computed on limited samples; OOS interval is short.
 
+## Completed work (verification session 2026-10-31o)
+- Re-ran both baselines from scratch: `python src/orb/runner.py --prefix axb0306_verify --source axb0306` and `--source kaggle`. Compared all metric fields against stored canonical artifacts: byte-identical (trade_count, win_rate, gross/net P&L, costs, avg R, expectancy, PF, max DD, Sharpe, Sortino, exposure, full 12-scenario cost grid). Baselines unchanged: axb0306 60 trades net -$31,637.98; Kaggle 688 trades net -$626,525.96. Determinism re-confirmed.
+- Independent signal-funnel cross-check (`scripts/diag_signal_funnel.py`, separate code path from `BacktestEngine.run`): Kaggle 932 trading dates -> 771 OR days -> 765 first breakouts -> 688 pass RVOL+ATR filters -> 688 pass cutoff/sizing/entry. Engine trade count 688 matches exactly. Matching funnel run on axb0306 (61 OR days, 61 breakouts, 60 pass filters) matches engine's 60 trades.
+- Ledger integrity audit (both samples): zero exits past 15:55 ET forced-flatten; zero days with >1 trade; stop/target within 0.125 index points (<= half tick) of the exact 0.4R formula (residual is tick rounding per spec); exit reasons distributed target/stop/stop_first_ambiguous.
+- Added `artifacts/README.md` documenting canonical vs verification vs historical artifact files (nothing deleted).
+- Added reproducibility + independent funnel cross-check sections to `data/FEASIBILITY_REPORT.md`.
+- No code/strategy/parameter changes. Frozen baseline preserved.
+
 ## Next bounded task
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
