@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## State to verify (as of 2026-10-31am)
+## State to verify (as of 2026-10-31ao)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` should pass (66 passed).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json): axb0306 60 trades net -$31,637.98 / PF 0.492 / max DD $37,491.80 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.227 / max DD ~$626,994.56 / WR 64.83%.
@@ -11,7 +11,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen b
   - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
   - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
   - raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
-- Fresh re-run reproducibility: `python src/orb/runner.py --source axb0306` and `--source kaggle` reproduce the canonical artifacts byte-for-byte.
+- Fresh re-run reproducibility: `python src/orb/runner.py --source axb0306 --prefix <name>` and `--source kaggle --prefix <name>` reproduce the canonical artifacts field-by-field (verified this session with unique prefixes; transient verify artifacts removed after comparison).
 - Frozen baseline preserved: STRATEGY_RULES.txt v1.0 and config/orb_mnq_15m_showcase.yaml unchanged; no code/strategy/parameter changes.
 
 ## Bounded next steps
