@@ -63,3 +63,17 @@ Status: Maintenance pass complete; frozen baseline preserved; baselines verified
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD ~$626,994.56 (artifacts/metrics_kaggle.json)
 - Free-data sweep: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months) and Kaggle front-month (~3 years); Yahoo daily only. No data purchased; no credentials requested or stored.
 - Working tree clean (HEAD f0b1c53). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+
+## Completed work (this session 2026-11-01 — maintenance pass)
+- Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved.
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Verified raw data hashes unchanged (all four raw files match prior recorded hashes).
+- Verified frozen baseline hashes unchanged (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml).
+- Working tree clean. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Prior agent task complete: maintenance/documentation pass; no implementation work required.
+
+## Next bounded task
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
+2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
