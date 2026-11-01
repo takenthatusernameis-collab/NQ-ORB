@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API, Kaggle, websearch, FirstRate, Kibot, MarketParquet, Portara, historicalfuturesdata.com, investing.com, Yahoo Finance): no new genuinely free MNQ 1min/15min source. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API, Kaggle, websearch, FirstRate, Kibot, MarketParquet, Portara, historicalfuturesdata.com, investing.com, Yahoo Finance): no new genuinely free MNQ 1min/15min source. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
 ## Bounded next steps
 
