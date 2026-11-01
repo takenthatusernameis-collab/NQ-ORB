@@ -1,0 +1,234 @@
+{
+  "source": "kaggle",
+  "total_trades": 688,
+  "window_trades": 150,
+  "step_trades": 50,
+  "n_windows": 8,
+  "windows": [
+    {
+      "train_window": [
+        0,
+        150
+      ],
+      "test_window": [
+        150,
+        300
+      ],
+      "train": {
+        "count": 150,
+        "win_rate": 0.6,
+        "net_pnl": -144231.76,
+        "gross_pnl": -21832.0,
+        "profit_factor": 0.17223547641935807
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.58,
+        "net_pnl": -178375.24,
+        "gross_pnl": -55533.5,
+        "profit_factor": 0.12817822901577305
+      },
+      "test_dates": {
+        "start": "2023-07-05",
+        "end": "2024-02-21"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        200
+      ],
+      "test_window": [
+        200,
+        350
+      ],
+      "train": {
+        "count": 200,
+        "win_rate": 0.62,
+        "net_pnl": -194896.98,
+        "gross_pnl": -31869.5,
+        "profit_factor": 0.17132459756747473
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.5666666666666667,
+        "net_pnl": -173264.64,
+        "gross_pnl": -54670.5,
+        "profit_factor": 0.14004186612369882
+      },
+      "test_dates": {
+        "start": "2023-09-14",
+        "end": "2024-05-09"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        250
+      ],
+      "test_window": [
+        250,
+        400
+      ],
+      "train": {
+        "count": 250,
+        "win_rate": 0.588,
+        "net_pnl": -275402.98,
+        "gross_pnl": -71334.5,
+        "profit_factor": 0.14824633735970727
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.6,
+        "net_pnl": -168315.48,
+        "gross_pnl": -53934.5,
+        "profit_factor": 0.15467782275480377
+      },
+      "test_dates": {
+        "start": "2023-11-27",
+        "end": "2024-08-01"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        300
+      ],
+      "test_window": [
+        300,
+        450
+      ],
+      "train": {
+        "count": 300,
+        "win_rate": 0.59,
+        "net_pnl": -322607.0,
+        "gross_pnl": -77365.5,
+        "profit_factor": 0.14844161862478786
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.6733333333333333,
+        "net_pnl": -134617.64,
+        "gross_pnl": -31091.0,
+        "profit_factor": 0.23667338903337518
+      },
+      "test_dates": {
+        "start": "2024-02-22",
+        "end": "2024-10-15"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        350
+      ],
+      "test_window": [
+        350,
+        500
+      ],
+      "train": {
+        "count": 350,
+        "win_rate": 0.5971428571428572,
+        "net_pnl": -368161.62,
+        "gross_pnl": -86540.0,
+        "profit_factor": 0.1568907322281084
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.7066666666666667,
+        "net_pnl": -122071.62000000001,
+        "gross_pnl": -22121.0,
+        "profit_factor": 0.2715516870989917
+      },
+      "test_dates": {
+        "start": "2024-05-10",
+        "end": "2025-01-02"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        400
+      ],
+      "test_window": [
+        400,
+        550
+      ],
+      "train": {
+        "count": 400,
+        "win_rate": 0.5925,
+        "net_pnl": -443718.46,
+        "gross_pnl": -125269.0,
+        "profit_factor": 0.1506974767098474
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.7666666666666667,
+        "net_pnl": -70637.24,
+        "gross_pnl": 17621.0,
+        "profit_factor": 0.4472225604612209
+      },
+      "test_dates": {
+        "start": "2024-08-02",
+        "end": "2025-03-18"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        450
+      ],
+      "test_window": [
+        450,
+        600
+      ],
+      "train": {
+        "count": 450,
+        "win_rate": 0.6177777777777778,
+        "net_pnl": -457224.64,
+        "gross_pnl": -108456.5,
+        "profit_factor": 0.17646802423964195
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.7,
+        "net_pnl": -104755.42,
+        "gross_pnl": -23201.5,
+        "profit_factor": 0.35559530255434335
+      },
+      "test_dates": {
+        "start": "2024-10-16",
+        "end": "2025-06-05"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        500
+      ],
+      "test_window": [
+        500,
+        650
+      ],
+      "train": {
+        "count": 500,
+        "win_rate": 0.63,
+        "net_pnl": -490233.24,
+        "gross_pnl": -108661.0,
+        "profit_factor": 0.18868989252607657
+      },
+      "test": {
+        "count": 150,
+        "win_rate": 0.6866666666666666,
+        "net_pnl": -114820.72,
+        "gross_pnl": -32147.5,
+        "profit_factor": 0.32658207060932154
+      },
+      "test_dates": {
+        "start": "2025-01-03",
+        "end": "2025-08-28"
+      }
+    }
+  ],
+  "note": "Chronological rolling train/test split by trade index. The final test window is untouched by any parameter selection. No strategy or parameter changes were made; this reports the frozen baseline only."
+}
