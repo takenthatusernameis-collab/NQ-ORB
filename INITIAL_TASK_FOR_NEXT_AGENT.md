@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — maintenance re-verification + handoff refresh, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification + bounded free-data re-sweep, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 8745a12).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD b68b2cb).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 recomputed from disk; all six match recorded values exactly:
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
@@ -34,4 +34,3 @@
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal failure.
 EOF
-echo done
