@@ -1,19 +1,9 @@
 # Initial Task for Next Agent
 
-## Status (this session 2026-11-01 — independent re-verification, final pass)
-- Read durable handoff (HANDOFF.md) + initial task + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Prior agent task (maintenance/documentation re-verification) confirmed complete: no implementation work required beyond maintenance; frozen baseline preserved.
-- Full suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.94s (pandas 3.1.0, pytest 9.2.0 available via pip3).
-- SHA-256 re-computed, all match recorded values: STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; artifacts/metrics_axb0306.json e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f; artifacts/trades_axb0306.json ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; artifacts/metrics_kaggle.json a6ae100685ea30aa2392122fdf9830ccbaad5d25a22039db7e7521a0b12c1af1; artifacts/trades_kaggle.json 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5.
-- Fresh engine re-run (not a stored copy) for both sources, byte-diffed vs canonical artifacts: axb0306 trades+metrics IDENTICAL; kaggle trades+metrics IDENTICAL.
-- Independent funnel cross-check re-run: 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass filters -> engine trade count 688, matches exactly.
-- Working tree clean (HEAD 7fb3d83). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
-- Free-data sweep re-run: no new genuinely free MNQ 1min/15min source identified; blockers unchanged.
-
-## Canonical artifacts (source of truth — do not treat as proof of edge)
-
-- artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json — axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
-- artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json — Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD ~$626,994.56.
-- Both baselines negative under full costs; costs dominate.
+## Status (this session 2026-11-01 — prior task completion + handoff refresh)
+- Prior agent task (maintenance/documentation re-verification) confirmed complete. Full suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.89s.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created.
+- Blockers unchanged: history depth insufficient for robust walk-forward/OOS; results negative under full costs; axb0306 single-contract no roll.
 
 ## Bounded next task (carried forward unchanged)
 
