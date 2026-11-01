@@ -50,3 +50,7 @@ All prior maintenance-verification sessions verified the same frozen state (full
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+## Session log (2026-11-01 — maintenance verification)
+- Read durable handoff + initial task; re-ran full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Working tree clean (HEAD e15536c). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
+- No new free MNQ 1min/15min source identified; blockers unchanged (insufficient depth for robust walk-forward/OOS, negative under full costs).

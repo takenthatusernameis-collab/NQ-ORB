@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-## Prior task completed (this session 2026-11-01 — follow-up maintenance verification)
+## Prior task completed (this session 2026-11-01 — maintenance verification)
 
 - Read durable handoff + initial task; re-ran full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
-- Working tree clean (HEAD aef289d). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
+- Working tree clean (HEAD e15536c). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
 - No new free MNQ 1min/15min source; blockers unchanged.
 
 ## Bounded next task
