@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## State to verify (as of 2026-10-31al)
+## State to verify (as of 2026-11-01)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python -m pytest tests -q` should pass (66 passed).
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` should pass (66 passed; pytest 9.2.0 installed into user site; pandas/numpy installed to run the suite).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, exposure 0.103%.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56, Sharpe -1.680, Sortino -1.042, exposure 0.081%.
@@ -16,7 +16,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen b
 - Frozen baseline hashes:
   - STRATEGY_RULES.txt: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
-- No transient verify artifacts in artifacts/ (only canonical + historical).
+- No transient verify artifacts in artifacts/ (only canonical + historical). Working tree clean.
 
 ## Bounded next steps
 
