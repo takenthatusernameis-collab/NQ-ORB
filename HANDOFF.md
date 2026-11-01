@@ -105,11 +105,11 @@ All prior maintenance-verification sessions verified the same frozen state (full
 - No code/strategy/parameter changes; no broker integration. No commit created.
 - HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with this session's evidence; next task carried forward unchanged.
 
-## Session log (2026-11-01 — Kilo session completion)
-- Read durable handoff (HANDOFF.md) + initial task (INITIAL_TASK_FOR_NEXT_AGENT.md) + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Prior agent task (maintenance/documentation re-verification) confirmed complete.
-- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m unittest discover -s tests` -> 3 tests run (see test modules present; environment lacks pytest). Working tree clean (HEAD 418662c). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
-- Frozen STRATEGY_RULES.txt v1.0 hash 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1 preserved; config/orb_mnq_15m_showcase.yaml hash 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4 unchanged.
-- Raw data hashes verified: raw/MNQ_15min.csv f417f22d..., raw/MNQ_1min.csv 129623f4..., raw/MNQ_1min_frontmonth.csv edbadc73..., raw/MNQ_15min_frontmonth.csv 7e129ae3....
+## Session log (2026-11-01)
+- Read durable handoff (HANDOFF.md) + initial task (INITIAL_TASK_FOR_NEXT_AGENT.md) + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Prior agent task (maintenance/documentation re-verification) confirmed complete; no implementation work required beyond maintenance.
+- Re-computed SHA-256 hashes — all match recorded values: STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d…, raw/MNQ_1min.csv 129623f4…, raw/MNQ_1min_frontmonth.csv edbadc73…, raw/MNQ_15min_frontmonth.csv 7e129ae3….
+- Working tree clean (HEAD 2554cf7, up to date with origin/main). No code/strategy/parameter changes; frozen baseline preserved; no broker integration; no commit created.
+- This environment lacks pandas and pytest, so the test suite cannot execute here (matches prior "environment lacks pytest" note; prior sessions confirmed 66 passed where deps available). No code change is implied by the missing deps.
 - Canonical artifacts unchanged (axb0306 60 trades net -$31,637.98; Kaggle 688 trades net -$626,525.96).
-- No new free MNQ 1min/15min source identified; blockers unchanged (insufficient depth for robust walk-forward/OOS, negative under full costs; axb0306 roll/adjustment caveat noted).
+- No new free MNQ 1min/15min source identified; blockers unchanged (insufficient depth for robust walk-forward/OOS; results negative under full costs; axb0306 roll/adjustment caveat noted).
 - HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with this session's evidence; next task carried forward unchanged.
