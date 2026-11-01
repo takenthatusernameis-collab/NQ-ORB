@@ -2,9 +2,9 @@
 
 ## Status (this session 2026-11-01 — Kilo session completion)
 - Read durable handoff (HANDOFF.md) + initial task + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Prior agent task (maintenance/documentation re-verification) confirmed complete: no implementation work required beyond maintenance; frozen baseline preserved.
-- Full suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.97s (pandas 3.1.0, pytest 9.2.0 available via pip3).
+- Full suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.93s (pandas 3.1.0, pytest 9.2.0 available via pip3).
 - SHA-256 re-computed, all match recorded values: STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; artifacts/metrics_axb0306.json e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f; artifacts/trades_axb0306.json ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; artifacts/metrics_kaggle.json a6ae100685ea30aa2392122fdf9830ccbaad5d25a22039db7e7521a0b12c1af1; artifacts/trades_kaggle.json 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5.
-- Working tree clean (HEAD b84d519). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Working tree clean (HEAD 4f16338). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - No new free MNQ 1min/15min source identified; blockers unchanged.
 
 ## Canonical artifacts (source of truth — do not treat as proof of edge)
