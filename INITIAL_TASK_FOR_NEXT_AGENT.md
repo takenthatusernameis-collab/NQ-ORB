@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-01 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: clean (branch main, HEAD e40d4c8).
+- `git status`: clean (branch main, HEAD 0adbfe1).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 hashes verified unchanged and match HANDOFF.md exactly (all six files):
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
