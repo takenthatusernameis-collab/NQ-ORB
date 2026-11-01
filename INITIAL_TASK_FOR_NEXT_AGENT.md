@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01h)
+## State verified this session (2026-11-01m)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.64s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.58s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD $626,994.56.
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session verified tests pass, all hashes unchanged, baselines intact, artifacts clean. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
+This session verified tests pass, all hashes unchanged, baselines intact, artifacts clean. Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc MNQ commits, Kaggle, Yahoo Finance, Databento, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, arXiv, websearch) found **no new genuinely free MNQ 1min/15min source**. axb0306/cme-futures-ohlc last commit on the MNQ path remains `60abd3fb…` dated 2026-04-15T23:34:55Z. All paid candidates re-confirmed paid/key-gated. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
 
 ## Bounded next steps
 
