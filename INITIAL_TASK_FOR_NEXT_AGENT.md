@@ -40,4 +40,3 @@ This session verified tests pass (66 passed), all hashes unchanged, baselines in
 ## Next agent task
 
 Continue maintenance/documentation. Verify tests pass and hashes match (see state above). If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
-EOF
