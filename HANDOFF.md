@@ -40,6 +40,11 @@ Status: Independent re-verification complete; frozen baseline preserved; baselin
 ## Prior sessions (2026-10-30 through 2026-11-01)
 All prior maintenance-verification sessions verified the same frozen state (full suite green, raw + baseline hashes unchanged, baselines intact). Full per-session log retained in git history of this file.
 
+## Session log (2026-11-01 — follow-up maintenance verification)
+- Read durable handoff + initial task; re-ran full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Working tree clean (HEAD aef289d). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
+- No new free MNQ 1min/15min source; blockers unchanged.
+
 ## Next bounded task
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
