@@ -16,12 +16,11 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 - Frozen baseline hashes unchanged:
   - STRATEGY_RULES.txt: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
-- Working tree clean (no transient verify artifacts in artifacts/). No code/strategy/parameter changes; frozen baseline preserved.
-- data/FEASIBILITY_REPORT.md present.
+- Working tree clean. No code/strategy/parameter changes; frozen baseline preserved.
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. No new genuinely free MNQ 1min/15min source found. Documentation updated.
+Verified tests pass, all hashes unchanged, baselines intact. No new genuinely free MNQ 1min/15min source found. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
 ## Bounded next steps
 
