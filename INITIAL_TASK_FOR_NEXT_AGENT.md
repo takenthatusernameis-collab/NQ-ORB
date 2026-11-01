@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-## Prior task completed (this session 2026-11-01)
+## Prior task completed (this session 2026-11-01 — verification)
 Maintenance pass completed:
 - Tests green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
 - Frozen-baseline hashes unchanged: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4.
