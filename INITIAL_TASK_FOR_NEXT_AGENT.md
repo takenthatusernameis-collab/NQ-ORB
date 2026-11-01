@@ -1,12 +1,12 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — maintenance re-verification + live free-data sweep, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification + live free-data sweep + handoff refresh, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main).
-- Full suite not re-run in this environment (pytest not installed); last recorded: 71 passed (2026-11-01).
-- SHA-256 hashes verified unchanged and match HANDOFF.md exactly.
+- `git status`: working tree clean (branch main, HEAD 28f95ec).
+- pytest unavailable in this environment (no pytest installed); test suite not re-run this session (last recorded: 71 passed, 2026-11-01).
+- SHA-256 hashes verified unchanged and match HANDOFF.md exactly (all six files).
 - Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
-- Walk-forward present; all test windows negative on both sources.
+- Walk-forward present; all test windows negative on both sources (artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json).
 - Live free-data sweep (2026-11-01): no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume). axb0306 GitHub repo unchanged at commit 60abd3fb (2026-04-15T23:34:55Z). No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
@@ -18,7 +18,7 @@
 5. Research task remains blocked on data depth, not code — highest-value action is a bounded free-data re-sweep if anything changes; otherwise continue maintenance only.
 
 ## Test command
-- `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (71 passed).
+- `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (71 passed; pytest not installed in this environment — install pytest before re-running).
 
 ## Blockers
 - History depth insufficient for robust walk-forward/OOS: axb0306 ~3 months (single-contract MNQ.M26, unadjusted); Kaggle front-month ~3 years (unadjusted front-month by max volume). No multi-year free MNQ 1min/15min beyond these.
