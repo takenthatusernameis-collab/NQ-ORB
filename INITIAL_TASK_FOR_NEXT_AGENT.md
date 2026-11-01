@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01e)
+## State verified this session (2026-11-01f)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session re-ran the full suite (66 passed), re-verified all raw/baseline hashes unchanged, confirmed artifacts/ contains only canonical + historical files, and re-ran the free-data sweep (websearch MNQ 1min/15min free download, Kaggle MNQ search, GitHub API axb0306/cme-futures-ohlc commits on path=MNQ, FirstRate, Portara, Databento, investing.com, tzamrik/brtnsmth/tgtanalytics NQ datasets): **no new genuinely free MNQ 1min/15min source**. axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb…` dated 2026-04-15T23:34:55Z — unchanged since the prior session audit; no new intraday MNQ files, no extension of history. All paid candidates re-confirmed paid/key-gated. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+This session re-ran the full suite (66 passed), re-verified all raw/baseline hashes unchanged, confirmed artifacts/ contains only canonical + historical files. Free-data sweep: no new genuinely free MNQ 1min/15min source. axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb…` dated 2026-04-15T23:34:55Z — unchanged; no new intraday MNQ files, no extension of history. All paid candidates re-confirmed paid/key-gated. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
 
 ## Bounded next steps
 
