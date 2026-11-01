@@ -4,10 +4,10 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## State verified this session (2026-11-01w)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.60s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.62s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
-  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
-  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
+  - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140899.00, net -$626525.96, PF 0.2271, max DD ~$626994.56.
 - Raw data hashes unchanged:
   - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
   - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. No new genuinely free MNQ 1min/15min source found (GitHub axb0306/cme-futures-ohlc MNQ directory unchanged since 2026-04-15; Kaggle MNQ hits remain the already-ingested brandenmorris dump ending 2025-11-12 or NQ big contract; all paid candidates re-confirmed paid/key-gated). HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
+Verified tests pass, all hashes unchanged, baselines intact. No new genuinely free MNQ 1min/15min source found (axb0306/cme-futures-ohlc MNQ unchanged; Kaggle MNQ hits remain already-ingested or NQ big contract; paid candidates confirmed). HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
 ## Bounded next steps
 
