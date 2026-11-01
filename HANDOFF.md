@@ -139,6 +139,6 @@ Status: Maintenance pass complete; frozen baseline preserved; baselines verified
   - STRATEGY_RULES.txt v1.0: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
 - Baselines verified intact against canonical artifacts (axb0306/Kaggle front-month as previously reported).
-- Free-data sweep: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months) and Kaggle front-month (~3 years); Yahoo daily only. No data purchased; no credentials requested or stored.
-- Working tree clean (HEAD c825283). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Free-data sweep: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, single-contract MNQ.M26) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested or stored.
+- Working tree clean (HEAD bbf163c). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - Prior agent task complete: maintenance/documentation pass; no implementation work required.
