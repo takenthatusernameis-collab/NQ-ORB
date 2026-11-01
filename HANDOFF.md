@@ -84,11 +84,21 @@ Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemen
 - Verified baselines intact: axb0306 60 trades net -$31,637.98; Kaggle front-month 688 trades net -$626,525.96 (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json).
 - No new free MNQ 1min/15min sources beyond axb0306 and Kaggle front-month; Yahoo daily only. No data purchased, no code/strategy changes, frozen baseline preserved.
 
+## Completed work (this session 2026-11-01a)
+- Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved (STRATEGY_RULES.txt v1.0 sha256 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml sha256 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4).
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; front-month 15min 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; front-month 1min edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
+- Re-verified frozen baseline hashes unchanged (STRATEGY_RULES.txt 6d3258c3…; config/orb_mnq_15m_showcase.yaml 2a6c5ff8…).
+- Verified baselines intact: axb0306 60 trades net -$31,637.98 / PF 0.492 / max DD $37,491.80 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.227 / max DD ~$626,994.56 / WR 64.83% (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json).
+- No new free MNQ 1min/15min sources beyond axb0306 (~3 months, single-contract MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+- Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
+
 ## Next bounded task
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+",
 
 ## Completed work (this session 2026-10-31z)
 - Read prior agent task from HANDOFF and INITIAL_TASK_FOR_NEXT_AGENT; maintenance/documentation priority confirmed.
