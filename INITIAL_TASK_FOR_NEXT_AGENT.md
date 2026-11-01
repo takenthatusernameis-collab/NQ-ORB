@@ -2,12 +2,12 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01h)
+## State verified this session (2026-11-01i)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
-  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, exposure 0.103%.
-  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56, Sharpe -1.680, Sortino -1.042, exposure 0.081%.
+  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
 - Raw data hashes unchanged:
   - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
   - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-No implementation work was required beyond maintenance. Prior sessions re-ran the full suite, re-verified all hashes and baselines, re-ran both baselines fresh with `verify_` prefixes and diffed them byte-identical against canonical artifacts, removed transient verify artifacts, and re-ran the free-data sweep. Result: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. Results negative under full costs on both samples. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+No implementation work was required beyond maintenance. This session re-ran the full suite, re-verified all hashes and baselines, confirmed artifacts clean, and re-confirmed no new free MNQ 1min/15min source beyond axb0306 (~3 months) and Kaggle front-month (~3 years); Yahoo daily only. Results negative under full costs on both samples. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
 
 ## Bounded next steps
 
