@@ -77,3 +77,10 @@ Status: Maintenance pass complete; frozen baseline preserved; baselines verified
 2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+
+## Completed work (this session 2026-11-01 — maintenance verification)
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Verified raw data hashes unchanged (all four raw files match prior recorded hashes).
+- Verified frozen baseline hashes unchanged: STRATEGY_RULES.txt v1.0 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8....
+- Working tree clean (HEAD c6c035a). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Prior agent task (maintenance/documentation pass) verified complete: no implementation work required beyond maintenance.
