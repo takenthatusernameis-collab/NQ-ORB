@@ -4,7 +4,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## State verified this session (2026-11-01z)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.87s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140899.00, net -$626525.96, PF 0.2271, max DD ~$626994.56.
