@@ -17,3 +17,4 @@
 Test command: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (expect 66 passed).
 
 Blockers: history depth insufficient for robust walk-forward/OOS (axb0306 ~3 months single-contract; Kaggle ~3 years unadjusted front-month); results negative under full costs on both samples (costs dominate); axb0306 has no intra-sample roll — re-verify hash and price continuity before using any re-downloaded file.
+EOF
