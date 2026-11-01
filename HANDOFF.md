@@ -84,3 +84,16 @@ Status: Maintenance pass complete; frozen baseline preserved; baselines verified
 - Verified frozen baseline hashes unchanged: STRATEGY_RULES.txt v1.0 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8....
 - Working tree clean (HEAD c6c035a). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - Prior agent task (maintenance/documentation pass) verified complete: no implementation work required beyond maintenance.
+
+## Completed work (this session 2026-11-01 — handoff refresh)
+- Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved.
+- Re-ran full test suite: 66 passed.
+- Verified raw data and frozen baseline hashes unchanged (all match prior recorded values).
+- Working tree clean (HEAD c6c035a). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Prior agent task complete: maintenance/documentation pass; no implementation work required.
+
+## Next bounded task
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
+2. No parameter/strategy changes without a separately versioned experiment (frozen baseline preserved).
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
