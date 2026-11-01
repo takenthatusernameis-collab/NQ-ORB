@@ -1,11 +1,11 @@
 # Initial Task for Next Agent
 
-## Prior task completed (this session 2026-11-01 — handoff refresh)
+## Prior task completed (this session 2026-11-01 — maintenance verification)
 - Test suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
-- Raw data hashes unchanged: MNQ_15min f417f22d7c933920...; MNQ_1min 129623f45308a98a...; front-month 15min 7e129ae37f1ae62b...; front-month 1min edbadc731ed90c9e....
+- Raw data hashes unchanged (all four files match recorded hashes).
 - Frozen baseline hashes unchanged: STRATEGY_RULES.txt v1.0 6d3258c3f3af803f...; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663....
 - Baselines intact: axb0306 60 trades net -$31,637.98 / PF 0.492 / max DD $37,491.80 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.227 / max DD ~$626,994.56 / WR 64.83% (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json).
-- Working tree clean (HEAD c6c035a). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Working tree clean (HEAD c825283). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - Free-data sweep: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, single-contract MNQ.M26) and Kaggle front-month (~3 years); Yahoo daily only.
 
 ## Bounded next task
