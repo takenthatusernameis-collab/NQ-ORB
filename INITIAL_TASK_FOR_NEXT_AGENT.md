@@ -2,7 +2,7 @@
 
 ## Prior task completed (this session 2026-11-01)
 Maintenance pass completed:
-- Tests green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.86s.
+- Tests green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.91s.
 - Frozen-baseline hashes unchanged: STRATEGY_RULES.txt 6d3258c3…; config/orb_mnq_15m_showcase.yaml 2a6c5ff8….
 - Raw data hashes unchanged: MNQ_15min f417f22d…; MNQ_1min 129623f4…; front-month 15min 7e129ae3…; front-month 1min edbadc73….
 - Baselines verified intact:
@@ -17,4 +17,5 @@ Maintenance pass completed:
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
 ---
-"
+" filePath">
+/home/runner/work/NQ-ORB/NQ-ORB/INITIAL_TASK_FOR_NEXT_AGENT.md
