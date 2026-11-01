@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01e)
+## State verified this session (2026-11-01f)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.62s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.67s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, exposure 0.103%.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56, Sharpe -1.680, Sortino -1.042, exposure 0.081%.
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session verified tests pass (66 passed), all hashes unchanged, baselines intact, artifacts clean, and performed a free-data sweep confirming no new genuinely free MNQ 1min/15min source. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
+This session verified tests pass (66 passed), all hashes unchanged, baselines intact, artifacts clean. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
 
 ## Bounded next steps
 
@@ -40,3 +40,4 @@ This session verified tests pass (66 passed), all hashes unchanged, baselines in
 ## Next agent task
 
 Continue maintenance/documentation. Verify tests pass and hashes match (see state above). If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
+EOF
