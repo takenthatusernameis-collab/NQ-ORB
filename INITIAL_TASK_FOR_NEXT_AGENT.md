@@ -2,9 +2,10 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01o)
+## State verified this session (2026-11-01cc)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.87s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.90s.
+- HEAD: 66f7e67 (working tree clean).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140899.00, net -$626525.96, PF 0.2271, max DD ~$626994.56.
@@ -16,7 +17,6 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 - Frozen baseline hashes unchanged:
   - STRATEGY_RULES.txt: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
-- Working tree clean. No code/strategy/parameter changes; frozen baseline preserved.
 
 ## Prior agent task — complete
 
@@ -39,4 +39,4 @@ Verified tests pass (66), hashes unchanged, baselines intact. No new free MNQ 1m
 
 ## Next agent task
 
-Continue maintenance/documentation. Verify tests pass and hashes match (see state above). If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
+Continue maintenance/documentation. Verify tests pass and hashes match. If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
