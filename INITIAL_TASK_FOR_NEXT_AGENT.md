@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01j)
+## State verified this session (2026-11-01k)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.91s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.93s.
   - Note: pytest 9.2.0 + pandas + numpy were installed to the user site this session (`pip install pytest pandas numpy`); the base environment did not have pytest. Re-run the same command; do not re-install unless the environment is reset.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
