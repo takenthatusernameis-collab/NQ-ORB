@@ -3,6 +3,18 @@ Date: 2026-11-01
 Repository: takenthatusernameis-collab/NQ-ORB
 Status: Independent re-verification complete; frozen baseline preserved; baselines reproduce byte-for-byte; no new free MNQ 1min/15min source.
 
+## Session log (2026-11-01 — independent re-verification, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, HEAD 09de336).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
+- Walk-forward artifacts re-derived from a fresh process and byte-diffed against committed artifacts: `scripts/walk_forward.py --source axb0306 --window-trades 20 --step-trades 10` and `--source kaggle --window-trades 150 --step-trades 50` -> both diffs empty (artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json byte-identical). Kaggle test windows net -$178,375.24 .. -$114,820.72 (all 8 negative); axb0306 test windows net -$10,053.14 .. -$23,058.98 (all 3 negative).
+- Ledger integrity re-verified directly from artifacts: zero multi-trade days on both samples; zero exits past 15:55 ET (latest exit 10:00 ET on both); risk_points == 0.4*atr14 to within 0.0001 ticks on every trade; atr_pct within [0.10, 0.60] on every trade; rvol >= 1.0 on every trade; exit-reason splits target/stop/stop_first_ambiguous only (axb0306 42/12/6, kaggle 478/130/80); long/short split axb0306 33/27, kaggle 359/329.
+- Independent signal-funnel cross-check re-derived with a throwaway script (the bundled scripts/diag_signal_funnel.py hard-codes the Kaggle file and ignores --source, so the axb0306 funnel was reproduced separately): kaggle 932 trading dates / 771 OR-built / 765 first breakouts / 688 pass RVOL+ATR -> engine 688, matches; axb0306 74 trading dates / 61 OR-built / 61 first breakouts / 60 pass filters -> engine 60, matches. Throwaway script deleted; working tree clean.
+- Live free-data sweep (2026-11-01): GitHub axb0306/cme-futures-ohlc MNQ path latest commit still `60abd3fb…` 2026-04-15T23:34:55Z and the MNQ/ directory still holds exactly the same 8 files (no intraday extension). Live websearch re-scan of Kaggle MNQ hits, FinzData ($49 one-time MNQ), FirstRate Data ($99.95/yr), Portara (paid), MarketParquet ($79 one-time), historicalfuturesdata.com ($59/yr per year, free 10s sample only), TickTradingData, Kibot, Databento (key-gated + $125 credit expiring), Yahoo Finance (daily only), Infoway (API-key-gated), Barchart (Premier only for intraday) — no new genuinely free MNQ 1min/15min source. No data purchased; no credentials requested/stored.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+
 ## Authoritative state
 - STRATEGY_RULES.txt is the authoritative, frozen strategy definition (v1.0).
 - PROMPT.md specifies the research workflow.
@@ -24,6 +36,7 @@ Status: Independent re-verification complete; frozen baseline preserved; baselin
 2. No parameter/strategy changes without a separately named, versioned experiment with an explicit diff from the frozen baseline.
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods; preserve a final untouched OOS interval.
 4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+5. The only genuinely free MNQ 1min/15min paths remain axb0306 (~3 months, single-contract MNQ.M26, no roll) and Kaggle front-month (~3 years, unadjusted front-month by max volume). Both are negative under full costs; no walk-forward test window is positive. The research task is effectively blocked on data depth, not code — the next agent's highest-value action is a bounded free-data re-sweep, not parameter fitting.
 
 ## Prior sessions (2026-10-30 through 2026-11-01)
 All prior maintenance-verification sessions verified the same frozen state (full suite green, raw + baseline hashes unchanged, baselines intact). Full per-session log retained in git history of this file.
