@@ -1,0 +1,94 @@
+{
+  "source": "axb0306",
+  "total_trades": 60,
+  "window_trades": 20,
+  "step_trades": 10,
+  "n_windows": 3,
+  "windows": [
+    {
+      "train_window": [
+        0,
+        20
+      ],
+      "test_window": [
+        20,
+        40
+      ],
+      "train": {
+        "count": 20,
+        "win_rate": 0.85,
+        "net_pnl": 1474.1399999999999,
+        "gross_pnl": 9877.5,
+        "profit_factor": 1.141468638978298
+      },
+      "test": {
+        "count": 20,
+        "win_rate": 0.7,
+        "net_pnl": -10053.14,
+        "gross_pnl": -2528.0,
+        "profit_factor": 0.5203988653462116
+      },
+      "test_dates": {
+        "start": "2026-02-18",
+        "end": "2026-03-17"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        30
+      ],
+      "test_window": [
+        30,
+        50
+      ],
+      "train": {
+        "count": 30,
+        "win_rate": 0.8333333333333334,
+        "net_pnl": 462.2600000000001,
+        "gross_pnl": 12809.0,
+        "profit_factor": 1.0265134264872722
+      },
+      "test": {
+        "count": 20,
+        "win_rate": 0.55,
+        "net_pnl": -21922.100000000002,
+        "gross_pnl": -14948.0,
+        "profit_factor": 0.28798042913258215
+      },
+      "test_dates": {
+        "start": "2026-03-04",
+        "end": "2026-03-31"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        40
+      ],
+      "test_window": [
+        40,
+        60
+      ],
+      "train": {
+        "count": 40,
+        "win_rate": 0.775,
+        "net_pnl": -8579.0,
+        "gross_pnl": 7349.5,
+        "profit_factor": 0.7266242895545559
+      },
+      "test": {
+        "count": 20,
+        "win_rate": 0.55,
+        "net_pnl": -23058.98,
+        "gross_pnl": -15011.5,
+        "profit_factor": 0.25273124875233655
+      },
+      "test_dates": {
+        "start": "2026-03-18",
+        "end": "2026-04-15"
+      }
+    }
+  ],
+  "note": "Chronological rolling train/test split by trade index. The final test window is untouched by any parameter selection. No strategy or parameter changes were made; this reports the frozen baseline only."
+}
