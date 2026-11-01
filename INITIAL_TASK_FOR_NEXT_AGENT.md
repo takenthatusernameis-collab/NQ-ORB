@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01w)
+## State verified this session (2026-11-01x)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.62s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.60s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140899.00, net -$626525.96, PF 0.2271, max DD ~$626994.56.
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. No new genuinely free MNQ 1min/15min source found (axb0306/cme-futures-ohlc MNQ unchanged; Kaggle MNQ hits remain already-ingested or NQ big contract; paid candidates confirmed). HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
+Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc commits on path=MNQ, Kaggle MNQ search, websearch, Firstrate, Kibot, MarketParquet, Portara, historicalfuturesdata.com, investing.com, Yahoo Finance, Databento, FinzData, CME Group): **no new genuinely free MNQ 1min/15min source**. axb0306 MNQ history still ends 2026-04-15 (unchanged since prior session audit); Kaggle MNQ hits remain the already-ingested brandenmorris dump (ends 2025-11-12) or NQ big contract (excluded per STRATEGY_RULES.txt); all paid candidates re-confirmed paid/key-gated. No data purchased; no credentials requested or stored. HANDOFF.md updated.
 
 ## Bounded next steps
 
