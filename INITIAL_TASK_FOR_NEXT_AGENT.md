@@ -10,10 +10,10 @@
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
-1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (source, URL, retrieval date, symbol/contract, timezone, roll/adjustment method, SHA-256) in data/FEASIBILITY_REPORT.md before use.
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (source, URL, retrieval date, symbol/contract, timezone, roll/adjustment method, SHA-256) before use.
 2. No parameter/strategy changes without a separately named, versioned experiment with an explicit diff from the frozen baseline (STRATEGY_RULES.txt v1.0).
 3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods; preserve a final untouched out-of-sample interval.
-4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
+4. Keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.
 
 ## Test command
 - `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (66 passed).
@@ -30,4 +30,3 @@
 - Do not launch nested Kilo sessions, duplicate scheduled workflows, or additional GitHub Actions activations.
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy unless explicitly authorized.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal a failure.
-"
