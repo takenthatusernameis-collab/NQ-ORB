@@ -1193,11 +1193,18 @@ oldString">
 - No new free MNQ 1min/15min sources discovered. No data purchased; no credentials requested/stored. Working tree clean. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
-## Completed work (this session 2026-11-01e3)
+## Completed work (this session 2026-11-01e4)
 - Read prior agent task from HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md; maintenance/documentation priority confirmed; frozen baseline preserved (STRATEGY_RULES.txt v1.0 sha256 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml sha256 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4).
-- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Re-ran full test suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.89s.
 - Re-verified raw data hashes unchanged (MNQ_15min f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; MNQ_1min 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; front-month 15min 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4; front-month 1min edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7).
 - Re-verified frozen baseline hashes unchanged (STRATEGY_RULES.txt 6d3258c3…; config/orb_mnq_15m_showcase.yaml 2a6c5ff8…).
-- Verified baselines intact: axb0306 60 trades net -$31,637.98 / PF 0.492 / max DD $37,491.80 / WR 70.0%; Kaggle front-month 688 trades net -$626,525.96 / PF 0.227 / max DD ~$626,994.56 / WR 64.83% (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json).
-- No new free MNQ 1min/15min sources discovered. No data purchased; no credentials requested or stored. Working tree clean (HEAD 1515ce7). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Re-ran both baselines fresh (`--prefix verify_axb --source axb0306`, `--prefix verify_kag --source kaggle`) and diffed all key fields against canonical artifacts: byte-identical.
+  - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, worst day 2026-01-27 (-$3,811.28), exposure 0.103%.
+  - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
+- Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc commits on path=MNQ + live MNQ directory listing, Kaggle brandenmorris datasets, live websearch for free MNQ 1min/15min download, Yahoo Finance, Databento GLBX.MDP3, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, kibot, quantnet, getdata.finance, Barchart, arXiv 2605.04004): **no new genuinely free MNQ 1min/15min source**.
+  - axb0306 MNQ path last commit still `60abd3fb…` dated 2026-04-15T23:34:55Z; directory listing still exactly the same 8 files (no new intraday files, no history extension).
+  - Kaggle brandenmorris: both datasets still marked "Updated a year ago", coverage still ends 2025-11-12 — no extension. All other Kaggle hits are NQ big contract ($20/point, excluded per STRATEGY_RULES.txt) or non-MNQ.
+  - All paid candidates re-confirmed paid/key-gated (FirstRate $99.95/yr, FinzData $49 one-time, MarketParquet $79 one-time, historicalfuturesdata $59/yr per bar size, TickTradingData €200, Kibot $520, Portara paid, Databento key-gated+credit-based, CME DataMine purchase-only, investing.com daily-only, Yahoo daily-only, Barchart Premier-only for intraday). No data purchased; no credentials requested or stored.
+- Transient verify artifacts removed (`metrics_verify_*.json`, `trades_verify_*.json`); canonical files unambiguous, matching artifacts/README.md.
+- Working tree clean (no uncommitted changes, no untracked files). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 - Prior agent task complete: no implementation work required beyond maintenance. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
