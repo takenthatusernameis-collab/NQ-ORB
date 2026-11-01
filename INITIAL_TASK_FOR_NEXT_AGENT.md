@@ -20,11 +20,11 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session re-ran the full suite (66 passed), re-verified all raw/baseline hashes unchanged, confirmed artifacts/ contains only canonical + historical files. Free-data sweep: no new genuinely free MNQ 1min/15min source. axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb…` dated 2026-04-15T23:34:55Z — unchanged; no new intraday MNQ files, no extension of history. All paid candidates re-confirmed paid/key-gated. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+This session re-ran the full suite (66 passed), re-verified all raw/baseline hashes unchanged, confirmed artifacts/ contains only canonical + historical files. Free-data sweep: no new genuinely free MNQ 1min/15min source. axb0306/cme-futures-ohlc most recent commit on the MNQ path unchanged; no new intraday MNQ files, no extension of history. All paid candidates re-confirmed paid/key-gated. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
 
 ## Bounded next steps
 
-1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (and update data/FEASIBILITY_REPORT.md) before use.
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (and update data/FEASIBILITY_REPORT.md if created) before use.
 2. Do not change frozen rules/params without a separately named, versioned experiment with an explicit diff from the frozen baseline (STRATEGY_RULES.txt v1.0).
 3. If longer free MNQ 1min/15min history is obtained, re-run chronological train/validation/test splits and cost sensitivity across full periods; preserve a final untouched test interval.
 4. Keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence after each session.
@@ -39,4 +39,4 @@ This session re-ran the full suite (66 passed), re-verified all raw/baseline has
 
 ## Next agent task
 
-Continue maintenance/documentation. Verify tests pass and hashes match (see state above). If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
+Continue maintenance/documentation. Verify tests pass and hashes match (see state above). If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
