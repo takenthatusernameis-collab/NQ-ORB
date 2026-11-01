@@ -30,3 +30,4 @@
 - Do not launch nested Kilo sessions, duplicate scheduled workflows, or additional GitHub Actions activations.
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy unless explicitly authorized.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal a failure.
+"
