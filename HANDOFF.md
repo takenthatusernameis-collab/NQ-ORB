@@ -1,4 +1,15 @@
 # NQ ORB — Durable Handoff
+## Session log (2026-11-01 — prior task completed + live free-data sweep + handoff refresh, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, HEAD 9be29de).
+- Full suite `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f4530...`; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Baselines re-run from a fresh process and byte-diffed: `git diff --stat artifacts/` EMPTY. axb0306 metrics 60 trades / 70.0% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917; kaggle 688 / 64.83% / -$140,899.00 / -$626,525.96 / PF 0.2271. trades SHA-256 unchanged (axb0306 ce389da2…, kaggle 7251e4a9…).
+- Walk-forward re-derived and byte-diffed: `git diff --stat artifacts/walk_forward_*.json` EMPTY. axb0306 3 windows all negative net (-$10,053.14 .. -$23,058.98); kaggle 6 windows all negative net (-$70,637.24 .. -$114,820.72).
+- Independent ledger-integrity spot-check (throwaway script, deleted): zero multi-trade days on both samples; latest exit 10:00 ET on both (<= 15:55 ET); risk_points == 0.4*atr14 to within 0.0001 ticks on all 748 trades; exit-reason splits axb0306 42 target / 12 stop / 6 stop_first_ambiguous, kaggle 478 / 130 / 80; long/short axb0306 33/27, kaggle 359/329.
+- Live free-data sweep (2026-11-01): GitHub axb0306/cme-futures-ohlc MNQ path still holds exactly the same 8 files (latest commit 2026-04-15T23:34:55Z, no intraday extension). Live websearch re-scan: FinzData ($49 one-time MNQ intraday), FirstRate Data ($99.95/yr), MarketParquet ($79 one-time archive from Dec 2007), historicalfuturesdata.com ($59/yr per year, free 10s sample only), Databento (key-gated + $125 credit expiring), Barchart (Premier only for intraday), broker platforms (funded/demo account required), CME DataMine (priced per dataset), Kaggle (only already-ingested brandenmorris MNQ + $20/point NQ excluded), Yahoo daily-only. dbn-cache / Databento free tier is the only genuinely free path to new MNQ 1min bars and requires a Databento API key (key-gated) — no credentials requested, none stored. No new genuinely free MNQ 1min/15min source found; no data purchased.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+
 ## Session log (2026-11-01 — maintenance re-verification + handoff update, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - `git status`: working tree clean (branch main, HEAD 400c917).
