@@ -1,7 +1,7 @@
 # NQ ORB — Durable Handoff
 Date initialized: 2026-10-30
 Repository: takenthatusernameis-collab/NQ-ORB
-Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemented. Baselines verified under full costs. Latest session 2026-11-01c: maintenance + free-data sweep complete, no new source.
+Status: Free-data feasibility audit complete; MNQ 15m/1m infrastructure implemented. Baselines verified under full costs. Latest session 2026-11-01d: maintenance + free-data sweep complete, no new source.
 
 ## Initial authoritative state
 - `STRATEGY_RULES.txt` contains the user-specified NQ ORB rules and MNQ 15-minute showcase preset.
