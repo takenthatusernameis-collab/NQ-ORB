@@ -23,7 +23,6 @@ Status: Independent re-verification complete; frozen baseline preserved; baselin
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
 - SHA-256 verified unchanged: STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
-- Funnel re-check (Kaggle front-month): 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass filters -> 688 trades (matches canonical).
 - Canonical artifacts verified: axb0306 60/70%/-$31637.98/PF0.492/maxDD$37491.8; kaggle 688/64.83%/-$626525.96/PF0.227/maxDD~$626994.56.
 - Free-data sweep re-run (websearch): no new genuinely free MNQ 1min/15min source found (candidates paid/key-gated or NQ big contract excluded). No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created; working tree clean relative to evidence.

@@ -3,8 +3,9 @@
 ## Status (this session 2026-11-01 — maintenance re-verification)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - Full suite green: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
-- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created.
-- Blockers unchanged: history depth insufficient for robust walk-forward/OOS; results negative under full costs; axb0306 single-contract no roll.
+- SHA-256s verified unchanged for STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, and raw MNQ files.
+- Canonical artifacts verified (axb0306 60/70%/-$31637.98/PF0.492/maxDD$37491.8; kaggle 688/64.83%/-$626525.96/PF0.227/maxDD~$626994.56).
+- No new free MNQ 1min/15min source found via web search; frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created.
 
 ## Bounded next task (carried forward)
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (source, URL, retrieval date, symbol/contract, timezone, roll/adjustment method, SHA-256) before use.
