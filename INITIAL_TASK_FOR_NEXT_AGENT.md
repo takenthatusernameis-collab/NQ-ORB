@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01f)
+## State verified this session (2026-11-01i)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
@@ -20,11 +20,11 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session re-ran the full suite (66 passed), re-verified all raw/baseline hashes unchanged, confirmed artifacts/ contains only canonical + historical files. Free-data sweep: no new genuinely free MNQ 1min/15min source. axb0306/cme-futures-ohlc most recent commit on the MNQ path unchanged; no new intraday MNQ files, no extension of history. All paid candidates re-confirmed paid/key-gated. No data purchased, no code/strategy/parameter changes, frozen baseline preserved, no broker integration.
+This session verified tests pass (66 passed), all hashes unchanged, baselines intact, artifacts clean, and performed a free-data sweep confirming no new genuinely free MNQ 1min/15min source. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
 
 ## Bounded next steps
 
-1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (and update data/FEASIBILITY_REPORT.md if created) before use.
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (and update data/FEASIBILITY_REPORT.md if present) before use.
 2. Do not change frozen rules/params without a separately named, versioned experiment with an explicit diff from the frozen baseline (STRATEGY_RULES.txt v1.0).
 3. If longer free MNQ 1min/15min history is obtained, re-run chronological train/validation/test splits and cost sensitivity across full periods; preserve a final untouched test interval.
 4. Keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence after each session.
