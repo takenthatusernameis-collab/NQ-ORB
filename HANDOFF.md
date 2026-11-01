@@ -66,3 +66,20 @@ All prior maintenance-verification sessions verified the same frozen state (full
 - No new free MNQ 1min/15min source located in free-data sweep; free-data ceiling unchanged (axb0306 ~3 months single-contract MNQ.M26; Kaggle front-month ~3 years unadjusted).
 - Working tree clean (HEAD 62932d7).
 - HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with this session's evidence; next task carried forward unchanged.
+
+## Session log (2026-11-01 — independent re-verification, fresh engine re-run)
+- Read durable handoff (HANDOFF.md), initial task (INITIAL_TASK_FOR_NEXT_AGENT.md), STRATEGY_RULES.txt v1.0, PROMPT.md, AGENTS.md, and data/FEASIBILITY_REPORT.md; re-derived evidence rather than trusting prior claims.
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed.
+- Hashes re-computed (sha256sum): STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1 (matches); config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4 (matches); raw/MNQ_15min.csv f417f22d… (matches); raw/MNQ_1min.csv 129623f4… (matches); raw/MNQ_1min_frontmonth.csv edbadc73… (matches); raw/MNQ_15min_frontmonth.csv 7e129ae3… (matches).
+- Fresh engine re-run (not a stored copy) for both sources, then byte-diffed vs canonical artifacts:
+  - axb0306: metrics IDENTICAL, trades IDENTICAL (sha256 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364).
+  - kaggle: metrics IDENTICAL; trades file SHA-256 identical (7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5).
+- Verify artifacts deleted after comparison; working tree clean (HEAD 6f434dd). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
+- Independent funnel cross-check re-run: 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass RVOL+ATR filters -> engine trade count 688, matches exactly.
+- Prior agent task complete: maintenance/documentation pass independently re-verified; no implementation work required beyond maintenance.
+
+## Next bounded task
+1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes before use.
+2. No parameter/strategy changes without a separately named, versioned experiment (frozen baseline preserved).
+3. If longer free history is obtained, re-run chronological splits and cost sensitivity across full periods.
+4. Keep FEASIBILITY_REPORT.md, HANDOFF.md, and INITIAL_TASK_FOR_NEXT_AGENT.md updated with evidence.

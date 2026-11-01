@@ -290,3 +290,9 @@ of the exact 0.4R formula — the residual is tick rounding, as required by the 
 - **Databento GLBX.MDP3 MNQ**: coverage 2019-04-14→present — deepest MNQ source found, but **not free without credentials** (API key + paid credits beyond $125 signup credit). The Kaggle brandenmorris dump already used is the same GLBX.MDP3 dataset. Excluded from free-data path; no download; no API key requested or stored.
 - **arXiv 2605.04004** (v1/v2/v3, latest 2026-09-15): research paper, not a data source. Cited only as external corroboration.
 - Baselines re-verified byte-for-byte this session (see HANDOFF.md). Frozen baseline preserved; no code/strategy/parameter changes; no data purchased.
+
+## Independent re-verification (session 2026-11-01)
+- Both baselines re-run from a fresh process (`python3 src/orb/runner.py --prefix verify_axb --source axb0306` / `--prefix verify_kag --source kaggle`) and byte-diffed against canonical artifacts: metrics IDENTICAL for both; kaggle trades file SHA-256 identical (7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5), axb0306 trades identical (ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364). Verify copies deleted after comparison.
+- Independent signal-funnel cross-check re-run: 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass RVOL+ATR filters -> engine trade count 688, matches exactly.
+- Full suite `python3 -m pytest tests -q` -> 66 passed. Raw data and frozen baseline hashes re-computed, all unchanged.
+- Free-data sweep: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, single-contract MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested or stored.
