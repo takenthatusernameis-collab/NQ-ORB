@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-01 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: clean (branch main, up to date with origin/main, HEAD b351643).
+- `git status`: clean (branch main, up to date with origin/main, HEAD c9faa1b).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 hashes verified unchanged and match HANDOFF.md exactly (all six files):
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
@@ -13,7 +13,7 @@
   - raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
 - Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80 (trades sha256 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364); Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56 (trades sha256 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5).
 - Walk-forward: artifacts/walk_forward_axb0306.json (3 windows all negative), artifacts/walk_forward_kaggle.json (8 windows all negative).
-- Free-data re-sweep: GitHub axb0306/cme-futures-ohlc MNQ path latest commit still 60abd3fb… 2026-04-15T23:34:55Z (unchanged); no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested/stored.
+- Free-data re-sweep: GitHub axb0306/cme-futures-ohlc MNQ path unchanged; no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
