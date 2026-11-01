@@ -2,9 +2,10 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01h)
+## State verified this session (2026-11-01j)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.61s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.91s.
+  - Note: pytest 9.2.0 + pandas + numpy were installed to the user site this session (`pip install pytest pandas numpy`); the base environment did not have pytest. Re-run the same command; do not re-install unless the environment is reset.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7662.00, net -$31637.98, PF 0.4917, max DD $37491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140899.00, net -$626525.96, PF 0.2271, max DD ~$626994.56.
@@ -16,12 +17,14 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 - Frozen baseline hashes unchanged:
   - STRATEGY_RULES.txt: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
-- Fresh baseline re-run this session diffed all 41 metric fields plus full trade ledgers against canonical artifacts: byte-identical for both sources (0 diffs).
 - Working tree clean. No code/strategy/parameter changes; frozen baseline preserved.
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc commits on path=MNQ + live MNQ directory listing, Kaggle brandenmorris datasets, live websearch, Yahoo Finance, Databento, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, kibot, quantnet, getdata.finance, arXiv 2605.04004): **no new genuinely free MNQ 1min/15min source**. axb0306 MNQ history still ends 2026-04-15 (commit 60abd3fb…, unchanged since prior session audit); Kaggle brandenmorris dumps still end 2025-11-12 and are marked "Updated a year ago" — no extension. All paid candidates re-confirmed paid/key-gated. No data purchased; no credentials requested or stored. HANDOFF.md updated.
+Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc commits on path=MNQ + live MNQ directory listing, Kaggle brandenmorris dataset page, live websearch for free MNQ 1min/15min download, Yahoo Finance, Databento, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, getdata.finance, kibot, quantnet, arXiv 2605.04004): **no new genuinely free MNQ 1min/15min source**.
+- axb0306 MNQ history still ends 2026-04-15 (commit 60abd3fb…, unchanged since prior session audit); MNQ directory still exactly 8 files (15min/1h/1min/30min/4h/5min/daily/tick), no new intraday files, no history extension.
+- Kaggle brandenmorris dumps still end 2025-11-12 and are marked "Updated a year ago" — no extension. All other MNQ hits are NQ (big contract, $20/point) or paid/key-gated.
+- All paid candidates re-confirmed paid/key-gated (historicalfuturesdata.com $59/yr per bar size, FirstRate $99.95/yr, Portara paid, MarketParquet $79 one-time, Databento key-gated + $125 credit expiring, thinridge.io uses FirstRate paid data, getdata.finance paid, kibot $520, quantnet personal sale, CME DataMine purchase-only, investing.com daily-only, Yahoo daily-only). No data purchased; no credentials requested or stored. HANDOFF.md updated.
 
 ## Bounded next steps
 
