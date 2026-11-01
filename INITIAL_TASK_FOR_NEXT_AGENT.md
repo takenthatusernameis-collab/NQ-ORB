@@ -4,7 +4,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## State verified this session (2026-11-01h)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.59s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.58s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56.
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep re-run (GitHub API, Kaggle, websearch, FirstRate, Kibot, MarketParquet, Portara, historicalfuturesdata.com, investing.com, Yahoo Finance): no new genuinely free MNQ 1min/15min source. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
+Verified tests pass, all hashes unchanged, baselines intact. Free-data sweep confirmed no new genuinely free MNQ 1min/15min source. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated.
 
 ## Bounded next steps
 
