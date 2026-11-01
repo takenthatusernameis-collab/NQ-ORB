@@ -1,14 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — independent re-verification, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, HEAD 72848ec).
-- Full suite `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed (was 66; +5 new tests in tests/test_walk_forward.py).
+- `git status`: working tree clean (branch main).
+- Full suite `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 hashes verified unchanged and match HANDOFF.md exactly: STRATEGY_RULES.txt v1.0 `6d3258c3...`; config/orb_mnq_15m_showcase.yaml `2a6c5ff8...`; raw/MNQ_15min.csv `f417f22d...`; raw/MNQ_1min.csv `129623f4...`; raw/MNQ_1min_frontmonth.csv `edbadc73...`; raw/MNQ_15min_frontmonth.csv `7e129ae3...`.
 - Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
-- **NEW — walk-forward evaluation added** (reporting layer only; no strategy/parameter changes): `scripts/walk_forward.py` performs chronological rolling train/test splits by trade index over the frozen baseline trade ledgers. New artifacts: `artifacts/walk_forward_kaggle.json` (8 windows, 150-trade test windows stepped by 50) and `artifacts/walk_forward_axb0306.json` (3 windows, 20-trade test windows stepped by 10). Every test window is negative net on both sources; Kaggle test PF ranges 0.128–0.447, axb0306 0.253–0.520. The final test window on each source is preserved untouched (no parameter fitting against it). Deterministic unit tests added: `tests/test_walk_forward.py` (5 tests).
 - Free-data re-sweep re-confirmed: no new genuinely free MNQ 1min/15min source beyond axb0306 (~3 months, single-contract MNQ.M26, no roll/no adjustment) and Kaggle front-month (~3 years, unadjusted front-month by max volume). Yahoo Finance daily only; all other candidates paid/key-gated. No data purchased; no credentials requested/stored.
-- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean. New untracked files: scripts/walk_forward.py, tests/test_walk_forward.py, artifacts/walk_forward_kaggle.json, artifacts/walk_forward_axb0306.json.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
 1. Maintain documentation; if a new free MNQ 1min/15min source appears, record provenance/hashes (source, URL, retrieval date, symbol/contract, timezone, roll/adjustment method, SHA-256) before use.
