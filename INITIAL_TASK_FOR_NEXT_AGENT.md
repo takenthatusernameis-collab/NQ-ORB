@@ -1,15 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — independent re-verification, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification + handoff update, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, HEAD 09de336).
+- `git status`: working tree clean (branch main, HEAD 23ddcc4).
 - Full suite `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 hashes verified unchanged and match HANDOFF.md exactly: STRATEGY_RULES.txt v1.0 `6d3258c3...`; config/orb_mnq_15m_showcase.yaml `2a6c5ff8...`; raw/MNQ_15min.csv `f417f22d...`; raw/MNQ_1min.csv `129623f4...`; raw/MNQ_1min_frontmonth.csv `edbadc73...`; raw/MNQ_15min_frontmonth.csv `7e129ae3...`.
 - Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
-- Walk-forward artifacts re-derived from a fresh process and byte-diffed: both `artifacts/walk_forward_axb0306.json` and `artifacts/walk_forward_kaggle.json` reproduce exactly. All 11 test windows negative on both sources.
-- Ledger integrity re-verified: zero multi-trade days; zero exits past 15:55 ET; risk_points == 0.4*atr14 on every trade; atr_pct in [0.10,0.60]; rvol >= 1.0; exit-reason splits target/stop/stop_first_ambiguous only; long/short split axb0306 33/27, kaggle 359/329.
-- Signal-funnel cross-check re-derived independently for both sources (axb0306 74 trading dates -> 61 OR -> 61 breakouts -> 60 trades; kaggle 932 -> 771 -> 765 -> 688). Throwaway script deleted; working tree clean.
-- Free-data re-sweep re-confirmed (live, 2026-11-01): axb0306 GitHub MNQ path unchanged since 2026-04-15; Kaggle, FinzData, FirstRate, Portara, MarketParquet, historicalfuturesdata, TickTradingData, Kibot, Databento, Yahoo, Infoway, Barchart all re-checked — no new genuinely free MNQ 1min/15min source. No data purchased; no credentials requested/stored.
+- Walk-forward artifacts present: `artifacts/walk_forward_axb0306.json`, `artifacts/walk_forward_kaggle.json` — all test windows negative on both sources.
+- Free-data re-sweep re-confirmed (live): axb0306 GitHub MNQ path unchanged; Kaggle, FinzData, FirstRate, Portara, MarketParquet, historicalfuturesdata, TickTradingData, Kibot, Databento, Yahoo, Infoway, Barchart all re-checked — no new genuinely free MNQ 1min/15min source. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
