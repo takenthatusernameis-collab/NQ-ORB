@@ -2,10 +2,10 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01d)
+## State verified this session (2026-11-01e2)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.88s.
-- HEAD: 815c574 (clean working tree).
+- HEAD: b89bd03 (clean working tree).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD ~$626,994.56.
@@ -41,4 +41,4 @@ Verified tests pass (66), hashes unchanged, baselines intact. No new free MNQ 1m
 
 Continue maintenance/documentation. Verify tests pass and hashes match. If a new free MNQ 1min/15min source appears, record provenance/hashes before use and update data/FEASIBILITY_REPORT.md if present. Otherwise keep HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md current with evidence after each session. No implementation work is required unless the user changes scope.
 
-(End of file - total 42 lines)
+(End of file)
