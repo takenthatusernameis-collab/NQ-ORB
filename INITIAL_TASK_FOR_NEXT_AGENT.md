@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation (frozen baseline preserved).
 
-## State to verify (as of 2026-11-01e; last verified 2026-11-01e)
+## State to verify (as of 2026-11-01f; last verified 2026-11-01f)
 
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` should pass (66 passed).
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
