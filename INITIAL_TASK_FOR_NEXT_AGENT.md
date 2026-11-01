@@ -1,14 +1,17 @@
 # Initial Task for Next Agent
 
-## Status (this session 2026-11-01 — Kilo session completion)
+## Status (this session 2026-11-01 — engine re-run + funnel cross-check)
 
-- Read durable handoff (HANDOFF.md) + initial task + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Re-verified evidence.
+- Read durable handoff (HANDOFF.md) + initial task + STRATEGY_RULES.txt v1.0 + PROMPT.md + AGENTS.md. Re-derived evidence rather than trusting prior claims.
 - Prior agent task (maintenance/documentation re-verification) confirmed complete: no implementation work required beyond maintenance; frozen baseline preserved.
-- Re-computed SHA-256 hashes — all match recorded values (see HANDOFF.md session log).
-- Working tree clean (HEAD 1bc986a, up to date with origin/main). No code/strategy/parameter changes; frozen baseline preserved; no broker integration; no commit created.
-- Canonical artifacts unchanged (axb0306 60 trades net -$31,637.98; Kaggle 688 trades net -$626,525.96).
-- This environment lacks pandas/pytest, so the test suite cannot execute here (matches prior note; prior sessions confirmed 66 passed where deps available). No code change implied by missing deps.
-- No new free MNQ 1min/15min source identified; blockers unchanged (insufficient depth for robust walk-forward/OOS; results negative under full costs; axb0306 roll/adjustment caveat noted).
+- Environment note: this session installed pandas 3.1.0 + pytest 9.2.0 via pip3 (previously reported as unavailable). Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.94s.
+- SHA-256 re-computed, all match recorded values: STRATEGY_RULES.txt v1.0 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Fresh engine re-run (not a stored copy) for both sources, byte-diffed vs canonical artifacts:
+  - axb0306: trades SHA-256 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364 (IDENTICAL), metrics SHA-256 e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f (IDENTICAL).
+  - kaggle: trades SHA-256 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5 (IDENTICAL), metrics SHA-256 a6ae100685ea30aa2392122fdf9830ccbaad5d25a22039db7e7521a0b12c1af1 (IDENTICAL).
+- Independent funnel cross-check re-run: 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass filters -> engine trade count 688, matches exactly.
+- Verify artifacts deleted after comparison; working tree clean (HEAD 1b6408c). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created.
+- No new free MNQ 1min/15min source identified; blockers unchanged.
 
 ## Canonical artifacts (source of truth — do not treat as proof of edge)
 
@@ -25,8 +28,7 @@
 
 ## Test command
 
-- Where deps are available: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (prior sessions: 66 passed).
-- This environment lacks pandas/pytest; do not treat inability to run here as a code failure.
+- `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (prior sessions: 66 passed). pandas+pytest are installable via pip3 in this environment if missing; do not treat inability to run as a code failure.
 
 ## Blockers
 
