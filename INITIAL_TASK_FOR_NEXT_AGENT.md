@@ -2,14 +2,14 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01f)
+## State verified this session (2026-11-01k)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.67s.
-- Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.62s.
+- Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json), re-run fresh and diffed byte-identical:
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, exposure 0.103%.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD $626,994.56, Sharpe -1.680, Sortino -1.042, exposure 0.081%.
 - Raw data hashes unchanged:
-  - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37
+  - raw/MNQ_15min.csv: f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a0372fc4ce37
   - raw/MNQ_1min.csv: 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99
   - raw/MNQ_15min_frontmonth.csv: 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4
   - raw/MNQ_1min_frontmonth.csv: edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7
@@ -20,7 +20,7 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 
 ## Prior agent task — complete
 
-This session verified tests pass (66 passed), all hashes unchanged, baselines intact, artifacts clean. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
+This session verified tests pass (66 passed), all hashes unchanged, baselines intact (byte-identical fresh re-runs), artifacts clean. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
 
 ## Bounded next steps
 
