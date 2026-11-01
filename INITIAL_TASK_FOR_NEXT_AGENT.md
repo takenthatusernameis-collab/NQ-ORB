@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — walk-forward evaluation + free-data re-sweep, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - `git status`: working tree clean (branch main, HEAD d27e0f7).
 - Full suite `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed (was 66; +5 new tests in tests/test_walk_forward.py).
