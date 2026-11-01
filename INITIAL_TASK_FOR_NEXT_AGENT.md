@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-01 — maintenance re-verification + handoff refresh, COMPLETE)
+## Status (session 2026-11-01 — maintenance re-verification + live free-data sweep + handoff refresh, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, HEAD f44fa7f).
+- `git status`: working tree clean (branch main, HEAD a2772e3).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 hashes verified unchanged and match HANDOFF.md exactly (all six files).
 - Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
