@@ -2,9 +2,9 @@
 
 Read `HANDOFF.md` first. Current priority is maintenance/documentation; the frozen baseline is preserved.
 
-## State verified this session (2026-11-01o)
+## State verified this session (2026-11-01h)
 
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.60s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.57s.
 - Baselines (artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json):
   - axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80.
   - Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD $626,994.56.
@@ -16,11 +16,11 @@ Read `HANDOFF.md` first. Current priority is maintenance/documentation; the froz
 - Frozen baseline hashes unchanged:
   - STRATEGY_RULES.txt: 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1
   - config/orb_mnq_15m_showcase.yaml: 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4
-- No transient verify artifacts in artifacts/ (only canonical + historical). Working tree clean.
+- Working tree clean. No transient verify artifacts.
 
 ## Prior agent task — complete
 
-This session verified tests pass, all hashes unchanged, baselines intact, artifacts clean. Free-data sweep re-run (GitHub API axb0306/cme-futures-ohlc MNQ commits, Kaggle, Yahoo Finance, Databento, FinzData, MarketParquet, historicalfuturesdata.com, Portara, FirstRate, TickTradingData, infoway.io, CME DataMine, investing.com, thinridge.io, arXiv, websearch) found **no new genuinely free MNQ 1min/15min source**. axb0306/cme-futures-ohlc last commit on the MNQ path remains `60abd3fb…` dated 2026-04-15T23:34:55Z. All paid candidates re-confirmed paid/key-gated. No code/strategy/parameter/data changes; frozen baseline preserved; no broker integration.
+Verified tests pass, all hashes unchanged, baselines intact. No new free MNQ 1min/15min sources discovered in this session. Frozen baseline preserved; no code/strategy/parameter changes; no broker integration.
 
 ## Bounded next steps
 
