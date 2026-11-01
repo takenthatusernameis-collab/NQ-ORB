@@ -144,3 +144,10 @@ All prior maintenance-verification sessions verified the same frozen state (full
 - Independent funnel cross-check re-run: 932 trading dates, 771 OR-built, 765 first breakouts, 688 pass filters -> engine trade count 688, matches exactly.
 - Verify artifacts deleted after comparison; working tree clean (HEAD 1b6408c). Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; no commit created.
 - No new free MNQ 1min/15min source identified; blockers unchanged.
+
+## Session log (2026-11-01 — maintenance verification)
+- Read durable handoff + initial task; re-ran full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 66 passed in 0.89s.
+- Re-computed SHA-256 hashes — all match recorded values (STRATEGY_RULES.txt v1.0 6d3258c3…, config 2a6c5ff8…, raw/MNQ_15min.csv f417f22d…, raw/MNQ_1min.csv 129623f4…, raw/MNQ_1min_frontmonth.csv edbadc73…, raw/MNQ_15min_frontmonth.csv 7e129ae3…).
+- Working tree clean (HEAD 6bd114d). No code/strategy/parameter changes; frozen baseline preserved; no broker integration.
+- No new free MNQ 1min/15min source identified; blockers unchanged (insufficient depth for robust walk-forward/OOS, negative under full costs; axb0306 roll/adjustment caveat noted).
+- HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated with this session's evidence; next task carried forward unchanged.
