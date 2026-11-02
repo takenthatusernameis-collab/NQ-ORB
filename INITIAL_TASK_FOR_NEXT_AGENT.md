@@ -2,11 +2,11 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, up to date with origin/main, HEAD d1c5bfb).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD d764674).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
-- SHA-256 recomputed from disk; all six match recorded values exactly (STRATEGY_RULES.txt 6d3258c3…, config 2a6c5ff8…, raw/MNQ_15min.csv f417f22d…, raw/MNQ_1min.csv 129623f4…, raw/MNQ_1min_frontmonth.csv edbadc73…, raw/MNQ_15min_frontmonth.csv 7e129ae3…).
-- Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80 (trades sha256 ce389da2…); Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56 (trades sha256 7251e4a9…).
-- Walk-forward verified: axb0306 3 windows all negative (-$10,053.14, -$21,922.10, -$23,058.98); Kaggle 8 windows all negative (-$178,375.24 .. -$70,637.24).
+- SHA-256 verified unchanged (all six hashes match recorded values exactly).
+- Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
+- Walk-forward verified: axb0306 3 windows all negative; Kaggle 8 windows all negative.
 - Bounded free-data re-sweep (live, 2026-11-02): no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
