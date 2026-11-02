@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main; HEAD f3c3996.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> NOT RUN (pytest not installed in environment; prior recorded 71 passed).
+## Status (session 2026-11-02 — independent re-verification from a fresh process, COMPLETE)
+- On branch main; working tree clean; up to date with origin/main; HEAD a934119.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed** (re-confirmed this session; pytest/pandas/numpy had to be installed to user site first: `pip3 install --user pytest pandas numpy`).
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3…, config 2a6c5ff8…, raw/MNQ_15min.csv f417f22d7…, raw/MNQ_1min.csv 129623f45…, raw/MNQ_1min_frontmonth.csv edbadc731…, raw/MNQ_15min_frontmonth.csv 7e129ae37…).
 - Canonical artifacts verified present on disk: artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json, artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json, artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json — axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD $626,994.56.
 - Walk-forward artifacts present: artifacts/walk_forward_axb0306.json (3 windows), artifacts/walk_forward_kaggle.json (8 windows); all test windows negative on both sources.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
-- Prior task completed (maintenance re-verification only; no experiments, no data changes).
+- Prior task completed (re-verification only; no experiments, no data changes).
 
 ## Bounded default task
 1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`.
@@ -29,6 +29,7 @@
 ## Blockers / next concrete work
 - Research blocked on data depth; both baselines negative under full costs; all walk-forward windows negative. Highest-value action remains a bounded free-data re-sweep, not parameter fitting.
 - axb0306 roll/adjustment method: single-contract MNQ.M26, no roll inside the sample; repo update script hard-codes one contract ID — re-verify hash and price continuity before using any re-downloaded file.
+- Kaggle front-month sample ends 2025-11-12; the final ~2.9 months (2025-08-29 onward, 38 trades) are the preserved untouched out-of-sample interval. No free source extends this without purchase.
 
 ## Why this task (for the next agent)
 This is a maintenance/re-verification session, not a feature session. Do NOT tune stops, targets, filters, sizing, or session times — STRATEGY_RULES.txt v1.0 is frozen. The only authorized work is (a) re-verifying the frozen baseline is intact and reproducible, (b) watching for a new genuinely free MNQ 1min/15min data source (record provenance + SHA-256 before any use), and (c) refreshing HANDOFF.md / this file. All prior baselines are negative under full costs across every walk-forward window; the constraint is data depth (~3 months axb0306, ~3 years Kaggle front-month), not code.
