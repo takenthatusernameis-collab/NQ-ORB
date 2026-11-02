@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification + live upstream + bounded free-data re-sweep, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- On branch main; working tree clean; up to date with origin/main (HEAD 136d534).
+- On branch main; working tree clean; up to date with origin/main (HEAD c7a86d1).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 recomputed from disk; all six hashes match recorded values exactly (STRATEGY_RULES.txt 6d3258c3...; config 2a6c5ff8...; raw/MNQ_15min.csv f417f22d...; raw/MNQ_1min.csv 129623f4...; raw/MNQ_1min_frontmonth.csv edbadc73...; raw/MNQ_15min_frontmonth.csv 7e129ae3...).
 - Baselines re-run from a fresh process and normalized-SHA-256 diffed: trades IDENTICAL (axb0306 3d1b1bf0fa1b0dca, kaggle 71b457359c0937c3) and metrics IDENTICAL (axb0306 4be5d33a77071eb5, kaggle c983dfccc3ced8f7). Throwaway outputs deleted; `git diff --stat` EMPTY.
