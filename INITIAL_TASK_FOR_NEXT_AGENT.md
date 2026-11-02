@@ -1,7 +1,7 @@
 # Initial Task for Next Agent
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main (HEAD e069b59).
+- On branch main; working tree clean; up to date with origin/main (HEAD 4800877).
 - Tests: 71 passed (`PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`).
 - SHA-256 verified: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3…, config 2a6c5ff8…, raw files unchanged).
 - Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
@@ -32,4 +32,3 @@
 
 ## Why this task (for the next agent)
 This is a maintenance/re-verification session, not a feature session. Do NOT tune stops, targets, filters, sizing, or session times — STRATEGY_RULES.txt v1.0 is frozen. The only authorized work is (a) re-verifying the frozen baseline is intact and reproducible, (b) watching for a new genuinely free MNQ 1min/15min data source (record provenance + SHA-256 before any use), and (c) refreshing HANDOFF.md / this file. All prior baselines are negative under full costs across every walk-forward window; the constraint is data depth (~3 months axb0306, ~3 years Kaggle front-month), not code.
-"
