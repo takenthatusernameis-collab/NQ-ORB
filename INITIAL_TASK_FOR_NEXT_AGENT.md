@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, up to date with origin/main, HEAD e4955e9).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 7c5bc11).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 verified unchanged (all six hashes match recorded values exactly).
 - Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
@@ -26,5 +26,3 @@
 - Do not launch nested Kilo sessions/duplicate scheduled workflows/additional GitHub Actions activations.
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal failure.
-" filePath">
-/home/runner/work/NQ-ORB/NQ-ORB/INITIAL_TASK_FOR_NEXT_AGENT.md
