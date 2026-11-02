@@ -1,10 +1,10 @@
 # Initial Task for Next Agent
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main; HEAD 70e4d45.
-- Tests: 71 passed (`PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`).
+- On branch main; working tree clean; up to date with origin/main; HEAD 8d6f188.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> NOT RUN THIS SESSION (pytest not installed in environment; last recorded 71 passed).
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3…, config 2a6c5ff8…, raw/MNQ_15min.csv f417f22d7…, raw/MNQ_1min.csv 129623f45…, raw/MNQ_1min_frontmonth.csv edbadc731…, raw/MNQ_15min_frontmonth.csv 7e129ae37…).
-- Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD $626,994.56.
+- Canonical artifacts verified present on disk: artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json, artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json, artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json — axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD $626,994.56.
 - Walk-forward artifacts present: artifacts/walk_forward_axb0306.json (3 windows), artifacts/walk_forward_kaggle.json (8 windows); all test windows negative on both sources.
 - Live upstream check (2026-11-02): GitHub API confirms axb0306/cme-futures-ohlc MNQ path still holds exactly the same 8 files (latest commit 2026-04-15T23:34:55Z, no intraday extension). Live files byte-identical to committed copies. No new genuinely free MNQ 1min/15min source found.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
