@@ -1,7 +1,7 @@
 # Initial Task for Next Agent
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main.
+- On branch main; working tree clean; up to date with origin/main (HEAD 8b36c07).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 recomputed from disk; all six hashes match recorded values exactly.
 - Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
