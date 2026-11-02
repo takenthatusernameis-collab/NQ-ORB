@@ -230,6 +230,15 @@
 - Walk-forward artifacts present: all test windows negative on both sources.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
+## Session log (2026-11-02 — maintenance re-verification, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 85c2cc2).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly.
+- Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
+- Walk-forward artifacts present: all test windows negative on both sources.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+
 ## Canonical artifacts (source of truth)
 - artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json — axb0306: 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.492, max DD $37,491.80.
 - artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json — Kaggle front-month: 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.227, max DD ~$626,994.56.
