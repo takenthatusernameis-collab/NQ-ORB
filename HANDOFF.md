@@ -2088,3 +2088,11 @@ All prior maintenance-verification sessions verified the same frozen state (full
 - Bounded free-data re-sweep (live, 2026-11-02): no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume). Known paid/key-gated: FirstRate Data, Kibot, MarketParquet, Portara, historicalfuturesdata.com samples only, Databento GLBX.MDP3 (key-gated/credit), Barchart Premier, CME DataMine. Yahoo Finance MNQ=F daily only. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 - Prior task completed (maintenance re-verification only; no experiments, no data changes).
+
+## Session log (2026-11-02 — maintenance re-verification, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 511df13).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Canonical artifacts verified present on disk; frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+- Prior task completed (maintenance re-verification only; no experiments, no data changes).
