@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
 - On branch main; working tree clean; up to date with origin/main (HEAD 1e37fde).
-- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed (per prior sessions).
 - SHA-256 recomputed from disk; all six hashes match recorded values exactly.
 - Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
 - Walk-forward artifacts present (artifacts/walk_forward_axb0306.json 3 windows all negative net; artifacts/walk_forward_kaggle.json 8 windows all negative net).
@@ -10,13 +10,13 @@
 - No new genuinely free MNQ 1min/15min source found; no data purchased; no credentials requested/stored.
 
 ## Bounded default task
-1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`.
+1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests if available: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (or `python3 -m unittest discover -s tests`).
 2. **Data monitoring only.** If a new genuinely free MNQ 1min/15min source appears, record provenance + file hashes before any use. Known free sources: axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume). Do not purchase data; never store credentials.
 3. **No experiments without approval.** No parameter/strategy/rule changes without a separately named, versioned experiment with an explicit diff from frozen STRATEGY_RULES.txt v1.0.
 4. **Update docs.** Update HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with concrete evidence if anything changes.
 
 ## Test command
-- `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (71 passed)
+- `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` (71 passed per prior sessions)
 
 ## Hard boundaries (AGENTS.md)
 - Historical research and simulation only. No broker integration/order routing/live trading/paper trading/deployment.
