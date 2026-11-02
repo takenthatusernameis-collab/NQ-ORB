@@ -1,5 +1,18 @@
 # NQ ORB — Durable Handoff
 
+## Session log (2026-11-02 — independent maintenance re-verification, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 29d2f8c).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271.
+- Baselines re-run from a fresh process (`PYTHONPATH=... python3 -m orb.runner --source axb0306 --prefix reverify_axb`, `--source kaggle --prefix reverify_kag`) and diffed via normalized JSON SHA-256: trades IDENTICAL and metrics IDENTICAL for both sources. Throwaway `artifacts/trades_reverify_*.json` / `metrics_reverify_*.json` deleted; working tree clean.
+- Walk-forward re-derived and byte-diffed: `scripts/walk_forward.py --source axb0306 --window-trades 20 --step-trades 10` -> 3 windows all negative net (-$10,053.14 / -$21,922.10 / -$23,058.98); `--source kaggle --window-trades 150 --step-trades 50` -> 8 windows all negative net (-$178,375.24 .. -$70,637.24). `git diff --stat artifacts/` EMPTY.
+- Ledger integrity re-verified directly from canonical artifacts: zero multi-trade days on both samples; latest exit 10:00 ET on both (<= 15:55 ET); risk_points == 0.4*atr14 to within 0.0 ticks on all 748 trades; atr_pct within [0.10, 0.60] on every trade; rvol >= 1.0 on every trade; exit-reason splits target/stop/stop_first_ambiguous only (axb0306 42/12/6, kaggle 478/130/80); long/short axb0306 33/27, kaggle 359/329; risk_usd_planned == contracts*risk_points*2 on every trade (respects the $3,000 budget after floor sizing).
+- Live upstream check: GitHub API confirms axb0306/cme-futures-ohlc MNQ path still holds exactly the same 8 files (latest commit 2026-04-15T23:34:55Z, no intraday extension). Re-downloaded both live files via curl and re-hashed: raw/MNQ_1min.csv 129623f45308… and raw/MNQ_15min.csv f417f22d… — both byte-identical to committed local copies (no silent upstream change).
+- Bounded free-data re-sweep (live, 2026-11-02): MarketParquet MNQ ($79 one-time, 2019-05-06..2026-10-23, ratio-adjusted continuous; free tier = ~1yr daily only), Portara (paid), Yahoo Finance MNQ=F (daily only, 1-min last 30 days), Databento GLBX.MDP3 (key-gated + credit) — no new genuinely free MNQ 1min/15min source found; no data purchased; no credentials requested/stored.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+
 ## Session log (2026-11-02 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - `git status`: working tree clean (branch main, up to date with origin/main, HEAD ba87dac).
