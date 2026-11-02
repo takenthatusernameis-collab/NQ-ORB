@@ -2,11 +2,11 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification + bounded free-data re-sweep, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 1dd331f).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 611884f).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 recomputed from disk; all six match recorded values exactly (STRATEGY_RULES.txt 6d3258c3…, config 2a6c5ff8…, raw/MNQ_15min.csv f417f22d…, raw/MNQ_1min.csv 129623f4…, raw/MNQ_1min_frontmonth.csv edbadc73…, raw/MNQ_15min_frontmonth.csv 7e129ae3…).
 - Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80 (trades sha256 ce389da2…); Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56 (trades sha256 7251e4a9…). Walk-forward: all windows negative on both sources (axb0306 3 windows, Kaggle 8 windows).
-- Bounded free-data re-sweep (live, 2026-11-02): no new genuinely free MNQ 1min/15min source found; axb0306 GitHub path unchanged; Kaggle brandenmorris already ingested (ends 2025-11-12); tgtanalytics NQ big contract excluded. All other sources paid/key-gated/daily-only. No data purchased; no credentials requested/stored.
+- Bounded free-data re-sweep (live, 2026-11-02): GitHub axb0306/cme-futures-ohlc MNQ path unchanged — exactly 8 files, intraday range 2026-01-20..2026-04-15, latest commit 60abd3fb 2026-04-15T23:34:55Z (no new intraday extension). No new genuinely free MNQ 1min/15min source found (Kaggle brandenmorris already ingested, ends 2025-11-12; tgtanalytics NQ big contract excluded; all other sources paid/key-gated/daily-only). No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
