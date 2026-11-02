@@ -2,11 +2,11 @@
 
 ## Status (session 2026-11-02 — maintenance re-verification + bounded free-data re-sweep, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 674c523).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD b3fc5bc).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 verified unchanged (all six hashes match recorded values exactly): STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
-- Canonical artifacts verified: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
-- Baseline re-run from a fresh process and byte-diffed: IDENTICAL. Walk-forward re-derived and byte-diffed: IDENTICAL (axb0306 3 windows all negative net; Kaggle 8 windows all negative net).
+- Baselines re-run from a fresh process and byte-diffed (normalized JSON SHA-256): IDENTICAL for both sources. Walk-forward re-derived and byte-diffed: IDENTICAL (axb0306 3 windows all negative net; Kaggle 8 windows all negative net).
+- Live free-data re-sweep (2026-11-02): GitHub axb0306/cme-futures-ohlc MNQ path unchanged (8 files, latest commit 2026-04-15T23:34:55Z); re-downloaded 1min/15min files byte-identical to committed copies. Live websearch re-scan: no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume); FirstRate Data ($99.95/yr), Kibot ($150–$520 one-time), MarketParquet ($79), Portara, historicalfuturesdata.com ($59/yr), Databento (key-gated), Barchart (Premier), Yahoo (daily only) all paid/key-gated. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
