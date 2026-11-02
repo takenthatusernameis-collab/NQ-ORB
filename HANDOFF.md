@@ -164,8 +164,19 @@
 - Walk-forward verified: axb0306 3 windows all negative net; Kaggle 8 windows all negative net.
 - Bounded free-data re-sweep (live, 2026-11-02): no new genuinely free MNQ 1min/15min source found beyond axb0306 (~3 months, single-contract MNQ.M26, unadjusted) and Kaggle front-month (~3 years, unadjusted front-month by max volume); Yahoo daily only. No data purchased; no credentials requested/stored.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
-
 ">
+
+## Session log (2026-11-02 — maintenance re-verification + bounded free-data re-sweep, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 674c523).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
+- SHA-256 recomputed from disk; all six match recorded values exactly: STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
+- Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
+- Baseline re-run from a fresh process (`python3 -m orb.runner --source axb0306`) and byte-diffed: trades and metrics IDENTICAL to canonical artifacts. Throwaway outputs (`artifacts/trades_full.json`, `artifacts/metrics_full.json`) restored via `git checkout -- artifacts/`; working tree clean.
+- Walk-forward re-derived and byte-diffed: `scripts/walk_forward.py --source axb0306 --window-trades 20 --step-trades 10` -> 3 windows all negative net (-$10,053.14, -$21,922.10, -$23,058.98); `--source kaggle --window-trades 150 --step-trades 50` -> 8 windows all negative net (-$178,375.24 .. -$70,637.24). Both outputs byte-identical to committed artifacts.
+- Bounded free-data re-sweep (live, 2026-11-02): GitHub API confirms axb0306/cme-futures-ohlc MNQ path still holds exactly the same 8 files (latest commit 2026-04-15T23:34:55Z, no intraday extension). Live websearch re-scan: Kaggle brandenmorris MNQ unchanged (CC BY 4.0, Databento GLBX.MDP3, 2022-11-16..2025-11-12, already ingested); Kaggle brandenmorris MNQ-1m-Q4-2022--Q4-2025 (287.66 MB, same provenance, not separately ingested — overlaps existing Kaggle front-month); vbloise Micro Emini NASDAQ daily only (excluded); youneseloiarm Nasdaq-CME-Future-NQ is NQ big contract (excluded); choweric E-mini Nasdaq 2000-2022 is NQ daily only (excluded); juliancamilovilla data_set_nq_2m is NQ 2-min (excluded); dougeedavis Fifteen Minute NQ is NQ (excluded); tzamrik Nasdaq-100 1-Minute Session Bars 2022-2025 is NQ (excluded); FinzData ($49 one-time MNQ intraday), FirstRate Data ($99.95/yr), MarketParquet ($79 one-time), Portara (£330-£1,500 paid), historicalfuturesdata.com ($59/yr per year, free 10s sample only), Databento (key-gated + $125 credit expiring), Barchart (Premier only for intraday), Yahoo Finance (daily only), CME DataMine (priced per dataset), dbn-cache / Databento free tier (key-gated) — no new genuinely free MNQ 1min/15min source found; no data purchased; no credentials requested/stored.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+
 - STRATEGY_RULES.txt is the authoritative, frozen strategy definition (v1.0).
 - PROMPT.md specifies the research workflow.
 - AGENTS.md defines research, auditability, and no-live-trading constraints.
