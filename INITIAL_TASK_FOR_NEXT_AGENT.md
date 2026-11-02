@@ -1,14 +1,12 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-02 — maintenance re-verification + live upstream + bounded free-data re-sweep, COMPLETE)
+## Status (session 2026-11-02 — maintenance re-verification, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
-- `git status`: clean (branch main, up to date with origin/main, HEAD a50b2f0).
+- `git status`: working tree clean (branch main, up to date with origin/main, HEAD 54953bd).
 - Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed.
 - SHA-256 recomputed from disk; all six hashes match recorded values exactly (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
-- Baselines re-run from a fresh process and SHA-256 diffed: trades and metrics IDENTICAL for both sources (axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56). Throwaway reverify_* outputs deleted; `git diff --stat` EMPTY.
-- Walk-forward re-derived and byte-diffed: axb0306 3 windows all negative net (-$10,053.14 / -$21,922.10 / -$23,058.98); Kaggle 8 windows all negative net (-$178,375.24 .. -$70,637.24). `git diff --stat artifacts/` EMPTY.
-- Live upstream check (2026-11-02): GitHub API confirms axb0306/cme-futures-ohlc MNQ path still holds exactly the same 8 files (latest commit 2026-04-15T23:34:55Z, no intraday extension). Re-downloaded both live files via curl and re-hashed: raw/MNQ_1min.csv 129623f45308… and raw/MNQ_15min.csv f417f22d… — both byte-identical to committed local copies (no silent upstream change).
-- Bounded free-data re-sweep (live, 2026-11-02): no new genuinely free MNQ 1min/15min source found. Paid/key-gated: FirstRate Data ($99.95/yr), Kibot ($520 1min / $150 15min one-time), MarketParquet ($79), Portara ($220+), historicalfuturesdata.com ($59/yr), Databento (key-gated + $125 credit), Barchart (Premier only), Yahoo (daily only), Schwab (broker platform). dbn-cache (MIT) is the only free path to new MNQ 1min bars and requires a Databento API key (key-gated) — no credentials requested, none stored. No data purchased.
+- Canonical artifacts verified from disk: axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD ~$626,994.56.
+- Walk-forward artifacts present (artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json): all test windows negative on both sources.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
 
 ## Bounded next task
