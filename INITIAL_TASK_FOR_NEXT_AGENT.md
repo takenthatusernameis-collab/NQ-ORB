@@ -1,14 +1,14 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-03 — maintenance re-verification, one-hundred-fifty-third pass, COMPLETE)
-- Branch main; working tree clean; up to date with origin/main (verified via `git fetch origin --prune`: local HEAD 5385767 == origin/main 5385767). Recent commits docs-only checkpoints (5385767, 54aa273, 928c472, 938ee6a, 7654feb, f02d0fc, 02310cb, 46397d0), no code/data/config/artifact changes.
+## Status (session 2026-11-03 — maintenance re-verification, one-hundred-fifty-fourth pass, COMPLETE)
+- Branch main; working tree clean; up to date with origin/main (verified via `git fetch origin --prune`: local HEAD b040741 == origin/main b040741). Recent commits docs-only checkpoints (b040741, 5385767, 54aa273, 928c472, 938ee6a, 7654feb, f02d0fc, 02310cb, 46397d0), no code/data/config/artifact changes.
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1, config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4, raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37, raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99, raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7, raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts present + parseable, SHA-256 identical to recorded: metrics_axb0306.json e06f9dd0..., metrics_kaggle.json a6ae1006..., trades_axb0306.json ce389da2..., trades_kaggle.json 7251e4a9..., walk_forward_axb0306.json a91cf29d (3 windows), walk_forward_kaggle.json cf841997 (8 windows). All parse cleanly.
 - Walk-forward: axb0306 all 3 test windows negative (test net -$10,053.14, -$21,922.10, -$23,058.98); Kaggle all 8 test windows negative (test net -$178,375.24, -$173,264.64, -$168,315.48, -$134,617.64, -$122,071.62, -$70,637.24, -$104,755.42, -$114,820.72).
 - Raw date ranges unchanged: axb0306 ends 2026-04-15; Kaggle front-month ends 2025-11-12.
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src /tmp/controller-tests-venv/bin/python -m pytest tests -q` -> 71 passed in 0.87s.
 - Frozen baseline preserved; no code/strategy/parameter changes; working tree clean.
-- Free-data monitoring 2026-11-03 (153rd pass sweep): no new genuinely free MNQ 1min/15min source found. Same sources checked as prior pass — none free for full MNQ 1min/15min depth/coverage.
+- Free-data monitoring 2026-11-03 (154th pass sweep): no new genuinely free MNQ 1min/15min source found. Same sources checked as prior pass — none free for full MNQ 1min/15min depth/coverage.
 
 ## Tasks (maintenance only)
 1. **Re-verify** repo state (git status/log/fetch), file hashes vs recorded values, canonical artifacts parseable, walk-forward present and all test windows negative. Run tests if available.
