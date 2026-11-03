@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-03 — maintenance re-verification, seventh pass, COMPLETE)
+## Status (session 2026-11-03 — maintenance re-verification, eighth pass, COMPLETE)
 - On branch main; working tree clean; up to date with origin/main; HEAD 43b968a (chore(kilo): checkpoint agent session).
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed**.
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3…, config/orb_mnq_15m_showcase.yaml 2a6c5ff8…, raw/MNQ_15min.csv f417f22d7…, raw/MNQ_1min.csv 129623f45…, raw/MNQ_1min_frontmonth.csv edbadc731…, raw/MNQ_15min_frontmonth.csv 7e129ae37…).
