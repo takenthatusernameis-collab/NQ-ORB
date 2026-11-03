@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-03 — maintenance re-verification, sixty-third pass, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main; HEAD e7c45d7 (chore(kilo): checkpoint agent session).
+## Status (session 2026-11-03 — maintenance re-verification, sixty-fourth pass, COMPLETE)
+- On branch main; working tree clean; up to date with origin/main; HEAD cf3c3fe (chore(kilo): checkpoint agent session — maintenance re-verification (sixty-third pass)).
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed**.
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1, config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4, raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37, raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99, raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7, raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Raw date ranges re-checked from disk: axb0306 series ends 2026-04-15 (1min last bar 2026-04-15T23:29, 15min last bar 2026-04-15T23:15); Kaggle front-month ends 2025-11-12 (1min 2025-11-12T23:59, 15min 2025-11-12T23:45). Unchanged from prior captures.
 - Canonical artifacts verified present + parseable; walk-forward artifacts verified programmatically (all windows negative on both sources).
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
-- Source re-checks this pass: GitHub API (live) — axb0306/cme-futures-ohlc MNQ-path latest commit still `60abd3fb…` dated 2026-04-15T23:34:55Z, no extension. Kaggle — brandenmorris/mnq-1-minute-data-5132025-11122025 unchanged (v1, coverage to 2025-11-12), the source behind our front-month series; no newer MNQ version. Free-data re-sweep: no new genuinely free MNQ 1min/15min source (FinzData $49, FirstrateData $99.95/yr, HistoricalFuturesData $59/yr, Portara paid, Databento $125 credit expiring/unadjusted, MarketParquet $79, Yahoo 1m ~30 days, Kibot paid, CME DataMine samples only). Kaggle NQ datasets found are the E-mini NQ contract ($20/point), not MNQ — not a new MNQ source. No data purchased; no credentials requested/stored.
+- Free-data re-sweep: no new genuinely free MNQ 1min/15min source found. No data purchased; no credentials requested/stored.
 
 ## Bounded default task
 1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`.
