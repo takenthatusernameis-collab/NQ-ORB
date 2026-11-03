@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-03 — maintenance re-verification, twenty-seventh pass, COMPLETE)
-- On branch main; working tree clean; up to date with origin/main; HEAD fddfc0d.
+## Status (session 2026-11-03 — maintenance re-verification, twenty-eighth pass, COMPLETE)
+- On branch main; working tree clean; up to date with origin/main; HEAD 76e3de6.
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed**.
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1, config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4, raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37, raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99, raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7, raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts verified present on disk: artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json, artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json, artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json — axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD $626,994.56.
 - Walk-forward artifacts present; all windows negative on both sources (axb0306 3/3, Kaggle 8/8).
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
-- Free-data re-sweep (web search 2026-11-03): no new genuinely free MNQ 1min/15min source. Full-history providers remain paid (historicalfuturesdata $59/yr/year, FinzData $49 one-time, FirstRateData $99.95/yr after 1 month, MarketParquet paid archive beyond ~365 free daily + one sample week, Portara/CQG paid, Databento paid account with expiring $125 credit, Barchart Premier required for intraday, CME DataMine priced per dataset). Free tiers (Yahoo Finance 1m limited to ~30 days, AlgoSpecial USTEC index CFD — not a futures contract, M1 only 100k most-recent candles from 2026-07-01, Kaggle NQ uploads with unknown provenance/licence) are shallower or not comparable to the existing Kaggle front-month MNQ series (~3 years, 1,059,204 1min rows / 70,614 15min rows). No data purchased; no credentials requested/stored.
+- Free-data re-sweep: no new genuinely free MNQ 1min/15min source. No data purchased; no credentials requested/stored.
 
 ## Bounded default task
 1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`.
