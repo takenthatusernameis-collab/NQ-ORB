@@ -7,7 +7,6 @@
 - Canonical artifacts verified present on disk: artifacts/metrics_axb0306.json, artifacts/trades_axb0306.json, artifacts/metrics_kaggle.json, artifacts/trades_kaggle.json, artifacts/walk_forward_axb0306.json, artifacts/walk_forward_kaggle.json — axb0306 60 trades / 70.00% WR / gross -$7,662.00 / net -$31,637.98 / PF 0.4917 / max DD $37,491.80; Kaggle front-month 688 trades / 64.83% WR / gross -$140,899.00 / net -$626,525.96 / PF 0.2271 / max DD $626,994.56.
 - Walk-forward artifacts present; all test windows negative on both sources.
 - Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
-- Prior task completed (maintenance re-verification only; no experiments, no data changes).
 
 ## Bounded default task
 1. **Maintenance only.** Re-verify repo state (git status, file hashes, canonical artifacts, walk-forward artifacts). Run tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q`.
