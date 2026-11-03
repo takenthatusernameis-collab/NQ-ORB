@@ -45,7 +45,7 @@ def walk_forward(trades, window_trades, step_trades):
 
 def main():
     parser = argparse.ArgumentParser(description="Walk-forward evaluation")
-    parser.add_argument("--source", default="kaggle", choices=["axb0306", "kaggle"])
+    parser.add_argument("--source", default="kaggle", choices=["axb0306", "kaggle", "getdata"])
     parser.add_argument("--window-trades", type=int, default=150)
     parser.add_argument("--step-trades", type=int, default=50)
     parser.add_argument("--out", default="artifacts/walk_forward.json")

@@ -1,0 +1,66 @@
+{
+  "source": "getdata",
+  "total_trades": 9,
+  "window_trades": 3,
+  "step_trades": 2,
+  "n_windows": 2,
+  "windows": [
+    {
+      "train_window": [
+        0,
+        3
+      ],
+      "test_window": [
+        3,
+        6
+      ],
+      "train": {
+        "count": 3,
+        "win_rate": 0.6666666666666666,
+        "net_pnl": -1645.14,
+        "gross_pnl": -721.0,
+        "profit_factor": 0.51079431915501
+      },
+      "test": {
+        "count": 3,
+        "win_rate": 0.3333333333333333,
+        "net_pnl": -6298.96,
+        "gross_pnl": -4984.5,
+        "profit_factor": 0.11416501189746242
+      },
+      "test_dates": {
+        "start": "2026-02-25",
+        "end": "2026-03-06"
+      }
+    },
+    {
+      "train_window": [
+        0,
+        5
+      ],
+      "test_window": [
+        5,
+        8
+      ],
+      "train": {
+        "count": 5,
+        "win_rate": 0.6,
+        "net_pnl": -4699.54,
+        "gross_pnl": -2713.5,
+        "profit_factor": 0.34991174533965597
+      },
+      "test": {
+        "count": 3,
+        "win_rate": 0.3333333333333333,
+        "net_pnl": -5800.68,
+        "gross_pnl": -4899.5,
+        "profit_factor": 0.12061343666430167
+      },
+      "test_dates": {
+        "start": "2026-03-06",
+        "end": "2026-04-09"
+      }
+    }
+  ],
+  "note": "Chronological rolling train/test split by trade index. The final test window is untouched by any parameter selection. No strategy or parameter changes were made; this reports the frozen baseline only."
+}

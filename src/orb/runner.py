@@ -279,15 +279,20 @@ def _resolve_paths(source: str):
         return ("raw/MNQ_15min.csv", "raw/MNQ_1min.csv")
     if source == "kaggle":
         return ("raw/MNQ_15min_frontmonth.csv", "raw/MNQ_1min_frontmonth.csv")
-    raise ValueError(f"Unknown source '{source}'. Use 'axb0306' or 'kaggle'.")
+    if source == "getdata":
+        # Free NQ 1m sample (getdata-finance), aggregated to 15m ET-anchored bars.
+        # NQ is a price-equivalent proxy for the MNQ showcase contract; see
+        # data/FEASIBILITY_REPORT.md and HANDOFF.md for provenance and validation.
+        return ("raw/NQ_15min_getdata.csv", "raw/NQ_1min_getdata.csv")
+    raise ValueError(f"Unknown source '{source}'. Use 'axb0306', 'kaggle', or 'getdata'.")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Run NQ ORB backtest")
     parser.add_argument("--prefix", default="full", help="output filename prefix")
     parser.add_argument("--source", default="axb0306",
-                        choices=["axb0306", "kaggle"],
-                        help="data source to run on (default: axb0306)")
+                         choices=["axb0306", "kaggle", "getdata"],
+                         help="data source to run on (default: axb0306)")
     args = parser.parse_args()
 
     loader = DataLoader(data_dir="data")

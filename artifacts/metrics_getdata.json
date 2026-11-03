@@ -1,0 +1,168 @@
+{
+  "trade_count": 9,
+  "completed_trades": 9,
+  "count": 9,
+  "wins": 5,
+  "losses": 4,
+  "win_rate": 0.5555555555555556,
+  "gross_pnl": -6493.0,
+  "net_pnl": -9782.02,
+  "costs": 3289.02,
+  "avg_r": -0.24409747843408067,
+  "expectancy_usd": -1086.891111111111,
+  "profit_factor": 0.2924582072365566,
+  "long_trades": 3,
+  "short_trades": 6,
+  "avg_win_r": 0.38037355361165204,
+  "avg_loss_r": 1.0246862684912466,
+  "avg_win_usd": 808.668,
+  "avg_loss_usd": 3456.34,
+  "long_short_split": {
+    "long": {
+      "count": 3,
+      "wins": 2,
+      "losses": 1,
+      "win_rate": 0.6666666666666666,
+      "gross_pnl": -834.0,
+      "net_pnl": -2148.46,
+      "costs": 1314.46,
+      "avg_r": -0.09291845713497583,
+      "expectancy_usd": -716.1533333333333,
+      "profit_factor": 0.4442967254668667,
+      "long_trades": 3,
+      "short_trades": 0,
+      "avg_win_r": 0.3823214773951128,
+      "avg_loss_r": 1.0433983261951532,
+      "avg_win_usd": 858.87,
+      "avg_loss_usd": 3866.2
+    },
+    "short": {
+      "count": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 0.5,
+      "gross_pnl": -5659.0,
+      "net_pnl": -7633.56,
+      "costs": 1974.56,
+      "avg_r": -0.3196869890836331,
+      "expectancy_usd": -1272.26,
+      "profit_factor": 0.23351366982757582,
+      "long_trades": 0,
+      "short_trades": 6,
+      "avg_win_r": 0.3790749377560115,
+      "avg_loss_r": 1.0184489159232777,
+      "avg_win_usd": 775.1999999999999,
+      "avg_loss_usd": 3319.72
+    }
+  },
+  "max_drawdown_usd": 12241.18,
+  "cagr": -0.999871276390235,
+  "capital_convention": "synthetic $10,000 starting capital; CAGR = (final/initial)^(1/years)-1 on net P&L",
+  "years_covered": 0.4271047227926078,
+  "sharpe_r": -5.2323189238258,
+  "sortino_r": -3.7813557679750223,
+  "sharpe_sortino_note": "annualized from per-trade R returns with factor sqrt(252); return frequency = per completed trade (max 1/day)",
+  "worst_day_usd": -3866.2,
+  "best_day_usd": 945.36,
+  "worst_day_date": "2026-02-25",
+  "best_day_date": "2026-02-04",
+  "monthly_net_pnl": {
+    "2026-02": -5511.34,
+    "2026-03": -5784.4800000000005,
+    "2026-04": 795.5999999999999,
+    "2026-07": 718.2
+  },
+  "yearly_net_pnl": {
+    "2026": -9782.019999999999
+  },
+  "exposure_pct": 0.0,
+  "exposure_note": "bars held / 27 possible 15-min bars per session (09:30-16:00 ET)",
+  "cost_sensitivity": [
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 0.8,
+      "net_pnl": -8837.716000000002
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.0,
+      "net_pnl": -9495.519999999999
+    },
+    {
+      "slip_mult": 0.5,
+      "cost_mult": 1.2,
+      "net_pnl": -10153.324
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 0.8,
+      "net_pnl": -9124.216000000002
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.0,
+      "net_pnl": -9782.019999999999
+    },
+    {
+      "slip_mult": 1.0,
+      "cost_mult": 1.2,
+      "net_pnl": -10439.824
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 0.8,
+      "net_pnl": -9410.716000000002
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.0,
+      "net_pnl": -10068.519999999999
+    },
+    {
+      "slip_mult": 1.5,
+      "cost_mult": 1.2,
+      "net_pnl": -10726.324
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 0.8,
+      "net_pnl": -9697.216000000002
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.0,
+      "net_pnl": -10355.019999999999
+    },
+    {
+      "slip_mult": 2.0,
+      "cost_mult": 1.2,
+      "net_pnl": -11012.824
+    }
+  ],
+  "signal_close_entry_sensitivity": [
+    {
+      "slip_mult": 0.5,
+      "gross_pnl": -6493.5,
+      "net_pnl": -9782.519999999999
+    },
+    {
+      "slip_mult": 1.0,
+      "gross_pnl": -6780.0,
+      "net_pnl": -10069.019999999999
+    },
+    {
+      "slip_mult": 1.5,
+      "gross_pnl": -7066.5,
+      "net_pnl": -10355.519999999999
+    },
+    {
+      "slip_mult": 2.0,
+      "gross_pnl": -7353.0,
+      "net_pnl": -10642.019999999999
+    }
+  ],
+  "signal_close_note": "Separate sensitivity only: fills at breakout-bar close instead of next-bar open. Not used for primary results.",
+  "data_source": "getdata",
+  "data_file_15m": "raw/NQ_15min_getdata.csv",
+  "data_file_1m": "raw/NQ_1min_getdata.csv"
+}
