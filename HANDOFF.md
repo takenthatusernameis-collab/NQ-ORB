@@ -1,5 +1,18 @@
 # NQ ORB — Durable Handoff
 
+## Session log (2026-11-03 — maintenance re-verification, eighty-first pass, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main; HEAD 61daa1a, chore(kilo): checkpoint agent session).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed**.
+- SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1, config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4, raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37, raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99, raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7, raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
+- **Live source re-verification performed this pass (not just prior claims):**
+  - axb0306/cme-futures-ohlc: latest MNQ commit still `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, dated **2026-04-15T23:34:55Z**. Re-downloaded both live files from raw.githubusercontent.com and confirmed byte-identical hashes: `MNQ_1min_20260120_20260415.csv` = 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99 (matches ours), `MNQ_15min_20260120_20260415.csv` = f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37 (matches ours). Our capture is current; no extension.
+  - Kaggle brandenmorris/mnq-1-minute-data-5132025-11122025: still **version 1 only** (CC-BY-4.0, 11.76 GB, coverage 2025-05-13→2025-11-12). No newer MNQ version located.
+- Free-data re-sweep (web search + provider page fetches 2026-11-03): no new genuinely free MNQ 1min/15min source. Confirmed unchanged: MarketParquet free = last ~365 days daily + one intraday sample week (Apr 6-10 2026); full intraday archive = $79 one-time (paid); Databento $125 credit expires after 6 months, continuous series unadjusted, UTC timestamps; FinzData MNQ = $49 one-time (paid); FirstrateData MNQ = $99.95/yr after 1 month (paid); HistoricalFuturesData MNQ = paid (free sample = 3 months only); CME DataMine = sample files only, full data priced; Yahoo Finance MNQ=F 1m limited to ~30 days, not back-adjusted; Barchart intraday = Premier only. Kaggle NQ datasets (tzamrik, tgtanalytics, youneseloiarm, juliancamilovilla) are the **E-mini NQ contract ($20/point), not MNQ** — not a new MNQ source. No data purchased; no credentials requested/stored.
+- Canonical artifacts present + parseable; walk-forward windows negative on both sources (re-derived programmatically this pass).
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+- Prior task completed (maintenance re-verification only; no experiments, no data changes).
+
 ## Session log (2026-11-03 — maintenance re-verification, eightieth pass, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - `git status`: working tree clean (branch main, up to date with origin/main; HEAD dcedeef, chore(kilo): checkpoint agent session).
