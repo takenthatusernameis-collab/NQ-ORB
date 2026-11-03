@@ -1,5 +1,19 @@
 # NQ ORB — Durable Handoff
 
+## Session log (2026-11-03 — maintenance re-verification, sixty-fifth pass, COMPLETE)
+- Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
+- `git status`: working tree clean (branch main, up to date with origin/main; HEAD 74883fb, chore(kilo): checkpoint agent session).
+- Full suite: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> **71 passed**.
+- SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1, config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4, raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37, raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99, raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7, raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
+- Raw date ranges re-checked from disk: axb0306 series ends 2026-04-15 (1min last bar 2026-04-15T23:29, 15min last bar 2026-04-15T23:15); Kaggle front-month ends 2025-11-12 (1min 2025-11-12T23:59, 15min 2025-11-12T23:45). Unchanged.
+- Canonical artifacts verified present + parseable (metrics_axb0306.json, metrics_kaggle.json, trades_axb0306.json, trades_kaggle.json, walk_forward_axb0306.json, walk_forward_kaggle.json); walk-forward artifacts verified programmatically — axb0306 3 windows all negative (test net -$10,053.14 / -$21,922.10 / -$23,058.98, test dates 2026-02-18→03-17, 2026-03-04→03-31, 2026-03-18→04-15); Kaggle front-month 8 windows all negative (test net -$178,375.24 / -$173,264.64 / -$168,315.48 / -$134,617.64 / -$122,071.62 / -$70,637.24 / -$104,755.42 / -$114,820.72).
+- Source re-checks performed this pass:
+  - GitHub API (live): axb0306/cme-futures-ohlc most recent commit on the MNQ path is still `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated **2026-04-15T23:34:55Z** ("Update 2026-04-15: 368 files updated"). No new intraday MNQ files; history not extended.
+  - Kaggle API (live): brandenmorris/mnq-1-minute-data-5132025-11122025 still **version 1 only** (creationDate 2025-11-17T21:12:48.097Z, 11.76 GB, CC-BY-4.0) — the source behind our front-month series. No newer MNQ version located.
+  - Free-data re-sweep (web search 2026-11-03): no new genuinely free MNQ 1min/15min source. MarketParquet MNQ intraday archive = $79 one-time (free tier = ~last 365 days daily + one sample week intraday Apr 6-10 2026); FirstrateData MNQ = $99.95/yr after 1 month free (paid); Kibot MNQ continuous 1min = $520 one-time (paid); Yahoo Finance MNQ=F 1m limited to ~30 days and not back-adjusted; Portara MNQ = paid custom build; Barchart NQ intraday = Premier member only (MNQ not separately listed); FlashAlpha MNQ = options analytics only, no OHLCV. Kaggle NQ datasets (tzamrik, tgtanalytics) remain the **E-mini NQ contract ($20/point), not MNQ** — not a new MNQ source. No data purchased; no credentials requested/stored.
+- Frozen baseline preserved; no code/strategy/parameter changes; no broker integration; working tree clean.
+- Prior task completed (maintenance re-verification only; no experiments, no data changes).
+
 ## Session log (2026-11-03 — maintenance re-verification, sixty-fourth pass, COMPLETE)
 - Prior agent task read from HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md; re-derived evidence rather than trusting prior claims.
 - `git status`: working tree clean (branch main, up to date with origin/main; HEAD cf3c3fe, chore(kilo): checkpoint agent session — maintenance re-verification (sixty-third pass)).
