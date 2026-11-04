@@ -2,14 +2,13 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD 2bfcdc6 (checkpoint); working tree clean; local HEAD matches origin/main (2bfcdc6); `git fetch origin --prune` up to date.
+- Branch main; HEAD 577edb7 (checkpoint); working tree clean; local HEAD matches origin/main (577edb7); `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8...; raw/MNQ_15min.csv f417f22d...; raw/MNQ_1min.csv 129623f4...; raw/MNQ_1min_frontmonth.csv edbadc73...; raw/MNQ_15min_frontmonth.csv 7e129ae3...).
 - Canonical artifacts present + parseable: 16 JSON artifacts in artifacts/ parse cleanly. Walk-forward axb0306: 3 windows all test negative (-$10,053.14, -$21,922.10, -$23,058.98). Walk-forward Kaggle: 8 windows all test negative (-$178,375.24 ... -$114,820.72).
 - Baselines from canonical artifacts: axb0306 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80, Sharpe -1.06, Sortino -0.67, expectancy -$527.30/trade. Kaggle front-month 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD ~$626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65/trade.
 - Raw date ranges unchanged: axb0306 ends 2026-04-15; Kaggle front-month ends 2025-11-12.
-- Optional reproducibility re-run (this pass): both baselines re-run from scratch reproduced canonical metrics exactly — axb0306 (60 trades, gross -$7,662.00, net -$31,637.98, PF 0.49167, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, expectancy -$527.30, WR 70.0%) and kaggle (688 trades, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD $626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65, WR 64.83%); per-trade ledgers identical for both. `_verify` copies removed after comparison.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.99s.
-- Frozen baseline preserved; no code/strategy/parameter changes. No leftover `_verify` copies.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.90s.
+- Frozen baseline preserved; no code/strategy/parameter changes.
 - Free-data monitoring (2026-11-04): no new genuinely free MNQ 1min/15min source found. All candidates paid. Kaggle remains the only free full 1min source (already ingested).
 
 ## Tasks (maintenance only)
