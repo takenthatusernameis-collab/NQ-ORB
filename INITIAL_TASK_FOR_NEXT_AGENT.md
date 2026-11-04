@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD 57e79a4; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: 57e79a4, 55222fb, b4f2750, efd0554, af48cac.
+- Branch main; HEAD eda9f46; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: eda9f46, 57e79a4, 55222fb, b4f2750, efd0554.
 - SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
 - Tests: pandas + pytest installed for verification; full suite `python3 -m pytest tests/` = 71 passed, 0 failed (30 orb strategy tests + 41 controller/workflow tests).
 - Artifacts: 20 JSON files in artifacts/ parse cleanly (README.md present); walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
