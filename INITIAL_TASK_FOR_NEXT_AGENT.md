@@ -1,14 +1,14 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-04 — maintenance re-verification, 278th pass COMPLETE)
+## Status (session 2026-11-04 — maintenance re-verification, 279th pass COMPLETE)
 
-- Branch main; HEAD 1a47c93 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
+- Branch main; HEAD 8034d12 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values.
-- Canonical artifacts present + parseable: 17 JSON artifacts in artifacts/ parse cleanly via `json.load`. Walk-forward axb0306: 3 windows all test negative (-$10,053.14, -$21,922.10, -$23,058.98). Walk-forward Kaggle: 8 windows all test negative (per canonical artifacts).
+- Canonical artifacts present + parseable: 17 JSON artifacts in artifacts/ parse cleanly. Walk-forward axb0306: 3 windows all test negative (-$10,053.14, -$21,922.10, -$23,058.98). Walk-forward Kaggle: 8 windows all test negative (per canonical artifacts).
 - Baselines from canonical artifacts: axb0306 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80, Sharpe -1.06, Sortino -0.67, expectancy -$527.30/trade. Kaggle front-month 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD ~$626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65/trade.
 - Raw date ranges unchanged: axb0306 ends 2026-04-15; Kaggle front-month ends 2025-11-12.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.91s.
-- Frozen baseline preserved; no code/strategy/parameter changes. Leftover `_verify` artifact copies removed.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.90s.
+- Frozen baseline preserved; no code/strategy/parameter changes. No leftover `_verify` copies.
 
 ## Tasks (maintenance only)
 1. **Re-verify** repo state (`git status`/`git log`/`git fetch origin --prune`), file hashes vs recorded values, canonical artifacts parseable, walk-forward present and all test windows negative. Run tests if available.
