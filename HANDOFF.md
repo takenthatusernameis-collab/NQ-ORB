@@ -48,6 +48,9 @@ Maintenance re-verification completed this session: verified git state (working 
 
 See INITIAL_TASK_FOR_NEXT_AGENT.md. Maintenance/re-verification only: verify repo state/hashes/artifacts/tests if available, monitor for genuinely free MNQ 1min/15min data (record provenance+SHA256 before use), do not tune/change strategy without separately named versioned experiment with explicit diff from frozen STRATEGY_RULES.txt v1.0. Update HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md with concrete evidence.
 
+## Prior task (completed 2026-11-04, this session — maintenance re-verification — HEAD eb3adae)
+
+Maintenance re-verification completed this session: verified git state (working tree clean before edits, HEAD eb3adae, fetched origin --prune, up to date with origin/main; recent commits eb3adae, b30ac25, 2c78bb4, 816ff34, 45ef5db). Confirmed all six file hashes match recorded values (STRATEGY_RULES.txt 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8...; raw/MNQ_15min.csv f417f22d...; raw/MNQ_1min.csv 129623f4...; raw/MNQ_1min_frontmonth.csv edbadc73...; raw/MNQ_15min_frontmonth.csv 7e129ae3...). Confirmed artifacts parse cleanly (17 files after removing 6 leftover reverify copies; all JSON parse OK). Walk-forward structures verified (axb0306 3 windows all negative; Kaggle 8 windows all negative). Full test suite `python3 -m pytest tests/` = 71 passed, 0 failed. Re-ran free-data monitoring sweep; no new genuinely free MNQ 1min/15min source found (Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12; axb0306 stale at 2026-04-15; all other candidates paid/key-gated/limited). Removed leftover reverify artifact copies. Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 (End of file)
 
 
