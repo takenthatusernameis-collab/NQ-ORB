@@ -1,10 +1,10 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE, HEAD 170ba02)
+## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE, HEAD e879e9b)
 
-- Branch main; HEAD 170ba02 (controller checkpoint); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: 170ba02, dbd938c, 298a32b, 7cf455c, cc185da.
+- Branch main; HEAD e879e9b (controller checkpoint); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: e879e9b, 170ba02, dbd938c, 298a32b, 7cf455c.
 - SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values.
-- Artifacts: 16 JSON in artifacts/; all parse cleanly (0 parse errors).
+- Artifacts: 17 files in artifacts/; all JSON parse cleanly.
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative. Kaggle 8 windows, all test_net_pnl negative.
 - Baselines unchanged: axb0306 60 trades, 70.0% WR, net -$31,637.98; Kaggle front-month 688 trades, 64.83% WR, net -$626,525.96.
 - Raw date ranges unchanged: axb0306 ends 2026-04-15 (stale); Kaggle front-month ends 2025-11-12.
@@ -38,3 +38,5 @@
 ## Why this task
 
 Maintenance/re-verification only. Do NOT tune stops/targets/filters/sizing/session times — STRATEGY_RULES.txt v1.0 frozen. Only (a) verify frozen baseline intact/reproducible, (b) watch for genuinely free MNQ 1min/15min data (provenance+SHA256 before use), (c) refresh HANDOFF.md/this file.
+" filePath">
+/home/runner/work/NQ-ORB/NQ-ORB/INITIAL_TASK_FOR_NEXT_AGENT.md
