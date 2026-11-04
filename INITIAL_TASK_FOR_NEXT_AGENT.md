@@ -2,9 +2,9 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD aeee116 (chore(kilo): checkpoint agent session); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
+- Branch main; HEAD 843dd53 (chore(kilo): checkpoint agent session); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.89s.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.92s.
 - Artifacts: 17 entries in artifacts/ parse cleanly (README.md + JSONs). Walk-forward: walk_forward_axb0306.json 3 windows all negative; walk_forward_kaggle.json 8 windows all negative.
 - Frozen baseline preserved; no code/strategy/parameter changes.
 
