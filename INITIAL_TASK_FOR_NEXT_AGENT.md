@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD b3fe06c (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
+- Branch main; HEAD a07f7d1 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values.
 - Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.90s.
 - Artifacts: 16 JSON files in artifacts/ parse cleanly (17 directory entries incl. README.md).
