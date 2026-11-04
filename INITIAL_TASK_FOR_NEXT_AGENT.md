@@ -2,11 +2,11 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD e240cc5; working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: e240cc5, eda9f46, 57e79a4, 55222fb, b4f2750, efd0554.
+- Branch main; HEAD 619dc61 (chore(kilo): checkpoint agent session, one ahead of prior e240cc5); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: 619dc61, e240cc5, eda9f46, 57e79a4, 55222fb, b4f2750.
 - SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
 - Tests: pandas + pytest installed for verification; full suite `python3 -m pytest tests/` = 71 passed, 0 failed (30 orb strategy tests + 41 controller/workflow tests).
 - Artifacts: 20 JSON files in artifacts/ parse cleanly (README.md present); walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
-- Baselines (canonical): axb0306 net -$31,637.98, 60 trades; Kaggle front-month net -$626,525.96, 688 trades (metrics match canonical artifacts).
+- Baselines re-verified reproducible from scratch (runner re-run, recheck copies removed after comparison): axb0306 net -$31,637.98, 60 trades; Kaggle front-month net -$626,525.96, 688 trades (all key metrics match canonical artifacts exactly).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data re-scan unchanged: no new genuinely free MNQ 1min/15min source. axb0306 ends 2026-04-15 (stale); Kaggle front-month ends 2025-11-12 (CC BY 4.0). All other candidates paid/key-gated/limited (MarketParquet $79 one-time full archive; free = daily-only + 1-week sample; FirstRateData $99.95/yr; HistoricalFuturesData paid; Kibot $520-$820; Portara paid; Databento key-gated; Yahoo 30-day 1min/daily-only; GetData $49.99 once; investing.com daily-only; CME DataMine sample-only/paid; Barchart Premier intraday; TickTradingData €200/instrument; FinzData $49 one-time; thinridge.io paid upstream; quantnet not free; getdata.finance NQ/NAS100 CFD not MNQ).
 
