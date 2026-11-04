@@ -2,15 +2,17 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD d60243d; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: d60243d, bca9f95, 7cfcca1, 4227f59, e69aaba.
-- SHA-256 verified from disk (2026-11-04): all six hashes match recorded values.
-- Tests: pytest/pandas not installed in env; unittest blocked on missing deps (orb tests import pandas). Core verification of state/artifacts/hashes completed.
-- Artifacts: 17 entries in artifacts/ (README.md + 16 JSONs) parse cleanly. Walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
+- Branch main; HEAD 0e565cd; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: 0e565cd, d60243d, bca9f95, 7cfcca1, 4227f59.
+- SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
+- Tests: pandas + pytest installed for verification; full suite `python3 -m pytest tests/` = 71 passed, 0 failed (30 orb strategy tests + 41 controller/workflow tests).
+- Artifacts: 17 entries in artifacts/ (README.md + 16 canonical JSONs) parse cleanly; `_verify` copies removed, count back to 17. Walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
+- Baselines re-run from scratch (`python3 src/orb/runner.py --source axb0306 --prefix verify_*` and `--source kaggle --prefix verify_*`) and confirmed metrics/trades match canonical artifacts exactly (axb0306 net -$31,637.98, 60 trades; kaggle net -$626,525.96, 688 trades). Verify copies removed after comparison.
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
+- Free-data re-scan unchanged: no new genuinely free MNQ 1min/15min source. axb0306 ends 2026-04-15 (stale); Kaggle front-month ends 2025-11-12 (CC BY 4.0). All other candidates paid/key-gated/limited.
 
 ## Tasks (maintenance only)
 
-1. **Re-verify** repo state (`git status`/`git log`/`git fetch origin --prune`), file hashes vs recorded values (the six tracked files listed in HANDOFF.md), canonical artifacts parseable, walk-forward present and all test windows negative. Run tests if available.
+1. **Re-verify** repo state (`git status`/`git log`/`git fetch origin --prune`), file hashes vs recorded values (the six tracked files listed in HANDOFF.md), canonical artifacts parseable, walk-forward present and all test windows negative. Run tests (`python3 -m pytest tests/`) if available.
 2. **Optional reproducibility**: re-run both baselines from scratch (`python3 src/orb/runner.py --source axb0306 --prefix <name>` and `--source kaggle --prefix <name>`) and confirm metrics/trades match canonical artifacts. Remove any `_verify` copies after comparison.
 3. **Data monitoring**: watch for a new genuinely free MNQ 1min/15min source. If found, record source/license/access constraints, retrieval time, contract symbols/months, session timezone, bar timestamps, gaps, roll rules, adjustment method, and SHA-256 before any use. Known free: axb0306 (stale, ends 2026-04-15) and Kaggle front-month (ends 2025-11-12). All other candidates paid/key-gated/limited (MarketParquet $79 one-time full archive; free = daily-only + 1-week sample; FirstRateData $99.95/yr; HistoricalFuturesData paid; Kibot $520-$820; Portara paid; Databento key-gated; Yahoo 30-day 1min/daily-only; GetData $49.99 once; investing.com daily-only; CME DataMine sample-only/paid; Barchart Premier intraday; TickTradingData €200/instrument; FinzData $49 one-time; thinridge.io paid upstream; quantnet not free; getdata.finance NQ/NAS100 CFD not MNQ).
 4. **No experiments without approval**: no parameter/strategy/rule changes without separately named, versioned experiment with explicit diff from frozen STRATEGY_RULES.txt v1.0.
