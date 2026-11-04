@@ -44,3 +44,7 @@ Two live web searches executed this session: "free MNQ micro e-mini nasdaq 100 f
 ## Free-data monitoring log (2026-11-04, 258th pass)
 
 Repo re-verification complete, no changes made. `git fetch origin --prune` up to date; HEAD 9564ef6 (checkpoint after d9ff0ac); working tree clean. All six file SHA-256 hashes recomputed from disk match recorded values exactly. 20/20 canonical JSON artifacts parse via `json.load` (+ README.md). Walk-forward re-read unchanged: axb0306 3/3 negative; Kaggle 8/8 negative. Baselines unchanged. Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.94s. No new genuinely free MNQ 1min/15min source found; frozen baseline preserved.
+
+## Free-data monitoring log (2026-11-04, 259th pass)
+
+Repo re-verification complete, no changes made. `git fetch origin --prune` up to date; HEAD 88827b8 (checkpoint after 9564ef6); working tree clean. All six file SHA-256 hashes recomputed from disk match recorded values exactly. 20/20 canonical JSON artifacts parse via `json.load` (+ README.md). Walk-forward re-read unchanged: axb0306 3/3 negative; Kaggle 8/8 negative. Baselines unchanged. Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.98s. Free-data sweep: FinzData/MarketParquet/FirstRate/historicalfuturesdata.com all paid or free-limited (last 30 days daily / sample packs only); no new genuinely free MNQ 1min/15min source found. Frozen baseline preserved.
