@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-04 — maintenance re-verification, 280th pass COMPLETE)
+## Status (session 2026-11-04 — maintenance re-verification, 281st pass COMPLETE)
 
-- Branch main; HEAD 7849056 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
+- Branch main; HEAD 2d6df32 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values.
 - Canonical artifacts present + parseable: 17 JSON artifacts in artifacts/ parse cleanly. Walk-forward axb0306: 3 windows all test negative (-$10,053.14, -$21,922.10, -$23,058.98). Walk-forward Kaggle: 8 windows all test negative (per canonical artifacts).
 - Baselines from canonical artifacts: axb0306 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80, Sharpe -1.06, Sortino -0.67, expectancy -$527.30/trade. Kaggle front-month 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD ~$626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65/trade.
