@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — HEAD 6cc0601)
+## Current durable state (maintenance re-verification pass — HEAD 661fded)
 
 - Branch: main. Working tree clean (`git status --short` empty); HEAD at 6cc0601 (chore(kilo): checkpoint agent session, controller-committed 2026-11-04T21:49:03Z). Fetched origin --prune; local main up to date with origin/main. Recent commits: 6cc0601, 7ab124e, 7287ad5, 4d00661, b007093.
 - SHA-256 verified from disk (2026-11-04): all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
@@ -22,6 +22,10 @@ Maintenance re-verification completed prior session: verified git state (working
 ## Prior task (completed 2026-11-04, this session — maintenance re-verification — HEAD 6cc0601)
 
 Maintenance re-verification completed this session: verified git state (working tree clean, HEAD 6cc0601, fetched origin --prune, up to date with origin/main; recent commits 6cc0601, 7ab124e, 7287ad5, 4d00661, b007093). Confirmed all six file hashes match recorded values (same six values as above). Confirmed raw date ranges unchanged from disk (MNQ_15min.csv/MNQ_1min.csv end 2026-04-15; MNQ_1min_frontmonth.csv/MNQ_15min_frontmonth.csv end 2025-11-12). Confirmed artifacts parse cleanly (21 files total; 20 JSON, 0 parse errors). Confirmed walk-forward structures from artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; values as listed above). Full test suite `python3 -m pytest tests/` = 71 passed, 0 failed. Re-ran free-data monitoring sweep; no new genuinely free MNQ 1min/15min source found (Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12; axb0306 stale at 2026-04-15; all other candidates paid/key-gated/limited). Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+
+## Prior task (completed 2026-11-04, this session — maintenance re-verification — HEAD 661fded)
+
+Maintenance re-verification completed this session: verified git state (working tree clean, HEAD 661fded, fetched origin --prune, up to date with origin/main; recent commits 661fded, 6cc0601, 7ab124e, 7287ad5, 4d00661). Confirmed all six file hashes match recorded values (same six values as above). Confirmed raw date ranges unchanged (MNQ_15min.csv/MNQ_1min.csv end 2026-04-15; MNQ_1min_frontmonth.csv/MNQ_15min_frontmonth.csv end 2025-11-12). Confirmed artifacts parse cleanly (21 files total; 20 JSON, 0 parse errors). Walk-forward structures verified (axb0306 3 windows all negative; Kaggle 8 windows all negative). Full test suite `python3 -m pytest tests/` = 71 passed, 0 failed. Re-ran free-data monitoring sweep; no new genuinely free MNQ 1min/15min source found (Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12; axb0306 stale at 2026-04-15; all other candidates paid/key-gated/limited). Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 ## Next agent (immediate)
 
