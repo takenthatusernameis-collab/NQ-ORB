@@ -2,11 +2,11 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD a07f7d1 (checkpoint); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
+- Branch main; HEAD 26c9f5a (chore(kilo): checkpoint agent session); working tree clean; local HEAD matches origin/main; `git fetch origin --prune` up to date.
 - SHA-256 verified from disk: all six hashes match recorded values.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.90s.
-- Artifacts: 16 JSON files in artifacts/ parse cleanly (17 directory entries incl. README.md).
-- Frozen baseline preserved; no code/strategy/parameter changes. No leftover `_verify` artifact copies.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.89s.
+- Artifacts: 17 entries in artifacts/ parse cleanly (README.md + JSONs). Walk-forward: walk_forward_axb0306.json 3 windows all negative; walk_forward_kaggle.json 8 windows all negative.
+- Frozen baseline preserved; no code/strategy/parameter changes.
 
 ## Tasks (maintenance only)
 
@@ -34,5 +34,3 @@
 ## Why this task
 
 Maintenance/re-verification only. Do NOT tune stops/targets/filters/sizing/session times — STRATEGY_RULES.txt v1.0 frozen. Only (a) verify frozen baseline intact/reproducible, (b) watch for genuinely free MNQ 1min/15min data (provenance+SHA256 before use), (c) refresh HANDOFF.md/this file.
-
-(End of file - total 52 lines)
