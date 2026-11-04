@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (verified 2026-11-04 — maintenance re-verification, one-hundred-seventy-second pass, COMPLETE)
+## Current durable state (verified 2026-11-04 — maintenance re-verification, one-hundred-seventy-third pass, COMPLETE)
 
-- Branch: main. Working tree clean (`git status --short` empty). HEAD: a894bc7 (chore(kilo): checkpoint agent session). `git fetch origin --prune`: up to date with origin/main. Recent commits docs-only checkpoints.
+- Branch: main. Working tree clean (`git status --short` empty). HEAD: 8d5d893 (chore(kilo): checkpoint agent session). `git fetch origin --prune`: up to date with origin/main. Recent commits docs-only checkpoints.
 - SHA-256 (recomputed from disk this pass, all six match recorded values): STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4.
 - Canonical artifacts (present + parseable): artifacts/metrics_axb0306.json, artifacts/metrics_kaggle.json, artifacts/trades_axb0306.json, artifacts/trades_kaggle.json, artifacts/walk_forward_axb0306.json (3 windows), artifacts/walk_forward_kaggle.json (8 windows). All artifact files parse cleanly (20 JSON artifacts in artifacts/ validated).
 - Walk-forward detail (test windows): axb0306 — all 3 test windows negative (test net -$10,053.14, -$21,922.10, -$23,058.98). Kaggle — all 8 test windows negative (test net_pnl -$178,375.24, -$173,264.64, -$168,315.48, -$134,617.64, -$122,071.62, -$70,637.24, -$104,755.42, -$114,820.72). Final test window untouched by parameter selection.
