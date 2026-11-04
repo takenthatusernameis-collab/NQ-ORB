@@ -2,10 +2,10 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD 55222fb; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: 55222fb, b4f2750, efd0554, af48cac, 2cfb3cf.
+- Branch main; HEAD 57e79a4; working tree clean (`git status --short` empty); fetched origin --prune. Recent commits: 57e79a4, 55222fb, b4f2750, efd0554, af48cac.
 - SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
 - Tests: pandas + pytest installed for verification; full suite `python3 -m pytest tests/` = 71 passed, 0 failed (30 orb strategy tests + 41 controller/workflow tests).
-- Artifacts: 21 JSON files in artifacts/ parse cleanly (README.md present); walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
+- Artifacts: 20 JSON files in artifacts/ parse cleanly (README.md present); walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
 - Baselines (canonical): axb0306 net -$31,637.98, 60 trades; Kaggle front-month net -$626,525.96, 688 trades (metrics match canonical artifacts).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data re-scan unchanged: no new genuinely free MNQ 1min/15min source. axb0306 ends 2026-04-15 (stale); Kaggle front-month ends 2025-11-12 (CC BY 4.0). All other candidates paid/key-gated/limited.
