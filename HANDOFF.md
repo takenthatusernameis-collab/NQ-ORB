@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (verified 2026-11-04 — maintenance re-verification, 248th pass COMPLETE)
+## Current durable state (verified 2026-11-04 — maintenance re-verification, 249th pass COMPLETE)
 - Branch: main. Working tree clean of tracked changes (`git status --short` empty); HEAD 11d72e9 (checkpoint commits after 78cfb44). `git fetch origin --prune` up to date.
 - Session re-verified (this pass): all six file SHA-256 hashes match recorded values exactly (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts: 20 JSON files in artifacts/ parse cleanly via `json.load` (+ README.md). Prior handoffs noted "21 JSON files"; actual count is 20 JSON + 1 README.md (corrected).
@@ -17,7 +17,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Prior task
 
-248th pass maintenance re-verification (this session): `git fetch origin --prune` up to date, HEAD 6ba98e2. All six file hashes recomputed from disk match recorded values exactly. 20 canonical JSON artifacts parse cleanly via `json.load` (+ README.md). Walk-forward test windows confirmed all negative: axb0306 3/3 (-$10,053.14, -$21,922.10, -$23,058.98), Kaggle 8/8 (-$178,375.24, -$173,264.64, -$168,315.48, -$134,617.64, -$122,071.62, -$70,637.24, -$104,755.42, -$114,820.72). Baselines re-confirmed from canonical artifacts unchanged. Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.93s. Free-data monitoring: no new genuinely free MNQ 1min/15min source found beyond known free sets. No code/strategy/parameter changes made; frozen baseline preserved.
+249th pass maintenance re-verification (this session): `git fetch origin --prune` up to date, HEAD 6ba98e2. All six file hashes recomputed from disk match recorded values exactly. 20 canonical JSON artifacts parse cleanly via `json.load` (+ README.md). Walk-forward test windows confirmed all negative: axb0306 3/3 (-$10,053.14, -$21,922.10, -$23,058.98), Kaggle 8/8 (-$178,375.24, -$173,264.64, -$168,315.48, -$134,617.64, -$122,071.62, -$70,637.24, -$104,755.42, -$114,820.72). Baselines re-confirmed from canonical artifacts unchanged. Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.89s. Free-data monitoring: no new genuinely free MNQ 1min/15min source found beyond known free sets. No code/strategy/parameter changes made; frozen baseline preserved.
 
 ## Next agent (immediate)
 
