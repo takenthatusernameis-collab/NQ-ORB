@@ -1,14 +1,14 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-04 — maintenance re-verification, 287th pass COMPLETE)
+## Status (session 2026-11-04 — maintenance re-verification, 288th pass COMPLETE)
 
-- Branch main; HEAD 26050d6 (checkpoint); working tree clean; local HEAD matches origin/main (26050d6); `git fetch origin --prune` up to date. (Prior handoff recorded HEAD 6596138; current HEAD advanced to 26050d6 and matches origin/main — verified this pass.)
+- Branch main; HEAD f9aa295 (checkpoint); working tree clean; local HEAD matches origin/main (f9aa295); `git fetch origin --prune` up to date. (Prior handoff recorded HEAD 26050d6; current HEAD advanced to f9aa295 via docs-only checkpoint and matches origin/main — verified this pass.)
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8...; raw/MNQ_15min.csv f417f22d...; raw/MNQ_1min.csv 129623f4...; raw/MNQ_1min_frontmonth.csv edbadc73...; raw/MNQ_15min_frontmonth.csv 7e129ae3...).
 - Canonical artifacts present + parseable: 16 JSON artifacts in artifacts/ parse cleanly. Walk-forward axb0306: 3 windows all test negative (-$10,053.14, -$21,922.10, -$23,058.98). Walk-forward Kaggle: 8 windows all test negative.
 - Baselines from canonical artifacts: axb0306 60 trades, 70.0% WR, gross -$7,662.00, net -$31,637.98, PF 0.4917, max DD $37,491.80, Sharpe -1.06, Sortino -0.67, expectancy -$527.30/trade. Kaggle front-month 688 trades, 64.83% WR, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD ~$626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65/trade.
 - Raw date ranges unchanged: axb0306 ends 2026-04-15; Kaggle front-month ends 2025-11-12.
-- Optional reproducibility re-run (this pass): axb0306 baseline reproduced exactly via `python3 src/orb/runner.py --source axb0306 --prefix axb0306_verify` — 60 trades, gross -$7,662.00, net -$31,637.98, PF 0.49167, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, expectancy -$527.30, WR 70.0%. `_verify` copies removed after comparison.
-- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.95s.
+- Optional reproducibility re-run (this pass): both baselines re-run from scratch reproduced canonical metrics exactly — axb0306 (60 trades, gross -$7,662.00, net -$31,637.98, PF 0.49167, max DD $37,491.80, Sharpe -1.056, Sortino -0.668, expectancy -$527.30, WR 70.0%) and kaggle (688 trades, gross -$140,899.00, net -$626,525.96, PF 0.2271, max DD $626,994.56, Sharpe -1.68, Sortino -1.04, expectancy -$910.65, WR 64.83%); per-trade ledgers identical for both. `_verify` copies removed after comparison.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.91s.
 - Frozen baseline preserved; no code/strategy/parameter changes. No leftover `_verify` copies.
 - Free-data monitoring (2026-11-04): no new genuinely free MNQ 1min/15min source found. All candidates paid. Kaggle remains the only free full 1min source (already ingested).
 
@@ -38,3 +38,5 @@
 ## Why this task
 
 Maintenance/re-verification only. Do NOT tune stops/targets/filters/sizing/session times — STRATEGY_RULES.txt v1.0 frozen. Only (a) verify frozen baseline intact/reproducible, (b) watch for genuinely free MNQ 1min/15min data (provenance+SHA256 before use), (c) refresh HANDOFF.md/this file.
+
+(End of file - total 40 lines)
