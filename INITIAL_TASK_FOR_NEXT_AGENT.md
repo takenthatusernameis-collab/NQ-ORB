@@ -1,6 +1,12 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-04 — maintenance re-verification, 288th pass COMPLETE)
+## Status (session 2026-11-04 — maintenance re-verification, 290th pass COMPLETE)
+
+- Branch main; HEAD 12e3e92 (checkpoint); working tree clean; local HEAD matches origin/main (12e3e92); `git fetch origin --prune` up to date.
+- SHA-256 verified from disk: all six hashes match recorded values.
+- Tests: `PYTHONPATH=/home/runner/work/NQ-ORB/NQ-ORB/src python3 -m pytest tests -q` -> 71 passed in 0.97s.
+- Frozen baseline preserved; no code/strategy/parameter changes.
+- Free-data monitoring: no new genuinely free MNQ 1min/15min source.
 
 - Branch main; HEAD f9aa295 (checkpoint); working tree clean; local HEAD matches origin/main (f9aa295); `git fetch origin --prune` up to date. (Prior handoff recorded HEAD 26050d6; current HEAD advanced to f9aa295 via docs-only checkpoint and matches origin/main — verified this pass.)
 - SHA-256 verified from disk: all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3...; config/orb_mnq_15m_showcase.yaml 2a6c5ff8...; raw/MNQ_15min.csv f417f22d...; raw/MNQ_1min.csv 129623f4...; raw/MNQ_1min_frontmonth.csv edbadc73...; raw/MNQ_15min_frontmonth.csv 7e129ae3...).
