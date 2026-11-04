@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-04 — maintenance re-verification pass COMPLETE)
 
-- Branch main; HEAD 026dc06 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: 026dc06, 8ad31d3, 39c8589, c2b15e1, c9861f3, 619dc61, e240cc5.
+- Branch main; HEAD 157dc47 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: 157dc47, 026dc06, 8ad31d3, 39c8589, c2b15e1, c9861f3, 619dc61.
 - SHA-256 verified from disk (2026-11-04): all six tracked file hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv).
 - Tests: pandas + pytest installed for verification; full suite `python3 -m pytest tests/` = 71 passed, 0 failed (30 orb strategy tests + 41 controller/workflow tests).
 - Artifacts: 20 JSON files in artifacts/ parse cleanly (README.md present); walk-forward: axb0306 3/3 test windows negative; Kaggle 8/8 test windows negative.
