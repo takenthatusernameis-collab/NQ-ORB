@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD be4e937)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 68d91a8)
 
-- Branch main; HEAD be4e937 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: be4e937, 33cb5be, 6326f53, 7c9a762, 0b6435f.
+- Branch main; HEAD 68d91a8 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main. Recent commits: 68d91a8, 7c71dc8, be4e937, 33cb5be, 6326f53.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
-- Artifacts: 17 files in artifacts/ (README.md + 16 JSON); all JSON parse cleanly.
+- Artifacts: 21 files in artifacts/ (README.md + JSON/other); all JSON parse cleanly (0 parse errors).
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative (-$10053.14, -$21922.10, -$23058.98). Kaggle 8 windows, all test_net_pnl negative (-$178375.24, -$173264.64, -$168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72).
-- Baselines unchanged: axb0306 60 trades, 70.0% WR, net -$31,637.98; Kaggle front-month 688 trades, 64.83% WR, net -$626,525.96.
-- Raw date ranges unchanged: axb0306 ends 2026-04-15 (stale); Kaggle front-month ends 2025-11-12.
+- Baselines verified: axb0306 60 trades, 70.0% WR, net -$31637.98; Kaggle front-month 688 trades, 64.8256% WR, net -$626525.96.
+- Raw date ranges unchanged: axb0306 ends 2026-04-15T23:15:00/23:29:00 (stale); Kaggle front-month ends 2025-11-12T23:59:00/23:45:00.
 - Tests: pytest not available in this environment; test files present. Prior sessions recorded full suite `python3 -m pytest tests/` = 71 passed, 0 failed.
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min source found (Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12; axb0306 stale at 2026-04-15; others paid/key-gated/limited).
