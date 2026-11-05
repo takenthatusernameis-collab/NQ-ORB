@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD b43f6ca)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 6edee28)
 
-- Branch main; HEAD b43f6ca (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == b43f6ca). Recent commits: b43f6ca, c924d9a, 60bd690, 026f231, 15f03b2.
-- b43f6ca is a pure doc-bump over c924d9a (HEAD refs 60bd690→c924d9a only). No code/strategy/data changes.
+- Branch main; HEAD 6edee28 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == 6edee28). Recent commits: 6edee28, b43f6ca, c924d9a, 60bd690, 026f231.
+- 6edee28 is a pure doc-bump over b43f6ca (HEAD refs b43f6ca→6edee28 only). No code/strategy/data changes.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative (-$10053.14, -$21922.10, -$23058.98). Kaggle 8 windows, all test_net_pnl negative (-$178375.24, -$173264.64, -$168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72).
@@ -11,7 +11,7 @@
 - Raw date ranges unchanged: axb0306 ends 2026-04-15T23:15:00/23:29:00 (stale); Kaggle front-month ends 2025-11-12T23:59:00/23:45:00.
 - Tests: `python3 -m pytest tests/` = 71 passed, 0 failed (pytest 9.2.0 available this session).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min source found. GitHub API axb0306 MNQ path latest commit still 60abd3fb... dated 2026-04-15T23:34:55Z (no new intraday MNQ files, no history extension). Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12 (verified via dataset page, unchanged). Web search sweep (MarketParquet, FirstRate Data, Kibot, GetData, Kaggle tzamrik/tgtanalytics) found only paid/key-gated/limited sources; no genuinely free full MNQ 1min/15min series with history beyond the already-ingested cutoffs.
+- Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min source found. GitHub API axb0306 MNQ path latest commit still 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 dated 2026-04-15T23:34:55Z (no new intraday MNQ files, no history extension). Kaggle brandenmorris MNQ CC BY 4.0 still capped 2025-11-12 (verified via dataset page, unchanged). Web search sweep (MarketParquet, FirstRate, Kibot, GetData, Kaggle tzamrik/tgtanalytics) found only paid/key-gated/limited sources; no genuinely free full MNQ 1min/15min series with history beyond the already-ingested cutoffs.
 
 ## Tasks (maintenance only)
 
@@ -38,3 +38,5 @@
 ## Why this task
 
 Maintenance/re-verification only. Do NOT tune stops/targets/filters/sizing/session times — STRATEGY_RULES.txt v1.0 frozen. Only (a) verify frozen baseline intact/reproducible, (b) watch for genuinely free MNQ 1min/15min data (provenance+SHA256 before use), (c) refresh HANDOFF.md/this file.
+
+(End of file)
