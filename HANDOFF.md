@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — HEAD 7f2ad6e)
+## Current durable state (maintenance re-verification pass — HEAD 6e71e87)
 
 - Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 55f9677 (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 55f9677). Recent commits: 55f9677, 7f2ad6e, 36be7a0, 9f0eb8e, a7c4c55, 8930346, 6edee28.
 - HEAD advanced from 7f2ad6e to 55f9677 (checkpoint doc-bump). No code/strategy/data changes.
