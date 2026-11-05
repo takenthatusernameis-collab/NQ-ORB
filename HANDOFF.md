@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — 2026-11-05 08:27 UTC, this session)
+## Current durable state (maintenance re-verification pass — 2026-11-05 08:28 UTC, this session)
 
-- Branch: `main`. HEAD at verification: `0fc9ae5` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree had only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` modifications during this session; clean at baseline check before edits. Recent commits: 0fc9ae5, c75b159, 2f5b27b.
+- Branch: `main`. HEAD at verification: `7b3c54d` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` modifications during this session. Recent commits: 7b3c54d, 0fc9ae5, c75b159, 2f5b27b.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values:
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` — MATCH
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` — MATCH
@@ -21,9 +21,9 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05 bounded sweep, this session): GitHub API `repos/axb0306/cme-futures-ohlc/contents/MNQ` (8 items) lists only `MNQ_1min_20260120_20260415.csv` and `MNQ_15min_20260120_20260415.csv` as 1min/15min files — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source identified. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 
-## Prior task (completed 2026-11-05 08:27 UTC, this session — maintenance re-verification)
+## Prior task (completed 2026-11-05 08:28 UTC, this session — maintenance re-verification)
 
-- Re-verified from `main` HEAD `0fc9ae5`: all 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3…ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8…91e4`, `raw/MNQ_15min.csv` `f417f22d…ce37`, `raw/MNQ_1min.csv` `129623f4…ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73…13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3…9ef4`); **24** artifact JSON files parse clean (0 errors); raw row counts unchanged (5609/84078/1059205/70615; total 1219507). `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s, 2026-11-05 08:27 UTC). Bounded free-data sweep (GitHub API `contents/MNQ`): `MNQ_1min_20260120_20260415.csv`, `MNQ_15min_20260120_20260415.csv` only — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source identified. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` with concrete evidence.
+- Re-verified from `main` HEAD `7b3c54d`: all 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3…ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8…91e4`, `raw/MNQ_15min.csv` `f417f22d…ce37`, `raw/MNQ_1min.csv` `129623f4…ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73…13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3…9ef4`); **24** artifact JSON files parse clean (0 errors); raw row counts unchanged (5609/84078/1059205/70615; total 1219507). `python3 -m pytest -q` → **71 passed, 0 failed** (0.97s, 2026-11-05 08:28 UTC). Bounded free-data sweep (GitHub API `contents/MNQ`): `MNQ_1min_20260120_20260415.csv`, `MNQ_15min_20260120_20260415.csv` only — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source identified. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` with concrete evidence.
 
 ## Next agent (immediate)
 
