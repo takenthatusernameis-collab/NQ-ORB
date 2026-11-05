@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 60bd690)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD c924d9a)
 
-- Branch main; HEAD 60bd690 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == 60bd690). Recent commits: 60bd690, 026f231, 15f03b2, 7c71dc8, be4e937.
+- Branch main; HEAD c924d9a (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == c924d9a). Recent commits: c924d9a, 60bd690, 026f231, 15f03b2, 7c71dc8.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative (-$10053.14, -$21922.10, -$23058.98). Kaggle 8 windows, all test_net_pnl negative (-$178375.24, -$173264.64, -$168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72).
