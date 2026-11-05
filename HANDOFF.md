@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — 2026-11-05 08:25 UTC, this session)
+## Current durable state (maintenance re-verification pass — 2026-11-05 08:26 UTC, this session)
 
 - Branch: `main`. HEAD at verification: `2f5b27b` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean at verification (`git status --short` empty). Recent commits: 2f5b27b, 1f365bc, 7e57736.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values:
@@ -17,7 +17,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Canonical artifacts: **24** JSON files in `artifacts/` parse cleanly (0 parse errors).
 - Baselines/walk-forward unchanged from verified artifacts (`metrics_axb0306_full.json` / `metrics_verify_axb0306.json`: net `-$31637.98`, win rate `70%`, profit factor `0.4917`; `metrics_kaggle.json` / `metrics_verify_kaggle.json`: net `-$626525.96`, win rate `64.8%`, profit factor `0.2271`). Prior verified walk-forward: `axb0306` 3 windows, **all negative net P&L**; Kaggle 8 windows, **all negative net P&L**.
 - Raw row counts unchanged (wc -l): `MNQ_15min` 5609; `MNQ_1min` 84078; `MNQ_1min_frontmonth` 1059205; `MNQ_15min_frontmonth` 70615 (total 1219507).
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.92s) at 2026-11-05 08:25 UTC.
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s) at 2026-11-05 08:26 UTC.
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05 bounded sweep, this session): `axb0306/cme-futures-ohlc` MNQ `contents/MNQ` listing shows `MNQ_1min_20260120_20260415.csv` / `MNQ_15min_20260120_20260415.csv` (no newer MNQ 1min/15min filenames; latest intraday coverage remains through 2026-04-15). MarketParquet/FirstRate/Kibot/Databento/Yahoo remain paid, key-gated, daily/limited intraday, or insufficient for free full-history MNQ 1min/15min. **No new genuinely free MNQ 1min/15min full-history source identified.** Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 
