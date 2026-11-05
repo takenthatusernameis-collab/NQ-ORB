@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — 2026-11-05 08:33 UTC, this session)
+## Current durable state (maintenance re-verification pass — 2026-11-05 08:35 UTC, this session)
 
 - Branch: `main`. HEAD at verification: `707575c` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean before handoff edits; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` modified during this session. Recent commits: 707575c, ea89883, 7b3c54d, 0fc9ae5, c75b159.
 - SHA-256 re-verified from disk (2026-11-05 08:32 UTC): all 6 tracked file hashes **MATCH** recorded values:
@@ -28,6 +28,10 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 ## Prior task (completed 2026-11-05 08:33 UTC, this session — maintenance re-verification)
 
 - Re-verified from `main` HEAD `707575c` (working tree clean; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` modified this session): all 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3…ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8…91e4`, `raw/MNQ_15min.csv` `f417f22d…ce37`, `raw/MNQ_1min.csv` `129623f4…ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73…13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3…9ef4`); **24** artifact JSON files parse clean (0 errors); raw row counts unchanged (5609/84078/1059205/70615; total 1219507). `python3 -m pytest -q` → **71 passed, 0 failed** (0.93s, 2026-11-05 08:33 UTC). Bounded free-data sweep (GitHub API `repos/axb0306/cme-futures-ohlc/contents/MNQ`): `MNQ_1min_20260120_20260415.csv` (4904282 bytes, sha `946c6b76…`) and `MNQ_15min_20260120_20260415.csv` (333668 bytes, sha `7df04796…`) only — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source identified. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` with concrete evidence.
+
+## Prior task (completed 2026-11-05 08:35 UTC, this session — maintenance re-verification)
+
+- Re-verified from `main` HEAD `707575c`: all 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3…ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8…91e4`, `raw/MNQ_15min.csv` `f417f22d…ce37`, `raw/MNQ_1min.csv` `129623f4…ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73…13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3…9ef4`); **24** artifact JSON files parse clean (0 errors); raw row counts unchanged (5609/84078/1059205/70615; total 1219507). `python3 -m pytest -q` → **71 passed, 0 failed** (0.93s, 2026-11-05 08:35 UTC). Bounded free-data sweep (GitHub API `repos/axb0306/cme-futures-ohlc/contents/MNQ`): only `MNQ_1min_20260120_20260415.csv` (4904282 bytes, sha `946c6b76…`) and `MNQ_15min_20260120_20260415.csv` (333668 bytes, sha `7df04796…`) as 1min/15min — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source identified. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` with concrete evidence.
 
 ## Next agent (immediate)
 
