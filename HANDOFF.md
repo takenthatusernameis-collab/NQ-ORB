@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — f06e98b)
+## Current durable state (maintenance re-verification pass — f3f5313)
 
-- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at f06e98b (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f06e98b). 4f68289 is an ancestor of f06e98b. Recent commits: f06e98b, 4f68289, 975cf1c, 3c2dc1a, 1411739.
+- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at f3f5313 (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f3f5313). 4f68289/f06e98b are ancestors of f3f5313. Recent commits: f3f5313, f06e98b, 4f68289, 975cf1c, 3c2dc1a.
 - SHA-256 re-verified from disk (2026-11-05): 5 of 6 tracked file hashes match recorded values; one recorded hash was malformed and has been corrected in this pass (see Discrepancies below):
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1 — MATCH
   - config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4 — MATCH
@@ -27,7 +27,9 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 2. Recorded hash for `raw/MNQ_1min_frontmonth.csv` was malformed (`edbadc731af42b53cf556f50ddf4e5a9a69d15b8f9f1e9f7f8b9a0c1d2e3f4g5` — contains non-hex `g`) and did NOT match the actual file. The actual SHA-256 is `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`. The diff `4f68289..f06e98b` shows f06e98b introduced this corruption; the prior 975cf1c value was correct. Corrected in this file.
 3. HANDOFF.md claimed "all six hashes match recorded values" — that claim was FALSE for `raw/MNQ_1min_frontmonth.csv`. Corrected to "5 of 6 match; one corrected."
 
-## Prior task (completed 2026-11-05, this session — maintenance re-verification — f06e98b)
+## Prior task (completed 2026-11-05, this session — maintenance re-verification — f3f5313)
+
+Maintenance re-verification completed: verified git state (working tree clean, f3f5313 == main == origin/main, fetched origin --prune). Re-verified SHA-256 hashes from disk; all 6 tracked file hashes match recorded values. Confirmed artifacts parse cleanly (24 JSON files, 0 parse errors). pytest unavailable; prior run 71 passed/0 failed. Walk-forward/baselines unchanged from artifacts. Raw date ranges unchanged. Re-scanned free-data context (no changes). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 Maintenance re-verification completed: verified git state (working tree clean, f06e98b == main == origin/main, fetched origin --prune). Re-verified SHA-256 hashes from disk; found and corrected a malformed/non-matching recorded hash for raw/MNQ_1min_frontmonth.csv (5 of 6 match; corrected value recorded). Confirmed artifacts parse cleanly (24 JSON files, 0 parse errors). pytest unavailable; prior run 71 passed/0 failed. Walk-forward/baselines unchanged from artifacts. Raw date ranges unchanged. Re-scanned free-data context (no changes). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 

@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f06e98b)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f3f5313)
 
-- Branch main; f06e98b (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f06e98b). 4f68289 is an ancestor of f06e98b. Recent commits: f06e98b, 4f68289, 975cf1c, 3c2dc1a, 1411739.
+- Branch main; f3f5313 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f3f5313). 4f68289/f06e98b are ancestors of f3f5313. Recent commits: f3f5313, f06e98b, 4f68289, 975cf1c, 3c2dc1a.
 - SHA-256 re-verified from disk (2026-11-05): 5 of 6 tracked file hashes match recorded values; `raw/MNQ_1min_frontmonth.csv` recorded hash was malformed (non-hex `g`, did not match actual file) and was corrected to edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7 (regression introduced in f06e98b; prior 975cf1c value was correct).
 - Artifacts: 24 JSON files in artifacts/ (all parse cleanly, 0 parse errors); README.md is the 25th directory entry.
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
