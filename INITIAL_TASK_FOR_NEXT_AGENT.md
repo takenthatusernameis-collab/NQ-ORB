@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 2026-11-05T10:37Z, this session)
+## Status (maintenance re-verification COMPLETE — 2026-11-05T11:26Z, this session)
 
-- Branch `main`; HEAD `160e66b` (checkpoint; prior recorded HEAD `85c1394` — diff is only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md doc edits, no code/data drift); `git status --short` clean; **no code/data drift**.
+- Branch `main`; HEAD `087e4e6` (checkpoint; prior recorded HEAD `160e66b` — diff is only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md doc edits, no code/data drift); `git status --short` clean; **no code/data drift**.
 - SHA-256 re-verified from disk (all **MATCH**):
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126 lines)
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77 lines)
@@ -12,10 +12,10 @@
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615 lines)
 - Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - Baselines unchanged: axb0306 net **-$31637.98**, win rate **70%**, profit factor **0.4917**; Kaggle net **-$626525.96**, win rate **64.8%**, profit factor **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s, 2026-11-05).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.97s, 2026-11-05).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05, this session):
-  - GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15** (unchanged).
+  - GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7179dbe40397bb1840f179736276d47dd7` `2026-04-14` — **no extension beyond 2026-04-15** (unchanged).
   - Bounded web sweep for free MNQ 1min/15min full-history sources: PortaraCQG, FirstRate Data, Kibot ($520 one-time), MarketParquet paid archive, Databento (credit-gated) are paid/proprietary; Yahoo Finance (MNQ=F) and MarketParquet free are free but intraday-inadequate (30 days of 1-minute / one sample week only). **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.**
 
 ## Tasks (maintenance only — do in order)
