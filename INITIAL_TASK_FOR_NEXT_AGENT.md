@@ -1,10 +1,10 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f8913ec)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, 8d7d634)
 
-- Branch main; f8913ec (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f8913ec). Recent commits: f8913ec, 58ec68d, 9576f3f, 76311a8, 9df681d, 2006d4d, e1a15ff, 20260c0, e39a863, 41d6d6a.
+- Branch main; 8d7d634 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 8d7d634). Recent commits: 8d7d634, f8913ec, fafd139, 58ec68d, 9576f3f, 76311a8, 9df681d, 2006d4d, e1a15ff, 20260c0.
 - SHA-256 re-verified from disk (2026-11-05): all six tracked file hashes match recorded values.
-- Artifacts: 25 files in artifacts/ (all JSON parse cleanly, 0 parse errors).
+- Artifacts: 24 files in artifacts/ (all JSON parse cleanly, 0 parse errors).
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
 - Raw date ranges unchanged: MNQ_15min.csv 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 2026-01-20T13:27 → 2026-04-15T23:29; front-month files end 2025-11-12T23:45/23:59.
 - Tests: `python3 -m pytest tests/` = 71 passed, 0 failed.
