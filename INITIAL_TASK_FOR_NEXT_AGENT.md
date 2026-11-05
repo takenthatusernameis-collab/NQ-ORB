@@ -12,7 +12,7 @@
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615 lines)
 - Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - Baselines unchanged: axb0306 net **-$31637.98**, win rate **70%**, profit factor **0.4917**; Kaggle net **-$626525.96**, win rate **64.8%**, profit factor **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s, 2026-11-05T11:45Z).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.69s, 2026-11-05T13:31Z).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05T11:45Z, this session):
   - GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=5` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, priors 2026-04-14/13 — **no extension beyond 2026-04-15**.
