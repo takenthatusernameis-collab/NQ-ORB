@@ -2,7 +2,7 @@
 
 ## Status (maintenance re-verification COMPLETE — 2026-11-05, this session)
 
-- Branch `main`; HEAD `62fc2bc` (`chore(kilo): checkpoint agent session`); working tree clean; only `HANDOFF.md` and this file modified during this session — **no code/data drift**.
+- Branch `main`; HEAD `497c478` (`chore(kilo): checkpoint agent session`); working tree clean; only `HANDOFF.md` and this file modified during this session — **no code/data drift**.
 - SHA-256 re-verified from disk (all **MATCH**):
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126 lines)
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77 lines)
