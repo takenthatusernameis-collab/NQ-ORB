@@ -6,7 +6,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Current durable state (maintenance re-verification — 2026-11-05T14:35Z, this session)
 
-- Session-start verification (2026-11-05T14:35Z): `git status --short` clean before edits; HEAD `bd3b3cf` (`chore(kilo): checkpoint agent session`; checkpoint/history drift only, no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH**; artifacts **24** JSON files parse clean (0 parse errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.66s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
+- Session-start verification (2026-11-05T14:35Z): `git status --short` clean before edits; HEAD `95a431d` (checkpoint drift only; no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH**; artifacts **24** JSON files parse clean (0 parse errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.66s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - SHA-256 re-verified from disk (all **MATCH**):
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126 lines)
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77 lines)
