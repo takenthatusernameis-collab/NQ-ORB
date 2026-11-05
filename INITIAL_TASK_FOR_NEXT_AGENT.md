@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 2026-11-05T11:28Z, this session)
+## Status (maintenance re-verification COMPLETE — 2026-11-05T11:30Z, this session)
 
 - Branch `main`; HEAD `4ca6568`; `git status --short` clean; **no code/data drift**.
 - SHA-256 re-verified from disk (all **MATCH**):
@@ -12,11 +12,11 @@
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615 lines)
 - Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - Baselines unchanged: axb0306 net **-$31637.98**, win rate **70%**, profit factor **0.4917**; Kaggle net **-$626525.96**, win rate **64.8%**, profit factor **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.91s, 2026-11-05T11:28Z).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.89s, 2026-11-05T11:30Z).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring (2026-11-05T11:28Z, this session):
+- Free-data monitoring (2026-11-05T11:30Z, this session):
   - GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=3` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior commits 2026-04-14/13 — **no extension beyond 2026-04-15** (unchanged).
-  - Bounded web sweep: PortaraCQG, FirstRate Data, FinzData ($49), MarketParquet paid archive, Databento (credit-gated) paid/proprietary; Yahoo Finance (MNQ=F) and MarketParquet free intraday-inadequate (30 days 1-min / sample week). **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.**
+  - Bounded web sweep (2026-11-05): PortaraCQG, FirstRate Data, GetData ($49.99), FinzData, MarketParquet paid archive, Databento (credit-gated) paid/proprietary; TestMax replay not downloadable; Yahoo Finance (MNQ=F) and MarketParquet free intraday-inadequate (30 days 1-min / sample week). **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.**
 
 ## Tasks (maintenance only — do in order)
 
