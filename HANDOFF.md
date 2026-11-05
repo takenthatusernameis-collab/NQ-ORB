@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification — 2026-11-05T10:33Z, this session)
+## Current durable state (maintenance re-verification — 2026-11-05T10:37Z, this session)
 
-- Branch: `main`. HEAD at verification: `6b151ec` (checkpoint). `git status --short` clean. **No code/data drift.**
+- Branch: `main`. HEAD at verification: `85c1394` (checkpoint). `git status --short` clean. **No code/data drift.**
 - SHA-256 re-verified from disk (all **MATCH** recorded values):
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` — MATCH (126 lines)
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` — MATCH (77 lines)
@@ -17,13 +17,13 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Canonical artifacts: **24** JSON files in `artifacts/` parse cleanly (0 parse errors).
 - Baselines/walk-forward unchanged from verified artifacts (`metrics_axb0306_full.json` / `metrics_verify_axb0306.json`: net **-$31637.98**, win rate **70%**, profit factor **0.4917**; `metrics_kaggle.json` / `metrics_verify_kaggle.json`: net **-$626525.96**, win rate **64.8%**, profit factor **0.2271**). Prior verified walk-forward: `axb0306` 3 windows, **all negative net P&L**; Kaggle 8 windows, **all negative net P&L**.
 - Committed `artifacts/metrics_axb0306.json` SHA-256 re-verified: `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes) — unchanged.
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s, 2026-11-05).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.88s, 2026-11-05).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05 bounded check, this session): GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` (`Update 2026-04-15: 368 files updated`); prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15**. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 
-## Prior task (completed 2026-11-05T10:33Z, this session — maintenance re-verification)
+## Prior task (completed 2026-11-05T10:37Z, this session — maintenance re-verification)
 
-- Independently re-verified from `main` at HEAD `6b151ec` (clean working tree; no code/data drift): all 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES 126 lines, showcase config 77, raw line counts 5609/84078/1059205/70615). **24** artifact JSON files parse clean (0 errors); `artifacts/metrics_axb0306.json` SHA-256 unchanged (`e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, 9055 bytes). `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s).
+- Independently re-verified from `main` at HEAD `85c1394` (clean working tree; no code/data drift): all 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES 126 lines, showcase config 77, raw line counts 5609/84078/1059205/70615). **24** artifact JSON files parse clean (0 errors); `artifacts/metrics_axb0306.json` SHA-256 unchanged (`e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, 9055 bytes). `python3 -m pytest -q` → **71 passed, 0 failed** (0.88s).
 - Bounded free-data check (GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2`): latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15**. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 
 ## Next agent (immediate)
