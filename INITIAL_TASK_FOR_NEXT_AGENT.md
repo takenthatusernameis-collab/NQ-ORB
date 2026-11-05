@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 9f0eb8e)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 36be7a0)
 
-- Branch main; HEAD 9f0eb8e (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == 9f0eb8e). Recent commits: 9f0eb8e, a7c4c55, 8930346, 6edee28, b43f6ca, c924d9a.
-- 9f0eb8e is a pure doc-bump over a7c4c55 (HEAD refs a7c4c55→9f0eb8e only; diff = HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md, 8 insertions/8 deletions). No code/strategy/data changes.
+- Branch main; HEAD 36be7a0 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == 36be7a0). Recent commits: 36be7a0, 9f0eb8e, a7c4c55, 8930346, 6edee28, b43f6ca, c924d9a.
+- 36be7a0 is a pure doc-bump over 9f0eb8e (diff = HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md). No code/strategy/data changes.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative ([-10053.14, -21922.10, -23058.98]). Kaggle 8 windows, all test_net_pnl negative ([-178375.24, -173264.64, -168315.48, -134617.64, -122071.62, -70637.24, -104755.42, -114820.72]). getdata 2 windows ([-6298.96, -5800.68]).
