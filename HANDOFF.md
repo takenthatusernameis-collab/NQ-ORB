@@ -4,6 +4,12 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
+## Current durable state (maintenance re-verification — 2026-11-05T13:45Z, this session)
+
+- Session-start verification (2026-11-05T13:44Z): `git status --short` clean before edits; HEAD `b2e3868` (checkpoint/history drift only from prior `3f63cdd`; no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH** recorded values; `ls artifacts/*.json | wc -l` = **24** (0 parse errors, all JSON parsed clean); `python3 -m pytest -q` → **71 passed, 0 failed** (0.64s).
+- SHA-256 re-verified from disk (all **MATCH**): STRATEGY_RULES `6d3258c3...`, showcase config `2a6c5ff8...`, raw line counts 5609/84078/1059205/70615 (unchanged).
+- Bounded free-data monitoring (2026-11-05T13:45Z): GitHub API `axb0306` MNQ path latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` — **no extension beyond 2026-04-15**. No genuinely free MNQ 1min/15min full-history source found. No data purchased; no credentials requested/stored; no code/strategy/parameter changes.
+
 ## Current durable state (maintenance re-verification — 2026-11-05T13:43Z, this session)
 
 - Session-start verification (2026-11-05T13:42Z): `git status --short` clean before edits; HEAD `3f63cdd` (recent `chore(kilo): checkpoint agent session` commits; prior handoff referenced `219f300` — checkpoint/history drift only, no strategy/code/data changes indicated). All 6 tracked SHA-256 hashes **MATCH** recorded values; `ls artifacts/*.json | wc -l` = **24** (0 parse errors, all JSON parsed clean); `python3 -m pytest -q` → **71 passed, 0 failed** (0.66s).
