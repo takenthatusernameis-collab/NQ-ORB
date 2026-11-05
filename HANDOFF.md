@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification — 2026-11-05T10:31Z, this session)
+## Current durable state (maintenance re-verification — 2026-11-05T10:32Z, this session)
 
 - Branch: `main`. HEAD at verification: `6b151ec` (checkpoint). `git status --short` clean. **No code/data drift.**
 - SHA-256 re-verified from disk (all **MATCH** recorded values):
@@ -21,7 +21,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05 bounded check, this session): GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2` → latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` (`Update 2026-04-15: 368 files updated`); prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15**. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 
-## Prior task (completed 2026-11-05T10:31Z, this session — maintenance re-verification)
+## Prior task (completed 2026-11-05T10:32Z, this session — maintenance re-verification)
 
 - Independently re-verified from `main` at HEAD `6b151ec` (clean working tree; no code/data drift): all 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES 126 lines, showcase config 77, raw line counts 5609/84078/1059205/70615). **24** artifact JSON files parse clean (0 errors); `artifacts/metrics_axb0306.json` SHA-256 unchanged (`e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, 9055 bytes). `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s).
 - Bounded free-data check (GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2`): latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15**. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
