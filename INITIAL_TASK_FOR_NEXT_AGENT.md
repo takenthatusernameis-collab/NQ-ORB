@@ -1,5 +1,12 @@
 # Initial Task for Next Agent
 
+## Status (maintenance re-verification COMPLETE — 2026-11-05T17:37Z, this session)
+- `git status --short` clean before handoff edits (exit 0). No strategy/code/data/raw/artifact drift observed.
+- Re-verification (2026-11-05T17:37Z): all 6 tracked SHA-256 hashes **MATCH**; 24 artifacts, 0 parse errors; `python3 -m pytest -q` → **71 passed, 0 failed** (0.60s). GitHub API unchanged: 8 MNQ files; 1min blob `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4` (4904282), 15min `7df047964034b648ad7d8639515b6c9a92998af0` (333668); tick `d9a91eea5dcd13c4b1af8ea3248937f61db18cce` (29979112, 2026-03-09..2026-04-15 only); latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. **No 1min/15min extension beyond 2026-04-15.** No data purchased/credentials/code/strategy/parameter changes.
+- SHA-256 (all **MATCH**): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
+- Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
+- Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter changes.
+
 ## Status (maintenance re-verification COMPLETE — 2026-11-05T17:36Z, this session)
 - `git status --short` clean before handoff edits (exit 0). No strategy/code/data/raw/artifact drift observed.
 - Re-verification (2026-11-05T17:36Z): all 6 tracked SHA-256 hashes **MATCH**; 24 artifacts; `python3 -m pytest -q` → **71 passed, 0 failed** (0.61s). GitHub API unchanged: 1min blob `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4` (4904282), 15min `7df047964034b648ad7d8639515b6c9a92998af0` (333668); tick `d9a91eea5dcd13c4b1af8ea3248937f61db18cce` (29979112, 2026-03-09..2026-04-15 only); latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. **No 1min/15min extension beyond 2026-04-15.** No data purchased/credentials/code/strategy/parameter changes.
