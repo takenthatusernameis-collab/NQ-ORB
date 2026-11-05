@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, 3aa9f09)
 
-- Branch main; 3aa9f09 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). origin/main == 3aa9f09. Recent commits: 3aa9f09, 0450b8a, 06fc22e, f98b75c, f3f5313.
+- Branch main; af3673b (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). origin/main == 3aa9f09. Recent commits: 3aa9f09, 0450b8a, 06fc22e, f98b75c, f3f5313.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values.
 - Artifacts: 25 entries in artifacts/ (24 JSON files parse cleanly, 0 parse errors).
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
