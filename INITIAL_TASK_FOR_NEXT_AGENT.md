@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 2026-11-05T15:42Z, this session)
+## Status (maintenance re-verification COMPLETE — 2026-11-05T15:44Z, this session)
 
-- Branch `main`; HEAD `e8310e0` at session start (checkpoint drift only; no strategy/code/data drift). `git status --short` clean before edits.
+- Branch `main`; HEAD `986eb74` at session start (checkpoint drift only; no strategy/code/data drift). `git status --short` clean before edits.
 - Session re-verification completed at 2026-11-05T15:42Z with **no drift**: `git status --short` clean; all 6 tracked SHA-256 hashes **MATCH**; 24 artifacts parse clean (0 errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.70s); `metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes). GitHub API MNQ path latest commit still `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` — **no free MNQ 1min/15min full-history source extending beyond 2026-04-15 found**; no data purchased; no credentials; no code/strategy/parameter changes.
 - SHA-256 re-verified (all **MATCH**): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126); `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77); `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37` (5609); `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99` (84078); `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7` (1059205); `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615).
 - Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
