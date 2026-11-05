@@ -4,6 +4,13 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
+## Current durable state (maintenance re-verification — 2026-11-05T14:27Z, this session)
+
+- Session-start verification: `git status --short` clean; HEAD `2cd83c240284983dd98c62b298409fe47e7114e7` (checkpoint drift only). All 6 tracked SHA-256 hashes **MATCH** recorded values; artifacts **24** JSON files parse clean; `python3 -m pytest -q` → **71 passed, 0 failed** (0.71s).
+- SHA-256 re-verified from disk (all **MATCH**): STRATEGY_RULES `6d3258c3...`, showcase config `2a6c5ff8...`, raw line counts 5609/84078/1059205/70615 (unchanged).
+- Bounded free-data monitoring (2026-11-05T14:27Z): GitHub API `axb0306` MNQ path latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` — **no extension beyond 2026-04-15**. No genuinely free MNQ 1min/15min full-history source found. No data purchased; no credentials requested/stored; no code/strategy/parameter changes.
+- Frozen baseline preserved; no code/strategy/parameter changes.
+
 ## Current durable state (maintenance re-verification — 2026-11-05T14:26Z, this session)
 
 - Session-start verification (2026-11-05T14:25Z): `git status --short` clean before edits; HEAD `a7aae67` (checkpoint drift only; no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH** recorded values; `ls artifacts/*.json | wc -l` = **24** (0 parse errors, all JSON parsed clean); `python3 -m pytest -q` → **71 passed, 0 failed** (0.65s).
