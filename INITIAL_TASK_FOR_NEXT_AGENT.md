@@ -1,10 +1,10 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f3f5313)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f98b75c)
 
-- Branch main; f3f5313 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f3f5313). 4f68289/f06e98b are ancestors of f3f5313. Recent commits: f3f5313, f06e98b, 4f68289, 975cf1c, 3c2dc1a.
-- SHA-256 re-verified from disk (2026-11-05): 5 of 6 tracked file hashes match recorded values; `raw/MNQ_1min_frontmonth.csv` recorded hash was malformed (non-hex `g`, did not match actual file) and was corrected to edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7 (regression introduced in f06e98b; prior 975cf1c value was correct).
-- Artifacts: 24 JSON files in artifacts/ (all parse cleanly, 0 parse errors); README.md is the 25th directory entry.
+- Branch main; f98b75c (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f98b75c). Recent commits: f98b75c, f3f5313, f06e98b, 4f68289, 975cf1c.
+- SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values (MNQ_1min_frontmonth.csv corrected in prior pass).
+- Artifacts: 25 entries in artifacts/ (24 JSON files parse cleanly, 0 parse errors).
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
 - Raw date ranges unchanged: MNQ_15min.csv 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 2026-01-20T13:27 → 2026-04-15T23:29; front-month files end 2025-11-12T23:45/23:59.
 - Tests: pytest not installed in this environment; prior verified run 71 passed/0 failed.
