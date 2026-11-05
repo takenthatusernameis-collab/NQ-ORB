@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — HEAD fafd139)
+## Current durable state (maintenance re-verification pass — f8913ec)
 
-- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at fafd139 (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == fafd139). Recent commits: fafd139, 58ec68d, 9576f3f, 76311a8, 9df681d, 2006d4d, e1a15ff, 20260c0, e39a863, 41d6d6a.
+- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at f8913ec (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f8913ec). Recent commits: f8913ec, 58ec68d, 9576f3f, 76311a8, 9df681d, 2006d4d, e1a15ff, 20260c0, e39a863, 41d6d6a.
 - SHA-256 verified from disk (2026-11-05): all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts: 25 files in artifacts/ (all JSON parse cleanly, 0 parse errors).
 - Determinism/walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
@@ -15,9 +15,9 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring: unchanged — no new genuinely free MNQ 1min/15min full-history source found. Prior findings remain valid.
 
-## Prior task (completed 2026-11-05, this session — maintenance re-verification — HEAD fafd139)
+## Prior task (completed 2026-11-05, this session — maintenance re-verification — f8913ec)
 
-Maintenance re-verification completed: verified git state (working tree clean, HEAD fafd139, fetched origin --prune, up to date with origin/main). Confirmed all six file hashes match recorded values. Confirmed artifacts parse cleanly (25 files, 0 parse errors). Re-ran tests (71 passed/0 failed). Walk-forward/baselines unchanged from artifacts. Re-scanned free-data context (no changes). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+Maintenance re-verification completed: verified git state (working tree clean, f8913ec, fetched origin --prune, up to date with origin/main). Confirmed all six file hashes match recorded values. Confirmed artifacts parse cleanly (25 files, 0 parse errors). Re-ran tests (71 passed/0 failed). Walk-forward/baselines unchanged from artifacts. Re-scanned free-data context (no changes). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 ## Next agent (immediate)
 
