@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — 0450b8a)
+## Current durable state (maintenance re-verification pass — 3aa9f09)
 
-- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 0450b8a (chore(kilo): checkpoint agent session). origin/main == 0450b8a. Recent commits: 0450b8a, 06fc22e, f98b75c, f3f5313, f06e98b.
+- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 3aa9f09 (chore(kilo): checkpoint agent session). origin/main == 3aa9f09. Recent commits: 3aa9f09, 0450b8a, 06fc22e, f98b75c, f3f5313.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values:
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1 — MATCH
   - config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4 — MATCH
@@ -19,11 +19,11 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Raw date ranges unchanged (MNQ_15min.csv/MNQ_1min.csv end 2026-04-15T23:15:00/23:29:00; MNQ_1min_frontmonth.csv/MNQ_15min_frontmonth.csv end 2025-11-12T23:45:00/23:59:00).
 - Tests: pytest available; 71 passed/0 failed (this session).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring: unchanged — no new genuinely free MNQ 1min/15min full-history source found. Prior findings remain valid.
+- Free-data monitoring: unchanged — no new genuinely free MNQ 1min/15min full-history source found.
 
-## Prior task (completed 2026-11-05, this session — maintenance re-verification — 0450b8a)
+## Prior task (completed 2026-11-05, this session — maintenance re-verification — 3aa9f09)
 
-Maintenance re-verification completed: verified git state (working tree clean, 0450b8a == main == origin/main). Re-verified SHA-256 hashes from disk; all 6 tracked file hashes match recorded values. Confirmed artifacts parse cleanly (24 JSON files, 0 parse errors). pytest available; 71 passed/0 failed. Walk-forward/baselines unchanged from artifacts. Raw date ranges unchanged. No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+Maintenance re-verification completed: verified git state (working tree clean, 3aa9f09 == main == origin/main). Re-verified SHA-256 hashes from disk; all 6 tracked file hashes match recorded values. Confirmed artifacts parse cleanly (24 JSON files, 0 parse errors). Ran pytest (71 passed/0 failed). Walk-forward/baselines unchanged from artifacts. Raw date ranges unchanged. No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 ## Next agent (immediate)
 
