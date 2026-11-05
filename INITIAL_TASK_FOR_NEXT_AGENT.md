@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 2026-11-05 08:22 UTC, this session)
+## Status (maintenance re-verification COMPLETE — 2026-11-05 08:24 UTC, this session)
 
-- Branch `main`; HEAD at verification `5e435b8` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean at verification.
+- Branch `main`; HEAD at verification `7e57736` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean at verification.
 - SHA-256 re-verified from disk (all 6 match): `STRATEGY_RULES.txt` `6d3258c3…ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8…91e4`, `raw/MNQ_15min.csv` `f417f22d…ce37`, `raw/MNQ_1min.csv` `129623f4…ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73…13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3…9ef4`.
 - Artifacts: **24** JSON files parse cleanly (0 parse errors).
 - Baselines unchanged (`metrics_*_full.json` / `metrics_verify_*`): `axb0306` net `-$31637.98`, win rate `70%`, profit factor `0.4917`; Kaggle net `-$626525.96`, win rate `64.8%`, profit factor `0.2271`. Prior verified walk-forward: `axb0306` 3 windows all negative; Kaggle 8 windows all negative.
 - Raw rows unchanged: `MNQ_15min` 5609; `MNQ_1min` 84078; `MNQ_1min_frontmonth` 1059205; `MNQ_15min_frontmonth` 70615 (total 1219507).
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.91s, 2026-11-05 08:22 UTC).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.93s, 2026-11-05 08:24 UTC).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
 - Free-data monitoring (2026-11-05 bounded sweep): `axb0306/cme-futures-ohlc` MNQ 1min/15min still `20260120_20260415` (`contents/MNQ` listing: MNQ_1min/15min dated 20260120_20260415; no newer files). Other candidates remain paid, key-gated, daily/limited intraday, or insufficient for free full-history MNQ 1min/15min. **No new genuinely free MNQ 1min/15min full-history source located.**
 
