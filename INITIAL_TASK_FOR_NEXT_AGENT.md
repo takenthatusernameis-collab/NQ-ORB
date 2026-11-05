@@ -1,6 +1,14 @@
 # Initial Task for Next Agent
 
-# Initial Task for Next Agent
+## Status (maintenance re-verification COMPLETE — 2026-11-05T14:30Z+, this session)
+
+- Branch `main`; HEAD `912aee3` at verification (checkpoint drift only; no strategy/code/data drift). `git status --short` clean before edits.
+- SHA-256 re-verified (all **MATCH**): same six tracked files/hashes as recorded.
+- Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.61s).
+- Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**.
+- Free-data monitoring: GitHub API `axb0306` MNQ path latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` — **no extension beyond 2026-04-15**. No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found. No data purchased; no credentials; no code/strategy/parameter changes.
+- Frozen baseline preserved.
 
 ## Status (maintenance re-verification COMPLETE — 2026-11-05T14:30Z, this session)
 
