@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 8930346)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD a7c4c55)
 
-- Branch main; HEAD 8930346 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == 8930346). Recent commits: 8930346, 6edee28, b43f6ca, c924d9a, 60bd690.
-- 8930346 is a pure doc-bump over b43f6ca (HEAD refs b43f6ca→8930346 only). No code/strategy/data changes.
+- Branch main; HEAD a7c4c55 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty); fetched origin --prune; up to date with origin/main (`main` == `origin/main` == a7c4c55). Recent commits: a7c4c55, 8930346, 6edee28, b43f6ca, c924d9a.
+- a7c4c55 is a pure doc-bump over 8930346 (HEAD refs 8930346→a7c4c55 only). No code/strategy/data changes.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
 - Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative (-$10053.14, -$21922.10, -$23058.98). Kaggle 8 windows, all test_net_pnl negative (-$178375.24, -$173264.64, -$168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72).
