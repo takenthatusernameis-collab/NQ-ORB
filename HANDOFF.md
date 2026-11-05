@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification — 2026-11-05T14:44Z, this session)
+## Current durable state (maintenance re-verification — 2026-11-05T14:46Z, this session)
 
 - Session-start verification (2026-11-05T14:44Z): `git status --short` clean before edits; HEAD `e74cf32` (checkpoint drift only; no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH** (rechecked via `sha256sum`); artifacts **24** JSON files parse clean (0 parse errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.74s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - Session re-verification completed at 2026-11-05T14:44Z with **no drift**: git clean, all 6 hashes MATCH, 24 artifacts parse clean, 71 tests pass, metrics hash unchanged, free-data coverage unchanged (no extension beyond 2026-04-15).
