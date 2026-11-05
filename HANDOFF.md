@@ -4,10 +4,10 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — HEAD 70add8d)
+## Current durable state (maintenance re-verification pass — HEAD b2c4da2)
 
-- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 70add8d (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 70add8d). Recent commits: 70add8d, 2794b06, 3f19249, 6e71e87, 55f9677, 7f2ad6e, 36be7a0, 9f0eb8e.
-- HEAD advanced via checkpoints; no code/strategy/data changes in this session.
+- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at b2c4da2 (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == b2c4da2). Recent commits: b2c4da2, 70add8d, 2794b06, 3f19249, 6e71e87, 55f9677, 7f2ad6e, 36be7a0.
+- HEAD advanced via checkpoints since the prior verified state; no code/strategy/data changes in this session.
 - SHA-256 verified from disk (2026-11-05): all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
 - Determinism: prior verified byte-identical metrics and trade-ledger SHA-256 (axb0306 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; kaggle 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5). State unchanged.
@@ -16,11 +16,11 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Raw date ranges unchanged (MNQ_15min.csv/MNQ_1min.csv end 2026-04-15T23:15:00/23:29:00; MNQ_1min_frontmonth.csv/MNQ_15min_frontmonth.csv end 2025-11-12T23:59:00/23:45:00).
 - Tests: `python3 -m pytest tests/` = 71 passed, 0 failed (pytest 9.2.0 available this session).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min full-history source found. axb0306/cme-futures-ohlc last MNQ-path commit still 60abd3fb dated 2026-04-15T23:34:55Z (stale ~6.5 months). MarketParquet limited sample only; full archive paid. Kaggle MNQ only already-ingested brandenmorris dataset + byte-identical duplicate; NQ big-contract hits excluded.
+- Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min full-history source found. axb0306/cme-futures-ohlc last MNQ-path commit still 60abd3fb dated 2026-04-15T23:34:55Z (stale ~6.5 months); live MNQ/ directory listing still exactly the same 8 files, no extension of intraday history. MarketParquet limited sample only; full archive paid. Kaggle MNQ only already-ingested brandenmorris dataset + byte-identical duplicate; NQ big-contract hits excluded.
 
-## Prior task (completed 2026-11-05, this session — maintenance re-verification — HEAD 70add8d)
+## Prior task (completed 2026-11-05, this session — maintenance re-verification — HEAD b2c4da2)
 
-Maintenance re-verification completed this session: verified git state (working tree clean, HEAD 70add8d, fetched origin --prune, up to date). Confirmed all six file hashes match recorded values. Confirmed artifacts parse cleanly (21 files: README.md + 20 JSON, 0 parse errors). Re-ran tests (71 passed/0 failed). Walk-forward/baselines unchanged. Re-scanned free-data sources (no new genuinely free MNQ 1min/15min full-history). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+Maintenance re-verification completed this session: verified git state (working tree clean, HEAD b2c4da2, fetched origin --prune, up to date with origin/main). Confirmed all six file hashes match recorded values. Confirmed artifacts parse cleanly (21 files: README.md + 20 JSON, 0 parse errors). Re-ran tests (71 passed/0 failed). Walk-forward/baselines unchanged from artifacts. Re-scanned free-data sources (no new genuinely free MNQ 1min/15min full-history; axb0306 MNQ path still at commit 60abd3fb dated 2026-04-15T23:34:55Z, stale ~6.5 months, no history extension). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 ## Next agent (immediate)
 
