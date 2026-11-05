@@ -1,15 +1,15 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, 3aa9f09)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, 35cb08b)
 
-- Branch main; af3673b (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). origin/main == 3aa9f09. Recent commits: 3aa9f09, 0450b8a, 06fc22e, f98b75c, f3f5313.
+- Branch main; 35cb08b (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). origin/main == 35cb08b. Recent commits: 35cb08b, af3673b, 3aa9f09, 0450b8a, 06fc22e, f98b75c.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values.
 - Artifacts: 25 entries in artifacts/ (24 JSON files parse cleanly, 0 parse errors).
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
-- Raw date ranges unchanged: MNQ_15min.csv 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 2026-01-20T13:27 → 2026-04-15T23:29; front-month files end 2025-11-12T23:45/23:59.
-- Tests: pytest available; 71 passed/0 failed.
+- Raw date ranges re-checked by row count: MNQ_15min.csv 5608 rows 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 84077 rows 2026-01-20T13:27 → 2026-04-15T23:29; MNQ_1min_frontmonth.csv 1059204 rows → 2025-11-12T23:59; MNQ_15min_frontmonth.csv 70614 rows → 2025-11-12T23:45.
+- Tests: pytest available; 71 passed/0 failed (0.95s).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data re-scan: no new genuinely free MNQ 1min/15min full-history source found.
+- Free-data re-sweep (2026-11-05, 8+ sources): no new genuinely free MNQ 1min/15min full-history source found. Paid/limited: FirstRate Data, Portara, Kibot, MarketParquet full archive (paid); Yahoo Finance NQ=F/MNQ=F (daily only, 1min limited to last 30d and 8 bars/request, unadjusted contract-switching); MarketParquet free (last ~365d daily + intraday sample pack Apr 6-10 2026 only); Databento ($125 credit expiring in 6mo, unadjusted continuous series, UTC timestamps); Kaggle uploads (unknown provenance/licence); getdata-finance GitHub (1m sample only 2026-04-01 → 2026-09-02, E-mini NQ not MNQ, full archive behind getdata.finance).
 
 ## Tasks (maintenance only)
 
