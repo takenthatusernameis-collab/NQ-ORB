@@ -23,8 +23,10 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Prior task (completed 2026-11-05T10:37Z, this session — maintenance re-verification)
 
-- Independently re-verified from `main` at HEAD `85c1394` (clean working tree; no code/data drift): all 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES 126 lines, showcase config 77, raw line counts 5609/84078/1059205/70615). **24** artifact JSON files parse clean (0 errors); `artifacts/metrics_axb0306.json` SHA-256 unchanged (`e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, 9055 bytes). `python3 -m pytest -q` → **71 passed, 0 failed** (0.88s).
-- Bounded free-data check (GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2`): latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15**. No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- Independently re-verified from `main` at HEAD `85c1394` (clean working tree; no code/data drift vs HEAD `160e66b`, only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md doc edits between): all 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES 126 lines, showcase config 77, raw line counts 5609/84078/1059205/70615). **24** artifact JSON files parse clean (0 errors); `artifacts/metrics_axb0306.json` SHA-256 unchanged (`e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, 9055 bytes). `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s).
+- Bounded free-data monitoring, this session:
+  - GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=2`: latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`, prior `dc0dcf7` 2026-04-14 — **no extension beyond 2026-04-15** (unchanged).
+  - Bounded web sweep for free MNQ 1min/15min full-history sources: PortaraCQG, FirstRate Data, Kibot ($520 one-time), MarketParquet paid archive, Databento (credit-gated) are paid/proprietary; Yahoo Finance (MNQ=F) and MarketParquet free are free but intraday-inadequate (30 days of 1-minute / one sample week only). **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.** No data purchased; no credentials requested/stored; no code/strategy/parameter changes. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 
 ## Next agent (immediate)
 
