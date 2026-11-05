@@ -1,17 +1,17 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 2794b06)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 70add8d)
 
-- Branch main; HEAD 2794b06 (chore(kilo): checkpoint agent session; doc-only over 3f19249); working tree clean (`git status --short` empty, no untracked files). Recent commits: 2794b06, 3f19249, 6e71e87, 55f9677, 7f2ad6e, 36be7a0, 9f0eb8e.
+- Branch main; HEAD 70add8d (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Recent commits: 70add8d, 2794b06, 3f19249, 6e71e87, 55f9677, 7f2ad6e, 36be7a0, 9f0eb8e.
 - SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
-- Determinism re-verified from scratch (2026-11-05): both baselines re-run via `python src/orb/runner.py --prefix <verify> --source <axb0306|kaggle>` produce byte-identical metrics (0 differing fields) and identical trade-ledger SHA-256 (axb0306 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; kaggle 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5). Verify copies deleted after comparison.
-- Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative ([-10053.14, -21922.10, -23058.98]). Kaggle 8 windows, all test_net_pnl negative ([-178375.24, -$168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72]).
+- Determinism (prior verified): both baselines byte-identical metrics and trade-ledger SHA-256 (axb0306 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; kaggle 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5).
+- Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative ([-10053.14, -21922.10, -23058.98]). Kaggle 8 windows, all test_net_pnl negative ([-178375.24, -173264.64, -168315.48, -134617.64, -122071.62, -70637.24, -104755.42, -114820.72]).
 - Baselines verified: axb0306_full 60 trades, 70.0% WR, net -$31,637.98; Kaggle front-month 688 trades, 64.8256% WR, net -$626,525.96.
 - Raw date ranges unchanged: axb0306 ends 2026-04-15T23:15:00/23:29:00 (stale); Kaggle front-month ends 2025-11-12T23:59:00/23:45:00.
 - Tests: `python3 -m pytest tests/` = 71 passed, 0 failed (pytest 9.2.0 available this session).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring re-scan (2026-11-05): unchanged — no new genuinely free MNQ 1min/15min full-history source found. axb0306/cme-futures-ohlc last MNQ-path commit still 60abd3fb dated 2026-04-15T23:34:55Z (stale ~6.5 months; no extension of intraday history). MarketParquet limited free sample (Apr 6-10 2026 intraday, ~365 days daily) only; full archive paid. Kaggle MNQ only already-ingested brandenmorris dataset.
+- Free-data monitoring re-scan (2026-11-05): no new genuinely free MNQ 1min/15min full-history source found. axb0306/cme-futures-ohlc last MNQ commit 60abd3fb (2026-04-15, stale); MarketParquet limited sample only; Kaggle MNQ only already-ingested brandenmorris dataset.
 
 ## Tasks (maintenance only)
 
