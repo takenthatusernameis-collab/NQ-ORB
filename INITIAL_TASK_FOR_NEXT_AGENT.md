@@ -1,15 +1,14 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 2026-11-05 09:24 UTC, this session)
+## Status (maintenance re-verification COMPLETE — 2026-11-05 09:27 UTC, this session)
 
-- Branch `main`; HEAD at `5f23823` (2026-11-05, `chore(kilo): checkpoint agent session`), which touched only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; code/data state unchanged from `707575c`. Working tree clean before handoff edits; handoff/task-file edits only during this session.
-- SHA-256 re-verified from disk (all 6 **MATCH**): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
+- Branch `main`; HEAD at `3a4e393` at verification start. Working tree clean before handoff edits; `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updated only. Code/data unchanged.
+- SHA-256 re-verified from disk (all 6 **MATCH**): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37` (5609 rows), `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99` (84078), `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7` (1059205), `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615).
 - Artifacts: **24** JSON files parse cleanly (0 parse errors).
 - Baselines unchanged (`metrics_*_full.json` / `metrics_verify_*`): `axb0306` net `-$31637.98`, win rate `70%`, profit factor `0.4917`; Kaggle net `-$626525.96`, win rate `64.8%`, profit factor `0.2271`. Prior verified walk-forward: `axb0306` 3 windows all negative; Kaggle 8 windows all negative.
-- Raw rows unchanged (2026-11-05): `MNQ_15min` 5609; `MNQ_1min` 84078; `MNQ_1min_frontmonth` 1059205; `MNQ_15min_frontmonth` 70615 (total 1219507).
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.88s, 2026-11-05 09:24 UTC).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.90s, 2026-11-05 09:27 UTC).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring (2026-11-05 09:24 UTC bounded sweep): GitHub API `https://api.github.com/repos/axb0306/cme-futures-ohlc/contents/MNQ` lists 1min/15min only through 2026-04-15 (`MNQ_1min_20260120_20260415.csv` 4904282 bytes sha `946c6b76d685…`; `MNQ_15min_20260120_20260415.csv` 333668 bytes sha `7df047964034…`) — **no extension beyond 2026-04-15**. Latest commit on MNQ path `60abd3fb6369` dated 2026-04-15T23:34:55Z — unchanged. No new genuinely free MNQ 1min/15min full-history source located.
+- Free-data monitoring (2026-11-05 09:27 UTC bounded sweep): GitHub API `repos/axb0306/cme-futures-ohlc/contents/MNQ` + commits `?path=MNQ&per_page=1` — 1min/15min only through 2026-04-15 (`MNQ_1min_20260120_20260415.csv` 4904282 bytes sha `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4`; `MNQ_15min_20260120_20260415.csv` 333668 bytes sha `7df047964034b648ad7d8639515b6c9a92998af0`), latest MNQ-path commit `60abd3fb6369` 2026-04-15T23:34:55Z — **no extension beyond 2026-04-15**. No new genuinely free MNQ 1min/15min full-history source located.
 
 ## Tasks (maintenance only)
 
