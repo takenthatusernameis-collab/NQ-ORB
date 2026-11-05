@@ -4,7 +4,7 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification — 2026-11-05T16:31Z, this session)
+## Current durable state (maintenance re-verification — 2026-11-05T16:33Z, this session)
 
 - Session-start verification (2026-11-05T16:31Z): `git status --short` clean before edits; working tree had only handoff-task file timestamps from prior cycle (no strategy/code/data/raw/artifact drift). All 6 tracked SHA-256 hashes **MATCH** (rechecked via `sha256sum`); 24 artifacts parse clean (0 errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.64s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
 - Free-data monitoring (GitHub API, 2026-11-05T16:31Z): `axb0306/cme-futures-ohlc` MNQ contents (`MNQ/`) unchanged — `MNQ_1min_20260120_20260415.csv` (4904282, blob `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4`), `MNQ_15min_20260120_20260415.csv` (333668, blob `7df047964034b648ad7d8639515b6c9a92998af0`), `MNQ_tick_20260309_20260415.csv` (29979112, blob `d9a91eea5dcd13c4b1af8ea3248937f61db18cce`, 2026-03-09..2026-04-15 only). Latest MNQ path commit still `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. **No 1min/15min extension beyond 2026-04-15.** Tick file (~1 month ending 2026-04-15) does not satisfy full-history-extension criterion and is not used as evidence.
