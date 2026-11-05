@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification COMPLETE — 2026-11-05T18:39Z, this session)
+## Current durable state (maintenance re-verification COMPLETE — 2026-11-05T18:42Z, this session)
 
-- Session verification (2026-11-05T18:39Z, repo `f2d7862`): `git status --short` clean before handoff edits (exit 0); no drift. All 6 tracked SHA-256 hashes **MATCH**; 24 `artifacts/*.json`, 0 parse errors; `python3 -m pytest -q` → **71 passed, 0 failed** (0.59s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`.
+- Session verification (2026-11-05T18:42Z, repo `dbbc35e`): `git status --short` clean before handoff edits (exit 0); no drift. All 6 tracked SHA-256 hashes **MATCH**; 24 `artifacts/*.json`, 0 parse errors; `python3 -m pytest -q` → **71 passed, 0 failed** (0.66s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`.
 - Free-data monitoring (GitHub API + bounded web search, 2026-11-05T18:39Z): `axb0306/cme-futures-ohlc` `MNQ/` unchanged — `MNQ_1min_20260120_20260415.csv` 4904282 blob `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4`; `MNQ_15min_20260120_20260415.csv` 333668 blob `7df047964034b648ad7d8639515b6c9a92998af0`; `MNQ_tick_20260309_20260415.csv` 29979112 blob `d9a91eea5dcd13c4b1af8ea3248937f61db18cce` (2026-03-09..2026-04-15 only). Latest MNQ commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. Bounded web search: MarketParquet/FirstRate/Portara/Databento paid/limited/credits; Kaggle NQ sample (not MNQ full-history extension); getdata NQ equity (not MNQ futures) — **no genuinely free MNQ 1min/15min full-history extension beyond 2026-04-15 observed**. No data purchased; no credentials requested/stored; no code/strategy/parameter changes.
 - SHA-256 re-verified from disk (all **MATCH**):
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126 lines)
@@ -20,7 +20,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Prior session log (compact)
 
-- 2026-11-05T18:39Z (this session, `f2d7862`): maintenance re-verification (clean, 6/6 MATCH, 24 artifacts parse clean, 71 passed). GitHub API: axb0306 MNQ blobs unchanged; latest MNQ commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. Bounded web search: paid/limited/sample/non-matching sources only. No genuinely free MNQ 1min/15min full-history extension beyond 2026-04-15 observed. No data purchased; no code/strategy/parameter changes.
+- 2026-11-05T18:42Z (this session, `dbbc35e`): maintenance re-verification (clean, 6/6 MATCH, 24 artifacts parse clean, 71 passed). GitHub API: axb0306 MNQ blobs unchanged; latest MNQ commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z`. Bounded web search: paid/limited/sample/non-matching sources only. No genuinely free MNQ 1min/15min full-history extension beyond 2026-04-15 observed. No data purchased; no code/strategy/parameter changes.
 - 2026-11-05T18:37Z (`827cfcd`): maintenance re-verification (clean, 6/6 MATCH, 24/71). axb0306 unchanged; no free extension beyond 2026-04-15.
 - 2026-11-05T18:35Z (`7d6a856`): maintenance re-verification (clean, 6/6 MATCH, 24/71). axb0306 unchanged; no free extension beyond 2026-04-15.
 - 2026-11-05T18:33Z (`a32f9a7`): maintenance re-verification (clean, 6/6 MATCH, 24/71). axb0306 unchanged; no free extension beyond 2026-04-15.
