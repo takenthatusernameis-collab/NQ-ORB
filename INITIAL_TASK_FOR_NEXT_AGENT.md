@@ -1,14 +1,15 @@
 # Initial Task for Next Agent
 
-## Status (maintenance re-verification COMPLETE — 5335b33, 2026-11-05)
+## Status (maintenance re-verification COMPLETE — 4f6a37b, 2026-11-05)
 
-- Branch main; HEAD 5335b33 (chore(kilo): checkpoint agent session); working tree clean at verification.
+- Branch main; HEAD 4f6a37b (chore(kilo): checkpoint agent session); working tree clean at verification.
 - SHA-256 re-verified from disk: all 6 tracked hashes match recorded values (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_{15min,1min,1min_frontmonth,15min_frontmonth}.csv).
 - Artifacts: 25 entries, 24 JSON files parse cleanly (0 parse errors).
-- Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96; all walk-forward test windows negative net P&L).
-- Raw date ranges/row counts unchanged (MNQ_15min 5608 rows → 2026-04-15T23:15; MNQ_1min 84077 rows → 2026-04-15T23:29; MNQ_1min_frontmonth 1059204 rows → 2025-11-12T23:59; MNQ_15min_frontmonth 70614 rows → 2025-11-12T23:45).
+- Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98, win rate 70%, profit factor 0.4917; Kaggle 688 trades net -$626525.96, win rate 64.8%, profit factor 0.2271; all walk-forward test windows negative net P&L).
+- Raw date ranges/row counts unchanged (MNQ_15min 5609 rows → 2026-04-15T23:15; MNQ_1min 84078 rows → 2026-04-15T23:29; MNQ_1min_frontmonth 1059205 rows → 2025-11-12T23:59; MNQ_15min_frontmonth 70615 rows → 2025-11-12T23:45).
 - Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
+- Free-data monitoring (2026-11-05 sweep): MarketParquet, FirstRate Data, TestMax, Kibot, Yahoo Finance, Databento, GetData re-checked — all paid/key-gated/daily-only. No new genuinely free MNQ 1min/15min full-history source located.
 
 ## Tasks (maintenance only)
 
@@ -31,3 +32,4 @@
 - Research blocked on data depth; both baselines negative under full costs; all walk-forward test windows negative. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 - axb0306 roll/adjustment: single-contract MNQ.M26, no roll inside sample.
 - Kaggle front-month ends 2025-11-12; final ~2.9 months preserved as untouched OOS. No free source extends this without purchase.
+- If a genuinely free MNQ 1min/15min source with longer history is found (record provenance + SHA-256 before use), the next concrete task is a re-baseline run with the frozen preset and an updated walk-forward/OOS split — not parameter tuning.

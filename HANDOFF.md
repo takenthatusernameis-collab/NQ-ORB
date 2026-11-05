@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — 5335b33, 2026-11-05)
+## Current durable state (maintenance re-verification pass — 4f6a37b, 2026-11-05)
 
-- Branch: main. Working tree clean at verification (`git status --short` empty). HEAD 5335b33 (chore(kilo): checkpoint agent session). Recent commits: 5335b33, e05c643, 35cb08b, af3673b, 3aa9f09, 0450b8a.
+- Branch: main. Working tree clean at verification (`git status --short` empty). HEAD 4f6a37b (chore(kilo): checkpoint agent session). Recent commits: 4f6a37b, 5335b33, e05c643, 35cb08b, af3673b, 3aa9f09, 0450b8a.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values:
   - STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1 — MATCH
   - config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4 — MATCH
@@ -15,15 +15,15 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
   - raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7 — MATCH
   - raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4 — MATCH
 - Canonical artifacts: 25 entries in artifacts/ (24 JSON files parse cleanly, 0 parse errors).
-- Determinism/walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98, win rate 70%, max DD $37491.80; Kaggle 688 trades net -$626525.96, win rate 64.8%, profit factor 0.227; all walk-forward test windows negative net P&L).
-- Raw date ranges/row counts unchanged (MNQ_15min.csv 5608 rows 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 84077 rows 2026-01-20T13:27 → 2026-04-15T23:29; MNQ_1min_frontmonth.csv 1059204 rows → 2025-11-12T23:59; MNQ_15min_frontmonth.csv 70614 rows → 2025-11-12T23:45).
-- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s, 2026-11-05).
+- Determinism/walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98, win rate 70%, profit factor 0.4917, max DD $37491.80; Kaggle 688 trades net -$626525.96, win rate 64.8%, profit factor 0.2271; all walk-forward test windows negative net P&L).
+- Raw date ranges/row counts unchanged (MNQ_15min.csv 5609 rows 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 84078 rows 2026-01-20T13:27 → 2026-04-15T23:29; MNQ_1min_frontmonth.csv 1059205 rows → 2025-11-12T23:59; MNQ_15min_frontmonth.csv 70615 rows → 2025-11-12T23:45).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.87s).
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring: no change in status vs prior pass (no new genuinely free MNQ 1min/15min full-history source identified). Highest-value action remains bounded free-data re-sweep, not parameter fitting.
+- Free-data monitoring (2026-11-05 sweep): re-checked MarketParquet (free = last ~365 days daily + 1-week intraday sample pack only; full 1min/15min history is $79 one-time paid), FirstRate Data (paid $99.95/yr), TestMax (MNQ requires Pro), Kibot ($520 one-time), Yahoo Finance (daily only), Databento (key-gated + paid credits), GetData (paid). No new genuinely free MNQ 1min/15min full-history source identified. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 
 ## Prior task (completed 2026-11-05, this session — maintenance re-verification)
 
-Re-verified git state (clean, HEAD 5335b33), SHA-256 hashes (all 6 match), artifacts (24 JSON parse OK), raw row counts/ranges, tests (71 passed, 0 failed), baseline metrics (axb0306 net -$31637.98 / Kaggle net -$626525.96, all walk-forward windows negative). No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
+Re-verified git state (clean, HEAD 4f6a37b), SHA-256 hashes (all 6 match), artifacts (24 JSON parse OK), raw row counts/ranges, tests (71 passed, 0 failed), baseline metrics (axb0306 net -$31637.98 / Kaggle net -$626525.96, all walk-forward windows negative). Ran bounded free-data monitoring sweep; no new free MNQ 1min/15min source. No data purchased; no credentials requested/stored. Updated HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md.
 
 ## Next agent (immediate)
 
