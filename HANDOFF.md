@@ -6,7 +6,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Current durable state (maintenance re-verification pass — 2026-11-05 08:24 UTC, this session)
 
-- Branch: `main`. HEAD at verification: `7e57736` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean at verification (`git status --short` empty). Recent commits: 7e57736, 5e435b8, 859a6b5.
+- Branch: `main`. HEAD at verification: `1f365bc` (2026-11-05, `chore(kilo): checkpoint agent session`). Working tree clean at verification (`git status --short` empty). Recent commits: 1f365bc, 7e57736, 5e435b8.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values:
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` — MATCH
   - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` — MATCH
