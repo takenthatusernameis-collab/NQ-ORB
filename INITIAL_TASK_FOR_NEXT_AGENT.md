@@ -2,7 +2,7 @@
 
 ## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, f98b75c)
 
-- Branch main; f98b75c (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == f98b75c). Recent commits: f98b75c, f3f5313, f06e98b, 4f68289, 975cf1c.
+- Branch main; 06fc22e (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 06fc22e). Recent commits: 06fc22e, f98b75c, f3f5313, f06e98b, 4f68289.
 - SHA-256 re-verified from disk (2026-11-05): all 6 tracked file hashes match recorded values (MNQ_1min_frontmonth.csv corrected in prior pass).
 - Artifacts: 25 entries in artifacts/ (24 JSON files parse cleanly, 0 parse errors).
 - Walk-forward/baselines unchanged from prior verified artifacts (axb0306 3 windows all negative; Kaggle 8 windows all negative; axb0306 60 trades net -$31637.98; Kaggle 688 trades net -$626525.96).
