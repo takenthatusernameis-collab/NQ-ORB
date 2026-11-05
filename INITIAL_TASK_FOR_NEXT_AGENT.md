@@ -1,17 +1,17 @@
 # Initial Task for Next Agent
 
-## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 41d6d6a)
+## Status (session 2026-11-05 — maintenance re-verification pass COMPLETE, HEAD 20260c0)
 
-- Branch main; HEAD e39a863 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == e39a863). Recent commits: e39a863, 41d6d6a, ee49188, d372430, b021d09, fe68455, b2c4da2, 70add8d, 2794b06, d2bd42b, bfd59c4.
-- SHA-256 verified from disk (2026-11-05): all six tracked file hashes match recorded values.
+- Branch main; HEAD 20260c0 (chore(kilo): checkpoint agent session); working tree clean (`git status --short` empty, no untracked files). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 20260c0). Recent commits: 20260c0, e39a863, 41d6d6a, 71c6da9, ee49188, d372430, b021d09, fe68455, b2c4da2, 70add8d, 2794b06, d2bd42b, bfd59c4.
+- SHA-256 re-verified from disk (2026-11-05): all six tracked file hashes match recorded values.
+- Determinism re-verified from fresh process: axb0306 net -$31,637.98; kaggle net -$626,525.96. Trade-ledger SHA-256 byte-identical: axb0306 `ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364`; kaggle `7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5`. Metrics files also byte-identical. Verify copies deleted after comparison.
 - Artifacts: 21 files in artifacts/ (README.md + 20 JSON); all JSON parse cleanly (0 parse errors).
-- Determinism (prior verified): both baselines byte-identical metrics and trade-ledger SHA-256 (axb0306 ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364; kaggle 7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5).
-- Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative ([-10053.14, -21922.10, -23058.98]). Kaggle 8 windows, all test_net_pnl negative ([-178375.24, -173264.64, -168315.48, -$134617.64, -$122071.62, -$70637.24, -$104755.42, -$114820.72]).
+- Walk-forward verified from artifacts: axb0306 3 windows, all test_net_pnl negative ([-$10,053.14, -$21,922.10, -$23,058.98]). Kaggle 8 windows, all test_net_pnl negative ([-$178,375.24, -$173,264.64, -$168,315.48, -$134,617.64, -$122,071.62, -$70,637.24, -$104,755.42, -$114,820.72]).
 - Baselines verified: axb0306_full 60 trades, 70.0% WR, net -$31,637.98; Kaggle front-month 688 trades, 64.8256% WR, net -$626,525.96.
-- Raw date ranges unchanged: axb0306 ends 2026-04-15T23:15:00/23:29:00 (stale); Kaggle front-month ends 2025-11-12T23:59:00/23:45:00.
-- Tests: `python3 -m pytest tests/` = 71 passed, 0 failed (pytest 9.2.0 available this session).
+- Raw date ranges unchanged: MNQ_15min.csv 2026-01-20T13:15 → 2026-04-15T23:15; MNQ_1min.csv 2026-01-20T13:27 → 2026-04-15T23:29; front-month files end 2025-11-12T23:45/23:59.
+- Tests: `python3 -m pytest tests/` = 71 passed, 0 failed.
 - Frozen baseline preserved; no code/strategy/parameter changes; no data purchased; no credentials requested or stored.
-- Free-data monitoring re-scan (2026-11-05): no new genuinely free MNQ 1min/15min full-history source found. axb0306/cme-futures-ohlc last MNQ commit 60abd3fb (2026-04-15, stale ~6.5 months); live MNQ/ listing still exactly the same 8 files, no history extension. MarketParquet limited sample only; Kaggle MNQ only already-ingested brandenmorris dataset + byte-identical duplicate; NQ big-contract datasets excluded.
+- Free-data re-scan (2026-11-05): no new genuinely free MNQ 1min/15min full-history source. Confirmed paid/key-gated: historicalfuturesdata.com ($59/yr per bar size), FinzData ($49 one-time), FirstRate ($99.95/yr), MarketParquet ($79 one-time; free tier daily-only), Kibot ($520), Portara (paid), Databento (key-gated + credit-based), Barchart (intraday needs Premier), Yahoo Finance (MNQ=F daily only; 1-min = last 30 days), investing.com (daily-only), CME DataMine (samples only). Kaggle MNQ hits remain brandenmorris (ends 2025-11-12, already ingested) + byte-identical duplicate; all other hits are NQ big contract ($20/point) or non-MNQ.
 
 ## Tasks (maintenance only)
 
