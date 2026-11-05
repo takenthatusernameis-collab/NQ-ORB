@@ -1,5 +1,15 @@
 # Initial Task for Next Agent
 
+## Status (maintenance re-verification COMPLETE — 2026-11-05T14:31Z, this session)
+
+- Branch `main`; HEAD `168fbb4d` at verification (checkpoint drift only; no strategy/code/data drift). `git status --short` clean before edits.
+- SHA-256 re-verified (all **MATCH**): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126); `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77); `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37` (5609); `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99` (84078); `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7` (1059205); `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615).
+- Artifacts: **24** JSON files parse cleanly (0 parse errors). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
+- Tests: `python3 -m pytest -q` → **71 passed, 0 failed** (0.64s, 2026-11-05T14:31Z).
+- Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
+- Free-data monitoring (2026-11-05T14:31Z): GitHub API `axb0306` MNQ path latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` (priors 2026-04-14/13) — **no extension beyond 2026-04-15**. Bounded web sweep (2026-11-05): paid/proprietary — MarketParquet MNQ full 1-min 2019-05-06..2026-10-30 ($79; free = ~365d daily + sample), FinzData ($49/$295), FirstRate (purchase + $99.95/yr), HistoricalFuturesData free tier = latest 3 months intraday/daily only, Portara/Kibot/Barchart Premier/CME DataMine/Databento (paid/credits) — **not used/purchased**. Free but intraday-inadequate: Yahoo `MNQ=F`/`NQ=F` (1-min ~30d, 5-min 60d, 1h 730d), MarketParquet free (~365d daily + sample), Barchart free (2y daily), Kaggle `tgtanalytics/nq-futures-1min-bar-2022-2025` ends 2025-11-12 (no newer upload). `infoway.io` MNQ API requires an API key (credentials) — **not used**. **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.** No data purchased; no credentials requested/stored; no code/strategy/parameter changes.
+- Frozen baseline preserved; no code/strategy/parameter changes.
+
 ## Status (maintenance re-verification COMPLETE — 2026-11-05T14:30Z+, this session)
 
 - Branch `main`; HEAD `912aee3` at verification (checkpoint drift only; no strategy/code/data drift). `git status --short` clean before edits.

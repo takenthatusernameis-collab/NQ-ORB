@@ -4,6 +4,19 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
+## Current durable state (maintenance re-verification — 2026-11-05T14:31Z, this session)
+
+- Session-start verification (2026-11-05T14:30Z): `git status --short` clean before edits; HEAD `168fbb4d` (`chore(kilo): checkpoint agent session`; checkpoint/history drift only, no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH**; artifacts **24** JSON files parse clean (0 parse errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.64s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
+- SHA-256 re-verified from disk (all **MATCH**):
+  - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (126 lines)
+  - `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4` (77 lines)
+  - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37` (5609 lines)
+  - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99` (84078 lines)
+  - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7` (1059205 lines)
+  - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4` (70615 lines)
+- Bounded free-data monitoring (2026-11-05T14:31Z): GitHub API `repos/axb0306/cme-futures-ohlc/commits?path=MNQ&per_page=3` latest MNQ-path commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` `2026-04-15T23:34:55Z` (priors 2026-04-14/13) — **no extension beyond 2026-04-15**. Bounded web sweep (2026-11-05): paid/proprietary — MarketParquet MNQ full 1-min 2019-05-06..2026-10-30 ($79 one-time; free = ~365d daily + sample), FinzData ($49/$295), FirstRate (purchase + $99.95/yr), HistoricalFuturesData free tier = latest 3 months intraday/daily only, Portara/Kibot/Barchart Premier/CME DataMine/Databento (paid/credits) — **not used/purchased**. Free but intraday-inadequate: Yahoo `MNQ=F`/`NQ=F` (1-min ~30d, 5-min 60d, 1h 730d), MarketParquet free (~365d daily + sample), Barchart free (2y daily), Kaggle `tgtanalytics/nq-futures-1min-bar-2022-2025` ends 2025-11-12 (no newer upload). `infoway.io` MNQ API requires an API key (credentials) — **not used**. **No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found.** No data purchased; no credentials requested/stored; no code/strategy/parameter changes.
+- Frozen baseline preserved; no code/strategy/parameter changes.
+
 ## Current durable state (maintenance re-verification — 2026-11-05T14:30Z+, this session)
 
 - Session-start verification: `git status --short` clean before edits; HEAD `912aee3` (checkpoint drift only, no strategy/code/data changes). All 6 tracked SHA-256 hashes **MATCH**; artifacts **24** JSON files parse clean (0 parse errors); `python3 -m pytest -q` → **71 passed, 0 failed** (0.61s). `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (9055 bytes).
