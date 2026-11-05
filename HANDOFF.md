@@ -4,9 +4,9 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification pass — HEAD 9df681d)
+## Current durable state (maintenance re-verification pass — HEAD 76311a8)
 
-- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 9df681d (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 9df681d). Recent commits: 9df681d, e1a15ff, 20260c0, e39a863, 41d6d6a, 71c6da9, ee49188, d372430, b021d09, fe68455.
+- Branch: main. Working tree clean (`git status --short` empty, no untracked files); HEAD at 76311a8 (chore(kilo): checkpoint agent session). Fetched origin --prune; local main up to date with origin/main (`main` == `origin/main` == 76311a8). Recent commits: 76311a8, 9df681d, 2006d4d, e1a15ff, 20260c0, e39a863, 41d6d6a, 71c6da9, ee49188, d372430.
 - HEAD advanced via checkpoints since prior verified state; no code/strategy/data changes in this session.
 - SHA-256 verified from disk (2026-11-05): all six hashes match recorded values (STRATEGY_RULES.txt 6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1; config/orb_mnq_15m_showcase.yaml 2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4; raw/MNQ_15min.csv f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37; raw/MNQ_1min.csv 129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99; raw/MNQ_1min_frontmonth.csv edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7; raw/MNQ_15min_frontmonth.csv 7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4).
 - Canonical artifacts: 24 files in artifacts/ (all JSON parse cleanly, 0 parse errors).
@@ -29,5 +29,10 @@ See INITIAL_TASK_FOR_NEXT_AGENT.md. Maintenance/re-verification only: verify rep
 ## Maintenance re-verification pass — 2026-11-05 (HEAD 20260c0) [historical]
 
 - Repo state: working tree clean; local main == origin/main == 20260c0. Determinism re-verified from fresh process (axb0306 net -$31,637.98, kaggle net -$626,525.96; trade-ledger SHA-256 byte-identical). Artifacts 21 files, all parse cleanly. Tests 71 passed/0 failed. Free-data re-scan confirmed no new genuinely free MNQ 1min/15min full-history source.
+
+## Maintenance re-verification pass — 2026-11-05 (HEAD 76311a8)
+
+- Repo state: working tree clean; local main == origin/main == 76311a8. All six tracked file SHA-256 hashes match recorded values. Artifacts 24 JSON files, all parse cleanly. Tests 71 passed/0 failed. Free-data re-scan: no new genuinely free MNQ 1min/15min full-history source.
+- No code/strategy/data changes; frozen baseline preserved.
 
 (End of file)
