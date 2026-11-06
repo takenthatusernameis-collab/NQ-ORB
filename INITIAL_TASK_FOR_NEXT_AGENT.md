@@ -41,7 +41,16 @@
 - Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
 - Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal failure.
 
-## Blockers / next concrete work
+## Status (maintenance re-verification — 2026-11-06T17:58Z, this session)
+
+- `git status --short` **clean** before work (exit 0).
+- Verification: all 6 tracked SHA-256 hashes **MATCH**. 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed / 0 failed** (exit 0, 0.89s). No strategy/code/data/raw/artifact drift.
+- Free-data monitoring (`scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_2026-11-06T1758Z.json` (checked_at_utc `2026-11-06T17:58:11.571519+00:00`, file SHA-256 `f1421ca053cfe80e34870d0dee04bf74476c2226e717d423e978546bdb3cfa06`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free**; note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged (verified): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
+### Next agent task (2026-11-06T17:58Z)
+
+Repeat bounded maintenance loop: re-verify repo state (clean, 6 hashes, 24 artifacts, 71 tests), run `python3 scripts/free_data_monitor.py > research_state/free_data_monitor_<UTCstamp>.json`, record ledger SHA-256/checked_at/candidate count/axb0306 MNQ max end. No tuning. Update handoffs if anything changes. Latest completed: **2026-11-06T17:58Z** (ledger `research_state/free_data_monitor_2026-11-06T1758Z.json`, SHA-256 `f1421ca053cfe80e34870d0dee04bf74476c2226e717d423e978546bdb3cfa06`, checked `2026-11-06T17:58:11.571519+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
 
 - Research blocked on data depth; both frozen baselines negative under full costs; all verified walk-forward test windows negative. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
 - `axb0306` MNQ 1min/15min free coverage ends **2026-04-15** (re-verified 2026-11-06T17:56Z; ledger `research_state/free_data_monitor_2026-11-06T1756Z.json`, file SHA-256 `f375269280be1299da85516f99c222b6f8739c8e66e41b1267eda36570459366`, checked `2026-11-06T17:56:06.138468+00:00`, 14 candidates). Kaggle front-month ends 2025-11-12 (untouched OOS ~2.9 months). No free extension found without purchase.
