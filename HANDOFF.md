@@ -8,9 +8,10 @@
 
 ## Next agent (immediate)
 
-Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T19:56Z** (ledger `research_state/free_data_monitor_20261106T195639Z.json`, file SHA-256 `ecc4791a698ffdb09669838cd38e223e28b487c97546819eeb9226630800309f`, checked `2026-11-06T19:56:39.428195+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T20:17Z** (ledger `research_state/free_data_monitor_20261106T195639Z.json`, file SHA-256 `ecc4791a698ffdb09669838cd38e223e28b487c97546819eeb9226630800309f`, checked `2026-11-06T19:56:39.428195+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
 
 ## Prior maintenance verifications (evidence preserved)
+- 2026-11-06T20:17Z: ledger `research_state/free_data_monitor_20261106T201742Z.json` SHA-256 `3757b9b0030f30f0a289b0ecba08d25c3e6752c21c210511947270bfba44110e` (checked `2026-11-06T20:17:42.453557+00:00`), 71 passed, axb0306 ends 2026-04-15.
 
 - 2026-11-06T19:15Z: ledger `research_state/free_data_monitor_20261106T1930Z.json` SHA-256 `f2937ce7e8d209b71b6d0a986628b8e4992ad5dad5f2939f1bedff1dd5354c97` (checked `2026-11-06T19:15:44.113972+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T19:13Z: ledger `research_state/free_data_monitor_20261106T1925Z.json` SHA-256 `1dc9c34eba35602bedfd69cec64ae453f15e91901f4d7f0a45303fbb6517a0b7` (checked `2026-11-06T19:13:48.482672+00:00`), 71 passed, axb0306 ends 2026-04-15.
