@@ -123,6 +123,12 @@ def main() -> int:
                 "verdict": "excluded",
                 "note": "Bundled data files are third-party repo artifacts (loader.py sources Yahoo/synthetic). Not an authoritative free MNQ full-history source; provenance unverified. Not ingested.",
             },
+            {
+                "name": "infoway",
+                "url": "https://infoway.io/en/commodities-api/mnq",
+                "verdict": "unverified",
+                "note": "Free-API-key signup (no CC) offers MNQ OHLCV via data.infoway.io/common/v2/batch_kline, klineType 1..12 (1m..1y). Historical depth/roll-adjustment/tz undocumented; documented sample response prices (~298.62) are not on the MNQ point scale (~15k-26k) implying mapped/synthetic or non-futures provenance. Full history not demonstrated. Not ingested; no key created.",
+            },
         ],
     }
     print(json.dumps(evidence, indent=2))
