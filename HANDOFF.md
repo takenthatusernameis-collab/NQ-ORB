@@ -9,6 +9,7 @@
 ## Prior maintenance verifications (evidence preserved in ledgers/commits)
 
 - 2026-11-06T13:44Z: ledger `research_state/free_data_monitor_2026-11-06T1344Z.json` SHA-256 `ff3b46a58fbeab78792e4ba0f6ea163698ef3c790c3e72e34f7d7a75d60e7c81`; checked `2026-11-06T13:40:14Z`, 14 candidates; hashes/artifacts/tests unchanged (71 passed); axb0306 MNQ ends 2026-04-15.
+- 2026-11-06T13:45Z: ledger `research_state/free_data_monitor_2026-11-06T1345Z.json` SHA-256 `f3d8b02b7a83cd5cad51da6d3818934436f2a7410af3ae729ecbebf601077e84`; checked `2026-11-06T13:45:34.891907+00:00`, 14 candidates; all 6 tracked hashes MATCH, 24 artifacts, 71 passed; axb0306 MNQ 1min/15min ends 2026-04-15 (commit `60abd3fb`); no free extension found.
 - 2026-11-06T13:39Z: ledger `research_state/free_data_monitor_2026-11-06T1339Z.json` SHA-256 `9567e788329ddb57a8b1b2872a8f2c4fd79a0a70fb4d2cf3a7f07a4028be43a1`; checked `2026-11-06T13:39:25Z`, 14 candidates; unchanged.
 - 2026-11-06T13:36Z: ledger `research_state/free_data_monitor_2026-11-06T1336Z.json` SHA-256 `f969db20169776708e832c1d0fad44878285927d67ee3df6f2cfc2e94c93182c`; checked `2026-11-06T13:36:31Z`, 14 candidates; unchanged.
 - 2026-11-06T13:35Z/12:48Z/12:41Z/12:34Z/12:33Z/11:51Z/11:46Z/11:44Z/11:41Z and earlier 2026-11-06 sessions: equivalent re-verifications with ledgers in `research_state/`; all 6 tracked hashes matched, 24 artifacts, 71 passed; axb0306 ends 2026-04-15.
@@ -22,7 +23,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Kaggle front-month ends 2025-11-12; final ~2.9 months preserved as untouched OOS. No free source extends this without purchase.
 
 ## Next agent (immediate)
-Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T13:42Z** (ledger `research_state/free_data_monitor_2026-11-06T1342Z.json`, file SHA-256 `13d1258abdac3d617917205480795566284be12f1f6f91cd0388cea85339f50d`, checked `2026-11-06T13:42:51Z`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, commit `60abd3fb`).
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T13:45Z** (ledger `research_state/free_data_monitor_2026-11-06T1345Z.json`, file SHA-256 `f3d8b02b7a83cd5cad51da6d3818934436f2a7410af3ae729ecbebf601077e84`, checked `2026-11-06T13:45:34.891907+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, commit `60abd3fb`).
 
 1. Re-verify repo state: `git status --short` (clean before edits), all 6 tracked SHA-256 hashes against values in `HANDOFF.md`, confirm `ls artifacts/*.json | wc -l` (24, 0 parse errors), `python3 -m pytest -q` (**71 passed, 0 failed**; install missing deps if needed). Record any drift with concrete evidence.
 2. Bounded free-data monitoring for a genuinely free MNQ 1min/15min full-history source extending beyond **2026-04-15** (`axb0306/cme-futures-ohlc` latest). **Record provenance + SHA-256 before use.** Do not purchase data or bypass access controls/terms. Run `python3 scripts/free_data_monitor.py > research_state/free_data_monitor_<UTCstamp>.json` each session.
