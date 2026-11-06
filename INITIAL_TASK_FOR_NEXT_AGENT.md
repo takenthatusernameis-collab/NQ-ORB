@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-Maintenance loop (bounded, no tuning) — completed 2026-11-06T22:49Z
+Maintenance loop (bounded, no tuning) — completed 2026-11-06T22:51Z
 - Verified git clean; all 6 tracked SHA256 hashes match (STRATEGY_RULES.txt `6d3258c3...`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`; `raw/MNQ_15min.csv` `f417f22d...`; `raw/MNQ_1min.csv` `129623f4...`; `raw/MNQ_1min_frontmonth.csv` `edbadc73...`; `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`).
-- `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T224959Z.json` (SHA256 `391f8509b43e738b5bfb88405a515151e93c1e8269ecd48c849913e72257af47`, checked 2026-11-06T22:49:59+00:00, 14 candidates). axb0306 latest commit 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 (2026-04-15); MNQ 1min/15min coverage ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
+- `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T225117Z.json` (SHA256 `f05bf0e426b99ad3505d86f00335aa48974c2003a0d3b78392da03ade356913c`, checked 2026-11-06T22:51:24.973980+00:00, 14 candidates). axb0306 latest commit 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 (2026-04-15); MNQ 1min/15min coverage ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
 - 24 `artifacts/*.json`, 0 parse errors. pytest not available in this environment; prior verified 71 passed. Baselines unchanged (axb0306 net -$31637.98, win 70%, PF 0.4917; Kaggle net -$626525.96, win 64.8%, PF 0.2271). Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0).
 
 Do next (repeat same loop):
