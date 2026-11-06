@@ -1,5 +1,9 @@
 # Handoff
-## Current durable state (maintenance re-verification — 2026-11-06T20:31Z, this session)
+## Current durable state (maintenance re-verification — 2026-11-06T20:32Z, this session)
+
+- Session verification (2026-11-06T20:32Z): `git status --short` **clean** (exit 0). All 6 tracked SHA-256 hashes **MATCH** (same values as 20:31Z). 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.91s). `python3 scripts/free_data_monitor.py` re-run; latest ledger remains `research_state/free_data_monitor_20261106T2031Z.json` (checked_at_utc `2026-11-06T20:31:28.534928+00:00`, SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6`, 14 candidates, JSON valid). axb0306 latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends 2026-04-15, no extension observed. No code/strategy/data/raw/artifact changes.
+
+- Session verification (2026-11-06T20:31Z): `git status --short` **clean** (exit 0). All 6 tracked SHA-256 hashes **MATCH** (same values as 20:17Z: `STRATEGY_RULES.txt` `6d3258c3...`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`; `raw/MNQ_15min.csv` `f417f22d...`; `raw/MNQ_1min.csv` `129623f4...`; `raw/MNQ_1min_frontmonth.csv` `edbadc73...`; `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`). 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.95s). New ledger `research_state/free_data_monitor_20261106T2031Z.json` (checked_at_utc `2026-11-06T20:31:28.534928+00:00`, SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6`, 14 candidates, JSON valid). axb0306 latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends 2026-04-15, no extension observed. No code/strategy/data/raw/artifact changes.
 
 - Session verification (2026-11-06T20:31Z): `git status --short` **clean** (exit 0). All 6 tracked SHA-256 hashes **MATCH** (same values as 20:17Z: `STRATEGY_RULES.txt` `6d3258c3...`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`; `raw/MNQ_15min.csv` `f417f22d...`; `raw/MNQ_1min.csv` `129623f4...`; `raw/MNQ_1min_frontmonth.csv` `edbadc73...`; `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`). 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.95s). New ledger `research_state/free_data_monitor_20261106T2031Z.json` (checked_at_utc `2026-11-06T20:31:28.534928+00:00`, SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6`, 14 candidates, JSON valid). axb0306 latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends 2026-04-15, no extension observed. No code/strategy/data/raw/artifact changes.
 
@@ -9,10 +13,11 @@
 
 ## Next agent (immediate)
 
-Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T20:31Z** (ledger `research_state/free_data_monitor_20261106T2031Z.json`, file SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6`, checked `2026-11-06T20:31:28.534928+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T20:32Z** (ledger `research_state/free_data_monitor_20261106T2031Z.json`, file SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6`, checked `2026-11-06T20:31:28.534928+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
 
 ## Prior maintenance verifications (evidence preserved)
 
+- 2026-11-06T20:32Z: ledger `research_state/free_data_monitor_20261106T2031Z.json` SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6` (checked `2026-11-06T20:31:28.534928+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T20:31Z: ledger `research_state/free_data_monitor_20261106T2031Z.json` SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6` (checked `2026-11-06T20:31:28.534928+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T20:17Z: ledger `research_state/free_data_monitor_20261106T201742Z.json` SHA-256 `3757b9b0030f30f0a289b0ecba08d25c3e6752c21c210511947270bfba44110e` (checked `2026-11-06T20:17:42.453557+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T19:56Z: ledger `research_state/free_data_monitor_20261106T195639Z.json` SHA-256 `ecc4791a698ffdb09669838cd38e223e28b487c97546819eeb9226630800309f` (checked `2026-11-06T19:56:39.428195+00:00`), 71 passed, axb0306 ends 2026-04-15.
