@@ -1,5 +1,13 @@
 # Initial Task for Next Agent
 
+## Status (maintenance re-verification — 2026-11-06T07:50Z, this session)
+
+- `git status --short` **clean** (exit 0) before durable-doc edits. Repo HEAD at verification `886f774`.
+- Verification (2026-11-06T07:50Z): all 6 tracked SHA-256 hashes **MATCH** (full) per HANDOFF.md top section. 24 `artifacts/*.json`, 0 parse errors; `artifacts/metrics_axb0306.json` SHA-256 **MATCH** `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (`net_pnl` -31637.98, `win_rate` 0.7, `profit_factor` 0.491672798902303). `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.90s). No strategy/code/data/raw/artifact drift.
+- Free-data monitoring (2026-11-06T07:50Z, `scripts/free_data_monitor.py`): new ledger `research_state/free_data_monitor_2026-11-06T0750Z.json` (checked_at_utc `2026-11-06T07:45:23.803344+00:00`, 14 candidates, SHA-256 `3b662bf2082d32dea2457d696958e08b2f04028b1e46de50b3b9ce6dd85b4fdc`). `axb0306/cme-futures-ohlc` verdict `free`, latest MNQ 1min/15min coverage ends **2026-04-15** (re-verified by monitor; no extension observed). **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
+- Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
 ## Status (maintenance re-verification — 2026-11-06T07:48Z, this session)
 
 - `git status --short` **clean** (exit 0) before durable-doc edits. Repo HEAD at verification `886f774`.
@@ -35,5 +43,5 @@
 ## Blockers / next concrete work
 
 - Research blocked on data depth; both frozen baselines negative under full costs; all verified walk-forward test windows negative. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
-- `axb0306` roll/adjustment: single-contract `MNQ.M26`, no roll inside sample (2026-01-20..2026-04-15). Latest free 1min/15min coverage observed remains through 2026-04-15 (re-verified 2026-11-06T07:42Z; monitor ledger `research_state/free_data_monitor_2026-11-06T0742Z.json`, SHA-256 `3b27d18d23764225786f1669a86c8eb6fce3f2b49d9569e9e06fab97dd823543`; no extension). Kaggle front-month ends 2025-11-12; final ~2.9 months preserved as untouched OOS. No free source extends this without purchase.
+- `axb0306` roll/adjustment: single-contract `MNQ.M26`, no roll inside sample (2026-01-20..2026-04-15). Latest free 1min/15min coverage observed remains through 2026-04-15 (re-verified 2026-11-06T07:50Z; monitor ledger `research_state/free_data_monitor_2026-11-06T0750Z.json`, SHA-256 `3b662bf2082d32dea2457d696958e08b2f04028b1e46de50b3b9ce6dd85b4fdc`; no extension). Kaggle front-month ends 2025-11-12; final ~2.9 months preserved as untouched OOS. No free source extends this without purchase.
 - If a genuinely free MNQ 1min/15min source with longer history is found (**record provenance + SHA-256 before use**), the next concrete task is a re-baseline run with the frozen preset and an updated walk-forward/OOS split — **not** parameter tuning. Recompute metrics independently from the trade ledger and store configs/hashes/ledger/summary/validation artifacts.
