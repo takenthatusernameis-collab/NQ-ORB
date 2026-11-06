@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-Maintenance loop (bounded, no tuning) — completed 2026-11-06T21:14Z
+Maintenance loop (bounded, no tuning) — completed 2026-11-06T21:33Z
 - Verified git clean, all 6 tracked hashes match, 24 artifacts valid, 0 parse errors.
-- Ran `python3 -m pytest -q` -> 71 passed, 0 failed (0.89s).
-- Ran `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T211412Z.json` (SHA256 5cee0bc1f5911b64ad47c66e68ecf8381e5f66f396dafe6e2b5f17def436ab35), checked 2026-11-06T21:14:12.640614+00:00, 14 candidates. axb0306 latest commit 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 (2026-04-15); MNQ 1min/15min coverage ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
+- Ran `python3 -m pytest -q` -> 71 passed, 0 failed (0.91s).
+- Ran `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T213346Z.json` (SHA256 06c7e10976d5f1d6598accab2912a83b462fa652d520a470dcb11dc89a01b258), checked 2026-11-06T21:33:46.095344+00:00, 14 candidates. axb0306 latest commit 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 (2026-04-15); MNQ 1min/15min coverage ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
 - Baselines unchanged (axb0306 net -$31637.98, win 70%, PF 0.4917; Kaggle net -$626525.96, win 64.8%, PF 0.2271). All verified walk-forward windows negative. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0).
 
 Do next (repeat same loop):
