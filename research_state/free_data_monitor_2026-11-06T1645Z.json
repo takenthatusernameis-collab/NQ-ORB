@@ -1,0 +1,95 @@
+{
+  "checked_at_utc": "2026-11-06T16:46:03.440000+00:00",
+  "axb0306_cme_futures_ohlc": {
+    "ok": true,
+    "sha": "60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264",
+    "date": "2026-04-15T23:34:55Z",
+    "message": "Update 2026-04-15: 368 files updated"
+  },
+  "candidates": [
+    {
+      "name": "axb0306/cme-futures-ohlc",
+      "url": "https://github.com/axb0306/cme-futures-ohlc",
+      "verdict": "free",
+      "note": "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed."
+    },
+    {
+      "name": "finzdata",
+      "url": "https://finzdata.com/futures/mnq",
+      "verdict": "paid",
+      "note": "Full MNQ 1min/15min history is $49 one-time; last 30 days daily free. Not a free full-history source."
+    },
+    {
+      "name": "historicalfuturesdata.com",
+      "url": "https://historicalfuturesdata.com/browse/MNQ",
+      "verdict": "paid",
+      "note": "Annual 1m bars $59/year; only 10s monthly samples + 3 free months require free verified account. Not free full history."
+    },
+    {
+      "name": "marketparquet",
+      "url": "https://marketparquet.com/data/futures/mnq",
+      "verdict": "paid",
+      "note": "Intraday archive (2007-12-31..) is paid; free tier is daily-only last ~365 days + a sample week."
+    },
+    {
+      "name": "firstratedata",
+      "url": "https://firstratedata.com/i/futures/MNQ",
+      "verdict": "paid",
+      "note": "$99.95/yr after 1 month free updates. Not free full history."
+    },
+    {
+      "name": "portara",
+      "url": "https://portara.org/portarashop/product/mnq/",
+      "verdict": "paid",
+      "note": "\u00a3330-\u00a31,500. Not free."
+    },
+    {
+      "name": "databento",
+      "url": "https://databento.com/catalog/cme/GLBX.MDP3/futures/MNQ",
+      "verdict": "credits",
+      "note": "$125 signup credit expires after 6 months; not a free open full-history CSV."
+    },
+    {
+      "name": "cme_datamine",
+      "url": "https://www.cmegroup.com/datamine/datamine-api.html",
+      "verdict": "paid",
+      "note": "Full data priced per dataset; requires CME API ID + credentials. Excluded (no credentials, paid)."
+    },
+    {
+      "name": "yahoo_finance",
+      "url": "https://finance.yahoo.com/quote/MNQ=F/",
+      "verdict": "inadequate",
+      "note": "1m only last 30 days, 5m 60 days, 1h 730 days; not back-adjusted; insufficient for 15m full history."
+    },
+    {
+      "name": "barchart",
+      "url": "https://barchart.com",
+      "verdict": "inadequate",
+      "note": "Free tier: 2y daily, 1 download/day; intraday 1m needs Premier (paid)."
+    },
+    {
+      "name": "kaggle",
+      "url": "https://www.kaggle.com/datasets?search=nq+futures+1min",
+      "verdict": "unverified",
+      "note": "Unknown provenance and license; roll handling and timezone must be checked. Not used without verification."
+    },
+    {
+      "name": "getdata_finance_nq",
+      "url": "https://getdata.io/data-sources/132756-commodities-futures-prices-changes-trading-volume-daily-charts-yahoo-finance",
+      "verdict": "excluded",
+      "note": "NQ symbol feed describes US stocks cash & extended hours (equity/cash-style), not MNQ futures. Excluded per STRATEGY_RULES market definition."
+    },
+    {
+      "name": "s-k-28/nq-es-trader-5k-payout",
+      "url": "https://github.com/s-k-28/nq-es-trader-5k-payout",
+      "verdict": "excluded",
+      "note": "Bundled data files are third-party repo artifacts (loader.py sources Yahoo/synthetic). Not an authoritative free MNQ full-history source; provenance unverified. Not ingested."
+    },
+    {
+      "name": "infoway",
+      "url": "https://infoway.io/en/commodities-api/mnq",
+      "verdict": "unverified",
+      "note": "Free-API-key signup (no CC) offers MNQ OHLCV via data.infoway.io/common/v2/batch_kline, klineType 1..12 (1m..1y). Historical depth/roll-adjustment/tz undocumented; documented sample response prices (~298.62) are not on the MNQ point scale (~15k-26k) implying mapped/synthetic or non-futures provenance. Full history not demonstrated. Not ingested; no key created."
+    }
+  ]
+}
