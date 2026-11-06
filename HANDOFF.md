@@ -4,12 +4,14 @@
 
 Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout research implementation. `STRATEGY_RULES.txt` is the authoritative, frozen strategy definition. Historical research and simulation only — no broker integration, no live/paper trading, no deployment. No secrets, no paid data, no bypassing access controls.
 
-## Current durable state (maintenance re-verification COMPLETE — 2026-11-06T00:04Z, this session)
+## Current durable state (maintenance re-verification COMPLETE — 2026-11-06T00:05Z, this session)
 
-- Session verification (2026-11-06T00:04Z, this session, repo HEAD at verification `8890f83`; working tree clean before durable-doc edits): `git status --short` **clean** (exit 0). All 6 tracked SHA-256 hashes **MATCH** (full): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`. 24 `artifacts/*.json`, 0 parse errors. `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (verified net -$31637.98, win 0.7, PF 0.4917). `python3 -m pytest -q` **71 passed, 0 failed** (0.66s). No code/strategy/data/raw/artifact changes.
-- Free-data monitoring (2026-11-06T00:04Z): `axb0306/cme-futures-ohlc` MNQ latest commit unchanged `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` (2026-04-15T23:34:55Z). Blobs unchanged — 1min `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4` (4904282), 15min `7df047964034b648ad7d8639515b6c9a92998af0` (333668). **No genuinely free MNQ 1min/15min full-history CSV extension beyond 2026-04-15 observed.** No data purchased; no credentials requested/stored; no access controls bypassed.
+- Session verification (2026-11-06T00:05Z, this session, repo HEAD at verification `3abce2b`; working tree clean before durable-doc edits): `git status --short` **clean** (exit 0). All 6 tracked SHA-256 hashes **MATCH** (full): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`. 24 `artifacts/*.json`, 0 parse errors. `artifacts/metrics_axb0306.json` SHA-256 unchanged `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (verified net -$31637.98, win 0.7, PF 0.4917). `python3 -m pytest -q` **71 passed, 0 failed** (0.71s). No code/strategy/data/raw/artifact changes.
+- Free-data monitoring (2026-11-06T00:05Z): `axb0306/cme-futures-ohlc` MNQ latest commit unchanged `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` (2026-04-15T23:34:55Z). Blobs unchanged — 1min `946c6b76d68548e5b1fe584b6e16de0f19f6d0d4` (4904282), 15min `7df047964034b648ad7d8639515b6c9a92998af0` (333668). **No genuinely free MNQ 1min/15min full-history CSV extension beyond 2026-04-15 observed.** No data purchased; no credentials requested/stored; no access controls bypassed.
 - Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
 - Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
+## Prior durable state (maintenance re-verification COMPLETE — 2026-11-06T00:04Z, prior session)
 
 ## Prior durable state (maintenance re-verification COMPLETE — 2026-11-06T00:03Z, prior session)
 
@@ -32,6 +34,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 
 ## Prior session evidence (condensed)
 
+- 2026-11-06T00:05Z (HEAD `3abce2b`): 6/6 hashes MATCH, 24/24 parse, pytest 71/0 (0.71s), metrics hash unchanged, axb0306 blobs/commit unchanged; no free extension beyond 2026-04-15.
 - 2026-11-06T00:00Z (HEAD `b905359`): 6/6 hashes MATCH, 24/24 parse, pytest 71/0 (0.70s), metrics hash unchanged, axb0306 blobs/commit unchanged; no free extension beyond 2026-04-15.
 - 2026-11-05T23:56Z (HEAD `aac95d2`): 6/6 hashes MATCH, 24/24 parse, pytest 71/0 (0.72s), metrics hash unchanged, axb0306 blobs/commit unchanged; no free extension beyond 2026-04-15.
 - 2026-11-05T23:53Z (HEAD `938a6893`): 6/6 hashes MATCH, 24/24 parse, pytest 71/0 (0.68s), metrics hash unchanged, axb0306 blobs/commit unchanged; no free extension beyond 2026-04-15.
