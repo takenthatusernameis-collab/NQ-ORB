@@ -1,3 +1,10 @@
+## Status (maintenance re-verification — 2026-11-06T19:12Z, this session)
+
+- `git status --short` **clean** before work (exit 0).
+- Verification: all 6 tracked SHA-256 hashes **MATCH**. 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed / 0 failed** (exit 0, 0.95s). No strategy/code/data/raw/artifact drift.
+- Free-data monitoring (`scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_20261106T1912Z.json` (checked_at_utc `2026-11-06T19:12:05.631543+00:00`, file SHA-256 `ddae12e2fc627027dd74114b2bb42371373f940abe72f1faba90dea82fe8ebda`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free**; note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged (verified): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
 ## Status (maintenance re-verification — 2026-11-06T19:10Z, this session)
 
 - `git status --short` **clean** before work (exit 0).
