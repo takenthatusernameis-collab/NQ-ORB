@@ -1,5 +1,13 @@
 # Initial Task for Next Agent
 
+## Status (maintenance re-verification — 2026-11-06T07:48Z, this session)
+
+- `git status --short` **clean** (exit 0) before durable-doc edits. Repo HEAD at verification `886f774`.
+- Verification (2026-11-06T07:48Z): all 6 tracked SHA-256 hashes **MATCH** (full) per HANDOFF.md top section. 24 `artifacts/*.json`, 0 parse errors; `artifacts/metrics_axb0306.json` SHA-256 **MATCH** `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f` (`net_pnl` -31637.98, `win_rate` 0.7, `profit_factor` 0.491672798902303). `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.93s). No strategy/code/data/raw/artifact drift.
+- Free-data monitoring (2026-11-06T07:48Z, `scripts/free_data_monitor.py`): new ledger `research_state/free_data_monitor_2026-11-06T0748Z.json` (checked_at_utc `2026-11-06T07:44:36.633090+00:00`, 14 candidates, SHA-256 `8ff7009d1f3380f2f54fd0cbcf705c2b2ab673f18469b4f6c6c2e80517ad1f29`). `axb0306/cme-futures-ohlc` verdict `free`, latest MNQ 1min/15min coverage ends **2026-04-15** (re-verified by monitor; no extension observed). **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L.
+- Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
 ## Status (maintenance re-verification — 2026-11-06T07:42Z, this session)
 
 - `git status --short` **clean** (exit 0) before durable-doc edits. Repo HEAD at verification `b5bb485`, 2026-11-06T06:54Z, `chore(kilo): checkpoint agent session`.
