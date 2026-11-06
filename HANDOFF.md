@@ -1,5 +1,11 @@
 # Handoff
 
+## Current durable state (maintenance re-verification — 2026-11-06T17:56Z, this session)
+
+- Session verification (2026-11-06T17:56Z): `git status --short` **clean** before edits (exit 0). All 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`). 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 1.06s). No code/strategy/data/raw/artifact changes.
+- Free-data monitoring (2026-11-06T17:56Z, `scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_2026-11-06T1756Z.json` (checked_at_utc `2026-11-06T17:56:06.138468+00:00`, file SHA-256 `f375269280be1299da85516f99c222b6f8739c8e66e41b1267eda36570459366`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free**; note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
 ## Current durable state (maintenance re-verification — 2026-11-06T17:54Z, this session)
 
 - Session verification (2026-11-06T17:54Z): `git status --short` **clean** before edits (exit 0). All 6 tracked SHA-256 hashes **MATCH**. 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 1.04s). No code/strategy/data/raw/artifact changes.
