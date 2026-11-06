@@ -1,0 +1,115 @@
+{
+  "checked_at_utc": "2026-11-06T02:40:51.240086+00:00",
+  "axb0306_cme_futures_ohlc": {
+    "ok": true,
+    "sha": "60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264",
+    "date": "2026-04-15T23:34:55Z",
+    "message": "Update 2026-04-15: 368 files updated"
+  },
+  "candidates": [
+    {
+      "name": "axb0306/cme-futures-ohlc",
+      "url": "https://github.com/axb0306/cme-futures-ohlc",
+      "verdict": "free",
+      "note": "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed."
+    },
+    {
+      "name": "finzdata",
+      "url": "https://finzdata.com/futures/mnq",
+      "verdict": "paid",
+      "note": "Full MNQ 1min/15min history is $49 one-time; last 30 days daily free. Not a free full-history source."
+    },
+    {
+      "name": "historicalfuturesdata.com",
+      "url": "https://historicalfuturesdata.com/browse/MNQ",
+      "verdict": "paid",
+      "note": "Annual 1m bars $59/year; only 10s monthly samples + 3 free months require free verified account. Not free full history."
+    },
+    {
+      "name": "marketparquet",
+      "url": "https://marketparquet.com/data/futures/mnq",
+      "verdict": "paid",
+      "note": "Intraday archive (2007-12-31..) is paid; free tier is daily-only last ~365 days + a sample week."
+    },
+    {
+      "name": "firstratedata",
+      "url": "https://firstratedata.com/i/futures/MNQ",
+      "verdict": "paid",
+      "note": "$99.95/yr after 1 month free updates. Not free full history."
+    },
+    {
+      "name": "portara",
+      "url": "https://portara.org/portarashop/product/mnq/",
+      "verdict": "paid",
+      "note": "\u00a3330-\u00a31,500. Not free."
+    },
+    {
+      "name": "databento",
+      "url": "https://databento.com/catalog/cme/GLBX.MDP3/futures/MNQ",
+      "verdict": "credits",
+      "note": "$125 signup credit expires after 6 months; not a free open full-history CSV."
+    },
+    {
+      "name": "cme_datamine",
+      "url": "https://www.cmegroup.com/datamine/datamine-api.html",
+      "verdict": "paid",
+      "note": "Full data priced per dataset; requires CME API ID + credentials. Excluded (no credentials, paid)."
+    },
+    {
+      "name": "yahoo_finance",
+      "url": "https://finance.yahoo.com/quote/MNQ=F/",
+      "verdict": "inadequate",
+      "note": "1m only last 30 days, 5m 60 days, 1h 730 days; not back-adjusted; insufficient for 15m full history."
+    },
+    {
+      "name": "barchart",
+      "url": "https://barchart.com",
+      "verdict": "inadequate",
+      "note": "Free tier: 2y daily, 1 download/day; intraday 1m needs Premier (paid)."
+    },
+    {
+      "name": "kaggle",
+      "url": "https://www.kaggle.com/datasets?search=nq+futures+1min",
+      "verdict": "unverified",
+      "note": "Unknown provenance and license; roll handling and timezone must be checked. Not used without verification."
+    },
+    {
+      "name": "getdata_finance_nq",
+      "url": "https://getdata.io/data-sources/132756-commodities-futures-prices-changes-trading-volume-daily-charts-yahoo-finance",
+      "verdict": "excluded",
+      "note": "NQ symbol feed describes US stocks cash & extended hours (equity/cash-style), not MNQ futures. Excluded per STRATEGY_RULES market definition."
+    },
+    {
+      "name": "s-k-28/nq-es-trader-5k-payout",
+      "url": "https://github.com/s-k-28/nq-es-trader-5k-payout",
+      "verdict": "excluded",
+      "note": "Bundled data files are third-party repo artifacts (loader.py sources Yahoo/synthetic). Not an authoritative free MNQ full-history source; provenance unverified. Not ingested."
+    },
+    {
+      "name": "marketparquet_free_guide",
+      "url": "https://marketparquet.com/guides/free-nq-mnq-futures-historical-data",
+      "verdict": "paid",
+      "note": "Guide checked 2026-11-06. Free tier = daily NQ/MNQ last ~365 days + intraday sample pack Apr 6-10 2026 only. Full 1min history from 2019-05-06 (MNQ) / 2007-12 (NQ) is $79 one-time. Not free full history."
+    },
+    {
+      "name": "kaggle_tgtanalytics_nq_1min",
+      "url": "https://www.kaggle.com/datasets/tgtanalytics/nq-futures-1min-bar-2022-2025",
+      "verdict": "unverified",
+      "note": "NQ (E-mini, not MNQ) 1min 2022-12-26..2025-12-11, ~1.05M rows, RTH+ETH, ET timestamps. Wrong contract (NQ $20/tick vs MNQ $2/tick) and unknown provenance/license. Not ingested without verification."
+    },
+    {
+      "name": "kaggle_youneseloiarm_nq",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/nasdaq-cme-future-nq",
+      "verdict": "unverified",
+      "note": "NQ multi-timeframe from TradingView, CC0. Again NQ not MNQ; TradingView-sourced provenance and roll handling unverified. Not ingested."
+    },
+    {
+      "name": "topstepx_projectx_api",
+      "url": "https://help.topstepx.com/getting-started/data-feed",
+      "verdict": "excluded",
+      "note": "CME-licensed redistributor, but API access is $29/mo on top of account fee, requires funded/demo account + API key + signed data agreements, and VPS/remote-server use is prohibited by ToS. Not a free open source; credentials not requested."
+    }
+  ],
+  "session_note": "Maintenance re-verification 2026-11-06T02:39Z. axb0306/cme-futures-ohlc repo-level commit unchanged 60abd3fb (2026-04-15). MNQ folder contents re-listed via GitHub API: only MNQ_15min_20260120_20260415.csv, MNQ_1min_20260120_20260415.csv, MNQ_5min, MNQ_30min, MNQ_1h_20250321_20260415.csv, MNQ_4h, MNQ_daily_20250324_20260414.csv, MNQ_tick_20260309_20260415.csv. No newer MNQ file exists in the repo. Bounded web re-sweep performed:",
+  "conclusion": "No genuinely free MNQ 1min/15min full-history source extending beyond 2026-04-15 found. All paid/credit/unverified/excluded candidates documented. No data purchased, no credentials requested/stored, no access controls bypassed."
+}
