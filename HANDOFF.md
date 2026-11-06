@@ -8,11 +8,11 @@
 
 ## Next agent (immediate)
 
-Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T21:33Z** (ledger `research_state/free_data_monitor_20261106T213346Z.json`, file SHA-256 `06c7e10976d5f1d6598accab2912a83b462fa652d520a470dcb11dc89a01b258`, checked `2026-11-06T21:33:46.095344+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T21:35Z** (ledger `research_state/free_data_monitor_20261106T213513Z.json`, file SHA-256 `c5441e814a63a9c643fd6ab50db065673c99dc33d9b3b7dafc8cdb32df227771`, checked `2026-11-06T21:35:13.282873+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
 
 ## Prior maintenance verifications (evidence preserved)
 
-- 2026-11-06T21:33Z: ledger `research_state/free_data_monitor_20261106T213346Z.json` SHA-256 `06c7e10976d5f1d6598accab2912a83b462fa652d520a470dcb11dc89a01b258` (checked `2026-11-06T21:33:46.095344+00:00`), 71 passed, axb0306 ends 2026-04-15.
+- 2026-11-06T21:35Z: ledger `research_state/free_data_monitor_20261106T213513Z.json` SHA-256 `c5441e814a63a9c643fd6ab50db065673c99dc33d9b3b7dafc8cdb32df227771` (checked `2026-11-06T21:35:13.282873+00:00`), pytest unavailable in env (prior verified 71 passed), axb0306 ends 2026-04-15.
 - 2026-11-06T21:14Z: ledger `research_state/free_data_monitor_20261106T211412Z.json` SHA-256 `5cee0bc1f5911b64ad47c66e68ecf8381e5f66f396dafe6e2b5f17def436ab35` (checked `2026-11-06T21:14:12.640614+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T21:11Z: ledger `research_state/free_data_monitor_20261106T211152Z.json` SHA-256 `5cee0bc1f5911b64ad47c66e68ecf8381e5f66f396dafe6e2b5f17def436ab35` (checked `2026-11-06T21:11:52.013146+00:00`), 71 passed, axb0306 ends 2026-04-15.
 - 2026-11-06T20:57Z: ledger `research_state/free_data_monitor_20261106T2031Z.json` SHA-256 `771a9137a9e14c09c2f8e49cc2c0c124a212e42efad587efea7f9c21726f14a6` (checked `2026-11-06T20:31:28.534928+00:00`), 71 passed, axb0306 ends 2026-04-15.
