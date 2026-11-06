@@ -1,5 +1,11 @@
 # Initial Task for Next Agent
 
+## Status (maintenance re-verification — 2026-11-06T17:57Z, this session)
+
+- `git status --short` **clean** before work (exit 0).
+- Verification: all 6 tracked SHA-256 hashes **MATCH**. 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed / 0 failed** (exit 0, 0.98s). No strategy/code/data/raw/artifact drift.
+- Free-data monitoring (`scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_2026-11-06T1756Z.json` (checked_at_utc `2026-11-06T17:56:59.390492+00:00`, file SHA-256 `fca2cb6e2283994f0fa297dfb598bdb2d722f6ba39e1dc2ded40810c10b37505`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free**; note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found.
+
 ## Status (maintenance re-verification — 2026-11-06T17:56Z, this session)
 
 - `git status --short` **clean** before work (exit 0).
