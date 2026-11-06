@@ -190,3 +190,13 @@ Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_dat
 ## Next agent (immediate)
 
 Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T19:13Z** (ledger `research_state/free_data_monitor_20261106T1925Z.json`, file SHA-256 `1dc9c34eba35602bedfd69cec64ae453f15e91901f4d7f0a45303fbb6517a0b7`, checked `2026-11-06T19:13:48.482672+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
+
+## Current durable state (maintenance re-verification — 2026-11-06T19:15Z, this session)
+
+- Session verification (2026-11-06T19:15Z): `git status --short` **clean** before edits (exit 0). All 6 tracked SHA-256 hashes **MATCH**. 24 `artifacts/*.json`, 0 parse errors. `python3 -m pytest -q` **71 passed, 0 failed** (exit 0, 0.89s). No code/strategy/data/raw/artifact changes.
+- Free-data monitoring (2026-11-06T19:15Z, `scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_20261106T1930Z.json` (checked_at_utc `2026-11-06T19:15:44.113972+00:00`, file SHA-256 `f2937ce7e8d209b71b6d0a986628b8e4992ad5dad5f2939f1bedff1dd5354c97`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free**; note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
+- Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+
+## Next agent (immediate)
+
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T19:15Z** (ledger `research_state/free_data_monitor_20261106T1930Z.json`, file SHA-256 `f2937ce7e8d209b71b6d0a986628b8e4992ad5dad5f2939f1bedff1dd5354c97`, checked `2026-11-06T19:15:44.113972+00:00`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15, no extension observed).
