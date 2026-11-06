@@ -32,7 +32,7 @@ Build and rigorously evaluate a reproducible NQ/MNQ opening-range-breakout resea
 - Kaggle front-month ends 2025-11-12; final ~2.9 months preserved as untouched OOS. No free source extends this without purchase.
 
 ## Next agent (immediate)
-Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T12:38Z** (ledger `research_state/free_data_monitor_2026-11-06T1238Z.json`, file SHA-256 `2631b46692d94d8e0f95049864d528384a351b2d95901707eef07737b222666e`, checked `2026-11-06T12:37:59Z`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15T23:34:55Z).
+Repeat the same bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-06T12:40Z** (ledger `research_state/free_data_monitor_2026-11-06T1242Z.json`, file SHA-256 `ed92ebb32d476476cac90be54b48aaf592922bd9d87d7b4b25c0b7279161636d`, checked `2026-11-06T12:40:03Z`, 14 candidates; axb0306 MNQ 1min/15min ends 2026-04-15).
 
 1. Re-verify repo state: `git status --short` (clean before edits), all 6 tracked SHA-256 hashes against values in `HANDOFF.md`, confirm `ls artifacts/*.json | wc -l` (24, 0 parse errors), `python3 -m pytest -q` (**71 passed, 0 failed**; install missing deps if needed). Record any drift with concrete evidence.
 2. Bounded free-data monitoring for a genuinely free MNQ 1min/15min full-history source extending beyond **2026-04-15** (`axb0306/cme-futures-ohlc` latest). **Record provenance + SHA-256 before use.** Do not purchase data or bypass access controls/terms. Run `python3 scripts/free_data_monitor.py > research_state/free_data_monitor_<UTCstamp>.json` each session.
