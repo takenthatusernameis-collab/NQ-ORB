@@ -1,13 +1,1 @@
-# Initial task for next agent
-
-Maintenance loop (bounded, no tuning) — completed 2026-11-06T22:51Z
-- Verified git clean; all 6 tracked SHA256 hashes match (STRATEGY_RULES.txt `6d3258c3...`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`; `raw/MNQ_15min.csv` `f417f22d...`; `raw/MNQ_1min.csv` `129623f4...`; `raw/MNQ_1min_frontmonth.csv` `edbadc73...`; `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`).
-- `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T225117Z.json` (SHA256 `f05bf0e426b99ad3505d86f00335aa48974c2003a0d3b78392da03ade356913c`, checked 2026-11-06T22:51:24.973980+00:00, 14 candidates). axb0306 latest commit 60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264 (2026-04-15); MNQ 1min/15min coverage ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
-- 24 `artifacts/*.json`, 0 parse errors. pytest not available in this environment; prior verified 71 passed. Baselines unchanged (axb0306 net -$31637.98, win 70%, PF 0.4917; Kaggle net -$626525.96, win 64.8%, PF 0.2271). Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0).
-
-Do next (repeat same loop):
-1. `git status --short` clean check; verify tracked SHA256 hashes.
-2. `python3 -m pytest -q` (if pytest available).
-3. `python3 scripts/free_data_monitor.py`; record new ledger path/SHA256/checked_at + axb0306 coverage note.
-4. Do not tune parameters. If any new genuinely free full-history MNQ 1min/15min source appears with verifiable roll/tz/adjustment, document provenance/hashes/constraints before considering ingestion (no purchase, no credentials).
-5. Update HANDOFF.md (append this block + update "Next agent" + prior list) and write updated INITIAL_TASK_FOR_NEXT_AGENT.md with exact results.
+Read HANDOFF.md. Run `git status --short` (expect clean). Verify all 6 tracked SHA-256 hashes match (STRATEGY_RULES.txt `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`). Run `python3 scripts/free_data_monitor.py`; write a new timestamped ledger to `research_state/`; record file SHA-256, checked_at_utc, candidate count, axb0306 latest commit/date; confirm no extension beyond 2026-04-15. Do not tune parameters, change strategy logic, or touch raw data/artifacts. Update HANDOFF.md with the new session verification and write the next agent's initial task message.
