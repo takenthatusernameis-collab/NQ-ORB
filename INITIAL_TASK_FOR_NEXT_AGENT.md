@@ -1,32 +1,14 @@
-## Current durable state (maintenance re-verification — 2026-11-06T19:56Z, this session)
+# Initial task for next agent
 
-- `git status --short`: **clean** before edits (exit 0).
-- All 6 tracked SHA-256 hashes **MATCH** (`STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`).
-- `ls artifacts/*.json | wc -l`: **24**, 0 parse errors.
-- `python3 -m pytest -q`: **71 passed, 0 failed** (exit 0, 0.96s). No strategy/code/data/raw/artifact drift.
-- Free-data monitoring (`scripts/free_data_monitor.py`): ledger `research_state/free_data_monitor_20261106T195639Z.json` (checked_at_utc `2026-11-06T19:56:39.428195+00:00`, file SHA-256 `ecc4791a698ffdb09669838cd38e223e28b487c97546819eeb9226630800309f`, 14 candidates, JSON valid). `axb0306/cme-futures-ohlc` verdict **free** (commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, dated `2026-04-15T23:34:55Z`); note "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No genuinely free MNQ 1min/15min full-history source beyond 2026-04-15** found. No data purchased; no credentials requested/stored; no access controls bypassed.
-- Baselines unchanged (verified artifacts): axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0). No code/strategy/parameter/data/raw/artifact changes.
+Maintenance loop (bounded, no tuning) — completed 2026-11-06T20:09Z
+- Verified git clean, all 6 tracked hashes match, 24 artifacts valid, 0 parse errors.
+- Ran `python3 -m pytest -q` -> 71 passed, 0 failed (0.91s).
+- Ran `python3 scripts/free_data_monitor.py` -> ledger `research_state/free_data_monitor_20261106T200858Z.json` (SHA256 f553b8e4509033cdaaa68e03de2fa0229298e033d5828f5a3957bb950f6003f3), checked 2026-11-06T20:08:58.397502+00:00, 14 candidates. axb0306 ends 2026-04-15; no free MNQ 1min/15min full-history extension found.
+- Baselines unchanged (axb0306 net -$31637.98, win 70%, PF 0.4917; Kaggle net -$626525.96, win 64.8%, PF 0.2271). All verified walk-forward windows negative. Frozen baseline preserved.
 
-## Next agent (immediate) — bounded maintenance loop
-
-1. **Re-verify repo state.** `git status --short` (clean before edits), confirm all 6 tracked SHA-256 hashes match `HANDOFF.md` values, `ls artifacts/*.json | wc -l` = 24 and 0 parse errors, `python3 -m pytest -q` (**71 passed / 0 failed**). Record any drift with concrete evidence.
-2. **Bounded free-data monitoring.** Check for a genuinely free MNQ 1min/15min full-history source extending beyond **2026-04-15** (`axb0306/cme-futures-ohlc` latest). **Record provenance + SHA-256 before use.** Do not purchase data or bypass access controls/terms. Run `python3 scripts/free_data_monitor.py > research_state/free_data_monitor_<UTCstamp>.json` and record checked_at, candidate count, ledger SHA-256, and axb0306 MNQ max end.
-3. **No experiments/tuning.** Do not optimize thresholds, stops, targets, entry rules, or session times. Any change requires explicit approval and a separately named, versioned experiment with an explicit diff from frozen `STRATEGY_RULES.txt` v1.0.
-4. **Update and commit durably.** Update `HANDOFF.md` and this file with concrete evidence. Commit the monitor ledger and handoff updates.
-
-## Hard boundaries (AGENTS.md)
-
-- Historical research/simulation only. No broker integration/order routing/live trading/paper trading/deployment.
-- Never request/add/print/persist broker/API credentials.
-- Do not purchase data or use paid/proprietary services; prefer freely accessible datasets; never bypass access controls/terms.
-- Do not launch nested Kilo sessions/duplicate scheduled workflows/additional GitHub Actions activations.
-- Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without explicit authorization.
-- Do not delete research evidence, overwrite raw data, or reset/rewrite Git history to conceal failure.
-
-## Context
-
-- Research blocked on data depth; both frozen baselines negative under full costs; all verified walk-forward test windows negative. Highest-value action remains bounded free-data re-sweep, not parameter fitting.
-- `axb0306` MNQ 1min/15min free coverage ends **2026-04-15** (re-verified 2026-11-06T19:56Z; ledger `research_state/free_data_monitor_20261106T195639Z.json`, file SHA-256 `ecc4791a698ffdb09669838cd38e223e28b487c97546819eeb9226630800309f`, checked `2026-11-06T19:56:39.428195+00:00`, 14 candidates). Kaggle front-month ends 2025-11-12 (untouched OOS ~2.9 months). No free extension found without purchase.
-- If a genuinely free MNQ 1min/15min source with longer history is found (**record provenance + SHA-256 before use**), next concrete task is a re-baseline run with the frozen preset and an updated walk-forward/OOS split — **not** parameter tuning. Recompute metrics independently from the trade ledger and store configs/hashes/ledger/summary/validation artifacts.
-
-Latest completed: **2026-11-06T19:56Z**.
+Do next (repeat same loop):
+1. `git status --short` clean check; verify tracked SHA256 hashes.
+2. `python3 -m pytest -q`.
+3. `python3 scripts/free_data_monitor.py`; record new ledger path/SHA256/checked_at + axb0306 coverage note.
+4. Do not tune parameters. If any new genuinely free full-history MNQ 1min/15min source appears with verifiable roll/tz/adjustment, document provenance/hashes/constraints before considering ingestion (no purchase, no credentials).
+5. Update HANDOFF.md (this block + prior list + evidence) and write updated INITIAL_TASK_FOR_NEXT_AGENT.md with exact results.
