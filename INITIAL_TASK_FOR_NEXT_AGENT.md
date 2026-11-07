@@ -1,8 +1,8 @@
 # Initial task for next agent
 
 ## Completed this session (2026-11-07T22:07Z)
-- State verified at start: `git status --short` **clean**. HEAD `7e5fdb7 chore(kilo): checkpoint agent session`. All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T2207Z.json` SHA-256 `ec25d0fb00036eb048f2c8b5d7ce11bb625d840287871cb50a43e98e0ec89eb8` (`checked_at_utc` 2026-11-07T22:07:01Z). axb0306 (`axb0306/cme-futures-ohlc`, https://github.com/axb0306/cme-futures-ohlc) verdict **free**; monitor repo SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` (2026-04-15). Latest MNQ 1min/15min coverage ends **2026-04-15**, no extension observed.
+- State verified at start: `git status --short` **clean**. HEAD `4e974ee chore(kilo): checkpoint agent session`. All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T2207Z.json` SHA-256 `8140bf363a9256790a5488ad59b980bbf6db23933c938e176bd82eb73f25b915` (`checked_at_utc` 2026-11-07T22:07:51Z). axb0306 (`axb0306/cme-futures-ohlc`, https://github.com/axb0306/cme-futures-ohlc) verdict **free**; monitor repo SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` (2026-04-15). Latest MNQ 1min/15min coverage ends **2026-04-15**, no extension observed.
 - `HANDOFF.md` and this file updated. No strategy/code/data/raw/artifact changes.
 - Deadline **2026-11-08T06:00Z** not yet reached; loop continues.
 
