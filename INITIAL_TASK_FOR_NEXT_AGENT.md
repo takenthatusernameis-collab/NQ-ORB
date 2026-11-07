@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T10:27:35Z)
-- State re-verified at start: `git status --short` clean; `git log --oneline -1` = `7bbf1a4 chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (stdout captured) → `research_state/free_data_monitor_20261107T102735Z.json` SHA-256 `69db4696ed29eb5e5ae1cca7f2fb6a36c5e603d68486b81e35268022cf42b131` (checked `2026-11-07T10:27:35.733799+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` ("Update 2026-04-15: 368 files updated"); `git ls-remote` fallback corroborated same SHA. Independent raw-file tail check: MNQ 1min ends `2026-04-15T23:29:00`, MNQ 15min ends `2026-04-15T23:15:00`, front-month 1min/15min end `2025-11-12`. **No coverage extension observed.**
-- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T10:27:35Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
+## Completed this session (2026-11-07T10:29:36Z)
+- State re-verified at start: `git status --short` clean; `git log --oneline -1` = `84c7baa chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran → `research_state/free_data_monitor_20261107T102936Z.json` SHA-256 `6b45f8a86cd58dbd8b1f11b2ea60f1ce3fa1082e3bbb4874e9b92d88fe009473` (checked `2026-11-07T10:29:36.566760+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` ("Update 2026-04-15: 368 files updated"); `git ls-remote` fallback corroborated same SHA. Independent raw-file tail check: MNQ 1min ends `2026-04-15T23:29:00`, MNQ 15min ends `2026-04-15T23:15:00`, front-month 1min/15min end `2025-11-12`. **No coverage extension observed.**
+- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T10:29:36Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
@@ -19,7 +19,7 @@ Repeat until controller deadline **2026-11-08T06:00Z** or a verified free-data e
    - Verify tracked SHA-256 hashes for: `STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`
    - `git log --oneline -1`
 2. **Run monitor**
-   - `python3 scripts/free_data_monitor.py` → `research_state/free_data_monitor_<UTC>Z.json`
+   - `python3 scripts/free_data_monitor.py` → save stdout to `research_state/free_data_monitor_<UTC>Z.json`
    - Record SHA-256, candidate count, axb0306 verdict/coverage evidence as present in JSON
    - If the script errors, re-run `python3 scripts/free_data_monitor.py` once; the `git ls-remote` fallback should now succeed even under API rate limiting. Report any persistent failure.
 3. **Update durable state**
