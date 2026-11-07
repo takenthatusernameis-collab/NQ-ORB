@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T05:28:37Z)
-- State re-verified: git clean at start; all 6 tracked SHA-256 hashes match (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv); `git log --oneline -1` = `2e0e96e chore(kilo): checkpoint agent session`.
-- `python3 scripts/free_data_monitor.py` ran → `research_state/free_data_monitor_20261107T052837Z.json` (SHA-256 `13bc30eb7978338344937cfaae14655d361ed8b4f515c1f92864938da5063a98`, checked `2026-11-07T05:28:37.502230+00:00`, 14 candidates, JSON valid). Recorded in HANDOFF.md Current session verification + Recent session ledger.
+## Completed this session (2026-11-07T05:30:44Z)
+- State re-verified: git clean at start; all 6 tracked SHA-256 hashes match (STRATEGY_RULES.txt, config/orb_mnq_15m_showcase.yaml, raw/MNQ_15min.csv, raw/MNQ_1min.csv, raw/MNQ_1min_frontmonth.csv, raw/MNQ_15min_frontmonth.csv); `git log --oneline -1` = `fe5143d chore: maintenance sweep 2026-11-07T05:28Z - free-data monitor (no extension)`.
+- `python3 scripts/free_data_monitor.py` ran → `research_state/free_data_monitor_20261107T053031Z.json` (SHA-256 `5396ad30de8c426612328d08834264fffc38a69ece5334c04a49913d825cdd00`, checked `2026-11-07T05:30:44.174744+00:00`, 14 candidates, JSON valid). Recorded in HANDOFF.md Current session verification + Recent session ledger.
 - axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, no extension observed. No free-data extension appeared.
 - No code/strategy/data/raw/artifact changes. `pytest` unavailable (prior verified baseline: 71 passed, 2026-11-06T21:11Z).
 
@@ -34,7 +34,7 @@ Repeat the bounded maintenance loop until controller deadline **2026-11-08T06:00
    - Update `HANDOFF.md` Current session verification + Recent session ledger (append entry), keep prior entries intact
    - No code/strategy/data/raw/artifact changes unless a verified free-data extension appears (and even then only per rules)
    - Leave working tree clean (or only new untracked `research_state/free_data_monitor_*.json` ledgers as expected)
-   - Commit with a clear message if you create new evidence files? Follow repo norms; `research_state/` files are evidence (check .gitignore) — do **not** delete evidence. Do not reset/rewrite git history.
+   - Follow repo norms for evidence files; do **not** delete evidence. Do not reset/rewrite git history.
 
 ## Constraints (hard)
 - Historical research/simulation only. No broker integration/order routing/live trading/paper trading/deployment.
