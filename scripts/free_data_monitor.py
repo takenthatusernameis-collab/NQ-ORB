@@ -18,7 +18,11 @@ from typing import Any
 
 
 def gh_commit_latest(repo: str, path: str = "") -> dict[str, Any]:
-    """Return latest commit metadata for a repo path via GitHub API (unauthenticated)."""
+    """Return latest commit metadata for a repo path via GitHub API (unauthenticated).
+
+    Falls back to ``git ls-remote`` (which does not consume REST API rate limit)
+    when the unauthenticated API call fails or is rate-limited.
+    """
     url = f"https://api.github.com/repos/{repo}/commits?path={path}&per_page=1"
     try:
         out = subprocess.run(
@@ -27,9 +31,13 @@ def gh_commit_latest(repo: str, path: str = "") -> dict[str, Any]:
         )
         data = json.loads(out.stdout or "{}")
     except Exception as e:  # noqa: BLE001
-        return {"ok": False, "error": str(e)}
+        data = {"_parse_error": str(e)}
     if not data:
         return {"ok": False, "error": "empty response"}
+    if isinstance(data, dict):
+        # GitHub returns a dict with a "message" key on errors (e.g. rate limit)
+        return {"ok": False, "error": str(data.get("message", data)),
+                "fallback": "git_ls_remote"}
     c = data[0]
     return {
         "ok": True,
@@ -39,11 +47,38 @@ def gh_commit_latest(repo: str, path: str = "") -> dict[str, Any]:
     }
 
 
+def gh_ls_remote_head(repo: str) -> dict[str, Any]:
+    """Return HEAD commit SHA for a repo via ``git ls-remote`` (no API rate limit)."""
+    try:
+        out = subprocess.run(
+            ["git", "ls-remote", f"https://github.com/{repo}.git"],
+            check=False, capture_output=True, text=True, timeout=30,
+        )
+        head_sha = ""
+        main_sha = ""
+        for line in (out.stdout or "").strip().splitlines():
+            parts = line.split()
+            if len(parts) < 2:
+                continue
+            sha, ref = parts[0], parts[1]
+            if ref == "HEAD":
+                head_sha = sha
+            elif ref in ("refs/heads/main", "refs/heads/master"):
+                main_sha = sha
+        sha = head_sha or main_sha
+        if sha:
+            return {"ok": True, "sha": sha, "method": "git_ls_remote"}
+        return {"ok": False, "error": f"no head ref: {out.stderr[:200]}"}
+    except Exception as e:  # noqa: BLE001
+        return {"ok": False, "error": str(e)}
+
+
 def main() -> int:
     ts = datetime.now(timezone.utc).isoformat()
     evidence: dict[str, Any] = {
         "checked_at_utc": ts,
         "axb0306_cme_futures_ohlc": gh_commit_latest("axb0306/cme-futures-ohlc", "MNQ"),
+        "axb0306_head_sha_fallback": gh_ls_remote_head("axb0306/cme-futures-ohlc"),
         "candidates": [
             {
                 "name": "axb0306/cme-futures-ohlc",
