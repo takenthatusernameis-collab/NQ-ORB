@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-07T14:36:11.946747+00:00",
+  "axb0306_cme_futures_ohlc": {
+    "ok": true,
+    "sha": "60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264",
+    "date": "2026-04-15T23:34:55Z",
+    "message": "Update 2026-04-15: 368 files updated"
+  },
+  "axb0306_head_sha_fallback": {
+    "ok": true,
+    "sha": "60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264",
+    "method": "git_ls_remote"
+  },
+  "candidates": [
+    {
+      "name": "axb0306/cme-futures-ohlc",
+      "url": "https://github.com/axb0306/cme-futures-ohlc",
+      "verdict": "free",
+      "note": "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed."
+    }
+  ]
+}
