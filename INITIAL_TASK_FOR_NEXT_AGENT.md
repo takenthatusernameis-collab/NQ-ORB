@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T15:19:04Z)
-- State re-verified: `git status --short` clean at start (HEAD `cfc186a`); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T151904Z.json` SHA-256 `b783191c8a3c9dcce9af6b3a351a2f1ffe60ff43986d3df76e227225cb9c3eda` (checked `2026-11-07T15:19:04.861987+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; `axb0306_head_sha_fallback` ok via `git_ls_remote`, same SHA. Raw tails corroborate MNQ 1min ends `2026-04-15T23:29:00`, MNQ 15min ends `2026-04-15T23:15:00`. **No coverage extension observed.**
-- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:19:04Z, this session)`). No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T15:19:46Z)
+- State re-verified: at start `git status --short` showed only untracked `research_state/free_data_monitor_20261107T1520Z.json` (HEAD observed `a6dc8d7`); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T1520Z.json` SHA-256 `b8bdb69060655c9da7c1101db712ca1c7644aa9e8ae42aa8a7edcdc9a12cdbef` (checked `2026-11-07T15:19:46.752923+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; `axb0306_head_sha_fallback` ok via `git_ls_remote`, same SHA. MNQ 1min/15min coverage ends **2026-04-15**. **No coverage extension observed.**
+- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:19:46Z, this session)`); `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
