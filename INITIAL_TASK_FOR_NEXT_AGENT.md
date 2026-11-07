@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T13:21:30Z)
-- State re-verified at start: `git status --short` clean; `git log --oneline -1` = `b887a86 chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran → `research_state/free_data_monitor_20261107T132110Z.json` SHA-256 `7f4678b0126a8ddb8d8dd48da9bc7de53265b3dca2b73a8df20031cfa2b64e78` (checked `2026-11-07T13:21:30.401847+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; `axb0306_head_sha_fallback` `ok: true` via `git_ls_remote`, same SHA. **No coverage extension observed** (MNQ 1min/15min ends 2026-04-15).
-- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T13:21:30Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T13:22:55Z)
+- State re-verified at start: `git status --short` showed only untracked `research_state/free_data_monitor_20261107T132110Z.json` (prior ledger); `git log --oneline -1` = `3a2b6ad chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran → `research_state/free_data_monitor_20261107T132300Z.json` SHA-256 `938178d5950da82f7516de151341a155d7cb5c44956567bcc6c0dc088d58c549` (14 candidates, JSON valid). axb0306 verdict `free`, note states MNQ 1min/15min ends **2026-04-15** (no extension). Prior evidence: SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`.
+- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T13:22:55Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
@@ -32,3 +32,4 @@ Repeat until controller deadline **2026-11-08T06:00Z** or a verified free-data e
 
 ## Durable state (unchanged)
 - Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Walk-forward negative (axb0306 3 windows, Kaggle 8 windows). Frozen baseline `STRATEGY_RULES.txt` v1.0 preserved.
+- `axb0306` roll/adjustment: single-contract `MNQ.M26`, no roll inside sample (2026-01-20..2026-04-15). Latest observed free 1min/15min coverage through **2026-04-15**.
