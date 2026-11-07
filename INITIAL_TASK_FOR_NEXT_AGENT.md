@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T14:21:59Z)
-- State re-verified at start: `git status --short` **clean**; `git log --oneline -1` = `876199e chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T142159Z.json` SHA-256 `e196c623eebfe602c04518370f0a0caf810039706ceebbc70a54ad7fcd2f5ff6` (checked `2026-11-07T14:21:59.388945+00:00`, 14 candidates, JSON valid). Monitor JSON has `checked_at_utc`; axb0306 verdict `free`, ok true, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, note states MNQ 1min/15min ends **2026-04-15** (no extension). `axb0306_head_sha_fallback` ok via git_ls_remote, same SHA.
-- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T13:33:38Z, this session)`). `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T14:22:25Z)
+- State re-verified at start: `git status --short` **clean**; `git log --oneline -1` = `e60d6fa chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T142225Z.json` SHA-256 `3b5835fd4ef39f119b3f6b052763437e362d45c5ac316d929c2a2f55d1d897b0` (checked `2026-11-07T14:22:56.028637+00:00`, 14 candidates, JSON valid). Monitor JSON has `checked_at_utc`; axb0306 verdict `free`, ok true, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, note states MNQ 1min/15min ends **2026-04-15** (no extension). `axb0306_head_sha_fallback` ok via git_ls_remote, same SHA. Independent raw-file tails corroborate: MNQ 1min ends `2026-04-15T23:29:00`, MNQ 15min ends `2026-04-15T23:15:00`, front-month 1min ends `2025-11-12T23:59:00`, front-month 15min ends `2025-11-12T23:45:00`.
+- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T14:22:25Z, this session)`). `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
