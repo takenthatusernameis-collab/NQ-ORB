@@ -1,5 +1,12 @@
 # Handoff
 
+## Current session verification (2026-11-07T07:30:58Z, this session)
+- `git status --short` at start: **clean** (after controller checkpoint `44e9715` present at session open; no tracked edits to frozen files).
+- All 6 tracked SHA-256 hashes **MATCH**: `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
+- `git log --oneline -1` at start: `44e9715 chore(kilo): checkpoint agent session`.
+- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T073058Z.json` SHA-256 `388af87e8b7718643a16365644940c97d891c8a89a6f57477885c25062491c69` (checked `2026-11-07T07:31:01.722977+00:00`, 14 candidates, JSON valid). axb0306/cme-futures-ohlc: verdict `free`, latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15** (no extension observed).
+- No code/strategy/data/raw/artifact changes. `pytest` unavailable in this env (prior verified baseline: 71 passed, 2026-11-06T21:11Z).
+
 ## Current session verification (2026-11-07T06:40:27Z, this session)
 - `git status --short` at start: **clean** (after controller checkpoint `24e6e3f` present at session open; no tracked edits to frozen files).
 - All 6 tracked SHA-256 hashes **MATCH**: `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
@@ -35,26 +42,6 @@
 - `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T063517Z.json` SHA-256 `f4e320fc6fc6608ac7651f03081e9ed6f6c4c866e29901f917423eca663dfb0a` (checked `2026-11-07T06:35:17.557739+00:00`, 14 candidates, JSON valid). axb0306/cme-futures-ohlc: verdict `free`, latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15** (no extension observed).
 - No code/strategy/data/raw/artifact changes.
 
-## Current session verification (2026-11-07T06:29:54Z, this session)
-- `git status --short` at start: **clean** (after controller checkpoint `84d3cd3` present at session open; no tracked edits to frozen files).
-- All 6 tracked SHA-256 hashes **MATCH**: `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
-- `git log --oneline -1` at start: `84d3cd3 chore(kilo): checkpoint agent session`.
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T062954Z.json` SHA-256 `ff9e6d5686ada43bdeeea15768e7addf09d6e0e7d9dc4611ab2b68d016573ef0` (checked `2026-11-07T06:29:54.199270+00:00`, 14 candidates, JSON valid). axb0306/cme-futures-ohlc: verdict `free`, latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15** (no extension observed).
-- No code/strategy/data/raw/artifact changes.
-
-## Current session verification (2026-11-07T05:41:51Z, this session)
-- `git status --short` at start: **clean** (after controller checkpoint `a68e0ac` present at session open; no tracked edits to frozen files).
-- All 6 tracked SHA-256 hashes **MATCH**: `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
-- `git log --oneline -1` at start: `a68e0ac chore(kilo): checkpoint agent session`.
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T054151Z.json` SHA-256 `b705dfa3f60353a03a452a4d71a11d4f69d520fad8fc2ebde1f676395dbdb8ac` (checked `2026-11-07T05:41:51.121197+00:00`, 14 candidates, JSON valid). axb0306/cme-futures-ohlc: verdict `free`, latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15** (no extension observed).
-- No code/strategy/data/raw/artifact changes.
-
-## Current session verification (2026-11-07T05:40:25Z, this session)
-- `git status --short` at start: **clean** (after controller checkpoint `4347fdc` present at session open; no tracked edits to frozen files).
-- All 6 tracked SHA-256 hashes **MATCH**: `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
-- `git log --oneline -1` at start: `4347fdc chore(kilo): checkpoint agent session`.
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T054025Z.json` SHA-256 `c71282e184cb68c197fe0a8d008c91bd2e072908ecfbc861b37d714a13d95bb6` (checked `2026-11-07T05:40:40.847493+00:00`, 14 candidates, JSON valid). axb0306/cme-futures-ohlc: verdict `free`, latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15** (no extension observed).
-- No code/strategy/data/raw/artifact changes.
 
 ## Prior session verification (2026-11-07T05:37:59Z)
 - `git status --short` at start: **clean** (after controller checkpoint state present at session open; no tracked edits to frozen files).
@@ -78,6 +65,8 @@ Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_mon
 - 2026-11-07T05:41:51Z: `free_data_monitor_20261107T054151Z.json` SHA-256 `b705dfa3f60353a03a452a4d71a11d4f69d520fad8fc2ebde1f676395dbdb8ac` (checked `2026-11-07T05:41:51.121197+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 
 ## Recent session ledger (compact; full history in `research_state/` and git)
+
+- 2026-11-07T07:30:58Z: `free_data_monitor_20261107T073058Z.json` SHA-256 `388af87e8b7718643a16365644940c97d891c8a89a6f57477885c25062491c69` (checked `2026-11-07T07:31:01.722977+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 
 - 2026-11-07T06:40:27Z: `free_data_monitor_20261107T064027Z.json` SHA-256 `454c594f7c087ee39378f9ab064679701fdc30ad06b116761626505d5e5ed40b` (checked `2026-11-07T06:40:27.582258+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). No changes.
 
