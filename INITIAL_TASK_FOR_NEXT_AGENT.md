@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T19:20Z)
-- State verified at start: `git status --short` **clean**; HEAD `0ef2d2f chore(kilo): checkpoint agent session` (`git --no-pager log --oneline -3`). All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt` `6d3258c3...`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`, `raw/MNQ_15min.csv` `f417f22d...`, `raw/MNQ_1min.csv` `129623f4...`, `raw/MNQ_1min_frontmonth.csv` `edbadc73...`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T1920Z.json` SHA-256 `13ecb783e17463d709bd788a3bd86aa7393af6470fd01836aaaf6d8e7739d15b` (checked `2026-11-07T19:20:34.576013+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` ("Update 2026-04-15: 368 files updated"); fallback `git_ls_remote` same SHA. MNQ 1min/15min coverage ends **2026-04-15**. **No coverage extension observed.**
-- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T19:19Z, this session)`); this file refreshed. No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T19:21Z)
+- State verified at start: `git status --short` **clean**; HEAD `1d6a067 chore(kilo): checkpoint agent session` (`git --no-pager log --oneline -3`). All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt` `6d3258c3...`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`, `raw/MNQ_15min.csv` `f417f22d...`, `raw/MNQ_1min.csv` `129623f4...`, `raw/MNQ_1min_frontmonth.csv` `edbadc73...`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T1921Z.json` SHA-256 `fa6c372a7719f5bb228376077f4d524db52ed787e5185fd2742b2d5ef9e95c9a` (`checked_at_utc` null in top-level; 14 candidates, JSON valid). axb0306 verdict `free`, note: "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." **No coverage extension observed.**
+- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T19:21Z, this session)`); this file refreshed. No strategy/code/data/raw/artifact changes.
 - Deadline **2026-11-08T06:00Z** not yet reached; loop continues.
 
 ## Read first (do not skip)
