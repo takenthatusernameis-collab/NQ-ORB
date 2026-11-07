@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T15:07:26Z)
-- State re-verified at start: `git status --short` **clean**; `git log --oneline -1` = `78a0bfd chore: capture completed workflow run diagnostics` (prior HANDOFF recorded stale `d6553ab`; intervening commits `9c967c8`, `b92e2ad`, `78a0bfd` touch no frozen files, `git diff --stat d6553ab HEAD -- STRATEGY_RULES.txt config raw/` empty); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0, no stderr) → `research_state/free_data_monitor_20261107T1507Z.json` SHA-256 `f90c0ef5a3228cb6861f49698130d3e6fe47135d206c08ecf953e166daa1b1cb` (checked `2026-11-07T15:07:47.386871+00:00`, 14 candidates, JSON valid). Monitor JSON has `checked_at_utc`; axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` ("Update 2026-04-15: 368 files updated"); `axb0306_head_sha_fallback` `ok: true` via `git_ls_remote`, same SHA. **No coverage extension observed.**
-- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:07:26Z, this session)`). No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T15:09:00Z)
+- State re-verified: `git status --short` clean at start (HEAD `78a0bfd` then controller checkpoint `9e5dffa`); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T1508Z.json` SHA-256 `7b7161d34231aa8df6230cb56e93995e9bc88d1cd21a3d66b412445b980b5dc8` (checked `2026-11-07T15:09:00.787930+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`: "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." Raw tails corroborate 1min `2026-04-15T23:29:00`, 15min `2026-04-15T23:15:00`. **No coverage extension observed.**
+- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:09:00Z, this session)`). No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
@@ -20,7 +20,7 @@ Repeat until controller deadline **2026-11-08T06:00Z** or a verified free-data e
    - `git log --oneline -1`
 2. **Run monitor**
    - `python3 scripts/free_data_monitor.py` → save stdout to `research_state/free_data_monitor_<UTC>Z.json`
-   - Record SHA-256, candidate count, axb0306 verdict/coverage evidence as present in JSON (include `checked_at_utc` if present)
+   - Record SHA-256, candidate count, axb0306 verdict/coverage evidence (`checked_at_utc` if present)
    - If the script errors, re-run once; `git ls-remote` fallback should succeed under API rate limiting. Report any persistent failure.
 3. **Update durable state**
    - Prepend a `## Current session verification (...)` block to `HANDOFF.md`
