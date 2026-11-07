@@ -1,6 +1,6 @@
 # Handoff
 
-## Current session verification (2026-11-07T02:43:44Z, this session)
+## Current session verification (2026-11-07T02:44:56Z, this session)
 
 - `git status --short` at start: clean (no tracked/untracked changes) — no code/strategy/data/raw/artifact changes.
 - All 6 tracked SHA-256 hashes **MATCH**:
@@ -10,22 +10,23 @@
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
   - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T024344Z.json` (file SHA-256 `40108cf3d27f4227daf17cee56285a8d452c5e22309d6f3cb612095f6b9cff2d`, `checked_at_utc` `2026-11-07T02:43:54.465575+00:00`, **14 candidates**, JSON valid).
-- axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, **no extension observed** (re-verified). `git status --short` after run shows only untracked `research_state/free_data_monitor_20261107T024344Z.json`.
+- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T024456Z.json` (file SHA-256 `6fd1e231c7293d8e0529cc89a81e9826c85a54d2cd4511571fe650675572ebb2`, `checked_at_utc` `2026-11-07T02:44:56.045426+00:00`, **14 candidates**, JSON valid).
+- axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, **no extension observed** (re-verified). `git status --short` after run shows only untracked `research_state/free_data_monitor_20261107T024456Z.json`.
 - No code/strategy/data/raw/artifact changes this session.
 
-## Current durable state (as of 2026-11-07T02:41:46Z)
+## Current durable state (as of 2026-11-07T02:44:56Z)
 
 - Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0).
 
 ## Next agent (immediate)
 
-Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-07T02:43:44Z** (ledger `research_state/free_data_monitor_20261107T024344Z.json`, SHA-256 `40108cf3d27f4227daf17cee56285a8d452c5e22309d6f3cb612095f6b9cff2d`, checked `2026-11-07T02:43:54.465575+00:00`, 14 candidates; axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, free, MNQ 1min/15min ends 2026-04-15, no extension).
+Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_monitor.py`, record evidence, no tuning). Latest completed: **2026-11-07T02:44:56Z** (ledger `research_state/free_data_monitor_20261107T024456Z.json`, SHA-256 `6fd1e231c7293d8e0529cc89a81e9826c85a54d2cd4511571fe650675572ebb2`, checked `2026-11-07T02:44:56.045426+00:00`, 14 candidates; axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, free, MNQ 1min/15min ends 2026-04-15, no extension).
 
 **Initial task message for next agent:** Read HANDOFF.md. Run `git status --short` (expect only untracked `research_state/free_data_monitor_*.json` ledgers, or clean). Verify all 6 tracked SHA-256 hashes match (STRATEGY_RULES.txt `6d3258c3...`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...`; `raw/MNQ_15min.csv` `f417f22d...`; `raw/MNQ_1min.csv` `129623f4...`; `raw/MNQ_1min_frontmonth.csv` `edbadc73...`; `raw/MNQ_15min_frontmonth.csv` `7e129ae3...`). Run `python3 scripts/free_data_monitor.py`; save output to a new timestamped ledger in `research_state/`; record file SHA-256, checked_at_utc, candidate count, axb0306 latest commit/date; confirm no extension beyond 2026-04-15. Do not tune parameters, change strategy logic, or touch raw data/artifacts. Update HANDOFF.md with the new session verification and write the next agent's initial task message.
 
 ## Prior maintenance verifications (evidence preserved)
 
+- 2026-11-07T02:44:56Z: ledger `research_state/free_data_monitor_20261107T024456Z.json` SHA-256 `6fd1e231c7293d8e0529cc89a81e9826c85a54d2cd4511571fe650675572ebb2` (checked `2026-11-07T02:44:56.045426+00:00`), 14 candidates, `git status` clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). No code/strategy/data/raw/artifact changes.
 - 2026-11-07T02:43:44Z: ledger `research_state/free_data_monitor_20261107T024344Z.json` SHA-256 `40108cf3d27f4227daf17cee56285a8d452c5e22309d6f3cb612095f6b9cff2d` (checked `2026-11-07T02:43:54.465575+00:00`), 14 candidates, `git status` clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). No code/strategy/data/raw/artifact changes.
 - 2026-11-07T02:41:46Z: ledger `research_state/free_data_monitor_20261107T024146Z.json` SHA-256 `2773186214eaf2d22fdf325820e81efeb011e0f9ba921d8ca415b805eb12fdc1` (checked `2026-11-07T02:41:46.210085+00:00`), 14 candidates, `git status` clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). No code/strategy/data/raw/artifact changes.
 - 2026-11-07T02:40:53Z: ledger `research_state/free_data_monitor_20261107T024053Z.json` SHA-256 `2bf11cdb4f39b4665c206d67c4f927a04779d476a68ecfb11cafbd612c77a19c` (checked `2026-11-07T02:40:57.032239+00:00`), 14 candidates, `git status` clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). No code/strategy/data/raw/artifact changes.
