@@ -1,8 +1,8 @@
 # Initial task for next agent
 
 ## Completed this session (2026-11-07T22:00Z)
-- State verified at start: `git status --short` **clean**. HEAD `94b3376 chore(kilo): checkpoint agent session`. All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T2200Z.json` SHA-256 `b997b572c14cf47a2d8112962acce73ff19a206f3fa25bb307e88ed7a4b12fab` (checked_at_utc `2026-11-07T22:00:01.518496+00:00`; 14 candidates, JSON valid). axb0306 (`axb0306/cme-futures-ohlc`, https://github.com/axb0306/cme-futures-ohlc) verdict **free**; head commit `60abd3fb` dated `2026-04-15T23:34:55Z`; latest MNQ 1min/15min coverage ends **2026-04-15**, re-verified/no extension. **No coverage extension observed.**
+- State verified at start: `git status --short` **clean**. HEAD `4115721 chore(kilo): checkpoint agent session`. All 6 tracked SHA-256 hashes match expected values (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T2200Z.json` SHA-256 `99040c23940d848b13f33b2e5d8f32c9aaf35e6d4e15ec4195970b9f403e2671` (checked_at_utc `2026-11-07T22:00:44.304647+00:00`; 14 candidates, JSON valid). axb0306 (`axb0306/cme-futures-ohlc`, https://github.com/axb0306/cme-futures-ohlc) verdict **free**; head commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` (git_ls_remote fallback ok, same SHA); latest MNQ 1min/15min coverage ends **2026-04-15**, re-verified/no extension. **No coverage extension observed.**
 - `HANDOFF.md` updated to current-session verification. This file refreshed. No strategy/code/data/raw/artifact changes.
 - Deadline **2026-11-08T06:00Z** not yet reached; loop continues.
 
