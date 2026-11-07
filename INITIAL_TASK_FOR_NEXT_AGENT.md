@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T15:14:36Z)
-- State re-verified: `git status --short` clean at start (HEAD `6392e4f`); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T151436Z.json` SHA-256 `2485b1319f66c5b9ffcff8e7d94e6073e76bb33b88839dd12a87199a4408f269` (checked `2026-11-07T15:14:59.245931+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`/`ok: true`, SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z` ("Update 2026-04-15: 368 files updated"); `axb0306_head_sha_fallback` `ok: true` via `git_ls_remote`, same SHA. **No coverage extension observed.**
-- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:14:36Z, this session)`). No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T15:16:21Z)
+- State re-verified: `git status --short` clean at start (HEAD `a7ccc92`); all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T151621Z.json` SHA-256 `288678222142695f62c78094168bc145d6dec6d4cc66e61ad705d86dfcfec704` (checked `2026-11-07T15:16:34.903328+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`, note: "Latest MNQ 1min/15min coverage ends 2026-04-15. Re-verified each session; no extension observed." Raw tails corroborate MNQ 1min ends `2026-04-15T23:29:00`, MNQ 15min ends `2026-04-15T23:15:00`. **No coverage extension observed.**
+- `HANDOFF.md` updated (prepended `## Current session verification (2026-11-07T15:16:21Z, this session)`). No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
