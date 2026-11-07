@@ -1,7 +1,6 @@
 # Handoff
 
-## Current session verification (2026-11-07T03:37:19Z, this session)
-
+## Current session verification (2026-11-07T04:26:55Z, this session)
 - `git status --short` at start: **clean** (no tracked/untracked changes).
 - All 6 tracked SHA-256 hashes **MATCH**:
   - `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
@@ -10,7 +9,7 @@
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
   - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T033713Z.json` (file SHA-256 `80eec84caf9c4900e981199e83ea8e654c24699513239ec056594c701d11d71b`, `checked_at_utc` `2026-11-07T03:37:19.101942+00:00`, **14 candidates**, JSON valid).
+- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T042653Z.json` (file SHA-256 `a286b9c52b2ea3392e866ac45930a1ee6c355bfdab75d9706fe0a039cfccb1d7`, `checked_at_utc` `2026-11-07T04:26:55.423855+00:00`, **14 candidates**, JSON valid).
 - axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, **no extension observed** (re-verified). Untracked `research_state/free_data_monitor_*.json` ledgers remain untracked.
 - `pytest` unavailable in this env (`No module named pytest`); prior verified baseline: **71 passed** (2026-11-06T21:11Z). No code changes this session.
 - No code/strategy/data/raw/artifact changes this session.
@@ -25,6 +24,7 @@ Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_mon
 
 ## Recent session ledger (compact; full history in `research_state/` and git)
 
+- 2026-11-07T04:26:55Z: `free_data_monitor_20261107T042653Z.json` SHA-256 `a286b9c52b2ea3392e866ac45930a1ee6c355bfdab75d9706fe0a039cfccb1d7` (checked `2026-11-07T04:26:55.423855+00:00`), 14 candidates, axb0306 ends 2026-04-15 (no extension). No changes.
 - 2026-11-07T03:39:08Z: `free_data_monitor_20261107T033908Z.json` SHA-256 `97b2314d5618d8bd77527e943f1746c46f234cae63a7ed360f7437097ce4a30a` (checked `2026-11-07T03:39:08.001735+00:00`), 14 candidates, axb0306 ends 2026-04-15 (no extension). No changes.
 - 2026-11-07T03:37:19Z: `free_data_monitor_20261107T033713Z.json` SHA-256 `80eec84caf9c4900e981199e83ea8e654c24699513239ec056594c701d11d71b` (checked `2026-11-07T03:37:19.101942+00:00`), 14 candidates, axb0306 ends 2026-04-15 (no extension). No changes.
 - 2026-11-07T03:36:32Z: `free_data_monitor_20261107T033632Z.json` SHA-256 `720f61f70c5aa3dbc1d1fab9184ea93c237974205836c2750e3c899f6fd9b301` (checked `2026-11-07T03:36:32.377563+00:00`), 14 candidates, axb0306 ends 2026-04-15 (no extension). No changes.
