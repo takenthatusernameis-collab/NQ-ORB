@@ -25,6 +25,7 @@ Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_mon
 
 ## Recent session ledger (compact; full history in `research_state/` and git)
 
+- 2026-11-07T03:32:34Z: `free_data_monitor_20261107T033232Z.json` SHA-256 `c0aaa8d38904497fabf9493bb81f25a8e7c127986961c8a4a03719cbe5f50716` (checked `2026-11-07T03:32:34.195556+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb...` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 - 2026-11-07T03:31:14Z: `free_data_monitor_20261107T033114Z.json` SHA-256 `ff2787947a27b0bcba0b497305084ed3836561f4adda9b36719ee8453ec9988d` (checked `2026-11-07T03:31:14.572040+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb...` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 - 2026-11-07T03:30:01Z: `free_data_monitor_20261107T033001Z.json` SHA-256 `03f9a43f6e67e76da0b86fd44f5b2404bd2e3efb7eb4764581cb53517a0dce43` (checked `2026-11-07T03:29:58.408707+00:00`), 14 candidates, axb0306 ends 2026-04-15 (no extension). No changes.
 - 2026-11-07T03:29:01Z: `free_data_monitor_20261107T032909Z.json` SHA-256 `bb2fd421dfd5d1abb0c9192929f8b7fa07a091185295f5b37bdbb6bbcf12218a`, axb0306 ends 2026-04-15 (no extension). No changes.
