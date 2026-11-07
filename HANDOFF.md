@@ -1,5 +1,12 @@
 # Handoff
 
+## Current session verification (2026-11-07T05:34:35Z, this session)
+- `git status --short` at start: **clean**.
+- All 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES.txt `6d3258c3…`, config/orb_mnq_15m_showcase.yaml `2a6c5ff8…`, raw/MNQ_15min.csv `f417f22d…`, raw/MNQ_1min.csv `129623f4…`, raw/MNQ_1min_frontmonth.csv `edbadc73…`, raw/MNQ_15min_frontmonth.csv `7e129ae3…`).
+- `git log --oneline -1` at start: `49e050f chore(kilo): checkpoint agent session`.
+- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T053435Z.json` SHA-256 `2699cd70131f5b7cd9735545ab81ac311e5b6c7cec1a86b2b4e01be883ab5dfb` (checked `2026-11-07T05:34:35.479481+00:00`, 14 candidates, JSON valid). axb0306 sha `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min ends **2026-04-15** (no extension). No changes.
+- `pytest` unavailable in this env (`No module named pytest`); prior verified baseline: **71 passed** (2026-11-06T21:11Z). No code/strategy/data/raw/artifact changes.
+
 ## Current session verification (2026-11-07T05:33:13Z, this session)
 - `git status --short` at start: **clean**.
 - All 6 tracked SHA-256 hashes **MATCH** (STRATEGY_RULES.txt `6d3258c3…`, config/orb_mnq_15m_showcase.yaml `2a6c5ff8…`, raw/MNQ_15min.csv `f417f22d…`, raw/MNQ_1min.csv `129623f4…`, raw/MNQ_1min_frontmonth.csv `edbadc73…`, raw/MNQ_15min_frontmonth.csv `7e129ae3…`).
@@ -73,6 +80,7 @@ Repeat the bounded maintenance loop (re-verify state, run `scripts/free_data_mon
 
 ## Recent session ledger (compact; full history in `research_state/` and git)
 
+- 2026-11-07T05:34:35Z: `free_data_monitor_20261107T053435Z.json` SHA-256 `2699cd70131f5b7cd9735545ab81ac311e5b6c7cec1a86b2b4e01be883ab5dfb` (checked `2026-11-07T05:34:35.479481+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 - 2026-11-07T05:33:13Z: `free_data_monitor_20261107T053306Z.json` SHA-256 `fcaceacae2b4b9b176be632ff6363783440ab3f644b32e2e9bf8c174d3eb31d5` (checked `2026-11-07T05:33:13.443579+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 - 2026-11-07T05:30:44Z: `free_data_monitor_20261107T053031Z.json` SHA-256 `5396ad30de8c426612328d08834264fffc38a69ece5334c04a49913d825cdd00` (checked `2026-11-07T05:30:44.174744+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
 - 2026-11-07T05:28:37Z: `free_data_monitor_20261107T052837Z.json` SHA-256 `13bc30eb7978338344937cfaae14655d361ed8b4f515c1f92864938da5063a98` (checked `2026-11-07T05:28:37.502230+00:00`), 14 candidates, git clean at start, all 6 hashes match, axb0306 `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`, MNQ 1min/15min ends 2026-04-15 (no extension). pytest unavailable (prior 71 passed). No changes.
