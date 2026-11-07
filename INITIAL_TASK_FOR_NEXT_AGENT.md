@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-## Completed this session (2026-11-07T13:29:31Z)
-- State re-verified at start: `git status --short` **clean**; `git log --oneline -1` = `79268a2 chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
-- `python3 scripts/free_data_monitor.py` ran (exit 0, no stderr) → `research_state/free_data_monitor_20261107T132931Z.json` SHA-256 `8b84041bfa6b41979c08b5e4096d8eab8ed045b771a2bf051b1b25fbee063c7c` (checked `2026-11-07T13:29:31.487773+00:00`, 14 candidates, JSON valid). axb0306 verdict `free`, note states MNQ 1min/15min ends **2026-04-15** (no extension). Prior evidence: SHA `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`. Independent raw-file tail check corroborates: MNQ 1min `2026-04-15T23:29:00`, MNQ 15min `2026-04-15T23:15:00`, front-month 1min `2025-11-12T23:59:00`, front-month 15min `2025-11-12T23:45:00`.
-- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T13:29:31Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
+## Completed this session (2026-11-07T13:30:10Z)
+- State re-verified at start: `git status --short` **clean**; `git log --oneline -1` = `88ba865 chore(kilo): checkpoint agent session`; all 6 tracked SHA-256 hashes match (`STRATEGY_RULES.txt`, `config/orb_mnq_15m_showcase.yaml`, `raw/MNQ_15min.csv`, `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv`, `raw/MNQ_15min_frontmonth.csv`).
+- `python3 scripts/free_data_monitor.py` ran (exit 0) → `research_state/free_data_monitor_20261107T133010Z.json` SHA-256 `7eb96dc276b5f89371f47e8d2e7850baf352012c460a02d3fb90b7a0ac113cc3` (14 candidates, JSON valid). Monitor JSON has no `checked_at` field; axb0306 verdict `free`, note states MNQ 1min/15min ends **2026-04-15** (no extension). Independent raw-file tails: MNQ 1min `2026-04-15T23:29:00`, MNQ 15min `2026-04-15T23:15:00`, front-month 1min `2025-11-12T23:59:00`, front-month 15min `2025-11-12T23:45:00`.
+- `HANDOFF.md` updated: prepended `## Current session verification (2026-11-07T13:30:10Z, this session)`. `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. No strategy/code/data/raw/artifact changes.
 
 ## Read first (do not skip)
 - `HANDOFF.md` (current state, recent ledger, deadline 2026-11-08T06:00Z)
@@ -20,7 +20,7 @@ Repeat until controller deadline **2026-11-08T06:00Z** or a verified free-data e
    - `git log --oneline -1`
 2. **Run monitor**
    - `python3 scripts/free_data_monitor.py` → save stdout to `research_state/free_data_monitor_<UTC>Z.json`
-   - Record SHA-256, candidate count, axb0306 verdict/coverage evidence as present in JSON
+   - Record SHA-256, candidate count, axb0306 verdict/coverage evidence as present in JSON (include `checked_at` if present)
    - If the script errors, re-run once; `git ls-remote` fallback should succeed under API rate limiting. Report any persistent failure.
 3. **Update durable state**
    - Prepend a `## Current session verification (...)` block to `HANDOFF.md`
