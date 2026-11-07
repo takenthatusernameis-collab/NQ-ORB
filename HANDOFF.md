@@ -1,6 +1,6 @@
 # Handoff
 
-## Current session verification (2026-11-07T01:41:58Z, this session)
+## Current session verification (2026-11-07T01:43:55Z, this session)
 
 - `git status --short` at start: clean (no tracked/untracked changes) — no code/strategy/data/raw/artifact changes.
 - All 6 tracked SHA-256 hashes **MATCH**:
@@ -10,10 +10,9 @@
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
   - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
-- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T014158Z.json` (file SHA-256 `47464cd6313aaf0d70727849999b5e58049dbb69ddca7ba660613e44fdd8a12a`, `checked_at_utc` `2026-11-07T01:41:58.836447+00:00`, **14 candidates**, JSON valid).
-- axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, **no extension observed** (re-verified). `git status --short` after run shows only untracked `research_state/free_data_monitor_20261107T014158Z.json`.
-- No code/strategy/data/raw/artifact changes this session.
-
+- `python3 scripts/free_data_monitor.py` executed → `research_state/free_data_monitor_20261107T014355Z.json` (file SHA-256 `526c8807944b401e2532a053299dce78490f4bda7bb34e167d1ca6e552648d52`, `checked_at_utc` `2026-11-07T01:43:55.534735+00:00`, **14 candidates**, JSON valid).
+- axb0306/cme-futures-ohlc: verdict `free`; latest commit `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264` dated `2026-04-15T23:34:55Z`; MNQ 1min/15min coverage ends **2026-04-15**, **no extension observed** (re-verified). `git status --short` after run shows only untracked `research_state/free_data_monitor_20261107T014355Z.json`.
+- No code/strategy/data/raw/artifact changes this session."
 ## Current durable state (as of 2026-11-07T01:40:17Z)
 
 - Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Prior verified walk-forward: axb0306 3 windows all negative net P&L; Kaggle 8 windows all negative net P&L. Frozen baseline preserved (`STRATEGY_RULES.txt` v1.0).
