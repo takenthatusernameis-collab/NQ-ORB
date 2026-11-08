@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-## Final status (deadline reached 2026-11-08T06:00Z)
-- Maintenance loop **stopped** at deadline. **No verified free MNQ 1min/15min coverage extension** observed (axb0306/cme-futures-ohlc still ends **2026-04-15**; 14 candidates checked 2026-11-08T06:00:17Z).
-- All 6 tracked SHA-256 hashes **MATCH**: STRATEGY_RULES `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, config `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, raw MNQ_15min `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, raw MNQ_1min `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, raw MNQ_1min_frontmonth `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, raw MNQ_15min_frontmonth `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
+## Final status (deadline reached 2026-11-08T06:00Z; verified 2026-11-08T06:01Z)
+- Maintenance loop **stopped** at deadline. **No verified free MNQ 1min/15min coverage extension** observed (axb0306/cme-futures-ohlc still ends **2026-04-15**; 14 candidates checked 2026-11-08T06:00:17Z; ledger `research_state/free_data_monitor_20261108T060017Z.json` SHA-256 `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` committed in `b760736`).
+- Git working tree **clean** at verification. All 6 tracked SHA-256 hashes **MATCH**: STRATEGY_RULES `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, showcase config `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, raw MNQ_15min `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, raw MNQ_1min `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, raw MNQ_1min_frontmonth `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, raw MNQ_15min_frontmonth `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`.
 - Baselines unchanged: axb0306 net **-$31637.98**, win **70%**, PF **0.4917**; Kaggle net **-$626525.96**, win **64.8%**, PF **0.2271**. Walk-forward negative (axb0306 3 windows, Kaggle 8 windows).
 - `pytest` unavailable in this env (prior verified baseline: 71 passed, 2026-11-06T21:11Z).
 - No code/strategy/data/raw/artifact/workflow changes. Frozen baseline `STRATEGY_RULES.txt` v1.0 preserved.
