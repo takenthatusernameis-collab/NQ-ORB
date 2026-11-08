@@ -1,14 +1,14 @@
 # Initial task for next agent
 
-## Status — prior task complete (verified 2026-11-08T18:48Z)
+## Status — prior task complete (verified 2026-11-08T18:50Z)
 
 The prior agent task is complete: the free-data maintenance monitoring loop stopped at the 2026-11-08T06:00Z deadline. This session re-verified state and found no pending work. **Do not** resume the 06:00 maintenance loop unless explicitly directed by the user or controller.
 
-- Verified `git status --short` clean at HEAD `39acd6d6e5a503375f72b0e3f9ef37664637fc1b` (main).
+- Verified `git status --short` clean at HEAD `d845e24f654bf36f24d7f8d9507e77c43e47e5eb` (main).
 - All 7 tracked SHA-256 hashes **MATCH** (re-verified via `sha256sum`): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`; `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`; `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`; `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`; `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`; `research_state/free_data_monitor_20261108T060017Z.json` `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`.
 - Latest free MNQ 1min/15min coverage ends **2026-04-15** (axb0306/cme-futures-ohlc, MNQ.M26). No extension observed.
 - Baselines unchanged: axb0306 net **-$31,637.98** (win 70%, PF 0.4917); Kaggle net **-$626,525.96** (win 64.8%, PF 0.2271). Walk-forward negative.
-- `pytest` available locally now (`pytest-9.2.0`, `pandas-3.1.1`, `numpy-2.5.4` in user-local env `/home/runner/work/_temp/kilo-home/.local`, NOT committed). Full suite `python3 -m pytest tests/ -q` → **71 passed in 0.96s**. Frozen baseline `STRATEGY_RULES.txt` v1.0 preserved.
+- `pytest` available locally now (`pytest-9.2.0`, `pandas-3.1.1`, `numpy-2.5.4` in user-local env `/home/runner/work/_temp/kilo-home/.local`, NOT committed). Full suite `python3 -m pytest tests/ -q` → **71 passed in 1.01s**. Frozen baseline `STRATEGY_RULES.txt` v1.0 preserved.
 - No code/strategy/data/raw/artifact/workflow changes. No pending work.
 
 ## Read first
@@ -35,6 +35,6 @@ Act only if explicitly requested. Bounded options consistent with repository bou
 
 ## Initial task message for the next agent
 
-> Prior task (free-data maintenance monitoring loop; 2026-11-08T06:00Z deadline) is complete and verified (2026-11-08T18:48Z): the loop remains stopped, the working tree was clean at HEAD `39acd6d6e5a503375f72b0e3f9ef37664637fc1b` (main), all 7 tracked SHA-256 hashes match (STRATEGY_RULES, showcase config, 4 raw CSVs, monitor ledger), latest free MNQ coverage ends 2026-04-15 (axb0306/cme-futures-ohlc, MNQ.M26), baselines unchanged (axb0306 net -$31,637.98 / Kaggle net -$626,525.96, walk-forward negative), `pytest` now available locally (71 passed in 0.96s; packages in user-local env, not committed), and no pending work remains. `HANDOFF.md` and this file updated.
+> Prior task (free-data maintenance monitoring loop; 2026-11-08T06:00Z deadline) is complete and verified (2026-11-08T18:50Z): the loop remains stopped, the working tree was clean at HEAD `d845e24f654bf36f24d7f8d9507e77c43e47e5eb` (main), all 7 tracked SHA-256 hashes match (STRATEGY_RULES, showcase config, 4 raw CSVs, monitor ledger), latest free MNQ coverage ends 2026-04-15 (axb0306/cme-futures-ohlc, MNQ.M26), baselines unchanged (axb0306 net -$31,637.98 / Kaggle net -$626,525.96, walk-forward negative), `pytest` now available locally (71 passed in 1.01s; packages in user-local env, not committed), and no pending work remains. `HANDOFF.md` and this file updated.
 >
 > **Next action (bounded, requires explicit direction):** choose one — (1) evidence packaging/report from existing artifacts/hashes only; (2) run tests if `pytest` is available and report outcomes (now confirmed: 71 passed); (3) one-time manual `python3 scripts/free_data_monitor.py` re-audit only if asked (no ingestion without full provenance audit); (4) new versioned experiment only with explicit authorization and a diff from frozen `STRATEGY_RULES.txt` v1.0. Preserve the frozen baseline and all hard boundaries (`AGENTS.md`). Update `HANDOFF.md` and this file after any substantive work.
