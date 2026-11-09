@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-## Verified context (2026-11-09T06:25Z, this session)
-- Repo: **clean** (`## main...origin/main`), HEAD `7d388dd chore(kilo): checkpoint agent session`.
-- Full suite: **75 passed in 0.90s** (`python3 -m pytest tests/ -q`, 2026-11-09T06:25Z).
+## Verified context (2026-11-09T06:26Z, this session)
+- Repo: **clean** (`## main...origin/main`), HEAD `beabba5 chore(kilo): checkpoint agent session`.
+- Full suite: **75 passed in 0.96s** (`python3 -m pytest tests/ -q`, 2026-11-09T06:26Z).
 - Tracked SHA-256 re-verified MATCH (8 files): `STRATEGY_RULES.txt` `6d3258c3...ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...91e4`, `config/orb_mnq_1m_wf_v1.yaml` `ad745900...845b`, `raw/MNQ_15min.csv` `f417f22d...ce37`, `raw/MNQ_1min.csv` `129623f4...ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73...13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3...9ef4`, `research_state/free_data_monitor_20261108T060017Z.json` `3f90bc19...776f`. Canonical artifacts match (`metrics_axb0306.json` `e06f9dd0...f93f`, `metrics_kaggle.json` `a6ae1006...1af1`, `trades_axb0306.json` `ce389da2...a364`, `trades_kaggle.json` `7251e4a9...8aa5`). Dated WF artifacts tracked (`walk_forward_date_60_20_20_axb0306.json` `f05c44b0...5546`, `walk_forward_date_60_20_20_kaggle.json` `eac749dc...1355`); 1m audit ledgers tracked (`research_state/1m_audit_axb0306.json` `3aac07d2...a706`, `research_state/1m_audit_kaggle.json` `27734632...4041`).
 - This session's re-verification (items 1-4 below) **complete**: git clean, all 8 tracked hashes MATCH, canonical artifact hashes MATCH, pytest 75/75 passed, free-data monitor unchanged (`checked_at_utc` `2026-11-08T06:00:17.980919+00:00`, latest bar `2026-04-15T23:34:55Z`, sha `60abd3fb...1264`, no extension). **No strategy/parameter changes to the frozen baseline.**
 - Monitor unchanged: `checked_at_utc` 2026-11-08T06:00:17.980919+00:00, axb0306 latest bar `2026-04-15T23:34:55Z` (no extension). 06:00Z maintenance loop stopped; free-data search exhausted per `data/FEASIBILITY_REPORT.md` — no new genuinely free MNQ 1min/15min source beyond axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26 unadjusted, 60 complete days) and kaggle front-month (2022-11-16..2025-11-12, unadjusted front-month by max volume, 688 trading days).
