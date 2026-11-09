@@ -1,5 +1,11 @@
 # Initial Task for Next Agent
 
+## Verified context (2026-11-09T12:59Z, this session)
+- Repo: **clean** (`## main...origin/main`), no untracked files (`git ls-files --others --exclude-standard` empty). HEAD at verification `737fbe8 chore(kilo): checkpoint agent session` (main, tracking `origin/main`) — no code/strategy/data/raw/artifact/workflow changes made by this session (only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updated).
+- Full suite: **75 passed in 0.99s** (`python3 -m pytest tests/ -q`, 2026-11-09T12:59Z).
+- All 16 tracked SHA-256 **MATCH** (recomputed via `sha256sum`): `STRATEGY_RULES.txt` `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff82b810663f0bd20259b80397a220dc36b120ff823f9c63974148391e4`, `config/orb_mnq_1m_wf_v1.yaml` `ad745900a1b9adf2ef65a591eb24aa435670ac797525077d58775e53618f845b`, `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`, `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`, `research_state/free_data_monitor_20261108T060017Z.json` `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, `artifacts/metrics_axb0306.json` `e06f9dd065963f60209353da8e15d2e8246651a1dfc636fab1948bec6296f93f`, `artifacts/metrics_kaggle.json` `a6ae100685ea30aa2392122fdf9830ccbaad5d25a22039db7e7521a0b12c1af1`, `artifacts/trades_axb0306.json` `ce389da2488474a6d0d994cf99bb1e6509761d80f85986f1f8da3e1738b6a364`, `artifacts/trades_kaggle.json` `7251e4a93a298352dbd7b09b1505567a8a4d0fc8fb7dbc9a573bc110fb818aa5`, `artifacts/walk_forward_date_60_20_20_axb0306.json` `f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546`, `artifacts/walk_forward_date_60_20_20_kaggle.json` `eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355`, `research_state/1m_audit_axb0306.json` `3aac07d224662c7ef514cc0e7df4a1236bcb5be312b5dc88f70a74533cb8a706`, `research_state/1m_audit_kaggle.json` `277346323e2375485abd053d3587736778eaaae64e0b12494ae71eeb588f6041`.
+- Free-data monitor file unchanged: `research_state/free_data_monitor_20261108T060017Z.json` hash `3f90bc...776f`, `checked_at_utc` `2026-11-08T06:00:17.980919+00:00`; axb0306/cme-futures-ohlc coverage ends 2026-04-15 (raw 15m last bar 2026-04-15T23:15:00, raw 1m last bar 2026-04-15T23:29:00), no extension observed. 06:00Z maintenance loop stopped. No strategy/parameter changes to frozen baseline.
+
 ## Verified context (2026-11-09T12:57Z, this session)
 - Repo: **clean** (`## main...origin/main`), no untracked files (`git ls-files --others --exclude-standard` empty). HEAD at verification start `239f5a7 chore(kilo): checkpoint agent session` (main, tracking `origin/main`) — no code/strategy/data/raw/artifact/workflow changes made by this session (only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updated).
 - Full suite: **75 passed in 0.95s** (`python3 -m pytest tests/ -q`, 2026-11-09T12:57Z).
@@ -14,6 +20,18 @@ There is no pending feature work. The frozen baseline (`STRATEGY_RULES.txt` v1.0
 3. **Confirm monitor unchanged:** `research_state/free_data_monitor_20261108T060017Z.json` hash/`checked_at_utc` unchanged; axb0306 coverage still ends 2026-04-15 with no extension observed. Do not restart the 06:00Z maintenance loop or launch additional scheduled workflows (AGENTS.md hard boundary).
 4. **Do NOT modify** `STRATEGY_RULES.txt`, either config, raw data, or canonical artifacts. No threshold/stop/target/entry/session optimization; no broker/live/paid-data work; no credentials. Any new work must be a separately named, versioned experiment with an explicit diff from the frozen baseline.
 5. **Update `HANDOFF.md` and this file** after any work, recording exact completed work, test command/results, blockers, and the next concrete task. Keep HANDOFF.md compact (authoritative snapshot + recent entries).
+
+## Completed work (2026-11-09T12:59Z, this session)
+Maintenance re-verification executed exactly as specified above. All four checks passed; no code/strategy/data/raw/artifact/workflow changes were made. Only `HANDOFF.md` and this file were updated.
+
+- `git status --short --branch` → `## main...origin/main`, clean; `git ls-files --others --exclude-standard` → empty.
+- HEAD: `737fbe8 chore(kilo): checkpoint agent session` (main, tracking `origin/main`).
+- `sha256sum` on all 16 tracked files → all 16 **MATCH** the HANDOFF.md hashes (verified individually, including `research_state/free_data_monitor_20261108T060017Z.json` `3f90bc...776f`).
+- `python3 -m pytest tests/ -q` → **75 passed in 0.99s**.
+- Monitor unchanged: `checked_at_utc` `2026-11-08T06:00:17.980919+00:00`; axb0306 raw coverage still ends 2026-04-15 (`raw/MNQ_15min.csv` last 2026-04-15T23:15:00; `raw/MNQ_1min.csv` last 2026-04-15T23:29:00). 06:00Z maintenance loop remains stopped; no nested/duplicate workflows launched.
+
+## Next concrete task
+None pending. Repeat the maintenance re-verification above at the next session start, or await an explicitly authorized new experiment (which must be separately named, versioned, and diffed from the frozen baseline).
 
 ## Standing blocker (report honestly)
 Limited free MNQ history (~3 months axb0306; ~3 years kaggle front-month proxy) restricts robust walk-forward/out-of-sample inference. Both baselines are negative net after costs (axb0306 net -$31,637.98, 60 trades, PF 0.492; kaggle net -$626,525.96, 688 trades, PF 0.227; date-based WF OOS tests also negative net). This is evidence, not a claim of edge. Do not present synthetic results as market evidence or describe the strategy as profitable without reproducible, cost-aware, out-of-sample evidence.
