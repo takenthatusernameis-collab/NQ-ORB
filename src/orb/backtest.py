@@ -33,6 +33,21 @@ class BacktestEngine:
         # Round to nearest tick without improving fill in a weird way; just round
         return round(round(price / tick) * tick, 10)
 
+    def _flatten_fill(self, bar) -> float:
+        """Price used for the 15:55 ET forced flatten.
+
+        Convention (documented, configurable): use the OPEN of the first bar
+        whose timestamp is at or after the forced-flatten time. This treats the
+        flatten as happening at the moment the clock reaches 15:55, i.e. the
+        open of the 15:55 bar, rather than its close (which would be a fill
+        one minute later than the flatten time). Set config.flatten_fill to
+        'close' to override.
+        """
+        mode = getattr(self.config, 'flatten_fill', 'open')
+        if mode == 'close':
+            return float(bar['close'])
+        return float(bar['open'])
+
     def run(self, df_15m: pd.DataFrame, df_1m: pd.DataFrame = None):
         """Run backtest on 15min data with optional 1min for flatten/ordering."""
         df15 = df_15m.copy()
@@ -165,10 +180,12 @@ class BacktestEngine:
                     flattened = False
                     for _, mbar in df1m_day.iterrows():
                         mtime = mbar['time_et']
-                        # Check flatten first? Flatten at 15:55 - if we reach/past, flatten
+                        # Flatten takes precedence: the first bar whose timestamp
+                        # reaches the forced-flatten time closes the position at
+                        # that bar's open (see _flatten_fill). This is the only
+                        # exit evaluated at or after 15:55 ET.
                         if mtime >= self.config.forced_flatten:
-                            # Flatten at or after 15:55; use this bar's close/open as reasonable; prefer close if in range
-                            exit_price = mbar['close']
+                            exit_price = self._flatten_fill(mbar)
                             exit_reason = 'flatten_1555'
                             exit_time = mbar['datetime_et']
                             flattened = True
@@ -196,21 +213,12 @@ class BacktestEngine:
                             exit_time = mbar['datetime_et']
                             break
                     if not flattened and exit_price is None:
-                        # No hit found by end of day - flatten at last bar before/at cutoff? look for any bar at 15:55
-                        # try to find bar at or after 15:55
-                        df1m_flat = df1m[(df1m['date'] == trading_date) & (df1m['time_et'] >= self.config.forced_flatten)].copy()
-                        if len(df1m_flat) > 0:
-                            mbarf = df1m_flat.sort_values('datetime_et').iloc[0]
-                            exit_price = mbarf['open'] if mbarf['time_et'] == self.config.forced_flatten else mbarf['close']
-                            exit_reason = 'flatten_1555'
-                            exit_time = mbarf['datetime_et']
-                        else:
-                            # use last bar of day
-                            last = df1m_day.tail(1)
-                            if len(last) > 0:
-                                exit_price = last.iloc[0]['close']
-                                exit_reason = 'eod'
-                                exit_time = last.iloc[0]['datetime_et']
+                        # No 15:55 bar and no stop/target hit before it: the
+                        # session ended early (holiday / early close) with no
+                        # evaluable flatten. Mark as unverified rather than
+                        # manufacturing a fill at an arbitrary price.
+                        exit_reason = 'no_1555_data_unverified'
+                        exit_time = None
                 else:
                     # No 1min data - cannot reliably determine intrabar/flatten; mark as unverified
                     exit_price = None

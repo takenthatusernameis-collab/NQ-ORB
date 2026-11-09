@@ -1,0 +1,61 @@
+# NQ ORB — MNQ 1-minute walk-forward experiment v1 (frozen baseline params)
+#
+# This experiment changes ONLY the evaluation resolution and the forced-flatten
+# fill convention relative to the frozen 15-minute baseline
+# (config/orb_mnq_15m_showcase.yaml). No strategy rule, filter, stop, target,
+# sizing, session time, or direction parameter is altered:
+#
+#   diff vs baseline = {
+#       flatten_fill: 'open' (new; baseline had no field, default 'open'),
+#   }
+#
+# Everything else is byte-identical to the frozen ORBConfig defaults, which are
+# pinned by STRATEGY_RULES.txt v1.0. The 1-minute data is used solely to
+# resolve the 15:55 ET forced flatten and intrabar stop/target ordering at
+# execution-grade resolution (STRATEGY_RULES.txt section 6).
+#
+# Walk-forward: chronological date-based 60/20/20 split of the trade ledger,
+# no shuffling, final test window untouched.
+
+experiment:
+  name: orb_mnq_1m_wf_v1
+  description: "Frozen MNQ ORB baseline evaluated at 1-minute resolution with exact 15:55 ET forced-flatten; chronological 60/20/20 walk-forward."
+  resolution: "1m"
+  data_sources:
+    axb0306: raw/MNQ_1min.csv
+    kaggle:  raw/MNQ_1min_frontmonth.csv
+
+config:
+  # --- Identical to frozen baseline (no change) ---
+  or_start: "09:30"
+  or_end: "09:45"
+  no_new_entry_after: "15:00"
+  forced_flatten: "15:55"
+  rvol_lookback: 20
+  rvol_min: 1.0
+  atr_length: 14
+  atr_min_pct: 0.10
+  atr_max_pct: 0.60
+  stop_atr_mult: 0.4
+  target_stop_mult: 0.4
+  risk_usd: 3000.0
+  mnq_multiplier: 2.0
+  max_trades_per_day: 1
+  tick_size: 0.25
+  commission_per_side: 2.25
+  fee_per_side: 0.62
+  slippage_ticks: 1
+  # --- New field for this experiment only ---
+  flatten_fill: "open"
+
+walk_forward:
+  method: date_based_chronological
+  train_pct: 0.6
+  val_pct: 0.2
+  test_pct: 0.2
+  min_train_days: 30
+  note: >
+    Splits the trade ledger by trading DATE (not trade index) into three
+    contiguous chronological windows. The final test window is never used for
+    any parameter selection. Windows are re-derived from the raw data on every
+    run so the split cannot drift with the artifact ledger.

@@ -33,6 +33,9 @@ class ORBConfig:
     commission_per_side = 2.25
     fee_per_side = 0.62
     slippage_ticks = 1
+    # Forced-flatten fill convention: 'open' uses the first bar at/after
+    # 15:55 ET's open (fill at the flatten time); 'close' uses that bar's close.
+    flatten_fill = 'open'
 
 class ORBStrategy:
     def __init__(self, config: ORBConfig = None):
