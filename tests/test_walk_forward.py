@@ -95,8 +95,9 @@ def test_walk_forward_date_60_20_20_single_split():
     # Contiguous and non-overlapping by date.
     assert meta["train_dates"][-1] < meta["val_dates"][0]
     assert meta["val_dates"][-1] < meta["test_dates"][0]
-    # Final test window is the tail of the calendar.
-    assert meta["test_dates"][0] == dates[60]
+    # Final test window is the tail of the calendar (last 20%).
+    assert meta["test_dates"][0] == dates[80]
+    assert meta["val_dates"][0] == dates[60]
     assert meta["test_dates"][-1] == dates[99]
 
 
@@ -136,6 +137,6 @@ def test_walk_forward_date_60_20_20_final_test_untouched():
     trades = [_make_trade(i, date=dates[i]) for i in range(100)]
     out = list(wf.walk_forward_date_60_20_20(trades))[0]
     train, val, test, meta = out
-    assert meta["test_dates"][0] == dates[60]
+    assert meta["test_dates"][0] == dates[80]
     assert meta["test_dates"][-1] == dates[99]
     assert all(t["date"] in set(meta["test_dates"]) for t in test)
