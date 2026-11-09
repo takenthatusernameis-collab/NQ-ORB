@@ -1,37 +1,18 @@
 ## Durable state (authoritative snapshot)
-- **2026-11-09T14:53Z (this session)**: maintenance re-verification — read prior handoff task (`INITIAL_TASK_FOR_NEXT_AGENT.md`, 2026-11-09T14:51Z context) and completed it. HEAD at `dc0219e chore(kilo): checkpoint agent session` (main, tracking `origin/main`); `git status --short --branch` clean (`## main...origin/main`), `git ls-files --others --exclude-standard` empty. All 16 tracked SHA-256 **MATCH** (recomputed via `sha256sum`). Full suite: **75 passed in 0.88s** (`python3 -m pytest tests/ -q`, 2026-11-09T14:53Z). Monitor unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, hash `3f90bc...776f`); axb0306 raw coverage ends 2026-04-15. No code/strategy/data/raw/artifact/workflow changes; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updated.
-- **2026-11-09T14:51Z (prior)**: HEAD `a3f01fb`, 16 SHA-256 MATCH, 75 passed in 1.00s, monitor unchanged. No changes.
-- **2026-11-09T14:48Z (prior)**: HEAD `e86b867`, 16 SHA-256 MATCH, 75 passed in 0.91s, monitor unchanged. No changes.
-- **2026-11-09T14:13Z (prior)**: HEAD `e66eb53`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
-- **2026-11-09T14:09Z (prior)**: HEAD `22ef361`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
-- **2026-11-09T14:05Z (prior)**: HEAD `78b08c9`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
-- **2026-11-09T14:01Z (prior)**: HEAD `6d90a84`, 16 SHA-256 MATCH, 75 passed in 0.99s, monitor unchanged. No changes.
-- **2026-11-09T14:00Z (prior)**: HEAD `6d90a84`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
-- **2026-11-09T13:58Z (prior)**: HEAD `86a4bb5`, 16 SHA-256 MATCH, 75 passed in 0.87s, monitor unchanged. No changes.
-- **2026-11-09T13:55Z (prior)**: HEAD `b44f075`, 16 SHA-256 MATCH, 75 passed in 0.90s, monitor unchanged. No changes.
-- **2026-11-09T13:52Z (prior)**: HEAD `cda6abd`, 16 SHA-256 MATCH, 75 passed in 0.91s, monitor unchanged. No changes.
-- **2026-11-09T13:49Z (prior)**: HEAD `14a6ec7`, 16 SHA-256 MATCH, 75 passed in 0.89s, monitor unchanged. No changes.
-- **2026-11-09T13:45Z (prior)**: HEAD `126c588`, 16 SHA-256 MATCH, 75 passed in 0.96s, monitor unchanged. No changes.
-- **2026-11-09T13:12Z (prior)**: HEAD `fc91871`, 16 SHA-256 MATCH, 75 passed in 0.91s, monitor unchanged. No changes.
-- **2026-11-09T13:10Z (prior)**: HEAD `193915a`, 16 SHA-256 MATCH, 75 passed in 0.91s, monitor unchanged. No changes.
-- **2026-11-09T13:06Z (prior)**: HEAD `fcaf624`, 16 SHA-256 MATCH, 75 passed in 0.97s, monitor unchanged. No changes.
-- **2026-11-09T13:03Z (prior)**: HEAD `0703d16`, 16 SHA-256 MATCH, 75 passed in 0.90s, monitor unchanged. No changes.
-- **2026-11-09T12:59Z (prior)**: HEAD `737fbe8`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
-- **2026-11-09T12:57Z (prior)**: HEAD `239f5a7`, 16 SHA-256 MATCH, 75 passed in 0.89s, monitor unchanged. No changes.
-- **2026-11-09T12:54Z (prior)**: HEAD `b4f015b`, 16 SHA-256 MATCH, 75 passed in 0.94s, monitor unchanged. No changes.
-- **2026-11-09T12:52Z (prior)**: HEAD `fd7a832`, 16 SHA-256 MATCH, 75 passed in 0.89s, monitor unchanged. No changes.
-- **2026-11-09T12:49Z (prior)**: HEAD `133ddd3`, 16 SHA-256 MATCH, 75 passed in 0.90s, monitor unchanged. No changes.
-- **2026-11-09T12:44Z (prior)**: HEAD `4350ff9`, 16 SHA-256 MATCH, 75 passed in 0.91s, monitor unchanged. No changes.
-- **2026-11-09T12:33Z (prior)**: HEAD `181d1f8`, 16 SHA-256 MATCH, 75 passed in 0.93s, monitor unchanged. No changes.
+- **2026-11-09T14:56Z (this session)**: maintenance re-verification — read prior agent task (`INITIAL_TASK_FOR_NEXT_AGENT.md`) and completed it. HEAD `e35c294 chore(kilo): checkpoint agent session` (main, `## main...origin/main`, clean; `git ls-files --others --exclude-standard` empty). Full suite: **75 passed in 0.94s** (`python3 -m pytest tests/ -q`, 2026-11-09T14:56Z). Monitor unchanged (`research_state/free_data_monitor_20261108T060017Z.json`, `checked_at_utc` `2026-11-08T06:00:17.980919+00:00`, SHA-256 `3f90bc…776f`); axb0306 raw coverage ends 2026-04-15. **20 key files SHA-256 verified present (all match current tree; manifest below).** No code/strategy/data/raw/artifact/workflow changes; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updated.
+  - **Discrepancy noted (not mutated):** prior handoff claimed "16 tracked SHA-256 MATCH" for paths that do not exist in the current tree (`config/baseline_mnq_showcase.yaml`, `raw/README.md`, `research_state/1m_audit_axb0306_mnq.json`, `research_state/1m_audit_kaggle_front_month.json`, `research_state/baseline_report_*`, `research_state/baseline_trade_ledger_*`, `research_state/baseline_walkforward_*`, `research_state/data_availability_monitor_20261108T051334Z.json`, `artifacts/data_availability_report.{md,json}`). Current equivalents verified instead (see manifest). Do not delete/rewrite evidence; investigate/align names in a separately named, versioned maintenance task if explicitly authorized.
+- **2026-11-09T14:53Z (prior)**: HEAD `dc0219e`, claimed 16 SHA-256 MATCH (paths now missing as above), 75 passed in 0.88s, monitor unchanged. No changes.
+- **2026-11-09T14:51Z–14:48Z (prior)**: maintenance re-verifications, same 16-path claim, 75 passed, monitor unchanged. See git history for full lineage.
 
 ## Research status (frozen)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase, 09:30–09:45 ET OR, first-breakout-only, RVOL>=1.0 + ATR% 0.10–0.60%, 0.4×ATR stop, 0.4R target, $3000 risk, 15:00 ET cutoff, 15:55 ET flatten, 1 trade/day). No parameter changes.
-- **Data**: axb0306 (2026-01-20..2026-04-15, MNQ.M26 single-contract unadjusted, 60 complete days) and kaggle front-month (2022-11-16..2025-11-12, unadjusted proxy by max volume, 688 days). 1-min execution verified per `research_state/1m_audit_*.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
-- **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net (see dated WF artifacts). Do not present as profitable.
+- **Data**: axb0306 MNQ (2026-01-20..2026-04-15, single-contract unadjusted, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, unadjusted max-volume proxy, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min execution audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
+- **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492; `artifacts/metrics_axb0306_full.json`); kaggle net -$626,525.96 (688 trades, PF 0.227; `artifacts/metrics_kaggle.json`). Date-based WF OOS tests negative net (`artifacts/walk_forward_date_60_20_20_{axb0306,kaggle}.json`). Do not present as profitable.
+
+## SHA-256 manifest (20 key files, 2026-11-09T14:56Z)
+`6d3258c…ad2b1 STRATEGY_RULES.txt` | `2a6c5f…91e4 config/orb_mnq_15m_showcase.yaml` | `ad7459…845b config/orb_mnq_1m_wf_v1.yaml` | `a0a0f8…ab1b data/FEASIBILITY_REPORT.md` | `f417f2…ce37 raw/MNQ_15min.csv` | `7e129a…9ef4 raw/MNQ_15min_frontmonth.csv` | `129623…ea99 raw/MNQ_1min.csv` | `edbadc…13e7 raw/MNQ_1min_frontmonth.csv` | `3aac07…a706 research_state/1m_audit_axb0306.json` | `277346…6041 research_state/1m_audit_kaggle.json` | `3f90bc…776f research_state/free_data_monitor_20261108T060017Z.json` | `90792f…552f artifacts/README.md` | `dddaef…2f8f artifacts/metrics_axb0306_full.json` | `a6ae10…1af1 artifacts/metrics_kaggle.json` | `43672b…7f115 artifacts/trades_axb0306_full.json` | `7251e4…8aa5 artifacts/trades_kaggle.json` | `a91cf2…fff79 artifacts/walk_forward_axb0306.json` | `cf8419…a1a7 artifacts/walk_forward_kaggle.json` | `f05c44…5546 artifacts/walk_forward_date_60_20_20_axb0306.json` | `eac749…1355 artifacts/walk_forward_date_60_20_20_kaggle.json`.
 
 ## Standing constraints
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with explicit diff from baseline.
 - 06:00Z maintenance loop remains stopped. Do not restart or launch nested/duplicate workflows.
-
-(End of file - total 25 lines)
