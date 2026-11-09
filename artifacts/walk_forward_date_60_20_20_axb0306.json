@@ -1,0 +1,132 @@
+{
+  "source": "axb0306",
+  "method": "date_based_chronological_60_20_20",
+  "total_trades": 60,
+  "n_days": 60,
+  "train_days": 36,
+  "val_days": 12,
+  "test_days": 12,
+  "n_windows": 1,
+  "windows": [
+    {
+      "train_window": [
+        0,
+        36
+      ],
+      "val_window": [
+        36,
+        48
+      ],
+      "test_window": [
+        48,
+        60
+      ],
+      "train": {
+        "count": 36,
+        "win_rate": 0.8333333333333334,
+        "net_pnl": 1229.22,
+        "gross_pnl": 15418.5,
+        "profit_factor": 1.0591670348902695
+      },
+      "val": {
+        "count": 12,
+        "win_rate": 0.5,
+        "net_pnl": -15894.08,
+        "gross_pnl": -11491.5,
+        "profit_factor": 0.23042866079573296
+      },
+      "test": {
+        "count": 12,
+        "win_rate": 0.5,
+        "net_pnl": -16973.12,
+        "gross_pnl": -11589.0,
+        "profit_factor": 0.18440887961166355
+      },
+      "test_dates": {
+        "start": "2026-03-30",
+        "end": "2026-04-15"
+      },
+      "val_dates": {
+        "start": "2026-03-12",
+        "end": "2026-03-27"
+      },
+      "train_dates": {
+        "start": "2026-01-21",
+        "end": "2026-03-11"
+      },
+      "date_meta": {
+        "train_dates": [
+          "2026-01-21",
+          "2026-01-22",
+          "2026-01-23",
+          "2026-01-26",
+          "2026-01-27",
+          "2026-01-28",
+          "2026-01-29",
+          "2026-01-30",
+          "2026-02-02",
+          "2026-02-03",
+          "2026-02-04",
+          "2026-02-05",
+          "2026-02-06",
+          "2026-02-09",
+          "2026-02-10",
+          "2026-02-11",
+          "2026-02-12",
+          "2026-02-13",
+          "2026-02-16",
+          "2026-02-17",
+          "2026-02-18",
+          "2026-02-19",
+          "2026-02-20",
+          "2026-02-23",
+          "2026-02-24",
+          "2026-02-25",
+          "2026-02-26",
+          "2026-02-27",
+          "2026-03-02",
+          "2026-03-03",
+          "2026-03-04",
+          "2026-03-05",
+          "2026-03-06",
+          "2026-03-09",
+          "2026-03-10",
+          "2026-03-11"
+        ],
+        "val_dates": [
+          "2026-03-12",
+          "2026-03-13",
+          "2026-03-16",
+          "2026-03-17",
+          "2026-03-18",
+          "2026-03-19",
+          "2026-03-20",
+          "2026-03-23",
+          "2026-03-24",
+          "2026-03-25",
+          "2026-03-26",
+          "2026-03-27"
+        ],
+        "test_dates": [
+          "2026-03-30",
+          "2026-03-31",
+          "2026-04-01",
+          "2026-04-02",
+          "2026-04-06",
+          "2026-04-07",
+          "2026-04-08",
+          "2026-04-09",
+          "2026-04-10",
+          "2026-04-13",
+          "2026-04-14",
+          "2026-04-15"
+        ],
+        "n_days": 60,
+        "train_days": 36,
+        "val_days": 12,
+        "test_days": 12
+      }
+    }
+  ],
+  "note": "Chronological date-based 60/20/20 split of the trade ledger. Windows are contiguous by trading DATE (never shuffled). The final test window is untouched by any parameter selection and is re-derived from the raw trade ledger on every run. No strategy or parameter changes were made; this reports the frozen baseline only."
+}

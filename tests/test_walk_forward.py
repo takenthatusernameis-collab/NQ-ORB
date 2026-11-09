@@ -9,6 +9,7 @@ import os
 import sys
 from pathlib import Path
 
+import pandas as pd
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -71,3 +72,70 @@ def test_walk_forward_final_window_untouched():
     trades = [_make_trade(i) for i in range(300)]
     wins = list(wf.walk_forward(trades, window_trades=100, step_trades=100))
     assert wins[-1] == (0, 200, 200, 300)
+
+
+def _dates(n, start="2026-01-01"):
+    """Return n consecutive calendar days starting at `start`."""
+    base = pd.Timestamp(start)
+    return [(base + pd.Timedelta(days=i)).strftime("%Y-%m-%d") for i in range(n)]
+
+
+def test_walk_forward_date_60_20_20_single_split():
+    """Date-based 60/20/20 yields exactly one split by trading date."""
+    dates = _dates(100)
+    trades = [_make_trade(i, pnl=float(i), date=dates[i]) for i in range(100)]
+    out = list(wf.walk_forward_date_60_20_20(trades, min_train_days=30))
+    assert len(out) == 1
+    train, val, test, meta = out[0]
+    assert meta["n_days"] == 100
+    assert meta["train_days"] == 60
+    assert meta["val_days"] == 20
+    assert meta["test_days"] == 20
+    assert len(train) + len(val) + len(test) == len(trades)
+    # Contiguous and non-overlapping by date.
+    assert meta["train_dates"][-1] < meta["val_dates"][0]
+    assert meta["val_dates"][-1] < meta["test_dates"][0]
+    # Final test window is the tail of the calendar.
+    assert meta["test_dates"][0] == dates[60]
+    assert meta["test_dates"][-1] == dates[99]
+
+
+def test_walk_forward_date_60_20_20_too_short_returns_nothing():
+    """Fewer than 30 distinct trading dates yields no split."""
+    dates = _dates(29)
+    trades = [_make_trade(i, date=dates[i]) for i in range(29)]
+    assert list(wf.walk_forward_date_60_20_20(trades)) == []
+
+
+def test_walk_forward_date_main_writes_output(tmp_path, monkeypatch):
+    """date_60_20_20 mode writes a single-window artifact with val + test."""
+    dates = _dates(100)
+    trades = [_make_trade(i, pnl=float(i) - 50.0, date=dates[i]) for i in range(100)]
+    out_path = tmp_path / "wf_date.json"
+    monkeypatch.setattr(sys, "argv", [
+        "walk_forward.py", "--source", "kaggle",
+        "--method", "date_60_20_20", "--out", str(out_path),
+    ])
+    monkeypatch.setattr(wf, "load_trades", lambda p: trades)
+    wf.main()
+    data = json.loads(out_path.read_text())
+    assert data["method"] == "date_based_chronological_60_20_20"
+    assert data["n_windows"] == 1
+    assert data["train_days"] == 60
+    assert data["val_days"] == 20
+    assert data["test_days"] == 20
+    w = data["windows"][0]
+    assert "val" in w
+    assert w["test"]["count"] > 0
+    assert w["test_dates"]["start"] < w["test_dates"]["end"]
+
+
+def test_walk_forward_date_60_20_20_final_test_untouched():
+    """The last 20% of trading dates form the untouched test window."""
+    dates = _dates(100)
+    trades = [_make_trade(i, date=dates[i]) for i in range(100)]
+    out = list(wf.walk_forward_date_60_20_20(trades))[0]
+    train, val, test, meta = out
+    assert meta["test_dates"][0] == dates[60]
+    assert meta["test_dates"][-1] == dates[99]
+    assert all(t["date"] in set(meta["test_dates"]) for t in test)

@@ -1,0 +1,116 @@
+{
+  "1m": {
+    "source": "axb0306_1m",
+    "rows": 84077,
+    "date_range": [
+      "2026-01-20",
+      "2026-04-15"
+    ],
+    "n_days": 74,
+    "most_common_minutes": [
+      [
+        "08:27:00",
+        62
+      ],
+      [
+        "08:28:00",
+        62
+      ],
+      [
+        "08:29:00",
+        62
+      ],
+      [
+        "08:30:00",
+        62
+      ],
+      [
+        "08:31:00",
+        62
+      ]
+    ],
+    "gaps_gt_60s": 63,
+    "max_gap_minutes": 3406.0,
+    "days_with_0930_and_1555": 60,
+    "days_with_0930": 61,
+    "days_with_1555": 60,
+    "dst_spring_forward_2026_03_09": false,
+    "dst_fall_back_2026_11_01": false,
+    "zero_volume_bars": 0,
+    "nonfinite_ohlc": 0,
+    "pct_moves_gt_2pct": 0,
+    "max_off_tick_units": 0.0,
+    "file": "raw/MNQ_1min.csv",
+    "sha256": "129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99"
+  },
+  "15m": {
+    "source": "axb0306_15m",
+    "rows": 5608,
+    "date_range": [
+      "2026-01-20",
+      "2026-04-15"
+    ],
+    "n_days": 74,
+    "most_common_minutes": [
+      [
+        "08:15:00",
+        62
+      ],
+      [
+        "08:30:00",
+        62
+      ],
+      [
+        "08:45:00",
+        62
+      ],
+      [
+        "09:00:00",
+        62
+      ],
+      [
+        "18:00:00",
+        62
+      ]
+    ],
+    "gaps_gt_60s": 5607,
+    "max_gap_minutes": 3420.0,
+    "days_with_0930_and_1555": 0,
+    "days_with_0930": 61,
+    "days_with_1555": 0,
+    "dst_spring_forward_2026_03_09": false,
+    "dst_fall_back_2026_11_01": false,
+    "zero_volume_bars": 0,
+    "nonfinite_ohlc": 0,
+    "pct_moves_gt_2pct": 1,
+    "max_off_tick_units": 0.0,
+    "file": "raw/MNQ_15min.csv",
+    "sha256": "f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37"
+  },
+  "trade_day_overlap": {
+    "ledger_present": true,
+    "ledger_completed_trades": 60,
+    "ledger_dates": 60,
+    "overlap_days": 60,
+    "overlap_start": "2026-01-21",
+    "overlap_end": "2026-04-15",
+    "1m_dates_missing_from_ledger": [
+      "2026-01-20",
+      "2026-01-25",
+      "2026-02-01",
+      "2026-02-08",
+      "2026-02-15",
+      "2026-02-22",
+      "2026-03-01",
+      "2026-03-08",
+      "2026-03-15",
+      "2026-03-22"
+    ]
+  },
+  "limitations": [
+    "axb0306 is a short free sample spanning 2026-01-20..2026-04-15 (74 days, 60 with both 09:30 and 15:55 ET bars). Statistical power is limited; this is a validation subset, not a full history.",
+    "axb0306 15m bars are timestamped at 08:15/08:30/08:45 UTC by construction and do not carry 09:30/15:55 ET session anchors in the 15m audit view.",
+    "Gaps > 60s between consecutive 1m bars exist in both sources (overnight/session boundaries). These are expected and are NOT treated as missing intraday data."
+  ],
+  "generated_at_utc": "2026-11-09T05:42:23.717842+00:00"
+}

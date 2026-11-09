@@ -1,0 +1,117 @@
+{
+  "1m": {
+    "source": "kaggle_1m",
+    "rows": 1059204,
+    "date_range": [
+      "2022-11-15",
+      "2025-11-12"
+    ],
+    "n_days": 932,
+    "most_common_minutes": [
+      [
+        "19:00:00",
+        773
+      ],
+      [
+        "19:01:00",
+        773
+      ],
+      [
+        "19:02:00",
+        773
+      ],
+      [
+        "19:03:00",
+        773
+      ],
+      [
+        "19:04:00",
+        773
+      ]
+    ],
+    "gaps_gt_60s": 777,
+    "max_gap_minutes": 4381.0,
+    "days_with_0930_and_1555": 743,
+    "days_with_0930": 771,
+    "days_with_1555": 743,
+    "dst_spring_forward_2026_03_09": false,
+    "dst_fall_back_2026_11_01": false,
+    "zero_volume_bars": 0,
+    "nonfinite_ohlc": 0,
+    "pct_moves_gt_2pct": 4,
+    "max_off_tick_units": 0.0,
+    "file": "raw/MNQ_1min_frontmonth.csv",
+    "sha256": "edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7"
+  },
+  "15m": {
+    "source": "kaggle_15m",
+    "rows": 70614,
+    "date_range": [
+      "2022-11-15",
+      "2025-11-12"
+    ],
+    "n_days": 932,
+    "most_common_minutes": [
+      [
+        "19:00:00",
+        773
+      ],
+      [
+        "19:15:00",
+        773
+      ],
+      [
+        "19:30:00",
+        773
+      ],
+      [
+        "19:45:00",
+        773
+      ],
+      [
+        "20:00:00",
+        773
+      ]
+    ],
+    "gaps_gt_60s": 70613,
+    "max_gap_minutes": 4395.0,
+    "days_with_0930_and_1555": 0,
+    "days_with_0930": 771,
+    "days_with_1555": 0,
+    "dst_spring_forward_2026_03_09": false,
+    "dst_fall_back_2026_11_01": false,
+    "zero_volume_bars": 0,
+    "nonfinite_ohlc": 0,
+    "pct_moves_gt_2pct": 9,
+    "max_off_tick_units": 0.0,
+    "file": "raw/MNQ_15min_frontmonth.csv",
+    "sha256": "7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4"
+  },
+  "trade_day_overlap": {
+    "ledger_present": true,
+    "ledger_completed_trades": 688,
+    "ledger_dates": 688,
+    "overlap_days": 688,
+    "overlap_start": "2022-11-16",
+    "overlap_end": "2025-11-12",
+    "1m_dates_missing_from_ledger": [
+      "2022-11-15",
+      "2022-11-20",
+      "2022-11-24",
+      "2022-11-25",
+      "2022-11-27",
+      "2022-12-04",
+      "2022-12-11",
+      "2022-12-12",
+      "2022-12-18",
+      "2022-12-26"
+    ]
+  },
+  "limitations": [
+    "kaggle 15m bars are timestamped at 00:00/00:15/00:30 UTC by construction in this dataset; they do NOT carry 09:30/15:55 ET session anchors. The 1m series is what provides execution-grade 15:55 ET flatten evidence.",
+    "kaggle is a front-month continuous proxy, not a spot MNQ contract; roll semantics must remain explicit and volume averages must not mix across roll boundaries.",
+    "kaggle 1m has 771 days with a 09:30 ET bar and 743 with a 15:55 ET bar; 743 days have both. 28 days with 09:30 lack a 15:55 bar (session ended early / data gap) and produce no evaluable flatten.",
+    "Gaps > 60s between consecutive 1m bars exist in both sources (overnight/session boundaries). These are expected and are NOT treated as missing intraday data."
+  ],
+  "generated_at_utc": "2026-11-09T05:42:26.480349+00:00"
+}
