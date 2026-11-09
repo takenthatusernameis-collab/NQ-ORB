@@ -1,49 +1,23 @@
 # Initial Task for Next Agent
 
-## Context
-- Repository state: **clean** (git status clean, HEAD at `2a3af5a chore(kilo): checkpoint agent session`)
-- All 71 tests pass (`python3 -m pytest tests/ -q` → 71 passed in 0.92s)
-- All 7 tracked SHA-256 hashes match; all 4 canonical artifact hashes match
-- Monitor ledger: `checked_at_utc` 2026-11-08T06:00:17Z, axb0306/cme-futures-ohlc sha `60abd3fb...`, latest bar 2026-04-15T23:34:55Z (no extension observed)
-- 06:00Z maintenance loop **stopped**; no pending work
-- Baseline strategy (STRATEGY_RULES.txt) frozen; config `config/orb_mnq_15m_showcase.yaml` reflects current parameters
+## Verified context (2026-11-09T05:34Z, this session)
+- Repo: **clean** (`## main...origin/main`), HEAD `ae3c49f chore(kilo): checkpoint agent session`.
+- Full suite: **71 passed in 0.87s** (`python3 -m pytest tests/ -q`, 2026-11-09T05:31Z).
+- Tracked SHA-256 (re-verified MATCH): `STRATEGY_RULES.txt` `6d3258c3...ad2b1`, `config/orb_mnq_15m_showcase.yaml` `2a6c5ff8...91e4`, `config/orb_mnq_1m_wf_v1.yaml` `ad745900...845b`, `raw/MNQ_15min.csv` `f417f22d...ce37`, `raw/MNQ_1min.csv` `129623f4...ea99`, `raw/MNQ_1min_frontmonth.csv` `edbadc73...13e7`, `raw/MNQ_15min_frontmonth.csv` `7e129ae3...9ef4`, `research_state/free_data_monitor_20261108T060017Z.json` `3f90bc19...776f`.
+- Canonical artifacts (MATCH): `artifacts/metrics_axb0306.json` `e06f9dd0...f93f`, `artifacts/metrics_kaggle.json` `a6ae1006...1af1`, `artifacts/trades_axb0306.json` `ce389da2...a364`, `artifacts/trades_kaggle.json` `7251e4a9...8aa5`. WF artifacts present: `artifacts/walk_forward.json`=`artifacts/walk_forward_kaggle.json` `cf841997...a1a7` (kaggle, 688 trades, 8 windows), `artifacts/walk_forward_axb0306.json` `a91cf29d...ff79` (axb0306, 60 trades, 3 windows).
+- Monitor unchanged: `checked_at_utc` 2026-11-08T06:00:17.980919+00:00, axb0306/cme-futures-ohlc sha `60abd3fb6369c6ce0b6a4a65b0f2562fc96b1264`, latest bar `2026-04-15T23:34:55Z` (no extension). 06:00Z maintenance loop stopped; no pending work.
+- 1m evaluation **partially implemented** (do not re-optimize frozen baseline): `src/orb/backtest.py` supports 1m-driven flatten/ordering with configurable `flatten_fill` (open of first bar >= 15:55 ET) and stop-first on ambiguous intrabar touches; `scripts/audit_1m_coverage.py`, `scripts/walk_forward.py`, `config/orb_mnq_1m_wf_v1.yaml`, `tests/test_walk_forward.py` exist. `artifacts/metrics_kaggle1m.json`/`trades_kaggle1m.json` are byte-identical to canonical kaggle artifacts (both used `raw/MNQ_1min_frontmonth.csv`); `metrics_audit1m.json`/`trades_audit1m.json` identical to axb0306 canonicals. Canonical/1m metrics report required fields (trade count, win rate, avg win/loss R, expectancy R/USD, profit factor, gross/net P&L, CAGR/capital convention, max DD, Sharpe/Sortino + frequency, worst day, monthly/yearly, exposure, cost sensitivity, chronological 60/20/20 splits inside `compute_metrics`).
 
-## Next Concrete Task
-**Implement walk-forward evaluation using 1-minute data for exact 15:55 ET forced exit**
+## Concrete next task (close 1m walk-forward gaps; no parameter changes)
+1. **Resolve walk-forward method mismatch (auditable).** `config/orb_mnq_1m_wf_v1.yaml` specifies date-based chronological 60/20/20 with final test untouched, but `scripts/walk_forward.py` / `artifacts/walk_forward*.json` implement **rolling trade-index windows** (150/50). Do NOT overwrite canonicals. Implement the config-specified date-based 60/20/20 split (train/val/test contiguous by trading date, final test untouched, re-derived from raw/ledger on each run) as a separate, clearly named output (e.g., `artifacts/walk_forward_date_60_20_20_{source}.json`) and/or extend the script with an explicit `--method date_60_20_20` mode; document method, windows, and that no strategy parameters changed. Keep existing rolling artifacts unless deliberately superseded with evidence.
+2. **Persist 1m coverage audit ledgers.** Run `scripts/audit_1m_coverage.py` for kaggle+axb0306 and save JSON ledgers under `research_state/` (e.g., `1m_audit_kaggle.json`, `1m_audit_axb0306.json`) with source paths, hashes, session alignment (09:30 OR / 15:55 presence), DST coverage, gaps, zero-volume/nonfinite checks, tick sanity, and explicit limitations (kaggle 15m bars lack 09:30/15:55 timestamps by construction in that audit view; 1m provides execution-grade flatten evidence; axb0306 has 60 complete 09:30+15:55 days). Do not fabricate.
+3. **Deterministic test gaps (synthetic/fixture only).** Add/confirm tests for: 1m forced-flatten at first bar >= 15:55 using bar open (and `close` override if configured), ambiguous same-1m-bar stop+target resolved stop-first, no flatten bar available => unverified (no manufactured fill), DST-day session assignment/flatten behavior on 1m path, and contract-roll/gap handling does not mix volume/averages across sessions where applicable. Run focused tests then full suite.
+4. **Report clearly.** In `HANDOFF.md`, distinguish: (a) frozen 15m-signal baseline evaluated with 1m execution/flatten support (existing canonical/1m-suffixed evidence, same hashes), (b) walk-forward method(s) and their exact windows, (c) data limitations (MNQ 1m sources are free/repo-tracked samples; axb0306 short span 2026-01-20..2026-04-15/60 complete days; kaggle front-month proxy longer but front-month/roll semantics must remain explicit). Report gross/net separately and required metrics per available evidence.
+5. **Deliverables.** Updated `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, any new dated/config-named WF artifact(s) + `research_state` audit ledgers, deterministic test additions, and full-suite result. Keep changes small/auditable; do not touch `.github/workflows/main.yml`.
 
-### Rationale
-- The current baseline uses 15-minute bars only, which are insufficient for an exact 15:55 ET forced exit (per STRATEGY_RULES.txt and AGENTS.md hard boundary #4)
-- 1-minute data (`raw/MNQ_1min.csv` and `raw/MNQ_1min_frontmonth.csv`) is available and verified
-- This is the next logical step after freezing the baseline: evaluate the strategy with execution-grade resolution
-
-### Required Steps
-1. **Audit 1-minute data coverage**: Verify session alignment (09:30 ET range, 15:55 ET forced exit), DST transitions, contract roll dates, gaps, and bar timestamps
-2. **Implement 1-minute backtest engine**: Support closed-bar signals, first-breakout handling, both filters, both directions, stop/target calculations, tick rounding, risk sizing, one-trade-per-day, entry cutoff, forced flatten at 15:55 ET
-3. **Conservative intrabar event ordering**: When stop and target are both possible within a 1-minute bar, apply conservative ordering (stop first, then target, or vice versa — document assumption explicitly)
-4. **Costs**: Include per-contract, per-side commissions, exchange/clearing fees, and slippage; report gross and net performance separately
-5. **Walk-forward splits**: Use chronological train/validation/test splits (e.g., 60/20/20 by time). Do not shuffle. Preserve final untouched test interval
-6. **Report**: Trade count, win rate, avg win/loss in R, expectancy (R and USD), profit factor, gross/net P&L, CAGR/annualized return (state capital convention), max drawdown, Sharpe/Sortino (state return frequency), worst day, monthly/yearly breakdown, exposure/time-in-market, sensitivity to plausible cost assumptions
-7. **Deterministic tests**: Add tests for opening-range construction, first-breakout handling, both filters, both directions, stop/target, tick rounding, risk sizing, one-trade-per-day, entry cutoff, forced flatten, DST transitions, contract rolls, ambiguous intrabar touches
-
-### Constraints
-- Historical research only. No broker integration, live trading, or paper-trading execution
-- Do not purchase data or use paid/proprietary services
-- Do not optimize thresholds, stops, targets, entry rules, or session times before reporting the untouched baseline on 1-minute data
-- Any parameter change must be a separately named, versioned experiment with explicit diff from frozen baseline
-- Keep raw data separate from processed data and code; avoid committing large datasets
-- Run focused tests and full test suite after changes
-
-### Files to Reference
-- `STRATEGY_RULES.txt` — authoritative strategy definition
-- `PROMPT.md` — research workflow
-- `config/orb_mnq_15m_showcase.yaml` — current parameters
-- `raw/MNQ_1min.csv`, `raw/MNQ_1min_frontmonth.csv` — 1-minute data
-- `tests/` — existing test patterns
-- `AGENTS.md` — hard boundaries and standards
-
-### Deliverables
-- Updated `HANDOFF.md` with verification snapshot
-- New experiment config (e.g., `config/orb_mnq_1m_wf_v1.yaml`)
-- Walk-forward results (metrics + trades JSON in `artifacts/`)
-- Deterministic test additions in `tests/`
-- Updated `INITIAL_TASK_FOR_NEXT_AGENT.md` for the following agent
+## Constraints (must follow)
+- `STRATEGY_RULES.txt` is frozen baseline. No threshold/stop/target/entry/session optimization before reporting untouched baseline.
+- Historical research/simulation only; no broker/live trading; no paid data/credentials.
+- 15:55 ET forced exit requires 1-minute-or-better evidence; label anything unverified.
+- Conservative intrabar ordering when ambiguous (stop first) unless finer sequence available — keep explicit.
+- Run full relevant tests after changes; never claim completion without evidence.
