@@ -1,22 +1,22 @@
 # Initial Task for Next Agent
 
-## Verified context (2026-11-09T20:18Z, this session)
-- Repo: HEAD `1cac3b4` (`## main...origin/main`); `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` edited and committed via checkpoint commits `671516c`/`1cac3b4`. No other changes.
-- Full suite: **75 passed in 0.62s** (`PYTHONPATH=/tmp/pytest_env python3 -m pytest tests/ -q`; system python3.12 lacks pytest/pandas/numpy — `/tmp/pytest_env` provides deps).
-- **20/20 key files SHA-256 verified** (all match `HANDOFF.md` manifest).
+## Verified context (2026-11-09T20:21Z, this session)
+- Repo: HEAD `ae17c91` (`## main...origin/main`); `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` edited and committed via checkpoint commit `ae17c91`. No other changes.
+- Full suite: **75 passed in 0.61s** (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`; system python3.12 lacks pytest/pandas/numpy — `/tmp/pytest_env` provides deps; note: `/tmp/pytest_env/bin/python3` does not exist, use `/tmp/pytest_env/bin/pytest` directly).
+- **20/20 key files SHA-256 verified** (all match `HANDOFF.md` manifest; full 64-char hashes recomputed this session).
 - Monitor unchanged: `research_state/free_data_monitor_20261108T060017Z.json` (`checked_at_utc` `2026-11-08T06:00:17.980919+00:00`, SHA `3f90bc…776f`); axb0306 coverage ends 2026-04-15; no monitor writes after 2026-11-08T06:00:17Z; 06:00Z loop stopped.
 
-## Completed work (2026-11-09T20:18Z, this session)
+## Completed work (2026-11-09T20:21Z, this session)
 Maintenance re-verification independently completed:
-- `git status --short --branch` → `## main...origin/main` (clean at start; handoff files edited and committed via checkpoint commits).
-- 20/20 key SHA-256 recomputed and verified against `HANDOFF.md` manifest.
-- `PYTHONPATH=/tmp/pytest_env python3 -m pytest tests/ -q` → **75 passed in 0.62s**.
+- `git status --short --branch` → `## main...origin/main` (clean at start; handoff files edited and committed via checkpoint commit `ae17c91`).
+- 20/20 key SHA-256 recomputed and verified against `HANDOFF.md` manifest (all 20 full hashes match).
+- `PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q` → **75 passed in 0.61s**.
 - Monitor `checked_at_utc` unchanged (2026-11-08T06:00:17.980919+00:00); 06:00Z loop stopped.
-- No code/strategy/config/raw/artifact/workflow changes (checkpoint commits touched only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`).
+- No code/strategy/config/raw/artifact/workflow changes (checkpoint commit touched only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`).
 
 ## Next concrete task
 Maintenance re-verification just completed (this session). At next session start:
-1. **Maintenance re-verification**: `git status --short --branch`; recompute SHA-256 for 20 manifest files vs `HANDOFF.md`; run `PYTHONPATH=/tmp/pytest_env python3 -m pytest tests/ -q` (or equivalent with deps) → expect 75 passed; confirm monitor `checked_at_utc` unchanged. Update handoff/this file with evidence.
+1. **Maintenance re-verification**: `git status --short --branch`; recompute SHA-256 for 20 manifest files vs `HANDOFF.md`; run `PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q` → expect 75 passed; confirm monitor `checked_at_utc` unchanged. Update handoff/this file with evidence.
 2. **OR** (if explicitly authorized): proceed with a separately named, versioned experiment with explicit diff from frozen baseline (`STRATEGY_RULES.txt` v1.0). Do not optimize thresholds, stops, targets, entry rules, or session times without authorization. Any data/code changes must follow `AGENTS.md`/`PROMPT.md` constraints.
 3. Commit `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` updates if the workflow permits.
 
