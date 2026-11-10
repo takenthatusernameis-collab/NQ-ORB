@@ -1,15 +1,15 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T01:38Z
-**HEAD:** `a7b00cc` (`main...origin/main`; clean). HEAD advanced from prior handoff's cited `24642e5` via Kilo session checkpoint commit `a7b00cc` (chore: checkpoint agent session) — no code/data/artifact drift.
-**Tests:** 75 passed in 0.69s (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`)
+**Session:** 2026-11-10T02:43Z
+**HEAD:** `1f98752` (`main...origin/main`; clean). HEAD advanced from prior handoff's cited `a7b00cc` via (a) Kilo checkpoint commit `8429d46` (handoff-only: `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`, no drift) and (b) workflow-bot commit `cc46e83` (`chore: capture completed workflow run diagnostics`, appends 1 line to `research_state/workflow_run_diagnostics.jsonl` — controller diagnostics ledger only, no code/strategy/config/raw/artifact drift).
+**Tests:** 75 passed in 0.95s. Command path changed: `/tmp/pytest_env` no longer exists. Use `/tmp/kilo-tests-venv/bin/python -m pytest tests/ -q` (venv created this session with pytest/numpy/requests/pandas; matches `.github/workflows/main.yml` controller-tests step).
 **SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match exactly).
-**Monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches); user crontab empty (`no crontab for runner`); 06:00Z loop stopped; only `.github/workflows/main.yml` present; no duplicate research workflows/processes.
+**Monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, file SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches); user crontab empty; `/etc/cron.d/` OS-defaults only; no matching systemd timers; only `.github/workflows/main.yml` present; no duplicate research workflows/processes.
 **Note:** Handoff files updated but left uncommitted (no explicit commit authorization received).
 
 ## Prior task (completed)
 
-Maintenance re-verification per durable handoff (2026-11-10T01:38Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`; verified clean tree at HEAD `a7b00cc`; ran full test suite (**75/75 passed, 0.69s**); recomputed all 20 manifest SHA-256 hashes (**all match**); confirmed monitor unchanged and 06:00Z loop stopped; confirmed no duplicate workflows/processes. Confirmed HEAD `a7b00cc` vs cited `24642e5` is a Kilo session checkpoint (no drift). **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
+Maintenance re-verification per durable handoff (2026-11-10T02:43Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`; verified clean tree at HEAD `1f98752`; ran full test suite (**75/75 passed, 0.95s**); recomputed all 20 manifest SHA-256 hashes (**all match**); confirmed monitor unchanged and 06:00Z loop stopped; confirmed no duplicate workflows/processes. Confirmed HEAD `1f98752` vs cited `a7b00cc` is a Kilo handoff-only checkpoint (`8429d46`) plus a workflow-bot diagnostics-ledger append (`cc46e83`) — neither touches code, strategy, config, raw data, or canonical artifacts. **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
 
 ## Research status (frozen — no further work planned)
 
@@ -22,7 +22,7 @@ Maintenance re-verification per durable handoff (2026-11-10T01:38Z): inspected `
 Continue in **maintenance/read-only verification mode**.
 
 1. Inspect `HANDOFF.md` and `STRATEGY_RULES.txt`.
-2. Verify state: `git status --short --branch`; run `PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`; recompute the 20 SHA-256 hashes in `HANDOFF.md`.
+2. Verify state: `git status --short --branch`; run the full test suite; recompute the 20 SHA-256 hashes in `HANDOFF.md`. Note: the legacy `/tmp/pytest_env` path is gone — derive the pytest command from `.github/workflows/main.yml`'s controller-tests step (create a throwaway venv with pytest/numpy/requests/pandas as needed).
 3. Confirm `research_state/free_data_monitor_20261108T060017Z.json` and its `checked_at_utc`/SHA are unchanged and the 06:00Z loop remains stopped.
 4. If any drift is detected (dirty tree beyond handoff files, test failure, hash mismatch, monitor activity), investigate and document in `HANDOFF.md` with concrete evidence. Do **not** mutate frozen files to "fix" drift without explicit authorization and a separately versioned maintenance record.
 5. Update `HANDOFF.md` and this file with exact results (HEAD, test output, hashes/manifest status, monitor state, blockers, next step). Commit handoff updates as a handoff-only checkpoint only if explicitly authorized.
