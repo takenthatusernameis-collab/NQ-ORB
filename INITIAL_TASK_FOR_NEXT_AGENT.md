@@ -1,13 +1,15 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T01:15Z
-**HEAD:** `dab36a0` (`main...origin/main`; working tree clean at verification). NOTE: HEAD advanced from prior handoff's `f46d630` to `dab36a0` (handoff-only checkpoint commit); working tree clean, no new drift.
-**Tests:** 75 passed in 0.69s (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`)
+**Session:** 2026-11-10T01:16Z
+**HEAD:** `3d76d32` (`main...origin/main`; clean working tree at session start). NOTE: HEAD advanced from prior handoff's `dab36a0` to `3d76d32` (handoff-only checkpoint commit touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no code/data/artifact drift).
+**Tests:** 75 passed in 0.68s (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`)
 **SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match; recomputed this session via `sha256sum`).
-**Monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest; mtime 2026-11-09T20:08:32Z, no writes after); user crontab empty; 06:00Z loop stopped; only `.github/workflows/main.yml` present, no duplicate workflows/processes.
+**Monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest; mtime unchanged, no writes after); user crontab empty (06:00Z loop stopped); only `.github/workflows/main.yml` present, no duplicate workflows/processes.
+
+**Note:** `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` were updated this session with the results above and are left **uncommitted** in the working tree. Commit them as a handoff-only checkpoint (`chore(kilo): checkpoint agent session`) if authorized, or leave uncommitted — do not commit any code, strategy, config, raw data, or artifact changes.
 
 ## Prior task (completed)
-Maintenance re-verification per durable handoff (2026-11-10T01:15Z): read `HANDOFF.md`/`STRATEGY_RULES.txt`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified baseline state at HEAD `dab36a0` (clean working tree; HEAD advanced from prior `f46d630` via handoff-only checkpoint commit); ran full test suite (**75/75 passed, 0.69s**); recomputed all 20 manifest SHA-256 hashes via `sha256sum` (all match); confirmed monitor content unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA matches, mtime unchanged) and 06:00Z loop stopped (crontab empty; only `main.yml`). **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
+Maintenance re-verification per durable handoff (2026-11-10T01:16Z): read `HANDOFF.md`/`STRATEGY_RULES.txt`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified baseline state at HEAD `3d76d32` (clean working tree at session start; HEAD advanced from prior `dab36a0` via handoff-only checkpoint commit touching only the two handoff files); ran full test suite (**75/75 passed, 0.68s**); recomputed all 20 manifest SHA-256 hashes via `sha256sum` (all match); confirmed monitor content unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA matches, mtime unchanged) and 06:00Z loop stopped (crontab empty; only `main.yml`). **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
