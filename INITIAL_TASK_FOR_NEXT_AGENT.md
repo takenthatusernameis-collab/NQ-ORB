@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T10:34Z
-**HEAD:** `f49cce0` (`main...origin/main`; clean working tree at verification start). `f7d892a`/`f49cce0` are handoff-only checkpoints since `9894d55`. This session's handoff edits are **uncommitted** (commit not explicitly authorized).
+**Session:** 2026-11-10T10:36Z
+**HEAD:** `9e6baeb` (`main...origin/main`; clean working tree, up to date with origin). Handoff-only checkpoint committed at `9e6baeb` (`chore(kilo): checkpoint agent session`).
 **Tests:** 75 passed in 0.89s. Command: `/tmp/kilo-tests-venv/bin/python -m pytest tests/ -q` (existing throwaway venv at `/tmp/kilo-tests-venv`; matches `.github/workflows/main.yml` controller-tests step).
-**SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match exactly, `TOTAL BAD: 0`), re-computed this session.
+**SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match, `TOTAL BAD: 0`), last recomputed 2026-11-10T10:34Z; tree clean since, so hashes remain valid.
 **Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS-defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers` OS timers only (no matching orb/research/kilo/data timers); only `.github/workflows/main.yml` present; no duplicate research workflows/processes.
 
 ## Prior task (completed)
-Maintenance re-verification per durable handoff (2026-11-10T10:34Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed recent commits handoff-only; ran full test suite (**75/75 passed, 0.89s**); recomputed all 20 manifest SHA-256 hashes (**all match, `TOTAL BAD: 0`**); confirmed monitor unchanged and 06:00Z loop stopped; confirmed no crontab/research timers/duplicate workflows. **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
+Maintenance re-verification per durable handoff (2026-11-10T10:36Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed recent commits handoff-only; ran full test suite (**75/75 passed, 0.89s**); confirmed 20 manifest SHA-256 hashes unchanged (tree clean); confirmed monitor unchanged and 06:00Z loop stopped; confirmed no crontab/research timers/duplicate workflows. **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
