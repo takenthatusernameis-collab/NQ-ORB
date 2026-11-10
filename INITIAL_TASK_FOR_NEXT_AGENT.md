@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T23:28Z (maintenance re-verification)
-**HEAD:** `cb82489` (`main...origin/main`; clean working tree at verification start, up to date with origin). `cb82489` advances `99fc23f` via handoff-only checkpoint commits; combined `git diff 99fc23f HEAD` touches only HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md. No frozen strategy/config/raw/artifact drift.
-**Tests:** 75 passed in 0.70s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (throwaway venv with `pytest`+`pandas`; `pandas` required for full collection via `src/orb/indicators.py`/tests).
-**SHA-256:** 20/20 key files recomputed against the `HANDOFF.md` manifest table and verified — all match (2026-11-10T23:28Z).
+**Session:** 2026-11-10T23:30Z (maintenance re-verification)
+**HEAD:** `45d0d65` (`main...origin/main`; clean working tree at verification start, up to date with origin). `45d0d65` advances `cb82489` via handoff-only checkpoint commits; combined `git diff cb82489 HEAD` touches only HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md. No frozen strategy/config/raw/artifact drift.
+**Tests:** 75 passed in 0.71s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (throwaway venv with `pytest`+`pandas`; `pandas` required for full collection via `src/orb/indicators.py`/tests).
+**SHA-256:** 20/20 key files recomputed against the `HANDOFF.md` manifest table and verified — all match (2026-11-10T23:30Z).
 **Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, file SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; no duplicate research workflows/processes observed.
 
 ## Prior task (completed)
-Maintenance re-verification per durable handoff at HEAD `cb82489`: inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed `git status --short --branch` clean on `main...origin/main` (at verification start); ran full test suite (**75/75 passed, 0.70s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/canonical artifacts or monitor. No code, strategy, config, raw data, or canonical artifact changes. Handoff and initial-task files updated this session (handoff-only, not committed without explicit authorization).
+Maintenance re-verification per durable handoff at HEAD `45d0d65`: inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed `git status --short --branch` clean on `main...origin/main` (at verification start); ran full test suite (**75/75 passed, 0.71s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/canonical artifacts or monitor. No code, strategy, config, raw data, or canonical artifact changes. Handoff and initial-task files updated this session (handoff-only, not committed without explicit authorization).
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
@@ -22,3 +22,5 @@ Continue in **maintenance/read-only verification mode**.
 5. Update `HANDOFF.md` and this file with exact results (HEAD, test output, hashes/manifest status, monitor state, blockers, next step). Commit handoff updates as a handoff-only checkpoint only if explicitly authorized.
 
 **Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Do not restart the 06:00Z loop or launch nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized for a separately versioned experiment.
+
+(End of file - total 24 lines)
