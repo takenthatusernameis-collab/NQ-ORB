@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T10:36Z
-**HEAD:** `9e6baeb` (`main...origin/main`; clean working tree, up to date with origin). Handoff-only checkpoint committed at `9e6baeb` (`chore(kilo): checkpoint agent session`).
-**Tests:** 75 passed in 0.89s. Command: `/tmp/kilo-tests-venv/bin/python -m pytest tests/ -q` (existing throwaway venv at `/tmp/kilo-tests-venv`; matches `.github/workflows/main.yml` controller-tests step).
-**SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match, `TOTAL BAD: 0`), last recomputed 2026-11-10T10:34Z; tree clean since, so hashes remain valid.
-**Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS-defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers` OS timers only (no matching orb/research/kilo/data timers); only `.github/workflows/main.yml` present; no duplicate research workflows/processes.
+**Session:** 2026-11-10T10:37Z
+**HEAD:** `aac6aab` (`main...origin/main`; clean working tree, up to date with origin).
+**Tests:** 75 passed in 0.91s. Command: `/tmp/kilo-tests-venv/bin/python -m pytest tests/ -q` (throwaway venv at `/tmp/kilo-tests-venv`, per `.github/workflows/main.yml` controller-tests step).
+**SHA-256:** 20/20 key files recomputed and verified against `HANDOFF.md` manifest — all match (2026-11-10T10:37Z).
+**Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS-defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no matching orb/research/kilo/data timers); only `.github/workflows/main.yml` present; no duplicate research workflows/processes.
 
 ## Prior task (completed)
-Maintenance re-verification per durable handoff (2026-11-10T10:36Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed recent commits handoff-only; ran full test suite (**75/75 passed, 0.89s**); confirmed 20 manifest SHA-256 hashes unchanged (tree clean); confirmed monitor unchanged and 06:00Z loop stopped; confirmed no crontab/research timers/duplicate workflows. **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
+Maintenance re-verification per durable handoff (2026-11-10T10:37Z): inspected `HANDOFF.md`/`STRATEGY_RULES.txt`/`PROMPT.md`/`AGENTS.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed recent commits handoff-only; ran full test suite (**75/75 passed, 0.91s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor unchanged and 06:00Z loop stopped; confirmed no crontab/research timers/duplicate workflows. **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes. Handoff and initial-task files updated this session (working tree dirty until committed if authorized).
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
@@ -17,7 +17,7 @@ Maintenance re-verification per durable handoff (2026-11-10T10:36Z): inspected `
 Continue in **maintenance/read-only verification mode**.
 1. Inspect `HANDOFF.md` and `STRATEGY_RULES.txt`.
 2. Verify state: `git status --short --branch`; run full tests (`/tmp/kilo-tests-venv/bin/python -m pytest tests/ -q` or derive from `.github/workflows/main.yml` controller-tests step with a throwaway venv if absent); recompute the 20 SHA-256 hashes in `HANDOFF.md`.
-3. Confirm `research_state/free_data_monitor_20261108T060017Z.json` and its `checked_at_utc`/SHA are unchanged and the 06:00Z loop remains stopped.
+3. Confirm `research_state/free_data_monitor_20261108T060017Z.json` and its `checked_at_utc`/SHA are unchanged and the 06:00Z loop remains stopped (check crontab, `/etc/cron.d/`, `systemctl list-timers --all`, workflows/processes).
 4. If any drift is detected (dirty tree beyond handoff files, test failure, hash mismatch, monitor activity), investigate and document in `HANDOFF.md` with concrete evidence. Do **not** mutate frozen files to "fix" drift without explicit authorization and a separately versioned maintenance record.
 5. Update `HANDOFF.md` and this file with exact results (HEAD, test output, hashes/manifest status, monitor state, blockers, next step). Commit handoff updates as a handoff-only checkpoint only if explicitly authorized.
 
