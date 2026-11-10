@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-10T00:22Z
-**HEAD:** `001d9b4` (`main...origin/main`; working tree clean at verification). NOTE: HEAD advanced from prior handoff's `c8ff66c` to `001d9b4` (a prior checkpoint commit); working tree clean, no new drift.
-**Tests:** 75 passed in 0.68s (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`)
+**Session:** 2026-11-10T00:24Z
+**HEAD:** `93271b2` (`main...origin/main`; working tree clean at verification). NOTE: HEAD advanced from prior handoff's `001d9b4` to `93271b2` (prior checkpoint commits); working tree clean, no new drift.
+**Tests:** 75 passed in 0.60s (`PYTHONPATH=/tmp/pytest_env /tmp/pytest_env/bin/pytest tests/ -q`)
 **SHA-256:** 20/20 key files verified against `HANDOFF.md` manifest (all match; recomputed this session via `sha256sum`).
 **Monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest; mtime 2026-11-09T20:08:32Z, no writes after); user crontab empty; 06:00Z loop stopped; only `.github/workflows/main.yml` present, no duplicate workflows/processes.
 
 ## Prior task (completed)
-Maintenance re-verification per durable handoff (2026-11-10T00:22Z): read `HANDOFF.md`/`STRATEGY_RULES.txt`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified baseline state at HEAD `001d9b4` (clean working tree; HEAD advanced from prior `c8ff66c` to `001d9b4`, a prior checkpoint commit); ran full test suite (**75/75 passed, 0.68s**); recomputed all 20 manifest SHA-256 hashes via `sha256sum` (all match); confirmed monitor content unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00`, recomputed SHA matches, mtime unchanged) and 06:00Z loop stopped (crontab empty; only `main.yml`). **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
+Maintenance re-verification per durable handoff (2026-11-10T00:24Z): read `HANDOFF.md`/`STRATEGY_RULES.txt`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified baseline state at HEAD `93271b2` (clean working tree; HEAD advanced from prior `001d9b4` via checkpoint commits); ran full test suite (**75/75 passed, 0.60s**); recomputed all 20 manifest SHA-256 hashes via `sha256sum` (all match); confirmed monitor content unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, recomputed SHA matches, mtime unchanged) and 06:00Z loop stopped (crontab empty; only `main.yml`). **No drift detected.** No code, strategy, config, raw data, or canonical artifact changes.
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
