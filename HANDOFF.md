@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `f3dd37d` (`main...origin/main`, clean working tree at verification start, up to date with origin at `5913f2d`; `f3dd37d` advances `5913f2d` via handoff-only checkpoint commit, `git diff --stat 5913f2d f3dd37d` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 13 insertions/10 deletions). Header HEAD drift corrected (`44683fa` → `5913f2d`, then committed as `f3dd37d`). No frozen strategy/config/raw/artifact drift detected. Handoff/initial-task committed this session (handoff-only checkpoint `f3dd37d`).
-- **Timestamp (UTC)**: 2026-11-11T20:52Z
-- **Last re-verification (UTC)**: 2026-11-11T20:52Z (maintenance re-verification this session)
+- **HEAD**: `142c4b4` (`main...origin/main`, clean working tree at verification start, up to date with origin at `f3dd37d`; `142c4b4` advances `f3dd37d` via handoff-only checkpoint commit, `git diff --stat f3dd37d 142c4b4` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). No frozen strategy/config/raw/artifact drift detected.
+- **Timestamp (UTC)**: 2026-11-11T21:10Z
+- **Last re-verification (UTC)**: 2026-11-11T21:10Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -10,7 +10,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, verified 2026-11-11T20:01Z — all match)
+## SHA-256 manifest (20 key files, verified 2026-11-11T21:10Z — all match)
 
 | File | SHA-256 |
 |---|---|
@@ -35,8 +35,8 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-- **2026-11-11T19:08Z (this session)**: completed prior agent task (maintenance re-verification) at HEAD `093f019` (`main...origin/main`, clean working tree at verification start, up to date with origin; `093f019` advances `6b475f3` via handoff-only checkpoint commit `chore(kilo): checkpoint agent session`, `git diff --stat 6b475f3 093f019` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`. Verified: `git status --short --branch` clean (`## main...origin/main`); `git diff --stat HEAD` empty at start; full suite **75 passed in 0.71s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`); 20/20 manifest SHA-256 hashes recomputed and all match (incl. `research_state/1m_audit_kaggle.json` `2773463...`, `research_state/1m_audit_axb0306.json` `3aac07d...`, monitor `3f90bc1...`); monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session (no duplicate research workflows/processes). **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff/initial-task updated and committed this session (handoff-only checkpoint).
-- **Test status**: full suite **75 passed in 0.68s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv with `pytest`+`pandas`). No regressions.
+- **2026-11-11T21:10Z (this session)**: completed prior agent task (maintenance re-verification) at HEAD `142c4b4` (`main...origin/main`, clean working tree at verification start, up to date with origin; `142c4b4` advances `f3dd37d` via prior handoff-only checkpoint commit, `git diff --stat f3dd37d 142c4b4` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`. Verified: `git status --short --branch` clean (`## main...origin/main`); full suite **75 passed in 0.63s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`); 20/20 manifest SHA-256 hashes recomputed and all match (incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`); monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session's kilo idle-timeout wrapper — no duplicate research workflows/processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff/initial-task updated this session (handoff-only, pending explicit commit).
+- **Test status**: full suite **75 passed in 0.63s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv with `pytest`+`pandas`). No regressions.
 
 ## Standing constraints
 
