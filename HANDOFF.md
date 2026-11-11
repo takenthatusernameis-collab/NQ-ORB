@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `829f4ea` (`main...origin/main`, clean working tree at start of this session's re-verification, up to date with origin; prior checkpoint chain through `488d1f8`). No frozen strategy/config/raw/artifact drift detected. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization; working tree will show HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only.
-- **Timestamp (UTC)**: 2026-11-11T17:50Z
-- **Last re-verification (UTC)**: 2026-11-11T17:50Z (maintenance re-verification this session)
+- **HEAD**: `d918120` (`main...origin/main`, clean working tree at start of this session's re-verification, up to date with origin; prior checkpoint chain through `829f4ea`). No frozen strategy/config/raw/artifact drift detected. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization; working tree will show HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only.
+- **Timestamp (UTC)**: 2026-11-11T18:07Z
+- **Last re-verification (UTC)**: 2026-11-11T18:07Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
