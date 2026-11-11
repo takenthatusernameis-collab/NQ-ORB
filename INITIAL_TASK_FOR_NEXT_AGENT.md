@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-11T11:12Z (maintenance re-verification)
-**HEAD:** `1beeab5` (`main...origin/main`, clean working tree at verification start, up to date with origin; `git diff --stat 1ef8e0d 1beeab5` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 12 insertions/9 deletions). No frozen strategy/config/raw/artifact drift. This session's HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md edits are uncommitted at write time.
-**Tests:** 75 passed in 0.93s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (existing throwaway venv with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
-**SHA-256:** 20/20 manifest hashes in HANDOFF.md recomputed and verified — all match (2026-11-11T11:12Z).
+**Session:** 2026-11-11T11:40Z (maintenance re-verification)
+**HEAD:** `051c095` (`main...origin/main`, clean working tree at verification start, up to date with origin; `git diff --stat 1beeab5 051c095` → `5febbac` HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only (11 insertions/8 deletions), `051c095` `research_state/workflow_run_diagnostics.jsonl` only (1 insertion)). No frozen strategy/config/raw/artifact drift. This session's HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md edits are uncommitted at write time.
+**Tests:** 75 passed in 0.67s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (fresh throwaway venv with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
+**SHA-256:** 20/20 manifest hashes in HANDOFF.md recomputed and verified — all match (2026-11-11T11:40Z).
 **Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; no duplicate research workflows/processes observed.
 
 ## Prior task (completed)
-Maintenance re-verification at HEAD `1beeab5` (`main...origin/main`, clean tree at start, up to date with origin; `git diff --stat 1ef8e0d 1beeab5` → handoff-only checkpoint commit touching HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 12 insertions/9 deletions). Inspected durable handoff/strategy docs (`HANDOFF.md`, `STRATEGY_RULES.txt`); confirmed clean tree at start (`## main...origin/main`); ran full tests (**75/75 passed, 0.93s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/artifact state. Handoff and initial-task files updated this session (handoff-only, uncommitted).
+Maintenance re-verification at HEAD `051c095` (`main...origin/main`, clean tree at start, up to date with origin; `git diff --stat 1beeab5 051c095` → `5febbac` HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, `051c095` `research_state/workflow_run_diagnostics.jsonl` only). Inspected durable handoff/strategy docs (`HANDOFF.md`, `STRATEGY_RULES.txt`); confirmed clean tree at start (`## main...origin/main`); ran full tests (**75/75 passed, 0.67s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/artifact state. Handoff and initial-task files updated this session (handoff-only, uncommitted).
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
@@ -22,5 +22,3 @@ Continue in **maintenance/read-only verification mode**.
 5. Update `HANDOFF.md` and this file with exact results (HEAD, test output, hashes/manifest status, monitor state, blockers, next step). Commit handoff updates as a handoff-only checkpoint only if explicitly authorized.
 
 **Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Do not restart the 06:00Z loop or launch nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized for a separately versioned experiment.
-
-(End of file - total 26 lines)
