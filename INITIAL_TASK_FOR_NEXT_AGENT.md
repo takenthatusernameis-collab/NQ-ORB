@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-11T02:10Z (maintenance re-verification)
+**Session:** 2026-11-11T02:12Z (maintenance re-verification)
 **HEAD:** `6f02acb` (`main...origin/main`; clean working tree at verification start, up to date with origin). `6f02acb` advances `42a84ad` via handoff-only checkpoint commit (HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). No frozen strategy/config/raw/artifact drift. This session's HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md edits are **uncommitted** (handoff-only checkpoint commit only if explicitly authorized).
-**Tests:** 75 passed in 0.82s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (throwaway venv with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
-**SHA-256:** 20/20 key files recomputed against the `HANDOFF.md` manifest table and verified — all match (2026-11-11T02:10Z).
+**Tests:** 75 passed in 0.80s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (throwaway venv with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
+**SHA-256:** 20/20 key files recomputed against the `HANDOFF.md` manifest table and verified — all match (2026-11-11T02:12Z).
 **Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only; `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; no duplicate research workflows/processes observed.
 
 ## Prior task (completed)
-Maintenance re-verification at HEAD `6f02acb`: inspected durable handoff/strategy docs; confirmed clean tree at start; ran full tests (**75/75 passed, 0.82s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff and initial-task files updated this session (handoff-only, uncommitted).
+Maintenance re-verification at HEAD `6f02acb`: inspected durable handoff/strategy docs; confirmed clean tree at start; ran full tests (**75/75 passed, 0.80s**); recomputed and confirmed 20/20 manifest SHA-256 hashes match; confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift detected** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff and initial-task files updated this session (handoff-only, uncommitted).
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
