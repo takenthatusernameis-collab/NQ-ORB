@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `918f962` (`main...origin/main`, clean working tree at start of this session's re-verification, up to date with origin; prior checkpoint chain through `6fc6dc7`, advances `6fc6dc7` via handoff-only checkpoint `918f962`). No frozen strategy/config/raw/artifact drift detected. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization; working tree will show HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only.
-- **Timestamp (UTC)**: 2026-11-11T18:19Z
-- **Last re-verification (UTC)**: 2026-11-11T18:19Z (maintenance re-verification this session)
+- **HEAD**: `3015a065` (`main...origin/main`, clean working tree at verification start, up to date with origin; `3015a065` advances `918f962` via handoff-only checkpoint commits). No frozen strategy/config/raw/artifact drift detected. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization (handoff-only).
+- **Timestamp (UTC)**: 2026-11-11T18:29Z
+- **Last re-verification (UTC)**: 2026-11-11T18:29Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -10,7 +10,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, verified 2026-11-11T18:19Z — all match)
+## SHA-256 manifest (20 key files, verified 2026-11-11T18:29Z — all match)
 
 | File | SHA-256 |
 |---|---|
@@ -35,8 +35,8 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-- **2026-11-11T07:56Z (this session)**: completed prior agent task (maintenance re-verification) at HEAD `a50b801` (`main...origin/main`, clean working tree at verification start, up to date with origin). `a50b801` advances prior `df2eb6f` via a handoff-only checkpoint commit (`git diff --stat df2eb6f a50b801` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 13 insertions/10 deletions). No frozen strategy/config/raw/artifact drift. Verified: `git status --short --branch` clean (`## main...origin/main`) and `git diff --stat HEAD` empty at start; full suite **75 passed in 1.24s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`); 20/20 manifest SHA-256 hashes in HANDOFF.md manifest table recomputed and all match (incl. `research_state/1m_audit_kaggle.json` `277346323e2375485abd053d3587736778eaaae64e0b12494ae71eeb588f6041`, monitor `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, file SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session (no duplicate research workflows/processes). **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff/initial-task updated this session (handoff-only, uncommitted).
-- **Test status**: full suite **75 passed in 1.24s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv with `pytest`+`pandas`). No regressions.
+- **2026-11-11T18:29Z (this session)**: completed prior agent task (maintenance re-verification) at HEAD `3015a065` (`main...origin/main`, clean working tree at verification start, up to date with origin; `git diff --stat 918f962..3015a065` → HANDOFF.md only, 6 insertions/5 deletions; `3015a065` advances `918f962` via handoff-only checkpoint commit `chore(kilo): checkpoint agent session`). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`. Verified: `git status --short --branch` clean (`## main...origin/main`); full suite **75 passed in 0.58s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`); 20/20 manifest SHA-256 hashes in HANDOFF.md manifest table recomputed and all match (incl. `research_state/1m_audit_kaggle.json` `277346323e2375485abd053d3587736778eaaae64e0b12494ae71eeb588f6041`, `research_state/1m_audit_axb0306.json` `3aac07d224662c7ef514cc0e7df4a1236bcb5be312b5dc88f70a74533cb8a706`, monitor `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, file SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session (no duplicate research workflows/processes). **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. No code/strategy/config/raw/artifact changes. Handoff/initial-task updated this session (handoff-only, uncommitted pending explicit commit authorization).
+- **Test status**: full suite **75 passed in 0.58s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv with `pytest`+`pandas`). No regressions.
 
 ## Standing constraints
 
