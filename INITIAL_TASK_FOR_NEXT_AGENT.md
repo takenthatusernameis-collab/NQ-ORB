@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-11T19:08Z (maintenance re-verification)
-**HEAD:** `093f019` (`main...origin/main`, clean working tree at verification start, up to date with origin; `093f019` advances `6b475f3` via handoff-only checkpoint, `git diff --stat 6b475f3 093f019` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Handoff/initial-task edits committed this session as handoff-only checkpoint.
-**Tests:** 75 passed in 0.71s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
-**SHA-256:** all 20 manifest hashes in HANDOFF.md recomputed and verified — all match (2026-11-11T19:08Z).
+**Session:** 2026-11-11T19:09Z (maintenance re-verification)
+**HEAD:** `6ea1b33` (`main...origin/main`, clean working tree at verification start, up to date with origin; `6ea1b33` advances `093f019` via handoff-only checkpoint, `git diff --stat 093f019 6ea1b33` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 16 insertions/14 deletions). Handoff/initial-task edits committed this session as handoff-only checkpoint.
+**Tests:** 75 passed in 0.65s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`; workflow controller-tests step does not install `pandas`).
+**SHA-256:** all 20 manifest hashes in HANDOFF.md recomputed and verified — all match (2026-11-11T19:09Z).
 **Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS defaults only; `systemctl list-timers --all` OS timers only; only `.github/workflows/main.yml`; no duplicate research workflows/processes observed.
 
 ## Prior task (completed)
-Maintenance re-verification at HEAD `093f019`. Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`; confirmed clean tree at start; ran full tests (**75 passed in 0.71s**); recomputed and confirmed all 20 manifest SHA-256 hashes match (incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`); confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Handoff/initial-task updated and committed (handoff-only checkpoint).
+Maintenance re-verification at HEAD `6ea1b33`. Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`; confirmed clean tree at start; ran full tests (**75 passed in 0.65s**); recomputed and confirmed all 20 manifest SHA-256 hashes match (incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`); confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Handoff/initial-task updated and committed (handoff-only checkpoint).
 
 ## Research status (frozen — no further work planned)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
