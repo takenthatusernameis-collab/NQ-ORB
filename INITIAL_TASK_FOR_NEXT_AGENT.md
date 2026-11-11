@@ -1,16 +1,16 @@
 # Initial task for next agent
 
-**Session:** 2026-11-11T19:51Z (maintenance re-verification)
-**HEAD:** `ea8ff19` (`main...origin/main`, clean working tree at verification start, up to date with origin; `ea8ff19` advances `b46cb99` via handoff-only checkpoint commit, `git diff --stat b46cb99 ea8ff19` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 16 insertions/10 deletions). Handoff/initial-task edits committed this session as handoff-only checkpoint.
-**Tests:** 75 passed in 0.68s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`).
-**SHA-256:** all 20 manifest hashes in HANDOFF.md recomputed and verified — all match (2026-11-11T19:51Z).
-**Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS defaults only; `systemctl list-timers --all` OS timers only; only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session's kilo idle-timeout wrapper.
+**Session:** 2026-11-11T20:01Z (maintenance re-verification)
+**HEAD:** `ff8c524` (`main...origin/main`, clean working tree at verification start, up to date with origin; `ff8c524` advances `ea8ff19` via handoff-only checkpoint commit, `git diff --stat ea8ff19 ff8c524` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Handoff/initial-task edits from this session pending commit (handoff-only).
+**Tests:** 75 passed in 0.62s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (existing throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`).
+**SHA-256:** all 20 manifest hashes in `HANDOFF.md` recomputed and verified — all match (2026-11-11T20:01Z).
+**Monitor/automation:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`); user crontab empty; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes limited to OS/runner daemons and this session — no duplicate research workflows/processes.
 
 ## Prior task (completed)
-Maintenance re-verification at HEAD `ea8ff19`. Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`; confirmed clean tree at start; ran full tests (**75 passed in 0.68s**); recomputed and confirmed all 20 manifest SHA-256 hashes match (incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`); confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Handoff/initial-task updated and committed (handoff-only checkpoint).
+Maintenance re-verification at HEAD `ff8c524`. Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`, `AGENTS.md`, `README.md`; confirmed clean tree at start; ran full tests (**75 passed in 0.62s**); recomputed and confirmed all 20 manifest SHA-256 hashes match (incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`); confirmed monitor file/`checked_at_utc`/SHA unchanged and 06:00Z loop stopped; confirmed no crontab, no research timers, single workflow, no duplicate research processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Handoff/initial-task updated (handoff-only).
 
 ## Research status (frozen — no further work planned)
-- **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
+- **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days). 1-min audits in `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 
 ## Next task
