@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `03285ad` (`main...origin/main`, clean working tree at verification start, up to date with origin; `git diff --stat b0ad497 03285ad` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, handoff-only checkpoint `03285ad` advances `b0ad497`). Header drift corrected: HANDOFF.md header recorded `b0ad497` while actual HEAD was `03285ad`; header corrected to `03285ad`. No frozen strategy/config/raw/artifact drift at verification start. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization; working tree will show HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only.
+- **HEAD**: `e7bd9c3` (`main...origin/main`, clean working tree at verification start, up to date with origin; `git diff --stat 03285ad e7bd9c3` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, handoff-only checkpoint `e7bd9c3` advances `03285ad`). Header drift corrected: HANDOFF.md header recorded `03285ad` while actual HEAD was `e7bd9c3`; header corrected to `e7bd9c3`. No frozen strategy/config/raw/artifact drift at verification start. This session's handoff/initial-task edits are uncommitted pending explicit commit authorization; working tree will show HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only.
 - **Timestamp (UTC)**: 2026-11-11T15:21Z
 - **Last re-verification (UTC)**: 2026-11-11T15:21Z (maintenance re-verification this session)
 
@@ -146,7 +146,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, verified 2026-11-11T15:03Z — all match)
+## SHA-256 manifest (20 key files, verified 2026-11-11T15:45Z — all match)
 
 | File | SHA-256 |
 |---|---|
