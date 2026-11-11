@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `5913f2d` (`main...origin/main`, clean working tree at verification start, up to date with origin; `5913f2d` advances `44683fa` via handoff-only checkpoint commit, `git diff --stat 44683fa 5913f2d` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 13 insertions/9 deletions). Header HEAD drift corrected (`44683fa` → `5913f2d`). No frozen strategy/config/raw/artifact drift detected. Handoff/initial-task edits from this session pending commit (handoff-only).
+- **HEAD**: `f3dd37d` (`main...origin/main`, clean working tree at verification start, up to date with origin at `5913f2d`; `f3dd37d` advances `5913f2d` via handoff-only checkpoint commit, `git diff --stat 5913f2d f3dd37d` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only, 13 insertions/10 deletions). Header HEAD drift corrected (`44683fa` → `5913f2d`, then committed as `f3dd37d`). No frozen strategy/config/raw/artifact drift detected. Handoff/initial-task committed this session (handoff-only checkpoint `f3dd37d`).
 - **Timestamp (UTC)**: 2026-11-11T20:52Z
 - **Last re-verification (UTC)**: 2026-11-11T20:52Z (maintenance re-verification this session)
 
