@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at verification start)**: `e35b988` (`main...origin/main`, clean before edits). `git fetch --dry-run`: no remote changes; `git diff origin/main --stat`: empty.
-- **Timestamp (UTC)**: 2026-11-12T23:56:43Z
-- **Last re-verification (UTC)**: 2026-11-12T23:56:43Z (maintenance re-verification this session)
+- **HEAD (at verification start)**: `01ea3df` (`main...origin/main`, clean before edits). `git fetch --dry-run`: no remote changes; `git diff origin/main --stat`: empty.
+- **Timestamp (UTC)**: 2026-11-12T23:57:58Z
+- **Last re-verification (UTC)**: 2026-11-12T23:57:58Z (maintenance re-verification this session)
 
 **Concurrent-session note:** Prior handoff text referenced a later checkpoint `9092f0ff…` / `7e620bb…` in session logs from other runs; this session verified the repository state present at `8132a57` as described below. Handoff-only updates from this session are committed on top of the then-current HEAD.
 **HEAD progression note:** `e35b988` is the immediately prior handoff-only checkpoint (2026-11-12T23:56:23Z) committed on top of `c6cedfb`. It touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research/data/config/artifact files changed between `c6cedfb` and `e35b988`.
@@ -58,10 +58,11 @@
 - **2026-11-12T20:59:17Z (prior)**: maintenance re-verification at HEAD `3b840e5`; 75 passed in 0.96s; 20/20 matched; monitor unchanged; 06:00Z stopped.
 - **2026-11-12T20:57:37Z (prior)**: maintenance re-verification at HEAD `c977a70`; 75 passed in 0.93s; 20/20 matched; monitor unchanged; 06:00Z stopped.
 - **2026-11-12T20:49:53Z (prior)**: maintenance re-verification at HEAD `fad6630`; 75 passed in 0.92s; 20/20 matched; monitor unchanged; 06:00Z stopped.
+- **2026-11-12T23:57:58Z (this session)**: maintenance re-verification at HEAD `01ea3df` (`main...origin/main`, clean before edits; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines — unchanged; SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.99s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** (known `artifacts/metrics_axb0306_full.json` historical manifest typo only; on-disk authoritative `dddaefa…` unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → OS-default timers only (dpkg-db-backup, logrotate, sysstat, podman, phpsessionclean, man-db, motd-news, update-notifier, tmpfiles, e2scrub, fstrim, ua-timer; no orb/kilo/research/data timers); only `.github/workflows/main.yml`; no duplicate research/monitor processes (`ps aux | grep -Ei "orb|free_data_monitor|research"` empty). 06:00Z loop remains stopped. No frozen files modified.
 
 ## Test status
 
-- Full suite **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-12T23:56:43Z). No regressions.
+- Full suite **75 passed in 0.99s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-12T23:57:58Z). No regressions.
 
 ## Standing constraints
 
