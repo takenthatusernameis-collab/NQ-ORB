@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at start of this verification)**: `6519efc1b162a4749119be240fd55e6791fcd7ce` (`main...origin/main`, clean before edits; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Prior handoff recorded HEAD `1e3fa0b`; the intervening checkpoint `6519efc` (`1e3fa0b..6519efc`) is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, 11 insertions/10 deletions); this session's changes are handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`).
-- **Timestamp (UTC)**: 2026-11-12T17:13:00Z
-- **Last re-verification (UTC)**: 2026-11-12T17:13:00Z (maintenance re-verification this session)
+- **HEAD (at start of this verification)**: `1df9b98b630e1da48be99e6688d3d4db0a5419f3` (`main...origin/main`, clean before edits; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Prior handoff recorded HEAD `6519efc`; the intervening checkpoint `1df9b98` (`6519efc..1df9b98`) is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`); this session's changes are handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`).
+- **Timestamp (UTC)**: 2026-11-12T17:15:00Z
+- **Last re-verification (UTC)**: 2026-11-12T17:15:00Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -39,11 +39,11 @@
 
 ## Session log (recent)
 
-- **2026-11-12T17:13:00Z (this session)**: maintenance re-verification complete at HEAD `6519efc` (`main...origin/main`, clean before edits; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). HEAD had advanced from the prior handoff's `1e3fa0b` via handoff-only checkpoint `6519efc` (`1e3fa0b..6519efc`, handoff-only: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, 11 insertions/10 deletions); this session's changes are handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 1.20s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → 17 OS-default timers only (no orb/kilo/research/data timers); only `.github/workflows/main.yml`; observed processes OS/kilo session daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
+- **2026-11-12T17:15:00Z (this session)**: maintenance re-verification complete at HEAD `1df9b98` (`main...origin/main`, clean before edits; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). HEAD had advanced from the prior handoff's `6519efc` via handoff-only checkpoint `1df9b98` (`6519efc..1df9b98`, handoff-only: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`); this session's changes are handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 1.28s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo session daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
 
 ## Test status
 
-- Full suite **75 passed in 1.20s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T17:13:00Z). No regressions.
+- Full suite **75 passed in 1.28s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T17:15:00Z). No regressions.
 
 ## Standing constraints
 
