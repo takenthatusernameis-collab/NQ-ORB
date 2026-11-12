@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `2c40c68` (`main...origin/main`, clean working tree at verification start, up to date with origin; `2c40c68` is a handoff-only checkpoint over `17af1eb`, `git diff --stat 17af1eb 2c40c68` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Handoff/initial-task edits from this session pending commit (handoff-only, if explicitly authorized). No frozen strategy/config/raw/artifact drift detected.
-- **Timestamp (UTC)**: 2026-11-12T01:10:42Z
-- **Last re-verification (UTC)**: 2026-11-12T01:10:42Z (maintenance re-verification this session)
+- **HEAD**: `ad08896` (`main...origin/main`, clean working tree at verification start, up to date with origin; `ad08896` is a handoff-only checkpoint over `2c40c68`, `git diff --stat 2c40c68 ad08896` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Handoff/initial-task edits from this session pending commit (handoff-only, if explicitly authorized). No frozen strategy/config/raw/artifact drift detected.
+- **Timestamp (UTC)**: 2026-11-12T01:47:52Z
+- **Last re-verification (UTC)**: 2026-11-12T01:47:52Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
