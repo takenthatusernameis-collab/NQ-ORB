@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at verification)**: `0434eaf` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Working tree clean at verification. Diff from prior handoff HEAD `24ab2db` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched).
-- **Timestamp (UTC)**: 2026-11-12T16:09:11Z
-- **Last re-verification (UTC)**: 2026-11-12T16:09:11Z (maintenance re-verification this session)
+- **HEAD (at verification)**: `99aa685` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Working tree clean at verification. Diff from prior handoff HEAD `0434eaf` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched).
+- **Timestamp (UTC)**: 2026-11-12T16:15:52Z
+- **Last re-verification (UTC)**: 2026-11-12T16:15:52Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -35,11 +35,12 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-**Manifest note:** `artifacts/metrics_axb0306_full.json` table entry is a known pre-existing transcription typo (`ddddaefa…` shown historically in some text); authoritative on-disk/git hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged, introduced at `d11a083` 2026-10-31). Table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-12T16:09:11Z).
+**Manifest note:** `artifacts/metrics_axb0306_full.json` table entry is a known pre-existing transcription typo (`ddddaefa…` shown historically in some text); authoritative on-disk/git hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged, introduced at `d11a083` 2026-10-31). Table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-12T16:15:52Z).
 
 ## Session log (recent)
 
-- **2026-11-12T16:09:11Z (this session)**: maintenance re-verification complete at HEAD `0434eaf` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Diff from prior handoff HEAD `24ab2db` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 1.01s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers (OS defaults only); only `.github/workflows/main.yml`; observed processes OS/kilo session daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
+- **2026-11-12T16:15:52Z (this session)**: maintenance re-verification complete at HEAD `99aa685` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Diff from prior handoff HEAD `0434eaf` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.89s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers (OS defaults only); only `.github/workflows/main.yml`; observed processes OS/kilo session daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
+- **2026-11-12T16:09:11Z**: maintenance re-verification at HEAD `0434eaf`. Tests **75 passed in 1.01s**. 20/20 hashes matched. Monitor unchanged. 06:00Z loop stopped.
 - **2026-11-12T16:04:28Z**: maintenance re-verification at HEAD `24ab2db`. Tests **75 passed in 1.87s**. 20/20 hashes matched. Monitor unchanged. 06:00Z loop stopped.
 - **2026-11-12T15:23:17Z**: maintenance re-verification at HEAD `617b91d`. Tests **75 passed in 1.37s**. 20/20 hashes matched. Monitor unchanged (checked_at 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc…`). 06:00Z loop stopped.
 - **2026-11-12T15:21:30Z**: maintenance re-verification at HEAD `665d58e`. Tests **75 passed in 0.90s**. 20/20 hashes matched. Monitor unchanged. 06:00Z loop stopped.
@@ -82,7 +83,7 @@
 
 ## Test status
 
-- Full suite **75 passed in 1.01s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T16:09:11Z). No regressions.
+- Full suite **75 passed in 0.89s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T16:15:52Z). No regressions.
 
 ## Standing constraints
 
