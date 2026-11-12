@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
 - **HEAD (at verification)**: `b2aca5a` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Working tree handoff-only after this update.
-- **Timestamp (UTC)**: 2026-11-12T09:45:45Z
-- **Last re-verification (UTC)**: 2026-11-12T09:45:45Z (maintenance re-verification this session)
+- **Timestamp (UTC)**: 2026-11-12T09:47:26Z
+- **Last re-verification (UTC)**: 2026-11-12T09:47:26Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -10,7 +10,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, recomputed and verified 2026-11-12T09:37:26Z — 20/20 match)
+## SHA-256 manifest (20 key files, recomputed and verified 2026-11-12T09:47:26Z — 20/20 match)
 
 | File | SHA-256 |
 |---|---|
@@ -47,10 +47,11 @@
 - **2026-11-12T09:41:25Z**: maintenance re-verification at HEAD `8b98a4a`. Tests **75 passed in 0.92s**. 20/20 hashes matched. Monitor unchanged. 06:00Z loop stopped.
 - **2026-11-12T09:43:17Z**: maintenance re-verification at HEAD `2001841`. Tests **75 passed in 0.92s**. 20/20 hashes matched. Monitor unchanged. 06:00Z loop stopped.
 - **2026-11-12T09:45:45Z (this session)**: maintenance re-verification complete at HEAD `b2aca5a` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.89s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers; only `.github/workflows/main.yml`; no matching research/monitor processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
+- **2026-11-12T09:47:26Z (this session)**: maintenance re-verification complete at HEAD `b2aca5a` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers; only `.github/workflows/main.yml`; no matching research/monitor processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
 
 ## Test status
 
-- Full suite **75 passed in 0.89s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv). No regressions.
+- Full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv). No regressions.
 
 ## Standing constraints
 
