@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
 - **HEAD**: `5a9f9f3` (`main...origin/main`, clean and up to date with origin; handoff-only checkpoint commit `5a9f9f3` vs prior `87710f9`, touching only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md; tree clean, up to date with origin, `git fetch --dry-run` no remote changes). No frozen strategy/config/raw/artifact drift detected.
-- **Timestamp (UTC)**: 2026-11-12T05:03:03Z
-- **Last re-verification (UTC)**: 2026-11-12T05:03:03Z (maintenance re-verification this session)
+- **Timestamp (UTC)**: 2026-11-12T05:35:28Z
+- **Last re-verification (UTC)**: 2026-11-12T05:35:28Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -51,7 +51,9 @@
 
 - **2026-11-12T05:03:03Z (this session)**: maintenance re-verification complete at HEAD `5a9f9f3` (handoff-only checkpoint commit vs prior `87710f9`, touching only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md; `git status --short --branch` clean `main...origin/main`, `git fetch --dry-run` no remote changes, `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.73s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` manifest transcription typo noted above; on-disk/git-HEAD content `dddaefa…` unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → 17 OS timers only, no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo daemons only — no duplicate research workflows/processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only, to be committed as checkpoint).
 
-- **Test status**: full suite **75 passed in 0.73s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). No regressions.
+- **2026-11-12T05:35:28Z (this session)**: maintenance re-verification complete at HEAD `5a9f9f3` (clean `main...origin/main`, `git fetch --dry-run` no remote changes, `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` manifest transcription typo noted above; on-disk/git-HEAD content `dddaefa…` unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → 17 OS timers only, no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo daemons only — no duplicate research workflows/processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only, to be committed as checkpoint).
+
+- **Test status**: full suite **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). No regressions.
 
 ## Standing constraints
 
