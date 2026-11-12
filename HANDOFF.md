@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `afd65aa` (`main...origin/main`, clean working tree at verification start, up to date with origin; `afd65aa` is a handoff-only checkpoint over `df2473d`, `git diff --stat df2473d afd65aa` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). New handoff/initial-task edits from this session uncommitted pending explicit commit authorization. No frozen strategy/config/raw/artifact drift detected.
-- **Timestamp (UTC)**: 2026-11-12T01:58:32Z
-- **Last re-verification (UTC)**: 2026-11-12T01:58:32Z (maintenance re-verification this session)
+- **HEAD**: `99bd14e` (`main...origin/main`, clean working tree at verification start, up to date with origin; `99bd14e` is a handoff-only checkpoint over `afd65aa`, `git diff --stat afd65aa 99bd14e` → HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). New handoff/initial-task edits from this session uncommitted pending explicit commit authorization. No frozen strategy/config/raw/artifact drift detected.
+- **Timestamp (UTC)**: 2026-11-12T02:00:10Z
+- **Last re-verification (UTC)**: 2026-11-12T02:00:10Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -10,7 +10,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, verified 2026-11-12T01:53:46Z — all match)
+## SHA-256 manifest (20 key files, verified 2026-11-12T02:00:10Z — all match)
 
 | File | SHA-256 |
 |---|---|
@@ -35,8 +35,8 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-- **2026-11-12T01:58:32Z (this session)**: prior agent task (maintenance re-verification) complete at HEAD `df2473d`; HEAD advanced `df2473d` → `afd65aa` via prior handoff-only commit `afd65aa` ("chore(kilo): checkpoint agent session", HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Verified: `git status --short --branch` clean (`## main...origin/main`); `git fetch --dry-run` no remote changes; full suite **75 passed in 1.49s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest` 9.2.0 + `pandas` 3.1.1); 20/20 manifest SHA-256 hashes recomputed via `sha256sum` against actual file contents and all match (manifest table), incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`; monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes OS/kilo/idle-timeout daemons only — no duplicate research workflows/processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Corrected stale `HANDOFF.md` HEAD/timestamps to reflect current state (`df2473d` → `afd65aa`). No code/strategy/config/raw/artifact changes. Handoff/initial-task updated this session (handoff-only, uncommitted pending explicit commit authorization).
-- **Test status**: full suite **75 passed in 1.49s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv with `pytest` 9.2.0 + `pandas` 3.1.1). No regressions.
+- **2026-11-12T02:00:10Z (this session)**: prior agent task (maintenance re-verification) complete at HEAD `afd65aa`; HEAD advanced `afd65aa` → `99bd14e` via prior handoff-only commit `99bd14e` ("chore(kilo): checkpoint agent session", HANDOFF.md + INITIAL_TASK_FOR_NEXT_AGENT.md only). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Verified: `git status --short --branch` clean (`## main...origin/main`); `git fetch --dry-run` no remote changes; full suite **75 passed in 0.79s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv `/tmp/kilo-verify-venv` with `pytest` 9.2.0 + `pandas` 3.1.1); 20/20 manifest SHA-256 hashes recomputed via `sha256sum` against actual file contents and all match (manifest table), incl. audits `2773463...`/`3aac07d...`, monitor `3f90bc1...`; monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` matches manifest); user crontab empty (`no crontab for runner`); `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` OS timers only (no orb/research/kilo/data timers); only `.github/workflows/main.yml`; observed processes OS/kilo/idle-timeout daemons only — no duplicate research workflows/processes. **No drift** in frozen strategy/config/raw/canonical artifacts or monitor. Corrected stale `HANDOFF.md` HEAD/timestamps to reflect current state (`afd65aa` → `99bd14e`). No code/strategy/config/raw/artifact changes. Handoff/initial-task updated this session (handoff-only, uncommitted pending explicit commit authorization).
+- **Test status**: full suite **75 passed in 0.79s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, existing throwaway venv with `pytest` 9.2.0 + `pandas` 3.1.1). No regressions.
 
 ## Standing constraints
 
