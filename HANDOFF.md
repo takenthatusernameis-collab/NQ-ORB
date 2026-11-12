@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e164105` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). No frozen strategy/config/raw/artifact drift detected.
+- **HEAD**: `e44cc77` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). No frozen strategy/config/raw/artifact drift detected.
 - **Timestamp (UTC)**: 2026-11-12T07:48:27Z
 - **Last re-verification (UTC)**: 2026-11-12T07:48:27Z (maintenance re-verification this session)
 
