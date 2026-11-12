@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at verification)**: `33da607` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Working tree clean at verification. Diff from prior handoff HEAD `c68eaca` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched).
-- **Timestamp (UTC)**: 2026-11-12T14:11:33Z
-- **Last re-verification (UTC)**: 2026-11-12T14:11:33Z (maintenance re-verification this session)
+- **HEAD (at verification)**: `f8c8f69` (`main...origin/main`, clean; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Working tree clean at verification. Diff from prior handoff HEAD `33da607` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched).
+- **Timestamp (UTC)**: 2026-11-12T14:13:32Z
+- **Last re-verification (UTC)**: 2026-11-12T14:13:32Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -74,9 +74,11 @@
 - **2026-11-12T14:09:11Z**: maintenance re-verification complete at HEAD `c68eaca`. Tests **75 passed in 0.76s**. 20/20 hashes matched. Monitor unchanged (SHA `3f90bc…`). 06:00Z loop stopped.
 - **2026-11-12T14:11:33Z (this session)**: maintenance re-verification complete at HEAD `33da607` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Diff from prior handoff HEAD `c68eaca` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.81s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers (OS defaults only); only `.github/workflows/main.yml`; observed processes OS/kilo daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
 
+- **2026-11-12T14:13:32Z (this session)**: maintenance re-verification complete at HEAD `f8c8f69` (clean `main...origin/main`; `git fetch --dry-run` no remote changes; `git diff origin/main --stat` empty). Diff from prior handoff HEAD `33da607` is handoff-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` timestamp/text only; no frozen files touched). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 1.08s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` historical manifest typo: on-disk authoritative `dddaefa…`, unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00`, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo daemons only (no duplicate research/monitor processes). 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only).
+
 ## Test status
 
-- Full suite **75 passed in 0.81s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T14:11:33Z). No regressions.
+- Full suite **75 passed in 1.08s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`, 2026-11-12T14:13:32Z). No regressions.
 
 ## Standing constraints
 
@@ -84,4 +86,4 @@
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with explicit diff from baseline.
 - 06:00Z maintenance loop remains stopped. Do not restart or launch nested/duplicate workflows.
 
-(End of file - total 59 lines)
+(End of file - total 89 lines)
