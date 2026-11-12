@@ -14,13 +14,16 @@ Maintenance re-verification at HEAD `2b7b266` (handoff-only checkpoint commit vs
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days). 1-min audits in `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 
 ## Next task
-Continue in **maintenance/read-only verification mode**.
-1. Inspect `HANDOFF.md` and `STRATEGY_RULES.txt`.
-2. Verify state: `git status --short --branch` (expect clean `main...origin/main` before edits); run full tests (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` in a throwaway venv with `pytest`+`pandas`); recompute SHA-256 hashes in `HANDOFF.md` manifest and confirm match (known exception: `artifacts/metrics_axb0306_full.json` manifest typo in historical text — on-disk authoritative, not drift).
-3. Confirm `research_state/free_data_monitor_20261108T060017Z.json` `checked_at_utc`/SHA unchanged and 06:00Z loop stopped (crontab, `/etc/cron.d/`, `systemctl list-timers --all`, `.github/workflows/`, processes).
-4. If drift detected (dirty tree beyond handoff files, test failure, hash mismatch beyond known typo, monitor activity), investigate and document with concrete evidence. Do **not** mutate frozen files without explicit authorization and a separately versioned maintenance record.
+Continue in **maintenance/read-only verification mode**. The research baseline is frozen and complete; your job is to keep the repository provably intact and to report any change.
+
+1. Inspect `HANDOFF.md` and `STRATEGY_RULES.txt` (v1.0, 126 lines — must be unchanged).
+2. Verify state: `git status --short --branch` (expect clean `main...origin/main` before edits); run full tests (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` in a throwaway venv with `pytest`+`pandas`); recompute the 20 SHA-256 hashes in the `HANDOFF.md` manifest and confirm all match (known exception: `artifacts/metrics_axb0306_full.json` manifest typo in historical text — on-disk authoritative `dddaefa…`, not drift).
+3. Confirm `research_state/free_data_monitor_20261108T060017Z.json` `checked_at_utc`/SHA unchanged and the 06:00Z loop stopped (crontab, `/etc/cron.d/`, `systemctl list-timers --all`, `.github/workflows/`, processes).
+4. If drift is detected (dirty tree beyond handoff files, test failure, hash mismatch beyond the known typo, or monitor activity), investigate and document with concrete evidence. Do **not** mutate frozen files without explicit authorization and a separately versioned maintenance record.
 5. Update `HANDOFF.md` and this file with exact results (HEAD, test output, hashes/manifest status, monitor state, blockers, next step). Commit handoff updates as a handoff-only checkpoint if appropriate/authorized.
 
 **Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Do not restart the 06:00Z loop or launch nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized for a separately versioned experiment.
+
+**If you ever want to do real research work instead of maintenance:** the frozen baseline is negative-net and fully documented (`data/FEASIBILITY_REPORT.md`, `artifacts/`, `research_state/`). Any new experiment must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0, must not overwrite frozen files, and must follow the guardrails in `AGENTS.md` (free data only, no optimization before the untouched baseline is reported, chronological splits, gross+net reporting). Start by re-reading `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
 (End of file - total 26 lines)
