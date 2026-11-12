@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `7614b2a` (`main...origin/main`, clean and up to date with origin; one new checkpoint commit `7614b2a` vs prior `5cd5b16`, touching only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md; tree clean, up to date with origin). No frozen strategy/config/raw/artifact drift detected.
-- **Timestamp (UTC)**: 2026-11-12T05:00:13Z
-- **Last re-verification (UTC)**: 2026-11-12T05:00:13Z (maintenance re-verification this session)
+- **HEAD**: `87710f9` (`main...origin/main`, clean and up to date with origin; handoff-only checkpoint commit `87710f9` vs prior `7614b2a`, touching only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md; tree clean, up to date with origin, `git fetch --dry-run` no remote changes). No frozen strategy/config/raw/artifact drift detected.
+- **Timestamp (UTC)**: 2026-11-12T05:01:38Z
+- **Last re-verification (UTC)**: 2026-11-12T05:01:38Z (maintenance re-verification this session)
 
 ## Research status (frozen)
 
@@ -10,7 +10,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, recomputed and verified 2026-11-12T05:00:13Z — 20/20 match)
+## SHA-256 manifest (20 key files, recomputed and verified 2026-11-12T05:01:38Z — 20/20 match)
 
 | File | SHA-256 |
 |---|---|
@@ -47,7 +47,9 @@
 - **2026-11-12T04:59:10Z**: maintenance re-verification complete at HEAD `7614b2a` (checkpoint commit vs prior `5cd5b16`, handoff-only). Tests **75 passed in 0.77s**. 20/20 hashes matched. Monitor unchanged. No cron/timers/workflows/processes. 06:00Z loop stopped. No frozen files modified.
 - **2026-11-12T05:00:13Z (this session)**: maintenance re-verification complete at HEAD `7614b2a` (clean `main...origin/main`, `git fetch --dry-run` no remote changes, `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 0.70s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` manifest transcription typo noted above; on-disk/git-HEAD content `dddaefa…` unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → 17 OS timers only, no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo daemons only — no duplicate research workflows/processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only, to be committed as checkpoint).
 
-- **Test status**: full suite **75 passed in 0.70s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). No regressions.
+- **2026-11-12T05:01:38Z (this session)**: maintenance re-verification complete at HEAD `87710f9` (handoff-only checkpoint commit vs prior `7614b2a`, touching only HANDOFF.md/INITIAL_TASK_FOR_NEXT_AGENT.md; `git status --short --branch` clean `main...origin/main`, `git fetch --dry-run` no remote changes, `git diff origin/main --stat` empty). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines, unchanged), `PROMPT.md`, `AGENTS.md`. Full suite **75 passed in 1.02s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). Recomputed 20/20 manifest SHA-256 hashes: **20/20 matched** — no drift (known `artifacts/metrics_axb0306_full.json` manifest transcription typo noted above; on-disk/git-HEAD content `dddaefa…` unchanged). Monitor `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00, SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f`, axb0306 CME OHLC capped at 2026-04-15, candidates unchanged). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); `systemctl list-timers --all` → no orb/kilo/research/data timers; only `.github/workflows/main.yml`; observed processes OS/kilo daemons only — no duplicate research workflows/processes. 06:00Z loop remains stopped. No frozen files modified. Handoff/initial-task updated (handoff-only, to be committed as checkpoint).
+
+- **Test status**: full suite **75 passed in 1.02s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, throwaway venv `/tmp/kilo-verify-venv` with `pytest`+`pandas`). No regressions.
 
 ## Standing constraints
 
