@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T12:55:47Z (completed bounded state check; refreshed durable files).
-**HEAD:** `125376a` (= origin/main, clean `main...origin/main`). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T12:58:01Z (completed bounded state check; refreshed durable files).
+**HEAD:** `91eb5a561` (= origin/main, clean `main...origin/main`). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T12:55:47Z — clean tree, HEAD == origin/main (`125376a`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96`.
+**Last bounded state check:** 2026-11-13T12:58:01Z — clean tree, HEAD == origin/main (`91eb5a561`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96`.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -46,9 +46,9 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T12:55:47Z)
+## Prior task (completed 2026-11-13T12:58:01Z)
 
-Read prior durable handoff/task (`HANDOFF.md` at HEAD `e419896`), ran bounded state check (clean tree, HEAD == origin/main `125376a`, strategy SHA `6d3258c3…`, net -$31,637.98 / -$626,525.96) — state matched terminal record. No frozen/research/data/artifact files touched; durable files refreshed only; no commit added.
+Read prior durable handoff/task (`HANDOFF.md` at HEAD `125376a`), ran bounded state check (clean tree, HEAD == origin/main `91eb5a561`, strategy SHA `6d3258c3…`, net -$31,637.98 / -$626,525.96) — state matched terminal record. No frozen/research/data/artifact files touched; durable files refreshed only; no commit added.
 
 ## Constraints
 
