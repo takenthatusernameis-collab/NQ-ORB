@@ -1,7 +1,7 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T09:50:04Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
-**HEAD:** `05baf01` (clean `main...origin/main`, HEAD == origin/main). Working tree: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` modified (uncommitted) by this session. No research/data/config/artifact changes. **No commit added.**
+**Session:** 2026-11-13T09:51:37Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
+**HEAD:** `2fc019a` (= origin/main, clean `main...origin/main` at session start). Working tree: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` modified (uncommitted) by this session. No research/data/config/artifact changes. **No commit added.**
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
 **Last full sanity check:** 2026-11-13T09:44:56Z — 75 passed (0.91s), 20/20 manifest matched. This session: branch/hash/tree confirmed only (no re-run, to avoid maintenance loop).
 
@@ -9,8 +9,8 @@
 
 **Do not run another maintenance re-verification loop.** The research task is COMPLETE and the frozen baseline is final and negative-net:
 
-- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, net **-$31,637.98**, PF 0.492 (artifacts/metrics_axb0306_full.json).
-- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, net **-$626,525.96**, PF 0.227 (artifacts/metrics_kaggle.json).
+- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, net **-$31,637.98**, PF 0.492 (`artifacts/metrics_axb0306_full.json`).
+- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, net **-$626,525.96**, PF 0.227 (`artifacts/metrics_kaggle.json`).
 - Chronological train/val/test splits and date-based walk-forward are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate and observed rates are below that. Cost-sensitivity grid (slip ×0.5–2.0, cost ×0.8–1.2) stays negative.
 
 The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
@@ -28,9 +28,9 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T09:50:04Z)
+## Prior task (completed 2026-11-13T09:51:37Z)
 
-Terminal-state confirmation at HEAD `05baf01` (= origin/main, clean `main...origin/main`, clean working tree): read prior agent task from durable handoff (prior task completed at HEAD `a09f0d74`); confirmed `git show --stat 05baf01` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite last verified **75 passed in 0.91s**; 20/20 manifest matched; re-read both baseline metrics files and confirmed the reported net/PF. No frozen/research files touched; **no commit added**. `HANDOFF.md` consolidated/session-log appended and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
+Terminal-state confirmation at HEAD `2fc019a` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff (prior task completed at HEAD `05baf01`); confirmed `git show --stat 2fc019a` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. No frozen/research files touched, no tests/manifest rerun (avoids maintenance loop; last full 75 passed, 20/20 on 2026-11-13T09:44:56Z), **no commit added**. `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
 
 ## Constraints
 
