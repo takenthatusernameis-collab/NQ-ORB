@@ -1,13 +1,13 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T23:08:09Z. **Prior agent task:** completed (read durable handoff/strategy/prompt, confirmed terminal state and frozen artifacts/reports present, refreshed `HANDOFF.md` + this file). **HEAD at start:** `c40c5c6` (origin/main; transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-13T23:09:08Z. **Prior agent task:** completed (read durable handoff/strategy/prompt, verified terminal state and frozen artifacts, refreshed `HANDOFF.md` + this file). **HEAD at start:** `861c0f5` (origin/main; transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
 2. Do **not** run another maintenance re-verification: no test suite, no manifest re-hash, no free-data monitor poll, no checkpoint commit, no workflow/controller edits.
 3. Report the terminal state and stop:
-   - Research complete; frozen baseline final and negative-net; free-data search exhausted (`data/FEASIBILITY_REPORT.md`); maintenance loop diagnosed.
+   - Research complete; frozen baseline final and negative-net; free-data search exhausted (`data/FEASIBILITY_REPORT.md`); maintenance loop diagnosed (`.github/workflows/main.yml` cron `*/5 * * * *` produces only checkpoint commits).
    - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), gross -$7,662, net **-$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80.
    - Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), gross -$140,899, net **-$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56.
    - Chronological train/val/test: -$448,765.02 / -$66,243.22 / -$111,517.72; date-based walk-forward also all negative. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate, observed below that.
@@ -23,8 +23,8 @@
 ## Verified state (this session)
 
 - Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged).
-- HEAD at start `c40c5c6` (origin/main). Durable handoff files refreshed this session.
-- Frozen artifacts/reports confirmed present: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `research_state/1m_audit_{axb0306,kaggle}.json`, `data/FEASIBILITY_REPORT.md`.
+- HEAD at start `861c0f5` (origin/main); working tree clean. Checkpoint loop still active (`*/5` cron).
+- Frozen artifacts/reports confirmed present and consistent with handoff: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `research_state/1m_audit_{axb0306,kaggle}.json`, `data/FEASIBILITY_REPORT.md`.
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session. No commit made.
 
 ## Constraints
