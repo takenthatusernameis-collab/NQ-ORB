@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T23:36:27Z. **Prior agent task:** completed (read durable handoff, verified frozen numbers against on-disk JSON read-only, confirmed clean tree + checkpoint loop, refreshed `HANDOFF.md` + this file). **HEAD at start:** `004224d` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-13T23:37:52Z. **Prior agent task:** completed (read durable handoff and frozen artifacts, confirmed terminal state, refreshed `HANDOFF.md` + this file). **HEAD at start:** `b1b0233` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -22,8 +22,8 @@
 
 ## Verified state (this session)
 
-- Frozen figures re-checked against JSON: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json` (incl. `chronological_splits`), `artifacts/walk_forward.json` — all match the handoff (axb0306 net -$31,637.98, PF 0.4917; Kaggle net -$626,525.96, PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72; 8/8 walk-forward windows negative).
-- HEAD at start `b245cf5`; working tree clean and in sync with `origin/main` (0 ahead / 0 behind). Checkpoint loop active (`*/5` cron).
+- Frozen figures re-checked against JSON (read-only): `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json` — axb0306 net -$31,637.98, PF 0.4917; Kaggle net -$626,525.96, PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72.
+- HEAD at start `b1b0233`; working tree clean and in sync with `origin/main` (0 ahead / 0 behind). Checkpoint loop active (`*/5` cron).
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session. No commit made.
 
 ## Constraints

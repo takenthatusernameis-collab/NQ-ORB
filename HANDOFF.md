@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `004224d` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
-- **Timestamp (UTC)**: 2026-11-13T23:36:27Z
-- **This session**: read `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed the prior agent task is complete (terminal state — research complete, frozen baseline final, negative-net). Verified frozen numbers against on-disk JSON (read-only): axb0306 net -$31,637.98 / PF 0.4917; Kaggle net -$626,525.96 / PF 0.2271 — all match. Confirmed working tree clean and in sync with `origin/main`; checkpoint-loop diagnosis unchanged. No tests re-run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
+- **HEAD**: `b1b0233` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
+- **Timestamp (UTC)**: 2026-11-13T23:37:52Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and frozen metric artifacts; confirmed the prior agent task is complete (terminal state — research complete, frozen baseline final, negative-net). Verified frozen numbers against on-disk JSON (read-only): axb0306 net -$31,637.98 / PF 0.4917; Kaggle net -$626,525.96 / PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72 — all match. Confirmed working tree clean and in sync with `origin/main`; checkpoint-loop diagnosis unchanged. No tests re-run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
 
 ## TERMINAL STATE — READ FIRST
 
