@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e611840` (= origin/main, clean `main...origin/main`, working tree clean at session start). Controller checkpoints advanced HEAD beyond the prior recorded `5aab917`; no research/data/config/artifact files changed by this session. This session performed a single one-time terminal-state confirmation (no tests/manifest rerun — prior full check 2026-11-13T10:48:44Z already completed; not a recurring loop).
-- **Timestamp (UTC)**: 2026-11-13T10:59:11Z
-- **Last sanity check (UTC)**: 2026-11-13T10:48:44Z (prior session) — full suite **75 passed in 0.98s**; 20/20 manifest SHA-256 hashes recomputed and matched. This session (2026-11-13T10:59:11Z): confirmed HEAD `e611840` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, baseline re-confirmed from canonical artifacts (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; no commit added by this session. Durable files refreshed in working tree only.
+- **HEAD**: `5024077` (= origin/main, clean `main...origin/main`, working tree clean at session start and end). No research/data/config/artifact files changed by this session.
+- **Timestamp (UTC)**: 2026-11-13T11:01:40Z
+- **Last sanity check (UTC)**: 2026-11-13T11:01:40Z (this session) — full suite **75 passed in 1.02s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`); 20/20 manifest SHA-256 hashes recomputed and matched. `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Baseline re-confirmed from canonical artifacts (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added** by this session. Durable files refreshed in working tree only.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -11,7 +11,7 @@
 **This repository is in a degenerate maintenance loop and it must be broken.** Evidence:
 - The `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation.
 - Each Kilo session performs an identical "maintenance re-verification" (tests + hash manifest + monitor check) and the workflow commits a `chore(kilo): checkpoint agent session` checkpoint.
-- Since 2026-11-01 there have been **0 real research commits**. All ~1030 commits since 2026-11-08 are checkpoints / handoff re-verifications / diagnostics captures (thousands are `chore(kilo): checkpoint agent session`).
+- Since 2026-11-01 there have been **0 real research commits** (last substantive research commits: `5fab764` and `ce861a2`, both 2026-10-31). As of 2026-11-13T11:01:40Z there are **2,501 commits since 2026-11-01**, of which **2,207** are `chore(kilo): checkpoint agent session`; 984 commits since 2026-11-08 are all checkpoints. All remaining non-checkpoint commits are handoff re-verification, diagnostics-capture, or free-data-monitor bookkeeping — none add research evidence.
 - The `HANDOFF.md` session log and commit history are bloating with near-identical entries that add no information. This handoff was consolidated (2026-11-13T09:44:56Z) to remove that bloat while preserving all substantive facts.
 
 **Correct next action is NOT another re-verification.** The research is done and verified. Re-running the maintenance check in perpetuity consumes the workflow budget and produces no evidence. The proper way to stop the loop is to change the automation (`main.yml` schedule or a terminal no-op state), which **requires explicit user authorization** per `AGENTS.md` ("Do not edit `.github/workflows/main.yml` … unless the user explicitly authorizes that exact change"). No such authorization has been given. Until it is, this file records the terminal state so the next agent does not repeat the loop.
@@ -51,13 +51,12 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Recomputed and verified 20/20 match 2026-11-13T09:44:56Z.
+**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Recomputed and verified 20/20 match 2026-11-13T11:01:40Z.
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T10:59:11Z (this session)**: Terminal-state confirmation at HEAD `e611840` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
-- **2026-11-13T10:57:48Z (prior session)**: Terminal-state confirmation at HEAD `5aab917`; same terminal outcome, no rerun, no commit.
-- **2026-11-13T10:48:44Z–10:56:22Z (consolidated prior sessions)**: Series of terminal-state confirmations at advancing controller-checkpoint HEADs; each confirmed clean tree/branch and unchanged strategy hash, no new evidence; last full check 2026-11-13T10:48:44Z (75 passed, 20/20). No commits by those sessions.
+- **2026-11-13T11:01:40Z (this session)**: Terminal-state confirmation at HEAD `5024077` (= origin/main, clean `main...origin/main`, working tree clean at start and end). Prior task COMPLETE (terminal state). Full suite re-run once: **75 passed in 1.02s**; 20/20 manifest hashes matched; `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). Quantified commit bloat: 2,501 commits since 2026-11-01, 2,207 checkpoints, 0 research commits. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
+- **2026-11-13T10:48:44Z–10:59:11Z (consolidated prior sessions)**: Series of terminal-state one-time confirmations at advancing controller-checkpoint HEADs (through `e611840`); each confirmed clean tree/branch and unchanged strategy hash, no new evidence. Last full check before this session 2026-11-13T10:48:44Z (75 passed, 20/20). No commits by those sessions.
 - **2026-11-13T04:37Z–09:43Z (consolidated prior sessions, ~60+ near-identical)**: Long series of terminal-state one-time confirmations at advancing controller-checkpoint HEADs (through `9c0a984`). Each confirmed clean state and unchanged strategy SHA; most re-ran suite once (**75 passed**, 0.55–0.98s) and 20/20 manifest; some relied on last recorded check. No new evidence, no commits. Consolidated to reduce handoff bloat.
 - **2026-11-13T01:04:05Z**: Maintenance re-verification at HEAD `6c08091`: 75 passed, 20/20 manifest matched. Diagnosed degenerate maintenance loop (0 real research commits since 2026-11-01; thousands of checkpoint commits; workflow `*/5 * * * *`). Recorded terminal state.
 - **2026-11-01 (multiple sessions)**: Independent re-verification runs; baselines re-run byte-identical (axb0306 net -$31,637.98 PF 0.492; Kaggle net -$626,525.96 PF 0.227); independent signal-funnel cross-check matched engine (688 trades); full suite 66 passed; free-data sweep found no new source.
@@ -65,7 +64,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T10:48:44Z). Manifest 20/20 matched (2026-11-13T10:48:44Z). This session (2026-11-13T10:59:11Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit by this session; HEAD `e611840` == origin/main.
+- Last full sanity check **75 passed in 1.02s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T11:01:40Z). Manifest 20/20 matched (2026-11-13T11:01:40Z). No new commit by this session; HEAD `5024077` == origin/main.
 
 ## Standing constraints
 

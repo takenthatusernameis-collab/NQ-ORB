@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T10:59:11Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
-**HEAD:** `e611840` (= origin/main, clean `main...origin/main` at session start). Working tree at session end: handoff files updated only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`). No research/data/config/artifact changes. **No commit added.**
+**Session:** 2026-11-13T11:01:40Z (this session — read prior agent task from durable handoff, confirmed terminal state with a fresh full check, refreshed durable files)
+**HEAD:** `5024077` (= origin/main, clean `main...origin/main` at start and end). Working tree at session end: handoff files updated only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`). No research/data/config/artifact changes. **No commit added.**
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last full sanity check:** 2026-11-13T10:48:44Z (prior session) — 75 passed (0.98s), 20/20 manifest matched. This session confirmed clean tree/branch and strategy hash only (no re-run).
+**Last full sanity check:** 2026-11-13T11:01:40Z — **75 passed in 1.02s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`), 20/20 manifest hashes matched.
 
 ## Status: TERMINAL
 
@@ -15,22 +15,28 @@
 
 The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
 
+## The repo is in a degenerate maintenance loop (evidence, 2026-11-13T11:01:40Z)
+
+- 2,501 commits since 2026-11-01; **2,207** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31). No commit since 2026-11-01 touches `.github/`.
+- The workflow `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with the generic prompt "Read the prior agent task from the durable handoff and complete it." That prompt is what causes every session to repeat the same verification.
+- Re-running tests/hashes every few minutes adds no evidence and only grows the repo.
+
 ## Next task (default prompt: "continue")
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. Confirm state is clean/expected (`git status --short --branch`). Optionally do **one** quick sanity check (e.g. `STRATEGY_RULES.txt` SHA `6d3258c3…`) — do not repeat/loop.
-3. Report the terminal state and stop: research complete, baseline final negative-net, free-data search exhausted.
+2. Confirm state is clean/expected (`git status --short --branch`) and `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged.
+3. Report the terminal state and stop: research complete, baseline final negative-net, free-data search exhausted, loop diagnosed.
 4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
-5. **Do not add another `chore(kilo): checkpoint agent session` commit.** History is already bloated with checkpoint/handoff commits. Leave the working tree as-is unless the user explicitly authorizes a commit or an automation change.
+5. **Do not add another `chore(kilo): checkpoint agent session` commit** and do not re-run the full suite/manifest unless something changed. History is already bloated. Leave the working tree as-is unless the user explicitly authorizes a commit or an automation change.
 
 ## If explicitly authorized by the user
 
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T10:59:11Z)
+## Prior task (completed 2026-11-13T11:01:40Z)
 
-Terminal-state confirmation at HEAD `e611840` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff; confirmed prior task COMPLETE. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
+Terminal-state confirmation at HEAD `5024077` (= origin/main, clean `main...origin/main`, clean working tree at start and end): read prior agent task from durable handoff; confirmed prior task COMPLETE. Ran the full suite once (**75 passed in 1.02s**) and recomputed the manifest (**20/20 match**); verified `STRATEGY_RULES.txt` SHA unchanged; re-confirmed the baseline from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). Quantified the commit bloat (2,501 commits since 2026-11-01; 2,207 checkpoints; 0 research). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
 
 ## Constraints
 
