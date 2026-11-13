@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T22:04:27Z. **Prior agent task:** completed (read durable handoff/strategy, confirmed terminal state from frozen artifacts, refreshed `HANDOFF.md` + this file). **HEAD:** `04d0fc1` (= origin/main, clean). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-13T22:05:14Z. **Prior agent task:** completed (read durable handoff/strategy, re-confirmed terminal state from frozen artifacts, strategy SHA-256, and live git state; refreshed `HANDOFF.md` + this file). **HEAD:** `e290d32` (= origin/main, clean). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -22,14 +22,14 @@
 
 ## Verified state (this session)
 
-- Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged).
-- Working tree: HEAD `cb0b3f7` (= origin/main, clean). Durable handoff files refreshed this session.
+- Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged, re-hashed live).
+- Working tree: HEAD `e290d32` (= origin/main, clean). Durable handoff files refreshed this session.
 - Frozen metrics (re-read from JSON this session): axb0306 60 trades / 42W/18L (70%) / gross -$7,662 / net -$31,637.98 / costs $23,975.98 / PF 0.4917 / max DD $37,491.80; Kaggle 688 trades / 446W/242L (64.8%) / gross -$140,899 / net -$626,525.96 / costs $485,626.96 / PF 0.2271 / max DD $626,994.56.
-- Since 2026-11-01T00:00:00Z: **2,706 commits**, **2,408** `chore(kilo): checkpoint agent session`, **2,439** `chore(kilo)`-prefixed; **0** real research commits.
+- Since 2026-11-01T00:00:00Z: **2,708 commits**, **2,410** `chore(kilo): checkpoint agent session`, **2,441** `chore(kilo)`-prefixed; **0** real research commits.
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session.
 
 ## Constraints
 
 Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Do not add commits without explicit user authorization.
 
-(End of file - total 33 lines)
+(End of file - total 35 lines)

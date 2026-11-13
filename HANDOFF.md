@@ -1,9 +1,9 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `04d0fc1` (= origin/main, clean).
-- **Timestamp (UTC)**: 2026-11-13T22:04:27Z
+- **HEAD**: `e290d32` (= origin/main, clean).
+- **Timestamp (UTC)**: 2026-11-13T22:05:14Z
 - **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; confirmed terminal state from frozen artifacts (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`) and git state; completed prior agent task (no remaining research work). Refreshed durable handoff files. No tests, manifest re-hash, monitor poll, or commits.
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; re-confirmed terminal state from frozen artifacts (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`), strategy SHA-256, and live git state; completed prior agent task (no remaining research work). Refreshed durable handoff files (consolidated). No tests, manifest re-hash, monitor poll, or commits.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -11,7 +11,7 @@
 
 **This repository is in a degenerate maintenance loop.**
 - `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and spawns a sequential Kilo session per activation; each activation commits `chore(kilo): checkpoint agent session`.
-- Since 2026-11-01T00:00:00Z: **2,706 commits**, of which **2,408** are `chore(kilo): checkpoint agent session` and **2,439** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
+- Since 2026-11-01T00:00:00Z: **2,708 commits**, of which **2,410** are `chore(kilo): checkpoint agent session` and **2,441** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
 - HEAD advances by checkpoint commits each session, so any count quoted here is already stale.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks or add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md` ("Do not edit `.github/workflows/main.yml` … unless the user explicitly authorizes that exact change"). No such authorization has been given.
