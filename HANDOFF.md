@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `9302b27` at session start (origin/main; only the controller's `chore(kilo): checkpoint agent session` commits advance it). Exact HEAD is transient due to the maintenance loop.
-- **Timestamp (UTC)**: 2026-11-13T23:07:35Z
-- **This session**: read `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed terminal state — research complete, frozen baseline final and negative-net, free-data search exhausted. No tests, manifest re-hash, monitor poll, workflow/controller edits, or commit. Durable handoff files remain current.
+- **HEAD**: `c40c5c6` at session start (origin/main; only the controller's `chore(kilo): checkpoint agent session` commits advance it). Exact HEAD is transient due to the maintenance loop.
+- **Timestamp (UTC)**: 2026-11-13T23:08:09Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed terminal state and frozen artifacts/reports present — research complete, frozen baseline final and negative-net, free-data search exhausted. No tests, manifest re-hash, monitor poll, workflow/controller edits, or commit. Durable handoff files refreshed.
 
 ## TERMINAL STATE — READ FIRST
 
