@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `45f50021a24e7633259ce6eea397dd35705011ba` (= origin/main, clean `main...origin/main` at 2026-11-13T14:05:40Z; 0 ahead / 0 behind). Advanced from `90108e0800dd` by cron checkpoint commits; all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
-- **Timestamp (UTC)**: 2026-11-13T14:05:40Z
-- **Last bounded state check (UTC)**: 2026-11-13T14:05:40Z (this session). Clean tree, HEAD == origin/main (`45f50021a2`, 0/0 vs origin), strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` (read directly from `artifacts/metrics_{axb0306_full,kaggle}.json`, no re-run). No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**. Prior agent task (terminal-state report) complete; next-agent initial task written in `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- **HEAD**: `128b11f9e6d0e442c80a4a3d26f92b2faffcc71b` (= origin/main, clean `main...origin/main` at 2026-11-13T16:45:02Z; 0 ahead / 0 behind). Advanced from `45f50021a2` by `b557c26 chore(kilo): checkpoint agent session` and `128b11f chore: capture completed workflow run diagnostics` (the latter appends only to `research_state/workflow_run_diagnostics.jsonl`); all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
+- **Timestamp (UTC)**: 2026-11-13T16:45:02Z
+- **Last bounded state check (UTC)**: 2026-11-13T16:45:02Z (this session). Clean tree, HEAD == origin/main (`128b11f9`, 0/0 vs origin), strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` (read directly from `artifacts/metrics_{axb0306_full,kaggle}.json`, no re-run). 20/20 manifest SHA-256 hashes re-verified against the recorded manifest. No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**. Prior agent task (terminal-state report + durable-file refresh) complete; next-agent initial task written in `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - The `*/5 * * * *` loop is still active; stopping it requires explicit user authorization (see below).
 
 ## TERMINAL STATE — READ FIRST
@@ -55,7 +55,8 @@
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T14:05:40Z (this session)**: Completed prior agent task (terminal-state report). Read `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified cheaply (no re-run): clean tree, HEAD `45f50021a2` == origin/main (0/0), strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` read from frozen artifacts. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification, no commit; durable handoff files refreshed only.
+- **2026-11-13T16:45:02Z (this session)**: Completed prior agent task (terminal-state report + durable-file refresh). Read `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified cheaply (no re-run): clean tree, HEAD `128b11f9` == origin/main (0/0), strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` read from frozen artifacts, 20/20 manifest SHA-256 hashes matched. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification run, no commit; durable handoff files refreshed only.
+- **2026-11-13T14:05:40Z (prior session)**: Completed prior agent task (terminal-state report). Read `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`; verified cheaply (no re-run): clean tree, HEAD `45f50021a2` == origin/main (0/0), strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` read from frozen artifacts. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification, no commit; durable handoff files refreshed only.
 - **2026-11-13T13:56:13Z–2026-11-13T12:49:00Z (consolidated ~11 near-identical)**: Series of terminal-state confirmations at advancing controller-checkpoint HEADs (`90108e0800dd` → `c72f76c`); each verified clean tree, HEAD == origin/main, unchanged strategy SHA `6d3258c3…`, and net `-31637.98` / `-626525.96`. No new evidence, no valuable re-verification, no commits. Consolidated to reduce bloat.
 - **2026-11-13T12:45:41Z–2026-11-13T11:49:31Z**: Series of terminal-state confirmations at advancing controller-checkpoint HEADs (`b84b319` → `dbca432`); each verified clean state, unchanged strategy SHA, and canonical metrics. Most did not re-run the suite (last full: **75 passed in 0.91s** at 2026-11-13T11:53:44Z); 20/20 manifest matched at 2026-11-13T11:01:40Z. No new evidence, no commits. Consolidated to reduce bloat.
 - **2026-11-13T04:37Z–11:01Z (consolidated ~60+ near-identical)**: Terminal-state confirmations at advancing checkpoint HEADs (through `9c0a984`); each confirmed clean state and unchanged strategy SHA. No new evidence, no commits. Consolidated.
@@ -65,7 +66,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.88s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T12:48:19Z). Manifest 20/20 matched at the same time. HEAD `c775b17` == origin/main; no commit. **Not re-run this session** (no evidence value; terminal state unchanged).
+- Last full sanity check **75 passed in 0.88s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T12:48:19Z). Manifest 20/20 matched at the same time. HEAD `c775b17` == origin/main; no commit. **Not re-run this session** (no evidence value; terminal state unchanged). Manifest re-verified 20/20 at 2026-11-13T16:45:02Z (this session, HEAD `128b11f9`).
 
 ## Standing constraints
 

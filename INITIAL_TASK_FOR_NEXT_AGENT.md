@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T14:05:40Z. Prior agent task complete (terminal-state report; durable files refreshed). **HEAD:** `45f50021a24e7633259ce6eea397dd35705011ba` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T16:45:02Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `128b11f9e6d0e442c80a4a3d26f92b2faffcc71b` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T14:05:40Z — clean tree, HEAD == origin/main (`45f50021a2`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run).
+**Last bounded state check:** 2026-11-13T16:45:02Z — clean tree, HEAD == origin/main (`128b11f9`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run). 20/20 manifest SHA-256 hashes matched.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -16,7 +16,7 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 
 ## The repo is in a degenerate maintenance loop (evidence)
 
-- 2,509 commits since 2026-11-01; **2,219** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
+- 2,509+ commits since 2026-11-01; **2,219+** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
 - `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with a generic prompt, causing repeated verification. Re-running tests/hashes adds no evidence and only grows the repo.
 
 ## Your task (default prompt: "continue")
@@ -36,9 +36,9 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T14:05:40Z)
+## Prior task (completed 2026-11-13T16:45:02Z)
 
-Reported terminal state per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified cheaply (clean tree, HEAD `45f50021a2` == origin/main 0/0, strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` read from frozen artifacts). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification run. Durable files refreshed only; no commit added.
+Reported terminal state per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified cheaply (clean tree, HEAD `128b11f9` == origin/main 0/0, strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626525.96` read from frozen artifacts, 20/20 manifest SHA-256 hashes matched). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification run. Durable files refreshed only; no commit added.
 
 ## Constraints
 
