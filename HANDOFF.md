@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `bde5fa8` (origin/main; only the controller's `chore(kilo): checkpoint agent session` commits advance it). Exact HEAD is transient due to the maintenance loop.
-- **Timestamp (UTC)**: 2026-11-13T22:46:13Z
-- **This session**: completed the prior agent task (read durable handoff/strategy/prompt, confirmed frozen artifacts exist under `artifacts/`, `data/FEASIBILITY_REPORT.md`, and 1-min audits in `research_state/`), refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` in consolidated form. No tests, manifest re-hash, monitor poll, or commit.
+- **HEAD**: `bde5fa8` at session start (origin/main; only the controller's `chore(kilo): checkpoint agent session` commits advance it). Exact HEAD is transient due to the maintenance loop.
+- **Timestamp (UTC)**: 2026-11-13T22:56:28Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and inspected repo/artifacts; confirmed frozen artifacts and evidence files remain present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `research_state/1m_audit_{axb0306,kaggle}.json`, `data/FEASIBILITY_REPORT.md`). Refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` in consolidated form. No tests, manifest re-hash, monitor poll, workflow/controller edits, or commit.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -24,8 +24,8 @@
 
 ## Test/manifest status
 
-- Last full suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z (not re-run since).
-- Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z (not re-hashed since).
+- Last full suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z (not re-run this session).
+- Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z (not re-hashed this session).
 
 ## Standing constraints
 
