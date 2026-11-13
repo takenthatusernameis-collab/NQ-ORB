@@ -1,7 +1,7 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T10:56:22Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
-**HEAD:** `1e41eee` (= origin/main, clean `main...origin/main` at session start). Working tree: clean at start; this session edited only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research/data/config/artifact changes. **No commit added.**
+**Session:** 2026-11-13T10:57:48Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
+**HEAD:** `5aab917` (= origin/main, clean `main...origin/main` at session start). Working tree at session end: handoff files updated only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`). No research/data/config/artifact changes. **No commit added.**
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
 **Last full sanity check:** 2026-11-13T10:48:44Z (prior session) — 75 passed (0.98s), 20/20 manifest matched. This session confirmed clean tree/branch and strategy hash only (no re-run).
 
@@ -15,10 +15,10 @@
 
 The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
 
-## Next task (default prompt is the generic "continue")
+## Next task (default prompt: "continue")
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. Confirm the tree is clean or only contains expected handoff-only working-tree edits (`git status --short --branch`). Optionally do **one** quick sanity check (`STRATEGY_RULES.txt` SHA `6d3258c3…`) — do not repeat/loop.
+2. Confirm state is clean/expected (`git status --short --branch`). Optionally do **one** quick sanity check (e.g. `STRATEGY_RULES.txt` SHA `6d3258c3…`) — do not repeat/loop.
 3. Report the terminal state and stop: research complete, baseline final negative-net, free-data search exhausted.
 4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
 5. **Do not add another `chore(kilo): checkpoint agent session` commit.** History is already bloated with checkpoint/handoff commits. Leave the working tree as-is unless the user explicitly authorizes a commit or an automation change.
@@ -28,9 +28,9 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T10:56:22Z)
+## Prior task (completed 2026-11-13T10:57:48Z)
 
-Terminal-state confirmation at HEAD `1e41eee` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff; confirmed prior task COMPLETE. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
+Terminal-state confirmation at HEAD `5aab917` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff; confirmed prior task COMPLETE. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
 
 ## Constraints
 

@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `1e41eee` (= origin/main, clean `main...origin/main`, working tree clean at session start). Controller checkpoints advanced HEAD beyond the prior recorded `2ebf049`; no research/data/config/artifact files changed by this session. This session performed a single one-time terminal-state confirmation (no tests/manifest rerun — prior full check 2026-11-13T10:48:44Z already completed; not a recurring loop).
-- **Timestamp (UTC)**: 2026-11-13T10:54:22Z
-- **Last sanity check (UTC)**: 2026-11-13T10:48:44Z (prior session) — full suite **75 passed in 0.98s**; 20/20 manifest SHA-256 hashes recomputed and matched. This session (2026-11-13T10:54:22Z): confirmed HEAD `1e41eee` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, baseline re-confirmed from canonical artifacts (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; no commit added by this session. Durable files refreshed in working tree only.
+- **HEAD**: `5aab917` (= origin/main, clean `main...origin/main`, working tree clean at session start). Controller checkpoints advanced HEAD beyond the prior recorded `1e41eee`; no research/data/config/artifact files changed by this session. This session performed a single one-time terminal-state confirmation (no tests/manifest rerun — prior full check 2026-11-13T10:48:44Z already completed; not a recurring loop).
+- **Timestamp (UTC)**: 2026-11-13T10:57:48Z
+- **Last sanity check (UTC)**: 2026-11-13T10:48:44Z (prior session) — full suite **75 passed in 0.98s**; 20/20 manifest SHA-256 hashes recomputed and matched. This session (2026-11-13T10:57:48Z): confirmed HEAD `5aab917` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, baseline re-confirmed from canonical artifacts (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; no commit added by this session. Durable files refreshed in working tree only.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -55,7 +55,8 @@
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T10:56:22Z (this session)**: Terminal-state confirmation at HEAD `1e41eee` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
+- **2026-11-13T10:57:48Z (this session)**: Terminal-state confirmation at HEAD `5aab917` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
+- **2026-11-13T10:56:22Z (prior session)**: Terminal-state confirmation at HEAD `1e41eee`; same terminal outcome, no rerun, no commit.
 - **2026-11-13T10:54:22Z (prior session)**: Terminal-state confirmation at HEAD `1e41eee` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior full check 2026-11-13T10:48:44Z). Baseline re-confirmed from artifacts: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
 - **2026-11-13T10:55:00Z (prior session, recorded pre-checkpoint advance)**: Terminal-state confirmation at recorded HEAD `2ebf049`; same terminal outcome, no rerun, no commit.
 - **2026-11-13T10:53:00Z (prior session)**: Terminal-state confirmation at HEAD `097058d`; same terminal outcome, no rerun, no commit.
@@ -72,7 +73,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T10:48:44Z). Manifest 20/20 matched (2026-11-13T10:48:44Z). This session (2026-11-13T10:54:22Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit by this session; HEAD `1e41eee` == origin/main.
+- Last full sanity check **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T10:48:44Z). Manifest 20/20 matched (2026-11-13T10:48:44Z). This session (2026-11-13T10:57:48Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit by this session; HEAD `5aab917` == origin/main.
 
 ## Standing constraints
 
