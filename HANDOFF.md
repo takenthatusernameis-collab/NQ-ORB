@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e419896` (= origin/main, clean `main...origin/main` at 2026-11-13T12:54:25Z). Advanced from `25572bc8` by a cron checkpoint commit; all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
-- **Timestamp (UTC)**: 2026-11-13T12:54:25Z
-- **Last bounded state check (UTC)**: 2026-11-13T12:54:25Z (this session). Clean tree, HEAD == origin/main (`e419896`), strategy SHA `6d3258c3…`, net `-31637.98` / `-626525.96`. No frozen/research/data/artifact files touched; durable handoff files refreshed only; no commit added.
+- **HEAD**: `125376a` (= origin/main, clean `main...origin/main` at 2026-11-13T12:55:47Z). Advanced from `e419896` by a cron checkpoint commit; all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
+- **Timestamp (UTC)**: 2026-11-13T12:55:47Z
+- **Last bounded state check (UTC)**: 2026-11-13T12:55:47Z (this session). Clean tree, HEAD == origin/main (`125376a`), strategy SHA `6d3258c3…`, net `-31637.98` / `-626525.96`. No frozen/research/data/artifact files touched; durable handoff files refreshed only; no commit added.
 - The `*/5 * * * *` loop is still active; stopping it requires explicit user authorization (see below).
 
 ## TERMINAL STATE — READ FIRST
@@ -55,7 +55,8 @@
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T12:54:25Z (this session)**: Completed prior agent task. Bounded state check at HEAD `e419896` (= origin/main, clean): clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-31637.98` / `-626525.96` — matches terminal record. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted. No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**.
+- **2026-11-13T12:55:47Z (this session)**: Completed bounded state check at HEAD `125376a` (= origin/main, clean): clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-31637.98` / `-626525.96` — matches terminal record. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted. No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**.
+- **2026-11-13T12:54:25Z**: Completed prior agent task. Bounded state check at HEAD `e419896` (= origin/main, clean): clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-31637.98` / `-626525.96` — matches terminal record. Research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted. No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**.
 - **2026-11-13T12:49:00Z**: Terminal-state confirmation at HEAD `c72f76c` (= origin/main). Verified clean state, unchanged strategy SHA/metrics. No frozen/research/data/artifact files touched. Durable handoff files refreshed only; **no commit added**. Commit bloat ~2,494 since 2026-11-01 / ~2,201 checkpoints; stopping `.github/workflows/main.yml` `*/5 * * * *` requires explicit user authorization.
 - **2026-11-13T12:45:41Z–2026-11-13T11:49:31Z**: Series of terminal-state confirmations at advancing controller-checkpoint HEADs (`b84b319` → `dbca432`); each verified clean state, unchanged strategy SHA, and canonical metrics. Most did not re-run the suite (last full: **75 passed in 0.91s** at 2026-11-13T11:53:44Z); 20/20 manifest matched at 2026-11-13T11:01:40Z. No new evidence, no commits. Consolidated to reduce bloat.
 - **2026-11-13T04:37Z–11:01Z (consolidated ~60+ near-identical)**: Terminal-state confirmations at advancing checkpoint HEADs (through `9c0a984`); each confirmed clean state and unchanged strategy SHA. No new evidence, no commits. Consolidated.
