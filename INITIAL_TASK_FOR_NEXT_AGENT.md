@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T16:52:49Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `715c60db6ea664f681961cf3b998a5bf9fe9608d` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T16:58:00Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `b354c4bd370b6ba5ffe05601a116dd2e6f48f539` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T16:52:49Z — clean tree, HEAD == origin/main (`715c60d`), strategy SHA `6d3258c3…` matched by `sha256sum`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run). Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; not re-hashed this session.
+**Last bounded state check:** 2026-11-13T16:58:00Z — clean tree, HEAD == origin/main (`b354c4b`), strategy SHA `6d3258c3…` matched by `sha256sum`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run). Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; not re-hashed this session.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -24,7 +24,7 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 Do this once, in order, and stop:
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. **Do not run another bounded state check or re-verification.** The terminal state is already confirmed and recorded.
+2. **Do not run another bounded state check or re-verification.** The terminal state is already confirmed and recorded. If you verify anything, limit it to reading `git status`/`git rev-parse HEAD` and the frozen `artifacts/metrics_*.json`; do not re-run the test suite, re-hash the manifest, or poll the free-data monitor.
 3. Report the terminal state and stop:
    - research complete; frozen baseline final negative-net; free-data search exhausted; loop diagnosed.
    - Do **not** add another `chore(kilo): checkpoint agent session` commit and do **not** re-run tests/hashes/monitor. Leave the working tree as-is.
@@ -36,12 +36,12 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T16:52:49Z)
+## Prior task (completed 2026-11-13T16:58:00Z)
 
-Confirmed terminal state unchanged per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified cheaply (clean tree, HEAD `715c60d` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-31637.98` / `-626,525.96` read from frozen artifacts). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
+Confirmed terminal state unchanged per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified once (clean tree, HEAD `b354c4b` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
 
 ## Constraints
 
 Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized otherwise. No commits without explicit user authorization. Avoid checkpoint/handoff commit bloat.
 
-(End of file - total 57 lines)
+(End of file - total 54 lines)
