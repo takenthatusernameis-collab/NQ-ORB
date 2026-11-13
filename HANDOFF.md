@@ -1,7 +1,7 @@
 # NQ ORB — Durable handoff
 
 - **HEAD**: `1236eda` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind).
-- **Timestamp (UTC)**: 2026-11-13T20:58:46Z
+- **Timestamp (UTC)**: 2026-11-13T21:00:11Z
 - **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
 
 ## TERMINAL STATE — READ FIRST
