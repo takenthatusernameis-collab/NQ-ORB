@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T13:56:13Z (completed prior task: bounded state check; refreshed durable files).
+**Session:** 2026-11-13T13:56:49Z (confirmed terminal state; no re-verification run). Durable files refreshed.
 **HEAD:** `90108e0800dd08224ef1afd3fd691755c47069cc` (= origin/main, clean `main...origin/main`). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
 **Last bounded state check:** 2026-11-13T13:56:13Z — clean tree, HEAD == origin/main (`90108e0800dd`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96`.
@@ -25,20 +25,11 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 Do this once, in order, and stop:
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. Run **only** this bounded state check (do **not** run the full suite, manifest recomputation, or free-data monitor):
-
-   ```bash
-   git status --short --branch
-   git rev-parse HEAD origin/main
-   sha256sum STRATEGY_RULES.txt
-   python3 -c "import json;[print(f, json.load(open(f))['net_pnl']) for f in ('artifacts/metrics_axb0306_full.json','artifacts/metrics_kaggle.json')]"
-   ```
-
-3. If the state matches the record above (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96`), **report the terminal state and stop**:
+2. **Do not run another bounded state check or re-verification.** The terminal state is already confirmed and recorded.
+3. Report the terminal state and stop:
    - research complete; frozen baseline final negative-net; free-data search exhausted; loop diagnosed.
    - Do **not** add another `chore(kilo): checkpoint agent session` commit and do **not** re-run tests/hashes/monitor. Leave the working tree as-is.
-4. If the state does **not** match (new commits/artifacts/data, changed hashes, or an explicit user request/authorization), stop and report the discrepancy first; do not silently re-verify or overwrite anything.
-5. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
+4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
 
 ## If the user explicitly authorizes a change
 
@@ -46,12 +37,12 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T13:56:13Z)
+## Prior task (completed 2026-11-13T13:56:49Z)
 
-Read prior durable handoff/task, ran the prescribed bounded state check (clean tree, HEAD == origin/main `90108e0800dd`, strategy SHA `6d3258c3…`, net -$31,637.98 / -$626,525.96) — state matched terminal record. No frozen/research/data/artifact files touched; durable files refreshed only; no commit added.
+Confirmed terminal state. Research COMPLETE, frozen baseline final negative-net, free-data search exhausted. No re-verification run (adds no evidence). Durable files refreshed only; no commit added.
 
 ## Constraints
 
 Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized otherwise. No commits without explicit user authorization. Avoid checkpoint/handoff commit bloat.
 
-(End of file - total 55 lines)
+(End of file - total 57 lines)
