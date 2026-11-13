@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T19:05:30Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `ef5b9711721e425d1cd322ac7881ec72a6fedb47` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `7cd47f1470a100d847a42bec55b9fadd55ece990` by a controller checkpoint commit, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T19:06:29Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `aa19ef3b29d042a126a4125532b7c6fde909488b` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `ef5b9711721e425d1cd322ac7881ec72a6fedb47` by a controller checkpoint commit mid-session, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active (new checkpoint landed during this session) and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T19:05:30Z — clean tree, HEAD == origin/main (`ef5b971`), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades, PF 0.4917) and `-$626,525.96` (688 trades, PF 0.2271) read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json` (not re-run). No test suite run, no manifest re-hash (last 20/20 at 2026-11-13T16:50:32Z). Checkpoint count since 2026-11-01T00:00:00Z: 2,675 total / 2,377 `chore(kilo)` (0 real research commits).
+**Last bounded state check:** 2026-11-13T19:06:29Z — clean tree, HEAD == origin/main (`aa19ef3`), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades, PF 0.4917) and `-$626,525.96` (688 trades, PF 0.2271) read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json` (not re-run). No test suite run, no manifest re-hash (last 20/20 at 2026-11-13T16:50:32Z). Checkpoint count since 2026-11-01T00:00:00Z: 2,676 total / 2,410 `chore(kilo)` (0 real research commits).
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -36,9 +36,9 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T19:05:30Z)
+## Prior task (completed 2026-11-13T19:06:29Z)
 
-Confirmed terminal state unchanged per prior task. Verified once (clean tree, HEAD `ef5b971` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,675 total / 2,377 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
+Confirmed terminal state unchanged per prior task. Verified once (clean tree, HEAD `aa19ef3` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,676 total / 2,410 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
 
 ## Constraints
 
