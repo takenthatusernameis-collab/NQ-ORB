@@ -1,14 +1,14 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `b1b0233` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
-- **Timestamp (UTC)**: 2026-11-13T23:37:52Z
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and frozen metric artifacts; confirmed the prior agent task is complete (terminal state — research complete, frozen baseline final, negative-net). Verified frozen numbers against on-disk JSON (read-only): axb0306 net -$31,637.98 / PF 0.4917; Kaggle net -$626,525.96 / PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72 — all match. Confirmed working tree clean and in sync with `origin/main`; checkpoint-loop diagnosis unchanged. No tests re-run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
+- **HEAD**: `212868e` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
+- **Timestamp (UTC)**: 2026-11-13T23:45:00Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; re-verified the frozen figures directly from on-disk JSON (read-only); confirmed the prior agent task is complete (terminal state — research complete, frozen baseline final, negative-net). No tests run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE. The frozen baseline is final and negative-net.** No remaining research work is available on the current free-data ceiling (`data/FEASIBILITY_REPORT.md`: free-source search exhausted through 2026-11-03; every candidate is paid, key-gated, daily-only, or NQ big-contract rather than MNQ).
 
-**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01: **2,510 commits**, of which **2,220** are checkpoint commits — **0** research. Last substantive research commit: `5fab764`, 2026-10-31. ~473 `free_data_monitor_*` files in `research_state/` are the same loop's byproduct.
+**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01: **2,505 commits**, of which **2,217** are checkpoint commits — **0** research. Last substantive research commit: `5fab764`, 2026-10-31. ~483 `free_data_monitor_*` files in `research_state/` are the same loop's byproduct.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md`. None has been given.
 
