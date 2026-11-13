@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T01:52:16Z (terminal-state sanity check)
-**HEAD at check start:** `6c08091` (clean `main...origin/main`). No research/data/config/artifact drift observed.
-**Tests:** 75 passed in 0.91s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (venv with `pytest` 9.2.0 + `pandas` 3.1.1).
+**Session:** 2026-11-13T01:53:33Z (terminal-state sanity check)
+**HEAD at check start:** `3fb4304` (clean `main...origin/main`). No research/data/config/artifact drift observed.
+**Tests:** 75 passed in 0.94s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (venv with `pytest` 9.2.0 + `pandas` 3.1.1).
 **Frozen baseline:** `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (v1.0, unchanged). Research complete; baseline negative net (axb0306 -$31,637.98, 60 trades, PF 0.492; kaggle -$626,525.96, 688 trades, PF 0.227). Free-data ceiling exhausted (`data/FEASIBILITY_REPORT.md`). Monitor unchanged (`research_state/free_data_monitor_20261108T060017Z.json`, checked 2026-11-08T06:00:17Z).
 
 ## Status
@@ -20,7 +20,7 @@ Terminal. **Do not run another maintenance re-verification loop.** No new resear
 **Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. No nested/duplicate workflows. Keep changes to handoff/initial-task files unless explicitly authorized otherwise.
 
 ## Prior task (completed)
-Maintenance re-verification completed at 2026-11-13T01:04:05Z: inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines — unchanged), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean `main...origin/main` with no remote diff; ran full tests (**75 passed in 0.88s**); recomputed 20/20 manifest SHA-256 hashes — **20/20 matched** (known `metrics_axb0306_full.json` historical typo only, on-disk authoritative hash unchanged); confirmed monitor state/SHA/`checked_at_utc` unchanged and no duplicate processes. No frozen files modified. **Diagnosed the degenerate maintenance loop** (see below). Handoff-only checkpoint committed on top of HEAD `6c08091`.
+Maintenance re-verification completed at 2026-11-13T01:53:33Z: inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, unchanged), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean `main...origin/main` with no remote diff; ran full tests (**75 passed in 0.94s**); confirmed `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged. No frozen files modified. Handoff-only checkpoint on top of HEAD `3fb4304`.
 
 ## Research status (COMPLETE — frozen, no further work)
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (MNQ 15-min ORB showcase). Baseline results are negative net and must not be presented as profitable: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net.
@@ -30,7 +30,7 @@ Maintenance re-verification completed at 2026-11-13T01:04:05Z: inspected `HANDOF
 The repository is stuck in a no-value loop and the next agent must NOT repeat it:
 - `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation.
 - Each session performs an identical "maintenance re-verification" (tests + hash manifest + monitor check) and the workflow commits a `chore(kilo): checkpoint agent session` checkpoint.
-- Since 2026-11-01 there have been **0 real research commits**. All 1033 commits since 2026-11-08 are checkpoints / re-verifications / diagnostics (924 are `chore(kilo): checkpoint agent session`).
+- Since 2026-11-01 there have been **0 real research commits**. All commits since 2026-11-08 are checkpoints / re-verifications / diagnostics.
 - This consumes the workflow budget, bloats `HANDOFF.md`/git history, and produces no new evidence.
 
 ## Next task
@@ -46,5 +46,3 @@ If you are invoked again with a generic "continue" instruction, do the following
 **If the user explicitly asks for NEW research** (a new experiment, new data source, or a strategy variant): it must be a separately named, versioned experiment with an explicit diff from `STRATEGY_RULES.txt` v1.0, must not overwrite frozen files, and must follow `AGENTS.md` guardrails (free data only, no optimization before the untouched baseline is reported, chronological splits, gross+net reporting). Start by re-reading `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
 **Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Do not restart the 06:00Z loop or launch nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized for a separately versioned experiment.
-
-(End of file - total 44 lines)
