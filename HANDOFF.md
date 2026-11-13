@@ -1,9 +1,9 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `62875eb` (= origin/main, clean, 0 ahead / 0 behind).
-- **Timestamp (UTC)**: 2026-11-13T21:01:15Z
+- **HEAD**: `8e19f7d` (= origin/main, clean, 0 ahead / 0 behind).
+- **Timestamp (UTC)**: 2026-11-13T21:50:13Z
 - **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
-- **This session**: read durable handoff + strategy, confirmed frozen metrics, refreshed these two durable files. No tests, hashes, monitor, or commits.
+- **This session**: completed prior agent task — read durable handoff + strategy, re-read frozen metric JSON and strategy SHA-256, refreshed both durable files. No tests, manifest re-hash, monitor poll, or commits.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -11,7 +11,7 @@
 
 **This repository is in a degenerate maintenance loop.**
 - `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and spawns a sequential Kilo session per activation; each activation commits `chore(kilo): checkpoint agent session`.
-- Since 2026-11-01T00:00:00Z: **2,701 commits**, of which **2,400** are exact `chore(kilo): checkpoint agent session` and **2,434** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
+- Since 2026-11-01T00:00:00Z: **2,701 commits**, of which **2,401** are exact `chore(kilo): checkpoint agent session` and **2,435** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
 - HEAD advances by ~3 checkpoint commits per session, so any count quoted here is already stale.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks or add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md` ("Do not edit `.github/workflows/main.yml` … unless the user explicitly authorizes that exact change"). No such authorization has been given.
