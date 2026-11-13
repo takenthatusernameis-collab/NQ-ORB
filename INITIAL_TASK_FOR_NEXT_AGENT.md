@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T17:49:03Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `1fedd731becbc20c0f60cb15ed835d657cecf011` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `b9483d62` by controller `chore(kilo): checkpoint agent session` commits, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T17:50:13Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `f15c6f737e0fe328bad634616291fea1b2a5047b` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `1fedd731` by controller `chore(kilo): checkpoint agent session` commits, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T17:49:03Z — clean tree, HEAD == origin/main (`1fedd73`), strategy SHA `6d3258c3…` matched by `sha256sum`, net values `-$31,637.98` and `-$626,525.96` (read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json`, not re-run). Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; not re-hashed this session.
+**Last bounded state check:** 2026-11-13T17:50:13Z — clean tree, HEAD == origin/main (`f15c6f7`), strategy SHA `6d3258c3…` matched by `sha256sum`, net values `-$31,637.98` and `-$626,525.96` (read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json`, not re-run). Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; not re-hashed this session.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -16,7 +16,7 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 
 ## The repo is in a degenerate maintenance loop (evidence)
 
-- 2,658 commits since 2026-11-01; **2,391** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
+- 2,659 commits since 2026-11-01; **2,392** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
 - `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with a generic prompt, causing repeated verification. Re-running tests/hashes adds no evidence and only grows the repo.
 
 ## Your task (default prompt: "continue")
@@ -36,9 +36,9 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T17:49:03Z)
+## Prior task (completed 2026-11-13T17:50:13Z)
 
-Confirmed terminal state unchanged per prior task. Verified once (clean tree, HEAD `1fedd73` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,658 total / 2,391 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
+Confirmed terminal state unchanged per prior task. Verified once (clean tree, HEAD `f15c6f7` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,659 total / 2,392 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
 
 ## Constraints
 
