@@ -1,35 +1,36 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `c54ca9c` at session start (origin/main; only the controller's `chore(kilo): checkpoint agent session` commits advance it). Exact HEAD is transient due to the maintenance loop.
-- **Timestamp (UTC)**: 2026-11-13T23:15:16Z
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed terminal state (no re-verification: no tests, manifest re-hash, monitor poll, workflow/controller edits, or commit). Durable handoff files refreshed (consolidated, not appended).
+- **HEAD**: `e3f2367` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
+- **Timestamp (UTC)**: 2026-11-13T23:16:14Z
+- **This session**: read `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`; verified the handoff's frozen numbers against the on-disk JSON (read-only); confirmed working tree clean and checkpoint loop still active. No tests, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
 
 ## TERMINAL STATE — READ FIRST
 
-**The research task is COMPLETE. The frozen baseline is final and negative-net.** There is no remaining research work on the current free-data ceiling (`data/FEASIBILITY_REPORT.md`: free-source search exhausted through 2026-11-03 with no new source; every candidate paid, key-gated, daily-only, or NQ big-contract rather than MNQ).
+**The research task is COMPLETE. The frozen baseline is final and negative-net.** No remaining research work is available on the current free-data ceiling (`data/FEASIBILITY_REPORT.md`: free-source search exhausted through 2026-11-03; every candidate is paid, key-gated, daily-only, or NQ big-contract rather than MNQ).
 
-**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01 this produced thousands of commits, of which **0** are real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
+**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01: 2,509 commits, **0** of them research (last substantive research commit: `5fab764`, 2026-10-31). ~473 `free_data_monitor_*` files in `research_state/` are the same loop's byproduct.
 
-**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks or add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md` ("Do not edit `.github/workflows/main.yml` … unless the user explicitly authorizes that exact change"). No such authorization has been given.
+**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md`. None has been given.
 
 ## Research status (frozen)
 
 - **Strategy**: `STRATEGY_RULES.txt` v1.0 (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), MNQ 15-min ORB showcase. No parameter changes.
-- **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days) and Kaggle front-month proxy (2022-11-16..2025-11-12, 688 days). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted.
-- **Results (negative net, evidence not edge)** — from frozen JSON (`artifacts/`):
-  - axb0306 (`metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, **net -$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80, expectancy -0.0431R.
-  - Kaggle (`metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), 359 long / 329 short, gross -$140,899, **net -$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56.
-  - Chronological train/val/test (Kaggle): train -$448,765.02, val -$66,243.22, test -$111,517.72 — all negative. Date-based walk-forward splits also all negative net. Do not present as profitable.
-  - Driver: costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs a >71.43% pre-cost win rate and observed rates are below that.
+- **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days) and Kaggle front-month proxy (2022-11-16..2025-11-12, 688 days). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`.
+- **Results (negative net, evidence not edge)** — values re-checked this session against the frozen JSON:
+  - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, **net -$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80, expectancy -0.0431R.
+  - Kaggle (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), 359 long / 329 short, gross -$140,899, **net -$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56, expectancy -0.0684R.
+  - Kaggle chronological train/val/test: train -$448,765.02 (412 trades), val -$66,243.22 (137), test -$111,517.72 — all negative net. Date-based walk-forward (`artifacts/walk_forward.json`, 8 windows, train 150 / test 150, step 50) is also all negative net in every window. Do not present as profitable.
+  - Driver: costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs a >71.43% pre-cost win rate, observed rates are below that.
+- **Note for future readers**: the axb0306 60-day sample's *gross* P&L is -$7,662 and its chronological train split is +$1,229.22 net (36 trades, 30W/6L); this is small-sample noise, not an edge, and is not used as a claim.
 
-## Test/manifest status
+## Test/manifest status (not re-run this session)
 
-- Last full suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z (not re-run this session).
-- Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z (not re-hashed this session).
+- Last full suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z.
+- Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z.
 
 ## Standing constraints
 
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
-- Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with explicit diff from baseline.
-- Do not repeat maintenance re-verification. Report terminal state instead of re-verifying.
-- Keep this handoff compact; consolidate repeated confirmations.
+- Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with an explicit diff from baseline.
+- Do not repeat maintenance re-verification. Report terminal state instead.
+- Keep this handoff compact; consolidate rather than append.

@@ -1,30 +1,29 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T23:15:16Z. **Prior agent task:** completed (read durable handoff, confirmed terminal state, refreshed `HANDOFF.md` + this file). **HEAD at start:** `c54ca9c` (origin/main; transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-13T23:16:14Z. **Prior agent task:** completed (read durable handoff, verified frozen numbers against on-disk JSON, refreshed `HANDOFF.md` + this file). **HEAD at start:** `e3f2367` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
 2. Do **not** run another maintenance re-verification: no test suite, no manifest re-hash, no free-data monitor poll, no checkpoint commit, no workflow/controller edits.
 3. Report the terminal state and stop:
-   - Research complete; frozen baseline final and negative-net; free-data search exhausted (`data/FEASIBILITY_REPORT.md`); maintenance loop diagnosed (`.github/workflows/main.yml` cron `*/5 * * * *` produces only checkpoint commits).
+   - Research complete; frozen baseline final and negative-net; free-data search exhausted (`data/FEASIBILITY_REPORT.md`); maintenance loop diagnosed (`.github/workflows/main.yml` cron `*/5 * * * *` → 2,509 commits since 2026-11-01, 0 research).
    - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), gross -$7,662, net **-$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80.
    - Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), gross -$140,899, net **-$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56.
-   - Chronological train/val/test: -$448,765.02 / -$66,243.22 / -$111,517.72; date-based walk-forward also all negative. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate, observed below that.
+   - Chronological train/val/test: -$448,765.02 / -$66,243.22 / -$111,517.72; 8-window walk-forward (`artifacts/walk_forward.json`) also all negative. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate, observed below that.
 4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`) or changing controller/automation policy requires **explicit user authorization** per `AGENTS.md`. Do not touch it without that authorization.
 5. Stop. Leave the working tree as-is. If you must touch durable handoff files, consolidate rather than append, and do not commit (the controller owns commits).
 
 ## If the user explicitly authorizes a change
 
-- **Stop automation:** make the exact requested change, record it in `HANDOFF.md`, and do nothing else.
+- **Stop automation:** make the exact requested change, record it in `HANDOFF.md`, do nothing else.
 - **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
 ## Verified state (this session)
 
-- Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged).
-- HEAD at start `c54ca9c` (origin/main); working tree clean. Checkpoint loop still active (`*/5` cron).
-- Frozen artifacts/reports consistent with handoff: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `research_state/1m_audit_{axb0306,kaggle}.json`, `data/FEASIBILITY_REPORT.md`.
+- Frozen figures re-checked against JSON: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json` (incl. `chronological_splits`), `artifacts/walk_forward.json` — all match the handoff.
+- HEAD at start `e3f2367`; working tree clean. Checkpoint loop active (`*/5` cron).
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session. No commit made.
 
 ## Constraints
