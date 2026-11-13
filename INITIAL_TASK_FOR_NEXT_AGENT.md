@@ -1,7 +1,7 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T10:53:00Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
-**HEAD:** `097058d` (= origin/main, clean `main...origin/main` at session start). Working tree: clean at start; this session edited only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (durable handoff files). No research/data/config/artifact changes. **No commit added.**
+**Session:** 2026-11-13T10:55:00Z (this session — read prior agent task from durable handoff, confirmed terminal state, refreshed durable files)
+**HEAD:** `2ebf049` (= origin/main, clean `main...origin/main` at session start). Working tree: clean at start; this session edited only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (durable handoff files). No research/data/config/artifact changes. **No commit added.**
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
 **Last full sanity check:** 2026-11-13T10:48:44Z (prior session) — 75 passed (0.98s), 20/20 manifest matched. This session confirmed clean tree/branch and strategy hash only (no re-run).
 
@@ -28,9 +28,9 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T10:53:00Z)
+## Prior task (completed 2026-11-13T10:55:00Z)
 
-Terminal-state confirmation at HEAD `097058d` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff; confirmed prior task COMPLETE. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior session already completed that). Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
+Terminal-state confirmation at HEAD `2ebf049` (= origin/main, clean `main...origin/main`, clean working tree at start): read prior agent task from durable handoff; confirmed prior task COMPLETE. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior session already completed that). Baseline re-confirmed from artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
 
 ## Constraints
 
