@@ -1,10 +1,10 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `99e308a` (= origin/main, clean `main...origin/main`; no diff; no frozen/research files touched). Prior agent task (terminal-state one-time confirmation) completed this session — one-time confirmation only, not a maintenance re-verification loop. This session updates durable handoff files only in the working tree; **no commit made** and no frozen/research files touched.
-- **Timestamp (UTC)**: 2026-11-13T05:50:03Z
-- **Last sanity check (UTC)**: 2026-11-13T05:50:03Z (one-time terminal-state confirmation at HEAD `99e308a`; tree clean, HEAD == origin/main, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, full suite **75 passed in 0.56s**, 20/20 manifest hashes matched). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted).
+- **HEAD**: `4669eec` (= origin/main, clean `main...origin/main`; no diff; no frozen/research files touched). Prior agent task (terminal-state one-time confirmation) completed this session — one-time confirmation only, not a maintenance re-verification loop. Durable handoff files updated in the working tree only; **no commit made** and no frozen/research files touched.
+- **Timestamp (UTC)**: 2026-11-13T05:51:38Z
+- **Last sanity check (UTC)**: 2026-11-13T05:51:38Z (one-time terminal-state confirmation at HEAD `4669eec`; tree clean, HEAD == origin/main, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, full suite **75 passed in 0.55s**, 20/20 manifest hashes matched). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted).
 
-**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `99e308a` (2026-11-13T05:49:34Z, controller checkpoint on top of `722df98`), `722df98` (2026-11-13T05:48:29Z, controller checkpoint on top of `1506cf8`), `1506cf8` (2026-11-13T05:47:36Z, controller checkpoint on top of `0385346`), `0385346` (2026-11-13T05:46:xx, controller checkpoint on top of `93dca66`), `93dca66` (2026-11-13T05:45:xx), `1800d7a` (2026-11-13T05:41:xx, controller checkpoint on top of `ea81f09`), `ea81f09` (2026-11-13T05:39:xx, controller checkpoint on top of `d987016`), `d987016` (2026-11-13T05:38:xx, controller checkpoint on top of `348193b`), `348193b` (2026-11-13T04:52:xx), `b771563` (2026-11-13T04:50:xx, controller checkpoint on top of `2857835`), `2857835` (2026-11-13T04:49:26Z), `7c6f683` (2026-11-13T04:46:xx, controller checkpoint on top of `1677b8d`), `1677b8d` (2026-11-13T04:45:xx, controller checkpoint on top of `0de6f0f`), `0de6f0f` (2026-11-13T04:42:36Z), `cfe8fdf` (2026-11-13T03:44:23Z), `cbd860e` (2026-11-13T03:43:34Z), `a312f79`, `1800548` (2026-11-13T02:36:37Z, workflow diagnostics only), `969ebd5` (2026-11-13T02:07:58Z), `54ceb0e` (2026-11-13T02:06:47Z), `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
+**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `4669eec` (current tip), `99e308a`, `722df98`, `1506cf8`, `0385346`, `93dca66`, `1800d7a`, `ea81f09`, `d987016`, `348193b`, `b771563`, `2857835`, `7c6f683`, `1677b8d`, `0de6f0f`, `cfe8fdf`, `cbd860e`, `1800548` (workflow diagnostics only), `969ebd5`, `54ceb0e`, `76c681b`, `40f2cf1`, `d4d3acb`, `3fb4304`, `30bfcd8`, `6c08091`, `b93a133`; these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
 
 ## TERMINAL STATE — READ FIRST (added 2026-11-13T01:04:05Z)
 
@@ -24,7 +24,7 @@
 - **Data**: axb0306 MNQ (2026-01-20..2026-04-15, 60 complete days; raw `MNQ_{15min,1min}.csv`) and kaggle front-month proxy (2022-11-16..2025-11-12, 688 days; raw `MNQ_{15min,1min}_frontmonth.csv`). 1-min audits: `research_state/1m_audit_{axb0306,kaggle}.json`. Free-data search exhausted (`data/FEASIBILITY_REPORT.md`); 06:00Z monitor stopped.
 - **Results (negative net, evidence not edge)**: axb0306 net -$31,637.98 (60 trades, PF 0.492); kaggle net -$626,525.96 (688 trades, PF 0.227). Date-based WF OOS tests negative net. Do not present as profitable.
 
-## SHA-256 manifest (20 key files, recomputed and verified 2026-11-13T05:50:03Z — 20/20 match)
+## SHA-256 manifest (20 key files, recomputed and verified 2026-11-13T05:51:38Z — 20/20 match)
 
 | File | SHA-256 |
 |---|---|
@@ -49,12 +49,12 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Some historical text recorded a transcription typo (`ddddaefa…`); table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-13T05:50:03Z).
+**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Some historical text recorded a transcription typo (`ddddaefa…`); table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-13T05:51:38Z).
 
 ## Session log (recent, consolidated)
 
-- **2026-11-13T05:50:03Z (this session)**: Completed the prior agent task (terminal-state one-time confirmation) at HEAD `99e308a` (= origin/main, clean `main...origin/main`, tree clean, no diff). Verified `git status --short --branch` clean; `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite **75 passed in 0.56s**; 20/20 manifest SHA-256 hashes recomputed and matched. This was a single one-time confirmation, not a maintenance re-verification loop. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced; no commit added. Updated durable `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
-- **2026-11-13T04:37Z–05:48Z (consolidated prior sessions)**: A long series (~40+ near-identical) terminal-state one-time confirmations at advancing controller-checkpoint HEADs (`b5f7d6f`, `367e174`, `0de6f0f`, `73c754d`, `ea81f09`, `1800d7a`, `d987016`, `93dca66`, `0385346`, `99e308a`, …). Each confirmed a clean `main...origin/main`, unchanged `STRATEGY_RULES.txt` SHA, and relied on the most recent recorded sanity check (75 passed, 20/20 manifest hashes) rather than re-running a loop. No new evidence; no commits by these sessions; handoff/initial-task refreshed in the working tree. Consolidated here to reduce handoff bloat; no information lost.
+- **2026-11-13T05:51:38Z (this session)**: Completed prior agent task (terminal-state one-time confirmation) at HEAD `4669eec` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite **75 passed in 0.55s**; 20/20 manifest SHA-256 hashes recomputed and matched. Single one-time confirmation only (not a maintenance re-verification loop). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence; no commit added. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+- **2026-11-13T04:37Z–05:50Z (consolidated prior sessions)**: Long series (~40+ near-identical) terminal-state one-time confirmations at advancing controller-checkpoint HEADs (through `99e308a`). Each confirmed clean state/unchanged SHA; some re-ran tests+manifest once, others relied on last recorded check. No new evidence, no commits by those sessions. Consolidated here to reduce handoff bloat.
 - **2026-11-13T05:39:03Z**: One-time terminal-state confirmation at HEAD `ea81f09`: **75 passed in 0.81s**, 20/20 manifest hashes matched, tree clean, SHA unchanged.
 - **2026-11-13T05:38:19Z**: One-time confirmation at HEAD `d987016`: **75 passed in 0.56s**, 20/20 hashes matched.
 - **2026-11-13T04:46:06Z**: One-time confirmation at HEAD `1677b8d`: **75 passed in 0.58s**, 20/20 hashes matched; independently re-read `PROMPT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines), `data/FEASIBILITY_REPORT.md`, `artifacts/README.md`, and the `src/orb` + `tests/` layout to confirm the terminal-state claim is substantiated (implementation, 75 tests, both baselines, walk-forward, feasibility all present).
@@ -65,7 +65,7 @@
 
 ## Test status
 
-- Last sanity check **75 passed in 0.56s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; venv: pytest 9.2.0, pandas 3.1.1, numpy 2.5.4; 2026-11-13T05:50:03Z). No regressions observed. Manifest verified 20/20 at that check (no frozen files changed). HEAD is `99e308a` (= origin/main); this session added no new commit.
+- Last sanity check **75 passed in 0.55s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; venv: pytest 9.2.0, pandas 3.1.1, numpy 2.5.4; 2026-11-13T05:51:38Z). No regressions observed. Manifest verified 20/20 (no frozen files changed). HEAD `4669eec` (= origin/main); this session added no new commit.
 
 ## Standing constraints
 
