@@ -1,10 +1,10 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at check start)**: `54ceb0e` (clean `main...origin/main`; `54ceb0e` is a workflow `chore(kilo): checkpoint agent session` changing only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). This session updates durable handoff files only; no frozen/research files touched.
-- **Timestamp (UTC)**: 2026-11-13T02:06:47Z
-- **Last sanity check (UTC)**: 2026-11-13T02:06:47Z (terminal-state sanity check: tests 75 passed in 0.93s, `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` unchanged, tree clean). Prior task complete; no re-verification loop run.
+- **HEAD (at check start)**: `1800548` (clean `main...origin/main`; `1800548` is a workflow diagnostics capture touching only `research_state/workflow_run_diagnostics.jsonl`, on top of checkpoint `969ebd5` and `54ceb0e` which changed only handoff files). This session updates durable handoff files only; no frozen/research files touched.
+- **Timestamp (UTC)**: 2026-11-13T02:37:28Z
+- **Last sanity check (UTC)**: 2026-11-13T02:37:28Z (terminal-state sanity check: tests 75 passed in 2.54s, `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` unchanged, tree clean). Prior task complete; no re-verification loop run.
 
-**HEAD progression note:** recent handoff-only checkpoints on this line include `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint files. No research/data/config/artifact files changed in these checkpoints.
+**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `1800548` (2026-11-13T02:36:37Z, workflow diagnostics only), `969ebd5` (2026-11-13T02:07:58Z), `54ceb0e` (2026-11-13T02:06:47Z), `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
 
 ## TERMINAL STATE — READ FIRST (added 2026-11-13T01:04:05Z)
 
@@ -53,7 +53,9 @@
 
 ## Session log (recent)
 
-- **2026-11-13T02:06:47Z (this session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0). Tree clean on `main...origin/main` (HEAD `54ceb0e`, checkpoint-only commit touching handoff files). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. `pytest tests/ -q` → **75 passed in 0.93s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- **2026-11-13T02:37:28Z (this session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0). Tree clean on `main...origin/main` (HEAD `1800548`, workflow diagnostics capture on top of checkpoint `969ebd5`; `git diff origin/main --stat` empty). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; config/feasibility hashes unchanged. Runner had no system `pytest`/`pandas` (diagnostics log shows `ModuleNotFoundError`), so created `/tmp/kilo-verify-venv` (pytest 9.2.0 + pandas 3.1.1) and ran `python -m pytest tests/ -q` → **75 passed in 2.54s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+
+- **2026-11-13T02:06:47Z (prior session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0). Tree clean on `main...origin/main` (HEAD `54ceb0e`, checkpoint-only commit touching handoff files). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. `pytest tests/ -q` → **75 passed in 0.93s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 
 - **2026-11-13T02:03:33Z (prior session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`. Tree clean on `main...origin/main` (HEAD `76c681b`, `git diff origin/main --stat` empty). `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` and key config/feasibility hashes unchanged. `pytest tests/ -q` → **75 passed in 0.92s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 
@@ -63,7 +65,7 @@
 
 - **2026-11-13T01:56:41Z (prior session)**: Confirmed prior agent task (terminal-state sanity check at 2026-11-13T01:55:36Z) is complete. Tree clean on `main...origin/main` (HEAD `40f2cf1`, checkpoint-only commit touching handoff files). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced, no re-verification loop run per standing constraint. Updated durable handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` to reflect current state and stop further maintenance looping.
 
-- **2026-11-13T01:55:36Z (this session)**: terminal-state sanity check per handoff instructions (no full re-verification loop). Tree clean at start on `main...origin/main` (HEAD `d4d3acb`). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` → **75 passed in 0.95s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` to reflect current state and stop further maintenance looping.
+- **2026-11-13T01:55:36Z (prior session)**: terminal-state sanity check per handoff instructions (no full re-verification loop). Tree clean at start on `main...origin/main` (HEAD `d4d3acb`). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` → **75 passed in 0.95s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` to reflect current state and stop further maintenance looping.
 
 - **2026-11-13T01:53:33Z (prior session)**: terminal-state sanity check. Clean tree, `STRATEGY_RULES.txt` SHA unchanged, tests 75 passed in 0.94s. No new evidence. Handoff/initial-task refreshed.
 
@@ -79,7 +81,7 @@
 
 ## Test status
 
-- Last sanity check **75 passed in 0.93s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T02:06:47Z). No regressions observed. Full 20-file manifest re-verification last recorded 2026-11-13T01:04:05Z (20/20 match); no frozen files changed since.
+- Last sanity check **75 passed in 2.54s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T02:37:28Z; runner has no system pytest/pandas so the venv was rebuilt this session). No regressions observed. Full 20-file manifest re-verification last recorded 2026-11-13T01:04:05Z (20/20 match); no frozen files changed since.
 
 ## Standing constraints
 
