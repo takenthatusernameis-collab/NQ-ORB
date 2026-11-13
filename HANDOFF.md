@@ -1,10 +1,10 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at check start)**: `0de6f0f` (clean `main...origin/main`, HEAD == origin/main). This session updates durable handoff files only in the working tree; **no commit made** and no frozen/research files touched.
-- **Timestamp (UTC)**: 2026-11-13T04:42:36Z
-- **Last sanity check (UTC)**: 2026-11-13T04:42:36Z (one-time terminal-state confirmation: git clean, HEAD == origin/main `0de6f0f`, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged). Prior task complete; no re-verification loop run; no new checkpoint commit added (loop not extended).
+- **HEAD (at check start)**: `1677b8d` (clean `main...origin/main`, HEAD == origin/main). The controller added checkpoint `1677b8d` on top of the previous handoff HEAD `0de6f0f`. This session updates durable handoff files only in the working tree; **no commit made** and no frozen/research files touched.
+- **Timestamp (UTC)**: 2026-11-13T04:46:06Z
+- **Last sanity check (UTC)**: 2026-11-13T04:46:06Z (one-time terminal-state confirmation: `git status --short --branch` clean, HEAD == origin/main `1677b8d`, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, full suite **75 passed in 0.58s**, 20/20 manifest hashes recomputed and matched). Prior task complete; no re-verification loop run; no new checkpoint commit added (loop not extended).
 
-**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `cfe8fdf` (2026-11-13T03:44:23Z), `cbd860e` (2026-11-13T03:43:34Z), `a312f79`, `1800548` (2026-11-13T02:36:37Z, workflow diagnostics only), `969ebd5` (2026-11-13T02:07:58Z), `54ceb0e` (2026-11-13T02:06:47Z), `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
+**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `1677b8d` (2026-11-13T04:45:xx, controller checkpoint on top of `0de6f0f`), `0de6f0f` (2026-11-13T04:42:36Z), `cfe8fdf` (2026-11-13T03:44:23Z), `cbd860e` (2026-11-13T03:43:34Z), `a312f79`, `1800548` (2026-11-13T02:36:37Z, workflow diagnostics only), `969ebd5` (2026-11-13T02:07:58Z), `54ceb0e` (2026-11-13T02:06:47Z), `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
 
 ## TERMINAL STATE — READ FIRST (added 2026-11-13T01:04:05Z)
 
@@ -49,11 +49,13 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Some historical text recorded a transcription typo (`ddddaefa…`); table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-13T01:04:05Z).
+**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Some historical text recorded a transcription typo (`ddddaefa…`); table above records the authoritative hash. Recomputed and verified 20/20 match this session (2026-11-13T04:46:06Z).
 
 ## Session log (recent)
 
-- **2026-11-13T04:42:36Z (this session)**: Completed the prior task (terminal-state one-time confirmation) at HEAD `0de6f0f` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Per standing constraint, did NOT run another maintenance re-verification loop and added no commit (working tree only). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+- **2026-11-13T04:46:06Z (this session)**: Completed the prior task (terminal-state one-time confirmation) at HEAD `1677b8d` (= origin/main, clean `main...origin/main`, tree clean). Independently re-read `PROMPT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines), `data/FEASIBILITY_REPORT.md`, `artifacts/README.md`, and the `src/orb` + `tests/` layout to confirm the terminal-state claim is substantiated (implementation, 75 tests, both baselines, walk-forward, feasibility all present). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite **75 passed in 0.58s**; 20/20 manifest hashes matched. Per standing constraint, did NOT run another maintenance re-verification loop and added no commit (working tree only). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+
+- **2026-11-13T04:42:36Z (prior session)**: Completed the prior task (terminal-state one-time confirmation) at HEAD `0de6f0f` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Per standing constraint, did NOT run another maintenance re-verification loop and added no commit (working tree only). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
 
 - **2026-11-13T04:42:08Z (this session)**: Completed the prior task (terminal-state one-time confirmation) at HEAD `73c754d` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Per standing constraint, did NOT run another maintenance re-verification loop and added no commit (working tree only). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence produced. Updated durable `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
 
@@ -103,7 +105,7 @@
 
 ## Test status
 
-- Last sanity check **75 passed in 0.61s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T03:50:06Z). No regressions observed. Manifest previously verified 20/20 (no frozen files changed). HEAD is `b5f7d6f` (= origin/main, an auto checkpoint commit on top of `0604410`); this session added no new commit.
+- Last sanity check **75 passed in 0.58s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T04:46:06Z). No regressions observed. Manifest verified 20/20 this session (no frozen files changed). HEAD is `1677b8d` (= origin/main, controller checkpoint on top of `0de6f0f`); this session added no new commit.
 
 ## Standing constraints
 
