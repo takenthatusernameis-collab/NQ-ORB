@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (at check start)**: `76c681b` (clean `main...origin/main`; `76c681b` is a workflow `chore(kilo): checkpoint agent session` on 2026-11-13T01:57:xx changing only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` on top of `40f2cf1`). This session updates durable handoff files only; no frozen/research files touched.
-- **Timestamp (UTC)**: 2026-11-13T02:03:33Z
-- **Last sanity check (UTC)**: 2026-11-13T02:03:33Z (terminal-state sanity check: tests 75 passed in 0.92s, `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` and key configs/feasibility hashes unchanged, tree clean). Prior task complete; no re-verification loop run.
+- **HEAD (at check start)**: `675fb8a` (clean `main...origin/main`; `675fb8a` is a workflow `chore(kilo): checkpoint agent session` changing only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). This session updates durable handoff files only; no frozen/research files touched.
+- **Timestamp (UTC)**: 2026-11-13T02:05:14Z
+- **Last sanity check (UTC)**: 2026-11-13T02:05:14Z (terminal-state sanity check: tests 75 passed in 0.91s, `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` unchanged, tree clean). Prior task complete; no re-verification loop run.
 
 **HEAD progression note:** recent handoff-only checkpoints on this line include `76c681b` (2026-11-13T01:57:xx), `40f2cf1` (2026-11-13T01:56:32Z), `d4d3acb` (2026-11-13T01:54:36Z), `3fb4304` (2026-11-13T01:52:16Z), `30bfcd8` (2026-11-13T01:04:05Z), `6c08091` (2026-11-13T01:02:57Z), `b93a133` (2026-11-13T01:00:26Z); these touched only handoff/checkpoint files. No research/data/config/artifact files changed in these checkpoints.
 
@@ -53,7 +53,9 @@
 
 ## Session log (recent)
 
-- **2026-11-13T02:03:33Z (this session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`. Tree clean on `main...origin/main` (HEAD `76c681b`, `git diff origin/main --stat` empty). `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` and key config/feasibility hashes unchanged. `pytest tests/ -q` → **75 passed in 0.92s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- **2026-11-13T02:05:14Z (this session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0). Tree clean on `main...origin/main` (HEAD `675fb8a`, checkpoint-only commit touching handoff files). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. `pytest tests/ -q` → **75 passed in 0.91s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+
+- **2026-11-13T02:03:33Z (prior session)**: Completed prior agent task (terminal-state sanity check). Inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`. Tree clean on `main...origin/main` (HEAD `76c681b`, `git diff origin/main --stat` empty). `STRATEGY_RULES.txt` SHA `6d3258c3…ad2b1` and key config/feasibility hashes unchanged. `pytest tests/ -q` → **75 passed in 0.92s**. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence, no re-verification loop. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 
 - **2026-11-13T02:01:21Z (prior session)**: Completed prior task sanity check (tests 75 passed in 0.90s, SHA unchanged, clean tree). Handoff/initial-task refreshed.
 
@@ -77,7 +79,7 @@
 
 ## Test status
 
-- Last sanity check **75 passed in 0.92s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T02:03:33Z). No regressions observed. Full 20-file manifest re-verification last recorded 2026-11-13T01:04:05Z (20/20 match); no frozen files changed since.
+- Last sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`, venv with `pytest` 9.2.0 + `pandas` 3.1.1, 2026-11-13T02:05:14Z). No regressions observed. Full 20-file manifest re-verification last recorded 2026-11-13T01:04:05Z (20/20 match); no frozen files changed since.
 
 ## Standing constraints
 
