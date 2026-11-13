@@ -1,8 +1,8 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T16:50:32Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `6c294b929ad51d0d985e7b35dc54bf8413ce6b86` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T16:52:16Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `1058a6ed5b142bc6f8d9973a443b5def12226181` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T16:50:32Z — clean tree, HEAD == origin/main (`6c294b9`), strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run). 20/20 manifest SHA-256 hashes matched.
+**Last bounded state check:** 2026-11-13T16:52:16Z — clean tree, HEAD == origin/main (`1058a6e`), strategy SHA `6d3258c3…` matched by `sha256sum`, net values `-$31,637.98` and `-$626,525.96` (read from frozen artifacts, not re-run). Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; not re-hashed this session.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -36,9 +36,9 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T16:50:32Z)
+## Prior task (completed 2026-11-13T16:52:16Z)
 
-Confirmed terminal state unchanged per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified cheaply (clean tree, HEAD `6c294b9` == origin/main 0/0, strategy SHA `6d3258c3…` unchanged, net `-31637.98` / `-626,525.96` read from frozen artifacts, 20/20 manifest SHA-256 hashes matched). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification run. Durable files refreshed only; no commit added.
+Confirmed terminal state unchanged per INITIAL_TASK_FOR_NEXT_AGENT.md. Verified cheaply (clean tree, HEAD `1058a6e` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-31637.98` / `-626,525.96` read from frozen artifacts). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
 
 ## Constraints
 
