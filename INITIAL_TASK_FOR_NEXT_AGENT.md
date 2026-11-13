@@ -1,10 +1,23 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T01:04:05Z (maintenance re-verification + loop diagnosis)
-**HEAD at verification start:** `6c08091` (clean `main...origin/main` before edits; `git fetch --dry-run` no remote changes, `git diff origin/main --stat` empty). `6c08091` is the workflow's own `chore(kilo): checkpoint agent session` commit (2026-11-13T01:02:57Z) on top of `b93a133`; only `HANDOFF.md` changed, no research/data/config/artifact drift.
-**Tests:** 75 passed in 0.88s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (venv with `pytest` 9.2.0 + `pandas` 3.1.1).
-**SHA-256:** 20/20 manifest hashes matched (recomputed 2026-11-13T01:04:05Z). `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (v1.0, 126 lines — unchanged). `artifacts/metrics_axb0306_full.json` authoritative on-disk hash `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (known historical manifest transcription typo `ddddaefa…` only; unchanged). Monitor file SHA `3f90bc19548bb0d3e574644dc86e7e42fd75361f63dc22ca51bec1cc977c776f` unchanged.
-**Automation/monitor:** `research_state/free_data_monitor_20261108T060017Z.json` unchanged (`checked_at_utc` 2026-11-08T06:00:17.980919+00:00). `crontab -l` → `no crontab for runner`; `/etc/cron.d/` OS defaults only (e2scrub_all, php, sphinxsearch, sysstat); only `.github/workflows/main.yml`; `ps aux | grep -Ei "orb|free_data_monitor|research"` empty (no duplicate processes).
+**Session:** 2026-11-13T01:52:16Z (terminal-state sanity check)
+**HEAD at check start:** `6c08091` (clean `main...origin/main`). No research/data/config/artifact drift observed.
+**Tests:** 75 passed in 0.91s. Command: `/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q` (venv with `pytest` 9.2.0 + `pandas` 3.1.1).
+**Frozen baseline:** `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (v1.0, unchanged). Research complete; baseline negative net (axb0306 -$31,637.98, 60 trades, PF 0.492; kaggle -$626,525.96, 688 trades, PF 0.227). Free-data ceiling exhausted (`data/FEASIBILITY_REPORT.md`). Monitor unchanged (`research_state/free_data_monitor_20261108T060017Z.json`, checked 2026-11-08T06:00:17Z).
+
+## Status
+Terminal. **Do not run another maintenance re-verification loop.** No new research evidence is possible on the current free-data ceiling.
+
+## Next task (default: generic "continue")
+1. Read `HANDOFF.md` (**TERMINAL STATE**) and this file.
+2. Confirm tree clean (`git status --short --branch`). Optionally one quick sanity check (tests + `STRATEGY_RULES.txt` SHA) — do not loop.
+3. Report terminal state and stop. Note that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`) or changing automation requires explicit user authorization; do not touch it without that authorization.
+
+## If explicitly authorized by user
+- **Stop automation:** only with explicit authorization, edit `.github/workflows/main.yml`/controller/policy as specified and record it.
+- **New research/experiment:** must be separately named/versioned with explicit diff from `STRATEGY_RULES.txt` v1.0, must not overwrite frozen files/artifacts/configs/raw data, free data only, follow `AGENTS.md` (no pre-baseline optimization, chronological splits, gross+net). Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
+
+**Constraints:** Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. No nested/duplicate workflows. Keep changes to handoff/initial-task files unless explicitly authorized otherwise.
 
 ## Prior task (completed)
 Maintenance re-verification completed at 2026-11-13T01:04:05Z: inspected `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt` (v1.0, 126 lines — unchanged), `PROMPT.md`, `AGENTS.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean `main...origin/main` with no remote diff; ran full tests (**75 passed in 0.88s**); recomputed 20/20 manifest SHA-256 hashes — **20/20 matched** (known `metrics_axb0306_full.json` historical typo only, on-disk authoritative hash unchanged); confirmed monitor state/SHA/`checked_at_utc` unchanged and no duplicate processes. No frozen files modified. **Diagnosed the degenerate maintenance loop** (see below). Handoff-only checkpoint committed on top of HEAD `6c08091`.
