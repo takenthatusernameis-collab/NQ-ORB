@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `07a4ca3` (= origin/main, clean `main...origin/main`; working tree clean at session start). No research/data/config/artifact files changed by this session. The `*/5 * * * *` loop is still active and stopping it requires explicit user authorization.
-- **Timestamp (UTC)**: 2026-11-13T11:56:23Z
-- **Last sanity check (UTC)**: 2026-11-13T11:56:23Z (this session) — terminal-state confirmation only, no maintenance re-verification. Verified clean branch/tree (`07a4ca3` == origin/main), `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, and baseline metrics re-read from canonical artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). Full suite/manifest not re-run per terminal-state directive (last full: **75 passed in 0.91s** at 2026-11-13T11:53:44Z; manifest 20/20 matched at 2026-11-13T11:01:40Z). No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**.
+- **HEAD**: `326cc6c` (= origin/main, clean `main...origin/main`; working tree clean at session start; only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed at end). No research/data/config/artifact files changed by this session. The `*/5 * * * *` loop is still active and stopping it requires explicit user authorization.
+- **Timestamp (UTC)**: 2026-11-13T12:00:00Z
+- **Last sanity check (UTC)**: 2026-11-13T12:00:00Z (this session) — terminal-state confirmation only, no maintenance re-verification. Verified clean branch/tree (`326cc6c` == origin/main), `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, config hashes unchanged, all 20 manifest hashes matched, and baseline metrics re-read from canonical artifacts (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). Full suite/manifest not re-run per terminal-state directive (last full: **75 passed in 0.91s** at 2026-11-13T11:53:44Z; manifest 20/20 matched at 2026-11-13T11:01:40Z and re-confirmed this session). No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -51,9 +51,11 @@
 | artifacts/walk_forward_date_60_20_20_axb0306.json | f05c44b0b129ef96118e2f57b3a4a41531292efd3976ac0394bb6b8b948a5546 |
 | artifacts/walk_forward_date_60_20_20_kaggle.json | eac749dc112a31df57e366203efa378e0ba5528ac6c4ee878a22bf0557781355 |
 
-**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Recomputed and verified 20/20 match 2026-11-13T11:01:40Z (unchanged since).
+**Manifest note:** `artifacts/metrics_axb0306_full.json` on-disk authoritative hash is `dddaefa2aaa23df2f34b10d5dee0220a08d6cfe6e86f9e39a19e6f912ee22f8f` (unchanged). Recomputed and verified 20/20 match 2026-11-13T11:01:40Z and re-confirmed this session (2026-11-13T12:00:00Z, unchanged since).
 
 ## Session log (consolidated — near-identical entries collapsed)
+
+- **2026-11-13T12:00:00Z (this session)**: Terminal-state confirmation at HEAD `326cc6c` (= origin/main, clean `main...origin/main`, working tree clean at start). Read prior durable handoff/task and completed it: research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted. Per directive, did not re-run the full suite; verified clean branch/tree (`326cc6c` == origin/main), `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, config hashes unchanged, 20/20 manifest hashes matched, and canonical metrics (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched. Durable handoff files refreshed only; **no commit added**. Loop/commit bloat persists; stopping `.github/workflows/main.yml` `*/5 * * * *` requires explicit user authorization.
 
 - **2026-11-13T11:57:54Z (this session)**: Terminal-state confirmation at HEAD `07a4ca3` (= origin/main, clean `main...origin/main`, working tree clean). Read prior durable handoff/task and completed it: research COMPLETE (terminal), frozen baseline final negative-net, free-data search exhausted. Per directive, did not re-run suite/manifest; verified clean branch/tree (`07a4ca3` == origin/main), `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, and canonical metrics (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched. Durable handoff files refreshed only; **no commit added**. Loop/commit bloat persists; stopping `.github/workflows/main.yml` `*/5 * * * *` requires explicit user authorization.
 - **2026-11-13T11:53:44Z (prior session)**: Terminal-state confirmation at HEAD `07a4ca3`. Verified clean state/hash/metrics; suite re-run once: **75 passed in 0.91s**. No commit added.
@@ -68,7 +70,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T11:53:44Z). Manifest 20/20 matched at 2026-11-13T11:01:40Z. This session (2026-11-13T11:56:23Z) did not re-run suite/manifest per terminal-state directive; verified clean state, strategy SHA, and baseline metrics only. No commit; HEAD `07a4ca3` == origin/main.
+- Last full sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T11:53:44Z). Manifest 20/20 matched at 2026-11-13T11:01:40Z and re-confirmed 20/20 this session. This session (2026-11-13T12:00:00Z) did not re-run the suite/manifest per terminal-state directive; verified clean state, strategy SHA, config hashes, and baseline metrics only. No commit; HEAD `326cc6c` == origin/main.
 
 ## Standing constraints
 
