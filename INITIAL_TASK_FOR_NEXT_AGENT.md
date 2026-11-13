@@ -1,22 +1,22 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T19:06:29Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `aa19ef3b29d042a126a4125532b7c6fde909488b` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `ef5b9711721e425d1cd322ac7881ec72a6fedb47` by a controller checkpoint commit mid-session, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active (new checkpoint landed during this session) and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T19:11:36Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `9de5fe8d68a62aad5a3fad4eb4a31bff969653f7` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `aa19ef3b29d042a126a4125532b7c6fde909488b` by a controller checkpoint commit before this session, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T19:06:29Z — clean tree, HEAD == origin/main (`aa19ef3`), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades, PF 0.4917) and `-$626,525.96` (688 trades, PF 0.2271) read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json` (not re-run). No test suite run, no manifest re-hash (last 20/20 at 2026-11-13T16:50:32Z). Checkpoint count since 2026-11-01T00:00:00Z: 2,676 total / 2,410 `chore(kilo)` (0 real research commits).
+**Last bounded state check:** 2026-11-13T19:11:36Z — clean tree, HEAD == origin/main (`9de5fe8`), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades: 42W/18L, PF 0.4917) and `-$626,525.96` (688 trades: 446W/242L, PF 0.2271) read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json` (not re-run). No test suite run, no manifest re-hash (last 20/20 at 2026-11-13T16:50:32Z). Checkpoint count since 2026-11-01T00:00:00Z: 2,677 total / 2,379 `chore(kilo)` (0 real research commits).
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
 **Do not run another maintenance re-verification loop.** The research task is COMPLETE and the frozen baseline is final and negative-net:
 
-- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, net **-$31,637.98**, PF 0.4917 (`artifacts/metrics_axb0306_full.json`).
-- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, net **-$626,525.96**, PF 0.2271 (`artifacts/metrics_kaggle.json`).
+- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, 42W/18L (70% win), gross -$7,662, costs $23,975.98, net **-$31,637.98**, PF 0.4917, long 33 / short 27 (`artifacts/metrics_axb0306_full.json`).
+- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, 446W/242L (64.8% win), gross -$140,899, net **-$626,525.96**, PF 0.2271, long 359 / short 329 (`artifacts/metrics_kaggle.json`).
 - Chronological train/val/test splits and date-based walk-forward are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate and observed rates are below that. Cost-sensitivity grid (slip ×0.5–2.0, cost ×0.8–1.2) stays negative.
 
 The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
 
 ## The repo is in a degenerate maintenance loop (evidence)
 
-- 2,675 commits since 2026-11-01; **2,377** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
+- 2,677 commits since 2026-11-01; **2,379** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
 - `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with a generic prompt, causing repeated verification. Re-running tests/hashes adds no evidence and only grows the repo.
 
 ## Your task (default prompt: "continue")
@@ -36,12 +36,12 @@ Do this once, in order, and stop:
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 - **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T19:06:29Z)
+## Prior task (completed 2026-11-13T19:11:36Z)
 
-Confirmed terminal state unchanged per prior task. Verified once (clean tree, HEAD `aa19ef3` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,676 total / 2,410 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
+Confirmed terminal state unchanged per prior task. Verified only the bounded minimum (clean tree, HEAD `9de5fe8` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,677 total / 2,379 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
 
 ## Constraints
 
 Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized otherwise. No commits without explicit user authorization. Avoid checkpoint/handoff commit bloat.
 
-(End of file - total 45 lines)
+(End of file - total 47 lines)
