@@ -1,17 +1,17 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T09:43:02Z (this session — terminal-state one-time confirmation carried over from tip `b5bf568`; handoff updated)
-**HEAD:** `9c0a984` (clean `main...origin/main`, HEAD == origin/main, tree clean at start). Tip `9c0a984` is a controller checkpoint (`chore(kilo): checkpoint agent session`) touching only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (`git diff --stat b5bf568 9c0a984` confirms); prior `b5bf568`/`9c4d4c1`/`555816b`/`a97c9c4`/`431dcef`/`6c3133e` are controller checkpoints/handoff-only checkpoints — none touch research/data/config/artifact files. Durable handoff files updated in the working tree only — **no new commit was added by this session**.
+**Session:** 2026-11-13T09:44:56Z (this session — terminal-state one-time confirmation carried over from tip `9c0a984`; handoff consolidated and updated)
+**HEAD:** `a162ba8` (clean `main...origin/main`, HEAD == origin/main, tree clean at start). Tip `a162ba8` is a controller checkpoint (`chore(kilo): checkpoint agent session`) touching only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (`git show --stat a162ba8` confirms); prior `9c0a984`/`b5bf568`/`9c4d4c1`/`555816b`/`a97c9c4`/`431dcef`/`6c3133e` are controller/handoff-only checkpoints — none touch research/data/config/artifact files. Durable handoff files updated in the working tree only — **no new commit was added by this session**.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged via `sha256sum` (one-time confirmation, not a loop).
-**Last sanity check:** 2026-11-13T08:53:40Z — full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`), 20/20 manifest SHA-256 hashes matched, clean tree, SHA verified. No re-run this session (HEAD advanced only via handoff-only controller checkpoint; research state unchanged) to avoid the maintenance loop.
+**Last sanity check:** 2026-11-13T09:44:56Z — full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`), 20/20 manifest SHA-256 hashes matched, clean tree, SHA verified, both baseline result files re-read and matched.
 
 ## Status: TERMINAL
 
 **Do not run another maintenance re-verification loop.** The research task is COMPLETE and the frozen baseline is final and negative-net:
 
-- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, net **-$31,637.98**, PF 0.492.
-- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, net **-$626,525.96**, PF 0.227.
-- Chronological train/val/test splits and date-based walk-forward are negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate and observed rates are below that.
+- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, net **-$31,637.98**, PF 0.492 (artifacts/metrics_axb0306_full.json).
+- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, net **-$626,525.96**, PF 0.227 (artifacts/metrics_kaggle.json).
+- Chronological train/val/test splits and date-based walk-forward are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate and observed rates are below that. Cost-sensitivity grid (slip ×0.5–2.0, cost ×0.8–1.2) stays negative.
 
 The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
 
@@ -28,9 +28,9 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T09:43:02Z)
+## Prior task (completed 2026-11-13T09:44:56Z)
 
-Terminal-state one-time confirmation at HEAD `9c0a984` (carried over from prior tip `b5bf568`): confirmed clean `main...origin/main` and clean working tree. Confirmed `git diff --stat b5bf568 9c0a984` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff-only controller checkpoint). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; last recorded full suite **75 passed in 0.91s**, 20/20 manifest matched at 2026-11-13T08:53:40Z; no re-run performed this session to avoid the maintenance loop. No frozen/research files touched; no commit added. `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
+Terminal-state one-time confirmation at HEAD `a162ba8` (carried over from prior tip `9c0a984`): confirmed clean `main...origin/main` and clean working tree. Confirmed `git show --stat a162ba8` and `git diff --stat b5bf568 9c0a984` touch only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff-only controller checkpoint). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite **75 passed in 0.91s**; 20/20 manifest matched; re-read both baseline metrics files and confirmed the reported net/PF. No frozen/research files touched; **no commit added**. `HANDOFF.md` consolidated (removed near-identical session-log bloat) and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
 
 ## Constraints
 
