@@ -1,7 +1,7 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `300f36d1f48a6974558f42e0fc8f39d02e24a932` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). Advanced from `59245993ac870e1778e4214546e280390ea871e2` by controller checkpoint commit (`chore(kilo): checkpoint agent session`, not added by this agent); all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
-- **Timestamp (UTC)**: 2026-11-13T17:59:00Z
+- **HEAD**: `f012cec3030e9d1821c8d1b2f1d6e6f8ddd10f3b` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). Advanced from `300f36d1f48a6974558f42e0fc8f39d02e24a932` by controller checkpoint commit (`chore(kilo): checkpoint agent session`, not added by this agent); all terminal invariants unchanged (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net `-$31,637.98` / `-$626,525.96`).
+- **Timestamp (UTC)**: 2026-11-13T18:00:26Z
 - **Last bounded state check (UTC)**: 2026-11-13T17:59:00Z (this session). Clean tree, HEAD `300f36d` == origin/main (0/0), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades, PF 0.4917) / `-$626,525.96` (688 trades, PF 0.2271) read directly from `artifacts/metrics_{axb0306_full,kaggle}.json`; checkpoint count since 2026-11-01T00:00:00Z is 2,665 total / 2,367 `chore(kilo)` (0 real research commits). No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**. Manifest was last fully re-hashed 20/20 at 2026-11-13T16:50:32Z; **not re-hashed this session**. Prior agent task (terminal-state report + durable-file refresh) complete; next-agent initial task written in `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - The `*/5 * * * *` loop is still active; stopping it requires explicit user authorization (see below).
 
