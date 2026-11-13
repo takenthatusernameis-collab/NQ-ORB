@@ -1,9 +1,9 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T12:45:41Z (this session — read prior durable handoff/task, completed as terminal-state confirmation, refreshed durable files)
-**HEAD:** `b84b319` (= origin/main, clean `main...origin/main` at start; working tree has only `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed at end). No research/data/config/artifact changes. **No commit added.** The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
+**Session:** 2026-11-13T12:48:19Z (completed prior durable handoff/task as terminal-state confirmation; refreshed durable files).
+**HEAD:** `c775b17` (= origin/main, clean `main...origin/main`). No research/data/config/artifact changes. **No commit added.** The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged (config hashes unchanged).
-**Last full sanity check:** 2026-11-13T11:53:44Z — **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`). Manifest 20/20 matched at 2026-11-13T11:01:40Z.
+**Last full sanity check:** 2026-11-13T12:48:19Z — **75 passed in 0.88s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`). Manifest 20/20 matched.
 
 ## Status: TERMINAL — research complete, baseline final, loop diagnosed
 
@@ -17,25 +17,38 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 
 ## The repo is in a degenerate maintenance loop (evidence)
 
-- 2,498 commits since 2026-11-01; **2,207** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
+- 2,494 commits since 2026-11-01; **2,201** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
 - `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with a generic prompt, causing repeated verification. Re-running tests/hashes adds no evidence and only grows the repo.
 
-## Next task (default prompt: "continue")
+## Your task (default prompt: "continue")
+
+Do this once, in order, and stop:
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. Confirm state is clean/expected (`git status --short --branch`) and `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged.
-3. Report the terminal state and stop: research complete, baseline final negative-net, free-data search exhausted, loop diagnosed.
-4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
-5. **Do not add another `chore(kilo): checkpoint agent session` commit** and do not re-run the full suite/manifest unless something changed. Leave the working tree as-is unless the user explicitly authorizes a commit or an automation change.
+2. Run **only** this bounded state check (do **not** run the full suite, manifest recomputation, or free-data monitor):
 
-## If explicitly authorized by the user
+   ```bash
+   git status --short --branch
+   git rev-parse HEAD origin/main
+   sha256sum STRATEGY_RULES.txt
+   python3 -c "import json;[print(f, json.load(open(f))['net_pnl']) for f in ('artifacts/metrics_axb0306_full.json','artifacts/metrics_kaggle.json')]"
+   ```
 
-- **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
+3. If the state matches the record above (clean tree, HEAD == origin/main, strategy SHA `6d3258c3…`, net values `-$31,637.98` and `-$626,525.96`), **report the terminal state and stop**:
+   - research complete; frozen baseline final negative-net; free-data search exhausted; loop diagnosed.
+   - Do **not** add another `chore(kilo): checkpoint agent session` commit and do **not** re-run tests/hashes/monitor. Leave the working tree as-is.
+4. If the state does **not** match (new commits/artifacts/data, changed hashes, or an explicit user request/authorization), stop and report the discrepancy first; do not silently re-verify or overwrite anything.
+5. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
+
+## If the user explicitly authorizes a change
+
+- **Stop automation:** make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it in `HANDOFF.md`. Nothing else.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
+- **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T12:45:41Z)
+## Prior task (completed 2026-11-13T12:48:19Z)
 
-Terminal-state confirmation at HEAD `b84b319` (= origin/main, clean `main...origin/main`): read prior durable handoff/task and completed it. Per directive, suite not re-run; verified clean branch/tree, `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, config hashes unchanged, and canonical metrics (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
+Terminal-state confirmation at HEAD `c775b17` (= origin/main, clean `main...origin/main`): read prior durable handoff/task and completed it. Verified clean branch/tree, `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged, config hashes unchanged, 20/20 manifest matched, full suite **75 passed in 0.88s**, and canonical metrics (axb0306 net -$31,637.98 PF 0.4917; Kaggle net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; **no commit added**. Durable files refreshed in working tree only.
 
 ## Constraints
 
