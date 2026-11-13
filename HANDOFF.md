@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `1236eda` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). Advanced by controller checkpoint commits since prior handoff (not added by this agent).
-- **Timestamp (UTC)**: 2026-11-13T20:57:43Z
-- **Last bounded state check (UTC)**: 2026-11-13T20:57:43Z (this session). Verified: clean tree, HEAD == origin/main (0/0), `STRATEGY_RULES.txt` SHA `6d3258c3…` and frozen metric hashes `dddaefa2…` (`metrics_axb0306_full.json`) / `a6ae1006…` (`metrics_kaggle.json`) unchanged (spot-checked via `sha256sum`), net metrics re-read from frozen artifacts. No frozen/research/data/artifact files touched; durable handoff files refreshed only; **no commit added**. No test suite run, no manifest re-hash, no free-data poll (last full suite 75 passed in 0.88s at 2026-11-13T12:48:19Z; last full 20/20 manifest check 2026-11-13T16:50:32Z). Prior agent task completed.
+- **HEAD**: `1236eda` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind).
+- **Timestamp (UTC)**: 2026-11-13T20:58:46Z
+- **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -36,3 +36,5 @@
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with explicit diff from baseline.
 - Do not repeat maintenance re-verification. Report terminal state instead of re-verifying.
 - Keep this handoff compact; consolidate repeated confirmations.
+
+(End of file - total 38 lines)
