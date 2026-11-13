@@ -1,7 +1,7 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T09:45:51Z (this session — terminal-state confirmation; read prior handoff/task and updated durable files)
-**HEAD:** `a162ba8` (clean `main...origin/main`, HEAD == origin/main). Working tree: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` modified (uncommitted) by this session. No research/data/config/artifact changes. **No commit added.**
+**Session:** 2026-11-13T09:47:42Z (this session — terminal-state confirmation; read prior handoff/task and updated durable files)
+**HEAD:** `998cf27` (clean `main...origin/main`, HEAD == origin/main). Working tree: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` modified (uncommitted) by this session. No research/data/config/artifact changes. **No commit added.**
 **STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
 **Last full sanity check:** 2026-11-13T09:44:56Z — 75 passed (0.91s), 20/20 manifest matched. This session: branch/hash/tree confirmed only (no re-run, to avoid maintenance loop).
 
@@ -28,9 +28,9 @@ The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaini
 - **Stop automation:** only with explicit authorization, make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it.
 - **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
 
-## Prior task (completed 2026-11-13T09:44:56Z)
+## Prior task (completed 2026-11-13T09:47:42Z)
 
-Terminal-state one-time confirmation at HEAD `a162ba8` (carried over from prior tip `9c0a984`): confirmed clean `main...origin/main` and clean working tree. Confirmed `git show --stat a162ba8` and `git diff --stat b5bf568 9c0a984` touch only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff-only controller checkpoint). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite **75 passed in 0.91s**; 20/20 manifest matched; re-read both baseline metrics files and confirmed the reported net/PF. No frozen/research files touched; **no commit added**. `HANDOFF.md` consolidated (removed near-identical session-log bloat) and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
+Terminal-state one-time confirmation at HEAD `998cf27` (= origin/main, clean `main...origin/main`, clean working tree): confirmed `git show --stat 998cf27` and `git diff a162ba8 998cf27` touch only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff-only controller checkpoint). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; full suite last verified **75 passed in 0.91s**; 20/20 manifest matched; re-read both baseline metrics files and confirmed the reported net/PF. No frozen/research files touched; **no commit added**. `HANDOFF.md` consolidated (removed near-identical session-log bloat) and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed in the working tree only, uncommitted.
 
 ## Constraints
 

@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `a162ba8` (= origin/main, clean `main...origin/main`, working tree clean at session start). `a162ba8` is a controller checkpoint (`chore(kilo): checkpoint agent session`) touching only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (`git show --stat a162ba8` confirms); prior `9c0a984`/`b5bf568`/`9c4d4c1`/`555816b`/`a97c9c4`/`431dcef`/`6c3133e` are prior controller/handoff checkpoints — none touch research/data/config/artifact files. This session performed a single one-time terminal-state confirmation (tests + manifest re-verified against the actual artifacts). No research/data/config/artifact files changed. **No commit made** by this session; durable handoff files updated in the working tree only.
-- **Timestamp (UTC)**: 2026-11-13T09:45:51Z
-- **Last sanity check (UTC)**: 2026-11-13T09:44:56Z — full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`); 20/20 manifest SHA-256 hashes recomputed and matched. This session (2026-11-13T09:45:51Z): confirmed HEAD `a162ba8` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged — no tests/manifest rerun (terminal state; avoiding maintenance loop). No research/data/config/artifact files changed. **No commit made**.
+- **HEAD**: `998cf27` (= origin/main, clean `main...origin/main`, working tree clean at session start). `998cf27` is a controller checkpoint (`chore(kilo): checkpoint agent session`) touching only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (`git show --stat 998cf27` confirms); diff vs `a162ba8` touches only those two files. Prior `a162ba8`/`9c0a984`/`b5bf568`/`9c4d4c1`/`555816b`/`a97c9c4`/`431dcef`/`6c3133e` are prior controller/handoff checkpoints — none touch research/data/config/artifact files. This session performed a single one-time terminal-state confirmation (tests + manifest last re-verified against actual artifacts at 2026-11-13T09:44:56Z; not re-run this session to avoid the maintenance loop). No research/data/config/artifact files changed. **No commit made** by this session; durable handoff files updated in the working tree only.
+- **Timestamp (UTC)**: 2026-11-13T09:47:42Z
+- **Last sanity check (UTC)**: 2026-11-13T09:44:56Z — full suite **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`); 20/20 manifest SHA-256 hashes recomputed and matched. This session (2026-11-13T09:47:42Z): confirmed HEAD `998cf27` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged — no tests/manifest rerun (terminal state; avoiding maintenance loop). No research/data/config/artifact files changed. **No commit made**.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -55,7 +55,7 @@
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T09:45:51Z (this session)**: Completed prior agent task (read durable handoff/prior task, confirmed terminal state) at HEAD `a162ba8` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged; did not re-run tests/manifest to avoid maintenance loop (last full check 2026-11-13T09:44:56Z: 75 passed, 20/20). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+- **2026-11-13T09:47:42Z (this session)**: Completed prior agent task (read durable handoff/prior task, confirmed terminal state) at HEAD `998cf27` (= origin/main, clean `main...origin/main`, tree clean). Verified `STRATEGY_RULES.txt` SHA `6d3258c3…` unchanged; did not re-run tests/manifest to avoid maintenance loop (last full check 2026-11-13T09:44:56Z: 75 passed, 20/20). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
 - **2026-11-13T09:44:56Z (prior)**: Terminal-state one-time confirmation at HEAD `a162ba8`; suite **75 passed in 0.91s**, 20/20 manifest matched, baselines re-verified (`metrics_axb0306_full.json` net -$31,637.98 PF 0.492; `metrics_kaggle.json` net -$626,525.96 PF 0.227). No commit. Handoff consolidated.
 - **2026-11-13T04:37Z–09:43Z (consolidated prior sessions, ~60+ near-identical)**: Long series of terminal-state one-time confirmations at advancing controller-checkpoint HEADs (through `9c0a984`). Each confirmed clean `main...origin/main`/clean tree and unchanged `STRATEGY_RULES.txt` SHA `6d3258c3…`; most re-ran the suite once (**75 passed**, 0.55–0.98s) and 20/20 manifest; some relied on the last recorded check per TERMINAL STATE. No new evidence, no commits by those sessions. Consolidated here to reduce handoff bloat.
 - **2026-11-13T01:04:05Z**: Maintenance re-verification at HEAD `6c08091`: 75 passed, 20/20 manifest matched. Diagnosed the degenerate maintenance loop (0 real research commits since 2026-11-01; thousands of `chore(kilo): checkpoint agent session` commits; workflow `*/5 * * * *`). Recorded the terminal state.
@@ -64,7 +64,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T09:44:56Z, HEAD `a162ba8`). Manifest 20/20 matched (2026-11-13T09:44:56Z). This session (2026-11-13T09:45:51Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit; HEAD == origin/main.
+- Last full sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T09:44:56Z, HEAD `998cf27`). Manifest 20/20 matched (2026-11-13T09:44:56Z). This session (2026-11-13T09:47:42Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit; HEAD == origin/main.
 
 ## Standing constraints
 
