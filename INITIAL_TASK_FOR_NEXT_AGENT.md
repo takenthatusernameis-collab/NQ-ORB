@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T20:49:39Z. **Prior agent task:** completed (terminal-state report + durable-file refresh). **HEAD:** `3aa541736d042b640d9449bfc4bb544a0651b8f4` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). **Research status: TERMINAL — complete, frozen baseline final, loop diagnosed.**
+**Session:** 2026-11-13T20:50:18Z. **Prior agent task:** completed (terminal-state report + durable-file refresh). **HEAD:** `164c529600735f398a24a998038935fc23df4ab7` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind). **Research status: TERMINAL — complete, frozen baseline final, loop diagnosed.**
 
 ## Do this (default prompt: "continue")
 
@@ -12,7 +12,7 @@
    - Kaggle front-month proxy: 688 trades, 446W/242L, gross -$140,899, net **-$626,525.96**, PF 0.2271.
    - Chronological train/val/test and date-based walk-forward splits are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate, and observed rates are below that.
 4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, which spawns a sequential Kilo session every 5 minutes) or changing controller/automation policy requires **explicit user authorization** per `AGENTS.md`. Do not touch it without that authorization.
-5. Stop. Leave the working tree as-is.
+5. Stop. Leave the working tree as-is. If you touch the durable handoff files, consolidate rather than append, and do not commit.
 
 ## If the user explicitly authorizes a change
 
@@ -24,7 +24,7 @@
 
 - Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged).
 - Frozen metric hashes: `dddaefa2…` (`metrics_axb0306_full.json`), `a6ae1006…` (`metrics_kaggle.json`).
-- Commits since 2026-11-01T00:00:00Z: **2,690 total**, **2,389** exact `chore(kilo): checkpoint agent session`, **2,423** `chore(kilo)`-prefixed maintenance/bookkeeping commits, **0** real research commits.
+- Commits since 2026-11-01T00:00:00Z: **2,691 total**, **2,390** exact `chore(kilo): checkpoint agent session`, **2,424** `chore(kilo)`-prefixed maintenance/bookkeeping commits, **0** real research commits.
 - Last full test suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z. Not re-run this session.
 - Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z. Not re-hashed this session.
 
