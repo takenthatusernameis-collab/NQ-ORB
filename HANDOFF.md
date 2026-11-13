@@ -34,3 +34,5 @@
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with an explicit diff from baseline.
 - Do not repeat maintenance re-verification. Report terminal state instead.
 - Keep this handoff compact; consolidate rather than append.
+
+(End of file - total 36 lines)
