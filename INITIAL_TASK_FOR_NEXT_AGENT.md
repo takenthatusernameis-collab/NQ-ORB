@@ -1,45 +1,33 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T19:12:06Z. Prior agent task complete (terminal-state report + durable-file refresh). **HEAD:** `1e367441d71c5d7b39caf2141fe4119f20c51866` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced from `9de5fe8d68a62aad5a3fad4eb4a31bff969653f7` by a controller checkpoint commit before this session, not added by this agent). No research/data/config/artifact changes. The `*/5 * * * *` loop remains active and is not stopped without explicit user authorization.
-**STRATEGY_RULES.txt:** SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified unchanged.
-**Last bounded state check:** 2026-11-13T19:12:06Z — clean tree, HEAD == origin/main (`1e36744`), strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` (60 trades: 42W/18L, PF 0.4917) and `-$626,525.96` (688 trades: 446W/242L, PF 0.2271) read from frozen `artifacts/metrics_{axb0306_full,kaggle}.json` (not re-run). No test suite run, no manifest re-hash (last 20/20 at 2026-11-13T16:50:32Z). Checkpoint count since 2026-11-01T00:00:00Z: 2,678 total / 2,412 `chore(kilo)` (0 real research commits).
+**Session:** 2026-11-13T19:48:29Z. **Prior agent task:** completed (terminal-state report + durable-file refresh). **HEAD:** `2362cb8ad240cf305d409963aefd78811b8b2828` (= origin/main, clean `main...origin/main`, 0 ahead / 0 behind; advanced by a controller checkpoint commit, not added by the prior agent). **Research status: TERMINAL — complete, frozen baseline final, loop diagnosed.**
 
-## Status: TERMINAL — research complete, baseline final, loop diagnosed
-
-**Do not run another maintenance re-verification loop.** The research task is COMPLETE and the frozen baseline is final and negative-net:
-
-- axb0306 (2026-01-20..2026-04-15, single-contract MNQ.M26): 60 trades, 42W/18L (70% win), gross -$7,662, costs $23,975.98, net **-$31,637.98**, PF 0.4917, long 33 / short 27 (`artifacts/metrics_axb0306_full.json`).
-- Kaggle front-month (2022-11-16..2025-11-12): 688 trades, 446W/242L (64.8% win), gross -$140,899, net **-$626,525.96**, PF 0.2271, long 359 / short 329 (`artifacts/metrics_kaggle.json`).
-- Chronological train/val/test splits and date-based walk-forward are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate and observed rates are below that. Cost-sensitivity grid (slip ×0.5–2.0, cost ×0.8–1.2) stays negative.
-
-The free-data ceiling is exhausted (`data/FEASIBILITY_REPORT.md`): every remaining candidate source is paid, key-gated, daily-only, or NQ (big contract, $20/point), not MNQ. No new research evidence is possible on current free data.
-
-## The repo is in a degenerate maintenance loop (evidence)
-
-- 2,678 commits since 2026-11-01; **2,412** are `chore(kilo): checkpoint agent session`; **0** are real research commits (last substantive research commits `5fab764`/`ce861a2`, 2026-10-31).
-- `.github/workflows/main.yml` runs `cron: "*/5 * * * *"` and spawns a sequential Kilo session each activation with a generic prompt, causing repeated verification. Re-running tests/hashes adds no evidence and only grows the repo.
-
-## Your task (default prompt: "continue")
-
-Do this once, in order, and stop:
+## Do this (default prompt: "continue")
 
 1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. **Do not run another bounded state check or re-verification.** The terminal state is already confirmed and recorded. If you verify anything, limit it to reading `git status`/`git rev-parse HEAD` and the frozen `artifacts/metrics_*.json`; do not re-run the test suite, re-hash the manifest, or poll the free-data monitor.
+2. Do **not** run another maintenance re-verification. Do not run the test suite, re-hash the manifest, poll the free-data monitor, or add another checkpoint commit.
 3. Report the terminal state and stop:
-   - research complete; frozen baseline final negative-net; free-data search exhausted; loop diagnosed.
-   - Do **not** add another `chore(kilo): checkpoint agent session` commit and do **not** re-run tests/hashes/monitor. Leave the working tree as-is.
-4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, spawns a sequential Kilo session every 5 minutes) or changing automation/controller policy requires **explicit user authorization** per `AGENTS.md`; do not touch it without that authorization.
+   - research complete; frozen baseline final and negative-net; free-data search exhausted; maintenance loop diagnosed.
+   - axb0306: 60 trades, 42W/18L, gross -$7,662, net **-$31,637.98**, PF 0.4917.
+   - Kaggle front-month proxy: 688 trades, 446W/242L, gross -$140,899, net **-$626,525.96**, PF 0.2271.
+   - Chronological train/val/test and date-based walk-forward splits are all negative net. Costs (commissions + fees $2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate, and observed rates are below that.
+4. State that stopping `.github/workflows/main.yml` (`cron: "*/5 * * * *"`, which spawns a sequential Kilo session every 5 minutes) or changing controller/automation policy requires **explicit user authorization** per `AGENTS.md`. Do not touch it without that authorization.
+5. Stop. Leave the working tree as-is.
 
 ## If the user explicitly authorizes a change
 
-- **Stop automation:** make the exact requested change to `.github/workflows/main.yml`/controller/policy and record it in `HANDOFF.md`. Nothing else.
-- **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files/artifacts/configs/raw data; free data only; follow `AGENTS.md`. Start from `PROMPT.md` and `data/FEASIBILITY_REPORT.md`.
-- **Commit/release/cleanup of the loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
+- **Stop automation:** make the exact requested change to `.github/workflows/main.yml`/controller/policy, record it in `HANDOFF.md`, and do nothing else.
+- **New research/experiment:** must be separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; must not overwrite frozen files, configs, raw data, or canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, and `data/FEASIBILITY_REPORT.md`.
+- **Commit/release/cleanup of loop bloat:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Prior task (completed 2026-11-13T19:12:06Z)
+## Verified state at this session
 
-Confirmed terminal state unchanged per prior task. Verified only the bounded minimum (clean tree, HEAD `1e36744` == origin/main 0/0, strategy SHA `6d3258c3…` matched by `sha256sum`, net `-$31,637.98` / `-$626,525.96` read from frozen artifacts, 2,678 total / 2,412 checkpoint commits since 2026-11-01). Research COMPLETE, frozen baseline final negative-net, free-data search exhausted, maintenance loop diagnosed. No re-verification suite run, no manifest re-hash. Durable files refreshed only; no commit added.
+- Strategy SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged).
+- Frozen metric hashes: `dddaefa2…` (`metrics_axb0306_full.json`), `a6ae1006…` (`metrics_kaggle.json`).
+- Commits since 2026-11-01T00:00:00Z: **2,679 total**, **2,378** exact `chore(kilo): checkpoint agent session`, **2,413** `chore(kilo)`-prefixed maintenance/bookkeeping commits, **0** real research commits.
+- Last full test suite: **75 passed in 0.88s** at 2026-11-13T12:48:19Z. Not re-run this session.
+- Last full 20-file manifest check: **20/20 matched** at 2026-11-13T16:50:32Z. Not re-hashed this session.
 
 ## Constraints
 
-Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Keep session changes to handoff/initial-task files unless explicitly authorized otherwise. No commits without explicit user authorization. Avoid checkpoint/handoff commit bloat.
+Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Do not add commits without explicit user authorization. Avoid checkpoint/handoff commit bloat.
