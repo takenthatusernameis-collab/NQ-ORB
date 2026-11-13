@@ -1,9 +1,9 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `94b1051` (= origin/main, clean, 0 ahead / 0 behind).
-- **Timestamp (UTC)**: 2026-11-13T21:52:32Z
+- **HEAD**: `5e59f2c` (= origin/main, clean, 0 ahead / 0 behind).
+- **Timestamp (UTC)**: 2026-11-13T22:02:31Z
 - **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
-- **This session**: completed prior agent task — read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; confirmed terminal state from frozen artifacts and prior durable records; refreshed both durable handoff files. No tests, manifest re-hash, monitor poll, or commits.
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; confirmed terminal state from frozen artifacts and prior durable records; refreshed both durable handoff files. No tests, manifest re-hash, monitor poll, or commits.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -11,7 +11,7 @@
 
 **This repository is in a degenerate maintenance loop.**
 - `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and spawns a sequential Kilo session per activation; each activation commits `chore(kilo): checkpoint agent session`.
-- Since 2026-11-01T00:00:00Z: **2,704 commits**, of which **2,406** are `chore(kilo): checkpoint agent session` and **2,437** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
+- Since 2026-11-01T00:00:00Z: **2,705 commits**, of which **2,407** are `chore(kilo): checkpoint agent session` and **2,438** are `chore(kilo)`-prefixed maintenance/bookkeeping; **0** real research commits (last substantive research: `5fab764`, `ce861a2`, 2026-10-31).
 - HEAD advances by checkpoint commits each session, so any count quoted here is already stale.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks or add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md` ("Do not edit `.github/workflows/main.yml` … unless the user explicitly authorizes that exact change"). No such authorization has been given.
@@ -37,3 +37,5 @@
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change must be a separately named, versioned experiment with explicit diff from baseline.
 - Do not repeat maintenance re-verification. Report terminal state instead of re-verifying.
 - Keep this handoff compact; consolidate repeated confirmations.
+
+(End of file - total 39 lines)
