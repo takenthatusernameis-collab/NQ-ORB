@@ -1,9 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e290d32` (= origin/main, clean).
-- **Timestamp (UTC)**: 2026-11-13T22:05:14Z
-- **Research status**: TERMINAL — complete, frozen baseline final and negative-net.
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`; re-confirmed terminal state from frozen artifacts (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`), strategy SHA-256, and live git state; completed prior agent task (no remaining research work). Refreshed durable handoff files (consolidated). No tests, manifest re-hash, monitor poll, or commits.
+- **HEAD**: `1a2497a` (= origin/main, clean).
+- **Timestamp (UTC)**: 2026-11-13T22:06:24Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `data/FEASIBILITY_REPORT.md`; re-confirmed terminal state from frozen artifacts, strategy SHA-256, and live git state; completed prior agent task (no remaining research work). Refreshed durable handoff files (consolidated). No tests, manifest re-hash, monitor poll, or commits.
 
 ## TERMINAL STATE — READ FIRST
 
