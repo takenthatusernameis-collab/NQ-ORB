@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e1db58f` (= origin/main, clean `main...origin/main`, working tree clean at session start). Controller checkpoints since prior session (`76419c9`, `e1db58f`) touch only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` — none touch research/data/config/artifact files. This session performed a single one-time terminal-state confirmation (tests + manifest rerun once to complete the prior task; not a recurring loop). No research/data/config/artifact files changed. Durable handoff files updated in the working tree only (uncommitted by this session).
-- **Timestamp (UTC)**: 2026-11-13T10:48:44Z
-- **Last sanity check (UTC)**: 2026-11-13T10:48:44Z — full suite **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`); 20/20 manifest SHA-256 hashes recomputed and matched (all 20 files byte-identical to the table below). This session (2026-11-13T10:48:44Z): confirmed HEAD `e1db58f` == origin/main, `main...origin/main` clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, baseline re-confirmed (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; no commit added by this session. Durable files refreshed in working tree only.
+- **HEAD**: `5a5033f` (= origin/main, clean `main...origin/main`, working tree clean at session start). Controller checkpoint `5a5033f` (chore) is ahead of the prior recorded `e1db58f`; it touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`, not research/data/config/artifact files. This session performed a single one-time terminal-state confirmation (no tests/manifest rerun — prior session already completed that; not a recurring loop). No research/data/config/artifact files changed. Durable handoff files updated in the working tree only (uncommitted by this session).
+- **Timestamp (UTC)**: 2026-11-13T10:50:49Z
+- **Last sanity check (UTC)**: 2026-11-13T10:48:44Z (prior session) — full suite **75 passed in 0.98s**; 20/20 manifest SHA-256 hashes recomputed and matched (all 20 files byte-identical to the table below). This session (2026-11-13T10:50:49Z): confirmed HEAD `5a5033f` == origin/main, `main...origin/main` clean, working tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, baseline re-confirmed (axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271). No frozen/research/data/artifact files touched; no commit added by this session. Durable files refreshed in working tree only.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -55,7 +55,8 @@
 
 ## Session log (consolidated — near-identical entries collapsed)
 
-- **2026-11-13T10:48:44Z (this session)**: Terminal-state confirmation at HEAD `e1db58f` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Full suite **75 passed in 0.98s**; manifest **20/20** recomputed and matched (all 20 files byte-identical to recorded hashes). Baseline re-confirmed: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. Tests/manifest rerun once to complete prior task (not a recurring loop). **No commit added**. Durable handoff files refreshed in working tree only.
+- **2026-11-13T10:50:49Z (this session)**: Terminal-state confirmation at HEAD `5a5033f` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE (terminal state). Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; no tests/manifest rerun (prior session already completed that). Baseline re-confirmed: axb0306 60 trades net -$31,637.98 PF 0.4917; Kaggle 688 trades net -$626,525.96 PF 0.2271. No frozen/research/data/artifact files touched. **No commit added**. Durable handoff files refreshed in working tree only.
+- **2026-11-13T10:48:44Z (prior session)**: Terminal-state confirmation at HEAD `e1db58f` (= origin/main, clean `main...origin/main`, working tree clean). Prior task COMPLETE; strategy hash unchanged; full suite **75 passed in 0.98s**; manifest **20/20** recomputed and matched. Durable files updated (working tree only, uncommitted).
 - **2026-11-13T10:43:48Z (prior session)**: Terminal-state confirmation at HEAD `25156ad` (= origin/main): prior task COMPLETE; strategy hash unchanged; no tests/manifest rerun; durable files updated (working tree only, uncommitted).
 - **2026-11-13T09:58:34Z (prior session)**: Terminal-state confirmation at HEAD `7629859` (= origin/main): prior task COMPLETE; strategy hash unchanged; no tests/manifest rerun; durable files updated (working tree only, uncommitted).
 - **2026-11-13T09:57:35Z (prior session)**: Terminal-state confirmation at HEAD `631cc6a` (= origin/main): prior task COMPLETE; strategy hash unchanged; no tests/manifest rerun; durable files updated (working tree only, uncommitted).
@@ -68,7 +69,7 @@
 
 ## Test status
 
-- Last full sanity check **75 passed in 0.91s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T09:44:56Z). Manifest 20/20 matched (2026-11-13T09:44:56Z). This session (2026-11-13T10:43:48Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit by this session; HEAD == origin/main.
+- Last full sanity check **75 passed in 0.98s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T10:48:44Z). Manifest 20/20 matched (2026-11-13T10:48:44Z). This session (2026-11-13T10:50:49Z) confirmed clean tree/branch and strategy hash only (no re-run). No new commit by this session; HEAD `5a5033f` == origin/main.
 
 ## Standing constraints
 
