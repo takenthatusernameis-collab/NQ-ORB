@@ -1,10 +1,10 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `cf0cc44` (= origin/main, clean `main...origin/main`, working tree clean). Prior agent task (terminal-state one-time confirmation) completed this session — one-time confirmation only, not a maintenance re-verification loop. Tip `cf0cc44` is a controller checkpoint touching only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`; no research/data/config/artifact change. Durable handoff files updated in the working tree only; **no commit made** by this session and no frozen/research files touched.
-- **Timestamp (UTC)**: 2026-11-13T06:42:27Z
-- **Last sanity check (UTC)**: 2026-11-13T06:42:27Z (one-time terminal-state confirmation at HEAD `cf0cc44`; tree clean, HEAD == origin/main, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged). Full suite and manifest last recorded **75 passed in 0.56s / 20/20 match** at 2026-11-13T06:38:32Z — not re-run this session to avoid the maintenance re-verification loop. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted).
+- **HEAD**: `7c619e1` (= origin/main, clean `main...origin/main`, working tree clean at session start). Prior agent task (terminal-state one-time confirmation at then-tip `cf0cc44`) completed; this session performed a single terminal-state confirmation at `7c619e1` (not a maintenance re-verification loop). Tip `7c619e1` is a controller checkpoint (`chore(kilo): checkpoint agent session`); no research/data/config/artifact change. Durable handoff files updated in the working tree only; **no commit made** by this session and no frozen/research files touched.
+- **Timestamp (UTC)**: 2026-11-13T06:44:30Z
+- **Last sanity check (UTC)**: 2026-11-13T06:44:30Z (one-time terminal-state confirmation at HEAD `7c619e1`; tree clean, HEAD == origin/main, `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged). Full suite and manifest last recorded **75 passed in 0.56s / 20/20 match** at 2026-11-13T06:38:32Z — not re-run this session to avoid the maintenance re-verification loop. Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted).
 
-**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `cf0cc44` (current tip), `43169ec`, `aa9bb69`, `6ceb381`, `26eedf7`, `4669eec`, `99e308a`, `722df98`, `1506cf8`, `0385346`, `93dca66`, `1800d7a`, `ea81f09`, `d987016`, `348193b`, `b771563`, `2857835`, `7c6f683`, `1677b8d`, `0de6f0f`, `cfe8fdf`, `cbd860e`, `1800548` (workflow diagnostics only), `969ebd5`, `54ceb0e`, `76c681b`, `40f2cf1`, `d4d3acb`, `3fb4304`, `30bfcd8`, `6c08091`, `b93a133`; these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
+**HEAD progression note:** recent handoff-only / diagnostics checkpoints on this line include `7c619e1` (current tip), `cf0cc44`, `43169ec`, `aa9bb69`, `6ceb381`, `26eedf7`, `4669eec`, `99e308a`, `722df98`, `1506cf8`, `0385346`, `93dca66`, `1800d7a`, `ea81f09`, `d987016`, `348193b`, `b771563`, `2857835`, `7c6f683`, `1677b8d`, `0de6f0f`, `cfe8fdf`, `cbd860e`, `1800548` (workflow diagnostics only), `969ebd5`, `54ceb0e`, `76c681b`, `40f2cf1`, `d4d3acb`, `3fb4304`, `30bfcd8`, `6c08091`, `b93a133`; these touched only handoff/checkpoint/diagnostics files. No research/data/config/artifact files changed in these checkpoints.
 
 ## TERMINAL STATE — READ FIRST (added 2026-11-13T01:04:05Z)
 
@@ -53,7 +53,9 @@
 
 ## Session log (recent, consolidated)
 
-- **2026-11-13T06:42:27Z (this session)**: Completed prior agent task (terminal-state one-time confirmation) at HEAD `cf0cc44` (= origin/main, clean `main...origin/main`, tree clean). Verified `git show --name-only cf0cc44` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff-only controller checkpoint), so no research/data/config/artifact files changed. Verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged via `sha256sum`. Single one-time confirmation only (not a maintenance re-verification loop): tests/manifest not re-run this session (last recorded **75 passed in 0.56s**, 20/20 manifest match at 2026-11-13T06:38:32Z). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence; no commit added. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+- **2026-11-13T06:44:30Z (this session)**: Completed prior agent task (terminal-state one-time confirmation carried over from tip `cf0cc44`) at current HEAD `7c619e1` (= origin/main, clean `main...origin/main`). Confirmed `7c619e1` is a controller checkpoint with no research/data/config/artifact change; verified `STRATEGY_RULES.txt` SHA `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged. Single one-time confirmation only (not a maintenance re-verification loop): tests/manifest not re-run (last recorded **75 passed in 0.56s**, 20/20 manifest match at 2026-11-13T06:38:32Z). Research remains complete/frozen (negative-net baseline, free-data ceiling exhausted); no new evidence; no commit added. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (working tree only, uncommitted).
+
+- **2026-11-13T06:42:27Z**: One-time terminal-state confirmation at HEAD `cf0cc44` (handoff-only controller checkpoint touching only handoff files); `STRATEGY_RULES.txt` SHA unchanged; tests/manifest not re-run (last 75 passed/20/20 at 06:38:32Z). No commit added.
 
 - **2026-11-13T06:41:08Z**: One-time terminal-state confirmation at HEAD `43169ec`; prior tip `aa9bb69` handoff-only checkpoint; SHA unchanged; tests/manifest not re-run (last 75 passed/20/20 at 06:38:32Z). No commit added.
 
@@ -72,7 +74,7 @@
 
 ## Test status
 
-- Last sanity check **75 passed in 0.56s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T06:38:32Z). No regressions observed. Manifest verified 20/20 (no frozen files changed). One-time terminal-state confirmation at 2026-11-13T06:42:27Z (HEAD `cf0cc44`); tests/manifest not re-run this session. No new commit.
+- Last sanity check **75 passed in 0.56s** (`/tmp/kilo-verify-venv/bin/python -m pytest tests/ -q`; 2026-11-13T06:38:32Z). No regressions observed. Manifest verified 20/20 (no frozen files changed). One-time terminal-state confirmation at 2026-11-13T06:44:30Z (HEAD `7c619e1`); tests/manifest not re-run this session. No new commit.
 
 ## Standing constraints
 
