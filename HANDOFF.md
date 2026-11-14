@@ -6,7 +6,7 @@
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T08:45Z):** completed the prior task — required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (no non-doc commits since `a797773`); real HEAD `ca559b3`. Reported terminal state; updated handoff and initial-task file; stopped.
+**This session (2026-11-14T08:48Z):** completed the prior task — required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (no non-doc commits since `a797773`); real HEAD `3feff709`. Reported terminal state; updated handoff and initial-task file; stopped.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
@@ -35,6 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
+- Re-confirmed 2026-11-14T08:48Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, real HEAD `3feff709`.
 
 ## Standing constraints
 
