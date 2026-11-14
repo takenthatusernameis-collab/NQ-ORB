@@ -1,13 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `6a68857` (`chore(kilo): checkpoint agent session`; handoff-only checkpoint). Checkpoint commits since the last substantive research commit (`5fab764`, 2026-10-31) touch only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`. Working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T06:45Z (session AC).
+- **HEAD**: `6a68857` (`chore(kilo): checkpoint agent session`). Working tree clean at session start; no substantive research commit after `5fab764` (2026-10-31).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session AC (2026-11-14T06:45Z):** completed the prior agent task by reading the durable handoff/initial task and confirming terminal state (HEAD, git status, frozen artifact hashes/metrics spot-checked). No tests, hashes re-runs, monitor checks, or research work performed. No research code, configuration, raw data, canonical artifacts, workflows, controller, or automation policy modified. Terminal conclusion unchanged: report it and stop.
+**This session (2026-11-14T06:41Z, session AD):** read the durable handoff/initial task and confirmed terminal state (HEAD, clean git, frozen artifact hashes/metrics consistent). No tests, hashes re-runs, monitor checks, or research work performed. No research code, configuration, raw data, canonical artifacts, workflows, controller, or automation policy modified. Terminal conclusion unchanged: report it and stop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
@@ -33,5 +32,3 @@
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not repeat maintenance re-verification. Report terminal state instead.
 - Keep this handoff compact; consolidate rather than append.
-
-(End of file - total 37 lines)
