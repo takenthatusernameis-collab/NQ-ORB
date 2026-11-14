@@ -1,20 +1,20 @@
 # NQ ORB — Durable handoff
 
-- **HEAD:** `79e9607` (2026-11-14T13:22Z; doc-only checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD:** `120596c` (2026-11-14T13:23Z; checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Latest verification (2026-11-14T13:22Z):** at HEAD `79e9607`, drift anchor holds — `STRATEGY_RULES.txt` hash `6d3258c3…8ad2b1`; `git status --porcelain` clean; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (0 commits). No new code/experiment, no tests re-run, no workflow edits. ~1,015 commits since `a797773` (~3,040 since `5fab764` baseline), all maintenance/checkpoint/doc-only.
+**Latest verification (2026-11-14T13:23Z):** at HEAD `120596c`, drift anchor holds — `STRATEGY_RULES.txt` hash `6d3258c3…8ad2b1`; `git status --porcelain` clean; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (0 commits). No new code/experiment, no tests re-run, no workflow edits. ~1,016 commits since `a797773` (~3,041 since `5fab764` baseline), all maintenance/checkpoint/doc-only.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
 ## Repository state (accurate)
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
-- **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f` and `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, an additive `flatten_fill='open'` field whose default preserves baseline behavior, plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on the 15:55 ET flatten (all exits are target/stop/`stop_first_ambiguous`), so 1-minute resolution changes nothing — the negative result is robust to execution resolution.
-- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). The ~1,010 commits since are all `chore(kilo)` checkpoint/maintenance plus doc-only handoff refreshes; ~3,035 commits since `5fab764`.
+- **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f` and `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, additive `flatten_fill='open'` (default preserves baseline), plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on 15:55 ET flatten, so 1-minute resolution changes nothing.
+- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Subsequent commits are all `chore(kilo)` checkpoint/maintenance and doc-only.
 
 ## Evidence (frozen artifacts)
 
@@ -24,18 +24,17 @@
 
 ## Test/manifest status
 
-- Last full suite result on record: **75 passed in 0.63s** (2026-11-14T07:41Z). CI runs only the 4 controller/automation test files, not `tests/orb/`. (This session intentionally did not re-run tests, per "do not repeat maintenance re-verification".)
-- No `*manifest*` file exists in the tree; ignore the stale "20/20 manifest" reference.
+- Last full suite result on record: **75 passed in 0.63s** (2026-11-14T07:41Z). CI runs only the 4 controller/automation test files, not `tests/orb/`. Not re-run this session.
+- No `*manifest*` file exists in the tree; ignore stale "20/20 manifest" references.
 
 ## Maintenance-loop observation
 
-- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; ~3,035 checkpoint/diagnostic/doc commits since the baseline. Newest `research_state/` free-data monitor artifact is still `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z); zero after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; ~3,041 checkpoint/diagnostic/doc commits since baseline. Newest `research_state/` free-data monitor artifact is still `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z); none after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
 
 ## Robust drift anchor (use this, not exact HEAD)
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
-- Confirmed unchanged at HEAD `d58b322` (2026-11-14T12:32Z, doc-only). Treat in-session dirtiness limited to `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` as expected; do not create new commits for doc-only churn and do not modify automation.
 
 ## Standing constraints
 

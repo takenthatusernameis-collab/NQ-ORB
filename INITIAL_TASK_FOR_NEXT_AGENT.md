@@ -2,25 +2,25 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-This session (2026-11-14T13:22Z) read the durable handoff, confirmed the drift anchor, and reported terminal state. Nothing was implemented, tested, or committed beyond doc updates.
+Session 2026-11-14T13:23Z read the durable handoff, verified the drift anchor, and updated docs. No research code/tests/artifacts changed.
 
 ## Verified state
 
-- HEAD `79e9607` (doc-only checkpoint; `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` only).
+- HEAD `120596c` (2026-11-14T13:23Z).
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
-- Drift anchor verified this session: `git status --porcelain` clean; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
-- ~1,015 commits since `a797773` (~3,040 since baseline); all `chore(kilo)` checkpoint/diagnostics/maintenance or doc-only.
-- Maintenance automation stalled: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` free-data monitor artifact remains `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z), none after.
+- Drift anchor verified this session: `git status --porcelain` clean (before these doc updates); `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
+- ~1,016 commits since `a797773` (~3,041 since baseline); all `chore(kilo)` checkpoint/maintenance or doc-only.
+- Maintenance automation stalled: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` monitor artifact remains `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z).
 
 ## Frozen results (final, negative-net)
 
 - MNQ 15-min baseline negative-net on every free dataset available; free MNQ 1-min/15-min source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03).
-- axb0306 (NQ 15-min): 60 trades, 42W/18L, net **-$31,637.98**, PF 0.4917, expectancy -0.0431R.
-- Kaggle proxy (MNQ 15-min): 688 trades, 446W/242L, net **-$626,525.96**, PF 0.2271, expectancy -0.0684R.
+- axb0306 (NQ 15-min): 60 trades, net **-$31,637.98**, PF 0.4917, expectancy -0.0431R.
+- Kaggle proxy (MNQ 15-min): 688 trades, net **-$626,525.96**, PF 0.2271, expectancy -0.0684R.
 - 1-minute experiment `orb_mnq_1m_wf_v1` byte-identical to 15m (no trade binds on 15:55 ET flatten).
 - All chronological splits, walk-forward folds, and 12 cost-sensitivity combos negative. Driver: $2.87/side + 1-tick slippage; 0.4R target needs >71.43% pre-cost win rate.
-- Tests: last full suite on record **75 passed in 0.63s** (2026-11-14T07:41Z), not re-run this session. CI runs only 4 controller/automation files, not `tests/orb/`. No `*manifest*` file exists (ignore stale "20/20 manifest" refs).
+- Tests: last full suite on record **75 passed in 0.63s** (2026-11-14T07:41Z), not re-run. CI runs only 4 controller/automation files, not `tests/orb/`. No `*manifest*` file exists.
 
 ## Task
 
@@ -40,4 +40,4 @@ Only act if the user explicitly directs one of:
 - Do not re-run tests/hashes/drift checks solely for another checkpoint; the drift anchor is sufficient.
 - Keep `HANDOFF.md` compact; consolidate rather than append.
 
-(End of file - total 40 lines)
+(End of file)
