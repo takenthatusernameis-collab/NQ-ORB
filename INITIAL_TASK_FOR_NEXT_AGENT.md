@@ -1,7 +1,7 @@
 # Initial task for next agent
 
 **Status:** TERMINAL — research complete; no remaining research work.
-**Session:** 2026-11-14 (session AF). **Prior agent task:** complete the durable handoff's terminal task, then update handoff and this file. This session confirmed terminal state via a minimal drift check only (git HEAD `1951f93`/clean tree, `STRATEGY_RULES.txt` SHA-256, headline figures in both metric files matched the quoted frozen figures) — no tests, full hash re-runs, monitor checks, or research work. Only `HANDOFF.md` and this file changed; research code, configuration, raw data, canonical artifacts, workflows, controller, and automation policy untouched. Changes are uncommitted — the controller owns commits.
+**Session:** 2026-11-14 (session AG). **Prior agent task:** complete the durable handoff's terminal task, then update handoff and this file. This session confirmed terminal state via a minimal drift check only (git HEAD `3fd30e8`/clean-at-start, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, headline figures in both metric files matched) — no tests, full hash re-runs, monitor checks, or research work. Only `HANDOFF.md` and this file changed; research code, configuration, raw data, canonical artifacts, workflows, controller, and automation policy untouched. Changes are uncommitted — the controller owns commits.
 
 ## Required first action
 
