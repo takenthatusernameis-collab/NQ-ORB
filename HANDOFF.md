@@ -1,31 +1,31 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `b49b275` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean. `19adada..b49b275` touches only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`.
-- **Timestamp (UTC)**: 2026-11-14T06:36Z (session X).
+- **HEAD**: `4ec4315` (`chore(kilo): checkpoint agent session`; controller checkpoint of session X's handoff-only edit). Working tree clean. `b49b275..4ec4315` touches only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`; `19adada..b49b275` likewise. No substantive research commit since `5fab764` (2026-10-31).
+- **Timestamp (UTC)**: 2026-11-14T06:36Z (session Y).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session X (2026-11-14T06:36Z):** re-read handoff + `STRATEGY_RULES.txt`; completed the prior (session IX) read-only terminal confirmation. Verified: `git status` clean; SHA-256 matches `6d3258c3…8ad2b1`; canonical artifacts present; metrics match handoff (axb0306 net -$31,637.98 / PF 0.4917 / 60 trades; Kaggle 688 trades net -$626,525.96 / PF 0.2271); newest monitor artifact `free_data_monitor_20261108060017Z.json` (2026-11-08), stalled. Did NOT re-run tests. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only; no changes to research artifacts/code/config/raw data. Terminal conclusion unchanged: stop.
+**Session Y (2026-11-14T06:36Z):** read handoff, `STRATEGY_RULES.txt`, and `INITIAL_TASK_FOR_NEXT_AGENT.md`; the prior (session IX→X) task — read-only terminal confirmation — was already complete, so it was NOT repeated. Confirmed from the pre-existing handoff and spot-checks: `git status` clean; SHA-256 matches `6d3258c3…8ad2b1`; canonical metrics match handoff (axb0306 net -$31,637.98 / PF 0.4917; Kaggle net -$626,525.96 / PF 0.2271); newest monitor artifact still `free_data_monitor_20261108T060017Z.json` (2026-11-08), stalled. Did NOT re-run tests, full hash manifest, or monitor checks; did NOT edit `.github/workflows/main.yml`, controller, or automation policy. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only; no changes to research artifacts/code/config/raw data. Terminal conclusion unchanged: stop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Evidence (from frozen artifacts; re-confirmed session X)
+## Evidence (from frozen artifacts; re-confirmed session Y)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` (matches).
-- axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R (costs -$23,975.98 implied by net−gross).
-- Kaggle proxy (`artifacts/metrics_kaggle.json`, 688 trades, 2022-11-16..2025-11-12): 446W/242L (64.8%), gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
+- axb0306 (`artifacts/metrics_axb0306_full.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R (costs -$23,975.98 implied by net−gross; 60 trades per `trades_axb0306_full.json`).
+- Kaggle proxy (`artifacts/metrics_kaggle.json`, 446W/242L, 64.8%, 688 trades 2022-11-16..2025-11-12): gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
 - Chronological splits all negative (train -$448,720.04 / val -$65,094.22 / test negative). Walk-forward all negative (kaggle 8 windows test net -$70,637.24..-$178,375.24; test PF 0.128–0.447). All 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate; observed below.
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv). CI only runs the 4 controller/automation test files, not `tests/orb/`. Session X did not re-run tests (read-only terminal confirmation).
+- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv). CI only runs the 4 controller/automation test files, not `tests/orb/`. Sessions X and Y did not re-run tests (read-only terminal confirmation).
 - Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z).
 
 ## Maintenance-loop observation
 
-- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`, checkpoint-only commits through 2026-11-14. `research_state/` newest monitor artifact is 2026-11-08T06:00:17Z; zero artifacts after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; checkpoint-only commits continue through 2026-11-14 (`4ec4315`). `research_state/` newest monitor artifact is 2026-11-08T06:00:17Z; zero artifacts after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
 
 ## Standing constraints
 
