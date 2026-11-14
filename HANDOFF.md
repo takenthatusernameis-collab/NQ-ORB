@@ -1,16 +1,14 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: real HEAD `ca559b3` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below). This file is committed after the agent writes it, so a recorded HEAD one checkpoint behind the real HEAD is expected; use the robust drift anchor below instead of exact HEAD.
+- **HEAD**: `4724faa` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). This file is committed after it is written, so recorded HEAD may lag real HEAD by one checkpoint; use the robust drift anchor below.
 
 ## TERMINAL STATE — READ FIRST
 
-**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
+**Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T08:49Z):** confirmed terminal state via robust drift check (clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, real HEAD `ca559b3`). No tests re-run, no re-hash beyond drift check, no monitor poll. Reported terminal state; updated handoff and initial-task file; stopped.
+**This session (2026-11-14T09:39Z):** read prior handoff/initial task, ran robust drift anchor (clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `4724faa`). No tests re-run, no re-hash beyond drift check, no monitor poll. Updated handoff and initial task for next agent; reported terminal state.
 
-**Confirmed again 2026-11-14T09:39Z:** Terminal state verified via robust drift anchor (clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, real HEAD `fbd484e` — checkpoint churn only). Research complete.
-
-**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
+**Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
 ## Repository state (accurate)
 
