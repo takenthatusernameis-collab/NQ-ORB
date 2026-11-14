@@ -2,7 +2,7 @@
 
 ## Status: terminal research complete; do nothing unless explicitly directed (2026-11-14T22:09Z)
 
-Prior task completed and re-verified read-only (HEAD `fdf0656`, clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`). Durable notes refreshed/compacted. No tests/monitors/source/config/data/artifact changes. Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s** (not re-run this session per no-re-run guidance).
+Prior task completed and re-verified read-only (HEAD at session start `a192dad`, clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`; only non-doc delta is controller workflow diagnostics). Durable notes refreshed/compacted. No tests/monitors/source/config/data/artifact changes. Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s** (not re-run this session per no-re-run guidance).
 
 ## Your task (initial message)
 

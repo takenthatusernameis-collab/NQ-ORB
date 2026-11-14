@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete
 
-**HEAD observed:** `fdf0656` (chore: refresh handoff/next-agent doc only). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**HEAD observed at session start:** `a192dad` (chore(kilo): checkpoint agent session — doc-only). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T22:09Z):** read-only drift-anchor re-verification only. Clean tracked tree (`git status --porcelain` empty), SHA matches, and `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No source/config/data/artifact or test changes. Handoff and next-agent task refreshed to HEAD `fdf0656`.
+**This session (2026-11-14T22:09Z):** completed prior task — terminal-state re-verification, read-only. Clean tracked tree (`git status --porcelain` empty), SHA matches, and `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. Only non-doc change since `a797773` is appended `research_state/workflow_run_diagnostics.jsonl` (controller workflow capture; non-substantive). No source/config/data/artifact or test changes; tests not re-run. Handoff and next-agent task refreshed.
 
 ## Terminal state — read first
 
