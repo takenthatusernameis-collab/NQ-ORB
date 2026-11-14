@@ -2,11 +2,11 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Durable handoff and this file read 2026-11-14T15:41Z. Prior task was complete with no outstanding research work. This session confirmed the drift anchor only (working tree clean pre-edit, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no substantive commits since `a797773`). Tests were NOT re-run (anchor unchanged; last recorded **75 passed in 0.94s**).
+Durable handoff and this file read 2026-11-14T15:45Z. Prior task was complete with no outstanding research work. This session confirmed the drift anchor only (working tree clean pre-edit, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no substantive commits since `a797773`). Tests were NOT re-run (anchor unchanged; last recorded **75 passed in 0.94s**).
 
 ## Last verified state
 
-- HEAD at verification: `dd780f0` (checkpoint-only `chore(kilo)`).
+- HEAD at verification: `22b55a8` (checkpoint-only `chore(kilo)`); prior verified HEAD was `dd780f0`.
 - Baseline frozen at `5fab764`, `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`; no substantive (non-doc) change since `a797773`.
 - 34 JSON artifacts (+ `README.md`) in `artifacts/`. Newest `research_state/` monitor artifact: `free_data_monitor_20261108T060017Z.json`.
 - `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit user authorization.
@@ -33,4 +33,4 @@ Only act if the user explicitly directs one of:
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization.
 - Keep `HANDOFF.md` compact.
 
-(End of file)
+(End of file - total 36 lines)
