@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `f92dd7c` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD**: `85c79bd` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -35,7 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
-- Re-confirmed 2026-11-14T10:21Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `f92dd7c`.
+- Re-confirmed 2026-11-14T10:21Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `85c79bd`.
 
 ## Standing constraints
 
