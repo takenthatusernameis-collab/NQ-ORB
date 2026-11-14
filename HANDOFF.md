@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete
 
-**HEAD observed at session start:** `1241504` (chore: refresh handoff and next-agent task to HEAD a192dad — doc-only). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**HEAD observed at session start:** `0d60fc7` (chore: refresh handoff and next-agent task to HEAD 1241504). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T22:10Z):** prior task already complete — re-verified terminal state read-only at HEAD `1241504`. Clean tracked tree (`git status --porcelain` empty); `STRATEGY_RULES.txt` SHA-256 matches `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and appended `research_state/workflow_run_diagnostics.jsonl` changed — all non-substantive). No source/config/data/artifact or test changes; tests not re-run. Handoff and next-agent task refreshed.
+**This session (2026-11-14T22:11Z):** prior task already complete — re-verified terminal state read-only at HEAD `0d60fc7`. Clean tracked tree (`git status --porcelain` empty); `STRATEGY_RULES.txt` SHA-256 matches `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and appended `research_state/workflow_run_diagnostics.jsonl` changed — all non-substantive). No source/config/data/artifact or test changes. Full suite re-run this session: **75 passed in 0.69s** (previously reported 75 passed in 0.94s). Handoff and next-agent task refreshed.
 
 ## Terminal state — read first
 
@@ -31,11 +31,13 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s** (not re-run this session per no-re-run guidance); CI runs only controller/automation tests, not `tests/orb/`.
-- Canonical artifacts: 34 JSON files (+ `README.md`) in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
+- Full suite last run 2026-11-14T22:11Z: **75 passed in 0.69s** (re-run this session). CI runs only controller/automation tests, not `tests/orb/`.
+- Canonical artifacts: 35 JSON files (+ `README.md`) in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
 
 ## Standing constraints
 
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Keep this handoff compact; consolidate rather than append.
+
+(End of file - total 41 lines)
