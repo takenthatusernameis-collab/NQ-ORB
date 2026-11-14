@@ -1,17 +1,17 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `19adada` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean.
-- **Timestamp (UTC)**: 2026-11-14T06:34Z (session IX).
+- **HEAD**: `b49b275` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean. `19adada..b49b275` touches only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- **Timestamp (UTC)**: 2026-11-14T06:36Z (session X).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session IX (2026-11-14T06:34Z):** completed the prior agent task (session VIII terminal confirmation). Verified read-only: `git status` clean; `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` matches; canonical artifacts + `data/FEASIBILITY_REPORT.md` present; canonical metrics match handoff (axb0306 net -$31,637.98 / PF 0.4917 / 60 trades; Kaggle 688 trades net -$626,525.96 / PF 0.2271; walk-forward all negative); newest monitor artifact remains `free_data_monitor_20261108060017Z.json`, 2026-11-08, stalled. Did NOT re-run tests (session T: 75 passed in 0.70s). Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only; no changes to research artifacts/code/config/raw data. Terminal conclusion unchanged: stop.
+**Session X (2026-11-14T06:36Z):** re-read handoff + `STRATEGY_RULES.txt`; completed the prior (session IX) read-only terminal confirmation. Verified: `git status` clean; SHA-256 matches `6d3258c3…8ad2b1`; canonical artifacts present; metrics match handoff (axb0306 net -$31,637.98 / PF 0.4917 / 60 trades; Kaggle 688 trades net -$626,525.96 / PF 0.2271); newest monitor artifact `free_data_monitor_20261108060017Z.json` (2026-11-08), stalled. Did NOT re-run tests. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only; no changes to research artifacts/code/config/raw data. Terminal conclusion unchanged: stop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Evidence (from frozen artifacts; re-confirmed session IX)
+## Evidence (from frozen artifacts; re-confirmed session X)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` (matches).
 - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R (costs -$23,975.98 implied by net−gross).
@@ -20,7 +20,7 @@
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv). CI only runs the 4 controller/automation test files, not `tests/orb/`. Session IX did not re-run tests (read-only terminal confirmation).
+- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv). CI only runs the 4 controller/automation test files, not `tests/orb/`. Session X did not re-run tests (read-only terminal confirmation).
 - Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z).
 
 ## Maintenance-loop observation
@@ -34,4 +34,4 @@
 - Do not repeat maintenance re-verification. Report terminal state instead.
 - Keep this handoff compact; consolidate rather than append.
 
-(End of file - total 36 lines)
+(End of file - total 37 lines)
