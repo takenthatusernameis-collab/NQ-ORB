@@ -1,11 +1,11 @@
 # Initial task for next agent
 
 **Status:** TERMINAL — research complete; no remaining research work.
-**Session:** 2026-11-14T06:36Z (session Z). **Prior agent task:** session Y's task was a read-only terminal confirmation and it was already complete; sessions X, Y, and Z have each confirmed the terminal state read-only. Session Z read `HANDOFF.md`, `STRATEGY_RULES.txt`, and this file, confirmed the handoff's canonical numbers still hold (working tree clean; HEAD `3b02d80` is a handoff-only checkpoint), and updated `HANDOFF.md` and this file only — no changes to research artifacts/code/config/raw data, no test or full-hash re-runs, no workflow/controller/policy edits.
+**Session:** 2026-11-14T06:38Z (session AA). **Prior agent task:** session Z's read-only terminal confirmation was already complete. Session AA closed it by documenting the final terminal state and did not repeat tests, hashes, monitor polling, or other research work. Only `HANDOFF.md` and this file were changed; research code, configuration, raw data, canonical artifacts, workflows, controller, and automation policy were not touched.
 
 ## Required first action
 
-Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. Unless the user explicitly names a forward path below, **report terminal state and stop**. Do **not** re-run tests, re-hash artifacts, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy (explicit user authorization required per `AGENTS.md`). Three sessions in a row have confirmed the terminal state; repeating the check adds no evidence.
+Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. The terminal state is already established; **report it and stop unless the user explicitly names a forward path below**. Do not re-run tests, re-hash artifacts, poll the free-data monitor, add another handoff-only checkpoint, or edit `.github/workflows/main.yml` / controller / automation policy without explicit user authorization.
 
 ## Terminal summary to report
 
@@ -15,8 +15,8 @@ Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. Unless the user expl
 - Chronological splits and 8-window walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 - `cron: "*/5 * * * *"` still present at `.github/workflows/main.yml:11`; no free-data monitor artifact after 2026-11-08T06:00:17Z — automation stalled. Stop/reduce only with explicit user authorization.
-- Test suite: 75 passed (2026-11-14T05:39Z, session T, fresh venv); sessions X, Y, and Z did not re-run tests.
-- HEAD `3b02d80` is a checkpoint of session Y's handoff edits; no substantive research commit since `5fab764` (2026-10-31).
+- Test suite: 75 passed (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run tests.
+- HEAD `3e02490` is a handoff-only checkpoint. The working tree currently contains only the session AA documentation update; no substantive research commit exists after `5fab764` (2026-10-31).
 
 ## Only if user explicitly chooses a forward path
 
