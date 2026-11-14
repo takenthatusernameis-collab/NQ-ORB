@@ -6,7 +6,7 @@ Research is in **terminal COMPLETE state**. Frozen MNQ 15-min ORB baseline (`STR
 - axb0306 (NQ 15-min): 60 trades, net **-$31,637.98**
 - Kaggle proxy (MNQ 15-min): 688 trades, net **-$626,525.96**
 - 1-min experiment `orb_mnq_1m_wf_v1`: **byte-identical** to 15m; all splits/walk-forward/12 cost-sensitivity combos negative
-- Drift re-confirmed 2026-11-14T09:39Z: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `4724faa`)
+- Drift re-confirmed 2026-11-14T09:40Z: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `8a9b64b`)
 
 ## Task
 **Do nothing unless the user explicitly directs one of:**
