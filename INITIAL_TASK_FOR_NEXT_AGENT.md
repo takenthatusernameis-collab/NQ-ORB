@@ -2,14 +2,14 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Durable handoff and this file read 2026-11-14T15:37Z. Prior task was complete with no outstanding research work. This session confirmed only the drift anchor (not a maintenance cycle): working tree clean, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, and no substantive commits since `a797773`. Tests were NOT re-run this session (anchor unchanged; prior confirmation was **75 passed in 0.94s**). **This remains a terminal handoff.**
+Durable handoff and this file read 2026-11-14T15:39Z. Prior task was complete with no outstanding research work. This session confirmed only the drift anchor (not a maintenance cycle): working tree clean before doc update, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, and no substantive commits since `a797773`. Tests were NOT re-run this session (anchor unchanged; last recorded run **75 passed in 0.94s**). **This remains a terminal handoff.**
 
 ## Last verified state
 
-- HEAD at verification: `7669ca7` (checkpoint-only `chore(kilo)`); HEAD advances via checkpoint commits only.
+- HEAD at verification: `6b4dd1c` (checkpoint-only `chore(kilo)`); HEAD advances via checkpoint commits only.
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
-- Drift anchor held (2026-11-14T15:37Z): `git status --porcelain` clean; SHA-256 matches; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
+- Drift anchor held (2026-11-14T15:39Z): `git status --porcelain` clean pre-update; SHA-256 matches; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
 - Last full suite run (prior session, anchor unchanged): **75 passed in 0.94s**. 34 JSON artifacts (plus `README.md`) in `artifacts/`.
 - Maintenance automation note: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` monitor artifact remains `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z). Changing automation requires explicit user authorization.
 
@@ -23,7 +23,7 @@ Durable handoff and this file read 2026-11-14T15:37Z. Prior task was complete wi
 
 ## Task
 
-**No outstanding research work.** Default action: report terminal state and await an explicit user decision. Do not create work, do not re-verify, do not add handoff-only checkpoint cycles, and do not touch automation. Further agent cycles without explicit user direction are out of scope.
+**No outstanding research work.** Default action: report terminal state and await an explicit user decision. Do not create work, do not re-verify tests/hashes, do not add handoff-only checkpoint cycles, and do not touch automation. Further agent cycles without explicit user direction are out of scope.
 
 Only act if the user explicitly directs one of:
 
