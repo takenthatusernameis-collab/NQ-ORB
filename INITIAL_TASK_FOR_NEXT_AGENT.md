@@ -5,19 +5,24 @@
 ## Required first action
 
 1. Read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, `PROMPT.md`, and this file.
-2. Confirm terminal state via a minimal read-only drift check: `git status --porcelain` (clean), `git rev-parse HEAD` (expect `4cda252`), and `sha256sum STRATEGY_RULES.txt` (expect `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`).
-3. Report the terminal state below and stop. Do not re-run tests, re-hash artifacts beyond the drift check, poll the free-data monitor, add another handoff-only checkpoint, or edit `.github/workflows/main.yml` / controller / automation policy without explicit user authorization. (Note: there is no `*manifest*` file in the tree; ignore the old "20/20 manifest" reference.)
+2. Confirm terminal state using the **robust drift check** in `HANDOFF.md` ("Robust drift anchor"):
+   - `git status --porcelain` is empty (clean);
+   - `sha256sum STRATEGY_RULES.txt` == `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`;
+   - `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` is empty (no new substantive commits since 2026-11-09).
+   - Do **not** compare exact HEAD: the controller commits this file after the agent writes it, so the HEAD recorded in `HANDOFF.md` is always one checkpoint behind the real HEAD. A one-commit-ahead HEAD is expected, not drift.
+3. Report the terminal state below and stop. Do not re-run tests, re-hash artifacts beyond the drift check, poll the free-data monitor, add another handoff-only checkpoint, or edit `.github/workflows/main.yml` / controller / automation policy without explicit user authorization.
 
 ## Terminal summary to report
 
-- Frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on all available free datasets.
+- Frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3…8ad2b1`) is final and negative-net on all available free datasets.
 - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L, gross -$7,662, net **-$31,637.98**, costs -$23,975.98, PF 0.4917, expectancy -0.0431R.
 - Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L, gross -$140,899, net **-$626,525.96**, costs $485,626.96, PF 0.2271, expectancy -0.0684R.
-- Chronological splits and 8-window walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
+- Separate 1-minute experiment `orb_mnq_1m_wf_v1` (added 2026-11-09, commits `ae3c49f`/`a797773`) is **byte-identical** to the 15m baseline (no trade binds on the 15:55 flatten) — it corroborates the negative result and does not change the frozen baseline.
+- Chronological splits and walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 - `cron: "*/5 * * * *"` still present at `.github/workflows/main.yml:11`; no free-data monitor artifact after 2026-11-08T06:00:17Z — automation stalled. Stop/reduce only with explicit user authorization.
-- Test suite: 75 passed (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run tests. CI runs only the 4 controller/automation test files, not `tests/orb/`.
-- HEAD `4cda252` (handoff-only checkpoints); no substantive research commit after `5fab764` (2026-10-31).
+- Full test suite: **75 passed in 0.64s** (2026-11-14, this session). CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- Last substantive commit `a797773` (2026-11-09); ~2,970 checkpoint/diagnostic commits since baseline `5fab764` (2026-10-31). The real HEAD is one checkpoint ahead of the value recorded in `HANDOFF.md` (expected).
 
 ## Only if user explicitly chooses a forward path
 

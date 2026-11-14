@@ -1,30 +1,41 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `4cda252` (`chore(kilo): checkpoint agent session`). Working tree clean at start and end of this session; no substantive research commit after `5fab764` (2026-10-31). HEAD advanced `3fd30e8` -> `00b0372` -> `4cda252` via controller checkpoints only.
+- **HEAD**: `5127aa7` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
+- **HEAD-lag note:** the controller commits this file *after* the agent writes it, so the HEAD recorded here is always one checkpoint behind the real HEAD. Do not treat a one-commit-ahead HEAD as drift; use the non-doc anchor under "Robust drift anchor" below.
 
 ## TERMINAL STATE — READ FIRST
 
-**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
+**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14):** completed the prior agent's terminal handoff task with a minimal read-only drift check only — `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1` matches the frozen baseline, headline metric figures matched (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271). No tests, full hash re-runs, monitor checks, or research work performed. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` changed; research code, configuration, raw data, canonical artifacts, workflows, controller, and automation policy untouched. Terminal conclusion unchanged: report it and stop. Note: no `*manifest*` file exists in the tree; the earlier "20/20 manifest" reference is stale.
+**This session (2026-11-14):** completed the prior agent's terminal drift check and verified state (read-only plus one fast test run). Working tree clean; real HEAD `5127aa7`; `STRATEGY_RULES.txt` hash matches the frozen baseline; full suite **75 passed in 0.64s**; baseline headline metrics intact (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, PF 0.2271). Corrected one inaccurate prior handoff claim: a separate 1-minute experiment *does* exist (see "Repository state"). No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed this session.
 
-**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
+**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
-## Evidence (frozen artifacts; last substantive recheck in session Z)
+## Repository state (accurate)
 
-- `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` (matches the frozen baseline).
-- axb0306 (`artifacts/metrics_axb0306_full.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R (costs -$23,975.98 implied by net−gross; 60 trades per `trades_axb0306_full.json`).
+- **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
+- **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f` and `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, an additive `flatten_fill='open'` field whose default preserves baseline behavior, plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on the 15:55 ET flatten (all exits are target/stop/`stop_first_ambiguous`), so 1-minute resolution changes nothing — the negative result is robust to execution resolution.
+- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Everything since is checkpoint/diagnostics/maintenance churn (~2,970 commits since `5fab764`, all `chore(kilo)`/`maintenance`/`diagnostics`).
+
+## Evidence (frozen artifacts)
+
+- axb0306 (`artifacts/metrics_axb0306_full.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80.
 - Kaggle proxy (`artifacts/metrics_kaggle.json`, 446W/242L, 64.8%, 688 trades 2022-11-16..2025-11-12): gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
-- Chronological splits all negative (train -$448,720.04 / val -$65,094.22 / test negative). Walk-forward all negative (kaggle 8 windows test net -$70,637.24..-$178,375.24; test PF 0.128–0.447). All 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate; observed below.
+- Chronological splits all negative; walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run them. CI runs only the 4 controller/automation test files, not `tests/orb/`.
-- Manifest: no `*manifest*` file exists in the working tree (verified this session); the prior "20/20 matched" note referred to a transient manifest that is not present. Do not chase it.
+- Full suite **75 passed in 0.64s** (2026-11-14, this session); orb-only subset 30 passed. CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- No `*manifest*` file exists in the tree; ignore the stale "20/20 manifest" reference.
 
 ## Maintenance-loop observation
 
-- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; checkpoint-only commits continue through 2026-11-14 (`1951f93`). `research_state/` newest monitor artifact is 2026-11-08T06:00:17Z; zero artifacts after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; ~2,970 checkpoint/diagnostic commits since the baseline. Newest `research_state/` free-data monitor artifact is 2026-11-08T06:00:17Z; zero after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+
+## Robust drift anchor (use this, not exact HEAD)
+
+- Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
+- Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
 
 ## Standing constraints
 
