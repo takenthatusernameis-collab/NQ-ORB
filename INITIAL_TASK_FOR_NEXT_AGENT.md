@@ -4,6 +4,8 @@
 
 At 2026-11-14T10:23Z, the prior task was completed: the durable handoff was read, terminal state was confirmed, and this next-agent message was updated. No new research, code, tests, or workflow changes were made.
 
+Re-confirmed 2026-11-14T10:23Z (this session): prior task complete, handoff + this message refreshed. Drift anchor re-verified: `git status --porcelain` empty, `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No tests re-run, no new code/experiment, no workflow edits. Research remains terminal; no new work created.
+
 Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA `6d3258c3…8ad2b1`) is negative-net on every freely available dataset; free MNQ 1-min/15-min search exhausted. Drift anchor: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `255ca90`, checkpoint churn).
 
 Key results:

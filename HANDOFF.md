@@ -8,6 +8,8 @@
 
 **This session (2026-11-14T10:23Z):** completed the prior agent task: read the durable handoff and prior initial task, confirmed that no research work remains, and updated the durable handoff and next-agent message. Drift anchor remains clean: `git status --porcelain` empty, SHA `6d3258c3…8ad2b1`, no non-doc commits in `a797773..HEAD` for `src/ config/ scripts/ tests/ raw/ data/ artifacts/`; HEAD `255ca90` is checkpoint churn. No tests re-run, no new code/experiment, no workflow edits. Research remains terminal; no new work created.
 
+**Re-confirmed 2026-11-14T10:23Z** (this session): prior task complete, handoff + `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. Drift anchor re-verified: `git status --porcelain` empty, `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No tests re-run, no new code/experiment, no workflow edits. Research remains terminal; no new work created.
+
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
 ## Repository state (accurate)
@@ -35,7 +37,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
-- Re-confirmed 2026-11-14T10:23Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `255ca90`.
+- Confirmed clean 2026-11-14T10:23Z: `git status --porcelain` empty, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `255ca90`.
 
 ## Standing constraints
 
