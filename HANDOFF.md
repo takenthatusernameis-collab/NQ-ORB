@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `4d2d14c` (transient controller checkpoint loop); prior checkpoint `2644093`. Working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T01:47:20Z
+- **HEAD**: `32572b3` (transient controller checkpoint loop); prior checkpoint `4d2d14c`. Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T01:48:24Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available; free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, through 2026-11-03).
 
-**This session (2026-11-14T01:47:20Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed working tree clean and HEAD (`4d2d14c`, advanced from `2644093` via controller checkpoint) via `git status`/`git log`; verified `STRATEGY_RULES.txt` SHA-256 matches the frozen hash and canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`). No test run, no manifest re-hash, no monitor poll, no commit. Handoff/next-task files consolidated.
+**This session (2026-11-14T01:48:24Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed working tree clean and HEAD `32572b3` (advanced from `4d2d14c` via controller checkpoint) via `git status`/`git log`; verified `STRATEGY_RULES.txt` SHA-256 matches the frozen hash; re-read canonical artifact values and confirmed they match the figures below (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`). No test run, no manifest re-hash, no monitor poll, no commit. Handoff/next-task files consolidated.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
