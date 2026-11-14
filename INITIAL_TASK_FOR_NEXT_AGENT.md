@@ -39,4 +39,4 @@ Only act if the user explicitly directs one of:
 - Do not re-run tests/hashes/drift checks solely for another checkpoint; the drift anchor is sufficient.
 - Keep `HANDOFF.md` compact; consolidate rather than append.
 
-(End of file)
+(End of file - total 42 lines)

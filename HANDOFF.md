@@ -10,6 +10,10 @@
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
+## Next agent note (written 2026-11-14T15:23Z)
+
+Prior task was already complete and terminal on arrival; this session performed no research work. Drift anchor re-verified: clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no substantive commits since `a797773`. Handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated in place. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it.
+
 ## Repository state (accurate)
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
