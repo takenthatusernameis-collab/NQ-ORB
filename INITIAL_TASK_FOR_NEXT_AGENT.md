@@ -2,11 +2,11 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T17:13Z. Prior task complete with no outstanding research work; no research performed this session. Anchor re-verified: `git status --porcelain` clean at start (HEAD `4f85721`, chore checkpoint only), `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, last substantive commit `a797773`; no source/config/data/artifact commits since (HEAD advanced only via chore checkpoints). Tests NOT re-run (anchor unchanged; last recorded **75 passed in 0.94s** on `python -m pytest -q`; CI runs only the 4 controller/automation test files, not `tests/orb/`).
+Durable handoff and this file refreshed 2026-11-14T17:14Z. Prior task complete with no outstanding research work; no research performed this session. Anchor re-verified: `git status --porcelain` clean at start, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, last substantive commit `a797773`; no source/config/data/artifact commits since (HEAD advanced only via chore checkpoints). Tests NOT re-run (anchor unchanged; last recorded **75 passed in 0.94s** on `python -m pytest -q`; CI runs only the 4 controller/automation test files, not `tests/orb/`).
 
 ## Last verified state
 
-- HEAD at verification: `3bd9fd9` (doc/chore checkpoints only).
+- HEAD at verification: `bf94f2a` (chore checkpoints only).
 - Baseline frozen at `5fab764`, `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`; no substantive (non-doc) change since `a797773`.
 - 34 JSON artifacts (+ `README.md`) in `artifacts/`. Newest `research_state/` monitor artifact: `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z); automation stalled / not accumulating.
 - `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization.
