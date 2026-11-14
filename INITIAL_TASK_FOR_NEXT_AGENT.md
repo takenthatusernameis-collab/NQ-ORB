@@ -6,7 +6,7 @@ Durable handoff and this file read 2026-11-14T16:12Z. Prior task was complete wi
 
 ## Last verified state
 
-- HEAD at verification: `c0b0af2` (doc/diagnostic/chore checkpoints only).
+- HEAD at verification: `72040fe` (doc/diagnostic/chore checkpoints only).
 - Baseline frozen at `5fab764`, `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`; no substantive (non-doc) change since `a797773`.
 - 34 JSON artifacts (+ `README.md`) in `artifacts/`. Newest `research_state/` monitor artifact: `free_data_monitor_20261108T060017Z.json`.
 - `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization.
