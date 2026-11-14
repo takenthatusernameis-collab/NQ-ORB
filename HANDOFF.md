@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `7f31475` (transient controller checkpoint loop); prior checkpoint `ecd7110`. Working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T01:44:57Z
+- **HEAD**: `2644093` (transient controller checkpoint loop); prior checkpoint `7f31475`. Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T01:46:32Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available; free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, through 2026-11-03).
 
-**This session (2026-11-14T01:44:57Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed working tree clean and HEAD via `git status`/`git log`; verified `STRATEGY_RULES.txt` SHA-256 matches the frozen hash and canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`). No test run, no manifest re-hash, no monitor poll, no commit. Handoff/next-task files consolidated.
+**This session (2026-11-14T01:46:32Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed working tree clean and HEAD (`2644093`, advanced from `7f31475` via controller checkpoint) via `git status`/`git log`; verified `STRATEGY_RULES.txt` SHA-256 matches the frozen hash and canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`). No test run, no manifest re-hash, no monitor poll, no commit. Handoff/next-task files consolidated.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
