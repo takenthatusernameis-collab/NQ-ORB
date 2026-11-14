@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T03:40Z. **Prior agent task:** completed — confirm the terminal state from `HANDOFF.md` and update the durable handoff plus this file. Done: terminal state re-confirmed from disk, handoff consolidated (HEAD `9604f20`, clean tree), this file rewritten. No test-suite re-run, no commits, no automation edits. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T03:43Z. **Prior agent task:** completed — confirm the terminal state from `HANDOFF.md` and update the durable handoff plus this file. Done this session: terminal state re-confirmed from disk (git HEAD `4a8ba41`, clean tree, canonical artifacts present), handoff updated (HEAD `4a8ba41`), this file rewritten. No test-suite re-run, no hashes re-checked, no monitor poll, no commits, no automation edits. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -30,12 +30,11 @@ Only act on the option the user names; do not pick one yourself.
 - **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop variant explicitly permitted by `STRATEGY_RULES.txt` §2.1 (baseline uses the ATR-multiple stop), runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
 - **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Verified state (as of 2026-11-14T02:51Z)
+## Verified state (as of 2026-11-14T03:43Z)
 
-- `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged (recomputed from disk this session).
+- `STRATEGY_RULES.txt` v1.0 present and unmodified on disk (SHA-256 `6d3258c3...ad2b1` per prior verification; not re-hashed this session per the no-repeat rule).
 - Canonical artifacts present and matching recorded figures: `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- `research_state/`: 483 files, including 480 `free_data_monitor_*.json`, `1m_audit_{axb0306,kaggle}.json`, `workflow_run_diagnostics.jsonl`.
-- HEAD at session start: `9604f20`; working tree clean. Only checkpoint commits since `c17fe6e`.
+- HEAD at session start: `4a8ba41`; working tree clean (checked `git status --short` = empty).
 - Tests/manifest: last independently run 2026-11-14T02:43Z (**75 passed in 0.56s**, venv `/home/runner/work/_temp/orbvenv`); manifest 20/20 (2026-11-13T16:50:32Z). **Not re-run this session per the no-repeat rule.** CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files, not the ORB logic tests.
 
 ## Constraints
