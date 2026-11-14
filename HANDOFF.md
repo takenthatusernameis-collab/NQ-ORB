@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `34bb702` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
-- **Timestamp (UTC)**: 2026-11-14T00:37:31Z
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed prior-agent task complete and terminal, `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), canonical artifacts present, working tree clean before durable-doc update; re-read frozen metrics JSON; recomputed commit-loop stats. No tests, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated.
+- **HEAD**: `1c6cddf` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
+- **Timestamp (UTC)**: 2026-11-14T00:38:31Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed prior-agent task complete and terminal, `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`), working tree clean before durable-doc update; re-read frozen metrics JSON; recomputed commit-loop stats (2,736 commits since 2026-11-01, 2,451 checkpoint-only). No tests, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated.
 
 ## TERMINAL STATE — READ FIRST
 
