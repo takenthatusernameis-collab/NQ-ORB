@@ -1,8 +1,8 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `5cdf503` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
-- **Timestamp (UTC)**: 2026-11-14T00:20:45Z
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and repo state; re-read the canonical metrics JSON and confirmed the frozen figures and `STRATEGY_RULES.txt` SHA-256 unchanged. Confirmed the research task is terminal (frozen baseline final, negative-net, free-data exhausted). No tests run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
+- **HEAD**: `81f58c1` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
+- **Timestamp (UTC)**: 2026-11-14T00:21:10Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and repo state; re-verified `STRATEGY_RULES.txt` SHA-256 and canonical artifact presence; confirmed the research task is terminal (frozen baseline final, negative-net, free-data exhausted). No tests run, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated (not appended).
 
 ## TERMINAL STATE — READ FIRST
 
