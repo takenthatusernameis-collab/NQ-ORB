@@ -8,6 +8,8 @@
 
 **This session (2026-11-14T13:31Z):** read prior durable handoff and confirmed terminal state — `git status --porcelain` clean (no tracked/untracked changes), `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits. No new code/experiment, no tests re-run, no workflow edits. HEAD advanced only via `chore(kilo)` checkpoint commits; state unchanged.
 
+**This session (2026-11-14T13:32Z):** independently re-verified the drift anchor — `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits. State unchanged; research remains terminal and complete. No new code, tests, or artifacts.
+
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
 ## Repository state (accurate)
