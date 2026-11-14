@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `5127aa7` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
+- **HEAD**: `44b553d` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
 - **HEAD-lag note:** the controller commits this file *after* the agent writes it, so the HEAD recorded here is always one checkpoint behind the real HEAD. Do not treat a one-commit-ahead HEAD as drift; use the non-doc anchor under "Robust drift anchor" below.
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14):** completed the prior agent's terminal drift check and verified state (read-only plus one fast test run). Working tree clean; real HEAD `5127aa7`; `STRATEGY_RULES.txt` hash matches the frozen baseline; full suite **75 passed in 0.64s**; baseline headline metrics intact (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, PF 0.2271). Corrected one inaccurate prior handoff claim: a separate 1-minute experiment *does* exist (see "Repository state"). No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed this session.
+**This session (2026-11-14T07:41Z):** completed prior agent task (read durable handoff, verified terminal state, refreshed handoff/next-task). Drift check passed: working tree clean; real HEAD `44b553d` at verification; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773` in `src/ config/ scripts/ tests/ raw/ data/ artifacts/`. Full suite **75 passed in 0.63s**. Headline artifacts intact (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, PF 0.2271). No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
@@ -25,7 +25,7 @@
 
 ## Test/manifest status
 
-- Full suite **75 passed in 0.64s** (2026-11-14, this session); orb-only subset 30 passed. CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- Full suite **75 passed in 0.63s** (2026-11-14T07:41Z, this session). CI runs only the 4 controller/automation test files, not `tests/orb/`.
 - No `*manifest*` file exists in the tree; ignore the stale "20/20 manifest" reference.
 
 ## Maintenance-loop observation
