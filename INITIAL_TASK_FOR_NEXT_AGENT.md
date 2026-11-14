@@ -2,11 +2,11 @@
 
 ## Status: prior task COMPLETE — drift check completed; research terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T19:14Z. Prior task complete — completed prescribed read-only drift check (`git status --porcelain` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`); all held → state unchanged. HEAD at refresh: `deea0db`.
+Durable handoff and this file refreshed 2026-11-14T19:16Z. Prior task complete — completed prescribed read-only drift check (`git status --porcelain` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`); all held → state unchanged. HEAD at refresh: `d023c1f`.
 
 ## Last recorded state (verified this session)
 
-- HEAD at handoff refresh: `deea0db` (chore checkpoints only).
+- HEAD at handoff refresh: `d023c1f` (chore checkpoints only).
 - Baseline frozen at `5fab764`; no substantive (non-doc) change since `a797773`.
 - 34 JSON artifacts (+ `README.md`) in `artifacts/`. Automation stalled / not accumulating (newest `research_state/` monitor artifact `free_data_monitor_20261108T060017Z.json`).
 - `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization. Last recorded test run: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z); not re-run this session. CI runs only 4 controller/automation tests.
