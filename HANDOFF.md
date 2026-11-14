@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
 - **HEAD**: transient (controller checkpoint loop); working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T01:37:24Z
+- **Timestamp (UTC)**: 2026-11-14T01:39:01Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available; free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, through 2026-11-03).
 
-**This session (2026-11-14T01:37:24Z):** read `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed repo state read-only (git/ls/sha256sum, direct JSON reads of frozen metrics + walk_forward.json); confirmed `STRATEGY_RULES.txt` SHA-256 unchanged; no test run, no manifest re-hash, no monitor poll, no commit, no automation touch. Handoff consolidated below.
+**This session (2026-11-14T01:39:01Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed strategy hash and frozen artifact values by direct read (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`); no test run, no manifest re-hash, no monitor poll, no commit, no automation touch. Handoff/next-task files consolidated.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
