@@ -1,12 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `4085a42` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD**: `a57f9ae` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T10:18Z):** re-confirmed drift anchor (`git status --porcelain` clean, SHA `6d3258c3…8ad2b1`, no non-doc commits in `a797773..HEAD` for `src/ config/ scripts/ tests/ raw/ data/ artifacts/`, HEAD advanced to `1bffddb` — another `chore(kilo)` checkpoint commit). No tests re-run, no monitor poll, no new code/experiment, no checkpoint commits, no workflow edits. Research remains terminal; no new work created.
+**This session (2026-11-14T11:19Z):** read durable handoff and prior initial task; re-confirmed drift anchor (`git status --porcelain` clean, SHA `6d3258c3…8ad2b1`, no non-doc commits in `a797773..HEAD` for `src/ config/ scripts/ tests/ raw/ data/ artifacts/`; HEAD `a57f9ae`, checkpoint churn only). No tests re-run, no new code/experiment, no workflow edits. Research remains terminal; no new work created.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
@@ -35,7 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
-- Re-confirmed 2026-11-14T10:18Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `1bffddb`.
+- Re-confirmed 2026-11-14T11:19Z: clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `a57f9ae`.
 
 ## Standing constraints
 

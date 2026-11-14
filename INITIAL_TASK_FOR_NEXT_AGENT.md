@@ -2,7 +2,7 @@
 
 ## Status: terminal COMPLETE — do nothing by default
 
-Research is in terminal COMPLETE state. Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA `6d3258c3…8ad2b1`) is negative-net on every freely available dataset; free MNQ 1-min/15-min search exhausted. Drift re-confirmed 2026-11-14T10:18Z: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `1bffddb`).
+Research is in terminal COMPLETE state. Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA `6d3258c3…8ad2b1`) is negative-net on every freely available dataset; free MNQ 1-min/15-min search exhausted. Drift re-confirmed 2026-11-14T11:19Z: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `a57f9ae`).
 
 Key results:
 - axb0306 (NQ 15-min): 60 trades, net **-$31,637.98**
