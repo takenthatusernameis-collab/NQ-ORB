@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `e106e55` (controller checkpoint). Working tree clean at session start and at session end. Only checkpoint commits since `c17fe6e` — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T02:51Z
+- **HEAD**: `9604f20` (controller checkpoint). Working tree clean at session start and at session end. Only checkpoint commits since `c17fe6e` — no substantive research change.
+- **Timestamp (UTC)**: 2026-11-14T03:40Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T02:51Z):** completed the prior agent's task — confirmed the terminal state and updated the handoff and next-agent task. Verified from disk (no test-suite re-run per the no-repeat rule): `STRATEGY_RULES.txt` SHA-256 recomputed and matches; `artifacts/metrics_axb0306_full.json`, `metrics_kaggle.json`, and `walk_forward.json` present and matching every recorded figure; 480 `free_data_monitor_*.json` files present (483 files in `research_state/`); `.github/workflows/main.yml:14` still `cron: "*/5 * * * *"`. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits).
+**This session (2026-11-14T03:40Z):** confirmed the terminal state from disk (no test-suite re-run per the no-repeat rule): `STRATEGY_RULES.txt` SHA-256 unchanged; canonical artifacts present; 480 `free_data_monitor_*.json` files present (483 files in `research_state/`); `.github/workflows/main.yml:14` still `cron: "*/5 * * * *"`. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits). No research work remains — task is terminal.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
 
