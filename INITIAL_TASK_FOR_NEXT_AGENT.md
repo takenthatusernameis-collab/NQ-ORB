@@ -2,14 +2,14 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Session 2026-11-14T14:22Z read the durable handoff and this file, then independently verified the drift anchor. No research code/tests/artifacts changed; HEAD advanced only via `chore(kilo)` checkpoint commits. **This is the terminal handoff revision.**
+Session 2026-11-14T14:23Z read the durable handoff and this file, then independently verified the drift anchor. No research code/tests/artifacts changed; HEAD advanced only via `chore(kilo)` checkpoint commits. **This is the terminal handoff revision.**
 
 ## Verified state
 
-- HEAD `b3c6e6f` (2026-11-14; `chore(kilo)` checkpoint).
+- HEAD `9036c6c` (2026-11-14; `chore(kilo)` checkpoint).
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
-- Drift anchor confirmed this session (2026-11-14T14:22Z): `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
+- Drift anchor confirmed this session (2026-11-14T14:23Z): `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
 - All commits since `a797773` remain `chore(kilo)` checkpoint/maintenance or doc-only.
 - Maintenance automation stalled: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` monitor artifact remains `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z).
 
