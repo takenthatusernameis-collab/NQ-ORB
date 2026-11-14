@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `20c111e` (controller checkpoint loop). Prior checkpoint `32572b3`. Working tree was clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T01:51:35Z
+- **HEAD**: `c0326ba` (controller checkpoint loop). Prior `20c111e`. Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T02:39:10Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 documented sweeps through 2026-11-03).
 
-**This session (2026-11-14T01:51:35Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed working tree clean and HEAD `20c111e` via `git status`/`git log`. Verified the frozen `STRATEGY_RULES.txt` SHA-256 still matches. Re-ran the test suite once for grounding: **75 passed in 0.60s** (`/home/runner/work/_temp/orbvenv/bin/python -m pytest tests -q`). Re-read canonical artifacts and confirmed every figure below. No monitor poll, no manifest re-hash, no commit (controller owns commits).
+**This session (2026-11-14T02:39:10Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean working tree, HEAD `c0326ba`, and frozen `STRATEGY_RULES.txt` SHA-256 unchanged (`git status`/`git log`/`sha256sum`). Verified canonical artifact values below. No tests/hashes/monitor re-run (prior agent: 75 passed 2026-11-14T01:51:35Z; last manifest 20/20 matched 2026-11-13T16:50:32Z). No commit (controller owns commits).
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
@@ -21,12 +21,12 @@
   - Chronological train/val/test (688-trade Kaggle): -$448,765.02 / -$66,243.22 / -$111,517.72 — all negative net.
   - Walk-forward (`artifacts/walk_forward.json`, 8 windows): test PF 0.128–0.447, net -$70,637..-$178,375 — negative in every window. Cost sensitivity: all 12 combos negative (-$487,098.57..-$808,255.35); signal-close sensitivity all negative.
   - Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate; observed rates below that.
-- **Note**: axb0306 gross is -$7,662; its chronological train split is +$1,229.22 net (36 trades) — small-sample noise, not an edge, not used as a claim.
+- **Note**: axb0306 train split small-sample positive net (+$1,229.22, 36 trades) is noise, not an edge.
 
 ## Test/manifest status
 
-- **This session:** full suite re-run once → **75 passed in 0.60s**.
-- Prior: 75 passed (2026-11-13T12:48:19Z); last full 20-file manifest 20/20 matched (2026-11-13T16:50:32Z). Manifest not re-hashed this session.
+- Tests last run: **75 passed in 0.60s** (2026-11-14T01:51:35Z). Not re-run this session.
+- Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z). Not re-hashed this session.
 
 ## Standing constraints
 
