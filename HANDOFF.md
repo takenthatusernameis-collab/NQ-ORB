@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `0ab9f72` (controller checkpoint, `origin/main`). Working tree clean at session start and at session end. Only checkpoint commits since substantive research commit `5fab764` (2026-10-31) — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T03:44Z (session C; terminal state re-confirmed, no re-verification)
+- **HEAD**: `d223d0a` (`chore(kilo): checkpoint agent session`, `origin/main`). Working tree clean at session start and end. Only checkpoint commits since substantive research commit `5fab764` (2026-10-31) — no substantive research change.
+- **Timestamp (UTC)**: 2026-11-14T03:45Z (session D; terminal state re-confirmed, no re-verification)
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T03:44Z):** confirmed the terminal state from disk (no test-suite re-run, no hash re-check, no monitor poll per the no-repeat rule): git HEAD `0ab9f72` (clean tree), canonical artifacts present (`metrics_axb0306.json`, `metrics_axb0306_full.json`, `metrics_kaggle.json`, `walk_forward.json`, etc.), `STRATEGY_RULES.txt` and `data/FEASIBILITY_REPORT.md` present. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits). No research work remains — task is terminal.
+**This session (2026-11-14T03:45Z):** confirmed the terminal state from disk with a minimal read-only check (no test-suite re-run, no hash re-check, no monitor poll per the no-repeat rule): git HEAD `d223d0a` (clean tree), all canonical artifacts present (`metrics_axb0306_full.json`, `metrics_kaggle.json`, `walk_forward.json`, etc.), `STRATEGY_RULES.txt` and `data/FEASIBILITY_REPORT.md` present, 471 `free_data_monitor_*.json` files. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits). No research work remains — task is terminal.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
 
@@ -26,12 +26,12 @@
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.56s** (2026-11-14T02:43Z, venv `/home/runner/work/_temp/orbvenv`). Confirms the prior 75-passed run. Not re-run this session. CI (`.github/workflows/main.yml:61-62`) only runs the 4 controller/automation test files in a `pytest numpy requests` venv, not the ORB logic tests (`tests/orb/`).
+- Tests last run: **75 passed in 0.56s** (2026-11-14T02:43Z, venv `/home/runner/work/_temp/orbvenv`). Not re-run this session. CI (`.github/workflows/main.yml:61-62`) only runs the 4 controller/automation test files in a `pytest numpy requests` venv, not the ORB logic tests (`tests/orb/`).
 - Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z). Not re-hashed this session.
 
 ## Maintenance-loop diagnosis
 
-- Repo is in a degenerate maintenance loop: `.github/workflows/main.yml` runs `cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session` commits (last substantive research commit `5fab764`, 2026-10-31); `research_state/free_data_monitor_*.json` accumulates at sub-hourly cadence (480 files) with no new findings.
+- Repo is in a degenerate maintenance loop: `.github/workflows/main.yml` runs `cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session` commits (last substantive research commit `5fab764`, 2026-10-31); `research_state/free_data_monitor_*.json` accumulates at sub-hourly cadence (471 files) with no new findings.
 - Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`. None has been given. Do not touch it unilaterally.
 
 ## Standing constraints
