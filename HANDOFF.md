@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `8bc3d6c` (transient controller checkpoint loop); working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T01:42:31Z
+- **HEAD**: `ecd7110` (transient controller checkpoint loop, after `8bc3d6c`); working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T01:43:43Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available; free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, through 2026-11-03).
 
-**This session (2026-11-14T01:42:31Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed working tree clean and HEAD `8bc3d6c` via `git status`/`git log`; no test run, no manifest re-hash, no monitor poll, no commit, no automation touch. Handoff/next-task files consolidated.
+**This session (2026-11-14T01:43:43Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed working tree clean and HEAD via `git status`/`git log`; verified canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`). No test run, no manifest re-hash, no monitor poll, no commit, no automation touch. Handoff/next-task files consolidated.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
@@ -27,7 +27,7 @@
 
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z).
 - Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z).
-- This session (2026-11-14T01:42:31Z): no test run, no manifest re-hash, no commit.
+- This session: no test run, no manifest re-hash, no commit.
 
 ## Standing constraints
 
