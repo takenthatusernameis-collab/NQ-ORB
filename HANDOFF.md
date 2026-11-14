@@ -1,7 +1,7 @@
 # NQ ORB — Durable handoff
 
 - **HEAD at this handoff refresh:** `36eeaa1` (2026-11-14; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T21:16Z** (clean tree verified at check; no code/data/config/artifact edits this session). Drift anchor re-verified read-only at arrival: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. Last full-suite run on record: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z, prior session); not re-run this session to avoid maintenance-loop churn. No source/config/data/artifact changes made; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
+- **Last refreshed 2026-11-14T21:17Z** (clean tree verified at check; no code/data/config/artifact edits this session). Drift anchor re-verified read-only at arrival: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. Last full-suite run on record: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z, prior session); not re-run this session to avoid maintenance-loop churn. No source/config/data/artifact changes made; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -11,7 +11,7 @@
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T21:16Z)
+## Next agent note (written 2026-11-14T21:17Z)
 
 Research task complete and terminal — no outstanding research work. Drift anchor re-verified this session (clean tree, frozen spec hash unchanged, no substantive commits since `a797773`); no code/data/config/artifact changes were made. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
