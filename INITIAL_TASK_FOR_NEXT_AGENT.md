@@ -2,12 +2,12 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Session 2026-11-14T12:26Z re-confirmed the drift anchor at HEAD `e8a62aa`:
+Session 2026-11-14T12:27Z re-confirmed the drift anchor at HEAD `af3c6f4`:
 `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git status --porcelain` clean; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No code, no experiment, no tests, no workflow edits.
 
 ## Verified state
 
-- HEAD `e8a62aa` (doc-only controller checkpoint).
+- HEAD `af3c6f4` (doc-only controller checkpoint).
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
 - ~1,007 commits since `a797773` (~3,030 since baseline); all `chore(kilo)` checkpoint/diagnostics/maintenance or doc-only.

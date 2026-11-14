@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD:** `e8a62aa` (2026-11-14; controller checkpoint, doc-only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD:** `af3c6f4` (2026-11-14T12:26Z; controller checkpoint, doc-only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -35,7 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
-- Confirmed unchanged at HEAD `e8a62aa` (2026-11-14T12:26Z, doc-only). Treat in-session dirtiness limited to `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` as expected; do not create new commits for doc-only churn and do not modify automation.
+- Confirmed unchanged at HEAD `af3c6f4` (2026-11-14T12:27Z, doc-only). Treat in-session dirtiness limited to `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` as expected; do not create new commits for doc-only churn and do not modify automation.
 
 ## Standing constraints
 
