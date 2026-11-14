@@ -1,19 +1,54 @@
 # NQ ORB — Durable handoff
 
-- **HEAD observed at this refresh:** `d424f28` (chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T22:00Z**. Prior task (report terminal state and stop) completed and re-confirmed this session by read-only drift-anchor verification (clean tree, no substantive commits since `a797773`, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`). No tests, hashes beyond the anchor, monitor checks, or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z).
+- **HEAD observed at this refresh:** `f1de336` (chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **Last refreshed 2026-11-14T22:01Z**. Prior task (report terminal state and stop) completed and re-confirmed this session by read-only drift-anchor verification (clean tree, no substantive commits since `a797773`, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`). No tests, hashes beyond the anchor, monitor checks, or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z).
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T22:00Z):** prior terminal-state task completed and re-confirmed; durable notes refreshed only. Drift anchor re-verified read-only (clean tree; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; `sha256sum STRATEGY_RULES.txt` matches). No tests or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.63s** (2026-11-14T21:15Z). HEAD observed as `d424f28` (chore checkpoints only since `a797773`).
+**This session (2026-11-14T22:01Z):** prior terminal-state task completed and re-confirmed; durable notes refreshed only. Drift anchor re-verified read-only (clean tree; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; `sha256sum STRATEGY_RULES.txt` matches). No tests or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.63s** (2026-11-14T21:15Z). HEAD observed as `f1de336` (chore checkpoints only since `a797773`).
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T22:00Z)
+## Next agent note (written 2026-11-14T22:01Z)
 
-Research task complete and terminal — no outstanding research work. This session completed and re-confirmed the prior terminal-state task via read-only drift-anchor verification (HEAD `d424f28`, clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, empty `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/`); durable notes refreshed only. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
+Research task complete and terminal — no outstanding research work. This session completed and re-confirmed the prior terminal-state task via read-only drift-anchor verification (HEAD `f1de336`, clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, empty `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/`); durable notes refreshed only. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
+
+## Repository state (accurate)
+
+- **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
+- **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f`, `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, additive `flatten_fill='open'` (default preserves baseline), plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on 15:55 ET flatten, so 1-minute resolution changes nothing.
+- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Subsequent commits are chore/doc checkpoints (latest observed `f1de336`).
+
+## Evidence (frozen artifacts)
+
+- axb0306 (`artifacts/metrics_axb0306_full.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80.
+- Kaggle proxy (`artifacts/metrics_kaggle.json`, 446W/242L, 64.8%, 688 trades 2022-11-16..2025-11-12): gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
+- Chronological splits all negative; walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
+
+## Test/manifest status
+
+- Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s** (`python -m pytest -q`); not re-run this session (anchor unchanged). CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- Canonical artifacts present: 34 JSON files (plus `README.md`, 35 entries) in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
+
+## Maintenance-loop observation
+
+- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; checkpoint/diagnostic/doc commits continue to advance HEAD. Newest `research_state/` free-data monitor artifact is still `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z); none after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+
+## Robust drift anchor (use this, not exact HEAD)
+
+- Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Latest HEAD observed at this refresh: `f1de336` (chore checkpoint only).
+- Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop. (Confirmed at 2026-11-14T22:01Z, HEAD `f1de336`.)
+
+## Standing constraints
+
+- Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
+- Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
+- Do not repeat maintenance re-verification. Report terminal state instead.
+- Keep this handoff compact; consolidate rather than append.
+
+(End of file)
 
 ## Repository state (accurate)
 
