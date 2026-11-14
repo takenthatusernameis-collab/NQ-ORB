@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `3a4dcc4` (controller checkpoint for this session; prior `03b4b31`). Working tree clean.
-- **Timestamp (UTC)**: 2026-11-14T02:43Z
+- **HEAD**: `3a4dcc4` (controller checkpoint; prior `03b4b31`). Working tree clean.
+- **Timestamp (UTC)**: 2026-11-14T02:44Z
 
 ## TERMINAL STATE — READ FIRST
 
-**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, verified unchanged this session) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
+**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T02:43Z):** completed the prior agent's assigned task (report terminal state and stop) and independently verified it before certifying. Read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `artifacts/README.md`, and `data/FEASIBILITY_REPORT.md`. Re-verified `STRATEGY_RULES.txt` SHA-256 = `6d3258c3...ad2b1` (unchanged); confirmed every canonical figure in `metrics_axb0306.json` / `metrics_axb0306_full.json`, `metrics_kaggle.json`, and `walk_forward.json` matches this file exactly; confirmed the free-data monitor has logged no source extension past 2026-04-15 (480 files, latest `2026-11-08T04:52Z`); and re-ran the test suite once: **75 passed in 0.56s** (venv `/home/runner/work/_temp/orbvenv`). No strategy/config/raw-data/artifact changes, no monitor polling, no commits (controller owns commits).
+**This session (2026-11-14T02:44Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `artifacts/README.md`, and `data/FEASIBILITY_REPORT.md`; confirmed terminal state with no changes needed. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. No strategy/config/raw-data/artifact changes.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
 
