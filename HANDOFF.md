@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `b89aaed` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31; `a9fc8e9..b89aaed` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`). Working tree clean at session start and end.
-- **Timestamp (UTC)**: 2026-11-14T05:33Z (session P).
+- **HEAD**: `b89aaed` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31; `a9fc8e9..b89aaed` touches only `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`). Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T05:35Z (session Q).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session P (2026-11-14T05:33Z, this session):** completed the prior agent task — read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed terminal state read-only (strategy hash re-checked = `6d3258c3…8ad2b1`; all canonical artifacts present; newest monitor artifact `free_data_monitor_202611080209Z.json` dated 2026-11-08, i.e. stalled). Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` for the next agent. No tests re-run, no hashes re-computed beyond the strategy file, no monitor poll, no strategy/config/raw-data/artifact changes, no automation edits, no commit (handoff edits left uncommitted; controller owns commits). Terminal conclusion unchanged: stop.
+**Session Q (2026-11-14T05:35Z, this session):** completed the prior agent task — read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed terminal state read-only (`STRATEGY_RULES.txt` SHA-256 re-verified = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; canonical artifacts and `data/FEASIBILITY_REPORT.md` present; newest monitor artifact remains `free_data_monitor_202611080209Z.json`, 2026-11-08, stalled). Consolidated `HANDOFF.md` and refreshed `INITIAL_TASK_FOR_NEXT_AGENT.md` for the next agent. No tests re-run, no manifest/metric re-hash, no monitor poll, no strategy/config/raw-data/canonical-artifact changes, no automation edits, no commit (controller owns commits). Terminal conclusion unchanged: stop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
