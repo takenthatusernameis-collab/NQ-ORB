@@ -1,13 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `2c863c8` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
-- **HEAD-lag note:** the controller commits this file *after* the agent writes it, so the HEAD recorded here is always one checkpoint behind the real HEAD. Do not treat a one-commit-ahead HEAD as drift; use the non-doc anchor under "Robust drift anchor" below.
+- **HEAD**: real HEAD `28aa06d` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below). This file is committed after the agent writes it, so a recorded HEAD one checkpoint behind the real HEAD is expected; use the robust drift anchor below instead of exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T07:43Z):** performed the required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; real HEAD `2c863c8`; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (no non-doc commits since `a797773`). Canonical artifacts (`metrics_axb0306_full.json`, `metrics_kaggle.json`) unchanged since baseline 2026-10-31. No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed. Reported terminal state and stopped.
+**This session (2026-11-14T07:43Z):** completed the prior task — the required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; real HEAD `28aa06d`; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (no non-doc commits since `a797773`); 2,976 commits since baseline `5fab764` (all checkpoint/diagnostics/maintenance churn). Canonical artifacts (`metrics_axb0306_full.json`, `metrics_kaggle.json`) unchanged since baseline 2026-10-31. No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed. Reported terminal state; updated handoff and initial-task file; stopped.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
@@ -15,7 +14,7 @@
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f` and `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, an additive `flatten_fill='open'` field whose default preserves baseline behavior, plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on the 15:55 ET flatten (all exits are target/stop/`stop_first_ambiguous`), so 1-minute resolution changes nothing — the negative result is robust to execution resolution.
-- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Everything since is checkpoint/diagnostics/maintenance churn (~2,970 commits since `5fab764`, all `chore(kilo)`/`maintenance`/`diagnostics`).
+- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Everything since is checkpoint/diagnostics/maintenance churn (~2,976 commits since `5fab764`, all `chore(kilo)`/`maintenance`/`diagnostics`).
 
 ## Evidence (frozen artifacts)
 
@@ -30,7 +29,7 @@
 
 ## Maintenance-loop observation
 
-- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; ~2,970 checkpoint/diagnostic commits since the baseline. Newest `research_state/` free-data monitor artifact is 2026-11-08T06:00:17Z; zero after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
+- `.github/workflows/main.yml:11` still has `cron: "*/5 * * * *"`; ~2,976 checkpoint/diagnostic commits since the baseline. Newest `research_state/` free-data monitor artifact is 2026-11-08T06:00:17Z; zero after — automation stalled / not accumulating. Stopping/changing requires explicit user authorization per `AGENTS.md`; none given. Do not touch.
 
 ## Robust drift anchor (use this, not exact HEAD)
 
