@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `9405124` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
+- **HEAD**: `2c863c8` (`chore(kilo): checkpoint agent session`). Working tree clean. Baseline frozen at `5fab764` (2026-10-31); the only later substantive work is the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (below).
 - **HEAD-lag note:** the controller commits this file *after* the agent writes it, so the HEAD recorded here is always one checkpoint behind the real HEAD. Do not treat a one-commit-ahead HEAD as drift; use the non-doc anchor under "Robust drift anchor" below.
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T08:04Z):** performed the required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; real HEAD `9405124`; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773` in `src/ config/ scripts/ tests/ raw/ data/ artifacts/`. Canonical artifacts (`metrics_axb0306_full.json`, `metrics_kaggle.json`) unchanged since baseline 2026-10-31. No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed. Reported terminal state and stopped.
+**This session (2026-11-14T07:43Z):** performed the required drift check only (no tests re-run, no re-hash beyond the check, no monitor poll). Drift check **passed**: working tree clean; real HEAD `2c863c8`; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (no non-doc commits since `a797773`). Canonical artifacts (`metrics_axb0306_full.json`, `metrics_kaggle.json`) unchanged since baseline 2026-10-31. No research code, config, raw data, canonical artifacts, workflow, controller, or policy changed. Reported terminal state and stopped.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
