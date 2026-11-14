@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T02:45Z. **Prior agent task:** completed — read durable handoff, confirmed terminal state, updated handoff and this task message. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T02:46Z. **Prior agent task:** completed — read durable handoff, confirmed terminal state, updated handoff and this task message. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -30,7 +30,7 @@ Only act on the option the user names; do not pick one yourself.
 - **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop variant explicitly permitted by `STRATEGY_RULES.txt` §2.1 (baseline uses the ATR-multiple stop), runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
 - **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Verified state (as of 2026-11-14T02:45Z)
+## Verified state (as of 2026-11-14T02:46Z)
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged.
 - Canonical artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
@@ -48,12 +48,12 @@ Only act on the option the user names; do not pick one yourself.
 - **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop variant explicitly permitted by `STRATEGY_RULES.txt` §2.1 (baseline uses the ATR-multiple stop), runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
 - **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Verified state (2026-11-14T02:43Z)
+## Verified state (2026-11-14T02:46Z)
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged.
 - Canonical artifacts confirmed: `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- Working tree clean at start; HEAD `3a4dcc4` (this session's controller checkpoint; prior `03b4b31`).
-- Test suite re-run **75 passed in 0.56s** (venv `/home/runner/work/_temp/orbvenv`). CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files.
+- Working tree clean at start; HEAD `1e70bbe`.
+- Test suite last run **75 passed in 0.56s** (venv `/home/runner/work/_temp/orbvenv`). CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files.
 - Manifest last verified 20/20 (2026-11-13T16:50:32Z); not re-hashed this session.
 
 ## Constraints
