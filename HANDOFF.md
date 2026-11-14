@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `7d26bab` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean.
-- **Timestamp (UTC)**: 2026-11-14T03:52Z (session J).
+- **HEAD**: `ba1ebf8` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T04:33Z (session K).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` (306 lines) documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T03:52Z):** completed the prior agent task from the durable handoff — read `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` / `PROMPT.md` / `AGENTS.md`, and re-verified the terminal evidence directly from the frozen artifacts (read-only). No strategy/config/raw-data/artifact changes, no tests re-run, no re-hash, no monitor poll, no automation edits, no commits (controller owns commits). Terminal conclusion unchanged.
+**This session (2026-11-14T04:33Z, session K):** completed the prior agent task from the durable handoff — read `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` / `PROMPT.md` / `STRATEGY_RULES.txt` / `AGENTS.md` and re-verified terminal evidence from frozen artifacts (read-only). Confirmed: `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; key artifacts present (`metrics_axb0306_full.json`, `metrics_kaggle.json`, `walk_forward.json`, `data/FEASIBILITY_REPORT.md`); `main.yml:11` cron `*/5 * * * *`; 480 `research_state/free_data_monitor_*` entries, latest `free_data_monitor_20261108T060017Z.json` (no artifacts after 2026-11-08, monitor stalled). No strategy/config/raw-data/artifact changes, no tests re-run, no re-hash, no monitor poll, no automation edits, no commits. Terminal conclusion unchanged.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
