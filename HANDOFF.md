@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete
 
-**HEAD at session start (read-only verification):** `f4f0076` (`origin/main` in sync). Last substantive commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**Last substantive commit:** **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T23:08Z):** prior task completed — terminal state re-verified read-only at HEAD `3b2f55b` (`origin/main` == HEAD, 0 ahead / 0 behind). Tracked tree clean (`git status --porcelain` empty); `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1` matches; `git diff --stat a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (non-substantive). Full suite re-run and verified: **75 passed in 0.67s**. No data/config/artifact/source changes.
+**This session (2026-11-14T23:09Z):** prior durable task reviewed and completed (terminal state reported; handoff/next-task refreshed). Read-only verification at HEAD `b1e774f`: tracked tree clean, strategy hash unchanged, no substantive code/data/config/artifact changes since `a797773` (only doc/diagnostic churn). Tests not re-run this session per standing terminal instructions; last verified result remains **75 passed in 0.67s** (2026-11-14T23:08Z session). No new evidence.
 
 ## Terminal state — read first
 
@@ -31,7 +31,7 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last run 2026-11-14T23:03Z: **75 passed in 0.78s** (recorded in prior handoff; not re-run this session). CI runs only controller/automation tests, not `tests/orb/`.
+- Full suite last verified 2026-11-14T23:08Z: **75 passed in 0.67s** (not re-run this session). CI runs only controller/automation tests, not `tests/orb/`.
 - Canonical artifacts: 34 JSON files + `README.md` in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
 
 ## Standing constraints
