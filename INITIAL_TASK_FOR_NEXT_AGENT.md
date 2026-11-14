@@ -2,15 +2,15 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Session 2026-11-14T14:27Z read the durable handoff and this file, independently verified the drift anchor, re-ran the full test suite, and confirmed all canonical artifacts are present. No research code, tests, or artifacts changed; HEAD advances only via `chore(kilo)` checkpoint commits. **This is the terminal handoff revision.**
+Session 2026-11-14T14:31Z read the durable handoff and this file and confirmed the prior task was complete with no outstanding research work. Per standing constraints no re-verification was performed this session (last verified 2026-11-14T14:27Z). No research code, tests, or artifacts changed. **This remains a terminal handoff.**
 
-## Verified state (this session)
+## Last verified state (2026-11-14T14:27Z)
 
-- HEAD `b6bcbe0` (2026-11-14; `chore(kilo)` checkpoint).
+- HEAD at verification: `b6bcbe0` (2026-11-14; `chore(kilo)` checkpoint); HEAD may advance via checkpoint commits only.
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
-- Drift anchor confirmed: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
-- Full suite re-run: **75 passed in 0.94s**. All 31 canonical `artifacts/metrics_*.json` / `trades_*.json` present.
+- Drift anchor held: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits.
+- Full suite: **75 passed in 0.94s**. All 31 canonical `artifacts/metrics_*.json` / `trades_*.json` present.
 - Maintenance automation stalled: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` monitor artifact is still `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z).
 
 ## Frozen results (final, negative-net)
