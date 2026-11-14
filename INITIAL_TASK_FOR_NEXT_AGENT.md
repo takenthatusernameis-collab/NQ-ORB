@@ -22,7 +22,7 @@
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 - `cron: "*/5 * * * *"` still present at `.github/workflows/main.yml:11`; no free-data monitor artifact after 2026-11-08T06:00:17Z — automation stalled. Stop/reduce only with explicit user authorization.
 - Full test suite (last recorded run): **75 passed in 0.63s** (2026-11-14T07:41Z). CI runs only the 4 controller/automation test files, not `tests/orb/`. This session did not re-run tests per "do not repeat maintenance re-verification".
-- Last substantive commit `a797773` (2026-11-09); ~2,976 checkpoint/diagnostic commits since baseline `5fab764` (2026-10-31). Real HEAD is one checkpoint ahead of the last recorded handoff HEAD (expected). Drift check re-confirmed clean this session (2026-11-14T07:43Z): clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; real HEAD `28aa06d`.
+- Last substantive commit `a797773` (2026-11-09); ~2,977 checkpoint/diagnostic commits since baseline `5fab764` (2026-10-31). Real HEAD is one checkpoint ahead of the last recorded handoff HEAD (expected). Drift check re-confirmed clean this session (2026-11-14T07:44Z): clean tree (at check time), SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; real HEAD `9b06c2f`.
 
 ## Only if user explicitly chooses a forward path
 
