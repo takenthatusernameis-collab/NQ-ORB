@@ -1,25 +1,25 @@
 # NQ ORB — Durable handoff
 
-- **HEAD observed at this refresh:** `fccd86a` (chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T21:20Z**. Prior task (report terminal state) is complete. This session only re-verified the drift anchor (clean tree, no substantive commits since `a797773`, SHA match), refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no tests, hashes beyond the anchor, monitor checks, source/config/data/artifact changes were made. Last full-suite run on record: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z).
+- **HEAD observed at this refresh:** `7ffea04` (chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **Last refreshed 2026-11-14T21:21Z**. Prior task (report terminal state and stop) is complete and was re-confirmed. This session only re-verified the drift anchor (clean tree, no substantive commits since `a797773`, SHA match), refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no tests, hashes beyond the anchor, monitor checks, or source/config/data/artifact changes were made. Last full-suite run on record: **75 passed in 0.63s** (`python -m pytest -q`, 2026-11-14T21:15Z).
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T21:20Z):** prior terminal-state task completed; durable notes refreshed only. Drift anchor re-verified read-only (clean tree; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; `sha256sum STRATEGY_RULES.txt` matches). No tests or source/config/data/artifact changes were made. Last recorded full suite: **75 passed in 0.63s** (2026-11-14T21:15Z).
+**This session (2026-11-14T21:21Z):** prior terminal-state task complete and re-confirmed; durable notes refreshed only. Drift anchor re-verified read-only (clean tree; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; `sha256sum STRATEGY_RULES.txt` matches). No tests or source/config/data/artifact changes were made. Last recorded full suite: **75 passed in 0.63s** (2026-11-14T21:15Z). HEAD advanced from `fccd86a` to `7ffea04` via chore checkpoint only.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T21:20Z)
+## Next agent note (written 2026-11-14T21:21Z)
 
-Research task complete and terminal — no outstanding research work. This session completed the prior terminal-state task and refreshed durable notes only; no substantive code/config/data/artifact changes were made. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
+Research task complete and terminal — no outstanding research work. This session re-confirmed the prior terminal-state task and refreshed durable notes only; no substantive code/config/data/artifact changes were made. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
 ## Repository state (accurate)
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764` (2026-10-31). Primary artifacts: `metrics_axb0306_full.json`, `metrics_kaggle.json`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (added 2026-11-09, commits `ae3c49f` and `a797773`): new `config/orb_mnq_1m_wf_v1.yaml`, YAML loader `src/orb/config.py`, additive `flatten_fill='open'` (default preserves baseline), plus 1m artifacts `metrics_audit1m.json` / `metrics_kaggle1m.json`. It does **not** modify the frozen baseline. Result: **byte-identical** to the 15m baseline (axb0306 60 trades net -$31,637.98; kaggle 688 trades net -$626,525.96). No trade binds on 15:55 ET flatten, so 1-minute resolution changes nothing.
-- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Subsequent commits are all `chore(kilo)` checkpoint/maintenance and doc-only (latest `e95d2dd`).
+- **No non-doc commits after `a797773`** (2026-11-09 05:44Z). Subsequent commits are all `chore(kilo)` checkpoint/maintenance and doc-only (latest `7ffea04`).
 
 ## Evidence (frozen artifacts)
 
@@ -38,8 +38,8 @@ Research task complete and terminal — no outstanding research work. This sessi
 
 ## Robust drift anchor (use this, not exact HEAD)
 
-- Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Latest HEAD observed at this refresh: `fccd86a` (chore checkpoint only).
-- Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop. (Confirmed at 2026-11-14T21:19Z.)
+- Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Latest HEAD observed at this refresh: `7ffea04` (chore checkpoint only).
+- Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop. (Confirmed at 2026-11-14T21:21Z.)
 
 ## Standing constraints
 
