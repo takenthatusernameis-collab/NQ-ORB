@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T00:36:44Z. **Prior agent task:** completed (read durable handoff/prompt/rules/AGENTS and repo state; confirmed `STRATEGY_RULES.txt` SHA-256 unchanged, canonical artifacts present, working tree clean; re-read frozen metrics JSON to report exact values; recomputed commit-loop stats; refreshed `HANDOFF.md` + this file). **HEAD at start:** `cafbd42` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T00:37:31Z. **Prior agent task:** completed (read durable handoff/prompt/rules/AGENTS and repo state; confirmed terminal/negative-net state, `STRATEGY_RULES.txt` v1.0 SHA-256 unchanged, canonical artifacts present; recomputed commit-loop stats; consolidated `HANDOFF.md` + this file). **HEAD at start:** `34bb702` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -8,7 +8,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 **Current state: the research task is COMPLETE and terminal.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0) is final and negative-net on every free dataset available. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`): through 2026-11-03 every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ big-contract rather than MNQ. The only two usable free sources are axb0306 (~3 months, single-contract MNQ.M26, no roll) and Kaggle front-month (~3 years, unadjusted).
 
-**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,734 commits, 2,432 checkpoint-only, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
+**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,735 commits, 2,436 checkpoint-only, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
 
 **Your job is to report the terminal state and stop.** Concretely:
 
@@ -30,11 +30,11 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 ## Verified state (this session)
 
-- `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` re-verified unchanged.
-- Canonical artifacts present and unmodified: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json` (all dated 2026-11-13 22:34).
-- HEAD at start `cafbd42`; working tree clean. Checkpoint loop active (`*/5` cron).
-- Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session. No commit made.
-- Commit-loop stats recomputed this session: 2,734 commits since 2026-11-01, of which 2,432 are checkpoint-only (`chore(kilo): checkpoint agent session`); the remainder are maintenance/diagnostics. Last substantive research commit remains `5fab764` (2026-10-31).
+- `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged.
+- Canonical artifacts present: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`.
+- HEAD at start `34bb702`; checkpoint loop active (`*/5` cron).
+- Last full suite (not re-run): **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full manifest (not re-run): **20/20 matched** (2026-11-13T16:50:32Z). No commit made.
+- Commit-loop stats (2026-11-14T00:37:31Z): 2,735 commits since 2026-11-01, 2,436 checkpoint-only; last substantive research commit `5fab764` (2026-10-31).
 
 ## Constraints
 
