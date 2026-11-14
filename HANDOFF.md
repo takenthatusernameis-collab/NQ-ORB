@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD at last handoff refresh:** `46d4e09` (2026-11-14; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD. Last refreshed 2026-11-14T17:21Z.
+- **HEAD at last handoff refresh:** `6d26d9e` (2026-11-14; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD. Last refreshed 2026-11-14T17:22Z.
 
 ## TERMINAL STATE — READ FIRST
 
