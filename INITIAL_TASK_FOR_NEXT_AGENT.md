@@ -1,7 +1,7 @@
 # Initial task for next agent
 
 **Status:** TERMINAL — research complete; no remaining research work.
-**Session:** 2026-11-14T05:46Z (session VIII). **Prior agent task:** completed (session VIII confirmed terminal state read-only: `git status` clean, `STRATEGY_RULES.txt` SHA-256 matches `6d3258c3…8ad2b1`, canonical artifacts + `data/FEASIBILITY_REPORT.md` present, newest monitor artifact still 2026-11-08T06:00:17Z; did NOT re-run tests — session T: 75 passed in 0.70s; updated `HANDOFF.md` session VIII and this file only, no changes to research artifacts/code/config/raw data).
+**Session:** 2026-11-14T06:34Z (session IX). **Prior agent task:** completed (session IX verified terminal state read-only: `git status` clean, `STRATEGY_RULES.txt` SHA-256 matches `6d3258c3…8ad2b1`, canonical artifacts + `data/FEASIBILITY_REPORT.md` present, canonical metrics match handoff, newest monitor artifact still 2026-11-08T06:00:17Z; did NOT re-run tests — session T: 75 passed in 0.70s; updated `HANDOFF.md` and this file only, no changes to research artifacts/code/config/raw data).
 
 ## Required first action
 
@@ -10,12 +10,12 @@ Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. Unless the user expl
 ## Terminal summary to report
 
 - Frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on all available free datasets.
-- axb0306: 60 trades, net **-$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80, expectancy -0.0431R.
-- Kaggle proxy: 688 trades, net **-$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56, expectancy -0.0684R.
+- axb0306: 60 trades, net **-$31,637.98**, costs -$23,975.98, PF 0.4917, expectancy -0.0431R.
+- Kaggle proxy: 688 trades, net **-$626,525.96**, costs $485,626.96, PF 0.2271, expectancy -0.0684R.
 - Chronological splits and 8-window walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03).
 - `cron: "*/5 * * * *"` still present; no free-data monitor artifact after 2026-11-08T06:00:17Z — stalled. Stop/reduce only with explicit user authorization.
-- Test suite: 75 passed (2026-11-14T05:39Z).
+- Test suite: 75 passed (2026-11-14T05:39Z); session IX did not re-run tests.
 
 ## Only if user explicitly chooses a forward path
 
