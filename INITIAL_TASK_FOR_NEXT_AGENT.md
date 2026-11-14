@@ -1,11 +1,12 @@
 # Initial task for next agent
 
-**Status:** TERMINAL — research complete; no remaining research work.
-**Session:** 2026-11-14 (this session). **Prior agent task:** complete the durable handoff's terminal task, then update the handoff and this file. This session confirmed terminal state via a minimal read-only drift check only — git HEAD `00b0372` clean at start (advanced from `3fd30e8` via a controller checkpoint of the prior session's doc changes), `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1` matches the frozen baseline, and headline figures in both metric files matched — no tests, full hash re-runs, monitor checks, or research work performed. Only `HANDOFF.md` and this file changed; research code, configuration, raw data, canonical artifacts, workflows, controller, and automation policy untouched. The controller owns commits.
+**Status:** TERMINAL — research complete; no remaining research work. No action required unless the user explicitly names a forward path (see "Only if user explicitly chooses a forward path" below).
 
 ## Required first action
 
-Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. The terminal state is already established and re-confirmed this session; **report it and stop unless the user explicitly names a forward path below**. Do not re-run tests, re-hash artifacts, poll the free-data monitor, add another handoff-only checkpoint, or edit `.github/workflows/main.yml` / controller / automation policy without explicit user authorization. (Note: there is no `*manifest*` file in the tree; ignore the old "20/20 manifest" reference.)
+1. Read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, `PROMPT.md`, and this file.
+2. Confirm terminal state via a minimal read-only drift check: `git status --porcelain` (clean), `git rev-parse HEAD` (expect `4cda252`), and `sha256sum STRATEGY_RULES.txt` (expect `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`).
+3. Report the terminal state below and stop. Do not re-run tests, re-hash artifacts beyond the drift check, poll the free-data monitor, add another handoff-only checkpoint, or edit `.github/workflows/main.yml` / controller / automation policy without explicit user authorization. (Note: there is no `*manifest*` file in the tree; ignore the old "20/20 manifest" reference.)
 
 ## Terminal summary to report
 
@@ -15,12 +16,13 @@ Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. The terminal state i
 - Chronological splits and 8-window walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 - `cron: "*/5 * * * *"` still present at `.github/workflows/main.yml:11`; no free-data monitor artifact after 2026-11-08T06:00:17Z — automation stalled. Stop/reduce only with explicit user authorization.
-- Test suite: 75 passed (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run tests.
-- HEAD `00b0372` (handoff-only checkpoints); no substantive research commit after `5fab764` (2026-10-31).
+- Test suite: 75 passed (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run tests. CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- HEAD `4cda252` (handoff-only checkpoints); no substantive research commit after `5fab764` (2026-10-31).
 
 ## Only if user explicitly chooses a forward path
 
 Act only on the named option; do not select one independently.
+
 - **Stop/reduce automation:** make the exact requested change (explicit authorization required for workflow/controller/permissions/policy), record it in `HANDOFF.md`, stop.
 - **New experiment:** separately named/versioned with explicit diff from `STRATEGY_RULES.txt` v1.0 (e.g. `experiment_farside_stop_v1`, §2.1); do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; report gross vs net, costs, and out-of-sample results.
 - **Commit/release/cleanup:** only with explicit user authorization; never rewrite history.
