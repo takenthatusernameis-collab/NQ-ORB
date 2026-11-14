@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete
 
-**HEAD observed at session start:** `a1e910b` (chore(kilo): checkpoint agent session, 2026-11-14 ~23:04Z). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**HEAD at session start (read-only verification):** `f4f0076` (`origin/main` in sync). Last substantive commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T23:04Z):** prior task (report terminal state, do not re-run tests/hashes/monitor checks) already complete — re-verified terminal state read-only at HEAD `a1e910b`. Clean tracked tree (`git status --porcelain` empty); `STRATEGY_RULES.txt` SHA-256 matches `6d3258c3…8ad2b1`; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and controller checkpoint/diagnostics changed — all non-substantive). Remote in sync (`origin/main` == HEAD `a1e910b`, 0 ahead / 0 behind). Handoff and next-agent task refreshed. (Full suite last recorded 2026-11-14T23:03Z: **75 passed in 0.78s**; not re-run this session per standing instruction.)
+**This session (2026-11-14T23:05Z):** prior task completed — terminal state re-verified read-only at HEAD `f4f0076`. Tracked tree clean (`git status --porcelain` empty); strategy SHA matches; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (only handoff/next-task docs and controller checkpoint/diagnostics changes since substantive work). Remote in sync (`origin/main` == HEAD, 0 ahead / 0 behind). Handoff and next-agent task refreshed. Full suite last recorded 2026-11-14T23:03Z: **75 passed in 0.78s** (not re-run this session per standing instruction). No tests/hashes/monitor checks re-run; no data/config/artifact/source changes.
 
 ## Terminal state — read first
 
