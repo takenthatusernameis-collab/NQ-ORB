@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T00:44:01Z. **Prior agent task:** completed (this session: read durable handoff + this file; verified repo state via git/ls/sha256sum — no test run, no manifest re-hash, no monitor poll, no commit; re-read frozen metrics JSONs directly; recomputed commit-loop stats; consolidated `HANDOFF.md` + this file). **HEAD at start:** `0b79246` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T00:46:00Z. **Prior agent task:** completed (this session: read durable handoff + this file; verified repo state via read-only `git`/`ls`/`sha256sum` and direct reads of the frozen metrics JSONs — no test run, no manifest re-hash, no monitor poll, no commit; confirmed all handoff claims; consolidated `HANDOFF.md` + this file). **HEAD at start:** `bf2bc3c` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -8,7 +8,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 **Current state: the research task is COMPLETE and terminal.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0) is final and negative-net on every free dataset available. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`): through 2026-11-03 every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ big-contract rather than MNQ. The only two usable free sources are axb0306 (~3 months, single-contract MNQ.M26, no roll) and Kaggle front-month (~3 years, unadjusted).
 
-**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,738 commits, 2,439 checkpoint-only, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
+**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,739 commits, 2,440 checkpoint-only, plus workflow-diagnostic and handoff re-verification commits, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
 
 **Your job is to report the terminal state and stop.** Concretely:
 
@@ -31,9 +31,9 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 ## Verified state (this session)
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged (verified via `sha256sum`).
-- Canonical artifacts present: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- HEAD at start `0b79246`; checkpoint loop active (`*/5` cron).
-- Commit-loop stats (2026-11-14T00:44:01Z): 2,738 commits since 2026-11-01, 2,439 checkpoint-only; last substantive research commit `5fab764` (2026-10-31, `feat: complete required performance reporting...`).
+- Canonical artifacts present and values confirmed by direct read: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
+- HEAD at start `bf2bc3c`; checkpoint loop active (`*/5` cron).
+- Commit-loop stats (2026-11-14T00:46:00Z): 2,739 commits since 2026-11-01, 2,440 checkpoint-only, plus workflow-diagnostic and handoff re-verification commits; last substantive research commit `5fab764` (2026-10-31, `feat: complete required performance reporting...`).
 - Working tree clean (no unstaged changes) at time of durable-doc update.
 - Last full suite (not re-run): **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full manifest (not re-run): **20/20 matched** (2026-11-13T16:50:32Z). No commit made.
 
