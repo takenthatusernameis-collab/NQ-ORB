@@ -1,12 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (doc-only):** `fae62a4` (2026-11-14 checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD (doc-only):** `b3cfd05` (2026-11-14 checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Latest verification (2026-11-14T11:26Z, this session):** read handoff + prior next-agent task, verified drift anchor — `git status --porcelain` empty before doc edits; `sha256sum STRATEGY_RULES.txt` matches; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. State unchanged. This session's only work is refreshing this handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Prior checkpoint commits include `6464928`, `fae62a4`. No new code/experiment, no tests re-run, no workflow edits. Commit count since baseline: 3,024.
+**Latest verification (2026-11-14T11:27Z, this session):** read handoff + prior next-agent task, verified drift anchor — `git status --porcelain` empty before doc edits; `sha256sum STRATEGY_RULES.txt` matches; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. State unchanged. This session's only work is refreshing this handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Prior checkpoint commits include `6464928`, `fae62a4`, `b3cfd05`. No new code/experiment, no tests re-run, no workflow edits. Commit count since baseline: 3,025.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
@@ -35,7 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
-- Confirmed unchanged 2026-11-14T11:26Z (HEAD `fae62a4`, doc-only).
+- Confirmed unchanged 2026-11-14T11:27Z (HEAD `b3cfd05`, doc-only).
 - These doc edits (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) are uncommitted; the next agent should treat a dirty tree containing only these two files as the expected in-session state and commit them (or let the controller checkpoint them).
 
 ## Standing constraints

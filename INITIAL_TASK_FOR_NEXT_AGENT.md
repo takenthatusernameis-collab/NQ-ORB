@@ -2,14 +2,14 @@
 
 ## Status: prior task COMPLETE — no research work exists; do nothing by default
 
-Session 2026-11-14T11:26Z completed the prior handoff task: read the durable handoff, confirmed the drift anchor, refreshed `HANDOFF.md` and this message. No code, no experiment, no tests, no workflow edits. The only working-tree change is these two doc files (uncommitted when the session ends; expected state).
+Session 2026-11-14T11:27Z completed the prior handoff task: read the durable handoff, confirmed the drift anchor, refreshed `HANDOFF.md` and this message. No code, no experiment, no tests, no workflow edits. The only working-tree change is these two doc files (uncommitted when the session ends; expected state).
 
 ## Verified state
 
-- HEAD `fae62a4` (doc-only checkpoint). Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
+- HEAD `b3cfd05` (doc-only checkpoint). Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - `git status --porcelain` empty before this session's doc edits.
 - `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty → no substantive change since `a797773` (2026-11-09 05:44Z), the 1-minute experiment.
-- 3,024 commits since baseline, all `chore(kilo)` checkpoint/diagnostics/maintenance.
+- 3,025 commits since baseline, all `chore(kilo)` checkpoint/diagnostics/maintenance.
 
 ## Frozen results (final, negative-net)
 
@@ -39,4 +39,4 @@ Only act if the user explicitly directs one of:
 - Do not re-run tests/hashes/drift checks for the sole purpose of another checkpoint; the drift anchor above is sufficient.
 - Keep `HANDOFF.md` compact; consolidate rather than append.
 
-(End of file - total 45 lines)
+(End of file - total 42 lines)
