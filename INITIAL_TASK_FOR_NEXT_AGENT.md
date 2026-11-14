@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T02:48Z. **Prior agent task:** completed — the durable handoff's task was to confirm the terminal state and update the handoff plus this file. Done: terminal state re-confirmed, handoff consolidated, this file rewritten. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T02:50Z. **Prior agent task:** completed — the durable handoff's task was to confirm the terminal state and update the handoff plus this file. Done: terminal state re-confirmed, handoff consolidated, this file rewritten. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -34,7 +34,7 @@ Only act on the option the user names; do not pick one yourself.
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged (recomputed from disk this session).
 - Canonical artifacts present and matching recorded figures: `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- HEAD at session start: `6175f04`; working tree clean. Only checkpoint commits since `1e70bbe`.
+- HEAD at session start: `c17fe6e`; working tree clean. Only checkpoint commits since `6175f04`.
 - Tests/manifest: last independently run 2026-11-14T02:43Z (**75 passed in 0.56s**, venv `/home/runner/work/_temp/orbvenv`); manifest 20/20 (2026-11-13T16:50:32Z). **Not re-run this session per the no-repeat rule.** CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files, not the ORB logic tests.
 
 ## Constraints
