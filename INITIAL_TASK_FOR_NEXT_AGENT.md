@@ -21,8 +21,8 @@
 - Chronological splits and walk-forward all negative; all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate (observed below).
 - Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 - `cron: "*/5 * * * *"` still present at `.github/workflows/main.yml:11`; no free-data monitor artifact after 2026-11-08T06:00:17Z — automation stalled. Stop/reduce only with explicit user authorization.
-- Full test suite: **75 passed in 0.63s** (2026-11-14T07:41Z). CI runs only the 4 controller/automation test files, not `tests/orb/`.
-- Last substantive commit `a797773` (2026-11-09); ~2,970+ checkpoint/diagnostic commits since baseline `5fab764` (2026-10-31). Real HEAD is one checkpoint ahead of `HANDOFF.md` (expected).
+- Full test suite (last recorded run): **75 passed in 0.63s** (2026-11-14T07:41Z). CI runs only the 4 controller/automation test files, not `tests/orb/`. This session did not re-run tests per "do not repeat maintenance re-verification".
+- Last substantive commit `a797773` (2026-11-09); ~2,970+ checkpoint/diagnostic commits since baseline `5fab764` (2026-10-31). Real HEAD is one checkpoint ahead of `HANDOFF.md` (expected). Drift check re-confirmed clean this session (2026-11-14T08:04Z): clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`.
 
 ## Only if user explicitly chooses a forward path
 
