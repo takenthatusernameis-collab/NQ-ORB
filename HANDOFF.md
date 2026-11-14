@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
 - **HEAD**: `b7aea00` (`chore(kilo): checkpoint agent session`; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean.
-- **Timestamp (UTC)**: 2026-11-14T05:42Z (session U).
+- **Timestamp (UTC)**: 2026-11-14T05:43Z (session V).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session U (2026-11-14T05:42Z):** read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `data/FEASIBILITY_REPORT.md`; confirmed terminal state unchanged and read-only (`git status` clean; `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` matches; canonical artifacts + `data/FEASIBILITY_REPORT.md` present; newest monitor artifact remains `free_data_monitor_202611080209Z.json`, 2026-11-08, stalled). **Did NOT re-run the full test suite** (session T ran it: 75 passed in 0.70s; re-running is explicitly prohibited as redundant re-verification). No strategy/config/raw-data/canonical-artifact changes, no automation edits, no commit (controller owns commits). Terminal conclusion unchanged: stop.
+**Session V (2026-11-14T05:43Z):** read `HANDOFF.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed terminal state unchanged and read-only (`git status` clean; `STRATEGY_RULES.txt` SHA-256 = `6d3258c3…8ad2b1` matches; canonical artifacts + `data/FEASIBILITY_REPORT.md` present; newest monitor artifact remains `free_data_monitor_202611080209Z.json`, 2026-11-08, stalled). **Did NOT re-run tests** (session T: 75 passed in 0.70s). No changes, no commits. Terminal conclusion unchanged: stop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
