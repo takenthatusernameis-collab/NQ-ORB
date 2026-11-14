@@ -1,12 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (doc-only):** `44d4289` (2026-11-14 checkpoint; controller checkpointed the prior in-session doc refresh). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD (doc-only):** `5b0a7e1` (2026-11-14; controller checkpointed prior in-session doc refresh). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Latest verification (this session):** `git status --porcelain` empty; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. State unchanged. No new code/experiment, no tests re-run, no workflow edits. Commit count since baseline: 3,030.
+**Latest verification (2026-11-14):** at HEAD `5b0a7e1`, drift anchor holds — `STRATEGY_RULES.txt` hash `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No new code/experiment, no tests re-run, no workflow edits. ~3,030 commits since baseline (all maintenance/checkpoint/doc-only).
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
@@ -35,8 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
-- Confirmed unchanged (HEAD `44d4289`, doc-only).
-- Doc refreshes are committed by the controller checkpoint; treat a dirty tree containing only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` as expected in-session state. Do not create new commits for doc-only churn; do not modify automation.
+- Confirmed unchanged at HEAD `5b0a7e1` (2026-11-14, doc-only). Treat in-session dirtiness limited to `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md` as expected; do not create new commits for doc-only churn and do not modify automation.
 
 ## Standing constraints
 
