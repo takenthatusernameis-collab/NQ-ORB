@@ -1,17 +1,17 @@
 # NQ ORB — Durable handoff
 
-- **HEAD at this handoff refresh:** `812a0aa` (2026-11-14 21:12Z; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T21:12:26Z** (clean tree verified at check; no code/data/config/artifact edits this session). Prior drift evidence was not re-run per the standing instruction below.
+- **HEAD at this handoff refresh:** `74422ea` (2026-11-14; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **Last refreshed 2026-11-14T21:13Z** (clean tree verified at check; no code/data/config/artifact edits this session). Prior drift evidence was not re-run per the standing instruction below.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T21:12:26Z):** prior task (report terminal state and stop) was already complete on arrival. Read-only drift anchor re-verified against the handoff: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No tests/hashes/monitor checks re-run; no source/config/data/artifact changes made; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. HEAD at check was `812a0aa` (chore checkpoint only).
+**This session (2026-11-14T21:13Z):** prior task (report terminal state and stop) was already complete on arrival and is now reported terminal. Read-only drift anchor re-verified against the handoff: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No tests/hashes/monitor checks re-run; no source/config/data/artifact changes made; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed. HEAD at check was `74422ea` (chore checkpoint only).
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T21:12:26Z)
+## Next agent note (written 2026-11-14T21:13Z)
 
 Research task complete and terminal — no outstanding research work. The prior read-only drift check was not repeated this session beyond the anchor re-verification above; no code/data/config/artifact changes were made. **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
