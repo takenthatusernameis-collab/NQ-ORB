@@ -4,7 +4,7 @@
 
 **Last substantive commit:** **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T23:09Z):** prior durable task reviewed and completed (terminal state reported; handoff/next-task refreshed). Read-only verification at HEAD `b1e774f`: tracked tree clean, strategy hash unchanged, no substantive code/data/config/artifact changes since `a797773` (only doc/diagnostic churn). Tests not re-run this session per standing terminal instructions; last verified result remains **75 passed in 0.67s** (2026-11-14T23:08Z session). No new evidence.
+**This session (2026-11-14T23:10Z):** prior durable task reviewed and completed (terminal state reported). Read-only verification at HEAD `e8c8a23`: tracked tree clean, strategy hash unchanged, no substantive code/data/config/artifact changes since `a797773` (only doc/diagnostic/checkpoint churn). Tests not re-run per standing terminal instructions; last verified result remains **75 passed in 0.67s** (2026-11-14T23:08Z). No new evidence. Handoff and next-agent task refreshed.
 
 ## Terminal state — read first
 

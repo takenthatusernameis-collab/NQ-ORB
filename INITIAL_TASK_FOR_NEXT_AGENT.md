@@ -1,8 +1,8 @@
 # Initial Task for Next Agent — NQ ORB
 
-## Status: terminal research complete; do nothing unless explicitly directed (2026-11-14T23:09Z)
+## Status: terminal research complete; do nothing unless explicitly directed (2026-11-14T23:10Z)
 
-Prior task completed: terminal state reported and re-verified read-only at HEAD `b1e774f` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`). Durable handoff and this message refreshed. Tests not re-run (last verified: **75 passed in 0.67s**, 2026-11-14T23:08Z).
+Prior task completed: terminal state reported and re-verified read-only at HEAD `e8c8a23` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`). Durable handoff and this message refreshed. Tests not re-run (last verified: **75 passed in 0.67s**, 2026-11-14T23:08Z).
 
 ## Your task (initial message)
 
@@ -20,5 +20,3 @@ Only act if the user explicitly directs one of:
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization.
 - Keep `HANDOFF.md` compact.
-
-(End of file - total 23 lines)
