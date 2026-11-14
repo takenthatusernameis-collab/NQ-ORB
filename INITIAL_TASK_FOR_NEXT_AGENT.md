@@ -8,6 +8,7 @@ The NQ ORB research project is in a **terminal COMPLETE state**. The frozen MNQ 
 - Separate 1-minute experiment `orb_mnq_1m_wf_v1`: **byte-identical** results (no trade bound on 15:55 flatten)
 - All chronological splits, walk-forward windows, and 12 cost-sensitivity combos: negative
 - Free MNQ 1-min/15-min data search exhausted (~30 sweeps through 2026-11-03)
+- **Re-confirmed 2026-11-14T09:39Z** via robust drift anchor: clean tree, SHA match, no non-doc commits since `a797773` (real HEAD `fbd484e`, checkpoint churn only).
 
 ## Your Task
 **Do nothing unless the user explicitly directs one of three legitimate forward paths:**

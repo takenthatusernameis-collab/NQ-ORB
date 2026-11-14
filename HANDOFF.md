@@ -8,7 +8,7 @@
 
 **This session (2026-11-14T08:49Z):** confirmed terminal state via robust drift check (clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, real HEAD `ca559b3`). No tests re-run, no re-hash beyond drift check, no monitor poll. Reported terminal state; updated handoff and initial-task file; stopped.
 
-**Confirmed again 2026-11-14T09:38Z:** Terminal state verified. Research complete.
+**Confirmed again 2026-11-14T09:39Z:** Terminal state verified via robust drift anchor (clean tree, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, real HEAD `fbd484e` — checkpoint churn only). Research complete.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
