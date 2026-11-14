@@ -1,42 +1,39 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T03:50Z (session F). **Prior agent task:** completed (it was already complete from session E). Done this session: re-confirmed the terminal state from disk with a minimal read-only check (git HEAD `35abe2c`, clean tree, all canonical artifacts present, 471 monitor files, two metric JSONs re-read and figures match), handoff updated, this file kept current. No test-suite re-run, no hashes re-checked, no monitor poll, no commits, no automation edits. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T03:47Z (session G). **Prior agent task:** completed. This session read the durable handoff and terminal-state instructions; no research work remained. No tests, hashes, monitor checks, strategy/config/raw-data/artifact changes, automation edits, or commits were made.
 
-## Default prompt: "continue" — do this
+## Read first
 
-You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDOFF.md` first.
+Read `HANDOFF.md` and `STRATEGY_RULES.txt`, then this file. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
-**Current state: the research task is COMPLETE and terminal.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3...ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 documented sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ big-contract rather than MNQ. Usable free sources: axb0306 (~3 months, single-contract MNQ.M26, no roll, ends 2026-04-15) and Kaggle front-month (~3 years, unadjusted).
+## Do not repeat verification
 
-**Do NOT start another maintenance re-verification loop.** Do not re-run the test suite, re-hash artifacts, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repo is in a degenerate maintenance loop (`cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session`; last substantive research commit `5fab764`, 2026-10-31; 471 `free_data_monitor_*.json` files with no findings).
+Do **not** re-run the test suite, re-hash artifacts, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repo is in a degenerate maintenance loop (`cron: "*/5 * * * *"`, checkpoint-only recent history, 471 `free_data_monitor_*.json` files). Automation changes require explicit user authorization per `AGENTS.md`.
 
-**Your job is to report the terminal state and stop — unless the user explicitly chooses a forward path.** Concretely:
+## Report and stop
 
-1. Read `HANDOFF.md` (**TERMINAL STATE — READ FIRST**) and this file.
-2. Do not run tests/hashes/monitor checks, do not commit, do not touch automation.
-3. Report, concisely:
-   - Research complete; frozen baseline final and negative-net; free-data search exhausted.
-   - axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, net **-$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80, expectancy -0.0431R, avg win +0.3775R / avg loss -1.0245R.
-   - Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), 359 long / 329 short, gross -$140,899, net **-$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56, expectancy -0.0684R / -$910.65 USD, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80 (2023-05-12), exposure 8.07%, 2.99 years.
-   - Chronological train/val/test: -$448,765.02 / -$66,243.22 / -$111,517.72; 8-window walk-forward (`artifacts/walk_forward.json`) all negative (test PF 0.128–0.447); 12-way cost-sensitivity grid all negative (-$487,098.57..-$808,255.35); signal-close sensitivity all negative. Costs ($2.87/side, 1-tick adverse slippage) dominate; the 0.4R target needs >71.43% pre-cost win rate; observed rates are below that.
-   - Maintenance-loop diagnosis; stopping/changing `.github/workflows/main.yml` requires explicit user authorization.
-4. Stop. Leave the working tree as-is. If you must touch durable handoff files, consolidate rather than append, and do not commit (the controller owns commits).
+Unless the user explicitly selects a forward path, report this terminal state and stop:
 
-## If the user explicitly chooses a forward path
+- The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on all available free datasets. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): candidate MNQ 1-minute/15-minute sources are paid, key-gated, daily-only, or NQ rather than MNQ.
+- axb0306 (`artifacts/metrics_axb0306_full.json`): 60 trades, 42W/18L (70%), 33 long / 27 short, gross -$7,662, net **-$31,637.98**, costs $23,975.98, PF 0.4917, max DD $37,491.80, expectancy -0.0431R, average win +0.3775R / average loss -1.0245R.
+- Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), 359 long / 329 short, gross -$140,899, net **-$626,525.96**, costs $485,626.96, PF 0.2271, max DD $626,994.56, expectancy -0.0684R (-$910.65/trade), Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80 (2023-05-12), exposure 8.07%, 2.99 years.
+- Chronological train/validation/test: -$448,765.02 / -$66,243.22 / -$111,517.72. Eight-window walk-forward (`artifacts/walk_forward.json`): all negative, test PF 0.128-0.447. All 12 cost-sensitivity combinations and signal-close sensitivity are negative. Costs ($2.87/side plus one-tick adverse slippage) dominate; the 0.4R target requires a >71.43% pre-cost win rate, above the observed rates.
+- Maintenance-loop diagnosis is recorded in `HANDOFF.md`; stop/reduce automation requires explicit user authorization.
 
-Only act on the option the user names; do not pick one yourself.
+Leave the working tree as-is unless the user explicitly selects a forward path. If durable handoff files are updated, consolidate rather than append; do not commit (controller owns commits).
 
-- **Stop/reduce automation:** make the exact requested change, record it in `HANDOFF.md`, do nothing else. Editing `.github/workflows/main.yml`, the controller, permissions, or automation policy requires this explicit authorization.
-- **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop variant explicitly permitted by `STRATEGY_RULES.txt` §2.1 (baseline uses the ATR-multiple stop), runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
-- **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
+## Only if the user explicitly chooses a forward path
 
-## Verified state (as of 2026-11-14T03:50Z)
+Act only on the named option; do not select one independently.
 
-- `STRATEGY_RULES.txt` v1.0 present and unmodified on disk (SHA-256 `6d3258c3...ad2b1` per prior verification; not re-hashed this session per the no-repeat rule).
-- Canonical artifacts present and matching recorded figures (re-read `metrics_axb0306_full.json` and `metrics_kaggle.json` this session; figures exact): `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- HEAD at session start/end: `35abe2c` (controller checkpoint commit added after prior session's `f996a03`); working tree clean (checked `git status --short` = empty; recent commits all `chore(kilo): checkpoint agent session`, no substantive research commit).
-- Tests/manifest: last independently run 2026-11-14T02:43Z (**75 passed in 0.56s**, venv `/home/runner/work/_temp/orbvenv`); manifest 20/20 (2026-11-13T16:50:32Z). **Not re-run this session per the no-repeat rule.** CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files, not the ORB logic tests.
+- **Stop/reduce automation:** make the exact requested change and record it in `HANDOFF.md`; do nothing else. Explicit authorization is required for `.github/workflows/main.yml`, controller, permissions, or automation-policy changes.
+- **New experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; use free data only and follow `AGENTS.md`, `PROMPT.md`, and `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop explicitly permitted by `STRATEGY_RULES.txt` §2.1, runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
+- **Commit/release/cleanup:** only with explicit user authorization; never rewrite Git history to conceal a failure.
+
+## Verified prior state
+
+Prior verification recorded HEAD `35abe2c` with a clean working tree and all canonical artifacts present. Tests last passed 2026-11-14T02:43Z (75 passed in 0.56s, `/home/runner/work/_temp/orbvenv`); manifest last verified 2026-11-13T16:50:32Z (20/20). These were not repeated this session.
 
 ## Constraints
 
-Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested/duplicate workflows. Do not add commits without explicit user authorization.
+Historical research/simulation only. No broker/live/paper execution, credentials, or paid/proprietary data. Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. No nested or duplicate workflows. No commits without explicit user authorization.
