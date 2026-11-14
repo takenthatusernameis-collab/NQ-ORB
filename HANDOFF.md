@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `d223d0a` (`chore(kilo): checkpoint agent session`, `origin/main`). Working tree clean at session start and end. Only checkpoint commits since substantive research commit `5fab764` (2026-10-31) — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T03:45Z (session D; terminal state re-confirmed, no re-verification)
+- **HEAD**: `f996a03` (`chore(kilo): checkpoint agent session`, `origin/main`). Working tree clean at session start and end. Only checkpoint commits since substantive research commit `5fab764` (2026-10-31) — no substantive research change (last 20 commits all `chore(kilo): checkpoint agent session`).
+- **Timestamp (UTC)**: 2026-11-14T03:46Z (session E; terminal state re-confirmed from disk with a minimal read-only check, no test-suite re-run, no hash re-check, no monitor poll)
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T03:45Z):** confirmed the terminal state from disk with a minimal read-only check (no test-suite re-run, no hash re-check, no monitor poll per the no-repeat rule): git HEAD `d223d0a` (clean tree), all canonical artifacts present (`metrics_axb0306_full.json`, `metrics_kaggle.json`, `walk_forward.json`, etc.), `STRATEGY_RULES.txt` and `data/FEASIBILITY_REPORT.md` present, 471 `free_data_monitor_*.json` files. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits). No research work remains — task is terminal.
+**This session (2026-11-14T03:46Z):** confirmed the terminal state from disk with a minimal read-only check (no test-suite re-run, no hash re-check, no monitor poll per the no-repeat rule): git HEAD `f996a03` (clean tree), all canonical artifacts present (`metrics_axb0306_full.json`, `metrics_kaggle.json`, `walk_forward.json`, etc.), `STRATEGY_RULES.txt` and `data/FEASIBILITY_REPORT.md` present, 471 `free_data_monitor_*.json` files. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits). No research work remains — task is terminal.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
 
