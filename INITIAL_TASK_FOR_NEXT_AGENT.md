@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T02:50Z. **Prior agent task:** completed — the durable handoff's task was to confirm the terminal state and update the handoff plus this file. Done: terminal state re-confirmed, handoff consolidated, this file rewritten. Per the no-repeat rule, did not re-run tests/hashes/monitor checks, did not commit, did not touch automation. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T02:51Z. **Prior agent task:** completed — confirm the terminal state from `HANDOFF.md` and update the durable handoff plus this file. Done: terminal state re-confirmed from disk, handoff consolidated (HEAD `e106e55`, clean tree), this file rewritten. No test-suite re-run, no commits, no automation edits. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -8,7 +8,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 **Current state: the research task is COMPLETE and terminal.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3...ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 documented sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ big-contract rather than MNQ. Usable free sources: axb0306 (~3 months, single-contract MNQ.M26, no roll, ends 2026-04-15) and Kaggle front-month (~3 years, unadjusted).
 
-**Do NOT start another maintenance re-verification loop.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repo is in a degenerate maintenance loop (`cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session`; last substantive research commit `5fab764`, 2026-10-31).
+**Do NOT start another maintenance re-verification loop.** Do not re-run the test suite, re-hash artifacts, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repo is in a degenerate maintenance loop (`cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session`; last substantive research commit `5fab764`, 2026-10-31; 480 `free_data_monitor_*.json` files with no findings).
 
 **Your job is to report the terminal state and stop — unless the user explicitly chooses a forward path.** Concretely:
 
@@ -30,11 +30,12 @@ Only act on the option the user names; do not pick one yourself.
 - **New research/experiment:** separately named/versioned with an explicit diff from `STRATEGY_RULES.txt` v1.0; do not overwrite frozen files/configs/raw data/canonical artifacts; free data only; follow `AGENTS.md`, `PROMPT.md`, `data/FEASIBILITY_REPORT.md`. The strongest candidate is the far-side-of-range stop variant explicitly permitted by `STRATEGY_RULES.txt` §2.1 (baseline uses the ATR-multiple stop), runnable on the existing axb0306/Kaggle data as `experiment_farside_stop_v1`.
 - **Commit/release/cleanup:** only with explicit authorization; never rewrite Git history to conceal a failure.
 
-## Verified state (as of 2026-11-14T02:48Z)
+## Verified state (as of 2026-11-14T02:51Z)
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged (recomputed from disk this session).
 - Canonical artifacts present and matching recorded figures: `artifacts/metrics_axb0306.json`, `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- HEAD at session start: `c17fe6e`; working tree clean. Only checkpoint commits since `6175f04`.
+- `research_state/`: 483 files, including 480 `free_data_monitor_*.json`, `1m_audit_{axb0306,kaggle}.json`, `workflow_run_diagnostics.jsonl`.
+- HEAD at session start: `e106e55`; working tree clean. Only checkpoint commits since `c17fe6e`.
 - Tests/manifest: last independently run 2026-11-14T02:43Z (**75 passed in 0.56s**, venv `/home/runner/work/_temp/orbvenv`); manifest 20/20 (2026-11-13T16:50:32Z). **Not re-run this session per the no-repeat rule.** CI (`.github/workflows/main.yml:61-62`) only gates the 4 controller/automation test files, not the ORB logic tests.
 
 ## Constraints

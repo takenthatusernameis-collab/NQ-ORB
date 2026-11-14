@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `c17fe6e` (controller checkpoint; `6175f04` before it). Working tree clean at session start. Only checkpoint commits since the prior session — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T02:50Z
+- **HEAD**: `e106e55` (controller checkpoint). Working tree clean at session start and at session end. Only checkpoint commits since `c17fe6e` — no substantive research change.
+- **Timestamp (UTC)**: 2026-11-14T02:51Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T02:50Z):** completed the prior agent's task — read the handoff, prompt, next-agent task, rules, and artifacts; confirmed terminal state. Verified from disk (no re-run of tests/hashes per the no-repeat rule): frozen artifacts present and matching the recorded figures, `STRATEGY_RULES.txt` hash unchanged. Working tree clean at `c17fe6e`. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits).
+**This session (2026-11-14T02:51Z):** completed the prior agent's task — confirmed the terminal state and updated the handoff and next-agent task. Verified from disk (no test-suite re-run per the no-repeat rule): `STRATEGY_RULES.txt` SHA-256 recomputed and matches; `artifacts/metrics_axb0306_full.json`, `metrics_kaggle.json`, and `walk_forward.json` present and matching every recorded figure; 480 `free_data_monitor_*.json` files present (483 files in `research_state/`); `.github/workflows/main.yml:14` still `cron: "*/5 * * * *"`. No strategy/config/raw-data/artifact changes, no automation edits, no commit (controller owns commits).
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
 
@@ -26,12 +26,12 @@
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.56s** (2026-11-14T02:43Z, venv `/home/runner/work/_temp/orbvenv`); confirms the prior 75-passed run. CI (`.github/workflows/main.yml:61-62`) only runs the 4 controller/automation test files in a `pytest numpy requests` venv, not the ORB logic tests.
+- Tests last run: **75 passed in 0.56s** (2026-11-14T02:43Z, venv `/home/runner/work/_temp/orbvenv`). Confirms the prior 75-passed run. Not re-run this session. CI (`.github/workflows/main.yml:61-62`) only runs the 4 controller/automation test files in a `pytest numpy requests` venv, not the ORB logic tests (`tests/orb/`).
 - Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z). Not re-hashed this session.
 
 ## Maintenance-loop diagnosis
 
-- Repo is in a degenerate maintenance loop: `.github/workflows/main.yml` runs `cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session` commits (last substantive research commit `5fab764`, 2026-10-31); `research_state/free_data_monitor_*.json` accumulates at sub-hourly cadence with no new findings.
+- Repo is in a degenerate maintenance loop: `.github/workflows/main.yml` runs `cron: "*/5 * * * *"`; recent history is only `chore(kilo): checkpoint agent session` commits (last substantive research commit `5fab764`, 2026-10-31); `research_state/free_data_monitor_*.json` accumulates at sub-hourly cadence (480 files) with no new findings.
 - Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`. None has been given. Do not touch it unilaterally.
 
 ## Standing constraints
