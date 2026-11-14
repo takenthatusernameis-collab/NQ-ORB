@@ -1,7 +1,7 @@
 # NQ ORB — Durable handoff
 
 - **HEAD at last handoff refresh:** `1633fdc` (2026-11-14 19:22Z; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T19:22Z** (clean tree at check, hash `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; only docs refreshed this session).
+- **Last refreshed 2026-11-14T19:23Z** (clean tree at check, hash `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; only docs refreshed this session).
 
 ## TERMINAL STATE — READ FIRST
 
