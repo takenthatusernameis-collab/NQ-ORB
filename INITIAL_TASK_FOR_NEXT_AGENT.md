@@ -2,12 +2,11 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Session 2026-11-14T12:31Z read the durable handoff and re-confirmed the drift anchor at HEAD `35c9c0a`:
-`sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git status --porcelain` clean; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No code, no experiment, no tests, no workflow edits.
+This session (2026-11-14T12:30Z) read the durable handoff, confirmed the drift anchor, and reported terminal state. Nothing was implemented, tested, or committed beyond doc updates.
 
 ## Verified state
 
-- HEAD `35c9c0a` (doc-only controller checkpoint).
+- HEAD `4f065c8` (doc-only checkpoint; `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` only).
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
 - ~1,011 commits since `a797773` (~3,036 since baseline); all `chore(kilo)` checkpoint/diagnostics/maintenance or doc-only.
@@ -20,13 +19,14 @@ Session 2026-11-14T12:31Z read the durable handoff and re-confirmed the drift an
 - Kaggle proxy (MNQ 15-min): 688 trades, 446W/242L, net **-$626,525.96**, PF 0.2271, expectancy -0.0684R.
 - 1-minute experiment `orb_mnq_1m_wf_v1` byte-identical to 15m (no trade binds on 15:55 ET flatten).
 - All chronological splits, walk-forward folds, and 12 cost-sensitivity combos negative. Driver: $2.87/side + 1-tick slippage; 0.4R target needs >71.43% pre-cost win rate.
-- Tests: last full suite on record **75 passed in 0.63s** (2026-11-14T07:41Z), not re-run. CI runs only 4 controller/automation files, not `tests/orb/`. No `*manifest*` file exists (ignore stale "20/20 manifest" refs).
+- Tests: last full suite on record **75 passed in 0.63s** (2026-11-14T07:41Z), not re-run this session. CI runs only 4 controller/automation files, not `tests/orb/`. No `*manifest*` file exists (ignore stale "20/20 manifest" refs).
 
 ## Task
 
 **No outstanding research work.** Default action: report terminal state and await an explicit user decision. Do not create work, do not re-verify, do not add handoff-only checkpoint cycles, do not touch automation.
 
 Only act if the user explicitly directs one of:
+
 1. **Stop/reduce maintenance automation** — edit `cron: "*/5 * * * *"` in `.github/workflows/main.yml:11` (requires explicit authorization for that exact change).
 2. **Run a separately-versioned experiment** — e.g. far-side-of-range stop (`STRATEGY_RULES.txt` §2.1) as `experiment_farside_stop_v1`, with explicit diff from frozen baseline, deterministic tests, and chronological splits; then update `HANDOFF.md`.
 3. **Accept baseline as final** — archive the project.
