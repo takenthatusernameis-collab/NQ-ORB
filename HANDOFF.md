@@ -1,7 +1,7 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `4a8ba41` (controller checkpoint). Working tree clean at session start and at session end. Only checkpoint commits since `c17fe6e` — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T03:43Z
+- **HEAD**: `2af7eae` (controller checkpoint). Working tree clean at session start and at session end. Only checkpoint commits since `c17fe6e` — no substantive research change.
+- **Timestamp (UTC)**: 2026-11-14T03:43Z (session B)
 
 ## TERMINAL STATE — READ FIRST
 
