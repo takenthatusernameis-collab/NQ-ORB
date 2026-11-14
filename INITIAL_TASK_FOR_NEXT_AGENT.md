@@ -2,9 +2,9 @@
 
 ## Status: prior task COMPLETE — do nothing by default
 
-At 2026-11-14T10:21Z, the prior task was completed: the durable handoff was read, terminal state was confirmed, and this next-agent message was updated. No new research, code, tests, or workflow changes were made.
+At 2026-11-14T10:23Z, the prior task was completed: the durable handoff was read, terminal state was confirmed, and this next-agent message was updated. No new research, code, tests, or workflow changes were made.
 
-Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA `6d3258c3…8ad2b1`) is negative-net on every freely available dataset; free MNQ 1-min/15-min search exhausted. Drift anchor: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `85c79bd`, checkpoint churn).
+Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA `6d3258c3…8ad2b1`) is negative-net on every freely available dataset; free MNQ 1-min/15-min search exhausted. Drift anchor: clean tree, SHA match, no non-doc commits since `a797773` (HEAD `255ca90`, checkpoint churn).
 
 Key results:
 - axb0306 (NQ 15-min): 60 trades, net **-$31,637.98**
