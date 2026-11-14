@@ -2,14 +2,14 @@
 
 ## Status: prior task COMPLETE — drift check completed; research terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T19:16Z. Prior task complete — completed prescribed read-only drift check (`git status --porcelain` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`); all held → state unchanged. HEAD at refresh: `d023c1f`.
+Durable handoff and this file refreshed 2026-11-14T19:22Z. Prior task complete — completed prescribed read-only drift check on arrival and re-verified: `git status --porcelain` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`; 34 JSON artifacts (+ `README.md`) in `artifacts/`; automation still stalled (newest `research_state/` monitor artifact `free_data_monitor_20261108T060017Z.json`). All anchors held → state unchanged. Only docs touched since last substantive commit.
 
 ## Last recorded state (verified this session)
 
-- HEAD at handoff refresh: `d023c1f` (chore checkpoints only).
-- Baseline frozen at `5fab764`; no substantive (non-doc) change since `a797773`.
-- 34 JSON artifacts (+ `README.md`) in `artifacts/`. Automation stalled / not accumulating (newest `research_state/` monitor artifact `free_data_monitor_20261108T060017Z.json`).
-- `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization. Last recorded test run: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z); not re-run this session. CI runs only 4 controller/automation tests.
+- Last substantive (non-doc) commit: `a797773` (2026-11-09 05:44Z).
+- Baseline frozen at `5fab764` (2026-10-31).
+- 34 JSON artifacts (+ `README.md`) in `artifacts/`. Automation stalled / not accumulating (newest `research_state/` monitor artifact `free_data_monitor_20261108T060017Z.json`, 2026-11-08).
+- `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization. Last recorded test run: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z); not re-run this session. CI runs only 4 controller/automation tests, not `tests/orb/`.
 
 ## Frozen results (final, negative-net)
 
@@ -22,6 +22,7 @@ Durable handoff and this file refreshed 2026-11-14T19:16Z. Prior task complete �
 **No outstanding research work.** Report terminal state and await explicit user direction. Do not re-verify tests/hashes, do not add handoff-only checkpoint cycles, and do not touch automation.
 
 Only act if the user explicitly directs one of:
+
 1. **Stop/reduce maintenance automation** — edit `cron` in `.github/workflows/main.yml:11` (requires explicit authorization).
 2. **Run a separately-versioned experiment** — e.g. far-side-of-range stop as `experiment_farside_stop_v1` with explicit diff from baseline, deterministic tests, chronological splits; update `HANDOFF.md`.
 3. **Accept baseline as final** — archive the project.

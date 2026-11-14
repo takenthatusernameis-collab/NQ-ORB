@@ -1,6 +1,7 @@
 # NQ ORB — Durable handoff
 
-- **HEAD at last handoff refresh:** `d023c1f` (2026-11-14; chore checkpoints only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD. Last refreshed 2026-11-14T19:16Z.
+- **HEAD at last handoff refresh:** `d023c1f` (2026-11-14; chore checkpoints only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **Last refreshed 2026-11-14T19:16Z** (subsequent re-check at 2026-11-14T19:22Z held identical: clean tree, hash `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; only docs touched since).
 
 ## TERMINAL STATE — READ FIRST
 
@@ -10,9 +11,9 @@
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T19:16Z)
+## Next agent note (written 2026-11-14T19:22Z)
 
-Research task complete and terminal — drift check completed on arrival, state unchanged. Anchor verified unchanged: last substantive commit `a797773`; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no source/config/data/artifact commits since. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it.
+Research task complete and terminal — drift check completed on arrival and re-verified: clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, 34 JSON artifacts. State unchanged. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
 ## Repository state (accurate)
 
