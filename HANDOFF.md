@@ -1,6 +1,6 @@
 # NQ ORB — Durable handoff
 
-- **HEAD (doc-only):** `a85092b` (2026-11-14 checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD (doc-only):** `4b060bb` (2026-11-14 checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
@@ -35,7 +35,7 @@
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
 - Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
-- Confirmed unchanged (HEAD `a85092b`, doc-only).
+- Confirmed unchanged (HEAD `4b060bb`, doc-only).
 - These doc edits (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) are uncommitted; the next agent should treat a dirty tree containing only these two files as the expected in-session state and commit them (or let the controller checkpoint them).
 
 ## Standing constraints
