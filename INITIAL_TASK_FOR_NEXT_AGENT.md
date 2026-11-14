@@ -1,35 +1,42 @@
 # Initial Task for Next Agent — NQ ORB
 
-## Status: prior task COMPLETE — do nothing by default
+## Status: prior task COMPLETE — no research work exists; do nothing by default
 
-Session 2026-11-14T11:23Z: read durable handoff + prior next-agent task, verified drift anchor, refreshed handoff/this message. No tests re-run, no new code/experiment, no workflow edits.
+Session 2026-11-14T11:25Z completed the prior handoff task: read the durable handoff, confirmed the drift anchor, refreshed `HANDOFF.md` and this message. No code, no experiment, no tests, no workflow edits. The only working-tree change is these two doc files (uncommitted when the session ends; expected state).
 
-Drift anchor (verified 2026-11-14T11:23Z): `git status --porcelain` clean (aside intentional doc edits in-session), `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty (HEAD at verification `3b1cd7f`, doc-only). State unchanged and terminal.
+## Verified state
 
-Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0) negative-net on every free dataset; free MNQ 1-min/15-min search exhausted (`data/FEASIBILITY_REPORT.md`).
+- HEAD `6464928` (doc-only checkpoint). Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
+- `git status --porcelain` empty before this session's doc edits.
+- `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty → no substantive change since `a797773` (2026-11-09 05:44Z), the 1-minute experiment.
+- 3,023 commits since baseline, all `chore(kilo)` checkpoint/diagnostics/maintenance.
 
-Key results:
-- axb0306 (NQ 15-min): 60 trades, net **-$31,637.98**
-- Kaggle proxy (MNQ 15-min): 688 trades, net **-$626,525.96**
-- 1-min experiment `orb_mnq_1m_wf_v1`: byte-identical to 15m; all splits/walk-forward/12 cost-sensitivity combos negative
+## Frozen results (final, negative-net)
+
+- MNQ 15-min baseline is negative-net on every free dataset available; free MNQ 1-min/15-min source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps).
+- axb0306 (NQ 15-min): 60 trades, 42W/18L (70%), net **-$31,637.98**, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80.
+- Kaggle proxy (MNQ 15-min): 688 trades, 446W/242L (64.8%), net **-$626,525.96**, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
+- 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`): byte-identical to 15m baseline; no trade binds on the 15:55 ET flatten, so resolution changes nothing.
+- All chronological splits, walk-forward folds, and 12 cost-sensitivity combos negative. Driver: $2.87/side + 1-tick adverse slippage; the 0.4R target needs >71.43% pre-cost win rate (not observed).
+- Tests: last full suite on record **75 passed in 0.63s** (2026-11-14T07:41Z); this session did not re-run. CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- No `*manifest*` file exists in the tree; ignore the stale "20/20 manifest" reference.
 
 ## Task
 
-Prior task (read handoff and complete it; update handoff + initial task) is complete. **No outstanding research work.**
-
-**Default: report terminal state and await an explicit user decision. Do not create work, do not re-verify, do not add checkpoint commits.**
+**No outstanding research work.** Default action: report the terminal state and await an explicit user decision. Do not create work, do not re-verify, do not add handoff-only checkpoint cycles, do not touch automation.
 
 Only act if the user explicitly directs one of:
-1. **Stop/reduce maintenance automation** — edit `*/5 * * * *` in `.github/workflows/main.yml` (explicit authorization required).
-2. **Run a separately-versioned experiment** — e.g. far-side-of-range stop (`STRATEGY_RULES.txt` §2.1) as `experiment_farside_stop_v1`, with explicit diff from frozen baseline.
+
+1. **Stop/reduce maintenance automation** — edit `cron: "*/5 * * * *"` in `.github/workflows/main.yml:11` (requires explicit authorization; workflow currently stalled since 2026-11-08T06:00:17Z).
+2. **Run a separately-versioned experiment** — e.g. far-side-of-range stop (`STRATEGY_RULES.txt` §2.1) as `experiment_farside_stop_v1`, with an explicit diff from the frozen baseline, deterministic tests, and chronological splits; update `HANDOFF.md`.
 3. **Accept baseline as final** — archive the project.
 
 ## Constraints
 
-- Do not re-run tests, re-hash, re-verify drift, or add checkpoint commits.
-- Do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit authorization.
-- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
-- Any strategy change = separately named, versioned experiment with explicit diff from baseline.
-- Historical research/simulation only; no broker/live execution, no credentials, no paid data.
+- Historical research/simulation only; no broker/live/paper execution, no credentials, no paid/proprietary data.
+- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
+- Do not edit `.github/workflows/main.yml`, controller helper code, permissions, or automation policy without the user's explicit authorization for that exact change.
+- Do not re-run tests/hashes/drift checks for the sole purpose of another checkpoint; the drift anchor above is sufficient.
+- Keep `HANDOFF.md` compact; consolidate rather than append.
 
-(End of file - total 44 lines)
+(End of file - total 45 lines)
