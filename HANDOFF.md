@@ -1,17 +1,17 @@
 # NQ ORB — Durable handoff
 
 - **HEAD observed at this refresh:** `0a6a955` (chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T22:03Z**. Prior task (report terminal state and stop) completed by read-only drift-anchor verification (clean tracked tree, no substantive commits since `a797773`, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`). No tests, hashes beyond the anchor, monitor checks, or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z).
+- **Last refreshed 2026-11-14T22:05Z**. Prior task completed and re-verified read-only: clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, and no substantive commits since `a797773` (`git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty). No tests, monitor checks, or source/config/data/artifact changes made. Last recorded full suite: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z).
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T22:03Z):** read-only drift-anchor re-verification only (clean tree; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; `sha256sum STRATEGY_RULES.txt` matches). Durable notes refreshed. No source/config/data/artifact or test changes.
+**This session (2026-11-14T22:05Z):** read-only drift-anchor re-verification only (clean tracked tree; `sha256sum STRATEGY_RULES.txt` matches; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty). Durable notes refreshed/compacted. No source/config/data/artifact or test changes.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T22:03Z)
+## Next agent note (written 2026-11-14T22:05Z)
 
 Research task complete and terminal — no outstanding research work. Drift anchor confirmed at HEAD `0a6a955` (clean tracked tree, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, empty `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/`). **Default next action: report terminal state and await explicit user direction.** Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
@@ -39,7 +39,7 @@ Research task complete and terminal — no outstanding research work. Drift anch
 ## Robust drift anchor (use this, not exact HEAD)
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
-- Verify: `git status --porcelain` clean (aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. If all hold, state is unchanged — report terminal and stop. (Confirmed 2026-11-14T22:03Z, HEAD `0a6a955`.)
+- Verify: `git status --porcelain` clean (aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. If all hold, state is unchanged — report terminal and stop. (Confirmed 2026-11-14T22:05Z, HEAD `0a6a955`.)
 
 ## Standing constraints
 
