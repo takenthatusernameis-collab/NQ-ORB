@@ -2,7 +2,7 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T18:14Z. Prior task complete with no outstanding research work; no research performed this session. Ran only the prescribed read-only drift check (git status clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`); all held → state unchanged. HEAD at refresh: `1307d18`.
+Durable handoff and this file refreshed 2026-11-14T18:13Z. Prior task complete with no outstanding research work; no research performed this session. Ran only the prescribed read-only drift check (git status clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`; no non-doc commits since `a797773`); all held → state unchanged. HEAD at refresh: `71cd52d`.
 
 ## Last recorded state (verified this session)
 
