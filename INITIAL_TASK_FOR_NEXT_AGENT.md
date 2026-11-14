@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-13T23:55:25Z. **Prior agent task:** completed (read durable handoff and frozen artifacts, re-verified figures from JSON, refreshed `HANDOFF.md` + this file). **HEAD at start:** `aa73a2a` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T00:18:10Z. **Prior agent task:** completed (read durable handoff/prompt and repo state, confirmed terminal state, refreshed `HANDOFF.md` + this file). **HEAD at start:** `bbc41b9` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -22,9 +22,9 @@
 
 ## Verified state (this session)
 
-- Frozen figures re-checked against JSON (read-only): `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json` — axb0306 net -$31,637.98, PF 0.4917; Kaggle net -$626,525.96, PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72.
-- `STRATEGY_RULES.txt` SHA-256 confirmed `6d3258c3...ad2b1`.
-- HEAD at start `aa73a2a`; working tree clean and in sync with `origin/main` (0 ahead / 0 behind). Checkpoint loop active (`*/5` cron).
+- Frozen figures (from prior verified JSON): axb0306 (`artifacts/metrics_axb0306_full.json`) net -$31,637.98, PF 0.4917; Kaggle proxy (`artifacts/metrics_kaggle.json`) net -$626,525.96, PF 0.2271; chronological train/val/test -$448,765.02 / -$66,243.22 / -$111,517.72.
+- `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged.
+- HEAD at start `bbc41b9`; working tree clean, in sync with `origin/main` (0 ahead / 0 behind). Checkpoint loop active (`*/5` cron).
 - Last full suite: **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full 20-file manifest: **20/20 matched** (2026-11-13T16:50:32Z). Not re-run this session. No commit made.
 
 ## Constraints
