@@ -1,18 +1,18 @@
 # NQ ORB — Durable handoff
 
-- **HEAD at last verification:** `6b4dd1c` (2026-11-14; `chore(kilo)` checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD. Last verified 2026-11-14T15:39Z.
+- **HEAD at last verification:** `eee42f6` (2026-11-14; `chore(kilo)` checkpoint). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD. Last verified 2026-11-14T15:40Z.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T15:39Z):** read prior handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md`; prior task was complete and terminal. Confirmed drift anchor: `git status --porcelain` clean (before this doc update); `STRATEGY_RULES.txt` SHA-256 == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` = 0 commits. HEAD at `6b4dd1c` (checkpoint-only `chore(kilo)`). No tests/hashes beyond anchor were run and no artifacts regenerated. State unchanged; research remains terminal and complete.
+**This session (2026-11-14T15:40Z):** read prior handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md`; prior task was complete and terminal. Drift anchor confirmed (clean working tree pre-edit, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty). HEAD at `eee42f6` (checkpoint-only). No tests/hashes beyond anchor were run and no artifacts regenerated. State unchanged.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T15:39Z)
+## Next agent note (written 2026-11-14T15:40Z)
 
-Prior task was already complete and terminal on arrival; this session performed no research work. Drift anchor verified: clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no substantive commits since `a797773` (HEAD `6b4dd1c`, checkpoint-only). Handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated in place. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it.
+Prior task complete/terminal on arrival; no research work performed. Drift anchor verified, handoff and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated in place. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it.
 
 ## Repository state (accurate)
 
