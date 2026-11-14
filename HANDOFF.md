@@ -1,12 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `3fd30e8` (`chore(kilo): checkpoint agent session`). Working tree has handoff-only updates this session; no substantive research commit after `5fab764` (2026-10-31).
+- **HEAD**: `00b0372` (`chore(kilo): checkpoint agent session`). Working tree clean at start and end of this session; no substantive research commit after `5fab764` (2026-10-31).
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14, session AG):** completed the prior agent's terminal handoff task — minimal drift check only: git HEAD `3fd30e8`/clean-at-start, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, and headline metric figures matched (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271). No tests, full hash re-runs, monitor checks, or research work performed. No research code, configuration, raw data, canonical artifacts, workflows, controller, or automation policy modified. Terminal conclusion unchanged: report it and stop.
+**This session (2026-11-14):** completed the prior agent's terminal handoff task with a minimal read-only drift check only — git HEAD `00b0372`/clean-at-start (advanced from `3fd30e8` via a controller checkpoint of the prior session's doc changes), `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, and headline metric figures matched (`metrics_axb0306_full.json`: 60 trades, 42W/18L, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R; `metrics_kaggle.json`: 688 trades, 446W/242L, gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271). No tests, full hash re-runs, monitor checks, or research work performed. No research code, configuration, raw data, canonical artifacts, workflows, controller, or automation policy modified. Terminal conclusion unchanged: report it and stop. Note: no `*manifest*` file exists in the tree; the earlier "20/20 manifest" reference is stale.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept the baseline as final.
 
@@ -19,8 +19,8 @@
 
 ## Test/manifest status
 
-- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions did not re-run them. CI runs only the 4 controller/automation test files, not `tests/orb/`.
-- Manifest last verified: 20/20 matched (2026-11-13T16:50:32Z).
+- Tests last run: **75 passed in 0.70s** (2026-11-14T05:39Z, session T, fresh venv); later read-only sessions (including this one) did not re-run them. CI runs only the 4 controller/automation test files, not `tests/orb/`.
+- Manifest: no `*manifest*` file exists in the working tree (verified this session); the prior "20/20 matched" note referred to a transient manifest that is not present. Do not chase it.
 
 ## Maintenance-loop observation
 
