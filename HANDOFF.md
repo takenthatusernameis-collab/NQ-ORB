@@ -1,15 +1,15 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `35abe2c` (`chore(kilo): checkpoint agent session`, `origin/main`). Working tree was clean at session start; only documentation updates to `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` remain (controller owns commits). Only checkpoint commits since substantive research commit `5fab764` (2026-10-31) — no substantive research change.
-- **Timestamp (UTC)**: 2026-11-14T03:49Z (session H; prior durable handoff/initial task read and completed; terminal state confirmed unchanged).
+- **HEAD**: `688135c` (`chore(kilo): checkpoint agent session`, local; checkpoint-only since substantive research commit `5fab764`, 2026-10-31). Working tree clean except documentation updates to `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md` this session (controller owns commits).
+- **Timestamp (UTC)**: 2026-11-14T03:50Z (session I).
 
 ## TERMINAL STATE — READ FIRST
 
-**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03, and every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
+**The research task is COMPLETE and terminal. No remaining research work exists.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. The free-source search is exhausted: `data/FEASIBILITY_REPORT.md` documents ~30 documented sweeps through 2026-11-03; every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ (big contract) rather than MNQ.
 
-**This session (2026-11-14T03:49Z):** completed the prior agent task (read durable handoff/prior instructions, confirmed terminal state, updated handoff and next-agent task). No strategy/config/raw-data/artifact changes, no tests, hashes, monitor checks, automation edits, or commits (controller owns commits). Terminal conclusion unchanged; no further research work to perform.
+**This session (2026-11-14T03:50Z):** completed the prior agent task from the durable handoff (read `HANDOFF.md`/`INITIAL_TASK_FOR_NEXT_AGENT.md`/`PROMPT.md`, confirmed terminal state and evidence, updated handoff and next-agent task). No strategy/config/raw-data/artifact changes, no tests, hashes, monitor checks, automation edits, or commits (controller owns commits). Terminal conclusion unchanged.
 
-**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, the controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. The only legitimate forward paths require an explicit user decision: (a) stop or reduce the maintenance automation, (b) run a separately-versioned experiment (e.g. the far-side-of-range stop variant permitted by `STRATEGY_RULES.txt` §2.1), or (c) accept the baseline as final.
+**Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop. Legitimate forward paths require an explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop variant, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
 ## Research status (frozen)
 
