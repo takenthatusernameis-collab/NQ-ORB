@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete
 
-**HEAD observed:** `4d99ba5` (chore checkpoint only). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**HEAD observed:** `fdf0656` (chore: refresh handoff/next-agent doc only). Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-14T22:08Z):** read-only drift-anchor re-verification only. Clean tracked tree (`git status --porcelain` empty), SHA matches, and `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No source/config/data/artifact or test changes. Full suite re-run: **75 passed in 0.64s** (`python -m pytest -q`).
+**This session (2026-11-14T22:09Z):** read-only drift-anchor re-verification only. Clean tracked tree (`git status --porcelain` empty), SHA matches, and `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No source/config/data/artifact or test changes. Handoff and next-agent task refreshed to HEAD `fdf0656`.
 
 ## Terminal state — read first
 
@@ -31,7 +31,7 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s**; CI runs only controller/automation tests, not `tests/orb/`.
+- Full suite last run 2026-11-14T14:27Z: **75 passed in 0.94s** (not re-run this session per no-re-run guidance); CI runs only controller/automation tests, not `tests/orb/`.
 - Canonical artifacts: 34 JSON files (+ `README.md`) in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
 
 ## Standing constraints
