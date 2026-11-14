@@ -1,12 +1,12 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `6645563` (checkpoint churn). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **HEAD**: `c8db48a` (this session; prior doc/head was `6645563`). Baseline frozen at `5fab764` (2026-10-31); only later substantive work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**Session 2026-11-14T10:25Z:** completed the prior agent task — read the durable handoff and prior initial task, confirmed no research work remains, and refreshed the handoff and next-agent message. Drift anchor verified: `git status --porcelain` empty, SHA `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty, HEAD `6645563` (checkpoint churn). No tests re-run, no new code/experiment, no workflow edits. Research remains terminal; no new work created.
+**Session 2026-11-14T10:25Z:** read prior durable handoff/task, verified drift anchor, and refreshed handoff + `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification: `git status --porcelain` empty, SHA `6d3258c3…8ad2b1`, `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty at session start. No tests re-run, no new code/experiment, no workflow edits. State unchanged and terminal.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
@@ -34,8 +34,8 @@
 ## Robust drift anchor (use this, not exact HEAD)
 
 - Last substantive (non-doc) commit: **`a797773`** (2026-11-09 05:44Z).
-- Verify: `git status --porcelain` (clean); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all three hold, state is unchanged — report terminal and stop.
-- Confirmed clean 2026-11-14T10:25Z: `git status --porcelain` empty, SHA `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, HEAD `6645563`.
+- Verify: `git status --porcelain` (clean, aside from intentional doc edits in-session); `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` (empty). If all hold, state is unchanged — report terminal and stop.
+- Confirmed clean at session start 2026-11-14T10:25Z (HEAD `6645563`); drift anchor unchanged.
 
 ## Standing constraints
 
