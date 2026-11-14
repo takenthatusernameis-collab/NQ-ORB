@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T02:39:10Z. **Prior agent task:** completed — terminal state verified and durable handoff files consolidated. Read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean working tree and HEAD `c0326ba`; verified frozen `STRATEGY_RULES.txt` SHA-256 unchanged; verified canonical artifact figures. No tests/hashes/monitor re-run, no commit. **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T02:40:53Z. **Prior agent task:** completed — terminal state verified and durable handoff files consolidated. Read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean working tree and HEAD `e285d37`; verified frozen `STRATEGY_RULES.txt` SHA-256 unchanged; verified canonical artifact figures. No tests/hashes/monitor re-run, no commit by this agent (controller owns commits). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -32,7 +32,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 - `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3...ad2b1` unchanged.
 - Canonical artifacts confirmed: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
-- Working tree clean at start; HEAD `c0326ba`.
+- Working tree clean at start; HEAD `e285d37`.
 - Test suite last run **75 passed in 0.60s** (2026-11-14T01:51:35Z); manifest last verified 20/20 (2026-11-13T16:50:32Z). Not re-run this session.
 
 ## Constraints

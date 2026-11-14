@@ -1,13 +1,13 @@
 # NQ ORB — Durable handoff
 
-- **HEAD**: `c0326ba` (controller checkpoint loop). Prior `20c111e`. Working tree clean at session start.
-- **Timestamp (UTC)**: 2026-11-14T02:39:10Z
+- **HEAD**: `e285d37` (controller checkpoint loop). Prior `c0326ba`. Working tree clean at session start.
+- **Timestamp (UTC)**: 2026-11-14T02:40:53Z
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE and terminal. No remaining research work.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`, ~30 documented sweeps through 2026-11-03).
 
-**This session (2026-11-14T02:39:10Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean working tree, HEAD `c0326ba`, and frozen `STRATEGY_RULES.txt` SHA-256 unchanged (`git status`/`git log`/`sha256sum`). Verified canonical artifact values below. No tests/hashes/monitor re-run (prior agent: 75 passed 2026-11-14T01:51:35Z; last manifest 20/20 matched 2026-11-13T16:50:32Z). No commit (controller owns commits).
+**This session (2026-11-14T02:40:53Z):** read `HANDOFF.md`, `PROMPT.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `README.md`, `artifacts/README.md`, `data/FEASIBILITY_REPORT.md`; confirmed clean working tree, HEAD `e285d37` (controller checkpoint), and frozen `STRATEGY_RULES.txt` SHA-256 unchanged. Research task confirmed terminal: complete, frozen baseline final, negative-net on every free dataset, free-source search exhausted. No tests/hashes/monitor re-run (prior agent: 75 passed 2026-11-14T01:51:35Z; last manifest 20/20 matched 2026-11-13T16:50:32Z). No commit by this agent (controller owns commits). No code changes made.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits, do not edit `.github/workflows/main.yml`, controller, or automation policy (requires explicit user authorization per `AGENTS.md`; none given). Report terminal state and stop.
 
