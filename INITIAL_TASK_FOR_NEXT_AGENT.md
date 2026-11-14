@@ -1,6 +1,6 @@
 # Initial task for next agent
 
-**Session:** 2026-11-14T00:38:31Z. **Prior agent task:** completed (read durable handoff/prompt/rules/AGENTS and repo state; confirmed terminal/negative-net state, `STRATEGY_RULES.txt` v1.0 SHA-256 unchanged, canonical artifacts present; recomputed commit-loop stats; consolidated `HANDOFF.md` + this file). **HEAD at start:** `1c6cddf` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
+**Session:** 2026-11-14T00:39:22Z. **Prior agent task:** completed (this session: read durable handoff/prompt/rules/AGENTS and repo state; confirmed terminal/negative-net state, `STRATEGY_RULES.txt` v1.0 SHA-256 unchanged, canonical artifacts present; recomputed commit-loop stats; consolidated `HANDOFF.md` + this file). **HEAD at start:** `1c6cddf` (transient due to checkpoint loop). **Research status: TERMINAL — complete, frozen baseline final, negative net.**
 
 ## Default prompt: "continue" — do this
 
@@ -8,7 +8,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 
 **Current state: the research task is COMPLETE and terminal.** The frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0) is final and negative-net on every free dataset available. The free-source search is exhausted (`data/FEASIBILITY_REPORT.md`): through 2026-11-03 every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ big-contract rather than MNQ. The only two usable free sources are axb0306 (~3 months, single-contract MNQ.M26, no roll) and Kaggle front-month (~3 years, unadjusted).
 
-**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,735 commits, 2,436 checkpoint-only, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
+**Do NOT do another maintenance re-verification.** Do not re-run the test suite, re-hash the manifest, poll the free-data monitor, add checkpoint commits, or edit `.github/workflows/main.yml` / controller / automation policy. The repository is in a degenerate maintenance loop (`.github/workflows/main.yml` runs on `cron: "*/5 * * * *"`; since 2026-11-01: 2,737 commits, 2,438 checkpoint-only, 0 research; last substantive research commit `5fab764`, 2026-10-31). Stopping or changing that automation requires **explicit user authorization** per `AGENTS.md`; none has been given.
 
 **Your job is to report the terminal state and stop.** Concretely:
 
@@ -34,7 +34,7 @@ You are the next Kilo agent for the NQ-ORB repository. Read this file and `HANDO
 - Canonical artifacts present: `artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`.
 - HEAD at start `1c6cddf`; checkpoint loop active (`*/5` cron).
 - Last full suite (not re-run): **75 passed in 0.88s** (2026-11-13T12:48:19Z). Last full manifest (not re-run): **20/20 matched** (2026-11-13T16:50:32Z). No commit made.
-- Commit-loop stats (2026-11-14T00:38:31Z): 2,736 commits since 2026-11-01, 2,451 checkpoint-only; last substantive research commit `5fab764` (2026-10-31).
+- Commit-loop stats (2026-11-14T00:39:22Z): 2,737 commits since 2026-11-01, 2,438 checkpoint-only; last substantive research commit `5fab764` (2026-10-31, `feat: complete required performance reporting...`).
 
 ## Constraints
 

@@ -1,14 +1,14 @@
 # NQ ORB — Durable handoff
 
 - **HEAD**: `1c6cddf` at this session start (transient — the controller's `chore(kilo): checkpoint agent session` commits advance it every ~5 min).
-- **Timestamp (UTC)**: 2026-11-14T00:38:31Z
-- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed prior-agent task complete and terminal, `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`), working tree clean before durable-doc update; re-read frozen metrics JSON; recomputed commit-loop stats (2,736 commits since 2026-11-01, 2,451 checkpoint-only). No tests, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated.
+- **Timestamp (UTC)**: 2026-11-14T00:39:22Z
+- **This session**: read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`; confirmed prior-agent task complete and terminal, `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), canonical artifacts present (`artifacts/metrics_axb0306_full.json`, `artifacts/metrics_kaggle.json`, `artifacts/walk_forward.json`, `data/FEASIBILITY_REPORT.md`), working tree clean before durable-doc update; re-read frozen metrics JSON; recomputed commit-loop stats (2,737 commits since 2026-11-01, 2,438 checkpoint-only). No tests, no manifest re-hash, no monitor poll, no workflow/controller edits, no commit. Durable files consolidated.
 
 ## TERMINAL STATE — READ FIRST
 
 **The research task is COMPLETE. The frozen baseline is final and negative-net.** No remaining research work is available on the current free-data ceiling (`data/FEASIBILITY_REPORT.md`: free-source search exhausted through 2026-11-03; every candidate is paid, key-gated, daily-only, or NQ big-contract rather than MNQ).
 
-**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01: **2,735 commits**, of which **2,436** are checkpoint-only — **0** research. Last substantive research commit: `5fab764` (2026-10-31, `feat: complete required performance reporting...`). `research_state/` contains many `free_data_monitor_*` files from the same loop.
+**This repository is in a degenerate maintenance loop.** `.github/workflows/main.yml` runs on `cron: "*/5 * * * *"` and each activation commits `chore(kilo): checkpoint agent session`. Since 2026-11-01: **2,737 commits**, of which **2,438** are checkpoint-only — **0** research. Last substantive research commit: `5fab764` (2026-10-31, `feat: complete required performance reporting...`). `research_state/` contains many `free_data_monitor_*` files from the same loop.
 
 **Correct next action is NOT another re-verification.** Do not re-run tests/hashes/monitor checks, do not add checkpoint commits. Stopping/changing automation (`.github/workflows/main.yml` schedule or controller/policy) requires **explicit user authorization** per `AGENTS.md`. None has been given.
 
