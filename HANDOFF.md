@@ -1,19 +1,19 @@
 # NQ ORB — Durable handoff
 
-- **HEAD at last handoff refresh:** `1d227f9` (2026-11-14 20:10Z; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
-- **Last refreshed 2026-11-14T20:12Z** (clean tree at check, hash `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; only docs refreshed this session).
+- **HEAD at last handoff refresh:** `df7ca9b` (2026-11-14 20:13Z; chore checkpoint only). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). Use the robust drift anchor below, not exact HEAD.
+- **Last refreshed 2026-11-14T20:14Z** (clean tree at check, hash `6d3258c3…8ad2b1`, no non-doc commits since `a797773`; only docs refreshed this session).
 
 ## TERMINAL STATE — READ FIRST
 
 **Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
 
-**This session (2026-11-14T20:12Z):** completed prescribed read-only drift check on arrival: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; 34 JSON artifacts (+README, 35 files) in `artifacts/`; automation still stalled (newest `research_state/` monitor by filename `free_data_monitor_20261108T060017Z.json`). All hold → state unchanged. No source/config/data/artifact changes; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
+**This session (2026-11-14T20:14Z):** completed prescribed read-only drift check on arrival: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty; 34 JSON artifacts (+README, 35 files) in `artifacts/`; automation still stalled (newest `research_state/` monitor by filename `free_data_monitor_20261108T060017Z.json`). All anchors hold → state unchanged. No source/config/data/artifact changes; only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` refreshed.
 
 **Correct next action is NOT re-verification.** Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Report terminal state and stop. Legitimate forward paths require explicit user decision: (a) stop/reduce maintenance automation, (b) run a separately-versioned experiment (e.g. far-side-of-range stop, `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`), or (c) accept baseline as final.
 
-## Next agent note (written 2026-11-14T20:12Z)
+## Next agent note (written 2026-11-14T20:14Z)
 
-Research task complete and terminal — drift check completed on arrival: clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, 34 JSON artifacts, automation still stalled (newest monitor `free_data_monitor_20261108T060017Z.json`). State unchanged. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
+Research task complete and terminal — drift check completed on arrival: clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, no non-doc commits since `a797773`, 34 JSON artifacts (+README, 35 files), automation still stalled (newest monitor `free_data_monitor_20261108T060017Z.json`). State unchanged. Default next action: report terminal state and await explicit user direction. Only act on one of the three forward paths if the user explicitly authorizes it. Do not re-run tests/hashes/monitor checks or add handoff-only checkpoint cycles.
 
 ## Repository state (accurate)
 
