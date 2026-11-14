@@ -1,12 +1,12 @@
 # Initial Task for Next Agent — NQ ORB
 
-## Status: prior task COMPLETE — terminal state reported (2026-11-14T21:17Z); research terminal; default action is to do nothing
+## Status: prior task COMPLETE — terminal state reported (2026-11-14T21:17:49Z); research terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T21:17Z. Arrival drift anchor re-verified read-only: `git status --porcelain` clean; `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git log --oneline a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No tests re-run this session (last recorded full suite: **75 passed in 0.63s**, 2026-11-14T21:15Z). No code/data/config/artifact changes made.
+Durable handoff and this file refreshed 2026-11-14T21:17:49Z after completing the prior task (report terminal state and stop). No tests, hashes, monitor checks, source/config/data/artifact changes were made. The last recorded full suite is **75 passed in 0.63s** (2026-11-14T21:15Z); it was not re-run this session.
 
 ## Your task (initial message)
 
-Report terminal state and stop. There is no outstanding research work. Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not touch `.github/workflows/main.yml`, the controller, or automation policy without explicit user authorization.
+Report the terminal research state and stop. There is no outstanding research work. Do not re-run tests/hashes/monitor checks, do not add handoff-only checkpoint cycles, and do not touch `.github/workflows/main.yml`, the controller, or automation policy without explicit user authorization.
 
 Only act if the user explicitly directs one of:
 
