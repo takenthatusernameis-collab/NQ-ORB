@@ -2,14 +2,14 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T17:18Z. Prior task complete with no outstanding research work; no research performed this session. Anchor re-confirmed: `git status --porcelain` clean, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, last substantive commit `a797773`; no source/config/data/artifact commits since (HEAD advanced only via chore checkpoints). Tests NOT re-run (anchor unchanged; last recorded **75 passed in 0.94s** on `python -m pytest -q`; CI runs only the 4 controller/automation test files, not `tests/orb/`).
+Durable handoff and this file refreshed 2026-11-14T17:19Z. Prior task complete with no outstanding research work; no research performed this session. No tests/hashes/monitor checks re-run (per terminal-state guidance). Durable handoff records anchor: last substantive commit `a797773`, `STRATEGY_RULES.txt` SHA-256 `6d3258c3…8ad2b1`, HEAD advanced only via chore checkpoints.
 
-## Last verified state
+## Last recorded state (from durable handoff; not re-verified this session)
 
-- HEAD at verification: `63bed47` (chore checkpoints only).
-- Baseline frozen at `5fab764`, `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`; no substantive (non-doc) change since `a797773`.
+- HEAD at last handoff refresh: `63bed47` (chore checkpoints only).
+- Baseline frozen at `5fab764`; no substantive (non-doc) change since `a797773`.
 - 34 JSON artifacts (+ `README.md`) in `artifacts/`. Newest `research_state/` monitor artifact: `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z); automation stalled / not accumulating.
-- `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization.
+- `.github/workflows/main.yml:11` still `cron: "*/5 * * * *"`; changing automation requires explicit authorization. Last recorded test run: **75 passed in 0.94s** (`python -m pytest -q`, 2026-11-14T14:27Z); CI runs only 4 controller/automation tests.
 
 ## Frozen results (final, negative-net)
 
