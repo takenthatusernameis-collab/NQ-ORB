@@ -2,15 +2,15 @@
 
 ## Status: prior task COMPLETE — research is terminal; default action is to do nothing
 
-Session 2026-11-14T12:28Z re-confirmed the drift anchor at HEAD `06ed643`:
+Session 2026-11-14T12:31Z read the durable handoff and re-confirmed the drift anchor at HEAD `35c9c0a`:
 `sha256sum STRATEGY_RULES.txt` == `6d3258c3…8ad2b1`; `git status --porcelain` clean; `git log a797773..HEAD -- src/ config/ scripts/ tests/ raw/ data/ artifacts/` empty. No code, no experiment, no tests, no workflow edits.
 
 ## Verified state
 
-- HEAD `06ed643` (doc-only controller checkpoint).
+- HEAD `35c9c0a` (doc-only controller checkpoint).
 - Baseline frozen at `5fab764` (2026-10-31), `STRATEGY_RULES.txt` v1.0 SHA-256 `6d3258c3…8ad2b1`.
 - No substantive (non-doc) change since `a797773` (2026-11-09 05:44Z, 1-minute experiment `orb_mnq_1m_wf_v1`).
-- ~1,009 commits since `a797773` (~3,034 since baseline); all `chore(kilo)` checkpoint/diagnostics/maintenance or doc-only.
+- ~1,011 commits since `a797773` (~3,036 since baseline); all `chore(kilo)` checkpoint/diagnostics/maintenance or doc-only.
 - Maintenance automation stalled: `.github/workflows/main.yml:11` has `cron: "*/5 * * * *"` but newest `research_state/` free-data monitor artifact remains `free_data_monitor_20261108T060017Z.json` (2026-11-08T06:00:17Z), none after.
 
 ## Frozen results (final, negative-net)
