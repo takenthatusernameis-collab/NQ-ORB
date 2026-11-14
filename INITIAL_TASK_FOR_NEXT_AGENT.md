@@ -1,8 +1,8 @@
 # Initial Task for Next Agent — NQ ORB
 
-## Status: prior task COMPLETE — terminal state reported (2026-11-14T21:17:49Z); research terminal; default action is to do nothing
+## Status: prior task COMPLETE — terminal state reported and re-verified (2026-11-14T21:19Z); research terminal; default action is to do nothing
 
-Durable handoff and this file refreshed 2026-11-14T21:17:49Z after completing the prior task (report terminal state and stop). No tests, hashes, monitor checks, source/config/data/artifact changes were made. The last recorded full suite is **75 passed in 0.63s** (2026-11-14T21:15Z); it was not re-run this session.
+Durable handoff and this file refreshed 2026-11-14T21:19Z after completing the prior task (report terminal state and stop). The drift anchor was re-verified read-only this session: clean tree, no substantive commits since `a797773`, and `sha256sum STRATEGY_RULES.txt` matches the frozen baseline. No tests, monitor checks, source/config/data/artifact changes were made. The last recorded full suite is **75 passed in 0.63s** (2026-11-14T21:15Z); it was not re-run this session.
 
 ## Your task (initial message)
 
@@ -21,4 +21,4 @@ Only act if the user explicitly directs one of:
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization.
 - Keep `HANDOFF.md` compact.
 
-(End of file - total 29 lines)
+(End of file)
