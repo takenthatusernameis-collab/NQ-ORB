@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T06:41Z):** completed prior durable task ("report terminal state and stop"). Re-read `HANDOFF.md`/`STRATEGY_RULES.txt`/canonical artifacts and re-verified `STRATEGY_RULES.txt` hash unchanged; canonical metrics unchanged: axb0306 60 trades, 42W/18L (70%), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L (64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271. No research, code, tests, data, artifacts, or automation-policy edits. Working tree clean at HEAD `442be7e` (automation checkpoint); `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated only.
+**This session (2026-11-15T06:42Z):** a generic controller prompt re-issued the durable task ("read prior handoff task, complete it, update handoff + initial task"). The prior terminal task — report terminal state and stop — was already completed (`239c9f7`). Re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `INITIAL_TASK_FOR_NEXT_AGENT.md`; re-verified `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`). A generic re-issue is not user authorization for new research (`INITIAL_TASK_FOR_NEXT_AGENT.md`), so no free-source sweep, test, monitor, or automation edit was made; canonical metrics carried forward unchanged from frozen artifacts (axb0306 60 trades, 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L, net -$626,525.96, PF 0.2271). Working tree clean at HEAD `19fd5eb` (controller checkpoint). Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only; no commit created by the agent).
 
 **Decision required before any further research work:** the user must choose (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required), (b) authorize a separately-versioned experiment, or (c) accept the baseline as final. Do not add further handoff-only research cycles; avoid repeating free-source sweeps, hashes, monitors, or tests absent a concrete new task.
 
@@ -23,7 +23,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `442be7e`.
+- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `19fd5eb`.
 
 ## Evidence (frozen artifacts)
 

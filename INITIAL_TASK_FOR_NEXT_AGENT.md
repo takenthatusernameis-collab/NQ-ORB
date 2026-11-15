@@ -30,4 +30,11 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-HEAD `442be7e` (clean working tree at session start of this edit). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session completed the terminal-state report and updated only `HANDOFF.md` and this file; no research, tests, data, artifacts, or automation changes were made. No commit created by the agent unless explicitly requested.
+HEAD `19fd5eb` (clean working tree). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. The last session (2026-11-15T06:42Z) received the standard controller prompt, re-confirmed the terminal state, and updated only `HANDOFF.md` and this file (doc-only); no research, tests, data, artifacts, or automation changes were made, and no commit was created by the agent.
+
+## Standing instruction for the next agent
+
+- Research is terminal and no research work is authorized. A generic "read the handoff and complete the prior task" prompt is **not** user authorization.
+- Before any action: re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; then report the terminal state and stop.
+- Do **not** infer new research, repeat free-source sweeps, re-hash monitors, re-run tests, or edit automation policy without an explicit user decision for a specific path.
+- The only valid forward paths (a: stop/reduce automation, b: named versioned experiment, c: accept baseline) each require an explicit user decision.
