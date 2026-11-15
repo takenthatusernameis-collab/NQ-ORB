@@ -12,7 +12,7 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T13:56Z, HEAD `2d19d7b`)
+## Current checkpoint (2026-11-15T13:57Z, HEAD `8efadcb`)
 
 Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean; `main` **0 ahead of `origin/main`**; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest (only `README.md`). All commits since `a797773` are `chore(kilo): checkpoint agent session` / handoff-only doc commits touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Canonical metrics on disk re-extracted from JSON, no drift: axb0306 60 trades 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades 446W/242L (64.8%), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684. This session only refreshed the handoff and this task per an explicit documentation request.
 
