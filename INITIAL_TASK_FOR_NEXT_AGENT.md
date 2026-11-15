@@ -12,9 +12,9 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T12:52Z, HEAD at verification `ffa39d9`)
+## Current checkpoint (2026-11-15T12:54Z, HEAD at verification `5331ae8`)
 
-Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); `main` ahead of `origin/main` (checkpoint commits only). `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest. Working tree clean at verification start. No research, data, test, or automation change performed this session. Canonical metrics on disk (no drift): axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04.
+Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean at verification start; `main` now **0 ahead of `origin/main`** (prior checkpoint commits pushed since last session; HEAD advanced from `ffa39d9` to `5331ae8`). `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest. No research, data, test, or automation change performed this session. Canonical metrics on disk (no drift): axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684.
 
 **Initial task for next agent:** On a generic prompt, repeat the lightweight terminal-state verification above (SHA, clean/branch state, no non-doc research diffs since `a797773`, 35 artifacts/no manifest, canonical metrics unchanged), report terminal state, and stop. Do not create a new handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed. Forward paths (a)/(b)/(c) require explicit user decision only.
 
