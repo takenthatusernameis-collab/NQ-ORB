@@ -4,7 +4,7 @@
 
 **Last substantive commit:** **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T00:10Z):** prior durable task completed (terminal state reported). Read-only re-verification at HEAD `857e3b0`: tracked tree clean, strategy SHA unchanged, `git diff a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and controller diagnostics `research_state/workflow_run_diagnostics.jsonl` (non-substantive automation checkpoints). Canonical artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`; 35 files in `artifacts/`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence, tests, or code. Handoff refreshed.
+**This session (2026-11-15T00:11Z):** prior durable task completed (terminal state reported). Read-only re-verification at HEAD `609fc2e`: tracked tree clean, strategy SHA unchanged, `git diff a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and controller diagnostics `research_state/workflow_run_diagnostics.jsonl` (non-substantive automation checkpoints). Canonical artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`; 35 files in `artifacts/`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence, tests, or code. Handoff refreshed.
 
 ## Terminal state — read first
 
