@@ -6,6 +6,8 @@
 
 **Earlier terminal-state doc checkpoints (2026-11-15):** HEADs `ed8f7b3` (17:35Z), `5df6b25` (17:46Z), `a5399d2` (18:36Z), `d2e8818` (18:41Z), `9b8a89c` (18:42Z), `0d54747` (18:43Z), `f2c1a51` (18:45Z), `da3814d` (18:46Z), `6ea13fa` (19:33Z), and `7a3fcda` (19:35Z) each repeated the same verification and found no state change. `4d29d00` is the controller checkpoint for this 19:36Z session.
 
+**Independent verification (2026-11-15T19:38Z):** Re-confirmed HEAD `4d29d00` on `main`, clean tree, STRATEGY_RULES.txt SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, empty `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`, 35 `artifacts/` files with no `*manifest*`, canonical metrics unchanged (axb0306 60 trades 33L/27S 42W/18L net -$31,637.98 PF 0.4917 maxDD $37,491.80 Sharpe -1.06/Sortino -0.67; Kaggle 688 trades 359L/329S 446W/242L net -$626,525.96 PF 0.2271 maxDD $626,994.56 Sharpe -1.68/Sortino -1.04). State unchanged and terminal; forward paths (a)/(b)/(c) remain gated on explicit user decision.
+
 ## Baseline
 
 `STRATEGY_RULES.txt` v1.0 frozen, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`. Frozen baseline commit `5fab764`; last substantive research commit `a797773` (1-minute experiment `orb_mnq_1m_wf_v1`, `ae3c49f`/`a797773`, additive `flatten_fill='open'`, byte-identical to 15m baseline). No strategy/config/raw-data/canonical-artifact changes.
