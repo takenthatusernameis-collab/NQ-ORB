@@ -2,7 +2,7 @@
 
 ## Status: terminal research complete; do nothing unless explicitly directed (2026-11-15T00:08Z)
 
-Prior task completed: terminal state re-verified read-only at HEAD `b35c005` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`; all newer commits are non-substantive controller checkpoints touching only the two handoff docs). Canonical artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`; 35 files in `artifacts/`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence or code. Durable handoff and this message refreshed.
+Prior task completed: terminal state reported and re-verified read-only at HEAD `0a00746` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`; commits after are non-substantive controller checkpoints touching only handoff/docs and `research_state/workflow_run_diagnostics.jsonl`). Canonical artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`; 35 files in `artifacts/`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence or code. Durable handoff and this message refreshed.
 
 ## Your task (initial message)
 
