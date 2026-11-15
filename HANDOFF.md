@@ -2,7 +2,7 @@
 
 ## Status: terminal research complete; awaiting user decision
 
-**This session (2026-11-15T12:46Z):** re-verified terminal state. `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged). Working tree clean; branch `main` tracking `origin/main`; HEAD `dbb393e`. `git diff --name-only a797773..dbb393e` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (non-research). 35 files in `artifacts/`, no `*manifest*`. No research, data, test, or automation change performed. Forward paths (a)/(b)/(c) remain gated on explicit user decision.
+**This session (2026-11-15T12:48Z):** re-verified terminal state. `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged). Working tree clean; branch `main` tracking `origin/main`; HEAD `9ea1e13`. `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (non-research). 35 files in `artifacts/`, no `*manifest*`. No research, data, test, or automation change performed. Forward paths (a)/(b)/(c) remain gated on explicit user decision.
 
 **Baseline:** `STRATEGY_RULES.txt` v1.0 frozen, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`. Frozen baseline commit `5fab764`; last substantive research commit `a797773` (1-minute experiment `orb_mnq_1m_wf_v1`, `ae3c49f`/`a797773`, additive `flatten_fill='open'`, byte-identical to 15m baseline). No strategy/config/raw-data/canonical-artifact changes.
 
@@ -29,4 +29,4 @@ Legitimate forward paths require explicit user decision:
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-(End of file - total 30 lines)
+(End of file - total 32 lines)
