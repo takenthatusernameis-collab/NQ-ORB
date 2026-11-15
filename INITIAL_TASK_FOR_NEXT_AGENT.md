@@ -11,13 +11,13 @@
 5. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 6. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-15T20:43Z)
+## Current checkpoint (2026-11-15T20:44Z)
 
-HEAD at verification: `b482c8a` on `main` (doc-only). Since last substantive `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session independently re-verified terminal state (HEAD `b482c8a`, clean tree at verification before this update, `STRATEGY_RULES.txt` SHA-256 `6d3258c...ad2b1` unchanged, empty substantive diff from `a797773`, 35 `artifacts/` files, no manifest, canonical metrics re-read and unchanged) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `afb91ec` on `main` (doc-only). Since last substantive `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session independently re-verified terminal state (`STRATEGY_RULES.txt` SHA-256 `6d3258c...ad2b1` unchanged, empty substantive diff from `a797773`, 35 `artifacts/` files, no manifest, canonical metrics re-read and unchanged) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
 
 ## Prior checkpoints (2026-11-15)
 
-`0986a0d`, `be538f0`, `81b9bbb`, `2c0fa4e`, `f87e72b`, `b746714`, `f963264`, `61c1eb5`, `dc3879f`, `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00`, `1451458`, `51d587a`, `f85bdb3`, `c541c1b`, `9aba8ad` each repeated the same verification and found no state change. None is a precedent for routine checkpoints.
+`0986a0d`, `be538f0`, `81b9bbb`, `2c0fa4e`, `f87e72b`, `b746714`, `f963264`, `61c1eb5`, `dc3879f`, `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00`, `1451458`, `51d587a`, `f85bdb3`, `c541c1b`, `9aba8ad`, `b482c8a` each repeated the same verification and found no state change. None is a precedent for routine checkpoints.
 
 ## Note on handoff-only checkpoints
 
