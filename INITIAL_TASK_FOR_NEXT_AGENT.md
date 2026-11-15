@@ -18,13 +18,13 @@ Report that the research task is complete and terminal, then exit cleanly. Do no
 - (b) Run a separately-versioned experiment (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1 as `experiment_farside_stop_v1`, with explicit diff from baseline).
 - (c) Accept baseline as final.
 
-## Current status (2026-11-15T04:40Z, HEAD `680f820`)
+## Current status (2026-11-15T04:41Z, HEAD `818b193`)
 
 - `main` clean and in sync with `origin/main`. No non-documentation commits since substantive work at `a797773`.
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen baseline unchanged).
 - Canonical evidence unchanged: axb0306 60 trades (42W/18L) gross -$7,662.00 / net -$31,637.98 / costs $23,975.98; Kaggle 688 trades (446W/242L) gross -$140,899.00 / net -$626,525.96 / costs $485,626.96.
 - `research_state/workflow_run_diagnostics.jsonl`: 63 entries (last 2026-11-15T03:48:18Z, `success`).
-- `0d9a01a`, `acf66f2`, `680f820` are handoff-only checkpoint commits (timestamp/HEAD bumps only, no research value). Do not add further handoff-only turns; the highest-value action is user decision (a) below.
+- `818b193` is a handoff-only checkpoint commit (timestamp/HEAD bump only, no research value). Do not add further handoff-only turns; the highest-value action is user decision (a) below.
 
 ## Churn warning for next agent
 
