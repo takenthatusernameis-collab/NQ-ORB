@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T07:40Z):** executed the prior agent task (terminal: verify and report). Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean at verification, HEAD `92419c9` (automation checkpoint commits only on top of `31b837d`; no non-doc commits after `a797773`), 35 files in `artifacts/`, canonical metrics unchanged (axb0306 60 trades, 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L, net -$626,525.96, PF 0.2271). No research, tests, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only, per explicit user request).
+**This session (2026-11-15T07:41Z):** executed the prior agent task (terminal: verify and report). Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean at verification, HEAD `058b625` (automation checkpoint commits only on top of `31b837d`; no non-doc commits after `a797773`), 35 files in `artifacts/`, canonical metrics unchanged (axb0306 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 446W/242L, net -$626,525.96, PF 0.2271). No research, tests, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only, per explicit user request).
 
 **Prior sessions (2026-11-15T06:46Z–07:39Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
 
@@ -25,7 +25,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. `STRATEGY_RULES.txt` SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `8751652` at this session's verification (checkpoint commits only on top of `31b837d`); working tree clean.
+- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `058b625` at this session's verification (checkpoint commits only on top of `31b837d`); working tree clean.
 
 ## Evidence (frozen artifacts)
 

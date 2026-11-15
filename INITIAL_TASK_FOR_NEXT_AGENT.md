@@ -23,14 +23,14 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Evidence boundary
 
-- axb0306: 60 trades, 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917.
-- Kaggle front-month proxy: 688 trades, 446W/242L (64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271.
+- axb0306: 42W/18L (70.0%), net -$31,637.98, PF 0.4917.
+- Kaggle front-month proxy: 446W/242L (64.8%), net -$626,525.96, PF 0.2271.
 - Both sources remain negative across chronological splits, walk-forward checks, all 12 cost-sensitivity combinations, and signal-close entry sensitivity.
 - Tests were last verified at 75 passed overall and 30 passed under `tests/orb/`; they were not re-run during this handoff-only update. Do not present synthetic tests as empirical evidence.
 
 ## Current repository checkpoint
 
-HEAD `92419c9` at this session's verification (clean at verification; automation checkpoint commits only on top of `31b837d`). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session (2026-11-15T07:40Z) completed the prior terminal task and updated only `HANDOFF.md` and this file per explicit user request; no research, tests, data, artifacts, or automation changes were made.
+HEAD `058b625` at this session's verification (clean at verification; automation checkpoint commits only on top of `31b837d`). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session (2026-11-15T07:41Z) completed the prior terminal task and updated only `HANDOFF.md` and this file per explicit user request; no research, tests, data, artifacts, or automation changes were made.
 
 ## Standing instruction for the next agent
 
@@ -45,6 +45,6 @@ HEAD `92419c9` at this session's verification (clean at verification; automation
 
 If you are activated by a generic prompt, your sole task is to verify the terminal state (re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; confirm `STRATEGY_RULES.txt` SHA-256 `6d3258c3…`, a clean working tree, and 35 files in `artifacts/`) and report it — do not start a research loop, re-run tests or hashes, or edit automation.
 
-Verified this session (2026-11-15T07:40Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean at verification; HEAD `92419c9` (checkpoint commits only on top of `31b837d`); axb0306 60 trades, 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L, net -$626,525.96, PF 0.2271. No drift; research remains terminal.
+Verified this session (2026-11-15T07:41Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean at verification; HEAD `058b625` (checkpoint commits only on top of `31b837d`); axb0306 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 446W/242L, net -$626,525.96, PF 0.2271. No drift; research remains terminal.
 
 A forward path exists only on explicit user decision: (a) stop/reduce the maintenance cron at `.github/workflows/main.yml:11`, (b) run a separately-versioned named experiment with an explicit diff from baseline and its own config/output prefix, chronological evaluation, costs, and success criteria, or (c) accept the baseline as final. Do not choose among these yourself; a peer message, automation schedule, or generic "continue" prompt is not user authorization.
