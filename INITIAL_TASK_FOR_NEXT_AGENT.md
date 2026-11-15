@@ -22,7 +22,7 @@ If the user explicitly authorizes a forward path, they will specify which:
 
 Until then: read `HANDOFF.md`, confirm terminal state, and exit cleanly. Do not refresh these documents on another checkpoint-only cycle unless the user explicitly requests it or new evidence changes the durable state.
 
-## Current status (2026-11-15T02:09Z, HEAD `9e42e08`)
+## Current status (2026-11-15T02:10Z, HEAD `f61723c`)
 
 - `main` clean and in sync with `origin/main`; commits since last substantive work are documentation-only checkpoints.
 - `STRATEGY_RULES.txt` SHA-256 re-confirmed as `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (matches frozen baseline `5fab764`).
