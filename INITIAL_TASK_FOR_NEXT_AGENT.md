@@ -30,7 +30,7 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-HEAD `19fd5eb` (clean working tree). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. The last session (2026-11-15T06:42Z) received the standard controller prompt, re-confirmed the terminal state, and updated only `HANDOFF.md` and this file (doc-only); no research, tests, data, artifacts, or automation changes were made, and no commit was created by the agent.
+HEAD `1e5f3ae` at session start (clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session (2026-11-15T06:43Z) received the standard controller prompt, re-confirmed terminal state against handoff/rules/canonical artifacts, and updated only `HANDOFF.md` and this file (doc-only); no research, tests, data, artifacts, or automation changes were made.
 
 ## Standing instruction for the next agent
 
