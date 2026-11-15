@@ -4,7 +4,7 @@
 
 **Last substantive commit:** **`a797773`** (2026-11-09 05:44Z). Baseline frozen at `5fab764` (2026-10-31); only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T01:03Z):** prior durable task ("report terminal state and stop") re-verified and completed. Read-only verification at HEAD `9a4ced7` (HEAD at read start: `9a4ced7`): tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1` unchanged, `git diff a797773..HEAD --stat` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (doc/diagnostics only, no code/test changes). Full test suite re-run: **75 passed in 0.63s**. Canonical artifacts (35 files in `artifacts/`, incl. `metrics_axb0306.json`, `metrics_kaggle.json`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence, tests, or code. Handoff and initial task for next agent refreshed.
+**This session (2026-11-15T01:04Z):** prior durable task ("report terminal state and stop") re-verified and completed. Read-only verification at HEAD `b78185f`: tracked tree clean at verification time, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1` unchanged, `git diff a797773..HEAD --stat` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (doc/diagnostics only; no code/test changes). Full test suite re-run: **75 passed in 0.75s**. Canonical artifacts (35 files in `artifacts/`, incl. `metrics_axb0306.json`, `metrics_kaggle.json`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence, tests, or code. Handoff and initial task refreshed.
 
 ## Terminal state — read first
 
@@ -31,8 +31,8 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T00:03Z: **75 passed in 0.70s**. CI runs only controller/automation tests, not `tests/orb/`.
-- Canonical artifacts: 34 JSON files + `README.md` in `artifacts/`. No `*manifest*` file exists; ignore stale "20/20 manifest" references.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. CI runs only controller/automation tests, not `tests/orb/`.
+- Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists; ignore stale "20/20 manifest" references.
 
 ## Standing constraints
 
