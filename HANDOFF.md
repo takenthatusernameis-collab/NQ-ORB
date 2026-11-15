@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T04:37Z):** completed prior durable task ("acknowledge terminal state and stop") as explicitly requested. Drift anchors re-verified: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; HEAD `1986013`, working tree clean and in sync with `origin/main`; diagnostics 63 entries (last `captured_at_utc` 2026-11-15T03:48:18, `success`). Canonical evidence unchanged (axb0306 60 trades, net -$31,637.98; Kaggle 688 trades, net -$626,525.96). No new research, code, tests, data, artifacts, or automation-policy edits. Terminal state reconfirmed.
+**This session (2026-11-15T04:39Z):** completed prior durable task ("acknowledge terminal state and stop") as requested. Drift anchors re-verified: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; HEAD `0d9a01a`, working tree clean and in sync with `origin/main`; diagnostics 63 entries (last `captured_at_utc` 2026-11-15T03:48:18Z, `success`); canonical artifacts present (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`, 35 entries total). Evidence unchanged (axb0306 60 trades, net -$31,637.98; Kaggle 688 trades, net -$626,525.96). No new research, code, tests, data, artifacts, or automation-policy edits. Terminal state reconfirmed.
 
 ## Terminal state — read first
 

@@ -18,7 +18,7 @@ Report that the research task is complete and terminal, then exit cleanly. Do no
 - (b) Run a separately-versioned experiment (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1 as `experiment_farside_stop_v1`, with explicit diff from baseline).
 - (c) Accept baseline as final.
 
-## Current status (2026-11-15T04:37Z, HEAD `1986013`)
+## Current status (2026-11-15T04:39Z, HEAD `0d9a01a`)
 
 - `main` clean and in sync with `origin/main`. No non-documentation commits since substantive work at `a797773`.
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen baseline unchanged).
