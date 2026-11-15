@@ -39,3 +39,5 @@ Legitimate forward paths require explicit user decision:
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Keep this handoff compact.
+
+(End of file - total 41 lines)
