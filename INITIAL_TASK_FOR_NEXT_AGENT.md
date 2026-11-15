@@ -13,7 +13,7 @@
 
 ## Current checkpoint (2026-11-15T18:38Z)
 
-HEAD at verification start: `b57a1ab` on `main`, a doc-only controller checkpoint chain over substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ (doc/state checkpoints). This session re-verified terminal state per explicit user request and refreshed durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification start: `1f5ca31` on `main`, a doc-only controller checkpoint chain over substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ (doc/state checkpoints). This session re-verified terminal state per explicit user request and refreshed durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
 
 ## Prior checkpoint (2026-11-15T18:36Z)
 
