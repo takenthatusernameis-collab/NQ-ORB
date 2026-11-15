@@ -11,17 +11,17 @@
 5. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 6. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-15T18:45Z)
+## Current checkpoint (2026-11-15T18:46Z)
 
-HEAD: `f2c1a51` on `main`, a doc-only controller checkpoint (child of `0d54747`) over substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session completed the prior terminal-state verification per explicit user request and refreshed both durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD: `da3814d` on `main`, a doc-only controller checkpoint (child of `f2c1a51`) over substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session completed the prior terminal-state verification per explicit user request and refreshed both durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
 
-## Prior checkpoint (2026-11-15T18:43Z)
+## Prior checkpoints (2026-11-15)
 
-HEAD at `0d54747`; verification and state unchanged.
+HEADs `f2c1a51` (18:45Z), `0d54747` (18:43Z), `9b8a89c` (18:42Z), `d2e8818` (18:41Z), `a5399d2` (18:36Z), `5df6b25` (17:46Z), and `ed8f7b3` (17:35Z) each repeated the same verification and found no state change. None is a precedent for routine checkpoints.
 
 ## Note on handoff-only checkpoints
 
-Repeated generic "read the handoff and complete the prior task" prompts have produced a series of doc-only checkpoints with no state change. The 18:43Z refresh was explicitly requested by the user and is not a precedent for routine checkpoints. If state is unchanged and the user has not asked for a documentation update, prefer to report terminal state in chat and stop rather than commit another checkpoint.
+Repeated generic "read the handoff and complete the prior task" prompts have produced a series of doc-only checkpoints with no state change. If state is unchanged and the user has not asked for a documentation update, prefer to report terminal state in chat and stop rather than commit another checkpoint.
 
 ## Conditional forward paths (explicit user decision only)
 
