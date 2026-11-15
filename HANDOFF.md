@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T05:39Z):** completed prior durable task ("report terminal state and stop") on explicit user instruction. Read `HANDOFF.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and `INITIAL_TASK_FOR_NEXT_AGENT.md`; confirmed working tree clean at HEAD `fb9c3b2`, frozen baseline unchanged. Refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only. No research, code, tests, data, artifacts, or automation-policy edits this session. Terminal state reconfirmed and reported; durable state left in the working tree for the next agent.
+**This session (2026-11-15T05:41Z):** completed prior durable task ("report terminal state and stop") on explicit user instruction. Re-verified repository state read-only (no test/hash/monitor re-runs): working tree clean at HEAD `b81d177`, `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258…d2b1`), `artifacts/` = 35 entries with both canonical metric files present. Terminal conclusion holds. Refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only; no research, code, tests, data, artifacts, or automation-policy edits this session.
 
 **Churn warning:** recent commits are handoff-only checkpoints (no research value). Highest-value user action remains (a) below (edit cron at `.github/workflows/main.yml:11`, explicit auth required). Avoid further handoff-only turns without that decision.
 
