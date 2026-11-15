@@ -4,9 +4,9 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T10:39Z):** completed the prior durable task on explicit user request — verified the terminal state and updated the handoff and next-agent task. Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean at verification start, branch `main` tracking `origin/main`, HEAD `8f30954` (doc-only; no non-doc research commit after `a797773`), 35 files in `artifacts/` with no `*manifest*` file, and `git diff --name-only a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`. Canonical metrics re-read from disk: axb0306 60 trades (42W/18L), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 688 trades (446W/242L), gross -$140,899.00, net -$626,525.96, PF 0.2271. No research, free-source sweep, data/artifact change, test run, or automation edit performed. No code change since `a797773`, so empirical results remain unchanged.
+**This session (2026-11-15T10:41Z):** re-verified the terminal state on explicit user request — verified the terminal state and updated the handoff and next-agent task. Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean, branch `main` tracking `origin/main`, HEAD `73173b4` (doc-only checkpoint of the prior verification; no non-doc research commit after `a797773`), 35 files in `artifacts/` with no `*manifest*` file, and `git diff --name-only a797773..HEAD` limited to `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Canonical metrics re-read from disk: axb0306 60 trades (42W/18L), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 688 trades (446W/242L), gross -$140,899.00, net -$626,525.96, PF 0.2271. No research, free-source sweep, data/artifact change, test run, or automation edit performed. No code change since `a797773`, so empirical results remain unchanged.
 
-**Prior sessions (2026-11-15T06:46Z–10:38Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
+**Prior sessions (2026-11-15T06:46Z–10:41Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
 
 **Decision required before any further research work:** the user must choose (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required), (b) authorize a separately-versioned experiment, or (c) accept the baseline as final. Do not add further handoff-only research cycles; avoid repeating free-source sweeps, hashes, monitors, or tests absent a concrete new task.
 
@@ -25,7 +25,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **Repository state (this session, 2026-11-15T10:39Z)**: HEAD `8f30954`, working tree clean at verification start, branch `main` tracking `origin/main`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — doc/diagnostics only, no research change.
+- **Repository state (this session, 2026-11-15T10:41Z)**: HEAD `73173b4`, working tree clean, branch `main` tracking `origin/main`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` — doc only, no research change.
 
 ## Evidence (frozen artifacts)
 
@@ -35,7 +35,7 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z–10:38Z sessions: no `pytest` module and no virtualenv, so `python3 -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z–10:41Z sessions: no `pytest` module and no virtualenv, so `python3 -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
 - Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists. Re-verified this session: 35 files, unchanged.
 
 ## Standing constraints
