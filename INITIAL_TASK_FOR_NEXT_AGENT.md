@@ -12,9 +12,9 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T13:46Z, HEAD `c02a61b`)
+## Current checkpoint (2026-11-15T13:48Z, HEAD `7916404`)
 
-Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean at verification; `main` **0 ahead of `origin/main`**; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest. No research, data, test, or automation change performed. Canonical metrics on disk (no drift): axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684. This session only refreshed the handoff and this task per an explicit documentation request.
+Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean at verification; `main` **0 ahead of `origin/main`**; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest (only `README.md`). All commits since `a797773` are `chore(kilo): checkpoint agent session` touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Canonical metrics on disk re-extracted from JSON, no drift: axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684. This session only refreshed the handoff and this task per an explicit documentation request.
 
 **Initial task for next agent:** On a generic prompt, repeat the lightweight terminal-state verification above (SHA, clean/branch state, no non-doc research diffs since `a797773`, 35 artifacts/no manifest, canonical metrics unchanged), report terminal state, and stop. Do not create a new handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed. Forward paths (a)/(b)/(c) require explicit user decision only.
 
