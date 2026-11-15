@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T02:03Z):** prior durable task ("acknowledge terminal state and stop") completed read-only at HEAD `1c1e267` (`main`, clean, in sync with `origin/main`). Checks: `git status` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified byte-for-byte; no non-doc/code/test/baseline/config/artifact changes since `a797773` (`git diff a797773..HEAD --name-only` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only). Canonical artifacts present (35 files in `artifacts/`, incl. `metrics_axb0306.json`, `metrics_kaggle.json`). `tests/orb/` re-run this session: **30 passed in 0.26s** (no regression; full suite last 75 passed 2026-11-15T01:04Z). No new evidence or code. Handoff and initial task refreshed.
+**This session (2026-11-15T02:04Z):** prior durable task ("acknowledge terminal state and stop") re-read and acknowledged at clean, in-sync `main` HEAD `278127d`; that checkpoint is documentation-only. No new research, code, tests, hashes, data checks, monitor sweeps, or automation changes. Canonical evidence remains `artifacts/metrics_axb0306.json` (net -$31,637.98) and `artifacts/metrics_kaggle.json` (net -$626,525.96). Handoff and initial task refreshed at the user's request.
 
 ## Terminal state — read first
 
@@ -31,7 +31,7 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` re-verified this session: **30 passed in 0.24s**. CI runs only controller/automation tests, not `tests/orb/`.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`.
 - Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists.
 
 ## Standing constraints
