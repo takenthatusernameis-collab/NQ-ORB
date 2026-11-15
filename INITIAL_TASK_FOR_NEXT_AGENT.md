@@ -11,13 +11,13 @@
 5. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 6. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-15T20:33Z)
+## Current checkpoint (2026-11-15T20:35Z)
 
-HEAD: `f963264` on `main` (doc-only checkpoint, parent `61c1eb5`). Since last substantive `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session independently re-verified terminal state (HEAD `f963264`, clean tree, `STRATEGY_RULES.txt` SHA-256 `6d3258c3...ad2b1` unchanged, empty substantive diff from `a797773`, 35 `artifacts/` files, no manifest, canonical metrics re-read and unchanged) and refreshed both durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD: `b746714` on `main` (doc-only checkpoint, parent `f963264`). Since last substantive `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session independently re-verified terminal state (HEAD `b746714`, clean tree at verification start, `STRATEGY_RULES.txt` SHA-256 `6d3258c3...ad2b1` unchanged, empty substantive diff from `a797773`, 35 `artifacts/` files, no manifest, canonical metrics re-read and unchanged) and refreshed both durable docs; no research, data, tests, or automation changes. State unchanged and terminal.
 
 ## Prior checkpoints (2026-11-15)
 
-`61c1eb5`, `dc3879f`, `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00`, `1451458`, `51d587a`, `f85bdb3`, `c541c1b` each repeated the same verification and found no state change. None is a precedent for routine checkpoints.
+`f963264`, `61c1eb5`, `dc3879f`, `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00`, `1451458`, `51d587a`, `f85bdb3`, `c541c1b` each repeated the same verification and found no state change. None is a precedent for routine checkpoints.
 
 ## Note on handoff-only checkpoints
 
