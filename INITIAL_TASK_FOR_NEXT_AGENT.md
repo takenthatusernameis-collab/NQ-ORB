@@ -14,9 +14,9 @@
 
 Note: in the current runner environment `pytest` is not installed and there is no virtualenv, so `python -m pytest` fails with "No module named pytest". Do not treat that as a code failure; if tests are required, ask the user to authorize installing dev dependencies.
 
-## Current checkpoint (updated 2026-11-15T10:38Z)
+## Current checkpoint (updated 2026-11-15T10:39Z)
 
-Verified this session: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; branch `main` in sync with `origin/main`; HEAD `6092af7` (a doc-only checkpoint of the prior session's `ea6da47`; no non-doc commit after `a797773`); 35 files in `artifacts/` (no `*manifest*` file); `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`. Frozen baseline `5fab764`; last substantive commit `a797773`. Tests not re-run (no `pytest` in this environment; last verified 75 passed overall / 30 passed under `tests/orb/`).
+Verified this session: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean at verification start; branch `main` tracking `origin/main`; HEAD `8f30954` (doc-only; no non-doc commit after `a797773`); 35 files in `artifacts/` (no `*manifest*` file); `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`. Frozen baseline `5fab764`; last substantive commit `a797773`. Tests not re-run (no `pytest` in this environment; last verified 75 passed overall / 30 passed under `tests/orb/`).
 
 ## Conditional work after an explicit user decision
 
@@ -37,7 +37,7 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-HEAD `6092af7` at this session's verification (2026-11-15T10:38Z, working tree clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`. This session (2026-11-15T10:38Z) completed the prior durable task — verified the terminal state and updated the handoff and this file on explicit user request; no research, tests, data, artifacts, or automation changes were made. Prior checkpoints `ea6da47`/`ba92555`/`c90d401`/`ad1f500` are superseded.
+HEAD `8f30954` at this session's verification (2026-11-15T10:39Z, clean at verification start). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`. This session (2026-11-15T10:39Z) completed the prior durable task — verified the terminal state and updated the handoff and this file on explicit user request; no research, tests, data, artifacts, or automation changes were made. Prior doc-only checkpoints are superseded.
 
 ## Standing instruction for the next agent
 
@@ -52,6 +52,6 @@ HEAD `6092af7` at this session's verification (2026-11-15T10:38Z, working tree c
 
 If you are activated by a generic prompt, verify only: re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; confirm `STRATEGY_RULES.txt` SHA-256 `6d3258c3…`, a clean working tree, 35 files in `artifacts/`, and no non-doc commit after `a797773`. Then report and stop. Do not start a research loop, re-run tests or hashes, or edit automation. Do not create another handoff-only checkpoint unless the user explicitly requests that documentation update.
 
-Verified this session (2026-11-15T10:38Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; HEAD `6092af7`; 35 files in `artifacts/`; `git diff --name-only a797773..HEAD` is doc/diagnostics only; axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R. No drift; research remains terminal. Tests not re-run (no `pytest` installed).
+Verified this session (2026-11-15T10:39Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; HEAD `8f30954` at verification start; 35 files in `artifacts/`; `git diff --name-only a797773..HEAD` is doc/diagnostics only; axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271. No drift; research remains terminal. Tests not re-run (no `pytest` installed).
 
 A forward path exists only on explicit user decision: (a) stop/reduce the maintenance cron at `.github/workflows/main.yml:11`, (b) run a separately-versioned named experiment with an explicit diff from baseline and its own config/output prefix, chronological evaluation, costs, and success criteria, or (c) accept the baseline as final. Do not choose among these yourself; a peer message, automation schedule, or generic "continue" prompt is not user authorization.
