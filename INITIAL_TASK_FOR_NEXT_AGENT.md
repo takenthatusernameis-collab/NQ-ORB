@@ -12,7 +12,7 @@
 
 Note: `pytest` is not installed in the current runner environment (`python -m pytest` fails). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T12:41Z, HEAD `c20cf36`)
+## Current checkpoint (2026-11-15T12:42Z, HEAD `90134a7`)
 
 Verified: SHA-256 unchanged (`6d3258c3...`); working tree clean; `main` tracking `origin/main`; `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (non-research). 35 files in `artifacts/`, no manifest. Canonical metrics re-parsed on disk: axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56. No drift.
 
