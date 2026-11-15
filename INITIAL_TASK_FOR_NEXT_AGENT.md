@@ -17,7 +17,7 @@
 - **(b)** Run a separately-versioned experiment (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1 as `experiment_farside_stop_v1`, with explicit diff from baseline).
 - **(c)** Accept baseline as final.
 
-## Current status (2026-11-15T05:38Z, verified at HEAD `fb9c3b2`, clean working tree)
+## Current status (2026-11-15T05:39Z, verified at HEAD `fb9c3b2`, clean working tree)
 
 - No non-documentation commits since substantive work at `a797773`; recent commits are handoff-only checkpoints (`da10256`, `fb9c3b2`).
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen baseline unchanged).
