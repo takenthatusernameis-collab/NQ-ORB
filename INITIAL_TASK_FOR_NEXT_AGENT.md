@@ -13,11 +13,11 @@
 
 ## Current checkpoint (2026-11-15T18:33Z)
 
-HEAD at `d21cddd` on `main` (0/0 vs `origin/main`), controller checkpoint of doc refresh `5df6b25` (→ checkpoint `4218cc1` → `f440a59` → `ed8f7b3` → `7cad9dc` → `7338c66` → `60d6e0b` → substantive `a797773`). Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed. This session re-verified terminal state per explicit user request to refresh docs; no research, data, tests, or automation changes; state unchanged from 17:46Z. Working tree clean.
+HEAD at verification start: `ab1a47a` on `main` (0/0 vs `origin/main`), a controller checkpoint over prior doc/state commits back to substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` differ. This session re-verified terminal state per explicit user request and refreshed durable docs; no research, data, tests, or automation changes. State unchanged.
 
 ## Prior checkpoint (2026-11-15T17:46Z)
 
-HEAD at `5df6b25` (checkpoint) → now `d21cddd`. Same verification; state unchanged.
+HEAD at `5df6b25`/`d21cddd` lineage at that time; verification and state unchanged.
 
 ## Note on handoff-only checkpoints
 
