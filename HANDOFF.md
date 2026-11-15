@@ -4,7 +4,9 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T06:46Z):** re-read `HANDOFF.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `data/FEASIBILITY_REPORT.md`, and both canonical metric artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`). Re-verified terminal state: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), HEAD `31b837d` clean, free-source search exhausted (~30 sweeps through 2026-11-03), canonical metrics unchanged (axb0306 60 trades, 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L, net -$626,525.96, PF 0.2271). Prior task already complete; this generic prompt is not user authorization for new research. No tests, hashes, monitor checks, free-source sweep, data/artifact change, or automation edit performed. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only).
+**This session (2026-11-15T06:47Z):** executed the prior agent task, which is terminal (report and stop). Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean, HEAD `40b3133` (only automation checkpoint commits `5f9c6a7`/`40b3133` on top of `31b837d`), 35 files in `artifacts/`, canonical metrics unchanged (axb0306 60 trades, 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 688 trades, 446W/242L, net -$626,525.96, PF 0.2271). No research, tests, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only, per explicit user request).
+
+**Prior session (2026-11-15T06:46Z):** re-read handoff, `PROMPT.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `data/FEASIBILITY_REPORT.md`, and both canonical metric artifacts. Re-verified terminal state. No code/data/artifact change.
 
 **Decision required before any further research work:** the user must choose (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required), (b) authorize a separately-versioned experiment, or (c) accept the baseline as final. Do not add further handoff-only research cycles; avoid repeating free-source sweeps, hashes, monitors, or tests absent a concrete new task.
 
@@ -23,7 +25,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. `STRATEGY_RULES.txt` SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `31b837d` at this session's verification; working tree clean.
+- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `40b3133` at this session's verification (checkpoint commits only on top of `31b837d`); working tree clean.
 
 ## Evidence (frozen artifacts)
 
