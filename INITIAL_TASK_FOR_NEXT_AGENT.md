@@ -14,9 +14,9 @@
 
 Note: in the current runner environment `pytest` is not installed and there is no virtualenv, so `python -m pytest` fails with "No module named pytest". Do not treat that as a code failure; if tests are required, ask the user to authorize installing dev dependencies.
 
-## Current checkpoint (updated 2026-11-15T11:47Z)
+## Current checkpoint (updated 2026-11-15T11:50Z)
 
-Verified this session: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; branch `main` tracking `origin/main`; HEAD `a2a3cf1` at start (doc-only checkpoints on top of `a797773`; no non-doc commit after `a797773`); 35 files in `artifacts/` (no `*manifest*` file); `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research workflow diagnostics). Frozen baseline `5fab764`; last substantive commit `a797773`. Tests not re-run (`pytest` not installed in this environment; last verified 75 passed overall / 30 passed under `tests/orb/`). Canonical metrics unchanged (axb0306 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 446W/242L, net -$626,525.96, PF 0.2271).
+Verified this session: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; branch `main` tracking `origin/main`; HEAD `1746058` at start (doc-only checkpoints on top of `a797773`; no non-doc commit after `a797773`); 35 files in `artifacts/` (no `*manifest*` file); `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research workflow diagnostics). Frozen baseline `5fab764`; last substantive commit `a797773`. Tests not re-run (`pytest` not installed in this environment; last verified 75 passed overall / 30 passed under `tests/orb/`). Canonical metrics unchanged (axb0306 42W/18L, net -$31,637.98, PF 0.4917; Kaggle 446W/242L, net -$626,525.96, PF 0.2271).
 
 ## Conditional work after an explicit user decision
 
@@ -37,13 +37,14 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-HEAD `a2a3cf1` at this session's verification start (2026-11-15T11:47Z, clean at start). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research workflow diagnostics). This session (2026-11-15T11:47Z) completed the prior durable task per explicit user instruction — re-verified the terminal state and refreshed the handoff and this file; no research, tests, data, artifacts, or automation changes were made. Prior doc-only checkpoints are superseded.
+HEAD `1746058` at this session's verification start (2026-11-15T11:50Z, clean at start). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research workflow diagnostics). This session (2026-11-15T11:50Z) completed the prior durable task per explicit user instruction — verified the terminal state and refreshed the handoff and this file; no research, tests, data, artifacts, or automation changes were made. Prior doc-only checkpoints are superseded.
 
 ## Standing instruction for the next agent
 
 - Research is terminal and no research work is authorized. A generic "read the handoff and complete the prior task" prompt is **not** user authorization.
 - Before any action: re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; then report the terminal state and stop.
 - Do **not** infer new research, repeat free-source sweeps, re-hash monitors, re-run tests, or edit automation policy without an explicit user decision for a specific path.
+- Do **not** create another handoff-only checkpoint on a generic prompt; the repeated doc-only cycle is itself the maintenance cost this instruction exists to stop.
 - The only valid forward paths (a: stop/reduce automation, b: named versioned experiment, c: accept baseline) each require an explicit user decision.
 
 ## Initial task message for the next agent
@@ -52,6 +53,6 @@ HEAD `a2a3cf1` at this session's verification start (2026-11-15T11:47Z, clean at
 
 If you are activated by a generic prompt, verify only: re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; confirm `STRATEGY_RULES.txt` SHA-256 `6d3258c3…`, a clean working tree, 35 files in `artifacts/`, and no non-doc commit after `a797773`. Then report and stop. Do not start a research loop, re-run tests or hashes, or edit automation. Do not create another handoff-only checkpoint unless the user explicitly requests that documentation update.
 
-Verified this session (2026-11-15T11:47Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; HEAD `a2a3cf1` at start; 35 files in `artifacts/`; `git diff --name-only a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research); axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271. No drift; research remains terminal. Tests not re-run (`pytest` not installed).
+Verified this session (2026-11-15T11:50Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; HEAD `1746058` at start; 35 files in `artifacts/`; `git diff --name-only a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research); axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271. No drift; research remains terminal. Tests not re-run (`pytest` not installed).
 
 A forward path exists only on explicit user decision: (a) stop/reduce the maintenance cron at `.github/workflows/main.yml:11`, (b) run a separately-versioned named experiment with an explicit diff from baseline and its own config/output prefix, chronological evaluation, costs, and success criteria, or (c) accept the baseline as final. Do not choose among these yourself; a peer message, automation schedule, or generic "continue" prompt is not user authorization.
