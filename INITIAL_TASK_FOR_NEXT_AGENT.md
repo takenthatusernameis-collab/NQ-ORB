@@ -11,9 +11,9 @@
 5. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 6. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-15T15:43Z)
+## Current checkpoint (2026-11-15T15:45Z)
 
-HEAD at verification: doc-only `f865e0f` on `main` (0/0 vs `origin/main`), built on substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed. This session refreshed handoff/docs per explicit user request; no research, data, tests, or automation changes.
+HEAD at verification: doc-only `7393ff9` on `main` (0/0 vs `origin/main`), descending from substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed. This session refreshed handoff/docs per explicit user request; no research, data, tests, or automation changes.
 
 ## Conditional forward paths (explicit user decision only)
 
