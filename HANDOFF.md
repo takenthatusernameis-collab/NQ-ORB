@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T05:47Z):** prior durable task ("report terminal state and stop") completed — reported terminal state; read-only verification only: HEAD `57c1beb` (clean), `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, `artifacts/` = 35 entries, canonical metrics re-read and match (axb0306 60T/-$31,637.98; Kaggle 688T/-$626,525.96). No research, code, tests, data, artifacts, or automation-policy edits. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
+**This session (2026-11-15T06:36Z):** prior durable task ("report terminal state and stop") completed — reported terminal state; read-only verification only: HEAD `12f378e` (clean), `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, `artifacts/` = 35 entries, canonical metrics match (axb0306 60T/-$31,637.98; Kaggle 688T/-$626,525.96). No research, code, tests, data, artifacts, or automation-policy edits. Updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
 
 **Churn warning:** recent commits are handoff-only checkpoints (no research value); substantive work ended at `a797773`. Highest-value user action remains (a) below (edit cron at `.github/workflows/main.yml:11`, explicit auth required). Avoid further handoff-only turns without that decision.
 
@@ -23,7 +23,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits touch only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Current HEAD `57c1beb` (2026-11-15T05:47Z).
+- **No non-doc commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits touch only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Current HEAD `12f378e` (2026-11-15T06:36Z).
 
 ## Evidence (frozen artifacts)
 
