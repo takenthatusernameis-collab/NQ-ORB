@@ -2,44 +2,29 @@
 
 ## Status: terminal research complete; awaiting user decision
 
-**Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+**Baseline:** `STRATEGY_RULES.txt` v1.0 frozen, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`. Frozen baseline commit `5fab764`; last substantive research commit `a797773` (1-minute experiment `orb_mnq_1m_wf_v1`, `ae3c49f`/`a797773`, additive `flatten_fill='open'`, byte-identical to 15m baseline). No strategy/config/raw-data/canonical-artifact changes.
 
-**This session (2026-11-15T11:55Z):** read the prior durable task from `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`, plus `STRATEGY_RULES.txt`, `PROMPT.md`, and both canonical metric artifacts. Confirmed the research task is complete and terminal with no remaining work. Verified: `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; branch `main` tracking `origin/main`; HEAD `b286d2b` (doc-only checkpoint stack on top of `a797773`; no non-doc commit after `a797773`); 35 files in `artifacts/` with no `*manifest*`; `git diff --name-only a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research) — no research change after `a797773`. Canonical metrics re-read from disk and byte-identical to the recorded values: axb0306 60 trades, 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, expectancy (avg R) -0.0431R, maxDD -$37,491.80; Kaggle 688 trades, 446W/242L (64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, expectancy (avg R) -0.0684R, maxDD -$626,994.56. No research, free-source sweep, data/artifact change, test run, or automation edit performed; `pytest` not installed in this environment (tests not re-run).
-
-**Decision required before any further research work:** the user must choose (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required), (b) authorize a separately-versioned experiment, or (c) accept the baseline as final. Do not add further handoff-only checkpoints absent a concrete new task; avoid repeating free-source sweeps, hashes, monitors, or tests absent a concrete new task.
+**This session (2026-11-15T11:57Z):** completed prior durable task by verifying terminal state and refreshing handoff/next-task docs. Verified: `STRATEGY_RULES.txt` SHA-256 unchanged; working tree clean; branch `main` tracking `origin/main`; HEAD `a50a691` at verification start (doc-only checkpoint stack on top of `a797773`); `git diff --name-only a797773..HEAD` limited to `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research); 35 files in `artifacts/` with no `*manifest*`. Canonical metrics re-read from disk (unchanged): axb0306 60 trades, 42W/18L (70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade); Kaggle 688 trades, 446W/242L (64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04 (daily). No research, free-source sweep, data/artifact change, test run, or automation edit performed. `pytest` not installed in this environment (last verified: 75 passed overall / 30 passed under `tests/orb/`, 2026-11-15T01:04Z/02:03Z).
 
 ## Terminal state — read first
 
-**Research task is COMPLETE and terminal. No remaining research work exists.** Frozen MNQ 15-min ORB baseline is final and negative-net on every free dataset available. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03): every candidate MNQ 1-min/15-min source is paid, key-gated, daily-only, or NQ rather than MNQ.
+**Research task is COMPLETE and terminal. No remaining research work is authorized.** Frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset. Free-source search exhausted (`data/FEASIBILITY_REPORT.md`, ~30 sweeps through 2026-11-03). 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results.
 
-**Correct next action: report the terminal state and await an explicit user decision.** Do not start another autonomous research loop, re-run tests/hashes/monitor checks, or edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization.
+**Correct next action:** report terminal state and await an explicit user decision. Do not start another autonomous research loop, repeat free-source sweeps/hashes/monitors/tests, or edit `.github/workflows/main.yml`, controller, or automation policy without explicit user authorization. Do not create further handoff-only checkpoints on generic prompts.
 
 Legitimate forward paths require explicit user decision:
-- (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required),
-- (b) run a separately-versioned experiment (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1, as `experiment_farside_stop_v1`, with explicit diff from baseline),
-- (c) accept baseline as final.
-
-## Repository state
-
-- **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **Repository state (this session, 2026-11-15T11:54Z)**: HEAD `d8b6830` (doc-only checkpoint stack; no non-doc commit after `a797773`), working tree clean, branch `main` tracking `origin/main`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (non-research workflow diagnostics) — no research change.
+- **(a)** stop/reduce maintenance automation (cron at `.github/workflows/main.yml:11`, explicit auth required)
+- **(b)** run a separately-versioned named experiment with explicit diff from baseline (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1)
+- **(c)** accept baseline as final
 
 ## Evidence (frozen artifacts)
 
-- axb0306 (`artifacts/metrics_axb0306.json`): 60 trades, 42W/18L (70%), long 33 (23W/10L) / short 27 (19W/8L), gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade). All 12 cost-sensitivity combos and signal-close sensitivity negative.
-- Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades (446W/242L, 64.8%; long 359 / short 329; 2022-11-16..2025-11-12), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, maxDD -$626,994.56, Sharpe -1.68 / Sortino -1.04 (daily).
-- All chronological splits, walk-forward, and all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate.
-
-## Test/manifest status
-
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run this session: no `pytest` module/virtualenv in environment (`python -m pytest` fails). No code change since `a797773`, so results expected unchanged but unverified in-session.
-- Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists. Re-verified this session: 35 files, unchanged.
+- **axb0306** (`artifacts/metrics_axb0306.json`): 60 trades, 42W/18L (70.0%), long 33 / short 27, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67. All 12 cost-sensitivity combos and signal-close sensitivity negative.
+- **Kaggle proxy** (`artifacts/metrics_kaggle.json`): 688 trades, 446W/242L (64.8%), long 359 / short 329 (2022-11-16..2025-11-12), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04. All chronological splits, walk-forward, and 12 cost-sensitivity combos negative.
+- Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate.
 
 ## Standing constraints
 
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
-- Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
-- Keep this handoff compact.
-
-(End of file - total 47 lines)
+- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
+- Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
