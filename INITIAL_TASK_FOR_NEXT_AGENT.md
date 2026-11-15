@@ -12,9 +12,9 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T12:49Z, HEAD at verification `8b3e6f4`)
+## Current checkpoint (2026-11-15T12:50Z, HEAD at verification `c6a4319`)
 
-Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); `main` tracking `origin/main`; `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (non-research); `9ea1e13..HEAD` = the two handoff docs only. 35 files in `artifacts/`, no manifest. Working tree clean. No research, data, test, or automation change performed this session. Canonical metrics on disk: axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04. No drift.
+Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); `main` tracking `origin/main` up to date; `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (non-research); `8b3e6f4..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only. 35 files in `artifacts/`, no manifest. Working tree clean. No research, data, test, or automation change performed this session. Canonical metrics on disk: axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04. No drift.
 
 ## Conditional forward paths (explicit user decision only)
 
