@@ -30,4 +30,4 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-At the start of this session: HEAD `239c9f7`, clean working tree; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; baseline commit `5fab764` present. The current session changed only `HANDOFF.md` and this file. No commit was created by the agent because the user did not request one.
+HEAD `442be7e` (clean working tree at session start of this edit). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session completed the terminal-state report and updated only `HANDOFF.md` and this file; no research, tests, data, artifacts, or automation changes were made. No commit created by the agent unless explicitly requested.
