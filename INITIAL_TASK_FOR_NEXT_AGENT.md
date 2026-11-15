@@ -22,11 +22,11 @@ If the user explicitly authorizes a forward path, they will specify which:
 
 Until then: read `HANDOFF.md`, confirm terminal state, and exit cleanly. Do not refresh these documents on another checkpoint-only cycle unless the user explicitly requests it or new evidence changes the durable state.
 
-## Current status (2026-11-15T03:08Z, HEAD `35ce7f9`)
+## Current status (2026-11-15T03:09Z, HEAD `f1f87c6`)
 
-- `main` clean and in sync with `origin/main`; commits since last substantive work (`a797773`) are documentation-only checkpoints (commits since `daca6a7` touched only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`).
+- `main` clean and in sync with `origin/main`; commits since last substantive work (`a797773`) are documentation-only checkpoints plus automation-appended `research_state/workflow_run_diagnostics.jsonl` (commits since `daca6a7` touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and that diagnostics file).
 - `STRATEGY_RULES.txt` SHA-256 re-confirmed by live command as `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (matches frozen baseline `5fab764`).
-- Terminal state acknowledged and re-confirmed at 2026-11-15T03:08Z. Working tree clean; `artifacts/` holds 35 files (34 JSON + README); canonical evidence unchanged (axb0306 net -$31,637.98; Kaggle net -$626,525.96).
+- Terminal state acknowledged and re-confirmed at 2026-11-15T03:09Z. Working tree clean; `artifacts/` holds 35 files (34 JSON + README); canonical evidence unchanged (axb0306 net -$31,637.98; Kaggle net -$626,525.96).
 - Prior evidence unchanged: axb0306 net -$31,637.98; Kaggle net -$626,525.96.
 - `research_state/workflow_run_diagnostics.jsonl` has 62 entries (last captured run id 43612571731, success).
 - No further research work is authorized by the durable task.
