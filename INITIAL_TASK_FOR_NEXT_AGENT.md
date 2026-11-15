@@ -1,8 +1,8 @@
 # Initial Task for Next Agent — NQ ORB
 
-## Status: terminal research complete; do nothing unless explicitly directed (2026-11-15T00:06Z)
+## Status: terminal research complete; do nothing unless explicitly directed (2026-11-15T00:08Z)
 
-Prior task completed: terminal state reported and re-verified read-only at HEAD `1ecf141` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`; all newer commits are non-substantive controller checkpoints touching only the two handoff docs). Durable handoff and this message refreshed. Tests re-run this session: **75 passed in 0.66s**.
+Prior task completed: terminal state re-verified read-only at HEAD `b35c005` (tracked tree clean, `STRATEGY_RULES.txt` SHA `6d3258c3…8ad2b1`, no substantive commits since `a797773`; all newer commits are non-substantive controller checkpoints touching only the two handoff docs). Canonical artifacts (`artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`; 35 files in `artifacts/`) and `data/FEASIBILITY_REPORT.md` present and unmodified. No new evidence or code. Durable handoff and this message refreshed.
 
 ## Your task (initial message)
 
