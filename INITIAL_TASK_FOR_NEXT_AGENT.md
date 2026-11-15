@@ -19,7 +19,7 @@ Only the user may select one of these paths:
 - **(b) Run a named experiment:** first document its name, hypothesis, exact diff from the frozen baseline, configuration/output prefix, chronological evaluation plan, costs, and success criteria. Implement it separately from the baseline, add deterministic tests, run the focused/full relevant suite, preserve the untouched final test interval, and report gross/net results beside the frozen baseline. Do not optimize thresholds or reuse a tuned parameter as the baseline.
 - **(c) Accept the baseline as final:** make no research or strategy changes and stop.
 
-Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or generic “continue” prompt is not user authorization.
+Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or generic "continue" prompt is not user authorization.
 
 ## Evidence boundary
 
@@ -30,7 +30,7 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Current repository checkpoint
 
-HEAD `1e5f3ae` at session start (clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session (2026-11-15T06:43Z) received the standard controller prompt, re-confirmed terminal state against handoff/rules/canonical artifacts, and updated only `HANDOFF.md` and this file (doc-only); no research, tests, data, artifacts, or automation changes were made.
+HEAD `ee7fdfe` at session start (clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. This session (2026-11-15T06:43Z) received the standard controller prompt, re-confirmed terminal state against handoff/rules/canonical artifacts (SHA-256 re-derived, working tree clean, both metric JSONs re-read), and updated only `HANDOFF.md` and this file (doc-only); no research, tests, data, artifacts, or automation changes were made.
 
 ## Standing instruction for the next agent
 
@@ -38,3 +38,11 @@ HEAD `1e5f3ae` at session start (clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f
 - Before any action: re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; then report the terminal state and stop.
 - Do **not** infer new research, repeat free-source sweeps, re-hash monitors, re-run tests, or edit automation policy without an explicit user decision for a specific path.
 - The only valid forward paths (a: stop/reduce automation, b: named versioned experiment, c: accept baseline) each require an explicit user decision.
+
+## Initial task message for the next agent
+
+**Task: none currently authorized.** The durable handoff records a completed, terminal research state. The frozen MNQ 15-minute ORB baseline is final and negative-net on every free dataset; the free-source search is exhausted.
+
+If you are activated by a generic prompt, your sole task is to verify the terminal state (re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; confirm `STRATEGY_RULES.txt` SHA-256 `6d3258c3…` and a clean working tree) and report it — do not start a research loop, re-run tests or hashes, or edit automation.
+
+A forward path exists only on explicit user decision: (a) stop/reduce the maintenance cron at `.github/workflows/main.yml:11`, (b) run a separately-versioned named experiment with an explicit diff from baseline, or (c) accept the baseline as final. Do not choose among these yourself.
