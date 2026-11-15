@@ -12,7 +12,7 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T13:44Z, HEAD `cdd612d`)
+## Current checkpoint (2026-11-15T13:45Z, HEAD `f9b3e16`)
 
 Verified: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean at verification; `main` **0 ahead of `origin/main`**; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. 35 files in `artifacts/`, no manifest. No research, data, test, or automation change performed. Canonical metrics on disk (no drift): axb0306 42W/18L (60 trades, 70.0%), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle 446W/242L (688 trades, 64.8%), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg R -0.0684. This session only refreshed the handoff and this task per an explicit documentation request.
 
