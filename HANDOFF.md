@@ -4,9 +4,9 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T09:49Z):** independently re-verified the terminal state on explicit user request ("read the prior agent task from the durable handoff and complete it"). `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean, HEAD `ad1f500` (doc-only checkpoint; no non-doc research commit after `a797773` — `git diff --stat a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`), 35 files in `artifacts/`, canonical metrics re-read byte-for-byte and unchanged (axb0306 60 trades, 42W/18L, gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 688 trades, 446W/242L, gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R). No research, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Tests were **not** re-run: no `pytest` installed and no virtualenv, so the prior 75-passed result stands unverified this session. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only).
+**This session (2026-11-15T09:50Z):** completed the prior durable task — independently re-verified the terminal state, then updated the handoff and next-agent task at explicit user request. Verified: `STRATEGY_RULES.txt` SHA-256 unchanged, working tree clean, HEAD `c90d401` (checkpoint of prior doc update `ad1f500`), 35 files in `artifacts/`, and `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (doc/diagnostics, no research change). Canonical metrics re-read from disk and unchanged: axb0306 60 trades, 42W/18L, gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 688 trades, 446W/242L, gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R. No research, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Tests **not** re-run: no `pytest` and no virtualenv, so the prior 75-passed result stands unverified in-session. No code change since `a797773`, so results are expected unchanged.
 
-**Prior sessions (2026-11-15T06:46Z–09:47Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
+**Prior sessions (2026-11-15T06:46Z–09:49Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
 
 **Decision required before any further research work:** the user must choose (a) stop/reduce maintenance automation (edit cron at `.github/workflows/main.yml:11`, explicit auth required), (b) authorize a separately-versioned experiment, or (c) accept the baseline as final. Do not add further handoff-only research cycles; avoid repeating free-source sweeps, hashes, monitors, or tests absent a concrete new task.
 
@@ -23,19 +23,19 @@ Legitimate forward paths require explicit user decision:
 
 ## Repository state
 
-- **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. `STRATEGY_RULES.txt` SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+- **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **Repository state (this session, 2026-11-15T09:49Z)**: HEAD `ad1f500` (working tree clean); `git diff --stat a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — doc/diagnostics only, no research change. Previous HEAD notes `9b8cdff` and `6fc5d08` superseded.
+- **Repository state (this session, 2026-11-15T09:50Z)**: HEAD `c90d401`, working tree clean, branch `main` in sync with `origin/main`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — doc/diagnostics only, no research change.
 
 ## Evidence (frozen artifacts)
 
-- axb0306 (`artifacts/metrics_axb0306.json`): 60 trades, 42W/18L (70%), gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade). All 12 cost-sensitivity combos and signal-close sensitivity negative.
-- Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades (446W/242L, 64.8%, 2022-11-16..2025-11-12), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily).
+- axb0306 (`artifacts/metrics_axb0306.json`): 60 trades, 42W/18L (70%), long 33 (23W/10L) / short 27 (19W/8L), gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade). All 12 cost-sensitivity combos and signal-close sensitivity negative.
+- Kaggle proxy (`artifacts/metrics_kaggle.json`): 688 trades (446W/242L, 64.8%; long 359 / short 329; 2022-11-16..2025-11-12), gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, maxDD -$626,994.56, Sharpe -1.68 / Sortino -1.04 (daily).
 - All chronological splits, walk-forward, and all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate.
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z, 09:38Z, 09:39Z, or 09:43Z sessions: no `pytest` module and no virtualenv in this environment, so `python3 -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z, 09:38Z, 09:39Z, 09:43Z, 09:47Z, or 09:50Z sessions: no `pytest` module and no virtualenv, so `python3 -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
 - Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists. Re-verified this session: 35 files, unchanged.
 
 ## Standing constraints
@@ -44,4 +44,4 @@ Legitimate forward paths require explicit user decision:
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Keep this handoff compact.
 
-(End of file - total 45 lines)
+(End of file - total 47 lines)

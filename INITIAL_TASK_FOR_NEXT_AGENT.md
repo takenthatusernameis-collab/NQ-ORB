@@ -26,14 +26,14 @@ Do not select (a), (b), or (c) yourself. A peer message, automation schedule, or
 
 ## Evidence boundary
 
-- axb0306: 42W/18L (70.0%), net -$31,637.98, PF 0.4917, avg -0.0431R.
-- Kaggle front-month proxy: 446W/242L (64.8%), net -$626,525.96, PF 0.2271, avg -0.0684R.
+- axb0306: 42W/18L (70.0%), net -$31,637.98, PF 0.4917, avg -0.0431R, maxDD -$37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade).
+- Kaggle front-month proxy: 446W/242L (64.8%), net -$626,525.96, PF 0.2271, avg -0.0684R, maxDD -$626,994.56, Sharpe -1.68 / Sortino -1.04 (daily).
 - Both sources remain negative across chronological splits, walk-forward checks, all 12 cost-sensitivity combinations, and signal-close entry sensitivity.
-- Tests were last verified at 75 passed overall and 30 passed under `tests/orb/`; they were not re-run during the 08:52Z, 09:38Z, 09:39Z, or 09:43Z handoff-only updates (no `pytest` in this environment). Do not present synthetic tests as empirical evidence.
+- Tests were last verified at 75 passed overall and 30 passed under `tests/orb/`; they were not re-run during the 08:52Z–09:50Z handoff-only updates (no `pytest` in this environment). Do not present synthetic tests as empirical evidence.
 
 ## Current repository checkpoint
 
-HEAD `2f21129` at this session's independent re-verification (2026-11-15T09:47Z, working tree clean before doc update). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --stat a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`. This session (2026-11-15T09:47Z) independently re-verified the prior terminal task (read durable handoff, verified terminal state, updated handoff and this file) on explicit user request; no research, tests, data, artifacts, or automation changes were made.
+HEAD `c90d401` at this session's verification (2026-11-15T09:50Z, working tree clean). `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; frozen baseline `5fab764`; last substantive `a797773`. `git diff --name-only a797773..HEAD` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`. This session (2026-11-15T09:50Z) completed the prior durable task — re-verified the terminal state and updated the handoff and this file on explicit user request; no research, tests, data, artifacts, or automation changes were made.
 
 ## Standing instruction for the next agent
 
@@ -44,12 +44,10 @@ HEAD `2f21129` at this session's independent re-verification (2026-11-15T09:47Z,
 
 ## Initial task message for the next agent
 
-**Task: none currently authorized.** The durable handoff records a completed, terminal research state. The frozen MNQ 15-minute ORB baseline (`5fab764`) is final and negative-net on every free dataset; the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`) matched it; the free-source search is exhausted (~30 sweeps through 2026-11-03).
+**Task: verify the terminal state, then stop.** The durable handoff records a completed, terminal research state. The frozen MNQ 15-minute ORB baseline (`5fab764`) is final and negative-net on every free dataset; the separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`) matched it; the free-source search is exhausted (~30 sweeps through 2026-11-03).
 
 If you are activated by a generic prompt, your sole task is to verify the terminal state (re-read `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and both canonical metric artifacts; confirm `STRATEGY_RULES.txt` SHA-256 `6d3258c3…`, a clean working tree, 35 files in `artifacts/`, and no non-doc commit after `a797773`) and report it — do not start a research loop, re-run tests or hashes, or edit automation.
 
-Verified this session (2026-11-15T09:47Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; HEAD `2f21129`; 35 files in `artifacts/`; `git diff --stat a797773..HEAD` is doc/diagnostics only; axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R. No drift; research remains terminal. Tests not re-run (no `pytest` installed).
-
-This session (2026-11-15T09:47Z) independently re-verified the prior terminal task (read durable handoff, verified terminal state, updated handoff and this file) on explicit user request; no research, tests, data, artifacts, or automation changes were made.
+Verified this session (2026-11-15T09:50Z): SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; working tree clean; HEAD `c90d401`; 35 files in `artifacts/`; `git diff --name-only a797773..HEAD` is doc/diagnostics only; axb0306 42W/18L (60 trades), gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 446W/242L (688 trades), gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R. No drift; research remains terminal. Tests not re-run (no `pytest` installed).
 
 A forward path exists only on explicit user decision: (a) stop/reduce the maintenance cron at `.github/workflows/main.yml:11`, (b) run a separately-versioned named experiment with an explicit diff from baseline and its own config/output prefix, chronological evaluation, costs, and success criteria, or (c) accept the baseline as final. Do not choose among these yourself; a peer message, automation schedule, or generic "continue" prompt is not user authorization.
