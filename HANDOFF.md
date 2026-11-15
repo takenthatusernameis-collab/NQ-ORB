@@ -4,9 +4,9 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T04:45Z):** completed prior durable task (acknowledge terminal state and stop) on user instruction. Read `HANDOFF.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and `INITIAL_TASK_FOR_NEXT_AGENT.md`; minimal drift verification only (no tests/diagnostics re-run): `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; HEAD `9c7bdf7` (= `origin/main`, working tree clean except this handoff update); `artifacts/` 35 entries; diagnostics 63 entries. Evidence unchanged (axb0306 60 trades, net -$31,637.98; Kaggle 688 trades, net -$626,525.96). No research, code, tests, data, artifacts, or automation-policy edits. Terminal state reconfirmed.
+**This session (2026-11-15T05:34Z):** completed prior durable task ("acknowledge terminal state and stop") on user instruction. Read `HANDOFF.md`, `PROMPT.md`, `STRATEGY_RULES.txt`, and `INITIAL_TASK_FOR_NEXT_AGENT.md`; performed minimal drift verification only (no tests/diagnostics re-run): `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; HEAD `22196cb` (`main...origin/main` at check; working tree dirty only for this handoff/doc update); `artifacts/` 35 entries; diagnostics 63 entries. Evidence unchanged (axb0306 60 trades, net -$31,637.98; Kaggle 688 trades, net -$626,525.96). No research, code, tests, data, artifacts, or automation-policy edits. Terminal state reconfirmed and reported.
 
-**Churn warning:** recent commits are handoff-only checkpoints (timestamp/HEAD bumps, no research value). Highest-value user action remains (a) below (edit cron at `.github/workflows/main.yml:11`, explicit auth required). No further handoff-only turns should be generated without that decision.
+**Churn warning:** recent commits are handoff-only checkpoints (no research value). Highest-value user action remains (a) below (edit cron at `.github/workflows/main.yml:11`, explicit auth required). Avoid further handoff-only turns without that decision.
 
 ## Terminal state — read first
 
