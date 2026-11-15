@@ -11,9 +11,9 @@
 5. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 6. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-15T17:31Z)
+## Current checkpoint (2026-11-15T17:33Z)
 
-HEAD at verification: `9bf062d` on `main` (0/0 vs `origin/main`), a harness doc-only checkpoint descending from `60d6e0b`, which descends from substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed. This session re-verified terminal state per explicit user request for a doc refresh; no research, data, tests, or automation changes. Working tree clean.
+HEAD at `7338c66` on `main` (0/0 vs `origin/main`), a doc-only checkpoint descending from `60d6e0b`, which descends from substantive `a797773`. Since `a797773` only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed. This session re-verified terminal state per explicit user request; no research, data, tests, or automation changes. Working tree clean.
 
 ## Note on handoff-only checkpoints
 
