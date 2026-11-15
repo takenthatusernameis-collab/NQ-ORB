@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete; awaiting user decision
 
-**This session (2026-11-15T19:45Z):** Explicit user request: read prior durable-handoff task, complete it (verify terminal state and report), then update `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Independent verification: HEAD `51d587a` on `main` (doc-only checkpoint, parent `1451458`), clean tree; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; `artifacts/` has 35 files and no `*manifest*`; canonical metrics re-read and unchanged (axb0306 60 trades 33L/27S, 42W/18L 70.0%, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67; Kaggle 688 trades 359L/329S, 446W/242L 64.8%, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04). No research/data/test/automation changes made. State unchanged and terminal; forward paths (a)/(b)/(c) remain gated on explicit user decision.
+**This session (2026-11-15T19:46Z):** Explicit user request: read prior durable-handoff task, complete it (verify terminal state and report), then update `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Independent verification: HEAD `f85bdb3` on `main` (doc-only checkpoint, parent `51d587a`), clean tree; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; `artifacts/` has 35 files and no `*manifest*`; canonical metrics re-read and unchanged (axb0306 60 trades 33L/27S, 42W/18L 70.0%, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67; Kaggle 688 trades 359L/329S, 446W/242L 64.8%, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04). No research/data/test/automation changes made. State unchanged and terminal; forward paths (a)/(b)/(c) remain gated on explicit user decision.
 
-**Earlier terminal-state doc checkpoints (2026-11-15):** HEADs `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00` (19:36Z), and `1451458` each repeated the same verification and found no state change. None is precedent for routine checkpoints absent explicit request or material change.
+**Earlier terminal-state doc checkpoints (2026-11-15):** HEADs `ed8f7b3`, `5df6b25`, `a5399d2`, `d2e8818`, `9b8a89c`, `0d54747`, `f2c1a51`, `da3814d`, `6ea13fa`, `7a3fcda`, `4d29d00` (19:36Z), `1451458`, `51d587a`, and `f85bdb3` each repeated the same verification and found no state change. None is precedent for routine checkpoints absent explicit request or material change.
 
 ## Baseline
 
@@ -33,4 +33,4 @@ Legitimate forward paths require explicit user decision:
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-(End of file - total 42 lines)
+(End of file - total 44 lines)
