@@ -12,7 +12,7 @@
 
 Note: `pytest` is not installed in this runner environment (`python -m pytest` -> No module named pytest). Do not treat that as a code failure; do not install dependencies or re-run tests without explicit user authorization.
 
-## Current checkpoint (2026-11-15T14:52Z, HEAD `2a73891`)
+## Current checkpoint (2026-11-15T14:53Z, HEAD `c244625`)
 
 Verified this session: SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (unchanged); working tree clean; `main` **0 ahead of `origin/main`** (0/0); `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty. Only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` changed since `a797773`. 35 files in `artifacts/`, no manifest (only `README.md`). Canonical metrics on disk re-extracted from JSON, no drift: axb0306 60 trades (60 completed) 42W/18L (70.0%), long 33 / short 27, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06 / Sortino -0.67, 12 cost combos (all negative); Kaggle 688 trades (688 completed) 446W/242L (64.8%), long 359 / short 329, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68 / Sortino -1.04, 12 cost combos (all negative). This session completed the terminal-state verification and refreshed both handoff documents per an explicit documentation request.
 
