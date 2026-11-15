@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T09:38Z):** completed the prior agent task (read durable handoff, verified terminal state, updated handoff and next-agent message). Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean, HEAD `0c97dd5` (automation diagnostics checkpoint; no non-doc research commits after `a797773`), 35 files in `artifacts/`, canonical metrics re-read and unchanged (axb0306 60 trades, 42W/18L, gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 688 trades, 446W/242L, gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R). No research, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Tests were **not** re-run: this environment has no `pytest` installed and no virtualenv, so the prior 75-passed result stands unverified this session. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only).
+**This session (2026-11-15T09:39Z):** completed the prior agent task (read durable handoff, verified terminal state, updated handoff and next-agent message). Verified: `STRATEGY_RULES.txt` SHA-256 unchanged (`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`), working tree clean, HEAD `a62d0d1` (Kilo checkpoint; no non-doc research commits after `a797773`), 35 files in `artifacts/`, canonical metrics re-read and unchanged (axb0306 60 trades, 42W/18L, gross -$7,662.00, net -$31,637.98, PF 0.4917, avg -0.0431R; Kaggle 688 trades, 446W/242L, gross -$140,899.00, net -$626,525.96, PF 0.2271, avg -0.0684R). No research, hashes/monitor checks, free-source sweep, data/artifact change, or automation edit performed. Tests were **not** re-run: this environment has no `pytest` installed and no virtualenv, so the prior 75-passed result stands unverified this session. Only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated (doc-only).
 
 **Prior sessions (2026-11-15T06:46Z–08:52Z):** repeated terminal-state verifications and doc-only handoff updates. No code/data/artifact change.
 
@@ -25,7 +25,7 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`. `STRATEGY_RULES.txt` SHA-256 re-verified this session: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc research commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `0c97dd5` at this session's verification; working tree clean.
+- **No non-doc research commits after `a797773`**. Diagnostics log appended by automation (non-substantive). Recent commits include automation checkpoints and doc-only handoff updates. Current HEAD `a62d0d1` at this session's verification; working tree clean.
 
 ## Evidence (frozen artifacts)
 
@@ -35,7 +35,7 @@ Legitimate forward paths require explicit user decision:
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z or 09:38Z sessions: no `pytest` module and no virtualenv in this environment, so `python -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` last verified 2026-11-15T02:03Z: **30 passed in 0.26s**. CI runs only controller/automation tests, not `tests/orb/`. Not re-run in the 08:52Z, 09:38Z, or 09:39Z sessions: no `pytest` module and no virtualenv in this environment, so `python -m pytest` fails with "No module named pytest". No code change since `a797773`, so results are expected unchanged but remain unverified in-session.
 - Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists. Re-verified this session: 35 files, unchanged.
 
 ## Standing constraints
