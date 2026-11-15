@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T02:07Z):** prior durable task ("acknowledge terminal state and stop") re-read and acknowledged at clean, in-sync `main` HEAD `a9e9225` (checkpoint commits since last substantive work are documentation-only). `STRATEGY_RULES.txt` SHA-256 re-confirmed as `6d3258c3…ad2b1`. No new research, code, tests, data checks, monitor sweeps, or automation changes. Canonical evidence remains `artifacts/metrics_axb0306.json` (net -$31,637.98) and `artifacts/metrics_kaggle.json` (net -$626,525.96). Terminal state confirmed; handoff/initial-task refreshed for next agent.
+**This session (2026-11-15T02:08Z):** prior durable task ("acknowledge terminal state and stop") completed at clean, in-sync `main` HEAD `29fe28d` (documentation-only checkpoint commits since last substantive work). `STRATEGY_RULES.txt` SHA-256 re-confirmed as `6d3258c3…ad2b1`. No new research, code, tests, data checks, monitor sweeps, or automation changes. Canonical evidence remains `artifacts/metrics_axb0306.json` (net -$31,637.98) and `artifacts/metrics_kaggle.json` (net -$626,525.96). Terminal state confirmed; next agent should stop unless explicit user authorization provides a forward path.
 
 ## Terminal state — read first
 
