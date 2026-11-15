@@ -17,3 +17,11 @@ If the user explicitly authorizes a forward path, they will specify which:
 - (c) accept baseline as final
 
 Until then: read `HANDOFF.md`, confirm terminal state, and exit cleanly.
+
+## Verification performed this session (2026-11-15T01:15Z, HEAD `37ce986`)
+
+- `git status` clean; branch in sync with `origin/main`.
+- `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified byte-for-byte.
+- `git diff a797773..HEAD --name-only` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only. No code/test/baseline/config/artifact changes.
+- `tests/orb/` re-run: **30 passed in 0.24s** (no regression; full suite 75 passed at 2026-11-15T01:04Z).
+- Artifacts intact: 35 files, incl. `metrics_axb0306.json` (net -$31,637.98) and `metrics_kaggle.json` (net -$626,525.96).

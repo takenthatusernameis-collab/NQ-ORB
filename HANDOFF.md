@@ -4,7 +4,7 @@
 
 **Last substantive commit:** `a797773` (2026-11-09 05:44Z). Baseline frozen at `5fab764`; only substantive post-baseline work is separately-versioned 1-minute experiment `orb_mnq_1m_wf_v1` (`ae3c49f`, `a797773`). `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 
-**This session (2026-11-15T01:13Z):** prior durable task ("report terminal state and stop") re-verified and completed read-only at HEAD `ebf6a01` (`main`, clean, in sync with `origin/main`). Checks: `git status` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified byte-for-byte; no non-doc/code/test/baseline/config/artifact changes since `a797773` (`git diff a797773..HEAD --name-only` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only). Canonical artifacts present (35 files in `artifacts/`, incl. `metrics_axb0306.json`, `metrics_kaggle.json`). No tests/hashes/monitor re-run per terminal instruction (last suite: 75 passed, 2026-11-15T01:04Z). No new evidence or code. Handoff and initial task refreshed.
+**This session (2026-11-15T01:15Z):** prior durable task ("report terminal state and stop") re-verified and completed read-only at HEAD `37ce986` (`main`, clean, in sync with `origin/main`). Checks: `git status` clean; `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` verified byte-for-byte; no non-doc/code/test/baseline/config/artifact changes since `a797773` (`git diff a797773..HEAD --name-only` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only). Canonical artifacts present (35 files in `artifacts/`, incl. `metrics_axb0306.json`, `metrics_kaggle.json`). `tests/orb/` re-run this session: **30 passed in 0.24s** (no regression; full suite was 75 passed at 2026-11-15T01:04Z). No new evidence or code. Handoff and initial task refreshed.
 
 ## Terminal state — read first
 
@@ -21,17 +21,17 @@ Legitimate forward paths require explicit user decision:
 
 - **Frozen baseline**: `STRATEGY_RULES.txt` v1.0 + `config/orb_mnq_15m_showcase.yaml`; last baseline commit `5fab764`. Primary artifacts: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`.
 - **Separate 1-minute experiment `orb_mnq_1m_wf_v1`** (`ae3c49f`, `a797773`): additive `flatten_fill='open'`; byte-identical to 15m baseline (axb0306 net -$31,637.98; kaggle net -$626,525.96). No trade binds on 15:55 ET flatten. Does not modify frozen baseline.
-- **No non-doc commits after `a797773`**. `research_state/workflow_run_diagnostics.jsonl` appended by automation (non-substantive).
+- **No non-doc commits after `a797773`**. `research_state/workflow_run_diagnostics.jsonl` appended by automation (non-substantive); 62 entries, last captured run 2026-11-14T21:58:42Z (success, run 43612571731).
 
 ## Evidence (frozen artifacts)
 
-- axb0306 (`artifacts/metrics_axb0306.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80.
+- axb0306 (`artifacts/metrics_axb0306.json`): 42W/18L (70%), 33 long / 27 short, gross -$7,662, net -$31,637.98, costs $23,975.98, PF 0.4917, expectancy -0.0431R, maxDD -$37,491.80, Sharpe -1.06 / Sortino -0.67 (per-trade), worst day -$3,811.28 (2026-01-27). All 12 cost-sensitivity combos and signal-close sensitivity negative.
 - Kaggle proxy (`artifacts/metrics_kaggle.json`, 446W/242L, 64.8%, 688 trades 2022-11-16..2025-11-12): gross -$140,899, net -$626,525.96, costs $485,626.96, PF 0.2271, expectancy -0.0684R, Sharpe -1.68 / Sortino -1.04 (daily), worst day -$4,789.80.
 - All chronological splits, walk-forward, and all 12 cost-sensitivity combos negative. Driver: costs ($2.87/side + 1-tick adverse slippage) dominate; 0.4R target needs >71.43% pre-cost win rate.
 
 ## Test/manifest status
 
-- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. CI runs only controller/automation tests, not `tests/orb/`.
+- Full suite last verified 2026-11-15T01:04Z: **75 passed in 0.75s**. `tests/orb/` re-verified this session: **30 passed in 0.24s**. CI runs only controller/automation tests, not `tests/orb/`.
 - Canonical artifacts: 35 files in `artifacts/` (34 JSON + `README.md`). No `*manifest*` file exists.
 
 ## Standing constraints
@@ -40,4 +40,4 @@ Legitimate forward paths require explicit user decision:
 - Do not modify `STRATEGY_RULES.txt`, configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Keep this handoff compact.
 
-(End of file - total 41 lines)
+(End of file - total 43 lines)
