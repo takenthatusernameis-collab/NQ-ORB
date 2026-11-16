@@ -4,7 +4,7 @@
 
 **This session (2026-11-16, Kilo):** Completed the explicit user request: “Read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent.” Re-verified current repo state from the working tree.
 
-- `git rev-parse --short HEAD`: `03b319a`
+- `git rev-parse --short HEAD`: `6d58636` (checkpoint commit; `a797773` is an ancestor, zero research drift)
 - `git status --short`: clean (no uncommitted changes)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (matches frozen v1.0)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (no research/data/test/automation source drift since last substantive commit `a797773`)
@@ -12,7 +12,7 @@
 - Canonical metrics unchanged (re-read from artifacts JSON):
   - `artifacts/metrics_axb0306.json`: trade_count 60 (42W/18L, 70.0%), long 33/short 27, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
   - `artifacts/metrics_kaggle.json`: trade_count 688 (446W/242L, 64.83%), long 359/short 329, net_pnl -626525.96, costs 275113.96, profit_factor 0.2271, avg_r -0.0684
-- `python3 -m pytest -q`: not run here if unavailable; last recorded suite result in prior sessions: **75 passed**. No research/test/artifact/source files modified this session.
+- `python3 -m pytest -q`: pytest not installed in this environment (`No module named pytest`), suite could not run here; last recorded suite result in prior sessions: **75 passed**. No research/test/artifact/source files modified this session.
 
 State remains **terminal**. Forward work requires an explicit user decision.
 
