@@ -4,7 +4,7 @@
 
 **This session (2026-11-16, Kilo):** Completed the durable handoff task — verified terminal repo state. No research, source, config, raw data, or artifact changes made. Handoff and next-agent task docs updated with confirmed state.
 
-- `git rev-parse --short HEAD`: `9497c26` (verified state `5b5b71b`, then handoff checkpoint commit); clean working tree
+- `git rev-parse --short HEAD`: `9497c26`; clean working tree (`git status --short` empty)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit)
 - `artifacts/`: 35 files; no `*manifest*` files
@@ -29,7 +29,7 @@ State remains **terminal**. Forward work requires an explicit user decision.
 
 Repeated independent verifications (2026-11-16, Kilo sessions) consistently confirmed frozen rules hash, zero research-source drift vs `a797773`, 35 artifacts/no manifests, and unchanged canonical metrics. HEAD advanced only via `chore(kilo): checkpoint agent session` commits touching handoff docs; no research drift introduced. Full test suite last recorded passing in pytest-available environments: **75 passed**. Recent environments may lack pytest. Earlier checkpoint-only entries carried no research changes; this handoff keeps essential evidence.
 
-- **2026-11-16 (final Kilo session, `9497c26`):** Re-ran all verification commands against verified state `5b5b71b`. `git status --short` clean; `sha256sum STRATEGY_RULES.txt` = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; `artifacts/` 35 files, 0 manifests; canonical metrics re-read and unchanged (axb0306: 60 trades, net_pnl -31637.98, PF 0.4917, avg_r -0.0431; kaggle: 688 trades, net_pnl -626525.96, PF 0.2271, avg_r -0.0684); pytest absent (`No module named pytest`). No research, source, config, raw data, or artifact changes. Only handoff/next-agent docs touched; checkpoint commit `9497c26` follows.
+- **2026-11-16 (final Kilo session):** Re-ran all verification commands. `git status --short` clean; `sha256sum STRATEGY_RULES.txt` = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; `artifacts/` 35 files, 0 manifests; canonical metrics re-read and unchanged (axb0306: 60 trades, net_pnl -31637.98, PF 0.4917, avg_r -0.0431; kaggle: 688 trades, net_pnl -626525.96, PF 0.2271, avg_r -0.0684); pytest absent (`No module named pytest`). No research, source, config, raw data, or artifact changes. Only handoff/next-agent docs touched across checkpoint commits `9497c26` and `e4d8d22`.
 
 ## Required action for next agent
 
