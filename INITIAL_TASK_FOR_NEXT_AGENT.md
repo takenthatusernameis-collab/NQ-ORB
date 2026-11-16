@@ -21,7 +21,7 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 
 ## Current checkpoint (2026-11-16, this session)
 
-Verified terminal state on current working tree (HEAD `b1f8c0e` at verification start; `git status --short` clean):
+Verified terminal state on current working tree (HEAD `730da4e` at verification start; `git status --short` clean):
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
