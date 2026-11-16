@@ -21,13 +21,13 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 
 ## Current checkpoint (2026-11-16, this session)
 
-Independently re-verified terminal state on current working tree (HEAD `77c26da`; `git status --short` clean before doc refresh). All checks pass:
+Independently re-verified terminal state on current working tree (HEAD `7bfc3a4`; `git status --short` clean before doc refresh). All checks pass:
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
 - Canonical metrics re-read unchanged in-file: axb0306 trade_count=60, wins=42, losses=18, win_rate=0.70, long_trades=33, short_trades=27, net -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle trade_count=688, wins=446, losses=242, win_rate=0.6483, long_trades=359, short_trades=329, net -$626,525.96, PF 0.2271, avg R -0.0684
 
-This session's task (independent terminal-state verification + durable-doc refresh, explicitly requested) completed. HEAD advanced `81eb6e9`→`77c26da`; `git diff --name-only 81eb6e9 77c26da` touched only HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
+This session's task (independent terminal-state verification + durable-doc refresh, explicitly requested) completed. HEAD advanced `77c26da`→`7bfc3a4`; `git diff --name-only 77c26da 7bfc3a4` touched only HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
 ## Conditional forward paths (explicit user decision only)
 
