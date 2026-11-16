@@ -3,17 +3,18 @@
 ## Context
 The NQ ORB research is **COMPLETE and TERMINAL**. The frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset (axb0306 and Kaggle proxy). The 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results. Free-source search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 
-## Current State
+## Current State (verified this session, HEAD `1bd0606`)
 - **STRATEGY_RULES.txt** v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
 - **Baseline commit**: `5fab764`; **Last substantive research commit**: `a797773`
+- **Working tree**: clean (`git status --short` empty); `git diff a797773..HEAD` on artifacts/config/src/tests/raw/data/scripts is empty
 - **Artifacts**: 35 files in `artifacts/`, no manifest, metrics unchanged
-- **Tests**: 75 passed (full suite green)
+- **Tests**: 75 passed (full suite green, ~0.73s)
 - **Canonical metrics**:
-  - axb0306: 60 trades, 70% win rate, net -$31,637.98, PF 0.4917, avg R -0.0431
+  - axb0306: 60 trades, 70.0% win rate, net -$31,637.98, PF 0.4917, avg R -0.0431
   - Kaggle: 688 trades, 64.8% win rate, net -$626,525.96, PF 0.2271, avg R -0.0684
 
 ## Your Task
-**Do not start autonomous research.** The correct action is to **report terminal state and await explicit user decision**.
+**Do not start autonomous research and do not add handoff-only checkpoints on generic prompts.** The correct action is to **report terminal state and await explicit user decision**. Repeated doc-only checkpoints add no new state.
 
 Legitimate forward paths (require explicit user authorization):
 - **(a)** Stop/reduce maintenance automation (cron at `.github/workflows/main.yml:11`)
@@ -25,7 +26,6 @@ Legitimate forward paths (require explicit user authorization):
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
 - Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
-- Do not create further handoff-only checkpoints on generic prompts; repeated doc-only checkpoints add no new state.
 
 ## Verification Commands (for reference)
 ```bash
