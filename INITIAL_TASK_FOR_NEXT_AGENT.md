@@ -21,14 +21,13 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 
 ## Current checkpoint (2026-11-16, this session)
 
-Verified terminal state on current working tree (HEAD `5f5a8ad` at verification start, 2026-11-16 04:29Z; `git status --short` clean):
+Verified terminal state on current working tree before this doc refresh (HEAD `d1ae810`, 2026-11-16 04:31Z; `git status --short` clean):
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
-- `git status --short` -> clean before this doc refresh
-- Canonical metrics re-read from source JSON, unchanged: axb0306 trade_count=60, wins=42, losses=18, win_rate=0.70, long_trades=33, short_trades=27, gross_pnl=-7662.00, net_pnl=-31637.98, costs=23975.98, avg_r=-0.0431, profit_factor=0.4917, max_drawdown_usd=37491.80, sharpe_r=-1.056, sortino_r=-0.668, exposure_pct=10.29%; Kaggle trade_count=688, wins=446, losses=242, win_rate=0.6483, long_trades=359, short_trades=329, gross_pnl=-140899.00, net_pnl=-626525.96, costs=485626.96, avg_r=-0.0684, profit_factor=0.2271, max_drawdown_usd=626994.56, sharpe_r=-1.680, sortino_r=-1.042, exposure_pct=8.07%
+- Canonical metrics re-read unchanged: axb0306 trade_count=60, wins=42, losses=18, win_rate=0.70, long_trades=33, short_trades=27, gross_pnl=-7662.00, net_pnl=-31637.98, costs=23975.98, avg_r=-0.0431, profit_factor=0.4917, max_drawdown_usd=37491.80, sharpe_r=-1.056, sortino_r=-0.668, exposure_pct=10.29%; Kaggle trade_count=688, wins=446, losses=242, win_rate=0.6483, long_trades=359, short_trades=329, gross_pnl=-140899.00, net_pnl=-626525.96, costs=485626.96, avg_r=-0.0684, profit_factor=0.2271, max_drawdown_usd=626994.56, sharpe_r=-1.680, sortino_r=-1.042, exposure_pct=8.07%
 
-No research/data/test/automation changes made this session. `python -m pytest` unavailable (not installed); not authorized to install/run. Durable docs refreshed per explicit user request; state remains terminal.
+Prior handoff task (independent verification + durable-doc refresh) completed. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
 ## Conditional forward paths (explicit user decision only)
 
