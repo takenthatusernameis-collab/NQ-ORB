@@ -9,7 +9,8 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-16)
 
-- `git rev-parse --short HEAD`: `b08aa16`; working tree clean (`git status --short` empty).
+- `git rev-parse --short HEAD`: `75822f2`; working tree clean (`git status --short` empty).
+- `git diff --name-only b08aa16..75822f2`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
@@ -51,8 +52,10 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 Repeated independent Kilo verifications (2026-10-31 through 2026-11-16) all confirmed the same
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
-session` commits touching handoff / next-agent docs; no research drift. Granular per-session entries
-are preserved in git history.
+session` and `chore(kilo): consolidate terminal-state handoff...` commits touching handoff /
+next-agent docs; no research drift. Latest: `75822f2` re-verified 2026-11-16 (rules hash
+`6d3258c3...`, zero drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
+Granular per-session entries are preserved in git history.
 
 ## Required action for next agent
 
