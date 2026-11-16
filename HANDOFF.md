@@ -4,7 +4,7 @@
 
 **This session (2026-11-16, Kilo):** Completed the explicit user request: “Read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent.” Re-verified current repo state from the working tree.
 
-- `git rev-parse --short HEAD`: `3135f9c`
+- `git rev-parse --short HEAD`: `03b319a`
 - `git status --short`: clean (no uncommitted changes)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (matches frozen v1.0)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (no research/data/test/automation source drift since last substantive commit `a797773`)
@@ -38,6 +38,13 @@ Legitimate forward paths (only with explicit user authorization):
 - **(a)** Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron) — requires explicit authorization for that exact change.
 - **(b)** Run a separately versioned, named experiment with explicit diff from frozen baseline (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1) — requires explicit user authorization and a named experiment design.
 - **(c)** Accept baseline as final — requires explicit user confirmation.
+
+## Initial task for next agent
+
+1. Run verification commands in "Verification commands" section to confirm terminal state.
+2. Report: frozen rules hash, zero drift vs `a797773`, 35 artifacts/no manifests, canonical metrics unchanged, test suite status.
+3. State: "Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."
+4. Do not initiate research, experiments, or automation changes without explicit user authorization.
 
 ## Hard constraints
 
