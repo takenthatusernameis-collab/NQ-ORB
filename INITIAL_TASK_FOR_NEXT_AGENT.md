@@ -19,9 +19,11 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16T01:26:11Z)
+## Current checkpoint (2026-11-16T01:28:41Z)
 
-HEAD at verification: `e7191e9` on `main`. This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `bb910ff` on `main`. This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684); no research, data, tests, or automation changes. State unchanged and terminal.
+
+**Prior checkpoint (2026-11-16T01:26:11Z):** doc-only refresh from HEAD `e7191e9`, same terminal finding.
 
 **Prior checkpoint (2026-11-16T01:24:52Z):** doc-only refresh from HEAD `e7191e9`, same terminal finding.
 
