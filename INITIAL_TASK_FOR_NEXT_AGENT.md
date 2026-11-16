@@ -1,28 +1,40 @@
 # Initial Task for Next Agent
 
 ## Context
-The NQ/MNQ Opening Range Breakout research is **COMPLETE and TERMINAL**. The frozen baseline (STRATEGY_RULES.txt v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) has been independently verified 31 times with identical results (latest: HEAD `c9988bc`, 2026-11-16; full test suite green: **75 passed**).
+The NQ ORB research is **COMPLETE and TERMINAL**. The frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset (axb0306 and Kaggle proxy). The 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results. Free-source search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 
-## Canonical Results (Frozen)
-- **axb0306** (60 trades, Jan–Apr 2026): 70% win rate, net P&L **-$31,637.98**, profit factor **0.49**, avg R **-0.043**
-- **Kaggle proxy** (688 trades, Nov 2022–Nov 2025): 64.8% win rate, net P&L **-$626,525.96**, profit factor **0.23**, avg R **-0.068**
-- All 12 cost-sensitivity combinations and signal-close sensitivities are negative on both datasets.
-- Costs ($2.87/side + 1-tick adverse slippage) dominate; the 0.4R target requires >71.43% pre-cost win rate.
+## Current State
+- **STRATEGY_RULES.txt** v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
+- **Baseline commit**: `5fab764`; **Last substantive research commit**: `a797773`
+- **Artifacts**: 35 files in `artifacts/`, no manifest, metrics unchanged
+- **Tests**: 75 passed (full suite green)
+- **Canonical metrics**:
+  - axb0306: 60 trades, 70% win rate, net -$31,637.98, PF 0.4917, avg R -0.0431
+  - Kaggle: 688 trades, 64.8% win rate, net -$626,525.96, PF 0.2271, avg R -0.0684
 
 ## Your Task
-**DO NOT start any new research, data acquisition, testing, or automation changes.**
+**Do not start autonomous research.** The correct action is to **report terminal state and await explicit user decision**.
 
-The research task is complete. The only valid next actions require **explicit user decision**:
+Legitimate forward paths (require explicit user authorization):
+- **(a)** Stop/reduce maintenance automation (cron at `.github/workflows/main.yml:11`)
+- **(b)** Run a separately-versioned named experiment with explicit diff from baseline (e.g., far-side-of-range stop per `STRATEGY_RULES.txt` §2.1)
+- **(c)** Accept baseline as final
 
-1. **(a) Stop/reduce maintenance automation** — Disable the cron in `.github/workflows/main.yml:11` (requires explicit user authorization for that exact change)
-2. **(b) Run a separately-versioned named experiment** — e.g., far-side-of-range stop per `STRATEGY_RULES.txt` §2.1, with an explicit diff from the frozen baseline
-3. **(c) Accept baseline as final** — No further work
-
-## Standing Constraints (Non-Negotiable)
+## Hard Constraints
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
-- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts. Any strategy change = separately named, versioned experiment with explicit diff from baseline.
+- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
+- Any strategy change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
-- Do not create further handoff-only checkpoints on generic prompts; repeated doc-only checkpoints have added no new state.
+- Do not create further handoff-only checkpoints on generic prompts; repeated doc-only checkpoints add no new state.
+
+## Verification Commands (for reference)
+```bash
+git status --short                              # should be clean
+sha256sum STRATEGY_RULES.txt                    # should match frozen hash
+git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts  # empty
+ls artifacts | wc -l                            # 35
+python3 -m pytest                               # 75 passed
+```
 
 ## Expected Output
-Report the terminal state to the user and await their explicit decision on (a), (b), or (c). Do not proceed without it.
+Report terminal state verification and present the three forward paths (a)/(b)/(c) for user decision. Do not proceed without explicit user direction.
