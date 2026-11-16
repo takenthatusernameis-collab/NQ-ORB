@@ -21,7 +21,7 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 
 ## Current checkpoint (2026-11-16, this session)
 
-Independently re-verified terminal state on current working tree (HEAD `de1dd4a`, controller checkpoint after `5fa2e34`; `git status --short` clean). All checks pass:
+Independently re-verified terminal state on current working tree (HEAD `2f1df3e`, controller checkpoint after `de1dd4a`; `git status --short` clean). All checks pass:
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
