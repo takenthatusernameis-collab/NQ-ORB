@@ -9,11 +9,11 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-16)
 
-- `git rev-parse --short HEAD`: `4d1330a`; working tree clean (`git status --short` empty).
-- `git diff --name-only a0c27c3..4d1330a`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
-- `git diff --name-only ad56aee..4d1330a`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
-- `git diff --name-only b08aa16..4d1330a`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
-- `git diff --name-only 557879f..4d1330a`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git rev-parse --short HEAD`: `ad30e49`; working tree clean (`git status --short` empty).
+- `git diff --name-only a0c27c3..ad30e49`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git diff --name-only ad56aee..ad30e49`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git diff --name-only b08aa16..ad30e49`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
+- `git diff --name-only 557879f..ad30e49`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
 - `git diff --name-only a797773..9cef30a`: only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (the diagnostics file is runtime/controller log capture, not research code or data).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
@@ -59,7 +59,7 @@ Repeated independent Kilo verifications (2026-10-31 through 2026-11-16) all conf
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` and `chore(kilo): consolidate terminal-state handoff...` commits touching handoff /
-next-agent docs; no research drift. Latest: `4d1330a` re-verified 2026-11-16 (rules hash
+next-agent docs; no research drift. Latest: `ad30e49` re-verified 2026-11-16 (rules hash
 `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
 Granular per-session entries are preserved in git history.
 
