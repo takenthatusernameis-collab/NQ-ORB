@@ -7,25 +7,27 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-16)
+## Verified state (re-verified this session, 2026-11-16, HEAD `f9ec9a3`)
 
-- `git rev-parse --short HEAD`: `fae7e2c`; working tree clean (`git status --short` empty).
-- `git diff --name-only a0c27c3..fae7e2c`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
-- `git diff --name-only ad56aee..fae7e2c`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
-- `git diff --name-only b08aa16..fae7e2c`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
-- `git diff --name-only 557879f..fae7e2c`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git rev-parse --short HEAD`: `f9ec9a3`; working tree clean (`git status --short` empty).
+- `git diff --name-only fae7e2c..f9ec9a3`: only `HANDOFF.md` and
+  `research_state/workflow_run_diagnostics.jsonl` (checkpoint/consolidation + controller runtime log
+  capture; no research drift).
+- `git diff --name-only a0c27c3..f9ec9a3`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git diff --name-only ad56aee..f9ec9a3`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
+- `git diff --name-only b08aa16..f9ec9a3`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
+- `git diff --name-only 557879f..f9ec9a3`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (checkpoint commits; no research drift).
 - `git diff --name-only a797773..9cef30a`: only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (the diagnostics file is runtime/controller log capture, not research code or data).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite: `python3 -m pytest tests -q` -> **75 passed** (pytest + pandas already installed this session; matches the last recorded pass in pytest-available environments).
+- Test suite: `python3 -m pytest tests -q` -> **75 passed** (pytest + pandas installed this session to run it; matches the last recorded pass in pytest-available environments).
 - Raw data SHA-256 (all unchanged):
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
   - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
   - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
-- Test suite: `python3 -m pytest tests -q` -> **75 passed** (pytest + pandas installed this session to run it; matches the last recorded pass in pytest-available environments).
 
 ## Canonical metrics (unchanged; re-read from artifacts this session)
 
@@ -59,7 +61,7 @@ Repeated independent Kilo verifications (2026-10-31 through 2026-11-16) all conf
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` and `chore(kilo): consolidate terminal-state handoff...` commits touching handoff /
-next-agent docs; no research drift. Latest: `ad30e49` re-verified 2026-11-16 (rules hash
+next-agent docs; no research drift. Latest: `f9ec9a3` re-verified 2026-11-16 (rules hash
 `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
 Granular per-session entries are preserved in git history.
 
