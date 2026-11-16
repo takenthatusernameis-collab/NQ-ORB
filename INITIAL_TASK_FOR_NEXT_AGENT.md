@@ -1,7 +1,7 @@
 # Initial Task for Next Agent
 
 ## Context
-The NQ/MNQ Opening Range Breakout research is **COMPLETE and TERMINAL**. The frozen baseline (STRATEGY_RULES.txt v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) has been independently verified 26 times with identical results.
+The NQ/MNQ Opening Range Breakout research is **COMPLETE and TERMINAL**. The frozen baseline (STRATEGY_RULES.txt v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) has been independently verified 27 times with identical results (latest: HEAD `56296e4`, 2026-11-16).
 
 ## Canonical Results (Frozen)
 - **axb0306** (60 trades, Jan–Apr 2026): 70% win rate, net P&L **-$31,637.98**, profit factor **0.49**, avg R **-0.043**
