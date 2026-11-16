@@ -4,8 +4,7 @@
 
 The NQ/MNQ opening-range-breakout research is **complete and frozen**. Verified this session (2026-11-16, Kilo) against the working tree:
 
-- `git rev-parse --short HEAD`: `6d58636` (clean working tree; `a797773` is an ancestor, zero research drift)
-- **Strategy rules**: `STRATEGY_RULES.txt` v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
+- `git rev-parse --short HEAD`: `36f6dec` (clean working tree; `a797773` is an ancestor, zero research drift)- **Strategy rules**: `STRATEGY_RULES.txt` v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
 - **Zero drift**: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` is empty (no research/source changes since last substantive commit `a797773`)
 - **Artifacts**: 35 files in `artifacts/`, no `*manifest*` files
 - **Results (canonical, from artifacts JSON)**:
