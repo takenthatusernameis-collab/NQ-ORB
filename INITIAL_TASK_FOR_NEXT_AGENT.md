@@ -19,11 +19,11 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16T01:37:54Z)
+## Current checkpoint (2026-11-16T02:25:51Z)
 
-HEAD at verification: `3fbf917` on `main` (prior doc-only checkpoint `7f3c7c3` beneath it). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged at `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, empty substantive diff from `a797773`, 35 `artifacts/` files with no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 42W/18L 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 446W/242L 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684). No research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `2ce8bea` on `main` (prior doc-only checkpoint `3fbf917` beneath it). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged at `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`, empty substantive diff from `a797773`, 35 `artifacts/` files with no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 42W/18L 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 446W/242L 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684). No research, data, tests, or automation changes. State unchanged and terminal.
 
-**Prior doc-only checkpoints (2026-11-16):** `3fbf917`, `7f3c7c3`, `c1f5ec0`, `a608225`, `fb60c79`, `3861a7d`, `bb910ff`, `e7191e9`, `ece2d95`, `4ab83a0`, `19391a1`, `18df1a3`, `541743a`, `ae2a04b`, `9205d7b`, `d945163`, `27f9d6d`, `a69d153`, plus earlier 2026-11-15 checkpoints — all verified the same unchanged, terminal state.
+**Prior doc-only checkpoints (2026-11-16):** `2ce8bea`, `3fbf917`, `7f3c7c3`, `c1f5ec0`, `a608225`, `fb60c79`, `3861a7d`, `bb910ff`, `e7191e9`, `ece2d95`, `4ab83a0`, `19391a1`, `18df1a3`, `541743a`, `ae2a04b`, `9205d7b`, `d945163`, `27f9d6d`, `a69d153`, plus earlier 2026-11-15 checkpoints — all verified the same unchanged, terminal state.
 
 ## Conditional forward paths (explicit user decision only)
 
