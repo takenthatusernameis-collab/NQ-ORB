@@ -25,14 +25,19 @@ Confirm terminal repository state and await explicit user decision on forward pa
 - Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Session Verification (2026-11-16, Kilo)
-- `git rev-parse --short HEAD`: `2c303fb`; clean working tree (`git status --short` empty)
-- HEAD advanced only via `chore(kilo): checkpoint agent session` commit `2c303fb` touching handoff docs; no research drift vs `a4a83e7`
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty
-- `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
+## Session Verification (2026-11-16, Kilo — durable handoff task completed)
+- `git rev-parse --short HEAD`: `39d7549`; clean working tree (`git status --short` empty)
+- `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `artifacts/`: 35 files, 0 manifest files
 - `metrics_axb0306.json`: 60 trades, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
 - `metrics_kaggle.json`: 688 trades, net_pnl -626525.96, costs 485626.96, profit_factor 0.2271, avg_r -0.0684
 - `python3 -m pytest -q`: pytest not installed in this environment; last recorded pass: 75 passed
+
+## Required action for next agent
+1. Run verification commands in `HANDOFF.md` (Verification commands) to confirm terminal state.
+2. Report: frozen rules hash, zero drift vs `a797773`, 35 artifacts/no manifests, canonical metrics unchanged, test suite status.
+3. State: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
+4. Do not initiate research, experiments, automation changes, or handoff-only checkpoints on generic prompts without explicit user authorization.
 
 (End of file - total 48 lines)
