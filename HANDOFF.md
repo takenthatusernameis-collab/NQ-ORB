@@ -7,13 +7,13 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-16, HEAD `ecd9386`)
+## Verified state (re-verified this session, 2026-11-16, HEAD `70d3576`)
 
-- `git rev-parse --short HEAD`: `ecd9386`; working tree clean (`git status --short` empty).
-  `ecd9386` ("chore(kilo): checkpoint agent session") touches only `HANDOFF.md` and
+- `git rev-parse --short HEAD`: `70d3576`; working tree clean (`git status --short` empty) before this
+  edit. `70d3576` ("chore(kilo): checkpoint agent session") touches only `HANDOFF.md` and
   `INITIAL_TASK_FOR_NEXT_AGENT.md` (doc-only checkpoint; no research drift). Prior handoff HEAD
-  `9184ed9`; diff `9184ed9..ecd9386` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`; `a797773..ecd9386` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`).
+  `ecd9386`; diff `ecd9386..70d3576` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`; `a797773..70d3576` touches only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
@@ -65,11 +65,6 @@ Granular per-session entries are preserved in git history.
 
 **Do not start autonomous research and do not create handoff-only checkpoints on generic prompts.**
 Report the terminal state and await an explicit user decision.
-
-Legitimate forward paths (only with explicit user authorization):
-- **(a)** Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron) — requires explicit authorization for that exact change.
-- **(b)** Run a separately versioned, named experiment with an explicit diff from the frozen baseline (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1) — requires explicit authorization and a named experiment design.
-- **(c)** Accept the baseline as final — requires explicit user confirmation.
 
 ## Hard constraints
 
