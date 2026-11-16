@@ -10,11 +10,12 @@ The frozen MNQ 15-minute ORB baseline (STRATEGY_RULES.txt v1.0) is implemented, 
 and evaluated on all available free data. It is negative-net on every dataset under full costs, and
 the free-data search is exhausted. Research is complete — do not invent new work.
 
-## Current state (re-verified 2026-11-16, HEAD `3debc6d`)
+## Current state (re-verified 2026-11-16, HEAD `7cc2f09`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean
-- Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`
+- HEAD `7cc2f09` is a `chore(kilo): checkpoint agent session` commit touching only HANDOFF.md and
+  INITIAL_TASK_FOR_NEXT_AGENT.md; zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
   - `metrics_axb0306.json`: 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg_r -0.0431
