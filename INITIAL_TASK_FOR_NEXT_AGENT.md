@@ -29,6 +29,8 @@ Independently re-verified terminal state on current working tree (HEAD `38b37fd`
 
 This session's task (independent terminal-state verification + durable-doc refresh) completed. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
+**Repeat verification (same session, same tree):** HEAD `38b37fd`; `git status --short` clean; all four verification checks pass identically; canonical metrics unchanged; no changes made. State remains terminal.
+
 ## Conditional forward paths (explicit user decision only)
 
 - **(a) Stop/reduce maintenance automation:** change only specifically authorized automation policy (cron at `.github/workflows/main.yml:11`), verify without activating duplicate workflows.
