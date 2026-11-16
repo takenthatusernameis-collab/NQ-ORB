@@ -12,16 +12,16 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
    - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
    - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty
    - `ls artifacts | wc -l` -> `35`, and no `*manifest*` file
-   - `git status --short` -> clean
-   - canonical metrics unchanged (axb0306 60 trades 42W/18L 70.0%, net -$31,637.98, PF 0.4917, avg R -0.0431, maxDD $37,491.80, Sharpe -1.06/Sortino -0.67; Kaggle 688 trades 446W/242L 64.8%, net -$626,525.96, PF 0.2271, avg R -0.0684, maxDD $626,994.56, Sharpe -1.68/Sortino -1.04)
+   - `git status --short` -> clean at verification (before any doc-only refresh you choose to make)
+   - canonical metrics unchanged in-file (axb0306 60 trades 42W/18L 70.0%, net -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades 446W/242L 64.8%, net -$626,525.96, PF 0.2271, avg R -0.0684)
 2. Report that research is complete and terminal, then stop. Do **not** infer a new research task from automation or a generic "continue" prompt.
 3. Do **not** repeat free-source sweeps, hashes, monitors, or tests without explicit user request. `python -m pytest` is not installed in this runner; do not install dependencies or re-run tests without authorization.
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16T00:25:26Z)
+## Current checkpoint (2026-11-16T00:26:45Z)
 
-HEAD at verification: `27f9d6d` on `main` (doc-only checkpoint commits since last substantive `a797773` touch only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 `6d3258...ad2b1` unchanged, empty substantive diff from `a797773` incl. `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `ae2a04b` on `main` (commits since last substantive `a797773` touch only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
 
 ## Conditional forward paths (explicit user decision only)
 
