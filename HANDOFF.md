@@ -4,8 +4,7 @@
 
 **This session (2026-11-16, Kilo):** Completed the prior agent task from the durable handoff: re-verified terminal repo state and refreshed handoff/next-agent task. No research, source, config, raw data, or artifact changes were made.
 
-- `git rev-parse --short HEAD`: `8ceda17` (`chore(kilo): checkpoint agent session`); clean working tree (`git status --short` empty)
-- Delta `f28042a..HEAD` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (no research/source/artifact/config change)
+- `git rev-parse --short HEAD`: `80e0bbe` (`chore(kilo): checkpoint agent session`); clean working tree (`git status --short` empty)- Delta `f28042a..HEAD` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (no research/source/artifact/config change)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `artifacts/`: 35 files; no `*manifest*` files
@@ -28,7 +27,7 @@ State remains **terminal**. Forward work requires an explicit user decision.
 
 ## Prior session trail (condensed)
 
-Repeated independent verifications (2026-11-16, Kilo sessions) consistently confirmed frozen rules hash, zero research-source drift vs `a797773`, 35 artifacts/no manifests, and unchanged canonical metrics. HEAD advanced to `8ceda17` only via `chore(kilo): checkpoint agent session` commits touching the two handoff docs; no research drift introduced. Full test suite last recorded passing in pytest-available environments: **75 passed**. Recent environments may lack pytest. Earlier checkpoint-only entries carried no research changes; this handoff keeps essential evidence.
+Repeated independent verifications (2026-11-16, Kilo sessions) consistently confirmed frozen rules hash, zero research-source drift vs `a797773`, 35 artifacts/no manifests, and unchanged canonical metrics. HEAD advanced to `80e0bbe` only via `chore(kilo): checkpoint agent session` commits touching the two handoff docs; no research drift introduced. Full test suite last recorded passing in pytest-available environments: **75 passed**. Recent environments may lack pytest. Earlier checkpoint-only entries carried no research changes; this handoff keeps essential evidence.
 
 ## Required action for next agent
 
