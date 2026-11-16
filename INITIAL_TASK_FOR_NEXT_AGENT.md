@@ -19,9 +19,11 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16T00:31:30Z)
+## Current checkpoint (2026-11-16T00:31:59Z)
 
-HEAD at verification: `19391a1` on `main` (commits since last substantive `a797773` touch only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `4ab83a0` on `main` (commits since last substantive `a797773` touch only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file) and refreshed both durable docs at explicit user request; no research, data, tests, or automation changes. State unchanged and terminal.
+
+**Prior checkpoint (2026-11-16T00:31:30Z):** doc-only refresh from HEAD `19391a1`, same terminal finding.
 
 ## Conditional forward paths (explicit user decision only)
 
