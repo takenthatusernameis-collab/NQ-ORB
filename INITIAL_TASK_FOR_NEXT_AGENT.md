@@ -1,18 +1,26 @@
 # Initial Task for Next Agent
 
 ## Objective
-Confirm terminal repository state and await explicit user decision on forward path.
+Confirm terminal repository state and await an explicit user decision on the forward path.
+
+## Context
+The frozen MNQ 15-minute ORB baseline is implemented, tested (75 passing), and evaluated on all
+available free data. It is negative-net on every dataset under full costs, and the free-data search
+is exhausted. Research is complete — do not invent new work.
 
 ## Required Actions
-1. Run verification commands in `HANDOFF.md` (Verification commands).
-2. Report confirmed facts:
-   - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
+1. Run the verification commands in `HANDOFF.md` (Verification commands) to confirm terminal state.
+2. Confirm and report:
+   - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
    - Zero drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`
    - 35 artifact files, 0 manifest files
-   - Canonical metrics unchanged: `metrics_axb0306.json` (60 trades, net P&L -$31,637.98, PF 0.4917, avg_r -0.0431); `metrics_kaggle.json` (688 trades, net P&L -$626,525.96, PF 0.2271, avg_r -0.0684)
-   - Test status: `python3 -m pytest -q` (pytest may be absent; last recorded pass in pytest-available envs: 75 passed)
+   - Canonical metrics unchanged:
+     - `metrics_axb0306.json`: 60 trades (33L/27S), net -31,637.98, PF 0.4917, avg_r -0.0431
+     - `metrics_kaggle.json`: 688 trades (359L/329S), net -626,525.96, PF 0.2271, avg_r -0.0684
+   - Tests: `python3 -m pytest tests -q` -> 75 passed (install pytest + pandas if absent)
 3. State: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
-4. Do not initiate research, experiments, automation changes, or handoff-only checkpoints on generic prompts without explicit user authorization.
+4. Do NOT initiate research, experiments, automation changes, or handoff-only checkpoints on generic
+   prompts without explicit user authorization.
 
 ## Forward Paths (require explicit user authorization)
 - **(a)** Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron)
@@ -24,21 +32,3 @@ Confirm terminal repository state and await explicit user decision on forward pa
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
 - Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
-
-## Session Verification (2026-11-16, Kilo — durable handoff task completed)
-
-- `git rev-parse --short HEAD`: `7b0a97f`; clean working tree (`git status --short` empty)
-- `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
-- `artifacts/`: 35 files, 0 manifest files
-- `metrics_axb0306.json`: 60 trades, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
-- `metrics_kaggle.json`: 688 trades, net_pnl -626525.96, costs 485626.96, profit_factor 0.2271, avg_r -0.0684
-- `python3 -m pytest -q`: pytest not installed in this environment; last recorded pass: 75 passed
-
-## Required action for next agent
-1. Run verification commands in `HANDOFF.md` (Verification commands) to confirm terminal state.
-2. Report: frozen rules hash, zero drift vs `a797773`, 35 artifacts/no manifests, canonical metrics unchanged, test suite status.
-3. State: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
-4. Do not initiate research, experiments, automation changes, or handoff-only checkpoints on generic prompts without explicit user authorization.
-
-(End of file - total 48 lines)
