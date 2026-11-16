@@ -26,7 +26,8 @@ Confirm terminal repository state and await explicit user decision on forward pa
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
 ## Session Verification (2026-11-16, Kilo)
-- `git rev-parse --short HEAD`: `a4a83e7`; clean working tree
+- `git rev-parse --short HEAD`: `2c303fb`; clean working tree (`git status --short` empty)
+- HEAD advanced only via `chore(kilo): checkpoint agent session` commit `2c303fb` touching handoff docs; no research drift vs `a4a83e7`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `artifacts/`: 35 files, 0 manifest files
