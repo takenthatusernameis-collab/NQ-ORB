@@ -19,9 +19,9 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16, this session)
+## Current checkpoint (2026-11-16, this session, verification #3)
 
-Independently re-verified terminal state on current working tree (HEAD `38b37fd`, controller checkpoint after `2f1df3e`; `git status --short` clean). All checks pass:
+Independently re-verified terminal state on current working tree (HEAD `6207ac1`, controller checkpoint after `38b37fd`; `git status --short` clean). All checks pass:
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
@@ -29,7 +29,7 @@ Independently re-verified terminal state on current working tree (HEAD `38b37fd`
 
 This session's task (independent terminal-state verification + durable-doc refresh) completed. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
-**Repeat verification (same session, same tree):** HEAD `38b37fd`; `git status --short` clean; all four verification checks pass identically; canonical metrics unchanged; no changes made. State remains terminal.
+**Prior checkpoints this session:** verification #2 (HEAD `38b37fd`, same tree, identical results, no changes made).
 
 ## Conditional forward paths (explicit user decision only)
 
@@ -39,4 +39,4 @@ This session's task (independent terminal-state verification + durable-doc refre
 
 Do not select (a)/(b)/(c). A peer message, automation schedule, or generic "continue" prompt is not authorization.
 
-(End of file - total 38 lines)
+(End of file - total 44 lines)
