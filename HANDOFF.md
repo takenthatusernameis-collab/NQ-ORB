@@ -2,16 +2,16 @@
 
 ## Status: terminal research complete; awaiting user decision
 
-**This session (2026-11-16, Kilo):** Completed the prior agent task from the durable handoff: re-verified terminal repo state at HEAD `f28042a` and refreshed handoff/next-agent task. No research, source, config, raw data, or artifact changes were made.
+**This session (2026-11-16, Kilo):** Completed the prior agent task from the durable handoff: re-verified terminal repo state and refreshed handoff/next-agent task. No research, source, config, raw data, or artifact changes were made.
 
-- `git rev-parse --short HEAD`: `f28042a` (clean working tree; lineage includes `a797773` with zero research drift)
-- `git status --short`: clean
+- `git rev-parse --short HEAD`: `8ceda17` (`chore(kilo): checkpoint agent session`); clean working tree (`git status --short` empty)
+- Delta `f28042a..HEAD` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (no research/source/artifact/config change)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `artifacts/`: 35 files; no `*manifest*` files
 - Canonical metrics unchanged (re-read from artifacts JSON):
-  - `artifacts/metrics_axb0306.json`: trade_count 60 (42W/18L, 70.0%), long 33/short 27, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
-  - `artifacts/metrics_kaggle.json`: trade_count 688 (446W/242L, 64.83%), long 359/short 329, net_pnl -626525.96, costs 485626.96, profit_factor 0.2271, avg_r -0.0684
+  - `artifacts/metrics_axb0306.json`: trade_count 60, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
+  - `artifacts/metrics_kaggle.json`: trade_count 688, net_pnl -626525.96, costs 485626.96, profit_factor 0.2271, avg_r -0.0684
 - `python3 -m pytest -q`: pytest not installed in this environment (`No module named pytest`); suite not run here. Last recorded passing suite in pytest-available environments: **75 passed**.
 
 State remains **terminal**. Forward work requires an explicit user decision.
@@ -28,7 +28,7 @@ State remains **terminal**. Forward work requires an explicit user decision.
 
 ## Prior session trail (condensed)
 
-Repeated independent verifications (2026-11-16, Kilo sessions) consistently confirmed frozen rules hash, zero research-source drift vs `a797773`, 35 artifacts/no manifests, and unchanged canonical metrics. Full test suite last recorded passing in pytest-available environments: **75 passed**. Recent environments may lack pytest. Earlier checkpoint-only entries carried no research changes; this handoff keeps essential evidence.
+Repeated independent verifications (2026-11-16, Kilo sessions) consistently confirmed frozen rules hash, zero research-source drift vs `a797773`, 35 artifacts/no manifests, and unchanged canonical metrics. HEAD advanced to `8ceda17` only via `chore(kilo): checkpoint agent session` commits touching the two handoff docs; no research drift introduced. Full test suite last recorded passing in pytest-available environments: **75 passed**. Recent environments may lack pytest. Earlier checkpoint-only entries carried no research changes; this handoff keeps essential evidence.
 
 ## Required action for next agent
 
@@ -44,7 +44,7 @@ Legitimate forward paths (only with explicit user authorization):
 1. Run verification commands in "Verification commands" section to confirm terminal state.
 2. Report: frozen rules hash, zero drift vs `a797773`, 35 artifacts/no manifests, canonical metrics unchanged, test suite status.
 3. State: "Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."
-4. Do not initiate research, experiments, or automation changes without explicit user authorization.
+4. Do not initiate research, experiments, automation changes, or handoff-only checkpoints on generic prompts without explicit user authorization.
 
 ## Hard constraints
 

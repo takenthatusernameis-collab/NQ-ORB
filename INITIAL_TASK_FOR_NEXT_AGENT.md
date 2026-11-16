@@ -14,7 +14,7 @@ Confirm terminal repository state and await explicit user decision on forward pa
      - `metrics_kaggle.json`: 688 trades, net P&L -$626,526, profit factor 0.23
    - Test suite status: `python3 -m pytest -q` (pytest may be absent; last recorded pass in pytest-available envs: 75 passed)
 3. State clearly: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
-4. Do NOT initiate any research, experiments, or automation changes without explicit user authorization.
+4. Do NOT initiate any research, experiments, automation changes, or handoff-only checkpoints on generic prompts without explicit user authorization.
 
 ## Forward Paths (require explicit user authorization)
 - **(a)** Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron)
