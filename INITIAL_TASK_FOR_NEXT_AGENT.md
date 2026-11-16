@@ -19,19 +19,13 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16T01:28:41Z)
+## Current checkpoint (2026-11-16T01:29:45Z)
 
-HEAD at verification: `bb910ff` on `main`. This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773` including `tests`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684); no research, data, tests, or automation changes. State unchanged and terminal.
+HEAD at verification: `3861a7d` on `main`. This session independently verified terminal state (`STRATEGY_RULES.txt` SHA-256 unchanged, empty substantive diff from `a797773`, 35 `artifacts/` files, no manifest, canonical metrics unchanged in-file: axb0306 60 trades 33L/27S 42W/18L 70.0% net -$31,637.98 PF 0.4917 avg R -0.0431; Kaggle 688 trades 359L/329S 446W/242L 64.8% net -$626,525.96 PF 0.2271 avg R -0.0684). No research, data, tests, or automation changes. State unchanged and terminal.
+
+**Prior checkpoint (2026-11-16T01:28:41Z):** doc-only verification from HEAD `bb910ff`, same terminal finding.
 
 **Prior checkpoint (2026-11-16T01:26:11Z):** doc-only refresh from HEAD `e7191e9`, same terminal finding.
-
-**Prior checkpoint (2026-11-16T01:24:52Z):** doc-only refresh from HEAD `e7191e9`, same terminal finding.
-
-**Prior checkpoint (2026-11-16T00:34:13Z):** doc-only refresh from HEAD `ece2d95`, same terminal finding.
-
-**Prior checkpoint (2026-11-16T00:32:56Z):** doc-only refresh from HEAD `18df1a3`, same terminal finding.
-
-**Prior checkpoint (2026-11-16T00:31:30Z):** doc-only refresh from HEAD `19391a1`, same terminal finding.
 
 ## Conditional forward paths (explicit user decision only)
 
