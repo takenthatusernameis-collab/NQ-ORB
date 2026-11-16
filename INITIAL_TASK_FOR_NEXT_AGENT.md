@@ -4,13 +4,13 @@
 
 The NQ ORB research is **COMPLETE and TERMINAL**. The frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset (axb0306 and Kaggle proxy). The 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results. Free-source search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 
-## Current State (verified this session, HEAD `188848e`)
+## Current State (verified this session, HEAD `b15890b`)
 
 - **STRATEGY_RULES.txt** v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
 - **Baseline commit**: `5fab764`; **Last substantive research commit**: `a797773`
-- **Working tree**: clean (`git status --short` empty); `git diff a797773..HEAD` on artifacts/config/src/tests/raw/data/scripts is empty
+- **Working tree**: `git diff a797773..HEAD` on artifacts/config/src/tests/raw/data/scripts is empty; only uncommitted doc-only edits to `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` from this refresh (no research/data/test/automation changes)
 - **Artifacts**: 35 files in `artifacts/`, no manifest, metrics unchanged
-- **Tests**: 75 passed (full suite green, ~0.74s)
+- **Tests**: 75 passed (full suite green, ~0.72s)
 - **Canonical metrics**:
   - axb0306: 60 trades, 70.0% win rate, net -$31,637.98, PF 0.4917, avg R -0.0431
   - Kaggle: 688 trades, 64.8% win rate, net -$626,525.96, PF 0.2271, avg R -0.0684
@@ -34,7 +34,7 @@ Legitimate forward paths (require explicit user authorization):
 ## Verification Commands (for reference)
 
 ```bash
-git status --short                              # should be clean
+git status --short                              # only the two doc files above (doc-only refresh)
 sha256sum STRATEGY_RULES.txt                    # should match frozen hash
 git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts  # empty
 ls artifacts | wc -l                            # 35
