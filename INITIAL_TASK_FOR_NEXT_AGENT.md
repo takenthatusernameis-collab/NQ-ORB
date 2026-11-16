@@ -3,7 +3,7 @@
 ## Context
 The NQ ORB research is **COMPLETE and TERMINAL**. The frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset (axb0306 and Kaggle proxy). The 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results. Free-source search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 
-## Current State (verified this session, HEAD `1bd0606`)
+## Current State (verified this session, HEAD `4aadef77`)
 - **STRATEGY_RULES.txt** v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
 - **Baseline commit**: `5fab764`; **Last substantive research commit**: `a797773`
 - **Working tree**: clean (`git status --short` empty); `git diff a797773..HEAD` on artifacts/config/src/tests/raw/data/scripts is empty
