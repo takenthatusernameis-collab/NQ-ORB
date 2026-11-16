@@ -7,10 +7,10 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-16, HEAD `b8dca7d`)
+## Verified state (re-verified this session, 2026-11-16, HEAD `adb6c26`)
 
-- `git rev-parse --short HEAD`: `2189630`; working tree clean (`git status --short` empty).
-- HEAD advanced from `c587f7a` to `12fc4cd` (via `b8dca7d`) only via `chore(kilo): checkpoint agent session` commits touching handoff / next-agent docs; no research drift.
+- `git rev-parse --short HEAD`: `adb6c26`; working tree clean when verification began (`git status --short` empty).
+- HEAD advanced from `c587f7a` to `adb6c26` only via `chore(kilo): checkpoint agent session` commits touching handoff / next-agent docs; no research drift.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
