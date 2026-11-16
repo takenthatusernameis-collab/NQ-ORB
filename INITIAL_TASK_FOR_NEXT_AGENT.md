@@ -1,55 +1,28 @@
-# Initial Task for Next Agent — NQ ORB
+# Initial Task for Next Agent
 
-## Current State: TERMINAL
+## Objective
+Confirm terminal repository state and await explicit user decision on forward path.
 
-The NQ/MNQ opening-range-breakout research is **complete and frozen**. Verified 2026-11-16 (Kilo) against working tree:
+## Required Actions
+1. Run all verification commands listed in `HANDOFF.md` (Verification commands section).
+2. Report the following confirmed facts:
+   - Frozen `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
+   - Zero drift vs commit `a797773` across `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`
+   - 35 artifact files, 0 manifest files
+   - Canonical metrics unchanged:
+     - `metrics_axb0306.json`: 60 trades, net P&L -$31,638, profit factor 0.49
+     - `metrics_kaggle.json`: 688 trades, net P&L -$626,526, profit factor 0.23
+   - Test suite status (pytest availability and last known pass count: 75 passed)
+3. State clearly: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
+4. Do NOT initiate any research, experiments, or automation changes without explicit user authorization.
 
-- `git rev-parse --short HEAD`: `36abf90` (clean; checkpoint lineage; `a797773` ancestor, zero research drift)
-- **Strategy rules**: `STRATEGY_RULES.txt` v1.0 frozen (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
-- **Zero drift**: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty
-- **Artifacts**: 35 files, no `*manifest*`
-- **Canonical results** (from artifacts JSON):
-  - **axb0306** (`artifacts/metrics_axb0306.json`, 2026-01–2026-04): 60 trades (42W/18L, 70.0%), long 33/short 27, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431
-  - **Kaggle** (`artifacts/metrics_kaggle.json`, proxy 2022-11–2025-11): 688 trades (446W/242L, 64.83%), long 359/short 329, net -$626,525.96, costs $275,113.96, PF 0.2271, avg R -0.0684
-- **Data**: Free sources exhausted (`data/FEASIBILITY_REPORT.md`); raw hashes recorded there. No paid/proprietary data.
-- **Tests**: pytest not installed here (`No module named pytest`); last recorded passing suite in pytest-available environments: **75 passed**.
+## Forward Paths (require explicit user authorization)
+- **(a)** Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron)
+- **(b)** Run a separately versioned, named experiment with explicit diff from frozen baseline
+- **(c)** Accept baseline as final
 
-## Your Task
-
-**Do not start autonomous research.** Do not create handoff-only checkpoints on generic prompts.
-
-1. Run verification commands below and confirm terminal state.
-2. Report: frozen rules hash, zero drift vs `a797773`, 35 artifacts/no manifests, canonical metrics unchanged, test suite status.
-3. State: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
-
-| Path | Description | Requires |
-|------|-------------|----------|
-| **(a)** | Stop/reduce maintenance automation (`.github/workflows/main.yml:11`, cron) | Explicit authorization for that exact change |
-| **(b)** | Run a separately versioned, named experiment with explicit diff from frozen baseline (e.g. far-side-of-range stop per `STRATEGY_RULES.txt` §2.1) | Explicit user authorization + named experiment design |
-| **(c)** | Accept baseline as final | Explicit user confirmation |
-
-## Hard Constraints (Non-Negotiable)
-
-- Historical research/simulation only — no broker/live/paper execution, no credentials, no paid data
-- Never modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts
-- Any strategy change = separately named, versioned experiment with explicit diff from baseline
-- Never edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change
-
-## Verification Commands
-
-```bash
-git status --short
-git rev-parse --short HEAD
-sha256sum STRATEGY_RULES.txt
-git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts
-ls artifacts | wc -l && ls artifacts | grep -c manifest || true
-python3 -m pytest -q  # if pytest installed
-```
-
-## Reference Files
-
-- `HANDOFF.md` — durable handoff (updated this session)
-- `STRATEGY_RULES.txt` — frozen strategy definition
-- `PROMPT.md` — research workflow definition
-- `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`
-- `data/FEASIBILITY_REPORT.md` — data sourcing evidence
+## Hard Constraints
+- Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
+- Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
+- Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
+- Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
