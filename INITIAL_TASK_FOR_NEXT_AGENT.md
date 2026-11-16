@@ -19,17 +19,17 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16, this session, verification #9)
+## Current checkpoint (2026-11-16, this session, verification #10)
 
-Independently re-verified terminal state on current working tree (HEAD `8079cfb`; `git status --short` clean). All checks pass:
+Independently re-verified terminal state on current working tree (HEAD `b62e4b1`; `git status --short` clean). All checks pass:
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
 - Canonical metrics re-read unchanged in-file: axb0306 trade_count=60, wins=42, losses=18, win_rate=0.70, long_trades=33, short_trades=27, net_pnl=-31637.98, PF 0.4917, avg_r -0.0431; Kaggle trade_count=688, wins=446, losses=242, win_rate=0.6483, long_trades=359, short_trades=329, net_pnl=-626525.96, PF 0.2271, avg_r -0.0684
 
 This session's task (independent terminal-state verification + durable-doc refresh) completed. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
-**Prior checkpoints this session:** verification #8 (HEAD `b6ccb3e`), verification #7 (HEAD `2124804`), verification #6 (HEAD `cb6150f`), verification #5 (HEAD `50e3a5b`), verification #4 (HEAD `50e3a5b`), verification #3 (HEAD `6207ac1`), verification #2 (HEAD `38b37fd`) — identical results.
+**Prior checkpoints this session:** verification #9 (HEAD `8079cfb`), verification #8 (HEAD `b6ccb3e`), verification #7 (HEAD `2124804`), verification #6 (HEAD `cb6150f`), verification #5 (HEAD `50e3a5b`), verification #4 (HEAD `50e3a5b`), verification #3 (HEAD `6207ac1`), verification #2 (HEAD `38b37fd`) — identical results.
 
 ## Conditional forward paths (explicit user decision only)
 
