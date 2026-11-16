@@ -2,9 +2,9 @@
 
 ## Status: terminal research complete; awaiting user decision
 
-**This session (2026-11-16, Kilo):** Completed the prior agent task from the durable handoff: re-verified terminal repo state and updated handoff/next-agent task. No research, source, config, raw data, or artifact changes were made.
+**This session (2026-11-16, Kilo):** Completed the prior agent task from the durable handoff: re-verified terminal repo state at HEAD `e28b208` and updated handoff/next-agent task. No research, source, config, raw data, or artifact changes were made.
 
-- `git rev-parse --short HEAD`: `e81a542` (clean working tree; checkpoint lineage `72fb74f` → `f77b293` → `36abf90` → `a83be7a` → `a1169d9` → `e81a542`; `a797773` is ancestor with zero research drift)
+- `git rev-parse --short HEAD`: `e28b208` (clean working tree; checkpoint lineage `72fb74f` → `f77b293` → `36abf90` → `a83be7a` → `a1169d9` → `e81a542` → `e28b208`; `a797773` is ancestor with zero research drift)
 - `git status --short`: clean
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty
