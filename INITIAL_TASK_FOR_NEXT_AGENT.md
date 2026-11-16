@@ -12,7 +12,7 @@ Confirm terminal repository state and await explicit user decision on forward pa
    - Canonical metrics unchanged:
      - `metrics_axb0306.json`: 60 trades, net P&L -$31,638, profit factor 0.49
      - `metrics_kaggle.json`: 688 trades, net P&L -$626,526, profit factor 0.23
-   - Test suite status (pytest availability and last known pass count: 75 passed)
+   - Test suite status: `python3 -m pytest -q` (pytest may be absent; last recorded pass in pytest-available envs: 75 passed)
 3. State clearly: **"Terminal — awaiting explicit user decision on forward path (a), (b), or (c)."**
 4. Do NOT initiate any research, experiments, or automation changes without explicit user authorization.
 
