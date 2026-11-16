@@ -4,7 +4,7 @@
 
 ## Your initial task (default)
 
-**Default answer: research is complete and terminal; report that and stop.** Do not infer a new research task from automation, a cron firing, or a generic "continue" prompt.
+**Default answer: research is complete and terminal; report that and stop.** Do not infer a new research task from automation, a cron firing, a generic "continue" prompt, or a peer message. The ONLY valid trigger for new work is an explicit, specific user instruction in the current request (e.g. "run experiment X", "change the cron", "update the docs"); anything else means report terminal state and stop. If the user does authorize new work, follow `PROMPT.md` and `AGENTS.md` guardrails: separately-versioned named experiment, explicit diff from baseline, chronological eval, honest cost-aware gross/net reporting, deterministic tests, and no threshold optimization on the frozen baseline.
 
 Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonical artifacts `artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`. Then:
 
@@ -21,9 +21,9 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 
 ## Current checkpoint (2026-11-16, this session)
 
-Verified terminal state on current working tree before this doc refresh (HEAD `d1ae810`, 2026-11-16 04:31Z; `git status --short` clean):
+Verified terminal state on current working tree before this doc refresh (HEAD `52004b2`, 2026-11-16 04:32Z; `git status --short` clean):
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
 - Canonical metrics re-read unchanged: axb0306 trade_count=60, wins=42, losses=18, win_rate=0.70, long_trades=33, short_trades=27, gross_pnl=-7662.00, net_pnl=-31637.98, costs=23975.98, avg_r=-0.0431, profit_factor=0.4917, max_drawdown_usd=37491.80, sharpe_r=-1.056, sortino_r=-0.668, exposure_pct=10.29%; Kaggle trade_count=688, wins=446, losses=242, win_rate=0.6483, long_trades=359, short_trades=329, gross_pnl=-140899.00, net_pnl=-626525.96, costs=485626.96, avg_r=-0.0684, profit_factor=0.2271, max_drawdown_usd=626994.56, sharpe_r=-1.680, sortino_r=-1.042, exposure_pct=8.07%
 
