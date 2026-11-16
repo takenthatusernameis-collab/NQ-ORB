@@ -3,7 +3,7 @@
 ## Context
 NQ ORB research is **COMPLETE and TERMINAL**. Frozen MNQ 15-min ORB baseline is final and negative-net on every available free dataset (axb0306 and Kaggle proxy). 1-minute experiment `orb_mnq_1m_wf_v1` did not change canonical results. Free-source search is exhausted (`data/FEASIBILITY_REPORT.md`).
 
-## Verified state (2026-11-16, verification #42, HEAD `be7fc30`)
+## Verified state (2026-11-16, verification #43, HEAD `dadd943`)
 - `STRATEGY_RULES.txt` v1.0 frozen — SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - Baseline commit `5fab764`; last substantive research commit `a797773`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → empty
@@ -11,7 +11,7 @@ NQ ORB research is **COMPLETE and TERMINAL**. Frozen MNQ 15-min ORB baseline is 
 - Canonical metrics unchanged:
   - **axb0306** (`artifacts/metrics_axb0306.json`): 60 trades (42W/18L, 70.0%), long 33 / short 27, net PnL -$31,637.98, PF 0.4917, avg R -0.0431
   - **Kaggle** (`artifacts/metrics_kaggle.json`): 688 trades (446W/242L, 64.83%), long 359 / short 329, net PnL -$626,525.96, PF 0.2271, avg R -0.0684
-- `python3 -m pytest` not available in this environment (not installed); last recorded full suite run in prior sessions: 75 passed
+- `python3 -m pytest` not available in this environment (no module named pytest); last recorded full suite run in prior sessions: 75 passed
 
 ## Required action
 **Do not start autonomous research and do not create handoff-only checkpoints on generic prompts.** Report terminal state and await explicit user decision.
