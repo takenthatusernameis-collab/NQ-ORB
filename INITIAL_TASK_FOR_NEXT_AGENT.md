@@ -19,9 +19,9 @@ Read this file plus `HANDOFF.md`, `STRATEGY_RULES.txt`, `AGENTS.md`, and canonic
 4. Do **not** create another handoff-only checkpoint unless the user explicitly requests a documentation update or state has materially changed.
 5. Do **not** modify `STRATEGY_RULES.txt`, frozen configs, raw data, canonical artifacts, `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
-## Current checkpoint (2026-11-16, this session, verification #14)
+## Current checkpoint (2026-11-16, this session, verification #15)
 
-Independently re-verified terminal state on current working tree (HEAD `d5d3e35`; `git status --short` clean). All checks pass:
+Independently re-verified terminal state on current working tree (HEAD `8e19881`; `git status --short` clean). All checks pass:
 - `sha256sum STRATEGY_RULES.txt` -> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` -> empty (0 lines)
 - `ls artifacts | wc -l` -> `35`; no `*manifest*`
@@ -29,7 +29,7 @@ Independently re-verified terminal state on current working tree (HEAD `d5d3e35`
 
 This session's task (independent terminal-state verification + durable-doc refresh) completed. No research/data/test/automation changes. `python3 -m pytest` unavailable (not installed) and not run. State remains terminal.
 
-**Prior checkpoints this session:** verification #13 (HEAD `a365777`), verification #12 (HEAD `a983fe5`), verification #11 (HEAD `04b2327`), verification #10 (HEAD `b62e4b1`), verification #9 (HEAD `8079cfb`), verification #8 (HEAD `b6ccb3e`), verification #7 (HEAD `2124804`), verification #6 (HEAD `cb6150f`), verification #5 (HEAD `50e3a5b`), verification #4 (HEAD `50e3a5b`), verification #3 (HEAD `6207ac1`), verification #2 (HEAD `38b37fd`) — identical results.
+**Prior checkpoints this session:** verification #14 (HEAD `d5d3e35`), verification #13 (HEAD `a365777`), verification #12 (HEAD `a983fe5`), verification #11 (HEAD `04b2327`), verification #10 (HEAD `b62e4b1`), verification #9 (HEAD `8079cfb`), verification #8 (HEAD `b6ccb3e`), verification #7 (HEAD `2124804`), verification #6 (HEAD `cb6150f`), verification #5 (HEAD `50e3a5b`), verification #4 (HEAD `50e3a5b`), verification #3 (HEAD `6207ac1`), verification #2 (HEAD `38b37fd`) — identical results.
 
 ## Conditional forward paths (explicit user decision only)
 
