@@ -9,8 +9,9 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-16)
 
-- `git rev-parse --short HEAD`: `75822f2`; working tree clean (`git status --short` empty).
-- `git diff --name-only b08aa16..75822f2`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
+- `git rev-parse --short HEAD`: `9cef30a`; working tree clean (`git status --short` empty).
+- `git diff --name-only b08aa16..9cef30a`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (handoff consolidation only; no research drift).
+- `git diff --name-only a797773..9cef30a`: only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (the diagnostics file is runtime/controller log capture, not research code or data).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
@@ -46,6 +47,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - Costs (commission + exchange/clearing $2.87/side, 1 tick adverse slippage) dominate net results.
 - Independent signal-funnel cross-check reproduces engine trade counts exactly (axb0306 60, kaggle 688).
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
+- `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (GitHub Actions run diagnostics), not research code, data, or a strategy artifact; it is excluded from the research-drift check.
 
 ## Prior session trail
 
@@ -53,8 +55,8 @@ Repeated independent Kilo verifications (2026-10-31 through 2026-11-16) all conf
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` and `chore(kilo): consolidate terminal-state handoff...` commits touching handoff /
-next-agent docs; no research drift. Latest: `75822f2` re-verified 2026-11-16 (rules hash
-`6d3258c3...`, zero drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
+next-agent docs; no research drift. Latest: `9cef30a` re-verified 2026-11-16 (rules hash
+`6d3258c3...`, zero research drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
 Granular per-session entries are preserved in git history.
 
 ## Required action for next agent
