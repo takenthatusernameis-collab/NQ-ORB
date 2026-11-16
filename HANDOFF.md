@@ -7,11 +7,12 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-16, HEAD `3cdfaca`)
+## Verified state (re-verified this session, 2026-11-16, HEAD `ffa28ba`)
 
-- `git rev-parse --short HEAD`: `3cdfaca`; working tree clean (`git status --short` empty). Prior
-  handoff HEAD `f9ec9a3`; diff `f9ec9a3..3cdfaca` touches only `HANDOFF.md` and
-  `INITIAL_TASK_FOR_NEXT_AGENT.md` (doc-only checkpoint; no research drift).
+- `git rev-parse --short HEAD`: `ffa28ba`; working tree clean (`git status --short` empty).
+  `ffa28ba` ("chore(kilo): checkpoint agent session") touches only `HANDOFF.md` and
+  `INITIAL_TASK_FOR_NEXT_AGENT.md` (doc-only checkpoint; no research drift). Prior handoff HEAD
+  `3cdfaca`; diff `f9ec9a3..ffa28ba` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - `git diff --name-only fae7e2c..3cdfaca`: only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   and `research_state/workflow_run_diagnostics.jsonl` (checkpoint/consolidation + controller runtime
   log capture; no research drift).
@@ -67,7 +68,7 @@ Repeated independent Kilo verifications (2026-10-31 through 2026-11-16) all conf
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` and `chore(kilo): consolidate terminal-state handoff...` commits touching handoff /
-  next-agent docs; no research drift. Latest: `3cdfaca` re-verified 2026-11-16 (rules hash
+  next-agent docs; no research drift. Latest: `ffa28ba` re-verified 2026-11-16 (rules hash
   `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed, metrics unchanged).
 Granular per-session entries are preserved in git history.
 
