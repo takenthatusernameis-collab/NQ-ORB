@@ -4,15 +4,14 @@
 
 **This session (2026-11-16, Kilo):** Re-verified terminal repo state per durable handoff task. No research, source, config, raw data, or artifact changes made.
 
-- `git rev-parse --short HEAD`: `e218bc9`; clean working tree (`git status --short` empty)
-- Delta `a797773..HEAD`: empty (zero research drift vs last substantive research commit)
+- `git rev-parse --short HEAD`: `a4a83e7`; clean working tree (`git status --short` empty)
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit)
 - `artifacts/`: 35 files; no `*manifest*` files
 - Canonical metrics unchanged (re-read from artifacts JSON):
   - `artifacts/metrics_axb0306.json`: trade_count 60, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
   - `artifacts/metrics_kaggle.json`: trade_count 688, net_pnl -626525.96, costs 485626.96, profit_factor 0.2271, avg_r -0.0684
-- `python3 -m pytest -q`: pytest not installed in this environment (`No module named pytest`); suite not run here. Last recorded passing suite in pytest-available environments: **75 passed**.
+- `python3 -m pytest -q`: pytest not installed in this environment (`No module named pytest`); suite not run. Last recorded passing suite in pytest-available environments: **75 passed**.
 
 State remains **terminal**. Forward work requires an explicit user decision.
 

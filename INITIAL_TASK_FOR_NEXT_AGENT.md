@@ -26,8 +26,8 @@ Confirm terminal repository state and await explicit user decision on forward pa
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
 
 ## Session Verification (2026-11-16, Kilo)
-- `git rev-parse --short HEAD`: `e218bc9`; clean working tree
-- Delta `a797773..HEAD` in `artifacts config src tests raw data scripts`: empty
+- `git rev-parse --short HEAD`: `a4a83e7`; clean working tree
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
 - `artifacts/`: 35 files, 0 manifest files
 - `metrics_axb0306.json`: 60 trades, net_pnl -31637.98, costs 23975.98, profit_factor 0.4917, avg_r -0.0431
