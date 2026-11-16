@@ -9,7 +9,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-16, HEAD `b8dca7d`)
 
-- `git rev-parse --short HEAD`: `12fc4cd`; working tree clean (`git status --short` empty).
+- `git rev-parse --short HEAD`: `2189630`; working tree clean (`git status --short` empty).
 - HEAD advanced from `c587f7a` to `12fc4cd` (via `b8dca7d`) only via `chore(kilo): checkpoint agent session` commits touching handoff / next-agent docs; no research drift.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
@@ -52,7 +52,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 Repeating independent Kilo verifications (2026-10-31 through 2026-11-16) all confirmed the same
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
-session` commits touching handoff / next-agent docs; no research drift. Latest: `12fc4cd`
+session` commits touching handoff / next-agent docs; no research drift. Latest: `2189630`
 re-verified 2026-11-16 (rules hash `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts /
 0 manifests, 75 tests passed, metrics unchanged, working tree clean). Granular per-session entries are preserved in git
 history.
