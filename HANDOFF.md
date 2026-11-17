@@ -7,11 +7,12 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-16, HEAD `e743e1a`)
+## Verified state (re-verified this session, 2026-11-16, HEAD `d4b1b5c`)
 
-- `git rev-parse --short HEAD`: `e743e1a`; working tree clean when verification began (`git status --short` empty).
-- HEAD advanced from `adb6c26` to `e743e1a` only via `chore(kilo): checkpoint agent session` commits touching handoff / next-agent docs (e.g. `e743e1a`, `7cc2f09`, `3debc6d`, `f4bc04a`); no research drift.
+- `git rev-parse --short HEAD`: `d4b1b5c`; working tree clean (`git status --short` empty).
+- HEAD advanced from `e743e1a` to `d4b1b5c` only via `chore(kilo): checkpoint agent session` commits touching handoff / next-agent docs and the controller/runtime log capture; no research drift.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
+- Full `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (controller/runtime log capture, excluded from research drift).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
@@ -52,7 +53,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 Repeating independent Kilo verifications (2026-10-31 through 2026-11-16) all confirmed the same
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
-session` commits touching handoff / next-agent docs; no research drift. Latest: `e743e1a`
+session` commits touching handoff / next-agent docs; no research drift. Latest: `d4b1b5c`
 re-verified 2026-11-16 (rules hash `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts /
 0 manifests, 75 tests passed, metrics unchanged, working tree clean). Granular per-session entries are preserved in git
 history.
