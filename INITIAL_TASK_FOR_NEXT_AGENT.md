@@ -25,12 +25,12 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `5739810`)
+## Current state (re-verified 2026-11-17, HEAD `48bd3aa`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification
-- HEAD `fb2a5c5` (advanced from `7ad9288` via checkpoint commits touching only
-  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`: `f3eaa7b`, `59d0d56`, `ab36904`, `5739810`, `fb2a5c5`).
+- HEAD `48bd3aa` (advanced from `fb2a5c5` via checkpoint commit `48bd3aa` touching only
+  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
   Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
@@ -38,7 +38,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `5739810`: 75 passed in 0.65s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `48bd3aa`: 75 passed in 0.63s (`python3 -m pytest tests -q`).
   To re-run: `python3 -m pip install --quiet pytest pandas && python3 -m pytest tests -q`
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`

@@ -9,7 +9,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-17, HEAD `5739810`)
 
-- `git rev-parse --short HEAD`: `fb2a5c5`; working tree clean at verification.
+- `git rev-parse --short HEAD`: `48bd3aa`; working tree clean at verification.
 - HEAD advanced from `7ad9288` via `chore(kilo): checkpoint agent session` commits touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`, `ab36904`, `5739810`, `fb2a5c5`). No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
@@ -59,8 +59,8 @@ terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no ma
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` commits touching handoff / next-agent docs, plus a single `chore: capture completed
 workflow run diagnostics` commit touching `research_state/workflow_run_diagnostics.jsonl`; no
-research drift. Latest: `ab36904` re-verified 2026-11-17 (75 tests passed, 0.62s). This session
-(`ab36904` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
+research drift. Latest: `48bd3aa` re-verified 2026-11-17 (75 tests passed, 0.63s). This session
+(`fb2a5c5` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
 against artifacts, then refreshed the handoff / next-agent docs at the user's explicit request; no
 research, experiments, or automation changes. Granular per-session entries are preserved in git history.
 
