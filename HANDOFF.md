@@ -7,16 +7,16 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `d81a2ef`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `dc64e48`)
 
-- `git rev-parse --short HEAD`: `d81a2ef`; `git status --short` clean at verification.
-- HEAD advanced since prior docs checkpoint (`1e758b6`) via handoff/docs checkpoint commits touching only
+- `git rev-parse --short HEAD`: `dc64e48`; `git status --short` clean at verification.
+- HEAD advanced since prior docs checkpoint (`2667970`) via a handoff/docs checkpoint commit touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `d81a2ef`: 75 passed in 0.91s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `dc64e48`: 75 passed in 0.92s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session (unchanged): axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
@@ -259,3 +259,8 @@ terminal state awaiting explicit user decision.
 
 Prior agent task completed: terminal state re-verified at HEAD `2667970` (75 tests passed in 0.93s;
 clean tree at verification; zero drift vs `a797773`; rules hash `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; all raw data hashes unchanged; canonical metrics unchanged; 35 artifacts, 0 manifests). HEAD `2667970` advanced from `d81a2ef` only via a handoff/docs checkpoint commit touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` — no research drift. Handoff and next-agent docs refreshed at explicit user request. No research, experiments, or automation changes made. Repository remains in terminal state awaiting explicit user decision.
+
+## Session note (2026-11-17, HEAD `dc64e48`)
+
+Prior agent task completed: terminal state re-verified at HEAD `dc64e48` (75 tests passed in 0.92s;
+clean tree at verification; zero drift vs `a797773`; rules hash `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; all raw data hashes unchanged; canonical metrics unchanged: axb0306 60 trades/70.0% win/net -31,637.98/PF 0.4917; kaggle 688 trades/64.83% win/net -626,525.96/PF 0.2271; 35 artifacts, 0 manifests). HEAD `dc64e48` advanced from `2667970` only via a handoff/docs checkpoint commit touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` — no research drift. Handoff and next-agent docs refreshed at explicit user request. No research, experiments, or automation changes made. Repository remains in terminal state awaiting explicit user decision.
