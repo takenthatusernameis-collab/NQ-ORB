@@ -23,7 +23,7 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `28d6478`)
+## Current state (re-verified 2026-11-17, HEAD `fc0105c`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification
