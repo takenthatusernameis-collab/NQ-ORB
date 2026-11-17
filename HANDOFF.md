@@ -7,11 +7,11 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `a768803`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `43aa32b`)
 
-- `git rev-parse --short HEAD`: `a768803`; working tree clean (`git status --short` empty).
-- HEAD advanced from `23cdcb5` only via `chore(kilo): checkpoint agent session` (`1d1df99`, then
-  `a768803`), each touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
+- `git rev-parse --short HEAD`: `43aa32b`; working tree clean (`git status --short` empty).
+- HEAD advanced from `a768803` only via `chore(kilo): checkpoint agent session` (`43aa32b`), touching
+  only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
@@ -58,7 +58,7 @@ terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no ma
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` commits touching handoff / next-agent docs, plus a single `chore: capture completed
 workflow run diagnostics` commit touching `research_state/workflow_run_diagnostics.jsonl`; no
-research drift. Latest: `a768803` re-verified 2026-11-17 (rules hash `6d3258c3...`, zero research
+research drift. Latest: `43aa32b` re-verified 2026-11-17 (rules hash `6d3258c3...`, zero research
 drift vs `a797773`, 35 artifacts / 0 manifests, 75 tests passed in 0.60s, metrics unchanged,
 working tree clean). This session confirmed the terminal state and updated the handoff /
 next-agent docs at the user's explicit request; no research, experiments, or automation changes.
