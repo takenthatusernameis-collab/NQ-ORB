@@ -9,7 +9,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-17, HEAD `be6d566`)
 
-- `git rev-parse --short HEAD`: `be6d566`; working tree clean at verification (before this handoff update).
+- `git rev-parse --short HEAD`: `a869996`; working tree clean at verification (before this handoff update).
 - HEAD advanced from `0c64a17` via a `chore(kilo): checkpoint agent session` commit touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
@@ -71,7 +71,7 @@ Report the terminal state and await an explicit user decision. Only a handoff up
 when the user explicitly requests it.
 
 This session completed the prior handoff task (terminal-state verification and handoff/next-agent
-refresh) per explicit user request, re-verifying terminal state at `be6d566`. The next agent should
+refresh) per explicit user request, re-verifying terminal state at `a869996`. The next agent should
 report state and stop unless the user explicitly authorizes path (a), (b), or (c) below or explicitly
 requests another handoff update.
 
