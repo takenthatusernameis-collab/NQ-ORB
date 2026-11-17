@@ -23,7 +23,7 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `a206093`)
+## Current state (re-verified 2026-11-17, HEAD `41917c9`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this docs update)
@@ -36,8 +36,8 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- `python3 -m pytest tests -q`: 75 passed in 0.57s at HEAD `927bca5`.
-- HEAD `927bca5` advanced only via handoff/docs checkpoint commits (no research drift); it is the
+- `python3 -m pytest tests -q`: 75 passed in 0.57s at HEAD `41917c9`.
+- HEAD `41917c9` advanced only via handoff/docs checkpoint commits (no research drift); it is the
   current tip.
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
