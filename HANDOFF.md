@@ -7,11 +7,11 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `f3eaa7b`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `59d0d56`)
 
-- `git rev-parse --short HEAD`: `f3eaa7b`; working tree clean before this handoff update.
-- HEAD advanced from `7ad9288` only via `chore(kilo): checkpoint agent session` (`f3eaa7b`), touching
-  only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
+- `git rev-parse --short HEAD`: `59d0d56`; working tree clean at verification.
+- HEAD advanced from `7ad9288` via `chore(kilo): checkpoint agent session` commits touching only
+  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`). No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
@@ -59,8 +59,8 @@ canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): ch
 session` commits touching handoff / next-agent docs, plus a single `chore: capture completed
 workflow run diagnostics` commit touching `research_state/workflow_run_diagnostics.jsonl`; no
 research drift. Latest: `7ad9288` re-verified 2026-11-17 (75 tests passed, 0.58s). This session
-(`f3eaa7b` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
-against artifacts, then updated the handoff / next-agent docs at the user's explicit request; no
+(`59d0d56` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
+against artifacts, then refreshed the handoff / next-agent docs at the user's explicit request; no
 research, experiments, or automation changes. Granular per-session entries are preserved in git history.
 
 ## Required action for next agent
