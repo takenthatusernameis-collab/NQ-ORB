@@ -29,10 +29,8 @@ Research is complete. There is no pending research task.
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification
-- HEAD advanced from `7ad9288` via `chore(kilo): checkpoint agent session` commits touching only
-  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`, `ab36904`). Earlier checkpoint
-  commits touch only those two docs, and `chore: capture completed workflow run diagnostics` touches
-  `research_state/workflow_run_diagnostics.jsonl`.
+- HEAD `fb2a5c5` (advanced from `7ad9288` via checkpoint commits touching only
+  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`: `f3eaa7b`, `59d0d56`, `ab36904`, `5739810`, `fb2a5c5`).
   Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):

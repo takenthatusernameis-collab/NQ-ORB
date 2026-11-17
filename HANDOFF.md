@@ -9,9 +9,9 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-17, HEAD `5739810`)
 
-- `git rev-parse --short HEAD`: `5739810`; working tree clean at verification.
+- `git rev-parse --short HEAD`: `fb2a5c5`; working tree clean at verification.
 - HEAD advanced from `7ad9288` via `chore(kilo): checkpoint agent session` commits touching only
-  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`, `ab36904`, `5739810`). No research drift.
+  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`, `ab36904`, `5739810`, `fb2a5c5`). No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
