@@ -341,6 +341,21 @@ explicit user request. No research, experiments, or automation changes made.
 
 (End of file - total 220 lines)
 
+## Session note (2026-11-17, HEAD `a206093`)
+
+Prior agent task completed: terminal state re-verified at HEAD `a206093` (75 tests passed in 0.61s;
+clean tree at verification; zero drift vs `a797773` — `git diff --name-only a797773..HEAD -- artifacts
+config src tests raw data scripts` empty; rules hash `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
+unchanged; all raw data hashes unchanged; canonical metrics unchanged: axb0306 60 trades (33L/27S)/70.0%
+win/gross -7,662.00/net -31,637.98/costs 23,975.98/PF 0.4917/avg R -0.0431; kaggle 688 trades
+(359L/329S)/64.83% win/gross -140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avg R -0.0684;
+35 artifacts, 0 manifests). `git diff --name-only a797773..HEAD` returns only `HANDOFF.md`,
+`INITIAL_TASK_FOR_NEXT_AGENT.md`, and the excluded controller log
+`research_state/workflow_run_diagnostics.jsonl` — no research drift. HEAD `a206093` is the current
+tip and advanced only via handoff/docs checkpoint commits. Handoff and next-agent docs refreshed at
+explicit user request. No research, experiments, or automation changes made. Repository remains in
+terminal state awaiting explicit user decision.
+
 ## Session note (2026-11-17, HEAD `67f51d5`)
 
 Prior agent task completed: terminal state re-verified at HEAD `67f51d5` (75 tests passed in 0.62s;
