@@ -7,17 +7,15 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `dabf16c`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `3e51db8`)
 
-- `git rev-parse --short HEAD`: `dabf16c`; `git status --short` clean at verification.
-- HEAD advanced since prior verification (`a251f54`) via checkpoint commit `dabf16c`
-  (`chore(kilo): checkpoint agent session`, touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
-- `git diff --name-only a251f54..dabf16c` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
-- `git diff --name-only a797773..dabf16c -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
+- `git rev-parse --short HEAD`: `3e51db8`; `git status --short` clean at verification.
+- HEAD advanced since prior verification (`dabf16c`) via this session's verification commit.
+- `git diff --name-only a797773..3e51db8 -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `dabf16c`: 75 passed in 0.92s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `3e51db8`: 75 passed in 0.95s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session (unchanged): axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
@@ -109,3 +107,10 @@ Prior agent task completed: terminal state re-verified (75 tests passed in 0.95s
 zero drift vs `a797773`; raw/artifact/canonical metrics unchanged; rules hash unchanged).
 Handoff and next-agent docs refreshed at explicit user request. No research, experiments, or
 automation changes made.
+
+## Session note (2026-11-17, HEAD `3e51db8`)
+
+Prior agent task completed: terminal state re-verified (75 tests passed in 0.95s; clean tree
+at verification; zero drift vs `a797773`; rules hash `6d3258c3` unchanged; raw/artifact/
+canonical metrics unchanged). Reported terminal state and forward paths to user. No research,
+experiments, or automation changes made.
