@@ -8,7 +8,7 @@ without explicit user authorization.
 
 The prior task (confirm/report terminal state, then refresh handoff and this file) was completed
 this session at the user's explicit request. No research work is pending. This session re-ran the
-full verification at `774177d` (75 tests passed, 1.14s; clean tree at verification; zero drift vs
+full verification at `fc2b43e` (75 tests passed, 1.14s; clean tree at verification; zero drift vs
 `a797773`; raw/artifact/canonical metrics unchanged; canonical metrics re-read from artifacts).
 
 ## What to do (in order)
@@ -27,12 +27,12 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `774177d`)
+## Current state (re-verified 2026-11-17, HEAD `fc2b43e`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this handoff update)
-- HEAD `774177d` (advanced from prior verification `67b9155` via `0823a14` checkpoint commit touching only
-  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`, plus `774177d` workflow-diagnostics capture touching only
+- HEAD `fc2b43e` (advanced from prior verification `774177d` via `0823a14` checkpoint commit touching only
+  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`, plus `fc2b43e` workflow-diagnostics capture touching only
   `research_state/workflow_run_diagnostics.jsonl`).
 - Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
@@ -41,7 +41,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `774177d`: 75 passed in 1.14s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `fc2b43e`: 75 passed in 1.14s (`python3 -m pytest tests -q`).
   To re-run: `python3 -m pip install --quiet pytest pandas && python3 -m pytest tests -q`
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
