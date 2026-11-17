@@ -2,6 +2,23 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
+## Session note (2026-11-17, HEAD `927bca5`)
+
+Prior agent task completed (read durable handoff, re-verified terminal state, updated handoff and
+next-agent docs). Terminal state re-verified at HEAD `927bca5` (75 tests passed in 0.57s;
+`git status --short` clean at verification; zero drift vs `a797773` —
+`git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; rules hash
+`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; all raw data hashes
+unchanged; canonical metrics unchanged: axb0306 60 trades (33L/27S)/70.0% win/gross -7,662.00/
+net -31,637.98/costs 23,975.98/PF 0.4917/avg R -0.0431; kaggle 688 trades (359L/329S)/64.83%
+win/gross -140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avg R -0.0684; 35 artifacts,
+0 manifests). `git diff --name-only a797773..HEAD` returns only `HANDOFF.md`,
+`INITIAL_TASK_FOR_NEXT_AGENT.md`, and the excluded controller log
+`research_state/workflow_run_diagnostics.jsonl` — no research drift. HEAD `927bca5` is the current
+tip and advanced only via handoff/docs checkpoint commits. Handoff and next-agent docs refreshed at
+explicit user request. No research, experiments, or automation changes made. Repository remains in
+terminal state awaiting explicit user decision.
+
 ## Session note (2026-11-17, HEAD `e614a44`)
 
 Prior agent task completed (explicit user request to complete the durable-handoff task, then update
@@ -113,9 +130,9 @@ The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on e
 free MNQ data source. It is **negative-net on all datasets** under full costs, and the free-data
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
-## Verified state (re-verified this session, 2026-11-17, HEAD `d24fe11`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `927bca5`)
 
-- `git rev-parse --short HEAD`: `d24fe11`; `git status --short` clean at verification (before this docs update).
+- `git rev-parse --short HEAD`: `927bca5`; `git status --short` clean at verification (before this docs update).
 - HEAD advanced since prior docs checkpoints only via handoff/docs checkpoint commits touching `HANDOFF.md` and
   `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift
@@ -123,7 +140,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `d24fe11`: 75 passed in 0.62s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `927bca5`: 75 passed in 0.57s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session (unchanged): axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
