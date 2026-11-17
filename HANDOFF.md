@@ -9,8 +9,8 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-17, HEAD `760fa7a`)
 
-- `git rev-parse --short HEAD`: `760fa7a`; working tree clean at verification.
-- HEAD advanced from `2522d60` via a `chore(kilo): checkpoint agent session` commit touching only
+- `git rev-parse --short HEAD`: `72e86a0`; working tree clean at verification.
+- HEAD advanced from `760fa7a` via a `chore(kilo): checkpoint agent session` commit touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
@@ -18,7 +18,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `760fa7a`: 75 passed in 0.61s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `72e86a0`: 75 passed in 0.58s (`python3 -m pytest tests -q`).
    Canonical artifacts, rules hash, raw hashes, and research-drift checks unchanged.
 
 - Raw data SHA-256 (all unchanged):
