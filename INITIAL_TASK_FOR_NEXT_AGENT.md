@@ -22,15 +22,15 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `90336b1`)
+## Current state (re-verified 2026-11-17, HEAD `23cdcb5`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean
-- HEAD advanced from `cd0100a` only via `chore: capture completed workflow run diagnostics`
-  (`90336b1`, touching `research_state/workflow_run_diagnostics.jsonl` only); earlier
-  `chore(kilo): checkpoint agent session` commits touch only `HANDOFF.md` and
-  `INITIAL_TASK_FOR_NEXT_AGENT.md`. Zero research drift vs `a797773` in `artifacts`, `config`,
-  `src`, `tests`, `raw`, `data`, `scripts`.
+- HEAD advanced from `90336b1` only via `chore(kilo): checkpoint agent session`
+  (`23cdcb5`, touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only); earlier
+  `chore(kilo): checkpoint agent session` commits touch only those two docs, and
+  `chore: capture completed workflow run diagnostics` touches `research_state/workflow_run_diagnostics.jsonl`.
+  Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
   - `metrics_axb0306.json`: 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98,
