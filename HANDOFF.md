@@ -7,17 +7,17 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `a6ee2c9`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `0b67aba`)
 
-- `git rev-parse --short HEAD`: `a6ee2c9` (parent `b483787`); `git status --short` clean at verification.
-- HEAD advanced since prior verification via one checkpoint commit: `a6ee2c9`
+- `git rev-parse --short HEAD`: `0b67aba` (parent `a6ee2c9`); `git status --short` clean at verification.
+- HEAD advanced since prior verification via one checkpoint commit: `0b67aba`
   (`chore(kilo): checkpoint agent session`, touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`). No research drift.
-- `git diff --name-only a797773..a6ee2c9` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only.
-- `git diff --name-only a797773..a6ee2c9 -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
+- `git diff --name-only a797773..0b67aba` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only.
+- `git diff --name-only a797773..0b67aba -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `a6ee2c9`: 75 passed in 0.98s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `0b67aba`: 75 passed in 0.91s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session: axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
@@ -63,8 +63,8 @@ canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): ch
 session` commits touching handoff / next-agent docs, plus `chore: capture completed
 workflow run diagnostics` commits touching `research_state/workflow_run_diagnostics.jsonl`; no
 research drift. This session completed the prior handoff task (confirm and report terminal state, then refresh
-handoff/next-agent docs) per explicit user request, re-verifying terminal state at `a6ee2c9`
-(75 tests passed, 0.98s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
+handoff/next-agent docs) per explicit user request, re-verifying terminal state at `0b67aba`
+(75 tests passed, 0.91s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
 unchanged). No research, experiments, or automation changes were made. Granular per-session entries are
 preserved in git history.
 
@@ -75,8 +75,8 @@ Report the terminal state and await an explicit user decision. Only a handoff up
 when the user explicitly requests it.
 
 This session completed the prior handoff task (confirm and report terminal state, then refresh
-handoff/next-agent docs) per explicit user request, re-verifying terminal state at `a6ee2c9`
-(75 tests passed, 0.98s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
+handoff/next-agent docs) per explicit user request, re-verifying terminal state at `0b67aba`
+(75 tests passed, 0.91s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
 unchanged; canonical metrics re-read from artifacts). No research, experiments, or automation changes were made. The next agent should
 report state and stop unless the user explicitly authorizes path (a), (b), or (c) below or
 explicitly requests another handoff update.
