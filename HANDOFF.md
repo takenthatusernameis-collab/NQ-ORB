@@ -7,18 +7,19 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `59d0d56`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `ab36904`)
 
-- `git rev-parse --short HEAD`: `59d0d56`; working tree clean at verification.
+- `git rev-parse --short HEAD`: `ab36904`; working tree clean at verification.
 - HEAD advanced from `7ad9288` via `chore(kilo): checkpoint agent session` commits touching only
-  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`). No research drift.
+  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (`f3eaa7b`, `59d0d56`, `ab36904`). No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite not re-run this session (pytest/pandas environment not assumed); last recorded pass: 75 tests (`7ad9288` verification). Canonical artifacts, rules hash, raw hashes, and research-drift checks unchanged.
+- Test suite re-run this session at HEAD `ab36904`: 75 passed in 0.62s (`python3 -m pytest tests -q`).
+  Canonical artifacts, rules hash, raw hashes, and research-drift checks unchanged.
 
 - Raw data SHA-256 (all unchanged):
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -58,8 +59,8 @@ terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no ma
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` commits touching handoff / next-agent docs, plus a single `chore: capture completed
 workflow run diagnostics` commit touching `research_state/workflow_run_diagnostics.jsonl`; no
-research drift. Latest: `7ad9288` re-verified 2026-11-17 (75 tests passed, 0.58s). This session
-(`59d0d56` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
+research drift. Latest: `ab36904` re-verified 2026-11-17 (75 tests passed, 0.62s). This session
+(`ab36904` base) re-verified rules hash, drift, artifact counts, raw hashes, and canonical metrics
 against artifacts, then refreshed the handoff / next-agent docs at the user's explicit request; no
 research, experiments, or automation changes. Granular per-session entries are preserved in git history.
 
