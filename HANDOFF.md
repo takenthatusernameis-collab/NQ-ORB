@@ -627,3 +627,15 @@ canonical metrics unchanged: axb0306 60 trades (33L/27S)/70.0% win/gross -7,662.
 kaggle 688 trades (359L/329S)/64.83% win/gross -140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avg R -0.0684; 35 artifacts, 0 manifests).
 Handoff and next-agent docs refreshed at explicit user request. No research, experiments, or automation changes made.
 Repository remains in terminal state awaiting explicit user decision.
+
+## Session note (2026-11-17, HEAD `d3b60e5`)
+
+Prior agent task completed: terminal state re-verified at HEAD `d3b60e5` (75 tests passed in 0.57s;
+clean tree at verification; zero research drift vs `a797773` — `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty; rules hash `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
+unchanged; all raw data hashes unchanged; canonical metrics re-read unchanged: axb0306 60 trades (33L/27S)/70.0%
+win/gross -7,662.00/net -31,637.98/costs 23,975.98/PF 0.4917/avg R -0.0431; kaggle 688 trades (359L/329S)/64.83%
+win/gross -140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avg R -0.0684; 35 artifacts, 0 manifests).
+HEAD `d3b60e5` advanced from `3597489` only via a handoff/docs checkpoint commit touching `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md` — no research drift. Handoff and next-agent docs refreshed at explicit
+user request. No research, experiments, or automation changes made. Repository remains in terminal state
+awaiting explicit user decision.
