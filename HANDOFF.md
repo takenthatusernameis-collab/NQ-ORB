@@ -7,17 +7,17 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `1773d9b`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `fb82d25`)
 
-- `git rev-parse --short HEAD`: `1773d9b`; `git status --short` clean at verification.
-- HEAD advanced since prior verification (`e828446`) via checkpoint commit `1773d9b`
+- `git rev-parse --short HEAD`: `fb82d25`; `git status --short` clean at verification.
+- HEAD advanced since prior verification (`1773d9b`) via checkpoint commit `fb82d25`
   (`chore(kilo): checkpoint agent session`, touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
-- `git diff --name-only e828446..1773d9b` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
-- `git diff --name-only a797773..e828446 -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
+- `git diff --name-only 1773d9b..fb82d25` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
+- `git diff --name-only a797773..fb82d25 -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `1773d9b`: 75 passed in 0.92s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `fb82d25`: 75 passed in 0.89s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session (unchanged): axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
@@ -62,8 +62,8 @@ terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no ma
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` commits touching handoff / next-agent docs, plus `chore: capture completed
 workflow run diagnostics` commits touching `research_state/workflow_run_diagnostics.jsonl`; no
-research drift. This session (2026-11-17) re-verified the terminal state at `e828446` (75 tests
-passed, 0.91s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
+research drift. This session (2026-11-17) re-verified the terminal state at `fb82d25` (75 tests
+passed, 0.89s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics
 unchanged) and then refreshed the handoff and next-agent docs per explicit user request. No
 research, experiments, or automation changes were made. Granular per-session entries are preserved
 in git history.
@@ -74,7 +74,10 @@ in git history.
 Report the terminal state and await an explicit user decision. Only a handoff update is authorized
 when the user explicitly requests it.
 
-This session (2026-11-17) re-verified terminal state at HEAD `1773d9b` (75 tests passed, 0.92s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical metrics unchanged) and refreshed the handoff and next-agent docs at explicit user request. No research, experiments, or automation changes were made.
+This session (2026-11-17) re-verified terminal state at HEAD `fb82d25` (75 tests passed, 0.89s; clean tree
+at verification; zero drift vs `a797773`; raw/artifact/canonical metrics unchanged) and refreshed the
+handoff and next-agent docs at explicit user request. No research, experiments, or automation changes
+were made.
 
 ## Hard constraints
 
@@ -94,8 +97,8 @@ ls artifacts | wc -l && ls artifacts | grep -c manifest || true
 sha256sum raw/MNQ_15min.csv raw/MNQ_1min.csv
 python3 -m pytest tests -q   # if pytest + pandas installed
 ```
-## Session note (2026-11-17, HEAD `1773d9b`)
+## Session note (2026-11-17, HEAD `fb82d25`)
 
-Prior agent task completed: terminal state re-verified (75 tests passed in 0.90s; clean tree;
+Prior agent task completed: terminal state re-verified (75 tests passed in 0.89s; clean tree;
 zero drift vs `a797773`; raw/artifact/canonical metrics unchanged). Handoff and next-agent
 docs refreshed at explicit user request. No research, experiments, or automation changes made.
