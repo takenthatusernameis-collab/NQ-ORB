@@ -7,10 +7,10 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `33f0f95`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `1052def`)
 
-- `git rev-parse --short HEAD`: `33f0f95`; working tree clean at verification (before this handoff update).
-- HEAD advanced from `ef01736` via a prior `chore(kilo): checkpoint agent session` commit touching only
+- `git rev-parse --short HEAD`: `1052def`; working tree clean at verification (before this handoff update).
+- HEAD advanced from `33f0f95` via a prior `chore(kilo): checkpoint agent session` commit touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
@@ -18,7 +18,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `33f0f95`: 75 passed in 0.58s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `1052def`: 75 passed in 0.58s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session: axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
@@ -62,7 +62,7 @@ terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no ma
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
 session` commits touching handoff / next-agent docs, plus `chore: capture completed
 workflow run diagnostics` commits touching `research_state/workflow_run_diagnostics.jsonl`; no
-research drift. This session re-ran the full verification at `33f0f95` per explicit user request
+research drift. This session re-ran the full verification at `1052def` per explicit user request
 (75 tests passed, 0.58s; clean tree; zero drift vs `a797773`; raw/artifact/canonical metrics
 unchanged; canonical metrics re-read from artifacts) and refreshed the handoff / next-agent docs;
 no research, experiments, or automation changes were made. Granular per-session entries are
@@ -75,7 +75,7 @@ Report the terminal state and await an explicit user decision. Only a handoff up
 when the user explicitly requests it.
 
 This session completed the prior handoff task (confirm and report terminal state, then refresh
-handoff/next-agent docs) per explicit user request, re-verifying terminal state at `33f0f95`
+handoff/next-agent docs) per explicit user request, re-verifying terminal state at `1052def`
 (75 tests passed, 0.58s; clean tree; zero drift vs `a797773`; raw/artifact/canonical metrics
 unchanged). No research, experiments, or automation changes were made. The next agent should
 report state and stop unless the user explicitly authorizes path (a), (b), or (c) below or
