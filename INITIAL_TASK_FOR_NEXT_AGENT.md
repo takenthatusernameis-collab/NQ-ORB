@@ -8,7 +8,7 @@ without explicit user authorization.
 
 This session completed the prior task (confirm/report terminal state, then refresh handoff and this
 file) at the user's explicit request; no research work is pending. This session re-ran the full
-verification at `3b87499` (75 tests passed, 0.58s; clean tree at verification;
+verification at `9c095f8` (75 tests passed, 0.61s; clean tree at verification;
 zero drift vs `a797773`; raw/artifact/canonical metrics unchanged).
 
 ## What to do (in order)
@@ -27,11 +27,11 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `3b87499`)
+## Current state (re-verified 2026-11-17, HEAD `9c095f8`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this handoff update)
-- HEAD `3b87499` (advanced from prior verification `1f4275b` via `chore(kilo): checkpoint agent session` touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
+- HEAD `9c095f8` (advanced from prior verification `3b87499` via a `chore(kilo): checkpoint agent session` commit touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
 - Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
@@ -39,7 +39,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `3b87499`: 75 passed in 0.58s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `9c095f8`: 75 passed in 0.61s (`python3 -m pytest tests -q`).
   To re-run: `python3 -m pip install --quiet pytest pandas && python3 -m pytest tests -q`
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
