@@ -7,10 +7,10 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `be6d566`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `8a8a1fc`)
 
-- `git rev-parse --short HEAD`: `a869996`; working tree clean at verification (before this handoff update).
-- HEAD advanced from `0c64a17` via a `chore(kilo): checkpoint agent session` commit touching only
+- `git rev-parse --short HEAD`: `8a8a1fc`; working tree clean at verification (before this handoff update).
+- HEAD advanced from `a869996` via a `chore(kilo): checkpoint agent session` commit touching only
   `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No research drift.
 - `git diff --name-only a797773..HEAD` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
   `research_state/workflow_run_diagnostics.jsonl` only.
@@ -18,7 +18,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `be6d566`: 75 passed in 0.62s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `8a8a1fc`: 75 passed in 0.58s (`python3 -m pytest tests -q`).
   Canonical artifacts, rules hash, raw hashes, and research-drift checks unchanged.
 
 - Raw data SHA-256 (all unchanged):
@@ -70,10 +70,12 @@ changes. Granular per-session entries are preserved in git history.
 Report the terminal state and await an explicit user decision. Only a handoff update is authorized
 when the user explicitly requests it.
 
-This session completed the prior handoff task (terminal-state verification and handoff/next-agent
-refresh) per explicit user request, re-verifying terminal state at `a869996`. The next agent should
-report state and stop unless the user explicitly authorizes path (a), (b), or (c) below or explicitly
-requests another handoff update.
+This session completed the prior handoff task (confirm and report terminal state, then refresh
+handoff/next-agent docs) per explicit user request, re-verifying terminal state at `8a8a1fc`
+(75 tests passed, 0.58s; clean tree; zero drift vs `a797773`; raw/artifact/canonical metrics
+unchanged). No research, experiments, or automation changes were made. The next agent should
+report state and stop unless the user explicitly authorizes path (a), (b), or (c) below or
+explicitly requests another handoff update.
 
 ## Hard constraints
 
