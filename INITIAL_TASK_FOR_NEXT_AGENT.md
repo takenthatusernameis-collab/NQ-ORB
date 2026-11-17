@@ -8,7 +8,7 @@ without explicit user authorization.
 
 This session completed the prior task (confirm/report terminal state, then refresh handoff and this
 file) at the user's explicit request; no research work is pending. This session re-ran the full
-verification at `2eb7c97` per explicit user request (75 tests passed, 0.58s; clean tree; zero
+verification at `74d6c09` per explicit user request (75 tests passed, 0.58s; clean tree; zero
 drift vs `a797773`; raw/artifact/canonical metrics unchanged).
 
 ## What to do (in order)
@@ -27,11 +27,11 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `2eb7c97`)
+## Current state (re-verified 2026-11-17, HEAD `74d6c09`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this handoff update)
-- HEAD `2eb7c97` (advanced from `8b36061` via a prior `chore(kilo): checkpoint agent session` commit
+- HEAD `74d6c09` (advanced from `2eb7c97` via a prior `chore(kilo): checkpoint agent session` commit
   touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
   Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
