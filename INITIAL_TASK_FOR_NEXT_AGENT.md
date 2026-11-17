@@ -22,11 +22,11 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `080e749`)
+## Current state (re-verified 2026-11-17, HEAD `3e5757b`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean
-- HEAD `dadcd7e` advanced from `816bd4c` only via `chore(kilo): checkpoint agent session`
+- HEAD `080e749` advanced from `3e5757b` only via `chore(kilo): checkpoint agent session`
   (touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` only); zero research drift vs
   `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`
 - 35 artifact files, 0 manifest files
