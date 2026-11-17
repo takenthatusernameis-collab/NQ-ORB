@@ -8,7 +8,7 @@ without explicit user authorization.
 
 The prior task (confirm/report terminal state, then refresh handoff and this file) was completed
 this session at the user's explicit request. No research work is pending. This session re-ran the
-full verification at `b483787` (75 tests passed, 0.94s; clean tree at verification; zero drift vs
+full verification at `a6ee2c9` (75 tests passed, 0.98s; clean tree at verification; zero drift vs
 `a797773`; raw/artifact/canonical metrics unchanged; canonical metrics re-read from artifacts).
 
 ## What to do (in order)
@@ -27,13 +27,13 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `b483787`)
+## Current state (re-verified 2026-11-17, HEAD `a6ee2c9`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this handoff update)
-- HEAD `b483787` (advanced from prior verification `3d173f7` via `b483787` checkpoint commit touching only
+- HEAD `a6ee2c9` (advanced from prior verification `b483787` via `a6ee2c9` checkpoint commit touching only
   `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
-- `git diff --name-only a797773..b483787` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only.
+- `git diff --name-only a797773..a6ee2c9` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only.
 - Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
@@ -41,7 +41,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `b483787`: 75 passed in 0.94s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `a6ee2c9`: 75 passed in 0.98s (`python3 -m pytest tests -q`).
   To re-run: `python3 -m pip install --quiet pytest pandas && python3 -m pytest tests -q`
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
