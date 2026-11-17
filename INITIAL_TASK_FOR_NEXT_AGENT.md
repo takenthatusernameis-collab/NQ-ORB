@@ -34,7 +34,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `a251f54`: 75 passed in 0.92s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `dabf16c`: 75 passed in 0.92s (`python3 -m pytest tests -q`).
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
