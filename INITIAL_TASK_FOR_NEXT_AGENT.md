@@ -5,12 +5,7 @@
 **Confirm the terminal repository state, report it, and await an explicit user decision.**
 Do not start autonomous research, experiments, automation changes, or handoff-only checkpoints
 without explicit user authorization. Only a handoff update is authorized when the user explicitly
-requests it (as happened this session).
-
-The prior task (confirm/report terminal state, then refresh handoff and this file) was completed
-this session at the user's explicit request. No research work is pending. This session re-ran the
-full verification at `a42a630` (75 tests passed, 0.91s; clean tree at verification; zero drift vs
-`a797773`; raw/artifact/canonical metrics unchanged).
+requests it.
 
 ## What to do (in order)
 
@@ -28,22 +23,18 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `a42a630`)
+## Current state (re-verified 2026-11-17, HEAD `3ed403d`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
-- `git status --short` clean at verification (before this handoff update)
-- HEAD `a42a630` (advanced from prior verification `608e6c1` via checkpoint commit touching only
-  `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`).
-- `git diff --name-only 608e6c1..a42a630` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
-- Zero research drift vs `a797773` in `artifacts`, `config`, `src`, `tests`, `raw`, `data`, `scripts`.
+- `git status --short` clean at verification
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` = empty (zero research drift)
 - 35 artifact files, 0 manifest files
 - Canonical metrics unchanged (from artifacts):
   - `metrics_axb0306.json`: 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98,
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `a42a630`: 75 passed in 0.91s (`python3 -m pytest tests -q`).
-  To re-run: `python3 -m pip install --quiet pytest pandas && python3 -m pytest tests -q`
+- Tests re-run this session at HEAD `3ed403d`: 75 passed in 0.90s (`python3 -m pytest tests -q`).
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
