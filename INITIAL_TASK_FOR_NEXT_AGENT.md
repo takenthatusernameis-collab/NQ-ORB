@@ -23,7 +23,7 @@ The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented
 dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
 Research is complete. There is no pending research task.
 
-## Current state (re-verified 2026-11-17, HEAD `76553ff`)
+## Current state (re-verified 2026-11-17, HEAD `fa26b84`)
 
 - `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - `git status --short` clean at verification (before this docs update)
@@ -34,7 +34,7 @@ Research is complete. There is no pending research task.
     costs 23,975.98, PF 0.4917, avg_r -0.0431
   - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
     costs 485,626.96, PF 0.2271, avg_r -0.0684
-- Tests re-run this session at HEAD `76553ff`: 75 passed in 0.57s (`python3 -m pytest tests -q`).
+- Tests re-run this session at HEAD `fa26b84`: 75 passed in 0.56s (`python3 -m pytest tests -q`).
   (pytest/pandas/numpy were not pre-installed in the base environment; install with
   `pip3 install pytest pandas numpy`, then `export PATH="$HOME/.local/bin:$PATH"`.)
 - HEAD advanced only via handoff/docs checkpoint commits (no research drift).

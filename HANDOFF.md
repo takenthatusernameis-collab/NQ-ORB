@@ -2,6 +2,18 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
+## Session note (2026-11-17, HEAD `fa26b84`)
+
+Prior agent task completed: terminal state re-verified at HEAD `fa26b84` (75 tests passed in 0.56s;
+clean tree at verification; zero drift vs `a797773`; rules hash `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
+unchanged; all raw data hashes unchanged; canonical metrics unchanged: axb0306 60 trades (33L/27S)/70.0%
+win/gross -7,662.00/net -31,637.98/costs 23,975.98/PF 0.4917/avg R -0.0431; kaggle 688 trades (359L/329S)/64.83%
+win/gross -140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avg R -0.0684; 35 artifacts, 0 manifests).
+HEAD `fa26b84` advanced from `76553ff` only via a handoff/docs checkpoint commit touching `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md` — no research drift. Handoff and next-agent docs refreshed at explicit
+user request. No research, experiments, or automation changes made. Repository remains in terminal state
+awaiting explicit user decision.
+
 ## Session note (2026-11-17, HEAD `7d4324d`)
 
 Prior agent task completed: terminal state re-verified at HEAD `7d4324d` (75 tests passed in 0.72s;
@@ -61,15 +73,15 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `b597c1c`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `fa26b84`)
 
-- `git rev-parse --short HEAD`: `b597c1c`; `git status --short` clean at verification (before this docs update).
+- `git rev-parse --short HEAD`: `fa26b84`; `git status --short` clean at verification (before this docs update).
 - HEAD advanced since prior docs checkpoints only via handoff/docs checkpoint commits touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite re-run this session at HEAD `b597c1c`: 75 passed in 0.65s (`python3 -m pytest tests -q`).
+- Test suite re-run this session at HEAD `fa26b84`: 75 passed in 0.56s (`python3 -m pytest tests -q`).
 - Canonical metrics re-read from artifacts this session (unchanged): axb0306 60 trades (33L/27S), win 70.0%,
   gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431; Kaggle 688 trades
   (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684.
