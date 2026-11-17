@@ -9,8 +9,8 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified this session, 2026-11-17, HEAD `cf00a6f`)
 
-- `git rev-parse --short HEAD`: `cf00a6f` (prior verification `cbc5f3c`); `git status --short` clean at verification.
-- HEAD advanced since prior verification via checkpoint commit: `cf00a6f`
+- `git rev-parse --short HEAD`: `608e6c1` (prior verification `cf00a6f`); `git status --short` clean at verification.
+- HEAD advanced since prior verification via checkpoint commit: `608e6c1`
   (`chore(kilo): checkpoint agent session`, touching only `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`). No research drift.
 - `git diff --name-only cbc5f3c..cf00a6f` = `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only.
 - `git diff --name-only a797773..cf00a6f -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
@@ -63,7 +63,7 @@ canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): ch
 session` commits touching handoff / next-agent docs, plus `chore: capture completed
 workflow run diagnostics` commits touching `research_state/workflow_run_diagnostics.jsonl`; no
 research drift. This session (2026-11-17) completed the prior handoff task (confirm/report terminal
-state, then refresh handoff/next-agent docs) per explicit user request, re-verifying at `cf00a6f`
+state, then refresh handoff/next-agent docs) per explicit user request, re-verifying at `608e6c1`
 (75 tests passed, 0.90s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical
 metrics unchanged; canonical metrics re-read from artifacts). No research, experiments, or automation
 changes were made. Granular per-session entries are preserved in git history.
@@ -75,7 +75,7 @@ Report the terminal state and await an explicit user decision. Only a handoff up
 when the user explicitly requests it.
 
 This session completed the prior handoff task (confirm and report terminal state, then refresh
-handoff and next-agent docs) per explicit user request, re-verifying terminal state at `cf00a6f`
+handoff and next-agent docs) per explicit user request, re-verifying terminal state at `608e6c1`
 (75 tests passed, 0.90s; clean tree at verification; zero drift vs `a797773`; raw/artifact/canonical
 metrics unchanged; canonical metrics re-read from artifacts). No research, experiments, or
 automation changes were made. The next agent should report state and stop unless the user
