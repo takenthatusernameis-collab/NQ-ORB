@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `8106f9f`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `c3baa30`)
 
-- `git rev-parse --short HEAD`: `8106f9f`; `git status --short` clean at verification.
+- `git rev-parse --short HEAD`: `c3baa30`; `git status --short` clean at verification.
 - HEAD advanced since prior doc checkpoint (`6480b26`) via a handoff/docs checkpoint commit.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
@@ -72,7 +72,7 @@ in git history.
 Report the terminal state and await an explicit user decision. Only a handoff update is authorized
 when the user explicitly requests it.
 
-This session (2026-11-17) re-verified terminal state at HEAD `8106f9f` (75 tests passed, 0.95s; clean tree
+This session (2026-11-17) re-verified terminal state at HEAD `c3baa30` (75 tests passed, 0.95s; clean tree
 at verification; zero drift vs `a797773`; raw/artifact/canonical metrics unchanged) and refreshed the
 handoff and next-agent docs at explicit user request. No research, experiments, or automation changes
 were made.
@@ -116,6 +116,13 @@ canonical metrics unchanged). Handoff and next-agent docs refreshed at explicit 
 No research, experiments, or automation changes made.
 
 ## Session note (2026-11-17, HEAD `8106f9f`)
+
+Prior agent task completed: terminal state re-verified (75 tests passed in 0.95s; clean tree
+at verification; zero drift vs `a797773`; rules hash `6d3258c3` unchanged; raw/artifact/
+canonical metrics unchanged). Handoff and next-agent docs refreshed at explicit user request.
+No research, experiments, or automation changes made.
+
+## Session note (2026-11-17, HEAD `c3baa30`)
 
 Prior agent task completed: terminal state re-verified (75 tests passed in 0.95s; clean tree
 at verification; zero drift vs `a797773`; rules hash `6d3258c3` unchanged; raw/artifact/
