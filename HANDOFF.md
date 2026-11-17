@@ -7,11 +7,13 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `ed30fe0`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `a6d7472`)
 
-- `git rev-parse --short HEAD`: `ed30fe0`; working tree clean (`git status --short` empty).
-- HEAD advanced from `5c372d0` to `ed30fe0` only via `chore(kilo): checkpoint agent session`
-  touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no research drift.
+- `git rev-parse --short HEAD`: `a6d7472`; working tree clean (`git status --short` empty).
+- HEAD advanced from `5c372d0` to `a6d7472` only via `chore(kilo): checkpoint agent session`
+  commits touching `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no research drift.
+- Latest commit `a6d7472` touches only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`
+  (`git diff --name-only ed30fe0..a6d7472` = those two files only).
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
 - `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (controller/runtime log capture, excluded from research-drift check).
@@ -55,9 +57,9 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 Repeating independent Kilo verifications (2026-10-31 through 2026-11-17) all confirmed the same
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
-session` commits touching handoff / next-agent docs; no research drift. Latest: `ed30fe0`
+session` commits touching handoff / next-agent docs; no research drift. Latest: `a6d7472`
 re-verified 2026-11-17 (rules hash `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts /
-0 manifests, 75 tests passed in 0.61s, metrics unchanged, working tree clean). This session confirmed
+0 manifests, 75 tests passed in 0.63s, metrics unchanged, working tree clean). This session confirmed
 the terminal state and updated the handoff / next-agent docs at the user's explicit request; no
 research, experiments, or automation changes. Granular per-session entries are preserved in git history.
 
