@@ -7,18 +7,19 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start further autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified this session, 2026-11-17, HEAD `0b1545d`)
+## Verified state (re-verified this session, 2026-11-17, HEAD `47f1942`)
 
-- `git rev-parse --short HEAD`: `a7e53e7`; working tree clean (`git status --short` empty).
-- HEAD advanced from `a797773` to `a7e53e7` only via `chore(kilo): checkpoint agent session` touching
-  `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no research drift.
+- `git rev-parse --short HEAD`: `47f1942`; working tree clean (`git status --short` empty).
+- HEAD advanced from `a797773` to `47f1942` only via `chore(kilo): checkpoint agent session` commits
+  touching `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`;
+  no research drift.
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`).
-- `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` (controller/runtime log capture, excluded from research-drift check).
-- `git diff --stat 698f0d6..HEAD`: only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` (no research drift in this step).
+- `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
+  `research_state/workflow_run_diagnostics.jsonl` (controller/runtime log capture, excluded from research-drift check).
 - `sha256sum STRATEGY_RULES.txt`: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0).
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`.
 - `artifacts/`: 35 files, 0 `*manifest*` files.
-- Test suite: `python3 -m pytest tests -q` -> **75 passed** (re-run this session, 0.80s).
+- Test suite: `python3 -m pytest tests -q` -> **75 passed** (re-run this session, 0.61s).
 - Raw data SHA-256 (all unchanged):
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
@@ -55,7 +56,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 Repeating independent Kilo verifications (2026-10-31 through 2026-11-17) all confirmed the same
 terminal state: frozen rules hash, zero drift vs `a797773`, 35 artifacts / no manifests, unchanged
 canonical metrics, and 75 passing tests. HEAD advanced only via `chore(kilo): checkpoint agent
-session` commits touching handoff / next-agent docs; no research drift. Latest: `a7e53e7`
+session` commits touching handoff / next-agent docs; no research drift. Latest: `47f1942`
 re-verified 2026-11-17 (rules hash `6d3258c3...`, zero research drift vs `a797773`, 35 artifacts /
 0 manifests, 75 tests passed, metrics unchanged, working tree clean). This session was a handoff-only
 checkpoint explicitly requested by the user; no research, experiments, or automation changes. Granular
