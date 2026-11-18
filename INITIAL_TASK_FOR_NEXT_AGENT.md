@@ -1,66 +1,77 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `b8bad199`).**
+> **Message from prior agent (2026-11-18, HEAD `bc2b64cb`).** This replaces the earlier
+> "report and stop" instruction, which was itself repeated across dozens of sessions.
 
-## Situation in one paragraph
+## One-line task
 
-NQ/MNQ ORB research is **complete and terminal** under the current scope. The frozen MNQ 15-minute ORB
-baseline is implemented, tested, and evaluated on every free data source that was available; it is
-negative-net on all of them, and the free-data search is exhausted (`data/FEASIBILITY_REPORT.md`).
-`git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` returns **0 files**:
-there is no research work left to do. Dozens of prior sessions produced docs-only commits that
-re-confirmed identical invariants and added zero evidence. `HANDOFF.md` and this file were just
-refreshed at HEAD `b8bad199`, so **do not rewrite them again**.
+**Ask the user to choose a forward path, and do no research work until they answer.**
 
-## Do exactly this, then stop
+## Situation
 
-1. Read `HANDOFF.md`: *Status*, *STOP RULE*, *Canonical metrics*, *Key facts*, *Forward paths*.
-2. Run **no** verification battery. Do not run `pytest`, `sha256sum`, artifact counts, or drift checks —
-   they cannot change any number below and only create another empty commit.
-3. Send the user **one** short message containing:
-   - the numbers table below,
-   - that a 0.4R target requires a 71.43% pre-cost win rate; both datasets miss it **and** gross P&L is
-     negative, so this is not a cost-only failure,
-   - that 75 tests pass and no research code/data changed since `a797773`,
-   - forward paths (a)/(b)/(c), with one explicit line asking the user to authorize **(a)** or **(c)** to
-     stop/reduce the cron, or to state the exact scope of experiment **(b)**.
-4. Stop. Make **no commit and no file edits**. If your turn would only produce a commit touching
-   `HANDOFF.md` / `INITIAL_TASK_FOR_NEXT_AGENT.md`, produce nothing.
+NQ/MNQ ORB research is complete under the current scope. The frozen MNQ 15-minute ORB baseline is
+implemented, tested (75 passing tests), and evaluated on both available free MNQ datasets. It loses
+money **gross and net** on both, and no further genuinely free MNQ 1-minute/15-minute data source exists
+(`data/FEASIBILITY_REPORT.md`). Since the last substantive research commit `a797773`, every change has
+been documentation-only; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
+scripts` returns **0 files**. There is nothing left to implement, verify, or search.
 
-The loop cannot end itself: the `.github/workflows/main.yml` cron resumes a session, and a docs-only
-commit is the only "deliverable" available. Only the user can break the cycle by choosing (a)/(b)/(c).
-Do not edit that workflow without explicit authorization for that exact change.
+## Do exactly this
+
+1. Read `HANDOFF.md` — *Status*, *STOP RULE*, *Canonical metrics*, *Key facts*, *Forward paths*.
+2. Run **no** verification battery (no `pytest`, `sha256sum`, artifact counts, drift checks). They cannot
+   change any number and only produce another empty checkpoint commit.
+3. Send the user **one** short message with the table below and this decision request:
+   - The 0.4R target needs a 71.43% pre-cost win rate. Observed win rates are 70.00% and 64.83%, and
+     gross P&L is negative, so this is **not** a cost-only failure.
+   - "Please authorize one of: **(a)** stop/reduce the `.github/workflows/main.yml` cron (the only action
+     that ends this loop), **(b)** a named, versioned experiment with an explicit diff from the frozen
+     baseline — say which one — or **(c)** accept the baseline as final and stop the automation."
+4. Stop. Make **no commit and no file edits**. If your turn would only rewrite `HANDOFF.md` /
+   `INITIAL_TASK_FOR_NEXT_AGENT.md` a third time, produce nothing instead.
+
+The loop cannot end itself: the workflow cron resumes a session, and a docs-only commit is the only
+"deliverable" available. Only the user can break the cycle. Never edit `.github/workflows/main.yml` or
+the controller without explicit authorization for that exact change.
 
 ## Numbers to report
 
 | Dataset | Trades | Split | Win % | Gross $ | Net $ | Costs $ | PF | Exp/trade | Gross R | Net R |
 |---|---|---|---|---|---|---|---|---|---|---|
-| axb0306 (MNQ.M26, 2026-01-20..2026-04-15) | 60 | 33L/27S | 70.00 | -7,662.00 | -31,637.98 | 23,975.98 | 0.4917 | -527.30 | -0.0431 | **-0.1773** |
-| Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359L/329S | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.0684 | **-0.3046** |
+| axb0306 (MNQ.M26, 2026-01-20..2026-04-15) | 60 | 33L/27S | 70.00 | -7,662.00 | -31,637.98 | 23,975.98 | 0.4917 | -527.30 | -0.043 | **-0.18** |
+| Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359L/329S | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.068 | **-0.30** |
 
-`avg_r` in the artifacts is gross/price-based; net R is recomputed from the trade ledgers as net P&L over
-realized dollar risk (`contracts x risk_points x $2`). Sizing at $3,000 planned risk with a 0.4xATR stop
-implies 29-278 MNQ contracts, so fully-loaded cost drag scales with size and dominates the result. No
-trade in either ledger exits via the 15:55 ET flatten, so reported P&L does not depend on any flatten
-execution assumption.
+`avg_r` in the artifacts is gross and price-based. Net R is net P&L over realized dollar risk
+(`contracts x risk_points x $2`), recomputed from the trade ledgers. Sizing at $3,000 planned risk with
+a 0.4xATR stop produces 29-278 MNQ contracts, so commission/fee/slippage drag scales with size and
+dominates. No trade exits via the 15:55 ET flatten, so reported P&L does not depend on any flatten
+execution assumption. Max drawdown is $37,491.80 (axb0306) and $626,994.56 (kaggle).
 
 ## Forward paths (each needs explicit user authorization for that exact scope)
 
-- **(a)** Stop or reduce the maintenance automation (`.github/workflows/main.yml` cron). The only action
-  that actually ends the docs-only checkpoint loop.
-- **(b)** Run a separately versioned, named experiment with an explicit diff from the frozen baseline
+- **(a)** Stop or reduce the maintenance automation (`.github/workflows/main.yml` cron).
+- **(b)** A separately versioned, named experiment with an explicit diff from the frozen baseline
   (cost-model sensitivity, entry-timing variant, or a pre-registered parameter study). Never mutate
-  `STRATEGY_RULES.txt` or existing canonical artifacts, and never tune to improve reported results.
+  `STRATEGY_RULES.txt` or canonical artifacts, and never tune to improve reported results.
 - **(c)** Accept the baseline as final and stop the automation.
 
 If the user supplies new free data or a new scope: audit first (source, license/access, retrieval time,
-contract months, timezone, timestamps, gaps, roll rule, adjustment, hashes) before writing or running any
-pipeline.
+contract months, timezone, timestamps, gaps, roll rule, adjustment, hashes) before writing any pipeline.
 
 ## Hard constraints
 
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
-- Any strategy/rule change = separately named, versioned experiment with an explicit diff from the frozen baseline.
-- Do not edit `.github/workflows/main.yml`, the controller, permissions, or automation policy without
-  explicit authorization for that exact change.
+- Any strategy/rule change = separately named, versioned experiment with an explicit diff from the baseline.
+- Do not delete research evidence or rewrite Git history to conceal a failure.
+
+## Verification commands (only for a later authorized research session — not for another checkpoint)
+
+```bash
+git status --short && git rev-parse --short HEAD
+git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts
+sha256sum STRATEGY_RULES.txt raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MNQ_1min_frontmonth.csv
+python3 -m pytest tests -q
+python3 src/orb/runner.py --prefix <new> --source axb0306   # compare to artifacts/metrics_axb0306.json
+python3 src/orb/runner.py --prefix <new> --source kaggle    # compare to artifacts/metrics_kaggle.json
+```

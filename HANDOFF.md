@@ -3,9 +3,11 @@
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
 The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on every available free
-MNQ data source. It is **negative-net on all datasets** under full costs, and the free-data search is
-exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
-change may begin without an explicit user decision on a forward path.
+MNQ data source. It is **negative-gross and negative-net on all datasets** under full costs, and the
+free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
+or automation change may begin without an explicit user decision on a forward path.
+
+Last refreshed: 2026-11-18 at HEAD `bc2b64cb` (working tree clean).
 
 ## STOP RULE for the next agent (read this first)
 
@@ -21,13 +23,16 @@ re-confirming identical invariants and adding nothing. **Do not continue that cy
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (re-verified 2026-11-18 at HEAD `b8bad199`; working tree clean)
+## Verified state (re-verified 2026-11-18 at HEAD `bc2b64cb`; working tree clean)
 
-- Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
+- `python3 -m pytest tests -q`: **75 passed in 0.77s**
+- Ledger re-aggregation (independent script over `artifacts/trades_*.json`) reproduces gross, net,
+  costs, trade counts, unique trade dates, and exit-reason sets exactly; net R over realized dollar
+  risk is **-0.1771** (axb0306) and **-0.3049** (kaggle), matching the quoted -0.18 / -0.30.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
 - `artifacts/`: 35 files, 0 manifest files
-- `python3 -m pytest tests -q`: **75 passed in 0.74s**
+- Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 
 Raw data hashes (unchanged):
 
@@ -113,7 +118,16 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `b8bad199` (this session):** user asked for the prior task plus a handoff refresh.
+- **2026-11-18, HEAD `bc2b64cb` (this session):** read the durable handoff, completed the prior
+  agent's task (report terminal state, numbers table, forward paths), and — at the user's explicit
+  instruction — refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` to a single
+  decision request. Verification performed: `pytest tests -q` → **75 passed**; drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
+  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged; canonical `metrics_*.json` values and an
+  independent ledger re-aggregation of both trade files match the table below. No code, data, config,
+  artifact, or automation change. This revision adds no research evidence.
+
+- **2026-11-18, HEAD `b8bad199`:** user asked for the prior task plus a handoff refresh.
   Verified: tree clean, `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
   scripts` → **0 files**, `artifacts/` 35 files, `pytest tests -q` → **75 passed in 0.71s**,
   `STRATEGY_RULES.txt` hash unchanged, and `metrics_axb0306.json` / `metrics_kaggle.json` still read
