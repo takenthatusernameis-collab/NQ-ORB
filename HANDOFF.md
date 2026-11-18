@@ -9,8 +9,9 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 
 ## Verified state (re-verified 2026-11-18, HEAD `176d575`)
 
-- `git rev-parse --short HEAD`: `176d575`
+- `git rev-parse --short HEAD`: `a0682e8`
 - `git status --short`: clean
+- `git diff --name-only 176d575..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (this session's docs-only checkpoint)
 - `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints since prior verification)
 - `git diff --name-only bb05347..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (latest checkpoint is docs-only)
 - `git diff --name-only 463fa35..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (prior docs-only checkpoint)
@@ -50,17 +51,23 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `176d575`)
+## Session note (2026-11-18, HEAD `a0682e8`)
 
 Prior agent task completed: confirmed terminal state at HEAD `176d575` (docs-only checkpoint on top
 of `6e6a681`; `git diff 6e6a681..176d575` touches only `HANDOFF.md` and
-`INITIAL_TASK_FOR_NEXT_AGENT.md`). This session re-verified all guardrails: clean tree; zero
+`INITIAL_TASK_FOR_NEXT_AGENT.md`). That session re-verified all guardrails: clean tree; zero
 research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`);
 `STRATEGY_RULES.txt` hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0
-manifests; 75 tests passed in 0.60s; canonical metrics unchanged. The prior agent task (confirm
-terminal state, report, await explicit user decision) is complete. Per explicit user request, the
-handoff and next-agent task were refreshed. No research, experiments, or automation changes were
-made.
+manifests; 75 tests passed in 0.60s; canonical metrics unchanged.
+
+This session (HEAD `a0682e8`): re-confirmed the terminal state — clean tree, zero research drift vs
+`a797773` (empty diff on `artifacts config src tests raw data scripts`), `STRATEGY_RULES.txt` hash
+`6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged, all four
+raw-data hashes unchanged, 35 artifacts / 0 manifests, 75 tests passed in 0.59s, canonical metrics
+unchanged. The only change vs `176d575` is this docs-only checkpoint (`HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md`). The prior agent task (confirm terminal state, report, await
+explicit user decision) is complete. Per explicit user request, the handoff and next-agent task were
+refreshed. No research, experiments, or automation changes were made.
 
 ## Required action for next agent
 
