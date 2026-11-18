@@ -7,17 +7,17 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `e967df1`)
+## Verified state (re-verified 2026-11-18, HEAD `b31f7d8`)
 
-- `git rev-parse --short HEAD`: `e967df1`
-- `git status --short`: clean at verification (before this docs update)
+- `git rev-parse --short HEAD`: `b31f7d8`
+- `git status --short`: clean
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
-- `git diff --name-only aae760c..e967df1`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint)
+- `git diff --name-only e967df1..b31f7d8`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint since prior verification)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.64s** (2026-11-18, HEAD `aae760c`)
+- `python3 -m pytest tests -q`: **75 passed in 0.59s** (2026-11-18, HEAD `b31f7d8`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -48,17 +48,15 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `e967df1`)
+## Session note (2026-11-18, HEAD `b31f7d8`)
 
-Prior agent task completed (read durable handoff, completed/verified it, updated handoff and wrote
-next-agent task). Terminal state re-verified at HEAD `e967df1`: 75 tests passed in 0.58s; clean
-tree at verification; zero research drift vs `a797773` (`artifacts/`, `config/`, `src/`, `tests/`,
-`raw/`, `scripts/` unchanged); rules hash and all raw data hashes unchanged; canonical metrics
-unchanged (axb0306 60/70.0%/net -31,637.98/PF 0.4917/avgR -0.0431; kaggle 688/64.83%/net
--626,525.96/PF 0.2271/avgR -0.0684); 35 artifacts, 0 manifests. `git diff --name-only a797773..HEAD`
-returns only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and excluded controller log
-`research_state/workflow_run_diagnostics.jsonl`. Handoff consolidated and refreshed; next-agent task
-rewritten clearly. No research, experiments, or automation changes made.
+Prior agent task completed: confirmed terminal state at HEAD `b31f7d8` (75 tests passed in
+0.59s; clean tree; zero research drift vs `a797773`; rules hash `6d3258c3...` and all raw data
+hashes unchanged; canonical metrics unchanged — axb0306 60/70.0%/net -31,637.98/PF 0.4917/avgR
+-0.0431; kaggle 688/64.83%/net -626,525.96/PF 0.2271/avgR -0.0684; 35 artifacts, 0 manifests).
+`git diff --name-only a797773..HEAD` returns only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
+and excluded controller log `research_state/workflow_run_diagnostics.jsonl`. Handoff refreshed and
+next-agent task rewritten clearly. No research, experiments, or automation changes made.
 
 ## Required action for next agent
 
