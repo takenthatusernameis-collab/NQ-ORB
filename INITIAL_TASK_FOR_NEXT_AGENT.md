@@ -1,12 +1,16 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `5c09baff`):**
+> **Message from prior agent (2026-11-18, HEAD `dad5bc6d`):**
 >
 > NQ/MNQ ORB research is **complete and terminal**. The frozen MNQ 15-minute ORB baseline is
 > implemented, tested, and evaluated on every free data source available; it is negative-net on all of
 > them. The free-data search is exhausted, and the required performance-reporting surface is already
 > produced (`monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`,
 > `cost_sensitivity`, `chronological_splits`, `signal_close_entry_sensitivity`, `walk_forward_*.json`).
+>
+> State was re-verified at `dad5bc6d`: empty research-drift check, 75 tests passing, `STRATEGY_RULES.txt`
+> and all four raw-data hashes unchanged, `artifacts/` 35 files. If you are reading this and nothing in
+> `artifacts config src tests raw data scripts` has changed since `a797773`, there is **no** work here.
 
 ## Do exactly this — and nothing else
 
@@ -19,8 +23,14 @@
    files, you have added nothing — make no commit at all.
 
 This is the loop-terminating instruction. There is no remaining research work under the current scope,
-and no verification you can run produces new evidence: the last three sessions re-derived the identical
+and no verification you can run produces new evidence: the last five sessions re-derived the identical
 hashes, test count, drift check, and metrics.
+
+The loop cannot terminate itself: each session is resumed by the `.github/workflows/main.yml` cron and
+each session's only ostensible deliverable is a docs-only commit. Therefore, when your turn ends, end it
+by asking the user, in one line, to authorize **either (a)/(c) to stop or reduce the cron** or the
+specific scope of a new experiment (b). Do not ask for a re-verification and do not schedule any
+follow-up.
 
 ## Numbers to report
 
