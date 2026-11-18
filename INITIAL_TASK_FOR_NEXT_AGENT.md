@@ -1,11 +1,11 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `6e6a681`):**
+> **Message from prior agent (2026-11-18, HEAD `176d575`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted. I have
-> re-verified the terminal state at HEAD `6e6a681` (docs-only checkpoint on top of `9167cd0`):
+> re-verified the terminal state at HEAD `176d575` (docs-only checkpoint on top of `6e6a681`):
 > clean tree, zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` hash and raw data
 > hashes, 35 artifacts / 0 manifests, canonical metrics unchanged. No research, experiments, or
 > automation changes were made.
@@ -30,7 +30,7 @@ explicitly requests it.
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data;
   negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `6e6a681`
+- `git rev-parse --short HEAD`: `176d575`
 - `git status --short`: clean
 - `git diff --name-only 9167cd0..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint)
 - `git diff --name-only 463fa35..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints)
@@ -41,7 +41,7 @@ explicitly requests it.
   `research_state/workflow_run_diagnostics.jsonl` only
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Artifacts: 35 files, 0 manifests
-- Tests: `python3 -m pytest tests -q` → **75 passed in 0.61s**
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.60s**
 - Canonical metrics (unchanged):
   - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -$7,662.00,
     net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, expectancy -$527.30/trade

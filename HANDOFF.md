@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `6e6a681`)
+## Verified state (re-verified 2026-11-18, HEAD `176d575`)
 
-- `git rev-parse --short HEAD`: `6e6a681`
+- `git rev-parse --short HEAD`: `176d575`
 - `git status --short`: clean
 - `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints since prior verification)
 - `git diff --name-only bb05347..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (latest checkpoint is docs-only)
@@ -19,7 +19,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.61s** (2026-11-18, HEAD `9167cd0`)
+- `python3 -m pytest tests -q`: **75 passed in 0.60s** (2026-11-18, HEAD `176d575`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -50,16 +50,17 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `6e6a681`)
+## Session note (2026-11-18, HEAD `176d575`)
 
-Prior agent task completed: confirmed terminal state at HEAD `6e6a681` (docs-only checkpoint on top
-of `9167cd0`; `git diff 9167cd0..6e6a681` touches only `HANDOFF.md` and
-`INITIAL_TASK_FOR_NEXT_AGENT.md`). Re-verified all guardrails: clean tree; zero research drift vs
-`a797773` (empty diff on `artifacts config src tests raw data scripts`); `STRATEGY_RULES.txt` hash
-`6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0 manifests; 75 tests passed in
-0.61s; canonical metrics unchanged. The prior agent task (confirm terminal state, report, await
-explicit user decision) is complete. Per explicit user request, the handoff and next-agent task were
-refreshed. No research, experiments, or automation changes were made.
+Prior agent task completed: confirmed terminal state at HEAD `176d575` (docs-only checkpoint on top
+of `6e6a681`; `git diff 6e6a681..176d575` touches only `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md`). This session re-verified all guardrails: clean tree; zero
+research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`);
+`STRATEGY_RULES.txt` hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0
+manifests; 75 tests passed in 0.60s; canonical metrics unchanged. The prior agent task (confirm
+terminal state, report, await explicit user decision) is complete. Per explicit user request, the
+handoff and next-agent task were refreshed. No research, experiments, or automation changes were
+made.
 
 ## Required action for next agent
 
