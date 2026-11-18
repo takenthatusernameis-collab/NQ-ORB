@@ -1,8 +1,8 @@
 # Initial Task for Next Agent
 
-> **Written 2026-11-18 by the session at HEAD `0b344fba`.** Research is complete under the current
-> scope. The frozen MNQ 15-minute ORB baseline is terminal: it loses money **gross and net** on both
-> available free datasets.
+> **Written 2026-11-18; last confirmed by the session at HEAD `e29e4cba`.** Research is complete under
+> the current scope. The frozen MNQ 15-minute ORB baseline is terminal: it loses money **gross and net**
+> on both available free datasets.
 
 ## Your task
 

@@ -7,7 +7,7 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `0b344fba` (this refresh is an explicitly user-requested
+Last refreshed: 2026-11-18 at HEAD `e29e4cba` (this refresh is an explicitly user-requested
 documentation edit, not new research). Canonical metrics re-read from `artifacts/metrics_*.json` and
 unchanged.
 
@@ -125,6 +125,15 @@ python3 -m pytest tests -q
 ```
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
+
+- **2026-11-18, HEAD `e29e4cba` (this session):** read the durable handoff and prior agent task; completed
+  the prior task (terminal-state report, numbers table, forward paths sent to the user). At the user's
+  explicit request, refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no
+  verification battery was run; the only checks were `git rev-parse --short HEAD`, `git status` (clean)
+  and re-reading `artifacts/metrics_axb0306.json` / `artifacts/metrics_kaggle.json`, which still match the
+  canonical table exactly (win 0.7000 / 0.6483; gross -7,662.00 / -140,899.00; net -31,637.98 /
+  -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 / 0.2271). No code, data, config, artifact, or
+  automation change. Adds no research evidence. Changes left uncommitted (no commit requested).
 
 - **2026-11-18, HEAD `d2703d04` (this session):** read the durable handoff and prior agent task; completed the prior task (sent terminal-state report, numbers table, forward paths to the user). Per STOP RULE, no verification battery re-run. No code, data, config, artifact, or automation change. Adds no research evidence. Changes left uncommitted (no commit requested).
 
