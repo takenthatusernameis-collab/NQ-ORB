@@ -7,9 +7,9 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `e29e4cba` (this refresh is an explicitly user-requested
-documentation edit, not new research). Canonical metrics re-read from `artifacts/metrics_*.json` and
-unchanged.
+Last refreshed: 2026-11-18 at HEAD `a8aa0e24` (explicitly user-requested documentation edit, not new
+research). Canonical metrics re-read from `artifacts/metrics_*.json`, tree clean, `artifacts/` still 35
+files, `STRATEGY_RULES.txt` hash still `6d3258c3…d2b1`. No code/data/config/automation change.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
 > explicitly asks for a refresh. The repeated docs-only rewrites below are exactly the cycle the STOP
@@ -87,6 +87,12 @@ Raw data hashes (unchanged):
   depend on any flatten execution assumption.
 - 0.4R target implies a pre-cost break-even win rate of 71.43%; both datasets fall short after costs,
   and gross P&L is negative too.
+- Chronological splits (already in the artifacts) kill the "good regime" hypothesis outright: on
+  axb0306 the 36-trade train segment is net **+$1,229.22** but val is **-$15,894.08** and test
+  **-$16,973.12** (both 6W/6L); on kaggle train is net **-$448,765.02**, val **-$66,243.22**, test
+  **-$111,517.72**. No out-of-sample segment is net positive, so the baseline is not salvageable by
+  recency or regime selection. Sharpe/Sortino (per-trade, daily-equivalent) are **-1.06/-0.67**
+  (axb0306) and **-1.68/-1.04** (kaggle); exposure is 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
 - Costs (commission + exchange/clearing $2.87/side, 1 tick adverse slippage) dominate net results.
 - An independent signal-funnel cross-check reproduces engine trade counts exactly (axb0306 60, Kaggle 688).
 - Required reporting surface already exists in the artifacts: `metrics_*.json` contain
@@ -126,7 +132,16 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `e29e4cba` (this session):** read the durable handoff and prior agent task; completed
+- **2026-11-18, HEAD `a8aa0e24` (this session):** read the durable handoff and prior agent task, completed
+  the prior task (terminal-state report, numbers table, forward paths), and at the user's explicit request
+  refreshed `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. No verification battery per STOP RULE; only
+  checks were `git rev-parse --short HEAD`, `git status` (clean), `artifacts/` count (35),
+  `sha256sum STRATEGY_RULES.txt` (unchanged), and re-reading both `metrics_*.json` (values match the
+  canonical table exactly). Added one previously undocumented evidence line: the chronological splits
+  show no net-positive out-of-sample segment on either dataset. No code, data, config, artifact, or
+  automation change. Adds no research evidence.
+
+- **2026-11-18, HEAD `e29e4cba` (session):** read the durable handoff and prior agent task; completed
   the prior task (terminal-state report, numbers table, forward paths sent to the user). At the user's
   explicit request, refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no
   verification battery was run; the only checks were `git rev-parse --short HEAD`, `git status` (clean)
