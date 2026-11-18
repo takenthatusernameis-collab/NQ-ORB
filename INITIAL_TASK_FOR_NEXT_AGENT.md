@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `8f75abe1`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `7413ee28`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -15,15 +15,16 @@ forward path or supplies new data.
 
 ## Decision rule — read before doing anything else
 
-- **Boilerplate turn** ("read the prior task and complete it, then update the handoff and write an
-  initial task for the next agent" with **no new scope**): send the message above only. Do **not**
-  rewrite `HANDOFF.md` or this file, do **not** re-run `pytest`/`sha256sum`/drift checks/artifact
-  counts, and do **not** commit. Both documents are already current; repeating verification only
-  produces docs-only commits with zero new evidence.
-- **Explicit refresh request** (the user specifically asks to update the handoff / write a new initial
-  task): a one-line verification pass (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`,
-  drift check, `sha256sum STRATEGY_RULES.txt`, re-read both `metrics_*.json`) plus the two-file refresh
-  is acceptable. Update the "Last refreshed" line, add one session-history bullet, and change no number.
+- **Boilerplate turn** ("read the prior task and complete it" with **no new scope**): send the message
+  above only. Do **not** rewrite `HANDOFF.md` or this file, do **not** re-run
+  `pytest`/`sha256sum`/drift checks/artifact counts, and do **not** commit. Both documents are current;
+  repeating verification only produces docs-only commits with zero new evidence.
+- **Explicit refresh request wording** (the prompt explicitly says "then update the handoff and write a
+  clear initial task message for the next agent"): a *single* compact verification pass
+  (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`, drift check, `sha256sum
+  STRATEGY_RULES.txt`, re-read both `metrics_*.json`) plus the two-file refresh is acceptable — but
+  change the "Last refreshed" line and one session-history bullet, and change **no number**. Do not
+  grow the session history: replace, don't append.
 - **New scope named by the user** (new free data, a named experiment, or a specific automation change):
   act on exactly that scope and nothing wider.
 

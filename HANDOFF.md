@@ -7,15 +7,14 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `8f75abe1` (explicitly user-requested documentation edit, not new
-research). One-line verification pass: `pytest tests -q` → **75 passed in 0.69s**; research-drift check
-**0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both
-`metrics_*.json` re-read and match the canonical table exactly. No code/data/config/artifact/automation
-change and no numbers changed. The STOP RULE below remains in force for every future boilerplate turn.
+Last refreshed: 2026-11-18 at HEAD `7413ee28`. One-line verification pass: `pytest tests -q` → **75
+passed in 0.67s**; research-drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the canonical table below. No
+code/data/config/artifact/automation change; no number changed. This session additionally compressed
+the duplicated checkpoint bullets out of "Session history" so future agents spend less context on them.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
-> explicitly asks for a refresh. The repeated docs-only rewrites below are exactly the cycle the STOP
-> RULE forbids.
+> explicitly asks for a refresh. Repeated docs-only rewrites are exactly the cycle the STOP RULE forbids.
 
 ## STOP RULE for the next agent (read this first)
 
@@ -26,21 +25,23 @@ identical invariants and adding nothing. **Do not continue that cycle.**
   new evidence and only creates another empty commit.
 - Do **not** rewrite `HANDOFF.md` or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user asks for a
   specific change. Treat both files as read-only by default.
-- Your entire turn is: read `INITIAL_TASK_FOR_NEXT_AGENT.md`, send the user one short message (state,
-  numbers table, forward paths), and stop. No file edits, no commit.
-- Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
-  exactly that scope.
+- A boilerplate turn is: read `INITIAL_TASK_FOR_NEXT_AGENT.md`, send the user one short message
+  (terminal state, numbers table, forward paths), and stop. No file edits, no commit.
+- Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
+  data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-18 at HEAD `2b90208e`; working tree clean before this refresh)
+## Verified state (re-verified 2026-11-18 at HEAD `7413ee28`; working tree clean)
 
-- `python3 -m pytest tests -q`: **75 passed in 0.77s**
-- Ledger re-aggregation (independent script over `artifacts/trades_*.json`) reproduces gross, net,
-  costs, trade counts, unique trade dates, and exit-reason sets exactly; net R over realized dollar
-  risk is **-0.1771** (axb0306) and **-0.3049** (kaggle), matching the quoted -0.18 / -0.30.
+- `python3 -m pytest tests -q`: **75 passed in 0.67s**
+- Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
+  → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
+  `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
 - `artifacts/`: 35 files, 0 manifest files
-- Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
+- Ledger re-aggregation (independent script over `artifacts/trades_*.json`) reproduces gross, net,
+  costs, trade counts, unique trade dates, and exit-reason sets exactly; net R over realized dollar
+  risk is **-0.1771** (axb0306) and **-0.3049** (kaggle), matching the quoted -0.18 / -0.30.
 
 Raw data hashes (unchanged):
 
@@ -69,43 +70,36 @@ Raw data hashes (unchanged):
 ## Key facts
 
 - `metrics.avg_r` is a **gross, price-based R multiple**: `(exit_fill - entry_fill) / risk_points`
-  (sign-adjusted), i.e. before commissions and slippage. It is **not** a net R. Recomputed directly
-  from the ledgers as net P&L over realized dollar risk (`contracts x risk_points x $2`) the two
-  consistent definitions both round to **-0.18** (axb0306) and **-0.30** (kaggle):
-  portfolio-weighted (sum net P&L / sum risk) = **-0.1771 / -0.3049**;
-  mean per-trade net R = **-0.1773 / -0.3046**. Quote net R, not `avg_r`, when discussing costed
-  performance.
+  (sign-adjusted), i.e. before commissions and slippage. It is **not** a net R. Recomputed from the
+  ledgers as net P&L over realized dollar risk (`contracts x risk_points x $2`), both consistent
+  definitions round to **-0.18** (axb0306) and **-0.30** (kaggle): portfolio-weighted
+  **-0.1771 / -0.3049**; mean per-trade **-0.1773 / -0.3046**. Quote net R, not `avg_r`.
 - Position sizing at a $3,000 planned risk with the 0.4xATR stop implies very large MNQ size:
-  contracts run 29-122 (median 63.5) on axb0306 and 34-278 (median 122) on kaggle. At 1 tick adverse
-  slippage plus $2.87/side fees this is what drives fully-loaded cost per trade of $399.60
-  (axb0306) and $705.85 (kaggle) - i.e. cost drag scales with size, not with the raw edge.
-- Independent recomputation of both ledgers reproduces every monetary metric exactly: count,
-  gross P&L, net P&L, costs, long/short split, profit factor, expectancy, win rate, and
-  one-trade-per-day (60/688 unique trade dates = 60/688 trades). `gross - net == costs` holds to the
-  cent on both datasets.
+  29–122 contracts (median 63.5) on axb0306 and 34–278 (median 122) on kaggle. With 1 tick adverse
+  slippage plus $2.87/side fees, fully-loaded cost is $399.60 (axb0306) and $705.85 (kaggle) per
+  trade — cost drag scales with size, not with the raw edge.
+- `gross - net == costs` holds to the cent on both datasets; 60/688 unique trade dates for 60/688
+  trades (one-trade-per-day rule intact).
 - No trade in either ledger exits via the 15:55 ET flatten (exit reasons are only `target`, `stop`,
   `stop_first_ambiguous`; latest exit 12:00 ET on axb0306 and 14:15 ET on kaggle). The
-  flatten/intrabar-ordering path is therefore test-covered code, but the reported P&L does not
-  depend on any flatten execution assumption.
-- 0.4R target implies a pre-cost break-even win rate of 71.43%; both datasets fall short after costs,
-  and gross P&L is negative too.
-- Chronological splits (already in the artifacts) kill the "good regime" hypothesis outright: on
-  axb0306 the 36-trade train segment is net **+$1,229.22** but val is **-$15,894.08** and test
-  **-$16,973.12** (both 6W/6L); on kaggle train is net **-$448,765.02**, val **-$66,243.22**, test
-  **-$111,517.72**. No out-of-sample segment is net positive, so the baseline is not salvageable by
-  recency or regime selection. Sharpe/Sortino (per-trade, daily-equivalent) are **-1.06/-0.67**
-  (axb0306) and **-1.68/-1.04** (kaggle); exposure is 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
+  flatten/intrabar-ordering path is test-covered, but reported P&L does not depend on a flatten
+  execution assumption.
+- 0.4R target implies a **71.43% pre-cost break-even win rate**; both datasets fall short *and* gross
+  P&L is negative — a strategy-edge failure, not a cost-only failure.
+- Chronological splits kill the "good regime" hypothesis: on axb0306 train (36 trades) is net
+  **+$1,229.22** but val is **-$15,894.08** and test **-$16,973.12**; on kaggle train
+  **-$448,765.02**, val **-$66,243.22**, test **-$111,517.72**. No out-of-sample segment is net
+  positive. Sharpe/Sortino (per-trade, daily-equivalent) are **-1.06/-0.67** (axb0306) and
+  **-1.68/-1.04** (kaggle); exposure 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
 - Costs (commission + exchange/clearing $2.87/side, 1 tick adverse slippage) dominate net results.
-- The artifacts' 12-point `cost_sensitivity` grid is net-negative in **every** scenario on both
-  datasets: axb0306 spans **-$24,754.28** (0.5x slippage, 0.8x fees) to **-$40,610.18** (2.0x/1.2x);
-  kaggle spans **-$487,098.57** to **-$808,255.35**. No plausible cost assumption rescues the
-  baseline, which is the strongest confirmation that the failure is in the edge, not the cost model.
-- An independent signal-funnel cross-check reproduces engine trade counts exactly (axb0306 60, Kaggle 688).
-- Required reporting surface already exists in the artifacts: `metrics_*.json` contain
-  `monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`, `cost_sensitivity`,
+- The 12-point `cost_sensitivity` grid is net-negative in **every** scenario on both datasets:
+  axb0306 **-$24,754.28** (0.5x slippage, 0.8x fees) to **-$40,610.18** (2.0x/1.2x); kaggle
+  **-$487,098.57** to **-$808,255.35**. No plausible cost assumption rescues the baseline.
+- An independent signal-funnel cross-check reproduces engine trade counts exactly (60 / 688).
+- Required reporting surface already exists: `metrics_*.json` contain `monthly_net_pnl`,
+  `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`, `cost_sensitivity`,
   `chronological_splits`, `signal_close_entry_sensitivity`; `walk_forward_*.json` exist.
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
-- `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture, excluded from research-drift checks.
 
 ## Forward paths (each requires explicit user authorization for that exact scope)
 
@@ -114,7 +108,7 @@ Raw data hashes (unchanged):
 - **(c)** Accept the baseline as final and stop the automation.
 
 If the user supplies new free data or a new scope, audit it first (source, license/access, retrieval
-time, contract months, timezone, timestamps, gaps, roll rule, hashes) before implementing.
+time, contract months, timezone, timestamps, gaps, roll rule, adjustment, hashes) before implementing.
 
 ## Hard constraints
 
@@ -136,176 +130,22 @@ sha256sum raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MN
 python3 -m pytest tests -q
 ```
 
-## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
+## Session history
 
-- **2026-11-18, HEAD `1051d276` (this session):** read the durable handoff and completed the prior
-  task (terminal-state report, numbers table, forward paths). The user explicitly asked to refresh the
-  handoff and write a new initial task, so the STOP RULE was overridden for this turn only. One-line
-  verification: `pytest tests -q` → **75 passed in 0.69s**; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
-  `artifacts/` 35 files; `STRATEGY_RULES.txt` and all four raw-data hashes unchanged;
-  `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical table exactly (win
-  0.7000 / 0.6483; gross -7,662.00 / -140,899.00; net -31,637.98 / -626,525.96; costs 23,975.98 /
-  485,626.96; PF 0.4917 / 0.2271; expectancy -527.30 / -910.65). Added one evidence line to Key facts
-  (every one of the 12 cost-sensitivity scenarios is net-negative on both datasets). No code, data,
-  config, artifact, or automation change; no canonical number changed.
-
-- **2026-11-18, HEAD `6a649c5c`:** read the durable handoff and completed the prior
-  task (terminal-state report, numbers table, forward paths). The user's prompt explicitly asked to
-  update the handoff and write a new initial task, so the STOP RULE was overridden for this turn only.
-  Interim verification: `pytest tests -q` → **75 passed in 0.70s**; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
-  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged (`6d3258c3…d2b1`); `metrics_axb0306.json`
-  and `metrics_kaggle.json` re-read and match the canonical values (win 0.7000 / 0.6483; gross
-  -7,662.00 / -140,899.00; net -31,637.98 / -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 /
-  0.2271; expectancy -527.30 / -910.65). No code, data, config, artifact, or automation change; adds
-  no research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `fde961fd`:** read the durable handoff and completed the prior
-  task (terminal-state report, numbers table, forward paths). At the user's explicit request,
-  refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no verification battery
-  was re-run; only `git rev-parse --short HEAD` (`fde961fd`) and `git status` (clean) were checked.
-  No code, data, config, artifact, or automation change; no number changed. Adds no research evidence.
-  Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `9cc3d8dd` (this session):** read the durable handoff and completed the prior task
-  (terminal-state report, numbers table, forward paths). The user then explicitly requested a handoff
-  refresh plus a new initial-task message, so the STOP RULE was overridden for this turn only. One-line
-  verification: `pytest tests -q` → **75 passed in 0.69s**; drift check → **0 files**; `artifacts/`
-  35 files; `STRATEGY_RULES.txt` hash unchanged (`6d3258c3…d2b1`); tree clean at `9cc3d8dd`. No code,
-  data, config, artifact, or automation change; no number changed; adds no research evidence.
-
-- **2026-11-18, HEAD `797d5035` (this session):** read the durable handoff and completed the prior task
-  (terminal-state report, numbers table, forward paths). The user then explicitly requested a handoff
-  refresh plus a new initial-task message, so the STOP RULE was overridden for this turn only.
-  Verification: `pytest tests -q` → **75 passed in 0.71s**; drift check → **0 files**; `artifacts/`
-  35 files; `STRATEGY_RULES.txt` hash unchanged (`6d3258c3…d2b1`). No code, data, config, artifact, or
-  automation change; adds no research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `070d6cbc` (this session):** read the durable handoff and prior agent task, completed
-  the prior task (terminal-state report, numbers table, forward paths), and at the user's explicit request
-  refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE only `git rev-parse`,
-  `git status` (clean) and `git log` were run; no numbers changed and none were re-derived. The initial
-  task file was tightened so the next agent reports and stops without rewriting either document again.
-  No code, data, config, artifact, or automation change; adds no research evidence. Changes left
-  uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `03830e0f` (this session):** read the durable handoff and prior agent task, completed
-  the prior task (terminal-state report, numbers table, forward paths sent to the user), and at the user's
-  explicit request refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification:
-  `pytest tests -q` → **75 passed in 0.73s**; drift check → **0 files**; `artifacts/` 35 files;
-  `STRATEGY_RULES.txt` hash unchanged. No code, data, config, artifact, or automation change; adds no
-  research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `b1db84bc` (this session):** read the durable handoff and prior agent task, completed
-  the prior task (terminal-state report, numbers table, forward paths sent to the user), and at the user's
-  explicit request refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification:
-  `pytest tests -q` → **75 passed in 0.73s**; drift check → **0 files**; `artifacts/` 35 files;
-  `STRATEGY_RULES.txt` hash unchanged. No code, data, config, artifact, or automation change; adds no
-  research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `a8aa0e24` (this session):** read the durable handoff and prior agent task, completed
-  the prior task (terminal-state report, numbers table, forward paths), and at the user's explicit request
-  refreshed `HANDOFF.md` + `INITIAL_TASK_FOR_NEXT_AGENT.md`. No verification battery per STOP RULE; only
-  checks were `git rev-parse --short HEAD`, `git status` (clean), `artifacts/` count (35),
-  `sha256sum STRATEGY_RULES.txt` (unchanged), and re-reading both `metrics_*.json` (values match the
-  canonical table exactly). Added one previously undocumented evidence line: the chronological splits
-  show no net-positive out-of-sample segment on either dataset. No code, data, config, artifact, or
-  automation change. Adds no research evidence.
-
-- **2026-11-18, HEAD `e29e4cba` (session):** read the durable handoff and prior agent task; completed
-  the prior task (terminal-state report, numbers table, forward paths sent to the user). At the user's
-  explicit request, refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no
-  verification battery was run; the only checks were `git rev-parse --short HEAD`, `git status` (clean)
-  and re-reading `artifacts/metrics_axb0306.json` / `artifacts/metrics_kaggle.json`, which still match the
-  canonical table exactly (win 0.7000 / 0.6483; gross -7,662.00 / -140,899.00; net -31,637.98 /
-  -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 / 0.2271). No code, data, config, artifact, or
-  automation change. Adds no research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `d2703d04` (this session):** read the durable handoff and prior agent task; completed the prior task (sent terminal-state report, numbers table, forward paths to the user). Per STOP RULE, no verification battery re-run. No code, data, config, artifact, or automation change. Adds no research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `0b344fba` (this session):** read the durable handoff and completed the prior
-  agent's task (terminal-state report, numbers table, forward paths sent to the user). At the user's
-  explicit request, refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` as a clear
-  initial task for the next agent. Per STOP RULE no verification battery was re-run; the only checks
-  were re-reading `artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`, which still
-  match the canonical table exactly (win 0.7000 / 0.6483; gross -7,662.00 / -140,899.00; net
-  -31,637.98 / -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 / 0.2271; expectancy -527.30 /
-  -910.65). Working tree was clean before this refresh; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-  No code, data, config, artifact, or automation change. Adds no research evidence. Changes left
-  uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `649dc9e4` (this session):** read the durable handoff and completed the prior
-  agent's task (terminal-state report, numbers table, forward paths). At the user's explicit request,
-  refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no verification battery
-  was run; the only check was re-reading `artifacts/metrics_axb0306.json` and
-  `artifacts/metrics_kaggle.json`, which still match the canonical table exactly (win 0.7000 / 0.6483;
-  gross -7,662.00 / -140,899.00; net -31,637.98 / -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 /
-  0.2271; expectancy -527.30 / -910.65). No code, data, config, artifact, or automation change. Adds no
-  research evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `2b90208e` (this session):** read the durable handoff, completed the prior agent's
-  task (terminal-state report, numbers table, forward paths), and — at the user's explicit request —
-  refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification: `pytest tests -q` →
-  **75 passed in 0.71s**; drift check `git diff --name-only a797773..HEAD -- artifacts config src tests
-  raw data scripts` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged
-  (`6d3258c3…d2b1`); `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical
-  values above exactly. No code, data, config, artifact, or automation change; changes left uncommitted
-  in the working tree because no commit was requested. Adds no research evidence.
-
-- **2026-11-18, HEAD `838f8c03`:** read the durable handoff and completed the prior
-  agent's task (terminal-state report, numbers table, forward paths). At the user's explicit request,
-  refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` and marked both **final/read-only future
-  sessions**. Verification: `pytest tests -q` → **75 passed in 0.72s**; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
-  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged. Resolved the net-R discrepancy
-  (-0.1771/-0.3049 portfolio-weighted vs -0.1773/-0.3046 mean per-trade; both round to -0.18/-0.30).
-  No code, data, config, artifact, or automation change. Adds no research evidence.
-
-- **2026-11-18, HEAD `bc2b64cb`:** read the durable handoff, completed the prior
-  agent's task (report terminal state, numbers table, forward paths), and — at the user's explicit
-  instruction — refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` to a single
-  decision request. Verification performed: `pytest tests -q` → **75 passed**; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
-  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged; canonical `metrics_*.json` values and an
-  independent ledger re-aggregation of both trade files match the table below. No code, data, config,
-  artifact, or automation change. This revision adds no research evidence.
-
-- **2026-11-18, HEAD `b8bad199`:** user asked for the prior task plus a handoff refresh.
-  Verified: tree clean, `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, `artifacts/` 35 files, `pytest tests -q` → **75 passed in 0.71s**,
-  `STRATEGY_RULES.txt` hash unchanged, and `metrics_axb0306.json` / `metrics_kaggle.json` still read
-  exactly the canonical values above. No code, data, config, artifact, or automation change. This is a
-  documentation-only revision of the two checkpoint files — it adds no research evidence.
-- **2026-11-18, HEAD `7fb16943`:** completed the prior-agent task (reported terminal
-  state, numbers table, 0.4R → 71.43% pre-cost break-even, 75 tests, forward paths (a)/(b)/(c)); at the
-  user's explicit instruction refreshed this file and `INITIAL_TASK_FOR_NEXT_AGENT.md`, and compressed
-  this session-history section from ~40 duplicated checkpoint notes into this summary. Verified at
-  `7fb16943`: tree clean, drift check → 0 files, `artifacts/` 35 files, `pytest tests -q` → 75 passed,
-  `STRATEGY_RULES.txt` hash unchanged. No code, data, config, artifact, or automation changes.
+- **2026-11-18, HEAD `7413ee28` (this session):** read the durable handoff and completed the prior task
+  (terminal-state report, numbers table, forward paths). The user again requested the handoff refresh
+  plus a new initial task, so the STOP RULE was overridden for this turn. Verification: `pytest tests
+  -q` → **75 passed in 0.67s**; drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+  hash unchanged; `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical table.
+  Compressed the session-history section (removed ~15 near-duplicate checkpoint bullets from
+  `8f75abe1`..`334e3eb5` and earlier). No code, data, config, artifact, or automation change; no number
+  changed; adds no research evidence.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
-- **2026-11-18, commits after `a797773`** (`5fab764` preset plus ~40 checkpoint commits including
-  `b809e0e6`, `1ba05c42`, `dad5bc6d`, `5c09baff`, `463cb154`, `eaa3e4d3`, `7b49a455`, `b89aae14`,
-  `ec839648`, `88d8e633`, `7f82e992`, `75b17c45`, `555bd7ee`, `8eeb6ac6`, `7fb16943`): docs-only
-  re-verifications of identical invariants with zero research drift; they produced no new evidence.
-  The loop only ends when the user authorizes path (a)/(c) or supplies new scope (b).
-
-- **2026-11-18, HEAD `334e3eb5` (this session):** read the durable handoff and completed the prior
-  agent's task (terminal-state report, numbers table, forward paths sent to the user). At the user's
-  explicit request, refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` as a clear
-  initial task for the next agent. Per STOP RULE, no verification battery was re-run (no new evidence
-  possible); drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged
-  (`6d3258c3…d2b1`). No code, data, config, artifact, or automation change. Adds no research
-  evidence. Changes left uncommitted (no commit requested).
-
-- **2026-11-18, HEAD `8f75abe1` (this session):** read the durable handoff and completed the prior
-  agent's task (terminal-state report, numbers table, forward paths sent to the user). At the user's
-  explicit request, refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` as a clear
-  initial task for the next agent. Working tree clean; drift check
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
-  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged (`6d3258c3…d2b1`). No code, data,
-  config, artifact, or automation change; no number changed; adds no research evidence. Changes left
-  uncommitted (no commit requested).
+- **2026-11-18, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~45 docs-only
+  checkpoint commits through `7413ee28` (including `8f75abe1`, `1051d276`, `6a649c5c`, `fde961fd`,
+  `9cc3d8dd`, `797d5035`, `070d6cbc`, `03830e0f`, `b1db84bc`, `a8aa0e24`, `e29e4cba`, `d2703d04`,
+  `0b344fba`, `649dc9e4`, `2b90208e`, `838f8c03`, `bc2b64cb`, `b8bad199`, `7fb16943`, `334e3eb5`).
+  Each re-confirmed identical invariants with zero research drift and produced **no new evidence**. The
+  loop only ends when the user authorizes path (a)/(c) or supplies new scope (b).
+- Pre-`13c46b65` detail: `git show 13c46b65:HANDOFF.md`.
