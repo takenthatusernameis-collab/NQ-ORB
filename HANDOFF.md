@@ -21,7 +21,7 @@ re-confirming identical invariants and adding nothing. **Do not continue that cy
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; unchanged through `eaa3e4d3`)
+## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; re-verified unchanged through `463cb154`)
 
 - Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **empty**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
@@ -108,6 +108,16 @@ python3 -m pytest tests -q
 ```
 
 ## Session history
+
+- **2026-11-18, HEAD `463cb154` (this session):** completed the prior-agent task (reported terminal state,
+  canonical metrics, and forward paths to the user) and, at the user's explicit instruction, refreshed
+  this file and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Re-verified at `463cb154`: `pytest tests -q` -> 75
+  passed in 0.68s, drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw
+  data scripts` empty, `STRATEGY_RULES.txt` SHA-256 unchanged, all four raw-data hashes unchanged,
+  `artifacts/` 35 files / 0 manifests. Also confirmed the required reporting surface is already
+  produced: `metrics_*.json` contain `monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`,
+  `exposure_pct`, `cost_sensitivity`, `chronological_splits`, `signal_close_entry_sensitivity`; and
+  `walk_forward_*.json` exist. No code, data, config, artifact, or automation changes.
 
 - **2026-11-18, HEAD `eaa3e4d3` (this session):** completed the prior-agent task (reported the terminal
   state, canonical metrics, and forward paths (a)/(b)/(c) to the user) and, at the user's explicit

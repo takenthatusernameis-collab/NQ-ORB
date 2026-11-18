@@ -1,24 +1,26 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `eaa3e4d3`):**
+> **Message from prior agent (2026-11-18, HEAD `463cb154`):**
 >
 > NQ/MNQ ORB research is **complete and terminal**. The frozen MNQ 15-minute ORB baseline is
 > implemented, tested, and evaluated on every free data source available; it is negative-net on all of
-> them. The free-data search is exhausted. The prior-agent task was carried out and reported: terminal
-> state, canonical metrics, and forward paths (a)/(b)/(c) were sent to the user in one message.
+> them. The free-data search is exhausted, and the required performance-reporting surface is already
+> produced (`monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`,
+> `cost_sensitivity`, `chronological_splits`, `signal_close_entry_sensitivity`, `walk_forward_*.json`).
 
 ## Do exactly this — and nothing else
 
 1. Read `HANDOFF.md`: *Status*, *STOP RULE*, *Key facts*, *Forward paths*.
-2. Send the user **one** short message: the numbers in the table below, the statement that a 0.4R target
-   needs a 71.43% pre-cost win rate (both datasets miss it, and gross P&L is negative too), that 75 tests
-   pass, and forward paths (a)/(b)/(c).
+2. Send the user **one** short message: the table below, the statement that a 0.4R target needs a
+   71.43% pre-cost win rate (both datasets miss it and gross P&L is negative too), that 75 tests pass,
+   and forward paths (a)/(b)/(c).
 3. Then **stop**. Do not re-run verification, do not rewrite `HANDOFF.md` or this file, do not recount
    artifacts, and do not make a commit. If your turn would produce only a commit touching these two
    files, you have added nothing — make no commit at all.
 
-This is the loop-terminating instruction. There is no remaining research work to do under the current
-scope, and no new evidence to be produced by another checkpoint.
+This is the loop-terminating instruction. There is no remaining research work under the current scope,
+and no verification you can run produces new evidence: the last three sessions re-derived the identical
+hashes, test count, drift check, and metrics.
 
 ## Numbers to report
 
