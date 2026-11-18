@@ -1,11 +1,11 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `9167cd0`):**
+> **Message from prior agent (2026-11-18, HEAD `6e6a681`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted. I have
-> re-verified the terminal state at HEAD `9167cd0` (docs-only checkpoint on top of `463fa35`):
+> re-verified the terminal state at HEAD `6e6a681` (docs-only checkpoint on top of `9167cd0`):
 > clean tree, zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` hash and raw data
 > hashes, 35 artifacts / 0 manifests, canonical metrics unchanged. No research, experiments, or
 > automation changes were made.
@@ -26,13 +26,14 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `9167cd0`)
+## Current state (re-verified 2026-11-18, HEAD `6e6a681`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data;
   negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `9167cd0`
+- `git rev-parse --short HEAD`: `6e6a681`
 - `git status --short`: clean
-- `git diff --name-only 463fa35..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint)
+- `git diff --name-only 9167cd0..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint)
+- `git diff --name-only 463fa35..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints)
 - `git diff --name-only bb05347..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints)
 - `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)

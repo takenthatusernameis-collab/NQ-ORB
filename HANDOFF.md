@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `9167cd0`)
+## Verified state (re-verified 2026-11-18, HEAD `6e6a681`)
 
-- `git rev-parse --short HEAD`: `9167cd0`
+- `git rev-parse --short HEAD`: `6e6a681`
 - `git status --short`: clean
 - `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoints since prior verification)
 - `git diff --name-only bb05347..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (latest checkpoint is docs-only)
@@ -50,19 +50,16 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `9167cd0`)
+## Session note (2026-11-18, HEAD `6e6a681`)
 
-Prior agent task completed: confirmed terminal state at HEAD `9167cd0` (docs-only checkpoint on top
-of `463fa35`; `git diff 463fa35..9167cd0` touches only `HANDOFF.md` and
+Prior agent task completed: confirmed terminal state at HEAD `6e6a681` (docs-only checkpoint on top
+of `9167cd0`; `git diff 9167cd0..6e6a681` touches only `HANDOFF.md` and
 `INITIAL_TASK_FOR_NEXT_AGENT.md`). Re-verified all guardrails: clean tree; zero research drift vs
 `a797773` (empty diff on `artifacts config src tests raw data scripts`); `STRATEGY_RULES.txt` hash
-`6d3258c3...` and all four raw-data hashes unchanged; 75 tests passed in 0.61s; 35 artifacts / 0
-manifests; canonical metrics unchanged — axb0306 60/70.0%/gross -7,662.00/net -31,637.98/costs
-23,975.98/PF 0.4917/avgR -0.0431/expectancy -527.30/maxDD 37,491.80; kaggle 688/64.83%/gross
--140,899.00/net -626,525.96/costs 485,626.96/PF 0.2271/avgR -0.0684/expectancy -910.65/maxDD
-626,994.56. The prior agent task (confirm terminal state, report, await explicit user decision) is
-complete. Per explicit user request, the handoff and next-agent task were refreshed. No research,
-experiments, or automation changes were made.
+`6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0 manifests; 75 tests passed in
+0.61s; canonical metrics unchanged. The prior agent task (confirm terminal state, report, await
+explicit user decision) is complete. Per explicit user request, the handoff and next-agent task were
+refreshed. No research, experiments, or automation changes were made.
 
 ## Required action for next agent
 
