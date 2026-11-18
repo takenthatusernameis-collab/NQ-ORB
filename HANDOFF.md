@@ -7,11 +7,11 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `fde961fd` (explicitly user-requested documentation edit, not new
-research). Tree clean; no verification battery re-run per STOP RULE (no new evidence possible).
-`STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; research-drift check unchanged at **0 files**;
-`artifacts/` 35 files. No code/data/config/artifact/automation change and no numbers changed. The
-STOP RULE below remains in force for every future boilerplate turn.
+Last refreshed: 2026-11-18 at HEAD `6a649c5c` (explicitly user-requested documentation edit, not new
+research). One-line verification pass: `pytest tests -q` → **75 passed in 0.70s**; research-drift check
+**0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both
+`metrics_*.json` re-read and match the canonical table exactly. No code/data/config/artifact/automation
+change and no numbers changed. The STOP RULE below remains in force for every future boilerplate turn.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
 > explicitly asks for a refresh. The repeated docs-only rewrites below are exactly the cycle the STOP
@@ -134,7 +134,18 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `fde961fd` (this session):** read the durable handoff and completed the prior
+- **2026-11-18, HEAD `6a649c5c` (this session):** read the durable handoff and completed the prior
+  task (terminal-state report, numbers table, forward paths). The user's prompt explicitly asked to
+  update the handoff and write a new initial task, so the STOP RULE was overridden for this turn only.
+  Interim verification: `pytest tests -q` → **75 passed in 0.70s**; drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
+  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged (`6d3258c3…d2b1`); `metrics_axb0306.json`
+  and `metrics_kaggle.json` re-read and match the canonical values (win 0.7000 / 0.6483; gross
+  -7,662.00 / -140,899.00; net -31,637.98 / -626,525.96; costs 23,975.98 / 485,626.96; PF 0.4917 /
+  0.2271; expectancy -527.30 / -910.65). No code, data, config, artifact, or automation change; adds
+  no research evidence. Changes left uncommitted (no commit requested).
+
+- **2026-11-18, HEAD `fde961fd`:** read the durable handoff and completed the prior
   task (terminal-state report, numbers table, forward paths). At the user's explicit request,
   refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`. Per STOP RULE no verification battery
   was re-run; only `git rev-parse --short HEAD` (`fde961fd`) and `git status` (clean) were checked.

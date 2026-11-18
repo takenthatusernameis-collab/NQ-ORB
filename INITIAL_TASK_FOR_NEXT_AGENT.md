@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `fde961fd`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `6a649c5c`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -11,23 +11,21 @@ Send the user one short message: research is terminal, the numbers table below, 
 the three forward paths. Then stop.
 
 There is no code work pending. Nothing in this repository can change a number until the user picks a
-forward path or supplies new data. If the turn is the boilerplate "read the prior task, complete it,
-update the handoff, write an initial task" request and the user names **no new scope**, repeat the
-message only; the two documents are already current at `9cc3d8dd`.
+forward path or supplies new data.
 
 ## Decision rule — read before doing anything else
 
 - **Boilerplate turn** ("read the prior task and complete it, then update the handoff and write an
-  initial task for the next agent" with no new scope): do the message above only. Do **not** rewrite
-  `HANDOFF.md` or this file, do **not** re-run `pytest`/`sha256sum`/drift checks/artifact counts, and
-  do **not** commit. Both documents are already current at `797d5035`; repeating verification only
-  produces docs-only commits with zero new evidence.
-- **Explicit refresh request** ("update the handoff and write a new initial task"): a one-line
-  verification pass (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`, drift check) plus
-  the two-file refresh is acceptable. Update the "Last refreshed" line, add one session-history
-  bullet, do not change any number.
-- **New scope named by the user** (new free data, a named experiment, or a specific automation
-  change): act on exactly that scope and nothing wider.
+  initial task for the next agent" with **no new scope**): send the message above only. Do **not**
+  rewrite `HANDOFF.md` or this file, do **not** re-run `pytest`/`sha256sum`/drift checks/artifact
+  counts, and do **not** commit. Both documents are already current at `6a649c5c`; repeating
+  verification only produces docs-only commits with zero new evidence.
+- **Explicit refresh request** (the user specifically asks to update the handoff / write a new initial
+  task): a one-line verification pass (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`,
+  drift check, `sha256sum STRATEGY_RULES.txt`, re-read both `metrics_*.json`) plus the two-file refresh
+  is acceptable. Update the "Last refreshed" line, add one session-history bullet, and change no number.
+- **New scope named by the user** (new free data, a named experiment, or a specific automation change):
+  act on exactly that scope and nothing wider.
 
 Any controllable scope expansion beyond the above is a violation of the frozen-baseline discipline in
 `AGENTS.md`, not initiative.
