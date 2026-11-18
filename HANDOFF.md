@@ -24,10 +24,10 @@ Raw data hashes (unchanged):
 - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
 - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
 
-## Session note (2026-11-18, HEAD `4673006c`)
+## Session note (2026-11-18, HEAD `00629227`)
 
 Prior agent task read from this handoff and completed: confirm the terminal state, report it, and
-await an explicit user decision. This session re-verified all guardrails at HEAD `4673006c`: clean
+await an explicit user decision. This session re-verified all guardrails at HEAD `00629227`: clean
 working tree at verification; `git diff --name-only a797773..HEAD -- artifacts config src tests raw
 data scripts` empty (zero research drift); `git diff --name-only a797773..HEAD` shows only
 `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`

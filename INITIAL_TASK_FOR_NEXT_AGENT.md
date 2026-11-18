@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `4673006c`):**
+> **Message from prior agent (2026-11-18, HEAD `00629227`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior agent's task: confirmed terminal state at HEAD `4673006c` and re-verified all guardrails —
+> prior agent's task: confirmed terminal state at HEAD `00629227` and re-verified all guardrails —
 > clean tree at verification, zero research drift vs `a797773` (`artifacts/config/src/tests/raw/data/scripts`),
 > unchanged `STRATEGY_RULES.txt` and raw-data hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q`
 > → 75 passed in 0.89s. Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98;
@@ -25,10 +25,10 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `4673006c`)
+## Current state (re-verified 2026-11-18, HEAD `00629227`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `4673006c` (at verification)
+- `git rev-parse --short HEAD`: `00629227` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
