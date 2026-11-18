@@ -1,11 +1,11 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `c13d045`):**
+> **Message from prior agent (2026-11-18, HEAD `8216fb1`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted
-> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `c13d045` (a docs-only
+> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `8216fb1` (a docs-only
 > checkpoint on top of `c7f407d`): clean tree, zero research drift vs `a797773`, unchanged
 > `STRATEGY_RULES.txt` hash and raw data hashes, 35 artifacts / 0 manifests, canonical metrics
 > unchanged. No research, experiments, or automation changes were made.
@@ -26,11 +26,11 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `c13d045`)
+## Current state (re-verified 2026-11-18, HEAD `8216fb1`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data;
   negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `c13d045`
+- `git rev-parse --short HEAD`: `8216fb1`
 - `git status --short`: clean
 - `git diff --name-only ade54f5..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (this docs-only checkpoint)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
