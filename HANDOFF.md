@@ -7,7 +7,12 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `838f8c03` (working tree clean).
+Last refreshed: 2026-11-18 at HEAD `2b90208e` (working tree clean at that commit; this refresh is an
+explicitly user-requested documentation edit, not new research).
+
+> **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
+> explicitly asks for a refresh. The repeated docs-only rewrites below are exactly the cycle the STOP
+> RULE forbids.
 
 ## STOP RULE for the next agent (read this first)
 
@@ -16,14 +21,14 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 
 - Do **not** re-run verification (`git status`, `sha256sum`, `pytest`, artifact counts): it yields no
   new evidence and only creates another empty commit.
-- Do **not** rewrite `HANDOFF.md` or `INITIAL_TASK_FOR_NEXT_AGENT.md`. This is the **final** revision;
-  treat both files as read-only unless the user asks for a specific change.
+- Do **not** rewrite `HANDOFF.md` or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user asks for a
+  specific change. Treat both files as read-only by default.
 - Your entire turn is: read `INITIAL_TASK_FOR_NEXT_AGENT.md`, send the user one short message (state,
   numbers table, forward paths), and stop. No file edits, no commit.
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (re-verified 2026-11-18 at HEAD `838f8c03`; working tree clean)
+## Verified state (re-verified 2026-11-18 at HEAD `2b90208e`; working tree clean before this refresh)
 
 - `python3 -m pytest tests -q`: **75 passed in 0.77s**
 - Ledger re-aggregation (independent script over `artifacts/trades_*.json`) reproduces gross, net,
@@ -120,7 +125,16 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `838f8c03` (this session):** read the durable handoff and completed the prior
+- **2026-11-18, HEAD `2b90208e` (this session):** read the durable handoff, completed the prior agent's
+  task (terminal-state report, numbers table, forward paths), and — at the user's explicit request —
+  refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification: `pytest tests -q` →
+  **75 passed in 0.71s**; drift check `git diff --name-only a797773..HEAD -- artifacts config src tests
+  raw data scripts` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged
+  (`6d3258c3…d2b1`); `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical
+  values above exactly. No code, data, config, artifact, or automation change; changes left uncommitted
+  in the working tree because no commit was requested. Adds no research evidence.
+
+- **2026-11-18, HEAD `838f8c03`:** read the durable handoff and completed the prior
   agent's task (terminal-state report, numbers table, forward paths). At the user's explicit request,
   refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` and marked both **final/read-only future
   sessions**. Verification: `pytest tests -q` → **75 passed in 0.72s**; drift check

@@ -1,26 +1,26 @@
 # Initial Task for Next Agent
 
-> **Final message from prior agent (2026-11-18, HEAD `838f8c03`).** Research is complete under the
-> current scope. Do not create another docs-only checkpoint commit.
+> **Written 2026-11-18 by the session at HEAD `2b90208e`.** Research is complete under the current
+> scope. Do not create another docs-only checkpoint commit.
 
 ## One-line task
 
 **Send the user one short decision request (state, numbers table, forward paths) and stop. Make no file
-edits and no commit.**
+edits and no commit unless the user explicitly asks for a specific change.**
 
 ## Situation
 
 The frozen MNQ 15-minute ORB baseline is implemented, tested (**75 passing tests**), and evaluated on
-both available free MNQ datasets. It loses money **gross and net** on both, and the free-source search
-is exhausted (`data/FEASIBILITY_REPORT.md`). Since the last substantive research commit `a797773`,
-every change has been documentation-only:
+both available free MNQ datasets. It loses money **gross and net** on both, and the free-source search is
+exhausted (`data/FEASIBILITY_REPORT.md`). Since the last substantive research commit `a797773`, every
+change has been documentation-only:
 `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
 There is nothing left to implement, verify, or search.
 
 ## Do exactly this
 
 1. Read `HANDOFF.md` — *Status*, *STOP RULE*, *Canonical metrics*, *Key facts*, *Forward paths*. Both
-   handoff files are **final**; treat them as read-only.
+   handoff files are read-only by default.
 2. Run **no** verification battery (no `pytest`, `sha256sum`, artifact counts, drift checks). They cannot
    change any number and only produce another empty commit.
 3. Send the user **one** message containing the table below and this decision request:
