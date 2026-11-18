@@ -1,45 +1,28 @@
 # Initial Task for Next Agent
 
-> **Written 2026-11-18 by the session at HEAD `649dc9e4`.** Research is complete under the current
+> **Written 2026-11-18 by the session at HEAD `0b344fba`.** Research is complete under the current
 > scope. The frozen MNQ 15-minute ORB baseline is terminal: it loses money **gross and net** on both
 > available free datasets.
 
-## One-line task
+## Your task
 
-**Send the user one short decision request (state, numbers table, forward paths) and stop. Make no
-file edits and no commit unless the user explicitly asks for a specific change.**
+**Send the user one short message: state, numbers table, forward paths. Then stop.**
+
+Do not run a verification battery (`pytest`, `sha256sum`, artifact counts, drift checks) — it cannot
+change any number and only produces another docs-only commit. Do not edit `HANDOFF.md` or this file
+again unless the user asks for a specific change. Do not commit unless the user explicitly asks.
 
 If the user again says only "read the prior task and complete it, then update the handoff", do the
-first half (the one message) and treat the second half as already satisfied — repeating the edit is
-what created ~45 docs-only commits. Do not spawn another checkpoint commit for a refresh that changes
-no numbers.
+first half (the one message) and treat the second half as already satisfied.
 
 ## Situation
 
 The frozen MNQ 15-minute ORB baseline is implemented, tested (**75 passing tests**), and evaluated on
 both available free MNQ datasets. It is **negative gross**, not merely negative net: costs make it
 worse, they are not the sole cause. The free-source search is exhausted
-(`data/FEASIBILITY_REPORT.md`). Since the last substantive research commit `a797773`, every change has
-been documentation-only:
+(`data/FEASIBILITY_REPORT.md`). Since the last substantive research commit `a797773`, every change
+has been documentation-only:
 `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-
-## Do exactly this
-
-1. Read `HANDOFF.md` — *Status*, *STOP RULE*, *Canonical metrics*, *Key facts*, *Forward paths*.
-2. Run **no** verification battery (no `pytest`, `sha256sum`, artifact counts, drift checks). They
-   cannot change any number. At most, re-read `artifacts/metrics_*.json` if you need to quote figures.
-3. Send the user **one** message with the table below and this decision request:
-   - The 0.4R target needs a 71.43% pre-cost win rate. Observed win rates are 70.00% and 64.83%
-     **and gross P&L is negative**, so this is a strategy-edge failure, not a cost-only failure.
-   - "Please authorize one of: **(a)** stop/reduce the `.github/workflows/main.yml` cron (the only
-     action that ends this loop), **(b)** a named, versioned experiment with an explicit diff from the
-     frozen baseline — say which one — or **(c)** accept the baseline as final and stop the automation."
-4. Stop. Do **not** edit `HANDOFF.md` or this file, and do **not** commit unless the user asks for that
-   specific change.
-
-The loop cannot end itself: the workflow cron resumes a session, and a docs-only commit is the only
-"deliverable" available. Only the user can break the cycle. Never edit `.github/workflows/main.yml` or
-the controller without explicit authorization for that exact change.
 
 ## Numbers to report
 
@@ -55,6 +38,11 @@ Sizing at $3,000 planned risk with a 0.4xATR stop produces 29-278 MNQ contracts,
 slippage drag scales with size. No trade exits via the 15:55 ET flatten, so reported P&L does not
 depend on any flatten execution assumption. Max drawdown is $37,491.80 (axb0306) and $626,994.56
 (kaggle).
+
+## The key finding to convey
+
+The 0.4R target needs a 71.43% pre-cost win rate. Observed win rates are 70.00% and 64.83% **and
+gross P&L is negative**, so this is a strategy-edge failure, not a cost-only failure.
 
 ## Forward paths (each needs explicit user authorization for that exact scope)
 
