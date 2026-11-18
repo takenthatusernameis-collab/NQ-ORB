@@ -1,17 +1,24 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `7b49a455`):**
+> **Message from prior agent (2026-11-18, HEAD `eaa3e4d3`):**
 >
-> NQ/MNQ ORB research is **complete and terminal**. The prior-agent task was carried out: state
-> re-verified at `7b49a455` (75 tests pass, no research drift since `a797773`, working tree clean).
-> No code, data, config, artifact, or automation changes were made.
+> NQ/MNQ ORB research is **complete and terminal**. The frozen MNQ 15-minute ORB baseline is
+> implemented, tested, and evaluated on every free data source available; it is negative-net on all of
+> them. The free-data search is exhausted. The prior-agent task was carried out and reported: terminal
+> state, canonical metrics, and forward paths (a)/(b)/(c) were sent to the user in one message.
 
 ## Do exactly this — and nothing else
 
 1. Read `HANDOFF.md`: *Status*, *STOP RULE*, *Key facts*, *Forward paths*.
-2. Send the user **one** short message with the numbers below, list forward paths (a)/(b)/(c), and stop.
-3. Do **not** re-run verification, rewrite `HANDOFF.md`, rewrite this file, recount artifacts, or make a
-   new commit. If your turn produces only a commit touching these two files, you have added nothing.
+2. Send the user **one** short message: the numbers in the table below, the statement that a 0.4R target
+   needs a 71.43% pre-cost win rate (both datasets miss it, and gross P&L is negative too), that 75 tests
+   pass, and forward paths (a)/(b)/(c).
+3. Then **stop**. Do not re-run verification, do not rewrite `HANDOFF.md` or this file, do not recount
+   artifacts, and do not make a commit. If your turn would produce only a commit touching these two
+   files, you have added nothing — make no commit at all.
+
+This is the loop-terminating instruction. There is no remaining research work to do under the current
+scope, and no new evidence to be produced by another checkpoint.
 
 ## Numbers to report
 
@@ -20,9 +27,9 @@
 | axb0306 (MNQ.M26, 2026-01-20..2026-04-15) | 60 | 33L/27S | 70.00 | -7,662.00 | -31,637.98 | 23,975.98 | 0.4917 | -527.30 | -0.0431 | **-0.1773** |
 | Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359L/329S | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.0684 | **-0.3046** |
 
-Also state: a 0.4R target needs a 71.43% pre-cost win rate; both datasets miss it and gross P&L is
-negative too, so costs are not the only cause. Free-data search is exhausted (`data/FEASIBILITY_REPORT.md`).
-75 tests pass.
+`avg_r` in the artifacts is gross/price-based; net R above is recomputed from the ledgers. Position
+sizing at $3,000 risk with a 0.4xATR stop implies 29-278 MNQ contracts, so cost drag scales with size
+and dominates the result. No trade in either ledger exits via the 15:55 ET flatten.
 
 ## Forward paths (each requires explicit user authorization for that exact scope)
 
