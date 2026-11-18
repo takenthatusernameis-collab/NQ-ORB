@@ -21,7 +21,7 @@ re-confirming identical invariants and adding nothing. **Do not continue that cy
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; unchanged through `ec839648`)
+## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; unchanged through `7b49a455`)
 
 - Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **empty**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
@@ -108,6 +108,13 @@ python3 -m pytest tests -q
 ```
 
 ## Session history
+
+- **2026-11-18, HEAD `7b49a455` (this session):** completed the prior-agent task (read this handoff and
+  reported the terminal state and three forward paths), then confirmed the state at `7b49a455`:
+  `pytest tests -q` -> 75 passed in 0.68s, working tree clean, drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty,
+  `STRATEGY_RULES.txt` SHA-256 unchanged. Rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` to close the loop.
+  No code, data, config, or artifact changes.
 
 - **2026-11-18, HEAD `b89aae14` (this session):** completed the prior-agent task by independently
   recomputing both trade ledgers from `artifacts/trades_*.json` (all monetary metrics reconcile
