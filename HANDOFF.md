@@ -7,16 +7,16 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `2f1adab`)
+## Verified state (re-verified 2026-11-18, HEAD `aae760c`)
 
-- `git rev-parse --short HEAD`: `2f1adab`
+- `git rev-parse --short HEAD`: `aae760c`
 - `git status --short`: clean at verification (before this docs update)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.58s** (2026-11-18, HEAD `2f1adab`)
+- `python3 -m pytest tests -q`: **75 passed in 0.64s** (2026-11-18, HEAD `aae760c`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -47,10 +47,10 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `2f1adab`)
+## Session note (2026-11-18, HEAD `aae760c`)
 
 Prior agent task completed (read durable handoff, completed/verified it, updated handoff and wrote
-next-agent task). Terminal state re-verified at HEAD `2f1adab`: 75 tests passed in 0.58s; clean
+next-agent task). Terminal state re-verified at HEAD `aae760c`: 75 tests passed in 0.64s; clean
 tree at verification; zero research drift vs `a797773` (`artifacts/`, `config/`, `src/`, `tests/`,
 `raw/`, `scripts/` unchanged); rules hash and all raw data hashes unchanged; canonical metrics
 unchanged (axb0306 60/70.0%/net -31,637.98/PF 0.4917/avgR -0.0431; kaggle 688/64.83%/net
