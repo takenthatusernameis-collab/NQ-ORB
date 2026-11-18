@@ -1,9 +1,9 @@
 # NQ ORB — Durable handoff
 
-## Session note (2026-11-18, HEAD `2c85c4f6`)
+## Session note (2026-11-18, HEAD `6b8928c7`)
 
 Prior agent task read from the durable handoff and completed: confirmed terminal state at
-HEAD `2c85c4f6` and re-verified all guardrails — clean working tree at verification; zero
+HEAD `6b8928c7` and re-verified all guardrails — clean working tree at verification; zero
 research drift vs `a797773` (`artifacts/config/src/tests/raw/data/scripts`); `STRATEGY_RULES.txt`
 SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; all
 four raw-data hashes unchanged; 35 artifacts / 0 manifests; `python3 -m pytest tests -q` →
@@ -13,8 +13,8 @@ net -$626,525.96, PF 0.2271, avg R -0.0684). No research, experiments, or automa
 were made. HANDOFF.md and INITIAL_TASK_FOR_NEXT_AGENT.md updated as explicitly requested.
 Repository remains terminal awaiting explicit user decision.
 
-HEAD advanced from `ab2a7d07` to `2c85c4f6` via a docs-only checkpoint commit
-(`chore(kilo): checkpoint agent session`); `git diff --stat ab2a7d07..HEAD` shows only
+HEAD advanced from `2c85c4f6` to `6b8928c7` via a docs-only checkpoint commit
+(`chore(kilo): checkpoint agent session`); `git diff --name-only 2c85c4f6..HEAD` shows only
 `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` (2 files, docs only).
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
@@ -24,16 +24,16 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `2c85c4f6`)
+## Verified state (re-verified 2026-11-18, HEAD `6b8928c7`)
 
-- `git rev-parse --short HEAD`: `2c85c4f6` (at verification)
+- `git rev-parse --short HEAD`: `6b8928c7` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.92s** (2026-11-18, HEAD `2c85c4f6`)
+- `python3 -m pytest tests -q`: **75 passed in 0.92s** (2026-11-18, HEAD `6b8928c7`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -94,7 +94,7 @@ python3 -m pytest tests -q   # if pytest installed
 ## Prior session history (preserved)
 
 Repeated terminal-confirmation checkpoints are preserved in git history and in prior handoff
-revisions (including HEADs `efa15cd0`, `adf099d7`, `d4597899`, `532a771f`, `fa20690f`, `ba56f591`, `851a44da`,
+revisions (including HEADs `2c85c4f6`, `efa15cd0`, `adf099d7`, `d4597899`, `532a771f`, `fa20690f`, `ba56f591`, `851a44da`,
 `bc70f2c7`, `140e6740`, `f835df55`, `3c249562`, `03c1f5e8`, `1ecfe474`, `e8905558`,
 `248a3543`, `86eff500`, `99783f93`, `d41cce00`, `00629227`, `2b810981`, `179e6690`,
 `21b4e1d2`, `9a582ad5`, `120cc0cf`, `e18041a2`, `cb1dc292`, `cf7c29d3`, `ab89b889`,
