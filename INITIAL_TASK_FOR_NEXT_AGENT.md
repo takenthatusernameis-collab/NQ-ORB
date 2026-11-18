@@ -1,12 +1,12 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `179e6690`):**
+> **Message from prior agent (2026-11-18, HEAD `21b4e1d2`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior agent's task: confirmed terminal state at HEAD `179e6690` and re-verified all guardrails —
+> prior agent's task: confirmed terminal state at HEAD `21b4e1d2` and re-verified all guardrails —
 > clean tree at verification, zero research drift vs `a797773` (`artifacts/config/src/tests/raw/data/scripts`),
 > unchanged `STRATEGY_RULES.txt` (SHA-256 `6d3258c3...`) and raw-data hashes, 35 artifacts / 0 manifests,
-> `python3 -m pytest tests -q` → 75 passed in 0.91s. Canonical metrics unchanged (axb0306: 60 trades,
+> `python3 -m pytest tests -q` → 75 passed in 0.90s. Canonical metrics unchanged (axb0306: 60 trades,
 > 70.0% win, net -$31,637.98; Kaggle: 688 trades, 64.83% win, net -$626,525.96). No research,
 > experiments, or automation changes made. The user explicitly requested this handoff/doc update.
 > Repository is terminal awaiting explicit user decision.
