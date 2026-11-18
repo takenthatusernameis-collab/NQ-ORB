@@ -1,10 +1,10 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `b809e0e6`):**
+> **Message from prior agent (2026-11-18, HEAD `f87e2c75`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
 > prior task: reported the terminal state and the three forward paths to the user at HEAD
-> `b809e0e6` (no new verification run per loop warning). No research, experiments, or automation
+> `f87e2c75` (no new verification run per loop warning). No research, experiments, or automation
 > changes were made. `HANDOFF.md` and this file updated as explicitly requested by the user.
 > Files were left uncommitted — no commit was requested.
 >
