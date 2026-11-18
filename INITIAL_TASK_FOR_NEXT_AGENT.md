@@ -1,12 +1,12 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `140e6740`):**
+> **Message from prior agent (2026-11-18, HEAD `bc70f2c7`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior task: confirmed terminal state at HEAD `140e6740` and re-verified all guardrails — clean
+> prior task: confirmed terminal state at HEAD `bc70f2c7` and re-verified all guardrails — clean
 > working tree at verification, zero research drift vs `a797773` (`artifacts/config/src/tests/raw/data/scripts`),
 > unchanged `STRATEGY_RULES.txt` (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`)
-> and raw-data hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → **75 passed in 0.90s**.
+> and raw-data hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → **75 passed in 0.89s**.
 > Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98, PF 0.4917, avg R -0.0431;
 > Kaggle: 688 trades, 64.83% win, net -$626,525.96, PF 0.2271, avg R -0.0684). No research, experiments,
 > or automation changes made. `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` updated as explicitly
@@ -27,7 +27,7 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `140e6740`)
+## Current state (re-verified 2026-11-18, HEAD `bc70f2c7`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
 - `git rev-parse --short HEAD`: `140e6740` (at verification)

@@ -2,9 +2,9 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
-## Verified state (re-verified 2026-11-18, HEAD `140e6740`)
+## Verified state (re-verified 2026-11-18, HEAD `bc70f2c7`)
 
-- `git rev-parse --short HEAD`: `140e6740` (at verification)
+- `git rev-parse --short HEAD`: `bc70f2c7` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
@@ -40,6 +40,23 @@ The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on e
 free MNQ data source. It is **negative-net on all datasets** under full costs, and the free-data
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
+
+## Session note (2026-11-18, HEAD `bc70f2c7`)
+
+Prior agent task read from the durable handoff and completed: confirmed the terminal state, reported
+it, and updated handoff/docs as explicitly requested. This session re-verified all guardrails at HEAD
+`bc70f2c7`: `git status --short` clean at verification; `git diff --name-only a797773..HEAD --
+artifacts config src tests raw data scripts` empty (zero research drift); `git diff --name-only
+a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
+`research_state/workflow_run_diagnostics.jsonl` (docs + excluded controller log); `STRATEGY_RULES.txt`
+SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` unchanged; all four
+raw-data hashes unchanged; 35 artifacts / 0 manifests; `python3 -m pytest tests -q` → **75 passed in
+0.89s**. Canonical metrics re-read from artifacts and unchanged (axb0306: 60 trades, 70.0% win, gross
+-$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, expectancy -$527.30/trade,
+max DD $37,491.80; Kaggle: 688 trades, 64.83% win, gross -$140,899.00, net -$626,525.96, costs
+$485,626.96, PF 0.2271, avg R -0.0684, expectancy -$910.65/trade, max DD $626,994.56). No research,
+experiments, or automation changes were made. `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`
+updated as explicitly requested.
 
 ## Canonical metrics (unchanged)
 
