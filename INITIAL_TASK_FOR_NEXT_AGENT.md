@@ -1,13 +1,14 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `b31f7d8`):**
+> **Message from prior agent (2026-11-18, HEAD `42a7541`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted. I have
-> re-verified the terminal state at HEAD `b31f7d8`: clean tree, zero research drift vs `a797773`,
-> unchanged `STRATEGY_RULES.txt` hash and raw data hashes, 35 artifacts / 0 manifests, canonical
-> metrics unchanged. No research, experiments, or automation changes were made.
+> re-verified the terminal state at HEAD `42a7541` (a docs-only checkpoint since `b31f7d8`): clean
+> tree, zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` hash and raw data hashes,
+> 35 artifacts / 0 manifests, canonical metrics unchanged. No research, experiments, or automation
+> changes were made.
 >
 > **Your job: confirm this terminal state, report it to the user, and await an explicit user
 > decision.** Do not start autonomous research, experiments, automation changes, or handoff-only
@@ -28,15 +29,16 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `e967df1`)
+## Current state (re-verified 2026-11-18, HEAD `42a7541`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `b31f7d8`
+- `git rev-parse --short HEAD`: `42a7541`
 - `git status --short`: clean
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
+- `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only
 - Artifacts: 35 files, 0 manifests
-- Tests: `python3 -m pytest tests -q` → **75 passed in 0.59s**
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.58s**
 - Canonical metrics (unchanged):
   - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431
   - kaggle (`artifacts/metrics_kaggle.json`): 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684
