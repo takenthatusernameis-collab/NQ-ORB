@@ -7,8 +7,8 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `6a649c5c` (explicitly user-requested documentation edit, not new
-research). One-line verification pass: `pytest tests -q` → **75 passed in 0.70s**; research-drift check
+Last refreshed: 2026-11-18 at HEAD `1051d276` (explicitly user-requested documentation edit, not new
+research). One-line verification pass: `pytest tests -q` → **75 passed in 0.69s**; research-drift check
 **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both
 `metrics_*.json` re-read and match the canonical table exactly. No code/data/config/artifact/automation
 change and no numbers changed. The STOP RULE below remains in force for every future boilerplate turn.
@@ -96,6 +96,10 @@ Raw data hashes (unchanged):
   recency or regime selection. Sharpe/Sortino (per-trade, daily-equivalent) are **-1.06/-0.67**
   (axb0306) and **-1.68/-1.04** (kaggle); exposure is 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
 - Costs (commission + exchange/clearing $2.87/side, 1 tick adverse slippage) dominate net results.
+- The artifacts' 12-point `cost_sensitivity` grid is net-negative in **every** scenario on both
+  datasets: axb0306 spans **-$24,754.28** (0.5x slippage, 0.8x fees) to **-$40,610.18** (2.0x/1.2x);
+  kaggle spans **-$487,098.57** to **-$808,255.35**. No plausible cost assumption rescues the
+  baseline, which is the strongest confirmation that the failure is in the edge, not the cost model.
 - An independent signal-funnel cross-check reproduces engine trade counts exactly (axb0306 60, Kaggle 688).
 - Required reporting surface already exists in the artifacts: `metrics_*.json` contain
   `monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`, `cost_sensitivity`,
@@ -134,7 +138,19 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `6a649c5c` (this session):** read the durable handoff and completed the prior
+- **2026-11-18, HEAD `1051d276` (this session):** read the durable handoff and completed the prior
+  task (terminal-state report, numbers table, forward paths). The user explicitly asked to refresh the
+  handoff and write a new initial task, so the STOP RULE was overridden for this turn only. One-line
+  verification: `pytest tests -q` → **75 passed in 0.69s**; drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
+  `artifacts/` 35 files; `STRATEGY_RULES.txt` and all four raw-data hashes unchanged;
+  `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical table exactly (win
+  0.7000 / 0.6483; gross -7,662.00 / -140,899.00; net -31,637.98 / -626,525.96; costs 23,975.98 /
+  485,626.96; PF 0.4917 / 0.2271; expectancy -527.30 / -910.65). Added one evidence line to Key facts
+  (every one of the 12 cost-sensitivity scenarios is net-negative on both datasets). No code, data,
+  config, artifact, or automation change; no canonical number changed.
+
+- **2026-11-18, HEAD `6a649c5c`:** read the durable handoff and completed the prior
   task (terminal-state report, numbers table, forward paths). The user's prompt explicitly asked to
   update the handoff and write a new initial task, so the STOP RULE was overridden for this turn only.
   Interim verification: `pytest tests -q` → **75 passed in 0.70s**; drift check

@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `6a649c5c`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `1051d276`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -18,7 +18,7 @@ forward path or supplies new data.
 - **Boilerplate turn** ("read the prior task and complete it, then update the handoff and write an
   initial task for the next agent" with **no new scope**): send the message above only. Do **not**
   rewrite `HANDOFF.md` or this file, do **not** re-run `pytest`/`sha256sum`/drift checks/artifact
-  counts, and do **not** commit. Both documents are already current at `6a649c5c`; repeating
+  counts, and do **not** commit. Both documents are already current at `1051d276`; repeating
   verification only produces docs-only commits with zero new evidence.
 - **Explicit refresh request** (the user specifically asks to update the handoff / write a new initial
   task): a one-line verification pass (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`,
@@ -64,6 +64,8 @@ Supporting facts if the user asks for more:
   flatten execution assumption.
 - Independent re-aggregation of `artifacts/trades_*.json` reproduces count, long/short split, gross, net,
   costs (`gross - net == costs` to the cent), profit factor, and expectancy exactly.
+- Cost sensitivity: all 12 scenarios in `cost_sensitivity` are net-negative — axb0306 -$24,754.28 to
+  -$40,610.18; kaggle -$487,098.57 to -$808,255.35. No cost assumption rescues the baseline.
 
 ## The key finding
 
