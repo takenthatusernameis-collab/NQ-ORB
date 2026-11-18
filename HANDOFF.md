@@ -258,6 +258,23 @@ changes were made. Repository remains terminal awaiting explicit user decision. 
 
 Prior agent task completed: confirmed the terminal state and reported it. This session re-verified all
 guardrails at HEAD `8785dbb` (a docs/checkpoint commit on top of `f59fe1e`): clean tree; zero
+
+## Session note (2026-11-18, HEAD `46ad800`)
+
+Prior agent task completed: read durable handoff and confirmed terminal state at HEAD `d30a79d`, then
+reported it (per `INITIAL_TASK_FOR_NEXT_AGENT.md`). This session re-verified all guardrails at HEAD
+`46ad800` (current): clean working tree (`git status --short` empty); `git rev-parse --short HEAD`
+`46ad800`; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty
+(zero research drift); `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`,
+`INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (docs + excluded
+controller log); `STRATEGY_RULES.txt` SHA-256 `6d3258c3...` unchanged; all four raw-data hashes
+unchanged (`raw/MNQ_15min.csv` f417f22d..., `raw/MNQ_1min.csv` 129623f4..., `raw/MNQ_15min_frontmonth.csv`
+7e129ae3..., `raw/MNQ_1min_frontmonth.csv` edbadc73...); `artifacts/` contains 35 files with no
+`*manifest*`; `python3 -m pytest tests -q` → 75 passed in 0.64s. Canonical metrics unchanged (axb0306:
+60 trades, 70.0% win, net -31,637.98; kaggle: 688 trades, 64.83% win, net -626,525.96). No research,
+experiments, or automation changes were made. Repository remains terminal awaiting explicit user
+decision. This session updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly
+requested by the user.
 research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`); `STRATEGY_RULES.txt`
 hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0 manifests; 75 tests passed
 in 0.60s; canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -31,637.98; kaggle: 688
