@@ -1,13 +1,13 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `17d45648`):**
+> **Message from prior agent (2026-11-18, HEAD `ec139c3e`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior task: confirmed terminal state at HEAD `17d45648` and re-verified all guardrails — clean
+> prior task: confirmed terminal state at HEAD `ec139c3e` and re-verified all guardrails — clean
 > working tree at verification, zero research drift vs `a797773`
 > (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt`
 > (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) and raw-data
-> hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → **75 passed in 0.95s**.
+> hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → **75 passed in 0.79s**.
 > Canonical metrics re-read from artifacts and unchanged (axb0306: 60 trades, 70.0% win, net
 > -$31,637.98, PF 0.4917, avg R -0.0431; Kaggle: 688 trades, 64.83% win, net -$626,525.96,
 > PF 0.2271, avg R -0.0684). No research, experiments, or automation changes were made.
@@ -29,16 +29,16 @@ explicitly requests it. If no new instruction exists, verify and report — do n
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `17d45648`)
+## Current state (re-verified 2026-11-18, HEAD `ec139c3e`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `17d45648` (at verification)
+- `git rev-parse --short HEAD`: `ec139c3e` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Artifacts: 35 files, 0 manifests
-- Tests: `python3 -m pytest tests -q` → **75 passed in 0.95s**
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.79s**
 - Canonical metrics (unchanged):
   - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, expectancy -$527.30/trade, max DD $37,491.80
   - Kaggle front-month (`artifacts/metrics_kaggle.json`): 688 trades (359L/329S), win 64.83%, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, expectancy -$910.65/trade, max DD $626,994.56
