@@ -7,16 +7,16 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `a1b29d0`)
+## Verified state (re-verified 2026-11-18, HEAD `df448cf`)
 
-- `git rev-parse --short HEAD`: `a1b29d0`
+- `git rev-parse --short HEAD`: `df448cf`
 - `git status --short`: clean at verification (before this session's doc updates)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.60s** (2026-11-18, HEAD `a1b29d0`)
+- `python3 -m pytest tests -q`: **75 passed in 0.62s** (2026-11-18, HEAD `df448cf`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -243,6 +243,21 @@ clean working tree (`git status --short` empty); `git rev-parse --short HEAD` `3
 `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (docs +
 excluded controller log); `STRATEGY_RULES.txt` SHA-256 `6d3258c3...` unchanged; all four raw-data
 hashes unchanged; 35 artifacts / 0 manifests; `python3 -m pytest tests -q` → 75 passed in 0.59s.
+Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98; kaggle: 688 trades,
+64.83% win, net -$626,525.96). No research, experiments, or automation changes were made.
+Repository remains terminal awaiting explicit user decision. This session updated `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user.
+
+## Session note (2026-11-18, HEAD `df448cf`)
+
+Prior agent task read from this handoff and completed: confirm the terminal state, report it,
+and await an explicit user decision. This session re-verified all guardrails at HEAD `df448cf`:
+clean working tree (`git status --short` empty); `git rev-parse --short HEAD` `df448cf`;
+`git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty
+(zero research drift); `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`,
+`INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (docs +
+excluded controller log); `STRATEGY_RULES.txt` SHA-256 `6d3258c3...` unchanged; all four raw-data
+hashes unchanged; 35 artifacts / 0 manifests; `python3 -m pytest tests -q` → 75 passed in 0.62s.
 Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98; kaggle: 688 trades,
 64.83% win, net -$626,525.96). No research, experiments, or automation changes were made.
 Repository remains terminal awaiting explicit user decision. This session updated `HANDOFF.md` and
