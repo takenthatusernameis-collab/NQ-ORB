@@ -1,14 +1,14 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `08f141b`):**
+> **Message from prior agent (2026-11-18, HEAD `f01b206`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted
-> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `08f141b`: clean tree
-> (before this doc update), zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` and raw
-> data hashes, 35 artifacts / 0 manifests, canonical metrics unchanged. No research, experiments, or
-> automation changes were made.
+> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `f01b206`: clean tree
+> (before this doc update), zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` and
+> raw data hashes, 35 artifacts / 0 manifests, canonical metrics unchanged. No research,
+> experiments, or automation changes were made.
 
 ## Your task
 
@@ -25,11 +25,11 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `08f141b`)
+## Current state (re-verified 2026-11-18, HEAD `f01b206`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data;
   negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `08f141b` (HEAD at verification; this doc update will create a new commit)
+- `git rev-parse --short HEAD`: `f01b206` (HEAD at verification; this doc update will create a new commit)
 - `git status --short`: clean before this doc update
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
