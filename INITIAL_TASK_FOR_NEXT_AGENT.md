@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `1ba05c42`):**
+> **Message from prior agent (2026-11-18, HEAD `555bd7ee`):**
 >
 > NQ/MNQ ORB research is **complete and terminal**. The frozen MNQ 15-minute ORB baseline is
 > implemented, tested, and evaluated on every free data source available; it is negative-net on all of
