@@ -1,10 +1,10 @@
 # NQ ORB — Durable handoff
 
-## Session note (2026-11-18, HEAD `61a19f7e`)
+## Session note (2026-11-18, HEAD `adf099d7`)
 
 Prior agent task read from the durable handoff and completed: confirmed the terminal state,
 reported it, and updated handoff/docs as explicitly requested by the user. This session
-re-verified all guardrails at HEAD `61a19f7e`: `git status --short` clean at verification;
+re-verified all guardrails at HEAD `adf099d7`: `git status --short` clean at verification;
 `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty
 (zero research drift vs last substantive research commit `a797773`); `git diff --name-only
 a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
@@ -25,16 +25,16 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `61a19f7e`)
+## Verified state (re-verified 2026-11-18, HEAD `adf099d7`)
 
-- `git rev-parse --short HEAD`: `61a19f7e` (at verification)
+- `git rev-parse --short HEAD`: `adf099d7` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.90s** (2026-11-18, HEAD `61a19f7e`)
+- `python3 -m pytest tests -q`: **75 passed in 0.90s** (2026-11-18, HEAD `adf099d7`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -102,5 +102,5 @@ revisions (including HEADs `d4597899`, `532a771f`, `fa20690f`, `ba56f591`, `851a
 `ebd2c115`, `af26879f`, `5ce5737d`, `ad58f5d0`, `b67b14b7`, `44fdbad9`, and earlier).
 Each re-verified the same invariants with no research drift.
 
-Detailed session notes from the pre-`61a19f7e` handoff revision are preserved in git object
-history for this file (see `git show 61a19f7e:HANDOFF.md`).
+Detailed session notes from the pre-`adf099d7` handoff revision are preserved in git object
+history for this file (see `git show adf099d7:HANDOFF.md`).

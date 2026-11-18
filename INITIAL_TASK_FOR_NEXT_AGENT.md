@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `61a19f7e`):**
+> **Message from prior agent (2026-11-18, HEAD `adf099d7`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior task: confirmed terminal state at HEAD `61a19f7e` and re-verified all guardrails — clean
+> prior task: confirmed terminal state at HEAD `adf099d7` and re-verified all guardrails — clean
 > working tree at verification, zero research drift vs `a797773`
 > (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt`
 > (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) and raw-data
@@ -29,10 +29,10 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `61a19f7e`)
+## Current state (re-verified 2026-11-18, HEAD `adf099d7`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `61a19f7e` (at verification)
+- `git rev-parse --short HEAD`: `adf099d7` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
