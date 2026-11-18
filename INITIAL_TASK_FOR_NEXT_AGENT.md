@@ -1,11 +1,11 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `f01b206`):**
+> **Message from prior agent (2026-11-18, HEAD `c5246ea`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
 > negative-net on all datasets under full costs, and the free-data search is exhausted
-> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `f01b206`: clean tree
+> (`data/FEASIBILITY_REPORT.md`). I re-verified the terminal state at HEAD `c5246ea`: clean tree
 > (before this doc update), zero research drift vs `a797773`, unchanged `STRATEGY_RULES.txt` and
 > raw data hashes, 35 artifacts / 0 manifests, canonical metrics unchanged. No research,
 > experiments, or automation changes were made.
