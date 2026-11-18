@@ -41,7 +41,7 @@ Raw data hashes (unchanged):
 ### axb0306 — single-contract MNQ.M26, 2026-01-20..2026-04-15, no roll / no adjustment
 
 - 60 trades (33L/27S); win rate 70.0%
-- gross -$7,662.00; net -$31,637.98; costs $23,975.98; avg R -0.0431; expectancy -$527.30/trade
+- gross -$7,662.00; net -$31,637.98; costs $23,975.98; avg R -0.0431 (gross, price-based); expectancy -$527.30/trade
 - profit factor 0.4917; max DD $37,491.80
 - 1-minute data supports exact 15:55 ET flatten / intrabar ordering on all 60 trade days
 - Source: `artifacts/metrics_axb0306.json`, `artifacts/trades_axb0306.json`
@@ -49,12 +49,29 @@ Raw data hashes (unchanged):
 ### Kaggle front-month — unadjusted front-month by max volume, 2022-11-16..2025-11-12
 
 - 688 trades (359L/329S); win rate 64.83%
-- gross -$140,899.00; net -$626,525.96; costs $485,626.96; avg R -0.0684; expectancy -$910.65/trade
+- gross -$140,899.00; net -$626,525.96; costs $485,626.96; avg R -0.0684 (gross, price-based); expectancy -$910.65/trade
 - profit factor 0.2271; max DD $626,994.56
 - Source: `artifacts/metrics_kaggle.json`, `artifacts/trades_kaggle.json`
 
 ## Key facts
 
+- `metrics.avg_r` is a **gross, price-based R multiple**: `(exit_fill - entry_fill) / risk_points`
+  (sign-adjusted), i.e. before commissions and slippage. It is **not** a net R. Recomputed directly
+  from the ledgers as net P&L over realized dollar risk (`contracts x risk_points x $2`) the net R is
+  **-0.1773** (axb0306) and **-0.3046** (kaggle). Quote net R, not `avg_r`, when discussing costed
+  performance.
+- Position sizing at a $3,000 planned risk with the 0.4xATR stop implies very large MNQ size:
+  contracts run 29-122 (median 63.5) on axb0306 and 34-278 (median 122) on kaggle. At 1 tick adverse
+  slippage plus $2.87/side fees this is what drives fully-loaded cost per trade of $399.60
+  (axb0306) and $705.85 (kaggle) - i.e. cost drag scales with size, not with the raw edge.
+- Independent recomputation of both ledgers reproduces every monetary metric exactly: count,
+  gross P&L, net P&L, costs, long/short split, profit factor, expectancy, win rate, and
+  one-trade-per-day (60/688 unique trade dates = 60/688 trades). `gross - net == costs` holds to the
+  cent on both datasets.
+- No trade in either ledger exits via the 15:55 ET flatten (exit reasons are only `target`, `stop`,
+  `stop_first_ambiguous`; latest exit 12:00 ET on axb0306 and 14:15 ET on kaggle). The
+  flatten/intrabar-ordering path is therefore test-covered code, but the reported P&L does not
+  depend on any flatten execution assumption.
 - 0.4R target implies a pre-cost break-even win rate of 71.43%; both datasets fall short after costs, and gross P&L is negative too.
 - Costs (commission + exchange/clearing $2.87/side, 1 tick adverse slippage) dominate net results.
 - An independent signal-funnel cross-check reproduces engine trade counts exactly (axb0306 60, Kaggle 688).
@@ -92,6 +109,13 @@ python3 -m pytest tests -q
 
 ## Session history
 
+- **2026-11-18, HEAD `b89aae14` (this session):** completed the prior-agent task by independently
+  recomputing both trade ledgers from `artifacts/trades_*.json` (all monetary metrics reconcile
+  exactly; drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
+  scripts` is empty; `STRATEGY_RULES.txt` and all four raw-data hashes unchanged; `pytest tests -q`
+  -> 75 passed). Findings added to Key facts: `avg_r` is gross/price-based, net R is -0.1773 /
+  -0.3046; sizing implies 29-278 contracts so cost drag dominates; zero flatten exits in either
+  sample. No code, data, config, or artifact changes - documentation precision only.
 - **2026-11-18, `ec839648` (this session):** completed the prior-agent task (reported terminal state
   and forward paths to the user). Consolidated this handoff — merged ~8 duplicated terminal-checkpoint
   notes into the single verified-state block above, added an explicit STOP RULE, and rewrote the
