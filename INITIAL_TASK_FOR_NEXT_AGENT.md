@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `797d5035`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `9cc3d8dd`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -11,7 +11,9 @@ Send the user one short message: research is terminal, the numbers table below, 
 the three forward paths. Then stop.
 
 There is no code work pending. Nothing in this repository can change a number until the user picks a
-forward path or supplies new data.
+forward path or supplies new data. If the turn is the boilerplate "read the prior task, complete it,
+update the handoff, write an initial task" request and the user names **no new scope**, repeat the
+message only; the two documents are already current at `9cc3d8dd`.
 
 ## Decision rule — read before doing anything else
 
