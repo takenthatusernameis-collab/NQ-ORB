@@ -1,22 +1,22 @@
 # Initial Task for Next Agent
 
-> **Written 2026-11-18; last confirmed at HEAD `a8aa0e24`.** Research is complete under the current
-> scope. The frozen MNQ 15-minute ORB baseline is terminal: it loses money **gross and net** on both
+> **Written 2026-11-18; last confirmed at HEAD `b1db84bc`.** Research under the current scope is
+> complete and terminal. The frozen MNQ 15-minute ORB baseline loses money **gross and net** on both
 > available free datasets, and no out-of-sample segment is net positive.
 
 ## Your task (do exactly this)
 
-1. Read `HANDOFF.md` and this file.
+1. Read `HANDOFF.md`, then this file.
 2. Send the user **one short message**: current state, the numbers table below, and the three forward
    paths.
 3. Stop. Do not edit code, data, config, artifacts, or automation. Do not run `pytest`, `sha256sum`,
-   artifact counts, or drift checks — they cannot change a number and only create another docs-only
-   commit.
+   artifact counts, or drift checks unless the user asks for a specific verification or a new scope —
+   they cannot change a number and only create another docs-only commit.
 
-Do not edit `HANDOFF.md` or this file unless the user asks for a specific change. Do not commit unless
-the user explicitly asks. If the user again says only "read the prior task and complete it, then update
-the handoff", do step 2 and note that the handoff is already current at `a8aa0e24` — do not rewrite it
-again.
+Do not edit `HANDOFF.md` or this file unless the user asks for a specific change, and do not commit
+unless the user explicitly asks. If the user again says only "read the prior task and complete it,
+then update the handoff", do step 2, note that the handoff is already current at `b1db84bc`, and do
+**not** rewrite these files again.
 
 ## Situation
 
