@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `f59fe1e`)
+## Verified state (re-verified 2026-11-18, HEAD `8785dbb`)
 
-- `git rev-parse --short HEAD`: `f59fe1e` (docs/checkpoint commit on top of `309c930`; clean tree)
+- `git rev-parse --short HEAD`: `8785dbb` (docs/checkpoint commit on top of `f59fe1e`; clean tree)
 - `git status --short`: clean
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
@@ -174,6 +174,17 @@ manifests; 75 tests passed in 0.66s; canonical metrics unchanged (axb0306: 60 tr
 -31,637.98; kaggle: 688 trades, 64.83% win, net -626,525.96). No research, experiments, or automation
 changes were made. Repository remains terminal awaiting explicit user decision. This session updated
 `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested.
+
+## Session note (2026-11-18, HEAD `8785dbb`)
+
+Prior agent task completed: confirmed the terminal state and reported it. This session re-verified all
+guardrails at HEAD `8785dbb` (a docs/checkpoint commit on top of `f59fe1e`): clean tree; zero
+research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`); `STRATEGY_RULES.txt`
+hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0 manifests; 75 tests passed
+in 0.60s; canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -31,637.98; kaggle: 688
+trades, 64.83% win, net -626,525.96). No research, experiments, or automation changes were made.
+Repository remains terminal awaiting explicit user decision. This session updated `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user.
 
 ## Session note (2026-11-18, HEAD `f59fe1e`)
 
