@@ -3,41 +3,30 @@
 ## Your task
 
 **Confirm the terminal repository state, report it, and await an explicit user decision.**
+
 Do not start autonomous research, experiments, automation changes, or handoff-only checkpoints
-without explicit user authorization. Only a handoff update is authorized when the user explicitly
-requests it.
+without explicit user authorization. A handoff/doc update is authorized only when the user
+explicitly requests it.
 
-## What to do (in order)
+## Steps
 
-1. Run the verification commands in `HANDOFF.md` (section "Verification commands") to confirm
-   the current terminal state.
+1. Run the verification commands in `HANDOFF.md` ("Verification commands") to confirm terminal state.
 2. Read `HANDOFF.md` and `STRATEGY_RULES.txt` for full context.
-3. Report the terminal state to the user and present the forward-path options below.
-4. Stop. Do not invent new work, run experiments, or modify automation unless the user explicitly
-   authorizes one of the forward paths.
+3. Report the terminal state and the forward-path options below to the user.
+4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Context
+## Current state (re-verified 2026-11-18, HEAD `2f1adab`)
 
-The frozen MNQ 15-minute ORB baseline (`STRATEGY_RULES.txt` v1.0) is implemented, tested
-(75 passing), and evaluated on all available free MNQ data. It is **negative-net on every
-dataset** under full costs, and the free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`).
-Research is complete. There is no pending research task.
-
-## Current state (re-verified 2026-11-18, HEAD `55f56b5`)
-
-- `STRATEGY_RULES.txt` SHA-256 = `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
-- `git status --short` clean at verification (before this docs update)
-- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` = empty (zero research drift)
-- `git diff --name-only a797773..HEAD` = only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`,
-  and the excluded controller log `research_state/workflow_run_diagnostics.jsonl`
-- 35 artifact files, 0 manifest files
-- Canonical metrics unchanged (from artifacts):
-  - `metrics_axb0306.json`: 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98,
-    costs 23,975.98, PF 0.4917, avg_r -0.0431
-  - `metrics_kaggle.json`: 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96,
-    costs 485,626.96, PF 0.2271, avg_r -0.0684
-- `python3 -m pytest tests -q`: 75 passed in 0.61s at HEAD `55f56b5`.
-- HEAD `55f56b5` advanced only via handoff/docs checkpoint commits and excluded controller-log captures (no research drift); it is the current tip.
+- Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
+- `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
+- `git status --short`: clean at verification
+- `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
+- `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only
+- Artifacts: 35 files, 0 manifests
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.58s**
+- Canonical metrics (unchanged):
+  - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -7,662.00, net -31,637.98, costs 23,975.98, PF 0.4917, avg R -0.0431
+  - kaggle (`artifacts/metrics_kaggle.json`): 688 trades (359L/329S), win 64.83%, gross -140,899.00, net -626,525.96, costs 485,626.96, PF 0.2271, avg R -0.0684
 - Raw data hashes unchanged:
   - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
   - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
@@ -46,7 +35,7 @@ Research is complete. There is no pending research task.
 
 ## Forward paths (require explicit user authorization)
 
-- **(a)** Stop or reduce maintenance automation (`.github/workflows/main.yml:11`, cron).
+- **(a)** Stop or reduce maintenance automation (`.github/workflows/main.yml` cron) — requires explicit authorization for that exact change.
 - **(b)** Run a separately versioned, named experiment with an explicit diff from the frozen baseline.
 - **(c)** Accept the baseline as final.
 
@@ -55,5 +44,4 @@ Research is complete. There is no pending research task.
 - Historical research/simulation only. No broker/live/paper execution, no credentials, no paid/proprietary data.
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
 - Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
-- Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without
-  explicit authorization for that exact change.
+- Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
