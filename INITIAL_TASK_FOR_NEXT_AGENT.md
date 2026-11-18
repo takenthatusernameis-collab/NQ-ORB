@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Written 2026-11-18; last confirmed at HEAD `b1db84bc`.** Research under the current scope is
+> **Written 2026-11-18; last confirmed at HEAD `03830e0f`.** Research under the current scope is
 > complete and terminal. The frozen MNQ 15-minute ORB baseline loses money **gross and net** on both
 > available free datasets, and no out-of-sample segment is net positive.
 

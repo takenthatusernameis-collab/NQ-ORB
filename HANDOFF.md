@@ -7,7 +7,7 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `b1db84bc` (explicitly user-requested documentation edit, not new
+Last refreshed: 2026-11-18 at HEAD `03830e0f` (explicitly user-requested documentation edit, not new
 research). Verified this session: tree clean, `artifacts/` 35 files, `STRATEGY_RULES.txt` hash
 `6d3258c3…d2b1` unchanged, research-drift check `git diff --name-only a797773..HEAD -- artifacts config
 src tests raw data scripts` → **0 files**, `pytest tests -q` → **75 passed in 0.73s**. No
@@ -133,6 +133,13 @@ python3 -m pytest tests -q
 ```
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
+
+- **2026-11-18, HEAD `03830e0f` (this session):** read the durable handoff and prior agent task, completed
+  the prior task (terminal-state report, numbers table, forward paths sent to the user), and at the user's
+  explicit request refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md`. Verification:
+  `pytest tests -q` → **75 passed in 0.73s**; drift check → **0 files**; `artifacts/` 35 files;
+  `STRATEGY_RULES.txt` hash unchanged. No code, data, config, artifact, or automation change; adds no
+  research evidence. Changes left uncommitted (no commit requested).
 
 - **2026-11-18, HEAD `b1db84bc` (this session):** read the durable handoff and prior agent task, completed
   the prior task (terminal-state report, numbers table, forward paths sent to the user), and at the user's
