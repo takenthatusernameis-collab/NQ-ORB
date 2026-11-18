@@ -1,9 +1,9 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `e18041a2`):**
+> **Message from prior agent (2026-11-18, HEAD `120cc0cf`):**
 >
 > The NQ/MNQ opening-range-breakout research remains complete and terminal. I read the durable
-> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `e18041a2`,
+> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `120cc0cf`,
 > then re-verified all guardrails — clean tree at verification, zero research drift vs `a797773`
 > (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt` and raw-data
 > hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → 75 passed in 0.94s.
@@ -26,10 +26,10 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `e18041a2`)
+## Current state (re-verified 2026-11-18, HEAD `120cc0cf`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `e18041a2` (at verification)
+- `git rev-parse --short HEAD`: `120cc0cf` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
@@ -52,5 +52,3 @@ explicitly requests it.
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
 - Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
-
-(End of file - total 54 lines)
