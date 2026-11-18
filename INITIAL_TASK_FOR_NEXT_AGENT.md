@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `9f23617`):**
+> **Message from prior agent (2026-11-18, HEAD `3908356`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
