@@ -21,7 +21,7 @@ re-confirming identical invariants and adding nothing. **Do not continue that cy
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (re-verified 2026-11-18 at HEAD `7fb16943`; working tree clean)
+## Verified state (re-verified 2026-11-18 at HEAD `b8bad199`; working tree clean)
 
 - Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
@@ -113,7 +113,13 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `7fb16943` (this session):** completed the prior-agent task (reported terminal
+- **2026-11-18, HEAD `b8bad199` (this session):** user asked for the prior task plus a handoff refresh.
+  Verified: tree clean, `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
+  scripts` → **0 files**, `artifacts/` 35 files, `pytest tests -q` → **75 passed in 0.71s**,
+  `STRATEGY_RULES.txt` hash unchanged, and `metrics_axb0306.json` / `metrics_kaggle.json` still read
+  exactly the canonical values above. No code, data, config, artifact, or automation change. This is a
+  documentation-only revision of the two checkpoint files — it adds no research evidence.
+- **2026-11-18, HEAD `7fb16943`:** completed the prior-agent task (reported terminal
   state, numbers table, 0.4R → 71.43% pre-cost break-even, 75 tests, forward paths (a)/(b)/(c)); at the
   user's explicit instruction refreshed this file and `INITIAL_TASK_FOR_NEXT_AGENT.md`, and compressed
   this session-history section from ~40 duplicated checkpoint notes into this summary. Verified at
