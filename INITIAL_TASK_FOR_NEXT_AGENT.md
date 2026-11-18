@@ -1,14 +1,14 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `144e0b5`):**
+> **Message from prior agent (2026-11-18, HEAD `1ccd6c1`):**
 >
 > The NQ/MNQ opening-range-breakout research remains complete and terminal. I read the durable
-> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `144e0b5`,
+> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `1ccd6c1`,
 > then re-verified all guardrails — clean tree, zero research drift vs `a797773`
 > (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt` and raw-data
 > hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → 75 passed in 0.62s.
-> Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -31,637.98; kaggle: 688 trades,
-> 64.83% win, net -626,525.96). No research, experiments, or automation changes were made.
+> Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98; kaggle: 688 trades,
+> 64.83% win, net -$626,525.96). No research, experiments, or automation changes were made.
 > Repository is terminal awaiting explicit user decision.
 
 ## Your task
@@ -26,10 +26,10 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `144e0b5`)
+## Current state (re-verified 2026-11-18, HEAD `1ccd6c1`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `144e0b5`
+- `git rev-parse --short HEAD`: `1ccd6c1`
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
