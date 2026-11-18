@@ -462,3 +462,7 @@ ls artifacts | wc -l && ls artifacts | grep -c manifest || true
 sha256sum raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MNQ_1min_frontmonth.csv
 python3 -m pytest tests -q   # if pytest + pandas installed
 ```
+
+## Session note (2026-11-18, HEAD `c34ee73`)
+
+Prior agent task completed: read the durable handoff and confirmed terminal state at HEAD `40052a5`, then re-verified all guardrails at HEAD `c34ee73` (current): clean working tree (`git status --short` empty); `git rev-parse --short HEAD` `c34ee73`; `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty (zero research drift); `git diff --name-only a797773..HEAD` shows only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` (docs + excluded controller log); `STRATEGY_RULES.txt` SHA-256 `6d3258c3...` unchanged; all four raw-data hashes unchanged (`raw/MNQ_15min.csv` f417f22d..., `raw/MNQ_1min.csv` 129623f4..., `raw/MNQ_15min_frontmonth.csv` 7e129ae3..., `raw/MNQ_1min_frontmonth.csv` edbadc73...); `artifacts/` contains 35 files with no `*manifest*`; `python3 -m pytest tests -q` → 75 passed in 0.62s. Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -31,637.98; kaggle: 688 trades, 64.83% win, net -626,525.96). No research, experiments, or automation changes were made. Repository remains terminal awaiting explicit user decision. This session updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user.
