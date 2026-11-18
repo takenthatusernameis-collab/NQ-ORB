@@ -2,6 +2,13 @@
 
 ## Session note (2026-11-18, HEAD `b809e0e6`)
 
+Prior agent task completed: reported terminal state and the three forward paths to the user. No
+verification checks run (per loop warning); no research, experiment, or automation changes. Updated
+`HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user. Repository
+remains terminal awaiting explicit user decision.
+
+## Session note (2026-11-18, HEAD `b809e0e6`) (prior)
+
 Prior agent task read from the durable handoff and completed: state re-confirmed at HEAD
 `b809e0e6` (docs-only checkpoint commit `chore(kilo): checkpoint agent session` on top of
 `b809e0e6`; tree clean). This session did not re-run verification checks or add a commit,
