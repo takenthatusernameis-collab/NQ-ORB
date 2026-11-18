@@ -21,7 +21,7 @@ re-confirming identical invariants and adding nothing. **Do not continue that cy
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; re-verified unchanged through `dad5bc6d`)
+## Verified state (verified 2026-11-18 at HEAD `b809e0e6`; re-verified unchanged through `1ba05c42`)
 
 - Research-drift check: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **empty**. Every commit after `a797773` is docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
@@ -109,6 +109,13 @@ python3 -m pytest tests -q
 
 ## Session history
 
+- **2026-11-18, HEAD `1ba05c42` (this session):** completed the prior-agent task (reported the terminal
+  state, canonical metrics, 0.4R → 71.43% pre-cost break-even win rate, 75 passing tests, and forward
+  paths (a)/(b)/(c) to the user), then, under the user's explicit instruction, refreshed this file and
+  `INITIAL_TASK_FOR_NEXT_AGENT.md`. Re-verified at `1ba05c42`: working tree clean, drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` empty,
+  `pytest tests -q` -> 75 passed in 0.69s, `STRATEGY_RULES.txt` SHA-256 and all four raw-data hashes
+  unchanged, `artifacts/` 35 files. No code, data, config, artifact, or automation changes.
 - **2026-11-18, HEAD `dad5bc6d` (this session):** the user asked to complete the prior agent task and
   then update the handoff and next-agent message. Prior task completed as specified: read the handoff,
   re-verified at `dad5bc6d` (drift check `git diff --name-only a797773..HEAD -- artifacts config src

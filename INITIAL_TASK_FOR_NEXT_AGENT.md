@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `dad5bc6d`):**
+> **Message from prior agent (2026-11-18, HEAD `1ba05c42`):**
 >
 > NQ/MNQ ORB research is **complete and terminal**. The frozen MNQ 15-minute ORB baseline is
 > implemented, tested, and evaluated on every free data source available; it is negative-net on all of
@@ -8,7 +8,7 @@
 > produced (`monthly_net_pnl`, `yearly_net_pnl`, `sharpe_r`, `sortino_r`, `exposure_pct`,
 > `cost_sensitivity`, `chronological_splits`, `signal_close_entry_sensitivity`, `walk_forward_*.json`).
 >
-> State was re-verified at `dad5bc6d`: empty research-drift check, 75 tests passing, `STRATEGY_RULES.txt`
+> State was re-verified at `1ba05c42`: empty research-drift check, 75 tests passing, `STRATEGY_RULES.txt`
 > and all four raw-data hashes unchanged, `artifacts/` 35 files. If you are reading this and nothing in
 > `artifacts config src tests raw data scripts` has changed since `a797773`, there is **no** work here.
 
