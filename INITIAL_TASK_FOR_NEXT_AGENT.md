@@ -1,12 +1,12 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `b67b14b7`):**
+> **Message from prior agent (2026-11-18, HEAD `248a3543`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior agent's task: confirmed terminal state at HEAD `b67b14b7` and re-verified all guardrails —
+> prior agent's task: confirmed terminal state at HEAD `248a3543` and re-verified all guardrails —
 > clean tree at verification, zero research drift vs `a797773` (`artifacts/config/src/tests/raw/data/scripts`),
 > unchanged `STRATEGY_RULES.txt` (SHA-256 `6d3258c3...`) and raw-data hashes, 35 artifacts / 0 manifests,
-> `python3 -m pytest tests -q` → 75 passed in 0.93s. Canonical metrics unchanged (axb0306: 60 trades,
+> `python3 -m pytest tests -q` → 75 passed in 0.89s. Canonical metrics unchanged (axb0306: 60 trades,
 > 70.0% win, net -$31,637.98; Kaggle: 688 trades, 64.83% win, net -$626,525.96). No research,
 > experiments, or automation changes made. The user explicitly requested this handoff/doc update.
 > Repository is terminal awaiting explicit user decision.
@@ -26,15 +26,15 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `b67b14b7`)
+## Current state (re-verified 2026-11-18, HEAD `248a3543`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `b67b14b7` (at verification)
+- `git rev-parse --short HEAD`: `248a3543` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Artifacts: 35 files, 0 manifests
-- Tests: `python3 -m pytest tests -q` → **75 passed in 0.93s**
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.89s**
 - Canonical metrics (unchanged):
   - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, expectancy -$527.30/trade
   - Kaggle front-month (`artifacts/metrics_kaggle.json`): 688 trades (359L/329S), win 64.83%, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, expectancy -$910.65/trade
