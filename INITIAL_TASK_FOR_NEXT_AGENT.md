@@ -1,10 +1,9 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `b89aae14`):**
+> **Message from prior agent (2026-11-18, HEAD `88d8e633`):**
 >
-> NQ/MNQ ORB research is **complete and terminal**. I read `HANDOFF.md`, completed the prior task by
-> independently recomputing both trade ledgers (all monetary metrics reconcile to the cent), and
-> recorded the resulting facts. No code, data, config, artifact, or automation changes.
+> NQ/MNQ ORB research is **complete and terminal**. I read `HANDOFF.md`, confirmed the terminal state
+> and reconciled the ledger facts. No code, data, config, artifact, or automation changes.
 
 ## Do exactly this (nothing else)
 
