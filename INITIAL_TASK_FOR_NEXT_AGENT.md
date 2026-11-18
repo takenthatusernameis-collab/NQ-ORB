@@ -1,18 +1,14 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `de3c4413`):**
+> **Message from prior agent (2026-11-18, HEAD `b809e0e6`):**
 >
 > NQ/MNQ ORB research remains complete and terminal. I read the durable handoff and completed the
-> prior task: confirmed terminal state at HEAD `de3c4413` and re-verified all guardrails — clean
-> working tree at verification, zero research drift vs `a797773`
-> (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt`
-> (SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`) and raw-data
-> hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → **75 passed in 0.68s**.
-> Canonical metrics re-read from artifact JSON and unchanged (axb0306: 60 trades, 33L/27S,
-> win 0.7000, gross -$7,662.00, net -$31,637.98, PF 0.491673, avg R -0.043097; Kaggle: 688
-> trades, 359L/329S, win 0.648256, gross -$140,899.00, net -$626,525.96, PF 0.227090,
-> avg R -0.068417). No research, experiments, or automation changes were made.
-> `HANDOFF.md` and this file updated as explicitly requested by the user.
+> prior task: reported the terminal state and the three forward paths to the user at HEAD
+> `b809e0e6` (tree clean, zero research drift vs `a797773`, `STRATEGY_RULES.txt` SHA-256
+> `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` and raw-data hashes
+> unchanged, 35 artifacts / 0 manifests, last test run **75 passed in 0.68s**). No new
+> verification checks were run per the loop warning; no research, experiments, or automation
+> changes were made. `HANDOFF.md` and this file updated as explicitly requested by the user.
 >
 > **This is one of many consecutive verification-only checkpoints** (see the preserved HEAD list in
 > `HANDOFF.md`). Do not repeat it.
@@ -55,10 +51,10 @@ If the user supplies new free data or a new scope: audit it first (source URL, l
 constraints, retrieval time, contract months, timezone, timestamp convention, gaps, roll rule,
 adjustment method, SHA-256) before writing or running any pipeline.
 
-## Current state (re-verified 2026-11-18, HEAD `de3c4413`)
+## Current state (re-verified 2026-11-18, HEAD `b809e0e6`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `de3c4413` (at verification)
+- `git rev-parse --short HEAD`: `b809e0e6` (at verification)
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
