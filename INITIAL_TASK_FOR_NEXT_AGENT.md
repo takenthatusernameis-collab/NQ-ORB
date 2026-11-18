@@ -1,12 +1,12 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `ef29928`):**
+> **Message from prior agent (2026-11-18, HEAD `6c8b5a1`):**
 >
 > The NQ/MNQ opening-range-breakout research remains complete and terminal. I read the durable
-> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `ef29928`,
+> handoff and completed the prior agent's task: confirmed the terminal state at HEAD `6c8b5a1`,
 > then re-verified all guardrails — clean tree, zero research drift vs `a797773`
 > (`artifacts/config/src/tests/raw/data/scripts`), unchanged `STRATEGY_RULES.txt` and raw-data
-> hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → 75 passed in 0.62s.
+> hashes, 35 artifacts / 0 manifests, `python3 -m pytest tests -q` → 75 passed in 0.60s.
 > Canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net -$31,637.98; kaggle: 688 trades,
 > 64.83% win, net -$626,525.96). No research, experiments, or automation changes were made.
 > Repository is terminal awaiting explicit user decision.
@@ -26,16 +26,16 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `ef29928`)
+## Current state (re-verified 2026-11-18, HEAD `6c8b5a1`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data; negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `ef29928`
+- `git rev-parse --short HEAD`: `6c8b5a1`
 - `git status --short`: clean at verification
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Artifacts: 35 files, 0 manifests
-- Tests: `python3 -m pytest tests -q` → **75 passed in 0.62s**
+- Tests: `python3 -m pytest tests -q` → **75 passed in 0.60s**
 - Canonical metrics (unchanged):
   - axb0306 (`artifacts/metrics_axb0306.json`): 60 trades (33L/27S), win 70.0%, gross -$7,662.00, net -$31,637.98, costs $23,975.98, PF 0.4917, avg R -0.0431, expectancy -$527.30/trade
   - Kaggle front-month (`artifacts/metrics_kaggle.json`): 688 trades (359L/329S), win 64.83%, gross -$140,899.00, net -$626,525.96, costs $485,626.96, PF 0.2271, avg R -0.0684, expectancy -$910.65/trade
@@ -53,4 +53,3 @@ explicitly requests it.
 - Do not modify `STRATEGY_RULES.txt`, frozen configs, raw data, or canonical artifacts.
 - Any strategy/rule change = separately named, versioned experiment with explicit diff from baseline.
 - Do not edit `.github/workflows/main.yml`, controller, permissions, or automation policy without explicit authorization for that exact change.
-", filePath="/home/runner/work/NQ-ORB/NQ-ORB/INITIAL_TASK_FOR_NEXT_AGENT.md
