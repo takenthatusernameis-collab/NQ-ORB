@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `4682067`)
+## Verified state (re-verified 2026-11-18, HEAD `b1c666b`)
 
-- `git rev-parse --short HEAD`: `4682067`
+- `git rev-parse --short HEAD`: `b1c666b`
 - `git status --short`: clean
 - `git diff --name-only b31f7d8..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (docs-only checkpoint since prior verification)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
@@ -17,7 +17,7 @@ experiments, automation changes, or handoff-only checkpoints without an explicit
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Baseline context: frozen showcase preset at `5fab764`; last substantive research commit `a797773`
 - `artifacts/`: 35 files, 0 `*manifest*` files
-- `python3 -m pytest tests -q`: **75 passed in 0.58s** (2026-11-18, HEAD `4682067`)
+- `python3 -m pytest tests -q`: **75 passed in 0.64s** (2026-11-18, HEAD `b1c666b`)
 
 Raw data hashes (unchanged):
 - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
@@ -48,10 +48,10 @@ Raw data hashes (unchanged):
 - No paid/proprietary data used; no credentials requested or stored; free-source search exhausted.
 - `research_state/workflow_run_diagnostics.jsonl` is controller/runtime log capture (excluded from research-drift checks).
 
-## Session note (2026-11-18, HEAD `4682067`)
+## Session note (2026-11-18, HEAD `b1c666b`)
 
-Prior agent task completed: confirmed terminal state at HEAD `4682067` (docs-only checkpoint since
-`e49de68` / `b31f7d8`; 75 tests passed in 0.58s; clean tree; zero research drift vs `a797773`; rules hash
+Prior agent task completed: confirmed terminal state at HEAD `b1c666b` (docs-only checkpoint since
+`4682067`; 75 tests passed in 0.64s; clean tree; zero research drift vs `a797773`; rules hash
 `6d3258c3...` and all raw data hashes unchanged; canonical metrics unchanged — axb0306
 60/70.0%/net -31,637.98/PF 0.4917/avgR -0.0431; kaggle 688/64.83%/net -626,525.96/PF 0.2271/avgR
 -0.0684; 35 artifacts, 0 manifests). `git diff --name-only a797773..HEAD` returns only
