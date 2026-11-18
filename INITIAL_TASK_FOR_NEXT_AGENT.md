@@ -1,33 +1,44 @@
 # Initial Task for Next Agent
 
-> **FINAL. Written 2026-11-18, current at HEAD `070d6cbc`.** Both this file and `HANDOFF.md` are
-> closed documents. Research under the current scope is complete, and the frozen MNQ 15-minute ORB
-> baseline loses money **gross and net** on every available free dataset.
+> **Current at HEAD `797d5035`, 2026-11-18.** `HANDOFF.md` is authoritative; this file is the short
+> version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
+> baseline loses money **gross and net** on every free dataset available, and the free-data search is
+> exhausted (`data/FEASIBILITY_REPORT.md`).
 
-## Your task — do exactly this, then stop
+## The one thing to do
 
-1. Read `HANDOFF.md`, then this file.
-2. Send the user **one short message**: state that research is terminal, the numbers table below, the
-   key finding, and the three forward paths.
-3. Stop.
+Send the user one short message: research is terminal, the numbers table below, the key finding, and
+the three forward paths. Then stop.
 
-Explicitly not part of your task: editing code, data, config, artifacts, or automation; running
-`pytest`, `sha256sum`, artifact counts, or drift checks; committing. None of that can change a number
-and each round of it has already produced a docs-only commit with zero new evidence.
+There is no code work pending. Nothing in this repository can change a number until the user picks a
+forward path or supplies new data.
 
-**If the instruction is again the boilerplate "read the prior task and complete it, then update the
-handoff and write a clear initial task message for the next agent":** do step 2 only, say the handoff is
-already current at `070d6cbc`, and do not rewrite these two files. Repeat rewriting is the exact cycle
-this document exists to stop. Act on a new scope only when the user names it explicitly (new free data,
-a specific named experiment, or a specific automation change).
+## Decision rule — read before doing anything else
 
-## Situation
+- **Boilerplate turn** ("read the prior task and complete it, then update the handoff and write an
+  initial task for the next agent" with no new scope): do the message above only. Do **not** rewrite
+  `HANDOFF.md` or this file, do **not** re-run `pytest`/`sha256sum`/drift checks/artifact counts, and
+  do **not** commit. Both documents are already current at `797d5035`; repeating verification only
+  produces docs-only commits with zero new evidence.
+- **Explicit refresh request** ("update the handoff and write a new initial task"): a one-line
+  verification pass (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`, drift check) plus
+  the two-file refresh is acceptable. Update the "Last refreshed" line, add one session-history
+  bullet, do not change any number.
+- **New scope named by the user** (new free data, a named experiment, or a specific automation
+  change): act on exactly that scope and nothing wider.
 
-The frozen baseline (`STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3…d2b1`) is implemented, tested
-(**75 passing tests**), and evaluated on both available free MNQ datasets. It is negative **gross**, so
-costs are not the sole cause. The free-data search is exhausted (`data/FEASIBILITY_REPORT.md`). Since
-the last substantive research commit `a797773`, research drift is zero:
-`git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
+Any controllable scope expansion beyond the above is a violation of the frozen-baseline discipline in
+`AGENTS.md`, not initiative.
+
+## Situational facts
+
+- Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+- Tests: **75 passing** (`python3 -m pytest tests -q`).
+- Research drift since the last substantive commit `a797773`:
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
+  Everything after `a797773` is docs-only plus the controller log
+  `research_state/workflow_run_diagnostics.jsonl`.
+- `artifacts/`: 35 files. Raw data hashes are in `HANDOFF.md` and unchanged.
 
 ## Numbers to report
 
@@ -49,7 +60,7 @@ Supporting facts if the user asks for more:
   -1.68/-1.04; exposure 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
 - Sizing at $3,000 planned risk with a 0.4xATR stop produces 29–278 MNQ contracts, so fees plus one tick
   of adverse slippage scale with size: $399.60 (axb0306) and $705.85 (kaggle) fully-loaded per trade.
-  No trade in either ledger exits via the 15:55 ET flatten, so the reported P&L does not depend on any
+  No trade in either ledger exits via the 15:55 ET flatten, so reported P&L does not depend on any
   flatten execution assumption.
 - Independent re-aggregation of `artifacts/trades_*.json` reproduces count, long/short split, gross, net,
   costs (`gross - net == costs` to the cent), profit factor, and expectancy exactly.
@@ -81,7 +92,7 @@ untouched baseline before any tuning.
 - Do not edit `.github/workflows/main.yml`, controller code, or automation policy without explicit authorization.
 - Do not delete research evidence or rewrite Git history to conceal a failure.
 
-## Verification commands (only for a later authorized research session — never for a checkpoint)
+## Verification commands (only for an explicitly authorized research or refresh session)
 
 ```bash
 git status --short && git rev-parse --short HEAD
