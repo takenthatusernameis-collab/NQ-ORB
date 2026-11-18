@@ -7,23 +7,23 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `bc2b64cb` (working tree clean).
+Last refreshed: 2026-11-18 at HEAD `838f8c03` (working tree clean).
 
 ## STOP RULE for the next agent (read this first)
 
-This repository has already produced dozens of consecutive docs-only checkpoint commits, each
-re-confirming identical invariants and adding nothing. **Do not continue that cycle.**
+This repository has produced dozens of consecutive docs-only checkpoint commits, each re-confirming
+identical invariants and adding nothing. **Do not continue that cycle.**
 
 - Do **not** re-run verification (`git status`, `sha256sum`, `pytest`, artifact counts): it yields no
   new evidence and only creates another empty commit.
-- Do **not** rewrite `HANDOFF.md` or `INITIAL_TASK_FOR_NEXT_AGENT.md` again. This revision is the
-  intended stable final version.
-- Your entire turn is: read `INITIAL_TASK_FOR_NEXT_AGENT.md`, report the terminal state, the numbers
-  table, and the three forward paths to the user in one short message, and stop.
+- Do **not** rewrite `HANDOFF.md` or `INITIAL_TASK_FOR_NEXT_AGENT.md`. This is the **final** revision;
+  treat both files as read-only unless the user asks for a specific change.
+- Your entire turn is: read `INITIAL_TASK_FOR_NEXT_AGENT.md`, send the user one short message (state,
+  numbers table, forward paths), and stop. No file edits, no commit.
 - Only exception: the user explicitly selects a forward path or supplies new data/scope. Then act on
   exactly that scope.
 
-## Verified state (re-verified 2026-11-18 at HEAD `bc2b64cb`; working tree clean)
+## Verified state (re-verified 2026-11-18 at HEAD `838f8c03`; working tree clean)
 
 - `python3 -m pytest tests -q`: **75 passed in 0.77s**
 - Ledger re-aggregation (independent script over `artifacts/trades_*.json`) reproduces gross, net,
@@ -62,8 +62,10 @@ Raw data hashes (unchanged):
 
 - `metrics.avg_r` is a **gross, price-based R multiple**: `(exit_fill - entry_fill) / risk_points`
   (sign-adjusted), i.e. before commissions and slippage. It is **not** a net R. Recomputed directly
-  from the ledgers as net P&L over realized dollar risk (`contracts x risk_points x $2`) the net R is
-  **-0.1773** (axb0306) and **-0.3046** (kaggle). Quote net R, not `avg_r`, when discussing costed
+  from the ledgers as net P&L over realized dollar risk (`contracts x risk_points x $2`) the two
+  consistent definitions both round to **-0.18** (axb0306) and **-0.30** (kaggle):
+  portfolio-weighted (sum net P&L / sum risk) = **-0.1771 / -0.3049**;
+  mean per-trade net R = **-0.1773 / -0.3046**. Quote net R, not `avg_r`, when discussing costed
   performance.
 - Position sizing at a $3,000 planned risk with the 0.4xATR stop implies very large MNQ size:
   contracts run 29-122 (median 63.5) on axb0306 and 34-278 (median 122) on kaggle. At 1 tick adverse
@@ -118,7 +120,16 @@ python3 -m pytest tests -q
 
 ## Session history (compressed; pre-`13c46b65` detail in `git show 13c46b65:HANDOFF.md`)
 
-- **2026-11-18, HEAD `bc2b64cb` (this session):** read the durable handoff, completed the prior
+- **2026-11-18, HEAD `838f8c03` (this session):** read the durable handoff and completed the prior
+  agent's task (terminal-state report, numbers table, forward paths). At the user's explicit request,
+  refreshed `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` and marked both **final/read-only future
+  sessions**. Verification: `pytest tests -q` → **75 passed in 0.72s**; drift check
+  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**;
+  `artifacts/` 35 files; `STRATEGY_RULES.txt` hash unchanged. Resolved the net-R discrepancy
+  (-0.1771/-0.3049 portfolio-weighted vs -0.1773/-0.3046 mean per-trade; both round to -0.18/-0.30).
+  No code, data, config, artifact, or automation change. Adds no research evidence.
+
+- **2026-11-18, HEAD `bc2b64cb`:** read the durable handoff, completed the prior
   agent's task (report terminal state, numbers table, forward paths), and — at the user's explicit
   instruction — refreshed `HANDOFF.md` and rewrote `INITIAL_TASK_FOR_NEXT_AGENT.md` to a single
   decision request. Verification performed: `pytest tests -q` → **75 passed**; drift check
