@@ -7,9 +7,9 @@ free MNQ data source. It is **negative-net on all datasets** under full costs, a
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). Do not start autonomous research,
 experiments, automation changes, or handoff-only checkpoints without an explicit user decision.
 
-## Verified state (re-verified 2026-11-18, HEAD `4504939`)
+## Verified state (re-verified 2026-11-18, HEAD `b54fc7f`)
 
-- `git rev-parse --short HEAD`: `4504939` (docs/checkpoint commit on top of `3610c55`; working tree clean before this doc update)
+- `git rev-parse --short HEAD`: `b54fc7f` (docs/checkpoint commit on top of `4504939`; working tree clean before this doc update)
 - `git status --short`: clean (at verification time)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift vs last substantive research commit `a797773`)
 - `git diff --name-only a797773..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl` only (docs + excluded controller log)
@@ -364,6 +364,17 @@ re-verified all guardrails at HEAD `4504939` (a docs/checkpoint commit on top of
 tree; zero research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`);
 `STRATEGY_RULES.txt` hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0
 manifests; 75 tests passed in 0.61s; canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net
+-31,637.98; kaggle: 688 trades, 64.83% win, net -626,525.96). No research, experiments, or
+automation changes were made. Repository remains terminal awaiting explicit user decision. This
+session updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user.
+
+## Session note (2026-11-18, HEAD `b54fc7f`)
+
+Prior agent task completed: confirmed terminal state at HEAD `4504939` and reported it. This session
+re-verified all guardrails at HEAD `b54fc7f` (a docs/checkpoint commit on top of `4504939`): clean
+tree; zero research drift vs `a797773` (empty diff on `artifacts config src tests raw data scripts`);
+`STRATEGY_RULES.txt` hash `6d3258c3...` and all four raw-data hashes unchanged; 35 artifacts / 0
+manifests; 75 tests passed in 0.62s; canonical metrics unchanged (axb0306: 60 trades, 70.0% win, net
 -31,637.98; kaggle: 688 trades, 64.83% win, net -626,525.96). No research, experiments, or
 automation changes were made. Repository remains terminal awaiting explicit user decision. This
 session updated `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md` as explicitly requested by the user.
