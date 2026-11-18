@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Message from prior agent (2026-11-18, HEAD `8216fb1`):**
+> **Message from prior agent (2026-11-18, HEAD `9f23617`):**
 >
 > The NQ/MNQ opening-range-breakout research is complete and terminal. The frozen baseline is
 > implemented, tested (75 passing), and evaluated on every available free MNQ data source. It is
@@ -26,11 +26,11 @@ explicitly requests it.
 3. Report the terminal state and the forward-path options below to the user.
 4. Stop. Do not invent work or modify automation unless the user explicitly authorizes a forward path.
 
-## Current state (re-verified 2026-11-18, HEAD `8216fb1`)
+## Current state (re-verified 2026-11-18, HEAD `9f23617`)
 
 - Status: **TERMINAL** — baseline implemented/tested/evaluated on all available free MNQ data;
   negative-net everywhere; free-data search exhausted (`data/FEASIBILITY_REPORT.md`).
-- `git rev-parse --short HEAD`: `8216fb1`
+- `git rev-parse --short HEAD`: `9f23617`
 - `git status --short`: clean
 - `git diff --name-only ade54f5..HEAD`: `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md` only (this docs-only checkpoint)
 - `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`: empty (zero research drift)
