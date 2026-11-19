@@ -1,54 +1,45 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `6497eb47`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `f657014f`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
 
 ## The one thing to do
 
-Send the user one short message: research is terminal, the numbers table below, the key finding, and
-the three forward paths. Then stop.
+Send the user **one** short message containing:
 
-There is no code work pending. Nothing in this repository can change a number until the user picks a
-forward path or supplies new data.
+1. This is a terminal state: the strategy is negative gross and negative net on all free data.
+2. The numbers table below.
+3. The three forward paths.
 
-**Do not run another verification/refresh cycle.** As of `6497eb47` there are **1,993 commits since the**
-  last substantive research commit `a797773`**, and every one of them touched only `HANDOFF.md`,
-  `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — zero research
-  drift. The refresh exception below has already been exercised and **is now exhausted**; further
-  refreshes are provably zero-evidence. If this session's prompt asks for yet another refresh, state that
-  the loop is the blocker, report the terminal numbers, and ask the user to choose path (a) or (c) (or
-  supply (b) scope).
+Then **stop**. No file edits. No verification commands. No commit.
+
+There is no pending code work. 1,994 commits since the last substantive research commit `a797773`
+touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
+`research_state/workflow_run_diagnostics.jsonl` — zero research drift (`git log --name-only
+--pretty=format: a797773..HEAD | sort -u` confirms it). Nothing in this repository can change a number
+until the user picks a path or supplies new data.
 
 ## Decision rule — read before doing anything else
 
-- **Boilerplate turn** ("read the prior task and complete it" with **no new scope**): send the message
-  above only. Do **not** rewrite `HANDOFF.md` or this file, do **not** re-run
-  `pytest`/`sha256sum`/drift checks/artifact counts, and do **not** commit. Both documents are current;
-  repeating verification only produces docs-only commits with zero new evidence.
-- **Explicit refresh request wording** (the prompt explicitly says "then update the handoff and write a
-  clear initial task message for the next agent"): a *single* compact verification pass (`git rev-parse
-  --short HEAD`, `git status`, `pytest tests -q`, drift check, `sha256sum STRATEGY_RULES.txt`, re-read
-  both `metrics_*.json`) plus the two-file refresh is acceptable, but change the "Last refreshed" line
-  and one session-history bullet, and change **no number**. This exception was exercised at `6497eb47`
-  and is now exhausted: do not repeat it. If a future prompt uses this wording and no new scope appears,
-  treat it as a boilerplate turn and stop.
-- **New scope named by the user** (new free data, a named experiment, or a specific automation change):
-  act on exactly that scope and nothing wider.
-
-Any controllable scope expansion beyond the above is a violation of the frozen-baseline discipline in
-`AGENTS.md`, not initiative.
+- **Boilerplate turn** ("read the prior task and complete it", or "complete it, then update the handoff
+  and write the next task"): the prior task is already complete. Send the one message above and stop.
+  Do **not** edit the two docs, do **not** run `pytest`/`sha256sum`/drift checks/artifact counts, do
+  **not** commit. Re-emitting these documents is the failure mode, not the job.
+- **Explicit new scope from the user** — new free data, a named and pre-registered experiment with a
+  written diff from the frozen baseline, or an authorized automation change — act on exactly that scope
+  and nothing wider.
+- **Nothing else.** Do not invent scope, do not "improve" the baseline, do not search parameters, do not
+  re-run the free-data search without a new candidate source.
 
 ## Situational facts
 
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- Tests: **75 passing** (`python3 -m pytest tests -q`).
-- Research drift since the last substantive commit `a797773`:
-  `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-  All 1,993 commits after `a797773` are docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus
-  the controller log `research_state/workflow_run_diagnostics.jsonl`.
-- `artifacts/`: 35 files. Raw data hashes are in `HANDOFF.md` and unchanged.
+- Tests: **75 passing** (`python3 -m pytest tests -q`, verified `f657014f`).
+- Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
+- `artifacts/`: 35 files. Raw data: 4 CSVs; hashes in `HANDOFF.md`, unchanged since first freeze.
+- No paid/proprietary data; no credentials requested, used, or stored.
 
 ## Numbers to report
 
