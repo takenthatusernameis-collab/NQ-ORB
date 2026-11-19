@@ -7,14 +7,14 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `374d763d`, on an explicit user request ("complete the prior task,
+Last refreshed: 2026-11-19 at HEAD `5ee4f153`, on an explicit user request ("complete the prior task,
   then update the handoff and write the next task"). The prior task remains complete: there was no
   outstanding code, data, or experiment work to perform. Verification pass this session:
   `git status --short` → clean; research-drift check `a797773..HEAD` → **0 files**;
   `artifacts/metrics_axb0306.json` / `metrics_kaggle.json` re-read and every canonical value below
   matches exactly. No code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **2,001 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **2,002 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`
   → 3 unique paths). Zero research drift over 2,001 commits. This is direct proof that the maintenance
@@ -43,14 +43,14 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `374d763d`; working tree holds only this docs refresh)
+## Verified state (re-verified 2026-11-19 at HEAD `5ee4f153`; working tree holds only this docs refresh)
 
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source file has
   changed since, per the zero-drift check below)
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
-  2,001 such commits as of `374d763d`.
+  2,002 such commits as of `5ee4f153`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
 - `artifacts/`: 35 files, 0 manifest files. Ledger re-aggregation (independent script over
@@ -150,9 +150,9 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `374d763d` (this session):** explicit user request ("complete the prior task, then
+- **2026-11-19, HEAD `5ee4f153` (this session):** explicit user request ("complete the prior task, then
   update the handoff and write the next task"). Prior task already complete → no implementation work
-  existed. Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**, 2,001
+  existed. Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**, 2,002
   docs-only commits, 3 unique paths; both canonical metric files re-read and every value matches. No
   number changed; no test re-run needed since no source path has changed since `6f73afaf`.
   **Refresh budget spent: the next turn is boilerplate, and the remaining item is a user decision.**
