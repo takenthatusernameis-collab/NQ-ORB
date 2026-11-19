@@ -7,8 +7,8 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `8563154a`. One-line verification pass: `pytest tests -q` → **75
-passed in 0.75s**; research-drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+Last refreshed: 2026-11-19 at HEAD `76d6edb6`. One-line verification pass: `pytest tests -q` → **75
+passed in 0.67s**; research-drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
 hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the canonical table below. No
 code/data/config/artifact/automation change; no number changed.
 
@@ -131,12 +131,14 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `8563154a` (this session):** completed the prior agent task (terminal-state report
+- **2026-11-19, HEAD `76d6edb6` (this session):** completed the prior agent task (terminal-state report
   to the user with the numbers table, key finding, and three forward paths), ran the explicit-refresh
-  verification pass (`pytest tests -q` → **75 passed in 0.75s**; drift check → **0 files**; sha256 of
-  `STRATEGY_RULES.txt` and all four raw CSVs unchanged; both `metrics_*.json` re-read and match), and
-  refreshed the "Last refreshed" line and this session-history bullet. No code, data, config, artifact,
-  or automation change; no number changed; adds no research evidence.
+  verification pass (`pytest tests -q` → **75 passed in 0.67s**; drift check → **0 files**; sha256 of
+  `STRATEGY_RULES.txt` and all four raw CSVs unchanged; `artifacts/` 35 files, 0 manifests; both
+  `metrics_*.json` re-read — trade counts, long/short, gross, net, costs, PF, expectancy, max DD,
+  Sharpe/Sortino, exposure, worst day, chronological splits and the 12-scenario cost grid all match),
+  and refreshed the "Last refreshed" line and this session-history bullet. No code, data, config,
+  artifact, or automation change; no number changed; adds no research evidence.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
 - **2026-11-18, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~45 docs-only
