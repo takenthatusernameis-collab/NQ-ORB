@@ -2,10 +2,10 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
-> **2026-11-19, HEAD `26e8c7a9` (this session):** explicit user request ("read the prior agent task from
+> **2026-11-19, HEAD `7054323c` (this session):** explicit user request ("read the prior agent task from
 > the durable handoff and complete it. Then update the handoff and write a clear initial task message for
 > the next agent."). Prior task confirmed complete; compact refresh only: working tree clean; drift
-> `a797773..HEAD` → **0 files**, 2,039 docs-only commits, 3 unique paths; both canonical metrics re-read
+> `a797773..HEAD` → **0 files**, 2,040 docs-only commits, 3 unique paths; both canonical metrics re-read
 > (60/688 trades, net -31,637.98/-626,525.96, PF 0.4917/0.2271) and match; rules hash unchanged;
 > `artifacts/` still 35 files. No number changed.
 The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on every available free
@@ -13,14 +13,14 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `4fcfad85`, on an explicit user request ("complete the prior task,
+Last refreshed: 2026-11-19 at HEAD `7054323c`, on an explicit user request ("complete the prior task,
   then update the handoff and write the next task"). The prior task remains complete: there was no
   outstanding code, data, or experiment work to perform. Verification this session: research-drift check
   `a797773..HEAD` → **0 files**; `artifacts/metrics_axb0306.json` / `metrics_kaggle.json` re-read and
   every canonical value below matches exactly; `STRATEGY_RULES.txt` hash unchanged; `artifacts/` still
   35 files. No code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **2,037 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **2,040 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`
   → 3 unique paths). Zero research drift across all commits. This is direct proof that the maintenance
@@ -56,7 +56,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
    `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log `research_state/workflow_run_diagnostics.jsonl`.
-    2,038 such commits as of HEAD `4fcfad85`.
+    2,040 such commits as of HEAD `7054323c`.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
 - `artifacts/`: 35 files, 0 manifest files. Ledger re-aggregation (independent script over
@@ -263,3 +263,4 @@ python3 -m pytest tests -q
   all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
 - **2026-11-19, HEAD `12e1d363` (this session):** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,027 docs-only commits, 3 unique paths; both canonical metric files re-read and match; rules hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
 - **2026-11-19, HEAD `4fcfad85` (this session):** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,038 docs-only commits, 3 unique paths; both canonical metric files re-read and match; rules hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
+- **2026-11-19, HEAD `7054323c` (this session):** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,040 docs-only commits, 3 unique paths; both canonical metrics re-read (60/688 trades, net -31,637.98/-626,525.96, PF 0.4917/0.2271) and match; rules hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
