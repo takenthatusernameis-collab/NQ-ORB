@@ -7,17 +7,16 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `ba2723e8`. One-line verification pass: `pytest tests -q` → **75
+Last refreshed: 2026-11-19 at HEAD `9e87e99c`. One-line verification pass: `pytest tests -q` → **75
 passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
-`STRATEGY_RULES.txt` hash `6d3258c3…d2b1` and all four raw CSV hashes unchanged; both `metrics_*.json`
-re-read and match the canonical table below. No code/data/config/artifact/automation change; no number
-changed.
+`STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
+canonical table below. No code/data/config/artifact/automation change; no number changed.
 
-Loop evidence (new, quantified this session): `git log a797773..HEAD` now holds **1,984 commits**, and
-across all of them the only touched paths are `HANDOFF.md` (1,941), `INITIAL_TASK_FOR_NEXT_AGENT.md`
-(1,860), and `research_state/workflow_run_diagnostics.jsonl` (33). Zero research drift over 1,984
-commits. This is direct proof that the maintenance cron — not the research task — is now the source of
-all repository activity, and that repeated refreshes cannot produce new evidence.
+Loop evidence: `git log a797773..HEAD` now holds **1,989 commits**, and across all of them the only
+touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
+`research_state/workflow_run_diagnostics.jsonl`. Zero research drift over 1,989 commits. This is direct
+proof that the maintenance cron — not the research task — is the source of all repository activity,
+and that repeated refreshes cannot produce new evidence.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
 > explicitly asks for a refresh. Repeated docs-only rewrites are exactly the cycle the STOP RULE forbids.
@@ -36,7 +35,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `ba2723e8`; working tree clean)
+## Verified state (re-verified 2026-11-19 at HEAD `9e87e99c`; working tree clean)
 
 - `python3 -m pytest tests -q`: **75 passed in 0.68s**
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
@@ -138,16 +137,16 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `ba2723e8` (this session):** completed the prior agent task (terminal-state
+- **2026-11-19, HEAD `9e87e99c` (this session):** completed the prior agent task (terminal-state
   report with the numbers table, key finding, and three forward paths), then ran the single explicit
-  refresh verification pass the prompt authorized (`pytest tests -q` → **75 passed**;
-  drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` and all four
-  raw CSV hashes unchanged; both `metrics_*.json` re-read — all values match the table). Research
+  refresh verification pass the prompt authorized (`pytest tests -q` → **75 passed**; drift check
+  `a797773..HEAD` → **0 files** capped at 1,989 commits; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+  hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read — all values match the table). Research
   still terminal; no metric changed. This is the same zero-evidence loop described in the STOP RULE and
   must not be repeated.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
-- **2026-11-18..19, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~1,984 docs-only
+- **2026-11-18..19, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~1,989 docs-only
   checkpoint commits through `d760920a` (including `7413ee28`, `76d6edb6`, `83023ed2`). Each
   re-confirmed identical invariants with zero research drift and produced **no new evidence**. The
   loop only ends when the user authorizes path (a)/(c) or supplies new scope (b).
