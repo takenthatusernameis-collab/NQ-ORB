@@ -7,8 +7,8 @@ data source. It is **negative-gross and negative-net on all datasets** under ful
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `201886a3`. This session's edit is a **reference bump only**: HEAD id
-updated, docs-only commit count 2,050 → 2,052, and the turn folded into the existing 2026-11-19 session
+Last refreshed: 2026-11-19 at HEAD `ef92ae4c`. This session's edit is a **reference bump only**: HEAD id
+updated, docs-only commit count 2,052 → 2,053, and the turn folded into the existing 2026-11-19 session
 line. No number, hash, claim, or constraint changed.
 
 ## STOP RULE for the next agent (read this first)
@@ -26,12 +26,12 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only exception: the user selects a forward path, requests a *specific* doc change, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `201886a3`, 2026-11-19)
+## Verified state (HEAD `ef92ae4c`, 2026-11-19)
 
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log
-  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,052 commits.
+  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,053 commits.
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source path has
   changed since). Not re-run at `201886a3`: the ephemeral CI sandbox has no `pytest`/`numpy`
   installed, so test status is carried forward from a zero-drift source tree rather than re-verified.
@@ -185,3 +185,9 @@ python3 -m pytest tests -q
   expectancy -$527.30/-$910.65, 12 net-negative cost scenarios each); `pytest` still unavailable in
   sandbox, so test status carries forward from the zero-drift source tree. HEAD/count references bumped,
   turn folded in. No number changed. See the STOP RULE — further refreshes add nothing.
+- **2026-11-19, HEAD `ef92ae4c`** — same boilerplate request, no forward path selected. Compact pass:
+  clean tree; drift `a797773..HEAD` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash
+  unchanged; both canonical metric files re-read and match (33L/27S and 359L/329S, win rates 70.00/64.83%,
+  gross -$7,662.00/-$140,899.00, net -$31,637.98/-$626,525.96, PF 0.4917/0.2271, avg_r -0.0431/-0.0684).
+  Test status carried forward (no `pytest` in sandbox). HEAD/count references bumped, turn folded in. No
+  number changed. See the STOP RULE — further refreshes add nothing.
