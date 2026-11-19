@@ -7,9 +7,9 @@ data source. It is **negative-gross and negative-net on all datasets** under ful
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `3b57e481`. This session's edit is a **reference bump only**: HEAD id
-and commit count updated, one session line folded into the existing 2026-11-19 entry. No number, hash,
-claim, or constraint changed.
+Last refreshed: 2026-11-19 at HEAD `2f899ebf`. This session's edit is a **reference bump only**: HEAD id
+updated and the turn folded into the existing 2026-11-19 session line. No number, hash, claim, or
+constraint changed.
 
 ## STOP RULE for the next agent (read this first)
 
@@ -26,7 +26,7 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only exception: the user selects a forward path, requests a *specific* doc change, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `3b57e481`, 2026-11-19)
+## Verified state (HEAD `2f899ebf`, 2026-11-19)
 
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
@@ -158,3 +158,7 @@ python3 -m pytest tests -q
   `a797773..HEAD` → **0 files** over 2,046 docs-only commits / 3 unique paths; `artifacts/` 35 files;
   `STRATEGY_RULES.txt` and all four raw-data hashes unchanged; both canonical metric files re-read and
   matching; `pytest` still unavailable in sandbox. HEAD/count references bumped, nothing else changed.
+- **2026-11-19, HEAD `2f899ebf`** — same boilerplate request again. Compact pass: `git status` clean;
+  drift `a797773..HEAD` → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt` hash and all four
+  raw-data hashes match; both canonical metric files re-read and match canonical table. HEAD reference
+  bumped, turn folded in. No number changed. See the STOP RULE — further refreshes add nothing.

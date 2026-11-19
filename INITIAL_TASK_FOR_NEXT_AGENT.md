@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `3b57e481`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `2f899ebf`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
@@ -42,7 +42,7 @@ the failure mode this file exists to stop.
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256
   `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run at
-  `3b57e481`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
+  `2f899ebf`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
   scripts` → **0 files**, across **2,046** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
@@ -116,3 +116,7 @@ attempting the last three commands there.
   `a797773..HEAD` → **0 files** over 2,046 docs-only commits / 3 unique paths; canonical metrics re-read and
   matching; `STRATEGY_RULES.txt` hash and all four raw-data hashes unchanged; `artifacts/` still 35 files.
   Test suite could not be re-run here (no `pytest`), recorded as carried-forward. No number changed.
+- **2026-11-19, HEAD `2f899ebf`:** same boilerplate request. Compact refresh: clean tree, drift
+  `a797773..HEAD` → **0 files**, `artifacts/` 35 files, `STRATEGY_RULES.txt` + 4 raw-data hashes match,
+  canonical metrics re-read and match the table below. `pytest` still unavailable locally (carried
+  forward). HEAD reference bumped only. Stop refreshing — see `HANDOFF.md` STOP RULE.
