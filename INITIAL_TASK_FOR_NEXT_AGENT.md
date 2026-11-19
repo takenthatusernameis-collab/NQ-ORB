@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `bccb007f`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `efeb03c1`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -13,7 +13,7 @@ the three forward paths. Then stop.
 There is no code work pending. Nothing in this repository can change a number until the user picks a
 forward path or supplies new data.
 
-**Do not run another verification/refresh cycle.** As of `d760920a` there are **1,984 commits since the
+**Do not run another verification/refresh cycle.** As of `efeb03c1` there are **1,987 commits since the
 last substantive research commit `a797773`**, and every one of them touched only `HANDOFF.md`,
 `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — zero research
 drift. Further refreshes are provably zero-evidence. If this session's prompt asks for yet another
@@ -44,7 +44,7 @@ Any controllable scope expansion beyond the above is a violation of the frozen-b
 - Tests: **75 passing** (`python3 -m pytest tests -q`).
 - Research drift since the last substantive commit `a797773`:
   `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-  All 1,984 commits after `a797773` are docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus
+  All 1,987 commits after `a797773` are docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus
   the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `artifacts/`: 35 files. Raw data hashes are in `HANDOFF.md` and unchanged.
 
