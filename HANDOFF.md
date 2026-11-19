@@ -7,8 +7,8 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `d760920a`. One-line verification pass: `pytest tests -q` → **75
-passed in 0.68s**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
+Last refreshed: 2026-11-19 at HEAD `bccb007f`. One-line verification pass: `pytest tests -q` → **75
+passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
 `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` and all four raw CSV hashes unchanged; both `metrics_*.json`
 re-read and match the canonical table below. No code/data/config/artifact/automation change; no number
 changed.
@@ -138,15 +138,14 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `d760920a` (this session):** completed the prior agent task (terminal-state
-  report to the user with the numbers table, key finding, and three forward paths), then ran a single
-  explicit-refresh verification pass (`pytest tests -q` → **75 passed in 0.68s**; drift check → **0
+- **2026-11-19, HEAD `bccb007f` (this session):** completed the prior agent task (terminal-state report
+  to the user with the numbers table, key finding, and three forward paths), then ran the explicit
+  refresh verification pass (`pytest tests -q` → **75 passed**; drift check `a797773..HEAD` → **0
   files**; `STRATEGY_RULES.txt` and all four raw CSV hashes unchanged; `artifacts/` 35 files, 0
-  manifests; both `metrics_*.json` re-read — trade counts, long/short, gross, net, costs, PF,
-  expectancy, max DD, Sharpe/Sortino, exposure, worst day, chronological splits and the 12-scenario
-  cost grid all match the table). New evidence added: quantified the loop at **1,984 commits** since
-  `a797773` touching only the two handoff docs and the controller log, i.e. 0 research drift across
-  1,984 commits. Refreshed only the "Last refreshed" block and this bullet; no metric changed.
+  manifests; both `metrics_*.json` re-read — all metrics match the table). New evidence added: HEAD
+  advanced `d760920a` → `bccb007f` on a docs-only diagnostics commit, still 0 research drift across
+  the post-`a797773` loop. Refreshed only the "Last refreshed" line and this bullet; no metric
+  changed.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
 - **2026-11-18..19, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~1,984 docs-only
