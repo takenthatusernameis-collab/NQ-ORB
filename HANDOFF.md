@@ -2,10 +2,10 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
-> **2026-11-19, HEAD `4fcfad85` (this session):** explicit user request ("read the prior agent task from
+> **2026-11-19, HEAD `26e8c7a9` (this session):** explicit user request ("read the prior agent task from
 > the durable handoff and complete it. Then update the handoff and write a clear initial task message for
 > the next agent."). Prior task confirmed complete; compact refresh only: working tree clean; drift
-> `a797773..HEAD` → **0 files**, 2,038 docs-only commits, 3 unique paths; both canonical metrics re-read
+> `a797773..HEAD` → **0 files**, 2,039 docs-only commits, 3 unique paths; both canonical metrics re-read
 > (60/688 trades, net -31,637.98/-626,525.96, PF 0.4917/0.2271) and match; rules hash unchanged;
 > `artifacts/` still 35 files. No number changed.
 The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on every available free
