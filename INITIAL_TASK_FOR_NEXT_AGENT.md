@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `dd99b666`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `cbbc7931`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -15,7 +15,7 @@ Send the user **one** short message containing:
 
 Then **stop**. No file edits. No verification commands. No commit.
 
-There is no pending code work. 1,997 commits since the last substantive research commit `a797773`
+There is no pending code work. 1,998 commits since the last substantive research commit `a797773`
 touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
 `research_state/workflow_run_diagnostics.jsonl` — zero research drift (`git log --name-only
 --pretty=format: a797773..HEAD | sort -u` confirms it). Nothing in this repository can change a number
@@ -40,7 +40,7 @@ until the user picks a path or supplies new data.
 ## Situational facts
 
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- Tests: **75 passing** (`python3 -m pytest tests -q`, verified `dd99b666`).
+- Tests: **75 passing** (`python3 -m pytest tests -q`, verified `cbbc7931`).
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
 - `artifacts/`: 35 files. Raw data: 4 CSVs; hashes in `HANDOFF.md`, unchanged since first freeze.
 - No paid/proprietary data; no credentials requested, used, or stored.

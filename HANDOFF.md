@@ -7,18 +7,19 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `dd99b666`, on an explicit user request ("update the handoff and
+Last refreshed: 2026-11-19 at HEAD `cbbc7931`, on an explicit user request ("update the handoff and
   write the next task") — the only condition under which these two docs may be edited. Verification
   pass this session: `git status --short` → clean; research-drift check `a797773..HEAD` → **0 files**;
   `python3 -m pytest tests -q` → **75 passed**; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged;
-  all `artifacts/metrics_*.json` re-read and every canonical value below matches exactly
-  (axb0306 and kaggle, and the `_verify`/`_1m`/`audit`/`full` re-runs agree with the canonical files).
-  No code/data/config/artifact change; no number changed.
+  all 4 raw-data hashes unchanged; `artifacts/metrics_axb0306.json` / `metrics_kaggle.json` re-read and
+  every canonical value below matches exactly (trade counts and long/short splits from
+  `artifacts/trades_*.json`; `gross - net == costs` to the cent; net R recomputed from `risk_points` as
+  **-0.1771 / -0.3049**). No code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **1,997 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **1,998 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`).
-  Zero research drift over 1,996 commits. This is direct proof that the maintenance cron — not the
+  Zero research drift over 1,997 commits. This is direct proof that the maintenance cron — not the
   research task — is the source of all repository activity, and that repeated refreshes cannot produce
   new evidence.
 
@@ -44,7 +45,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `dd99b666`; working tree holds only this docs refresh)
+## Verified state (re-verified 2026-11-19 at HEAD `cbbc7931`; working tree holds only this docs refresh)
 
 - `python3 -m pytest tests -q`: **75 passed**
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
@@ -146,12 +147,13 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `dd99b666` (this session):** explicit user request ("update the handoff and write
-  the next task"). Prior task already complete → compact verification pass (`git status` clean;
-  drift `a797773..HEAD` → **0 files**, 1,997 commits; `pytest tests -q` → **75 passed**;
-  `STRATEGY_RULES.txt` hash unchanged; all `metrics_*.json` re-read — every canonical value matches),
-  then this two-file refresh and a tightened `INITIAL_TASK_FOR_NEXT_AGENT.md`. No number changed, no
-  research drift. **Nothing further is producible here; the remaining item is a user decision.**
+- **2026-11-19, HEAD `cbbc7931` (this session):** explicit user request ("update the handoff and write
+  the next task"). Prior task already complete → compact verification pass (`git status` clean; drift
+  `a797773..HEAD` → **0 files**, 1,998 commits; `pytest tests -q` → **75 passed**; `STRATEGY_RULES.txt`
+  and all 4 raw-data hashes unchanged; canonical metrics and ledger aggregates re-derived — every value
+  matches), then this two-file refresh. No number changed, no research drift. **The refresh budget is
+  now spent: the next turn is boilerplate again, and the remaining item is a user decision.**
+- **2026-11-19, HEAD `dd99b666`:** prior refresh (75 passed, zero drift, 1,997 docs-only commits).
 - **2026-11-19, HEAD `a4a86b5a`:** prior refresh (75 passed, zero drift, 1,996 docs-only commits).
 - **2026-11-19, HEAD `57c15118`:** prior refresh (75 passed, zero drift, 1,995 docs-only commits).
 - **2026-11-19, HEAD `6497eb47`:** prior compact verification refresh (75 passed, zero drift, 1,993
