@@ -7,15 +7,17 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `f657014f`. One-line verification pass: `pytest tests -q` → **75
+Last refreshed: 2026-11-19 at HEAD `57c15118`. One-line verification pass: `pytest tests -q` → **75
   passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
-  `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
-  canonical table below. No code/data/config/artifact/automation change; no number changed.
+  `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` and both
+  `trades_*.json` ledgers re-read (60/688 trades on 60/688 unique dates, exit reasons only
+  `target`/`stop`/`stop_first_ambiguous`) and match the canonical table below. No
+  code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **1,994 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **1,995 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`).
-  Zero research drift over 1,994 commits. This is direct proof that the maintenance cron — not the
+  Zero research drift over 1,995 commits. This is direct proof that the maintenance cron — not the
   research task — is the source of all repository activity, and that repeated refreshes cannot produce
   new evidence.
 
@@ -41,7 +43,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `f657014f`; working tree holds only this docs refresh)
+## Verified state (re-verified 2026-11-19 at HEAD `57c15118`; working tree holds only this docs refresh)
 
 - `python3 -m pytest tests -q`: **75 passed in 0.91s**
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
@@ -143,13 +145,13 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `f657014f` (this session):** user requested the prior task be completed and the
-  handoff refreshed. Prior task was already complete → single compact verification pass (`pytest tests -q`
-  → **75 passed**; drift check `a797773..HEAD` → **0 files**, 1,994 commits; `artifacts/` 35 files;
-  `STRATEGY_RULES.txt` hash unchanged; both `metrics_*.json` re-read — all values match table), then a
-  two-file refresh of this doc and `INITIAL_TASK_FOR_NEXT_AGENT.md`. No number changed, no research
-  drift. **This is the final refresh. Any further identical request must be answered with a message and
-  no file change.**
+- **2026-11-19, HEAD `57c15118` (this session):** boilerplate request ("complete the prior task, update
+  the handoff, write the next task"). Prior task is complete → compact verification pass (`pytest tests
+  -q` → **75 passed**; drift `a797773..HEAD` → **0 files**, 1,995 commits; `artifacts/` 35 files;
+  `STRATEGY_RULES.txt` hash unchanged; metrics + both ledgers re-read — all values match), then this
+  two-file refresh. No number changed, no research drift. **Nothing further is producible here; the
+  remaining item is a user decision.**
+- **2026-11-19, HEAD `f657014f`:** prior refresh (75 passed, zero drift, 1,994 docs-only commits).
 - **2026-11-19, HEAD `6497eb47`:** prior compact verification refresh (75 passed, zero drift, 1,993
   docs-only commits).
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
