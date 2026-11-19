@@ -154,6 +154,7 @@ python3 -m pytest tests -q
 
 ## Session history
 
+- **2026-11-19, HEAD `347d1c21` (this session):** compact refresh on explicit user request. Drift `a797773..HEAD` → 0 files, 2,018 docs-only commits, 3 unique paths. No number changed.
 - **2026-11-19, HEAD `ce5df048` (this session):** explicit user request ("read the prior agent task from
   the durable handoff and complete it. Then update the handoff and write a clear initial task message for
   the next agent."). Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**,
