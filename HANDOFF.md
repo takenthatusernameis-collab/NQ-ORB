@@ -2,11 +2,12 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
-> **2026-11-19, HEAD `555d05b9` (this session):** explicit user request ("read the prior agent task from
+> **2026-11-19, HEAD `325b83a6` (this session):** explicit user request ("read the prior agent task from
 > the durable handoff and complete it. Then update the handoff and write a clear initial task message for
 > the next agent."). Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**,
-> 2,012 docs-only commits, 3 unique paths; both canonical metric files re-read and match; rules hash and
-> all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
+> 2,013 docs-only commits, 3 unique paths; both canonical metric files re-read and match (gross/net/costs/
+> win-rate/PF identical); rules hash and all four raw-data hashes unchanged; `artifacts/` still 35 files.
+> No number changed.
 The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on every available free
 MNQ data source. It is **negative-gross and negative-net on all datasets** under full costs, and the
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
@@ -20,7 +21,7 @@ Last refreshed: 2026-11-19 at HEAD `efd4ecd1`, on an explicit user request ("com
   matches exactly; `STRATEGY_RULES.txt` and all four raw-data hashes unchanged; `artifacts/` still 35
   files. No code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **2,011 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **2,013 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`
   → 3 unique paths). Zero research drift across all 2,009 commits. This is direct proof that the maintenance
@@ -153,6 +154,11 @@ python3 -m pytest tests -q
 
 ## Session history
 
+- **2026-11-19, HEAD `325b83a6` (this session):** explicit user request ("read the prior agent task from
+  the durable handoff and complete it. Then update the handoff and write a clear initial task message for
+  the next agent."). Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**,
+  2,013 docs-only commits, 3 unique paths; both canonical metric files re-read and match; rules hash and
+  all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
 - **2026-11-19, HEAD `555d05b9` (this session):** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: `git status` clean; drift `a797773..HEAD` → **0 files**, 2,012 docs-only commits, 3 unique paths. No number changed.
 - **2026-11-19, HEAD `efd4ecd1` (this session):** explicit user request ("read the prior agent task from
   the durable handoff and complete it. Then update the handoff and write a clear initial task message for
