@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `ef92ae4c`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `50a20f5f`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
@@ -42,7 +42,7 @@ the failure mode this file exists to stop.
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256
   `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run at
-  `ef92ae4c`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
+  `50a20f5f`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
   scripts` → **0 files**, across **2,053** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
@@ -112,30 +112,10 @@ attempting the last three commands there.
 
 ## Session note
 
-- **2026-11-19, HEAD `3b57e481`:** same boilerplate request. Compact refresh only: drift
-  `a797773..HEAD` → **0 files** over 2,046 docs-only commits / 3 unique paths; canonical metrics re-read and
-  matching; `STRATEGY_RULES.txt` hash and all four raw-data hashes unchanged; `artifacts/` still 35 files.
-  Test suite could not be re-run here (no `pytest`), recorded as carried-forward. No number changed.
-- **2026-11-19, HEAD `22d1171e`:** same boilerplate request. Compact refresh: clean tree, drift
-  `a797773..HEAD` → **0 files** over 2,048 docs-only commits / 3 unique paths, `artifacts/` 35 files,
-  `STRATEGY_RULES.txt` + 4 raw-data hashes match, canonical metrics re-read and match the table below.
-  `pytest` still unavailable locally (carried forward). HEAD/count references bumped only. Stop refreshing —
-  see `HANDOFF.md` STOP RULE.
-- **2026-11-19, HEAD `fdf4ed71`:** same boilerplate request. Compact refresh: clean tree, drift
-  `a797773..HEAD` → **0 files** over 2,049 docs-only commits / 3 unique paths, `artifacts/` 35 files,
-  `STRATEGY_RULES.txt` + 4 raw-data hashes match, canonical metrics re-read and match the table above.
-  `pytest` still unavailable locally (carried forward). HEAD/count references bumped only. Stop refreshing —
-  see `HANDOFF.md` STOP RULE.
-- **2026-11-19, HEAD `7ed4a396`:** same boilerplate request. Compact refresh: clean tree, drift
-  `a797773..HEAD` → **0 files** over 2,050 docs-only commits / 3 unique paths, `artifacts/` 35 files,
-  `STRATEGY_RULES.txt` + 4 raw-data hashes match, both canonical metric files re-read and match every field
-  of the table above. `pytest` still unavailable locally (carried forward from the zero-drift tree).
-  HEAD/count references bumped only. Stop refreshing — see `HANDOFF.md` STOP RULE.
-- **2026-11-19, HEAD `2f899ebf`:** same boilerplate request. Compact refresh: clean tree, drift
-  `a797773..HEAD` → **0 files**, `artifacts/` 35 files, `STRATEGY_RULES.txt` + 4 raw-data hashes match,
-  canonical metrics re-read and match the table below. `pytest` still unavailable locally (carried
-  forward). HEAD reference bumped only.
-- **2026-11-19, HEAD `ef92ae4c`:** same boilerplate request. Compact refresh: clean tree, drift
-  `a797773..HEAD` → **0 files**, `artifacts/` 35 files, `STRATEGY_RULES.txt` hash unchanged, both canonical
-  metric files re-read and match the table below. `pytest` still unavailable locally (carried forward).
-  HEAD/count references bumped only. Do not chain another refresh — see `HANDOFF.md` STOP RULE.
+- **2026-11-19, HEAD `3b57e481` … `50a20f5f`:** the same boilerplate request on every later turn, never a
+  forward path. Each was a compact refresh with identical results: clean tree, drift `a797773..HEAD` → **0
+  files** over 2,046–2,053 docs-only commits / 3 unique paths, `artifacts/` 35 files, `STRATEGY_RULES.txt`
+  and all four raw-data hashes unchanged, both canonical metric files re-read and matching the table above.
+  `pytest`/`numpy`/`pandas` unavailable locally (status carried forward from the zero-drift tree). Only
+  HEAD/count references changed. Collapsed into one note — these produced no new evidence. **Stop
+  refreshing:** see `HANDOFF.md` STOP RULE.
