@@ -7,14 +7,14 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `17060a04`. One-line verification pass: `pytest tests -q` → **75
+Last refreshed: 2026-11-19 at HEAD `a0fa8fd0`. One-line verification pass: `pytest tests -q` → **75
   passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
   `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
   canonical table below. No code/data/config/artifact/automation change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **1,990 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **1,992 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
-  `research_state/workflow_run_diagnostics.jsonl`. Zero research drift over 1,990 commits. This is direct
+  `research_state/workflow_run_diagnostics.jsonl`. Zero research drift over 1,992 commits. This is direct
   proof that the maintenance cron — not the research task — is the source of all repository activity,
   and that repeated refreshes cannot produce new evidence.
 
@@ -35,7 +35,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `9e87e99c`; working tree clean)
+## Verified state (re-verified 2026-11-19 at HEAD `a0fa8fd0`; working tree clean)
 
 - `python3 -m pytest tests -q`: **75 passed in 0.68s**
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
@@ -137,7 +137,7 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `17060a04` (this session):** completed prior agent task (terminal-state report
+- **2026-11-19, HEAD `a0fa8fd0` (this session):** completed prior agent task (terminal-state report
   with numbers table, key finding, three forward paths), then ran single explicit refresh verification
   pass (`pytest tests -q` → **75 passed**; drift check `a797773..HEAD` → **0 files**; `artifacts/` 35
   files; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read — all values
