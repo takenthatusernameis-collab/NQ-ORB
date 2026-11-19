@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `71dd4935`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `f97af23f`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -118,4 +118,4 @@ python3 src/orb/runner.py --prefix <new> --source kaggle    # compare to artifac
 
 ## Session note
 
-- **2026-11-19, HEAD `71dd4935`:** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,041 docs-only commits, 3 unique paths; both canonical metrics re-read and match (gross -$7,662.00 / -$140,899.00; net -$31,637.98 / -$626,525.96; PF 0.4917 / 0.2271); `STRATEGY_RULES.txt` hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
+- **2026-11-19, HEAD `f97af23f`:** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,043 docs-only commits, 3 unique paths; both canonical metrics re-read and match (gross -$7,662.00 / -$140,899.00; net -$31,637.98 / -$626,525.96; PF 0.4917 / 0.2271); `STRATEGY_RULES.txt` hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
