@@ -2,25 +2,25 @@
 
 ## Status: TERMINAL — research complete; awaiting explicit user decision
 
-> **2026-11-19, HEAD `dd3eaddb` (this session):** explicit user request ("read the prior agent task from
+> **2026-11-19, HEAD `03b54da1` (this session):** explicit user request ("read the prior agent task from
 > the durable handoff and complete it. Then update the handoff and write a clear initial task message for
 > the next agent."). Prior task confirmed complete; compact refresh only: working tree clean; drift
-> `a797773..HEAD` → **0 files**, 2,035 docs-only commits, 3 unique paths; both canonical metric files
-> (gross/net/costs/PF/avg_r) re-read and match; rules hash and all four raw-data hashes unchanged;
-> `artifacts/` still 35 files. No number changed.
+> `a797773..HEAD` → **0 files**, 2,036 docs-only commits, 3 unique paths; both canonical metric files
+> (trade_count/win_rate/gross/net/costs/PF/avg_r) re-read and match; rules hash and all four raw-data hashes
+> unchanged; `artifacts/` still 35 files. No number changed.
 The frozen MNQ 15-minute ORB baseline is implemented, tested, and evaluated on every available free
 MNQ data source. It is **negative-gross and negative-net on all datasets** under full costs, and the
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `dd3eaddb`, on an explicit user request ("complete the prior task,
+Last refreshed: 2026-11-19 at HEAD `03b54da1`, on an explicit user request ("complete the prior task,
   then update the handoff and write the next task"). The prior task remains complete: there was no
   outstanding code, data, or experiment work to perform. Verification this session: research-drift check
   `a797773..HEAD` → **0 files**; `artifacts/metrics_axb0306.json` / `metrics_kaggle.json` re-read and
   every canonical value below matches exactly; `STRATEGY_RULES.txt` hash unchanged; `artifacts/` still
   35 files. No code/data/config/artifact change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **2,035 commits**, and across all of them the only
+Loop evidence: `git log a797773..HEAD` now holds **2,036 commits**, and across all of them the only
   touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
   `research_state/workflow_run_diagnostics.jsonl` (verified by `git log --name-only --pretty=format:`
   → 3 unique paths). Zero research drift across all commits. This is direct proof that the maintenance
@@ -49,7 +49,7 @@ identical invariants and adding nothing. **Do not continue that cycle.**
 - Only exception: the user explicitly selects a forward path, requests a refresh, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (re-verified 2026-11-19 at HEAD `dd3eaddb`)
+## Verified state (re-verified 2026-11-19 at HEAD `03b54da1`)
 
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source file has
   changed since, per the zero-drift check below)
