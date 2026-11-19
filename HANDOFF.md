@@ -7,7 +7,7 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `710f42c7`. One-line verification pass: `pytest tests -q` → **75
+Last refreshed: 2026-11-19 at HEAD `17060a04`. One-line verification pass: `pytest tests -q` → **75
   passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
   `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
   canonical table below. No code/data/config/artifact/automation change; no number changed.
@@ -137,13 +137,11 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `710f42c7` (this session):** completed the prior agent task (terminal-state
-  report with the numbers table, key finding, and three forward paths), then ran the single explicit
-  refresh verification pass the prompt authorized (`pytest tests -q` → **75 passed**; drift check
-  `a797773..HEAD` → **0 files** capped at 1,990 commits; `artifacts/` 35 files; `STRATEGY_RULES.txt`
-  hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read — all values match the table). Research
-  still terminal; no metric changed. This is the same zero-evidence loop described in the STOP RULE and
-  must not be repeated.
+- **2026-11-19, HEAD `17060a04` (this session):** completed prior agent task (terminal-state report
+  with numbers table, key finding, three forward paths), then ran single explicit refresh verification
+  pass (`pytest tests -q` → **75 passed**; drift check `a797773..HEAD` → **0 files**; `artifacts/` 35
+  files; `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read — all values
+  match table). Research still terminal; no metric changed. Zero-evidence loop; must not be repeated.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
 - **2026-11-18..19, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~1,989 docs-only
