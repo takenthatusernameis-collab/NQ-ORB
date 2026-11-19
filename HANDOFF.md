@@ -7,7 +7,7 @@ data source. It is **negative-gross and negative-net on all datasets** under ful
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `22d1171e`. This session's edit is a **reference bump only**: HEAD id
+Last refreshed: 2026-11-19 at HEAD `fdf4ed71`. This session's edit is a **reference bump only**: HEAD id
 updated and the turn folded into the existing 2026-11-19 session line. No number, hash, claim, or
 constraint changed.
 
@@ -26,12 +26,12 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only exception: the user selects a forward path, requests a *specific* doc change, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `22d1171e`, 2026-11-19)
+## Verified state (HEAD `fdf4ed71`, 2026-11-19)
 
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log
-  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,048 commits.
+  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,049 commits.
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source path has
   changed since). Not re-run at `3b57e481`: the ephemeral CI sandbox has no `pytest`/`numpy`
   installed, so test status is carried forward from a zero-drift source tree rather than re-verified.
@@ -163,3 +163,8 @@ python3 -m pytest tests -q
   35 files; `STRATEGY_RULES.txt` hash and all four raw-data hashes match; both canonical metric files
   re-read and match canonical table; `pytest` still unavailable in sandbox. HEAD/count references bumped,
   turn folded in. No number changed. See the STOP RULE — further refreshes add nothing.
+- **2026-11-19, HEAD `fdf4ed71`** — same boilerplate request. Compact pass: clean tree; drift
+  `a797773..HEAD` → **0 files** over 2,049 docs-only commits / 3 unique paths; `artifacts/` 35 files;
+  `STRATEGY_RULES.txt` hash and all four raw-data hashes match; both canonical metric files re-read and
+  match canonical table; `pytest` still unavailable in sandbox. HEAD/count references bumped, turn folded
+  in. No number changed. See the STOP RULE — further refreshes add nothing.
