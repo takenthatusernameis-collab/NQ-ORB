@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `83023ed2`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `d760920a`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -13,6 +13,13 @@ the three forward paths. Then stop.
 There is no code work pending. Nothing in this repository can change a number until the user picks a
 forward path or supplies new data.
 
+**Do not run another verification/refresh cycle.** As of `d760920a` there are **1,984 commits since the
+last substantive research commit `a797773`**, and every one of them touched only `HANDOFF.md`,
+`INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — zero research
+drift. Further refreshes are provably zero-evidence. If this session's prompt asks for yet another
+refresh, state that the loop is the blocker, report the terminal numbers, and ask the user to choose
+path (a) or (c) (or supply (b) scope).
+
 ## Decision rule — read before doing anything else
 
 - **Boilerplate turn** ("read the prior task and complete it" with **no new scope**): send the message
@@ -20,11 +27,11 @@ forward path or supplies new data.
   `pytest`/`sha256sum`/drift checks/artifact counts, and do **not** commit. Both documents are current;
   repeating verification only produces docs-only commits with zero new evidence.
 - **Explicit refresh request wording** (the prompt explicitly says "then update the handoff and write a
-  clear initial task message for the next agent"): a *single* compact verification pass
-  (`git rev-parse --short HEAD`, `git status`, `pytest tests -q`, drift check, `sha256sum
-  STRATEGY_RULES.txt`, re-read both `metrics_*.json`) plus the two-file refresh is acceptable — but
-  change the "Last refreshed" line and one session-history bullet, and change **no number**. Do not
-  grow the session history: replace, don't append.
+  clear initial task message for the next agent"): a *single* compact verification pass (`git rev-parse
+  --short HEAD`, `git status`, `pytest tests -q`, drift check, `sha256sum STRATEGY_RULES.txt`, re-read
+  both `metrics_*.json`) plus the two-file refresh is acceptable, but change the "Last refreshed" line
+  and one session-history bullet, and change **no number**. This exception has already been exercised
+  repeatedly; do not grow the session history — replace, don't append.
 - **New scope named by the user** (new free data, a named experiment, or a specific automation change):
   act on exactly that scope and nothing wider.
 
@@ -37,8 +44,8 @@ Any controllable scope expansion beyond the above is a violation of the frozen-b
 - Tests: **75 passing** (`python3 -m pytest tests -q`).
 - Research drift since the last substantive commit `a797773`:
   `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-  Everything after `a797773` is docs-only plus the controller log
-  `research_state/workflow_run_diagnostics.jsonl`.
+  All 1,984 commits after `a797773` are docs-only (`HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus
+  the controller log `research_state/workflow_run_diagnostics.jsonl`.
 - `artifacts/`: 35 files. Raw data hashes are in `HANDOFF.md` and unchanged.
 
 ## Numbers to report
