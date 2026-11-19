@@ -7,7 +7,7 @@ data source. It is **negative-gross and negative-net on all datasets** under ful
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `414419f6`. This session's edit is a **reference bump only**: HEAD id
+Last refreshed: 2026-11-19 at HEAD `3b57e481`. This session's edit is a **reference bump only**: HEAD id
 and commit count updated, one session line folded into the existing 2026-11-19 entry. No number, hash,
 claim, or constraint changed.
 
@@ -26,14 +26,14 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only exception: the user selects a forward path, requests a *specific* doc change, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `414419f6`, 2026-11-19)
+## Verified state (HEAD `3b57e481`, 2026-11-19)
 
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log
-  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,045 commits.
+  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,046 commits.
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source path has
-  changed since). Not re-run at `414419f6`: the ephemeral CI sandbox has no `pytest`/`numpy`
+  changed since). Not re-run at `3b57e481`: the ephemeral CI sandbox has no `pytest`/`numpy`
   installed, so test status is carried forward from a zero-drift source tree rather than re-verified.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
@@ -154,3 +154,7 @@ python3 -m pytest tests -q
   consolidated the duplicated session log; `414419f6` bumped HEAD/count references and recorded that this
   sandbox cannot re-run `pytest` (no `pytest`/`numpy`). **No number changed.** No further refresh is
   warranted; see the STOP RULE.
+- **2026-11-19, HEAD `3b57e481`** — same boilerplate request a third time. Compact pass only: drift
+  `a797773..HEAD` → **0 files** over 2,046 docs-only commits / 3 unique paths; `artifacts/` 35 files;
+  `STRATEGY_RULES.txt` and all four raw-data hashes unchanged; both canonical metric files re-read and
+  matching; `pytest` still unavailable in sandbox. HEAD/count references bumped, nothing else changed.
