@@ -7,11 +7,10 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-18 at HEAD `7413ee28`. One-line verification pass: `pytest tests -q` → **75
-passed in 0.67s**; research-drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+Last refreshed: 2026-11-19 at HEAD `8563154a`. One-line verification pass: `pytest tests -q` → **75
+passed in 0.75s**; research-drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
 hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the canonical table below. No
-code/data/config/artifact/automation change; no number changed. This session additionally compressed
-the duplicated checkpoint bullets out of "Session history" so future agents spend less context on them.
+code/data/config/artifact/automation change; no number changed.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
 > explicitly asks for a refresh. Repeated docs-only rewrites are exactly the cycle the STOP RULE forbids.
@@ -132,14 +131,12 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-18, HEAD `7413ee28` (this session):** read the durable handoff and completed the prior task
-  (terminal-state report, numbers table, forward paths). The user again requested the handoff refresh
-  plus a new initial task, so the STOP RULE was overridden for this turn. Verification: `pytest tests
-  -q` → **75 passed in 0.67s**; drift check → **0 files**; `artifacts/` 35 files; `STRATEGY_RULES.txt`
-  hash unchanged; `metrics_axb0306.json` / `metrics_kaggle.json` re-read and match the canonical table.
-  Compressed the session-history section (removed ~15 near-duplicate checkpoint bullets from
-  `8f75abe1`..`334e3eb5` and earlier). No code, data, config, artifact, or automation change; no number
-  changed; adds no research evidence.
+- **2026-11-19, HEAD `8563154a` (this session):** completed the prior agent task (terminal-state report
+  to the user with the numbers table, key finding, and three forward paths), ran the explicit-refresh
+  verification pass (`pytest tests -q` → **75 passed in 0.75s**; drift check → **0 files**; sha256 of
+  `STRATEGY_RULES.txt` and all four raw CSVs unchanged; both `metrics_*.json` re-read and match), and
+  refreshed the "Last refreshed" line and this session-history bullet. No code, data, config, artifact,
+  or automation change; no number changed; adds no research evidence.
 - **2026-11-18, `a797773`:** last substantive research commit — frozen baseline implemented, evaluated
   on all free data sources, artifacts written.
 - **2026-11-18, commits after `a797773`:** `5fab764` (frozen showcase preset) plus ~45 docs-only
