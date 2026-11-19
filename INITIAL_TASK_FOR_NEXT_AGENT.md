@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `efeb03c1`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `ba2723e8`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
