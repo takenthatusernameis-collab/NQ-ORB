@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `b1bbbe98`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `aef2b6a2`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
@@ -44,7 +44,7 @@ the failure mode this file exists to stop.
 - Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run at
   `b1bbbe98`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, across **2,055** docs-only commits touching 3 unique paths.
+  scripts` → **0 files**, across **2,056** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
@@ -112,9 +112,9 @@ attempting the last three commands there.
 
 ## Session note
 
-- **2026-11-19, HEAD `3b57e481` … `b1bbbe98`:** the same boilerplate request on every later turn, never a
+- **2026-11-19, HEAD `3b57e481` … `aef2b6a2`:** the same boilerplate request on every later turn, never a
   forward path. Each was a compact refresh with identical results: clean tree, drift `a797773..HEAD` → **0
-  files** over 2,046–2,055 docs-only commits / 3 unique paths, `artifacts/` 35 files, `STRATEGY_RULES.txt`
+  files** over 2,046–2,056 docs-only commits / 3 unique paths, `artifacts/` 35 files, `STRATEGY_RULES.txt`
   and all four raw-data hashes unchanged, both canonical metric files re-read and matching the table above.
   `pytest`/`numpy`/`pandas` unavailable locally (status carried forward from the zero-drift tree). Only
   HEAD/count references changed. Collapsed into one note — these produced no new evidence. **Stop
