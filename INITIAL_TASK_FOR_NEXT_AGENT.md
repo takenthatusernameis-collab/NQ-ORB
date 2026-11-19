@@ -1,54 +1,51 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `6667938d`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
-> version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
-> baseline loses money **gross and net** on every free dataset available, and the free-data search is
-> exhausted (`data/FEASIBILITY_REPORT.md`).
+> **Current at HEAD `414419f6`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> version.
 >
-> **Prior task status: COMPLETE.** The previous agent's task ("complete the prior task, update the
-> handoff, write the next task") was itself a docs-only refresh; there has been no outstanding code,
-> data, pipeline, or experiment work since `a797773`. Do not look for work to do.
+> **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
+> 15-minute ORB baseline is implemented, tested, and evaluated on every free data source available. It is
+> **negative-gross and negative-net on all of them**, and the free-data search is exhausted
+> (`data/FEASIBILITY_REPORT.md`). Nothing in this repository can change a number until the user picks a
+> forward path or supplies new data.
 
-## The one thing to do
+## Your job, in one line
 
-Send the user **one** short message containing:
+Drain the user's next instruction. If it is boilerplate ("read the prior task and complete it"), reply with
+the status + numbers table + three forward paths below and **stop** — no edits, no verification sweep, no
+commit.
 
-1. This is a terminal state: the strategy is negative gross and negative net on all free data.
-2. The numbers table below.
-3. The three forward paths.
+## Default turn: send this, then stop
 
-Then **stop**. No file edits. No verification commands. No commit. Do not refresh `HANDOFF.md` again
-unless the user asks for a *specific* change to it.
+1. **Terminal state.** The strategy loses money gross *and* net on all free data. There is no outstanding work.
+2. **Numbers table** (below).
+3. **Three forward paths** (below).
 
-There is no pending code work. 2,044 commits since the last substantive research commit `a797773`
-touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
-`research_state/workflow_run_diagnostics.jsonl` — zero research drift (`git log --name-only
---pretty=format: a797773..HEAD | sort -u` → 3 paths). Nothing in this repository can change a number
-until the user picks a path or supplies new data.
+No file edits. No `pytest`/`sha256sum`/drift/artifact re-checks. No commit. Re-emitting these documents is
+the failure mode this file exists to stop.
 
-## Decision rule — read before doing anything else
+## Decision rule
 
-- **Boilerplate turn** ("read the prior task and complete it"): the prior task is already complete.
-  Send the one message above and stop. Do **not** edit the two docs, do **not** run
-  `pytest`/`sha256sum`/drift checks/artifact counts, do **not** commit. Re-emitting these documents is
-  the failure mode, not the job.
-- **Explicit doc-refresh request** ("update the handoff", "write the next task"): allowed, but must be
-  a single compact pass — re-read the canonical artifacts to confirm numbers, bump the HEAD/commit-count
-  references, add **one** session-history line, and change nothing else. Never chain further refreshes
-  after it; the next turn is boilerplate again.
-- **Explicit new scope from the user** — new free data, a named and pre-registered experiment with a
-  written diff from the frozen baseline, or an authorized automation change — act on exactly that scope
-  and nothing wider.
+- **Boilerplate turn** → the one message above, then stop.
+- **Explicit doc-refresh request** → allowed, **one compact pass only**: re-read the canonical artifacts to
+  confirm numbers, bump the HEAD/commit-count references, fold this turn into the existing session line.
+  Change nothing else. Never chain a second refresh.
+- **Explicit new scope** → act on exactly that scope and nothing wider. New free data must be audited
+  (source, license/access, retrieval time, contract months, timezone, timestamps, gaps, roll rule,
+  adjustment, hashes) and a fresh untouched baseline frozen before any tuning. A strategy change must be a
+  named, versioned experiment with a written diff from the frozen baseline.
 - **Nothing else.** Do not invent scope, do not "improve" the baseline, do not search parameters, do not
   re-run the free-data search without a new candidate source.
 
 ## Situational facts
 
-- Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- Tests: **75 passing** (`python3 -m pytest tests -q`, executed at `6f73afaf`; no source path has
-  changed since, per the zero-drift check below).
-- Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
-- `artifacts/`: 35 files. Raw data: 4 CSVs; hashes in `HANDOFF.md`, unchanged since first freeze.
+- Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256
+  `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
+- Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run at
+  `414419f6`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
+- Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
+  scripts` → **0 files**, across **2,045** docs-only commits touching 3 unique paths.
+- `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
 ## Numbers to report
@@ -58,44 +55,38 @@ until the user picks a path or supplies new data.
 | axb0306 (MNQ.M26, 2026-01-20..2026-04-15) | 60 | 33L/27S | 70.00 | -7,662.00 | -31,637.98 | 23,975.98 | 0.4917 | -527.30 | -0.043 | **-0.18** |
 | Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359L/329S | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.068 | **-0.30** |
 
-Supporting facts if the user asks for more:
+Supporting facts, only if the user asks:
 
-- `avg_r` in the artifacts is gross and price-based: `(exit_fill - entry_fill) / risk_points`. Net R is
-  net P&L over realized dollar risk (`contracts x risk_points x $2`): portfolio-weighted
-  **-0.1771 / -0.3049**, mean per-trade **-0.1773 / -0.3046**; both round to the quoted -0.18 / -0.30.
-  Quote net R, not `avg_r`, when discussing costed performance.
-- Chronological splits: axb0306 train (36 trades) net **+$1,229.22**, val **-$15,894.08**, test
-  **-$16,973.12**; kaggle train **-$448,765.02**, val **-$66,243.22**, test **-$111,517.72**.
-  No out-of-sample segment is net positive on either dataset.
-- Max drawdown $37,491.80 / $626,994.56; Sharpe/Sortino (per-trade, daily-equivalent) -1.06/-0.67 and
-  -1.68/-1.04; exposure 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
-- Sizing at $3,000 planned risk with a 0.4xATR stop produces 29–278 MNQ contracts, so fees plus one tick
-  of adverse slippage scale with size: $399.60 (axb0306) and $705.85 (kaggle) fully-loaded per trade.
-  No trade in either ledger exits via the 15:55 ET flatten, so reported P&L does not depend on any
-  flatten execution assumption.
+- `metrics.avg_r` is **gross and price-based**: `(exit_fill - entry_fill) / risk_points`. Net R is net P&L
+  over realized dollar risk (`contracts x risk_points x $2`): portfolio-weighted **-0.1771 / -0.3049**,
+  mean per-trade **-0.1773 / -0.3046**. Quote net R, not `avg_r`, for costed performance.
+- Chronological splits — axb0306: train (36 trades) **+$1,229.22**, val **-$15,894.08**, test
+  **-$16,973.12**. Kaggle: train **-$448,765.02**, val **-$66,243.22**, test **-$111,517.72**. No
+  out-of-sample segment is net positive.
+- Max DD $37,491.80 / $626,994.56; Sharpe/Sortino (per-trade, daily-equivalent) -1.06/-0.67 and -1.68/-1.04;
+  exposure 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
+- $3,000 planned risk with a 0.4xATR stop implies 29–278 MNQ contracts, so fees + one tick of adverse
+  slippage scale with size: $399.60 / $705.85 fully loaded per trade. No trade exits via the 15:55 ET
+  flatten, so reported P&L does not depend on a flatten execution assumption.
 - Independent re-aggregation of `artifacts/trades_*.json` reproduces count, long/short split, gross, net,
   costs (`gross - net == costs` to the cent), profit factor, and expectancy exactly.
-- Cost sensitivity: all 12 scenarios in `cost_sensitivity` are net-negative — axb0306 -$24,754.28 to
-  -$40,610.18; kaggle -$487,098.57 to -$808,255.35. No cost assumption rescues the baseline.
+- Cost sensitivity: all 12 scenarios are net-negative — axb0306 -$24,754.28 to -$40,610.18; kaggle
+  -$487,098.57 to -$808,255.35. No cost assumption rescues the baseline.
 
 ## The key finding
 
 The 0.4R target requires a **71.43% pre-cost win rate**. Observed win rates are 70.00% and 64.83% **and
 gross P&L is negative**, so this is a strategy-edge failure, not a cost-only failure. The only positive
-segment anywhere is the in-sample train window on axb0306, which is an overfit signature, not a lead.
+segment anywhere is the in-sample train window on axb0306 — an overfit signature, not a lead.
 
 ## Forward paths (each needs explicit user authorization for that exact scope)
 
-- **(a)** Stop or reduce the maintenance automation (`.github/workflows/main.yml` cron). Requires the
-  user to authorize that exact edit; this agent must not touch it unilaterally.
+- **(a)** Stop or reduce the maintenance automation (`.github/workflows/main.yml`, currently `*/5 * * * *`).
+  This agent must not touch it unilaterally.
 - **(b)** A separately versioned, named experiment with an explicit diff from the frozen baseline
   (cost-model sensitivity, entry-timing variant, or a pre-registered parameter study). Never mutate
   `STRATEGY_RULES.txt` or canonical artifacts, and never tune to improve reported results.
 - **(c)** Accept the baseline as final and stop the automation.
-
-If the user supplies new free data or a new scope: audit it first (source, license/access, retrieval
-time, contract months, timezone, timestamps, gaps, roll rule, adjustment, hashes), then freeze a new
-untouched baseline before any tuning.
 
 ## Hard constraints
 
@@ -116,6 +107,14 @@ python3 src/orb/runner.py --prefix <new> --source axb0306   # compare to artifac
 python3 src/orb/runner.py --prefix <new> --source kaggle    # compare to artifacts/metrics_kaggle.json
 ```
 
+Note: `pytest`, `numpy`, and `pandas` are not installed in the ephemeral CI sandbox; install them before
+attempting the last three commands there.
+
 ## Session note
 
-- **2026-11-19, HEAD `6667938d`:** explicit user request ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent."). Compact refresh only: drift `a797773..HEAD` → **0 files**, 2,044 docs-only commits, 3 unique paths; both canonical metrics re-read and match (gross -$7,662.00 / -$140,899.00; net -$31,637.98 / -$626,525.96; PF 0.4917 / 0.2271); `STRATEGY_RULES.txt` hash and all four raw-data hashes unchanged; `artifacts/` still 35 files. No number changed.
+- **2026-11-19, HEAD `414419f6`:** explicit user request ("read the prior agent task from the durable
+  handoff and complete it. Then update the handoff and write a clear initial task message for the next
+  agent."). Compact refresh only: drift `a797773..HEAD` → **0 files** over 2,045 docs-only commits / 3 unique
+  paths; canonical metrics re-read and matching; `STRATEGY_RULES.txt` hash and all four raw-data hashes
+  unchanged; `artifacts/` still 35 files. Test suite could not be re-run here (no `pytest`), recorded as
+  carried-forward. No number changed.

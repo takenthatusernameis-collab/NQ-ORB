@@ -7,8 +7,8 @@ data source. It is **negative-gross and negative-net on all datasets** under ful
 search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `6667938d`. This session's edit is a **consolidation**: identical
-session-history entries were collapsed into one summary so the document stops growing. No number, hash,
+Last refreshed: 2026-11-19 at HEAD `414419f6`. This session's edit is a **reference bump only**: HEAD id
+and commit count updated, one session line folded into the existing 2026-11-19 entry. No number, hash,
 claim, or constraint changed.
 
 ## STOP RULE for the next agent (read this first)
@@ -26,14 +26,15 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only exception: the user selects a forward path, requests a *specific* doc change, or supplies new
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `6667938d`, 2026-11-19)
+## Verified state (HEAD `414419f6`, 2026-11-19)
 
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
   → **0 files**. Every commit after `a797773` is docs-only (`HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`) plus the controller log
-  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,044 commits.
+  `research_state/workflow_run_diagnostics.jsonl` — 3 unique paths across all 2,045 commits.
 - `python3 -m pytest tests -q`: **75 passed** (last executed at HEAD `6f73afaf`; no source path has
-  changed since).
+  changed since). Not re-run at `414419f6`: the ephemeral CI sandbox has no `pytest`/`numpy`
+  installed, so test status is carried forward from a zero-drift source tree rather than re-verified.
 - `STRATEGY_RULES.txt` SHA-256: `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1` (frozen v1.0)
 - Frozen showcase preset: `5fab764`. Last substantive research commit: `a797773`.
 - `artifacts/`: 35 files, 0 manifest files. Ledger re-aggregation (independent script over
@@ -145,10 +146,11 @@ python3 -m pytest tests -q
   35 artifacts, canonical metrics identical. Individually they produced **no new evidence**; they are
   summarised here rather than listed one per line. For per-commit detail:
   `git log --name-only --pretty=format: a797773..HEAD`.
-- **2026-11-19, HEAD `6667938d` (this session)** — explicit user request ("read the prior agent task from
-  the durable handoff and complete it. Then update the handoff and write a clear initial task message for
-  the next agent."). Prior task confirmed complete. Verified in one pass: `git status` clean, drift
-  `a797773..HEAD` → **0 files**, `artifacts/` 35 files, `STRATEGY_RULES.txt` hash unchanged, both canonical
-  metric files re-read (win 70.00/64.83%, gross -7,662.00/-140,899.00, net -31,637.98/-626,525.96,
-  PF 0.4917/0.2271) and match. Change made: **consolidated** the duplicated session log and rewrote
-  `INITIAL_TASK_FOR_NEXT_AGENT.md` as an explicit user-decision request. No number changed.
+- **2026-11-19, HEAD `6667938d` and `414419f6`** — same explicit user request on two consecutive turns
+  ("read the prior agent task from the durable handoff and complete it. Then update the handoff and write a
+  clear initial task message for the next agent."). Prior task confirmed complete both times. Verified in
+  one pass: `git status` clean, drift `a797773..HEAD` → **0 files**, `artifacts/` 35 files,
+  `STRATEGY_RULES.txt` hash unchanged, both canonical metric files re-read and matching. `6667938d`
+  consolidated the duplicated session log; `414419f6` bumped HEAD/count references and recorded that this
+  sandbox cannot re-run `pytest` (no `pytest`/`numpy`). **No number changed.** No further refresh is
+  warranted; see the STOP RULE.
