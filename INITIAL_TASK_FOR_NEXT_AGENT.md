@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `a0436db4`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `59816a6c`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
@@ -42,9 +42,9 @@ the failure mode this file exists to stop.
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256
   `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
 - Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run at
-  `a0436db4`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
+  `59816a6c`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, across **2,057** docs-only commits touching 3 unique paths.
+  scripts` → **0 files**, across **2,058** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
@@ -112,9 +112,9 @@ attempting the last three commands there.
 
 ## Session note
 
-- **2026-11-19, HEAD `3b57e481` … `a0436db4`:** the same boilerplate request on every later turn, never a
+- **2026-11-19, HEAD `3b57e481` … `59816a6c`:** the same boilerplate request on every later turn, never a
   forward path. Each was a compact refresh with identical results: clean tree, drift `a797773..HEAD` → **0
-  files** over 2,046–2,057 docs-only commits / 3 unique paths, `artifacts/` 35 files, `STRATEGY_RULES.txt`
+  files** over 2,046–2,058 docs-only commits / 3 unique paths, `artifacts/` 35 files, `STRATEGY_RULES.txt`
   and all four raw-data hashes unchanged, both canonical metric files re-read and matching the table above.
   `pytest`/`numpy`/`pandas` unavailable locally (status carried forward from the zero-drift tree). Only
   HEAD/count references changed. Collapsed into one note — these produced no new evidence. **Stop
