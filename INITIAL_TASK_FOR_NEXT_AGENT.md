@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `a4a86b5a`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `dd99b666`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -15,7 +15,7 @@ Send the user **one** short message containing:
 
 Then **stop**. No file edits. No verification commands. No commit.
 
-There is no pending code work. 1,996 commits since the last substantive research commit `a797773`
+There is no pending code work. 1,997 commits since the last substantive research commit `a797773`
 touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
 `research_state/workflow_run_diagnostics.jsonl` — zero research drift (`git log --name-only
 --pretty=format: a797773..HEAD | sort -u` confirms it). Nothing in this repository can change a number
@@ -23,10 +23,14 @@ until the user picks a path or supplies new data.
 
 ## Decision rule — read before doing anything else
 
-- **Boilerplate turn** ("read the prior task and complete it", or "complete it, then update the handoff
-  and write the next task"): the prior task is already complete. Send the one message above and stop.
-  Do **not** edit the two docs, do **not** run `pytest`/`sha256sum`/drift checks/artifact counts, do
-  **not** commit. Re-emitting these documents is the failure mode, not the job.
+- **Boilerplate turn** ("read the prior task and complete it"): the prior task is already complete.
+  Send the one message above and stop. Do **not** edit the two docs, do **not** run
+  `pytest`/`sha256sum`/drift checks/artifact counts, do **not** commit. Re-emitting these documents is
+  the failure mode, not the job.
+- **Explicit doc-refresh request** ("update the handoff", "write the next task"): allowed, but must be
+  a single compact pass — re-read the canonical artifacts to confirm numbers, bump the HEAD/commit-count
+  references, add **one** session-history line, and change nothing else. Never chain further refreshes
+  after it; the next turn is boilerplate again.
 - **Explicit new scope from the user** — new free data, a named and pre-registered experiment with a
   written diff from the frozen baseline, or an authorized automation change — act on exactly that scope
   and nothing wider.
@@ -36,7 +40,7 @@ until the user picks a path or supplies new data.
 ## Situational facts
 
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- Tests: **75 passing** (`python3 -m pytest tests -q`, verified `a4a86b5a`).
+- Tests: **75 passing** (`python3 -m pytest tests -q`, verified `dd99b666`).
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → **0 files**.
 - `artifacts/`: 35 files. Raw data: 4 CSVs; hashes in `HANDOFF.md`, unchanged since first freeze.
 - No paid/proprietary data; no credentials requested, used, or stored.
