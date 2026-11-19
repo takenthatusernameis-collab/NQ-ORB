@@ -1,9 +1,13 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `cbbc7931`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `494c31d1`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
+>
+> **Prior task status: COMPLETE.** The previous agent's task ("complete the prior task, update the
+> handoff, write the next task") was itself a docs-only refresh; there has been no outstanding code,
+> data, pipeline, or experiment work since `a797773`. Do not look for work to do.
 
 ## The one thing to do
 
@@ -13,12 +17,13 @@ Send the user **one** short message containing:
 2. The numbers table below.
 3. The three forward paths.
 
-Then **stop**. No file edits. No verification commands. No commit.
+Then **stop**. No file edits. No verification commands. No commit. Do not refresh `HANDOFF.md` again
+unless the user asks for a *specific* change to it.
 
-There is no pending code work. 1,998 commits since the last substantive research commit `a797773`
+There is no pending code work. 1,999 commits since the last substantive research commit `a797773`
 touched only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
 `research_state/workflow_run_diagnostics.jsonl` — zero research drift (`git log --name-only
---pretty=format: a797773..HEAD | sort -u` confirms it). Nothing in this repository can change a number
+--pretty=format: a797773..HEAD | sort -u` → 3 paths). Nothing in this repository can change a number
 until the user picks a path or supplies new data.
 
 ## Decision rule — read before doing anything else
