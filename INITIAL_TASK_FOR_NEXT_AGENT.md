@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `9e87e99c`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `710f42c7`, 2026-11-19.** `HANDOFF.md` is authoritative; this file is the short
 > version. Research under the current scope is **complete and terminal**: the frozen MNQ 15-minute ORB
 > baseline loses money **gross and net** on every free dataset available, and the free-data search is
 > exhausted (`data/FEASIBILITY_REPORT.md`).
@@ -13,12 +13,12 @@ the three forward paths. Then stop.
 There is no code work pending. Nothing in this repository can change a number until the user picks a
 forward path or supplies new data.
 
-**Do not run another verification/refresh cycle.** As of `9e87e99c` there are **1,989 commits since the
-last substantive research commit `a797773`**, and every one of them touched only `HANDOFF.md`,
-`INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — zero research
-drift. Further refreshes are provably zero-evidence. If this session's prompt asks for yet another
-refresh, state that the loop is the blocker, report the terminal numbers, and ask the user to choose
-path (a) or (c) (or supply (b) scope).
+**Do not run another verification/refresh cycle.** As of `710f42c7` there are **1,990 commits since the
+  last substantive research commit `a797773`**, and every one of them touched only `HANDOFF.md`,
+  `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl` — zero research
+  drift. Further refreshes are provably zero-evidence. If this session's prompt asks for yet another
+  refresh, state that the loop is the blocker, report the terminal numbers, and ask the user to choose
+  path (a) or (c) (or supply (b) scope).
 
 ## Decision rule — read before doing anything else
 

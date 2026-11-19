@@ -7,16 +7,16 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `9e87e99c`. One-line verification pass: `pytest tests -q` → **75
-passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
-`STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
-canonical table below. No code/data/config/artifact/automation change; no number changed.
+Last refreshed: 2026-11-19 at HEAD `710f42c7`. One-line verification pass: `pytest tests -q` → **75
+  passed**; research-drift check `a797773..HEAD` → **0 files**; `artifacts/` 35 files;
+  `STRATEGY_RULES.txt` hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read and match the
+  canonical table below. No code/data/config/artifact/automation change; no number changed.
 
-Loop evidence: `git log a797773..HEAD` now holds **1,989 commits**, and across all of them the only
-touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
-`research_state/workflow_run_diagnostics.jsonl`. Zero research drift over 1,989 commits. This is direct
-proof that the maintenance cron — not the research task — is the source of all repository activity,
-and that repeated refreshes cannot produce new evidence.
+Loop evidence: `git log a797773..HEAD` now holds **1,990 commits**, and across all of them the only
+  touched paths are `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and
+  `research_state/workflow_run_diagnostics.jsonl`. Zero research drift over 1,990 commits. This is direct
+  proof that the maintenance cron — not the research task — is the source of all repository activity,
+  and that repeated refreshes cannot produce new evidence.
 
 > **Read-only rule.** Do not rewrite this file or `INITIAL_TASK_FOR_NEXT_AGENT.md` unless the user
 > explicitly asks for a refresh. Repeated docs-only rewrites are exactly the cycle the STOP RULE forbids.
@@ -137,10 +137,10 @@ python3 -m pytest tests -q
 
 ## Session history
 
-- **2026-11-19, HEAD `9e87e99c` (this session):** completed the prior agent task (terminal-state
+- **2026-11-19, HEAD `710f42c7` (this session):** completed the prior agent task (terminal-state
   report with the numbers table, key finding, and three forward paths), then ran the single explicit
   refresh verification pass the prompt authorized (`pytest tests -q` → **75 passed**; drift check
-  `a797773..HEAD` → **0 files** capped at 1,989 commits; `artifacts/` 35 files; `STRATEGY_RULES.txt`
+  `a797773..HEAD` → **0 files** capped at 1,990 commits; `artifacts/` 35 files; `STRATEGY_RULES.txt`
   hash `6d3258c3…d2b1` unchanged; both `metrics_*.json` re-read — all values match the table). Research
   still terminal; no metric changed. This is the same zero-evidence loop described in the STOP RULE and
   must not be repeated.
