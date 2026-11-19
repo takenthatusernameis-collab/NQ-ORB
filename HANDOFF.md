@@ -7,7 +7,7 @@ MNQ data source. It is **negative-gross and negative-net on all datasets** under
 free-data search is exhausted (see `data/FEASIBILITY_REPORT.md`). No autonomous research, experiment,
 or automation change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-19 at HEAD `76635538`, on an explicit user request ("complete the prior task,
+Last refreshed: 2026-11-19 at HEAD `9cf7c98c`, on an explicit user request ("complete the prior task,
   then update the handoff and write the next task"). The prior task remains complete: there was no
   outstanding code, data, or experiment work to perform. Verification pass this session:
   `git status --short` → clean; research-drift check `a797773..HEAD` → **0 files**;
@@ -148,6 +148,11 @@ python3 -m pytest tests -q
 
 ## Session history
 
+- **2026-11-19, HEAD `9cf7c98c` (this session):** explicit user request ("complete the prior task, then
+  update the handoff and write the next task"). Compact refresh only: `git status` clean; drift
+  `a797773..HEAD` → **0 files**, 2,007 docs-only commits, 3 unique paths; both canonical metric files
+  re-read and match; rules hash and all four raw-data hashes unchanged; `artifacts/` still 35 files.
+  No number changed.
 - **2026-11-19, HEAD `76635538` (this session):** explicit user request ("complete the prior task, then
   update the handoff and write the next task"). Compact refresh only: `git status` clean; drift
   `a797773..HEAD` → **0 files**, 2,006 docs-only commits, 3 unique paths; both canonical metric files
