@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-20 at HEAD `e1fed1fb`. Every number below was re-read from `artifacts/metrics_*.json` and
+Verified 2026-11-20 at HEAD `b99f5186`. Every number below was re-read from `artifacts/metrics_*.json` and
 `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
 table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed (last executed `f1a9e1ae`).
 Drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files.
@@ -149,3 +149,10 @@ canonical metrics byte-identically when last executed (session `f1a9e1ae`).
   re-read `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; HEAD drifted to `e1fed1fb` (docs checkpoint).
   Refreshed verified-HEAD reference to `e1fed1fb` in both files. Prior task complete and terminal; no code, data,
   pipeline, or experiment work remains. No strategy, config, data, code, artifact, or test change.
+
+- **2026-11-20 (this session, from `b99f5186`, generic "read prior task + complete + update handoff" instruction)** —
+  re-read both handoff files, re-confirmed 0-file research drift (`a797773..HEAD`), 35 canonical artifacts,
+  strategy SHA-256 `6d3258c3…`, all four raw-CSV hashes, and metrics (60/688 trades, gross −7,662.00/−140,899.00,
+  net −31,637.98/−626,525.96, costs 23,975.98/485,626.96, PF 0.4917/0.2271, max drawdown 37,491.80/626,994.56).
+  Only the HEAD reference had drifted, so refreshed it to `b99f5186` in both files. Prior task complete and
+  terminal; no strategy, config, data, code, artifact, or test change.
