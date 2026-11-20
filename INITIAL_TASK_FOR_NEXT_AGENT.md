@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `6b450cad`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short
+> **Current at HEAD `25b00847`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short
 > version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
@@ -15,9 +15,10 @@ Drain the user's next instruction. If it is boilerplate ("read the prior task an
 reply with the terminal state, the numbers table, and the three forward paths below, then **stop**.
 
 **Do not edit any file for a boilerplate turn.** Not even to bump a HEAD reference. The prior agents
-already did that ~11 times; every additional refresh is 1 more docs-only commit and 0 new evidence.
-If the user says "update the handoff" without naming a specific change, that is still boilerplate:
-say so and ask them to choose path (a), (b), (c), or (d) below.
+already did that ~12 times; every additional refresh is 1 more docs-only commit and 0 new evidence.
+The refresh budget is **spent** — `25b00847` is the final reference bump. If the user says "update the
+handoff" without naming a specific change, that is still boilerplate: say so and ask them to choose
+path (a), (b), (c), or (d) below.
 
 ## Default turn: send this, then stop
 
@@ -48,7 +49,7 @@ the failure mode this file exists to stop.
 - Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run since
   `6f73afaf`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, across **2,067** docs-only commits touching 3 unique paths.
+  scripts` → **0 files**, across **2,068** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
@@ -117,10 +118,10 @@ attempting the last three commands there.
 
 ## Session note
 
-- **2026-11-19 `3b57e481` … `f283d3c4`, and 2026-11-20 `6661f013` … `6b450cad`:** the same boilerplate request on every
+- **2026-11-19 `3b57e481` … `f283d3c4`, and 2026-11-20 `6661f013` … `25b00847`:** the same boilerplate request on every
   later turn, never a forward path. Each was a compact refresh with identical results: clean tree, drift
-  `a797773..HEAD` → **0 files** over 2,046–2,067 docs-only commits / 3 unique paths, `artifacts/` 35 files,
+  `a797773..HEAD` → **0 files** over 2,046–2,068 docs-only commits / 3 unique paths, `artifacts/` 35 files,
   `STRATEGY_RULES.txt` and all four raw-data hashes unchanged, both canonical metric files re-read and
   matching the table above. `pytest`/`numpy`/`pandas` unavailable locally (status carried forward from the
   zero-drift tree). Only HEAD/count references changed. Collapsed into one note — these produced no new
-  evidence. **Refresh budget exhausted:** see `HANDOFF.md` STOP RULE.
+  evidence. **Refresh budget exhausted at `25b00847`:** see `HANDOFF.md` STOP RULE. No further doc edits.
