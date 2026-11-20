@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-20 at HEAD `73d6c155`. Every number below was re-read from `artifacts/metrics_*.json` and
+Verified 2026-11-20 at HEAD `1b57351e`. Every number below was re-read from `artifacts/metrics_*.json` and
 `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
 table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed (last executed `f1a9e1ae`).
 Drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files.
@@ -128,3 +128,9 @@ canonical metrics byte-identically when last executed (session `f1a9e1ae`).
   gross R −0.0431/−0.0684. Re-confirmed 0-file drift (`a797773..HEAD`), 35 artifacts, and all five hashes.
   Only the HEAD reference had drifted, so refreshed it to `73d6c155` in both files. No strategy, config, data,
   code, artifact, test, or research change; this is confirmation, not a substantive research session.
+- **2026-11-20 (this session, from `1b57351e`, generic "read prior task + complete + update handoff" instruction)** —
+  re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; re-confirmed
+  0-file drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV
+  hashes. The prior task is complete and terminal; no code, data, pipeline, or experiment work remains.
+  Refreshed the verified-HEAD reference to `1b57351e` in both files. No strategy, config, data, code,
+  artifact, or test change.
