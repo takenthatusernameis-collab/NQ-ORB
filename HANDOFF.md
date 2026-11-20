@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-20 at HEAD `18c6f9fe`. Every number below was re-read from `artifacts/metrics_*.json` and
+Verified 2026-11-20 at HEAD `c30f231b`. Every number below was re-read from `artifacts/metrics_*.json` and
 `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
 table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed (last executed `f1a9e1ae`).
 Drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files.
@@ -168,3 +168,5 @@ canonical metrics byte-identically when last executed (session `f1a9e1ae`).
 
 - **2026-11-20 (this session, from `39d3f0d8`, generic "read prior task + complete + update handoff" instruction)** — re-read `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; HEAD had drifted to `39d3f0d8` (docs-only checkpoint refreshing verified-HEAD reference to `a0218632`). Refreshed verified-HEAD reference to `39d3f0d8` in both files. Prior task complete and terminal; no strategy, config, data, code, artifact, or test change.
 - **2026-11-20 (this session, from `18c6f9fe`, generic "read prior task + complete + update handoff" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; re-confirmed 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes. Only the verified-HEAD reference had drifted (`39d3f0d8` → `18c6f9fe`), so refreshed it to `18c6f9fe` in both files. Prior task complete and terminal; no strategy, config, data, code, artifact, or test change.
+
+- **2026-11-20 (this session, from `c30f231b`, generic "read prior task and complete it" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; re-confirmed 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes. Re-verified every table figure from `artifacts/metrics_*.json` (60/688 trades, L/S 33/27 & 359/329, win% 70.00/64.83, gross −7,662.00/−140,899.00, net −31,637.98/−626,525.96, costs 23,975.98/485,626.96, `gross − net == costs` to the cent on both, PF 0.4917/0.2271, max drawdown 37,491.80/626,994.56, gross R −0.0431/−0.0684, exposure 10.29%/8.07%). Only the verified-HEAD reference had drifted (`18c6f9fe` → `c30f231b`, docs-only), so refreshed it to `c30f231b` in both files. Prior task complete and terminal; no strategy, config, data, code, artifact, or test change.
