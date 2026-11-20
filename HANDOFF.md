@@ -7,7 +7,7 @@ data source. It is **negative-gross and negative-net on all of them** under full
 search is exhausted (`data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-20 at HEAD `3a2326b5` (final reference bump — see session history).
+Last refreshed: 2026-11-20 at HEAD `b5f4598f` (reference only — see session history).
 
 ## STOP RULE (read first)
 
@@ -22,12 +22,12 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only act on: an explicitly selected forward path, a *specific* requested doc change, or new supplied
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `3a2326b5`, 2026-11-20)
+## Verified state (HEAD `b5f4598f`, 2026-11-20)
 
 `f1a9e1ae` re-verified the two items earlier sessions could only carry forward, so nothing below is
-"carried forward" any more. The `3a2326b5` refresh re-read `artifacts/metrics_*.json` (numbers below
+"carried forward" any more. The `b5f4598f` refresh re-read `artifacts/metrics_*.json` (numbers below
 identical: 60/688 trades, same gross/net/costs/PF/expectancy/avg_r) and re-confirmed 0 research drift /
-35 artifacts / clean tree / 2,074 docs-only commits over the same 3 paths; it ran no test or runner pass.
+35 artifacts / clean tree / 2,075 docs-only commits over the same 3 paths; it ran no test or runner pass.
 
 - `python3 -m pytest tests -q` → **75 passed** at `f1a9e1ae`. Run after installing `pytest`/`numpy`/`pandas`
   into the session sandbox (`pip install pytest numpy pandas`, pytest 9.2.0). This is the first actual
@@ -37,7 +37,7 @@ identical: 60/688 trades, same gross/net/costs/PF/expectancy/avg_r) and re-confi
   dict equality) to `artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`. Scratch outputs
   were deleted afterwards; `artifacts/` remains at its canonical 35 files.
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
-  → **0 files**. All 2,074 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
+  → **0 files**. All 2,075 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`.
 - `git status --short` clean. Frozen showcase preset `5fab764`. Last substantive research commit `a797773`.
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
@@ -135,13 +135,13 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical file
   `git log --name-only --pretty=format: a797773..HEAD`.
 - **2026-11-19..20, `f97af23f..25b00847`** — ~24 further boilerplate turns, each a compact docs-only
   refresh with identical results, no forward path ever selected. Collapsed here; they added nothing.
-- **2026-11-20, `f1a9e1ae`..`3a2326b5`** — `f1a9e1ae` closed the two carried-forward caveats (75 tests
+- **2026-11-20, `f1a9e1ae`..`b5f4598f`** — `f1a9e1ae` closed the two carried-forward caveats (75 tests
   passed; byte-identical metric reproduction) and rewrote this file and `INITIAL_TASK_FOR_NEXT_AGENT.md` to
   be short and self-contained. `29bd703e` and `a3fe910e` were further docs-only refreshes with no test or
-  runner pass. `3a2326b5` is the **final reference bump**: metrics re-read (`artifacts/` unchanged), HEAD
-  refs advanced, and this paragraph folded in. None touched strategy, config, data, code, or canonical
-  artifacts; `artifacts/` still 35 files; 0 research drift. **Every future boilerplate turn gets the status
-  message with zero edits — no HEAD bumps, no doc churn.**
+  runner pass. `3a2326b5` re-read the metrics and bumped refs; `b5f4598f` re-read `artifacts/` (identical
+  numbers, 35 files), re-confirmed 0 drift / 2,075 docs-only commits over 3 paths, and advanced only the
+  HEAD/count references. None touched strategy, config, data, code, or canonical artifacts. **Every future
+  boilerplate turn gets the status message with zero edits — no HEAD bumps, no doc churn.**
 
 ## What the user must do
 
