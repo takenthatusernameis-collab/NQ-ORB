@@ -1,7 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `25b00847`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short
-> version.
+> **Current at HEAD `29bd703e`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
 > 15-minute ORB baseline is implemented, tested, and evaluated on every free data source available. It is
@@ -11,20 +10,19 @@
 
 ## Your job, in one line
 
-Drain the user's next instruction. If it is boilerplate ("read the prior task and complete it"),
-reply with the terminal state, the numbers table, and the three forward paths below, then **stop**.
+Drain the user's next instruction. If it is boilerplate ("read the prior task and complete it"), reply with
+the terminal state, the numbers table, and the four forward paths below, then **stop**.
 
-**Do not edit any file for a boilerplate turn.** Not even to bump a HEAD reference. The prior agents
-already did that ~12 times; every additional refresh is 1 more docs-only commit and 0 new evidence.
-The refresh budget is **spent** — `25b00847` is the final reference bump. If the user says "update the
-handoff" without naming a specific change, that is still boilerplate: say so and ask them to choose
-path (a), (b), (c), or (d) below.
+**Do not edit any file for a boilerplate turn.** Not even to bump a HEAD reference. Every refresh after
+`a797773` has added 0 new evidence; `29bd703e` is the final reference bump. If the user says "update the
+handoff" without naming a specific change, that is still boilerplate: say so and ask them to choose path
+(a), (b), (c), or (d).
 
 ## Default turn: send this, then stop
 
 1. **Terminal state.** The strategy loses money gross *and* net on all free data. There is no outstanding work.
 2. **Numbers table** (below).
-3. **Three forward paths** (below).
+3. **Four forward paths** (below).
 
 No file edits. No `pytest`/`sha256sum`/drift/artifact re-checks. No commit. Re-emitting these documents is
 the failure mode this file exists to stop.
@@ -42,14 +40,17 @@ the failure mode this file exists to stop.
 - **Nothing else.** Do not invent scope, do not "improve" the baseline, do not search parameters, do not
   re-run the free-data search without a new candidate source.
 
-## Situational facts
+## Situational facts (verified)
 
 - Frozen strategy: `STRATEGY_RULES.txt` v1.0, SHA-256
   `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`.
-- Tests: **75 passing** (`python3 -m pytest tests -q`, last executed at `6f73afaf`). Not re-run since
-  `6f73afaf`: this sandbox has no `pytest`/`numpy`, so status carries forward from a zero-drift source tree.
+- Tests: **75 passing** (`python3 -m pytest tests -q`), executed at `f1a9e1ae` after
+  `pip install pytest numpy pandas` in the sandbox. Re-run only for an authorized research/refresh session.
+- Baselines: `python3 src/orb/runner.py --prefix <tmp> --source axb0306|kaggle` reproduced
+  `artifacts/metrics_*.json` **byte-identically** at `f1a9e1ae` (delete the tmp outputs afterwards so
+  `artifacts/` stays at 35 files).
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, across **2,068** docs-only commits touching 3 unique paths.
+  scripts` → **0 files**, across **2,070** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
@@ -67,7 +68,8 @@ Supporting facts, only if the user asks:
   mean per-trade **-0.1773 / -0.3046**. Quote net R, not `avg_r`, for costed performance.
 - Chronological splits — axb0306: train (36 trades) **+$1,229.22**, val **-$15,894.08**, test
   **-$16,973.12**. Kaggle: train **-$448,765.02**, val **-$66,243.22**, test **-$111,517.72**. No
-  out-of-sample segment is net positive.
+  out-of-sample segment is net positive; the only net-positive segment anywhere is the in-sample axb0306
+  train window (overfit signature).
 - Max DD $37,491.80 / $626,994.56; Sharpe/Sortino (per-trade, daily-equivalent) -1.06/-0.67 and -1.68/-1.04;
   exposure 10.3% / 8.1%; worst day -$3,811.28 / -$4,789.80.
 - $3,000 planned risk with a 0.4xATR stop implies 29–278 MNQ contracts, so fees + one tick of adverse
@@ -81,8 +83,7 @@ Supporting facts, only if the user asks:
 ## The key finding
 
 The 0.4R target requires a **71.43% pre-cost win rate**. Observed win rates are 70.00% and 64.83% **and
-gross P&L is negative**, so this is a strategy-edge failure, not a cost-only failure. The only positive
-segment anywhere is the in-sample train window on axb0306 — an overfit signature, not a lead.
+gross P&L is negative**, so this is a strategy-edge failure, not a cost-only failure.
 
 ## Forward paths (each needs explicit user authorization for that exact scope)
 
@@ -108,20 +109,17 @@ segment anywhere is the in-sample train window on axb0306 — an overfit signatu
 git status --short && git rev-parse --short HEAD
 git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts
 sha256sum STRATEGY_RULES.txt raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MNQ_1min_frontmonth.csv
-python3 -m pytest tests -q
-python3 src/orb/runner.py --prefix <new> --source axb0306   # compare to artifacts/metrics_axb0306.json
-python3 src/orb/runner.py --prefix <new> --source kaggle    # compare to artifacts/metrics_kaggle.json
+pip install pytest numpy pandas && python3 -m pytest tests -q
+python3 src/orb/runner.py --prefix <tmp> --source axb0306   # diff vs artifacts/metrics_axb0306.json
+python3 src/orb/runner.py --prefix <tmp> --source kaggle    # diff vs artifacts/metrics_kaggle.json
 ```
 
-Note: `pytest`, `numpy`, and `pandas` are not installed in the ephemeral CI sandbox; install them before
-attempting the last three commands there.
+Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical files.
 
 ## Session note
 
-- **2026-11-19 `3b57e481` … `f283d3c4`, and 2026-11-20 `6661f013` … `25b00847`:** the same boilerplate request on every
-  later turn, never a forward path. Each was a compact refresh with identical results: clean tree, drift
-  `a797773..HEAD` → **0 files** over 2,046–2,068 docs-only commits / 3 unique paths, `artifacts/` 35 files,
-  `STRATEGY_RULES.txt` and all four raw-data hashes unchanged, both canonical metric files re-read and
-  matching the table above. `pytest`/`numpy`/`pandas` unavailable locally (status carried forward from the
-  zero-drift tree). Only HEAD/count references changed. Collapsed into one note — these produced no new
-  evidence. **Refresh budget exhausted at `25b00847`:** see `HANDOFF.md` STOP RULE. No further doc edits.
+- **2026-11-18 `a797773`:** last substantive research commit. **`a797773`..`29bd703e`:** 2,070 docs-only
+  commits over 3 unique paths, 0 research drift. Every boilerplate turn re-confirmed identical invariants
+  and produced no new evidence. `f1a9e1ae` was the last substantive refresh (75 tests executed, baselines
+  reproduced byte-identically) and rewrote both docs; `29bd703e` bumped references only. **No further doc
+  edits for boilerplate turns** — see `HANDOFF.md` STOP RULE.

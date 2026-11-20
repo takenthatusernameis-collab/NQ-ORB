@@ -7,11 +7,11 @@ data source. It is **negative-gross and negative-net on all of them** under full
 search is exhausted (`data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-20 at HEAD `f1a9e1ae`.
+Last refreshed: 2026-11-20 at HEAD `29bd703e`.
 
 ## STOP RULE (read first)
 
-This repository has produced **2,069 consecutive docs-only commits** that re-confirm identical invariants
+This repository has produced **2,070 consecutive docs-only commits** that re-confirm identical invariants
 and add nothing. That cycle is the failure mode, not the job.
 
 - A boilerplate turn ("read the prior agent task and complete it") is: read
@@ -22,7 +22,7 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only act on: an explicitly selected forward path, a *specific* requested doc change, or new supplied
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `f1a9e1ae`, 2026-11-20)
+## Verified state (HEAD `29bd703e`, 2026-11-20)
 
 This session re-verified the two items previous sessions could only carry forward, so nothing below is
 "carried forward" any more:
@@ -35,7 +35,7 @@ This session re-verified the two items previous sessions could only carry forwar
   dict equality) to `artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`. Scratch outputs
   were deleted afterwards; `artifacts/` remains at its canonical 35 files.
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
-  → **0 files**. All 2,069 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
+  → **0 files**. All 2,070 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`.
 - `git status --short` clean. Frozen showcase preset `5fab764`. Last substantive research commit `a797773`.
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
@@ -133,11 +133,11 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical file
   `git log --name-only --pretty=format: a797773..HEAD`.
 - **2026-11-19..20, `f97af23f..25b00847`** — ~24 further boilerplate turns, each a compact docs-only
   refresh with identical results, no forward path ever selected. Collapsed here; they added nothing.
-- **2026-11-20, `f1a9e1ae` (this session)** — end of the two carried-forward caveats: installed test deps and
-  ran the suite (**75 passed**) and re-ran both baselines (**byte-identical** metrics). Rewrote this file and
-  `INITIAL_TASK_FOR_NEXT_AGENT.md` to be short and self-contained, removing the accumulated per-turn log. No
-  strategy, config, data, code, or canonical artifact changed; `artifacts/` still 35 files; 0 research drift.
-  **This is the last doc refresh. Future boilerplate turns get the status message with zero edits.**
+- **2026-11-20, `f1a9e1ae`..`29bd703e`** — `f1a9e1ae` closed the two carried-forward caveats (75 tests
+  passed; byte-identical metric reproduction) and rewrote this file and `INITIAL_TASK_FOR_NEXT_AGENT.md` to
+  be short and self-contained. `29bd703e` is a single further docs-only refresh: HEAD/count references only.
+  Neither touched strategy, config, data, code, or canonical artifacts; `artifacts/` still 35 files; 0
+  research drift. **Future boilerplate turns get the status message with zero edits.**
 
 ## What the user must do
 
