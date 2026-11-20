@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-20 at HEAD `1f86ca58`. Every number below was re-read from `artifacts/metrics_*.json` and
+Verified 2026-11-20 at HEAD `a5e578f4`. Every number below was re-read from `artifacts/metrics_*.json` and
 `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
 table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed. Drift check
 `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files.
@@ -116,3 +116,9 @@ canonical metrics byte-identically when last executed (session `f1a9e1ae`).
   478/130/80), and every table figure. Re-ran the suite (75 passed), the 0-file drift diff, and the hash
   check; recorded the four raw-CSV SHA-256 values in this file and sharpened the "generic instruction"
   wording. No strategy, config, data, code, or artifact change.
+- **2026-11-20 (this session, from `a5e578f4`)** — re-verified every fact against the current HEAD: strategy
+  SHA-256 `6d3258c3…`, all four raw-CSV hashes, 0-file drift (`a797773..HEAD`), 35 canonical artifacts, and
+  metrics (60/688 trades, net −31,637.98/−626,525.96, PF 0.4917/0.2271). The two commits since `1f86ca58`
+  (`20e12ab1` docs checkpoint, `a5e578f4` workflow diagnostics) are docs-only and added no evidence.
+  Refreshed the verified-HEAD reference in this file and `INITIAL_TASK_FOR_NEXT_AGENT.md`; no strategy,
+  config, data, code, or artifact change.
