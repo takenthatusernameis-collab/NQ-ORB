@@ -7,11 +7,11 @@ data source. It is **negative-gross and negative-net on all of them** under full
 search is exhausted (`data/FEASIBILITY_REPORT.md`). No autonomous research, experiment, or automation
 change may begin without an explicit user decision on a forward path.
 
-Last refreshed: 2026-11-20 at HEAD `7e7c3e22`.
+Last refreshed: 2026-11-20 at HEAD `a3fe910e`.
 
 ## STOP RULE (read first)
 
-This repository has produced **2,072 consecutive docs-only commits** that re-confirm identical invariants
+This repository has produced **2,073 consecutive docs-only commits** that re-confirm identical invariants
 and add nothing. That cycle is the failure mode, not the job.
 
 - A boilerplate turn ("read the prior agent task and complete it") is: read
@@ -22,10 +22,11 @@ and add nothing. That cycle is the failure mode, not the job.
 - Only act on: an explicitly selected forward path, a *specific* requested doc change, or new supplied
   data/scope. Then act on exactly that scope.
 
-## Verified state (HEAD `7e7c3e22`, 2026-11-20)
+## Verified state (HEAD `a3fe910e`, 2026-11-20)
 
-This session re-verified the two items previous sessions could only carry forward, so nothing below is
-"carried forward" any more:
+`f1a9e1ae` re-verified the two items earlier sessions could only carry forward, so nothing below is
+"carried forward" any more. This refresh re-read `artifacts/metrics_*.json` (numbers below unchanged) and
+re-confirmed 0 research drift / 35 artifacts / clean tree; it ran no test or runner pass.
 
 - `python3 -m pytest tests -q` → **75 passed** at `f1a9e1ae`. Run after installing `pytest`/`numpy`/`pandas`
   into the session sandbox (`pip install pytest numpy pandas`, pytest 9.2.0). This is the first actual
@@ -35,7 +36,7 @@ This session re-verified the two items previous sessions could only carry forwar
   dict equality) to `artifacts/metrics_axb0306.json` and `artifacts/metrics_kaggle.json`. Scratch outputs
   were deleted afterwards; `artifacts/` remains at its canonical 35 files.
 - Research drift: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts`
-  → **0 files**. All 2,072 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
+  → **0 files**. All 2,073 commits after `a797773` touch only 3 unique paths: `HANDOFF.md`,
   `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`.
 - `git status --short` clean. Frozen showcase preset `5fab764`. Last substantive research commit `a797773`.
 - `STRATEGY_RULES.txt` SHA-256 `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`
@@ -133,11 +134,12 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical file
   `git log --name-only --pretty=format: a797773..HEAD`.
 - **2026-11-19..20, `f97af23f..25b00847`** — ~24 further boilerplate turns, each a compact docs-only
   refresh with identical results, no forward path ever selected. Collapsed here; they added nothing.
-- **2026-11-20, `f1a9e1ae`..`29bd703e`** — `f1a9e1ae` closed the two carried-forward caveats (75 tests
+- **2026-11-20, `f1a9e1ae`..`a3fe910e`** — `f1a9e1ae` closed the two carried-forward caveats (75 tests
   passed; byte-identical metric reproduction) and rewrote this file and `INITIAL_TASK_FOR_NEXT_AGENT.md` to
-  be short and self-contained. `29bd703e` is a single further docs-only refresh: HEAD/count references only.
-  Neither touched strategy, config, data, code, or canonical artifacts; `artifacts/` still 35 files; 0
-  research drift. **Future boilerplate turns get the status message with zero edits.**
+  be short and self-contained. `29bd703e` was a single further docs-only refresh. `a3fe910e` is the latest
+  checkpoint: one compact reference-only refresh (HEAD/count bump, artifact numbers re-read, 0 drift) with
+  no test or runner pass. None touched strategy, config, data, code, or canonical artifacts; `artifacts/`
+  still 35 files; 0 research drift. **Future boilerplate turns get the status message with zero edits.**
 
 ## What the user must do
 

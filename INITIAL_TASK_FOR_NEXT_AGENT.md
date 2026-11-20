@@ -1,6 +1,6 @@
 # Initial Task for Next Agent
 
-> **Current at HEAD `29bd703e`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short version.
+> **Current at HEAD `a3fe910e`, 2026-11-20.** `HANDOFF.md` is authoritative; this file is the short version.
 >
 > **Status: TERMINAL. There is no pending code, data, pipeline, or experiment work.** The frozen MNQ
 > 15-minute ORB baseline is implemented, tested, and evaluated on every free data source available. It is
@@ -14,7 +14,7 @@ Drain the user's next instruction. If it is boilerplate ("read the prior task an
 the terminal state, the numbers table, and the four forward paths below, then **stop**.
 
 **Do not edit any file for a boilerplate turn.** Not even to bump a HEAD reference. Every refresh after
-`a797773` has added 0 new evidence; `29bd703e` is the final reference bump. If the user says "update the
+`a797773` has added 0 new evidence; `a3fe910e` is the final reference bump. If the user says "update the
 handoff" without naming a specific change, that is still boilerplate: say so and ask them to choose path
 (a), (b), (c), or (d).
 
@@ -50,7 +50,7 @@ the failure mode this file exists to stop.
   `artifacts/metrics_*.json` **byte-identically** at `f1a9e1ae` (delete the tmp outputs afterwards so
   `artifacts/` stays at 35 files).
 - Research drift since `a797773`: `git diff --name-only a797773..HEAD -- artifacts config src tests raw data
-  scripts` → **0 files**, across **2,070** docs-only commits touching 3 unique paths.
+  scripts` → **0 files**, across **2,073** docs-only commits touching 3 unique paths.
 - `artifacts/`: 35 files. Raw data: 4 CSVs, hashes unchanged since first freeze (see `HANDOFF.md`).
 - No paid/proprietary data; no credentials requested, used, or stored.
 
@@ -118,8 +118,9 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical file
 
 ## Session note
 
-- **2026-11-18 `a797773`:** last substantive research commit. **`a797773`..`29bd703e`:** 2,070 docs-only
+- **2026-11-18 `a797773`:** last substantive research commit. **`a797773`..`a3fe910e`:** 2,073 docs-only
   commits over 3 unique paths, 0 research drift. Every boilerplate turn re-confirmed identical invariants
   and produced no new evidence. `f1a9e1ae` was the last substantive refresh (75 tests executed, baselines
-  reproduced byte-identically) and rewrote both docs; `29bd703e` bumped references only. **No further doc
+  reproduced byte-identically) and rewrote both docs; `a3fe910e` is the latest compact reference-only
+  refresh (numbers re-read from `artifacts/`, HEAD/count bump, no test or runner pass). **No further doc
   edits for boilerplate turns** — see `HANDOFF.md` STOP RULE.
