@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `0c75f2ac` (2026-11-20): TERMINAL
+## State at HEAD `1f86ca58` (2026-11-20): TERMINAL
 
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
@@ -13,10 +13,12 @@ supplies new data.
 ## Your job
 
 1. Read `HANDOFF.md`.
-2. If the instruction is generic ("read the prior task and complete it", "continue", "update the handoff"
-   with no specific change): reply with the terminal status, the numbers table below, and the four forward
-   paths — then **stop. Make no file edits, run no test/drift/artifact re-checks, create no commit.**
-3. If the user names a specific change or a forward path, do exactly that scope and nothing wider.
+2. If the instruction is generic — "read the prior task and complete it", "continue", "update the handoff",
+   "write the initial task for the next agent" — reply with the terminal status, the numbers table below, and
+   the four forward paths, then **stop. No file edits, no test/drift/artifact re-checks, no commit.** Writing
+   this page again is a no-op that only adds a docs-only commit.
+3. If the user names a specific change or a forward path (a)–(d), do exactly that scope and nothing wider.
+   Only refresh this file when a verified fact, the HEAD reference, or the available data genuinely changed.
 
 ## Numbers to report
 
@@ -25,7 +27,8 @@ supplies new data.
 | axb0306 (MNQ.M26, 2026-01-20..2026-04-15) | 60 | 33/27 | 70.00 | -7,662.00 | -31,637.98 | 23,975.98 | 0.4917 | -527.30 | -0.043 | **-0.18** |
 | Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359/329 | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.068 | **-0.30** |
 
-Max drawdown $37,491.80 / $626,994.56.
+Max drawdown $37,491.80 / $626,994.56. Source: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`
+(re-verified 2026-11-20 at HEAD `1f86ca58`).
 
 ## The key finding
 
@@ -60,6 +63,7 @@ segment is the in-sample axb0306 train window — an overfit signature).
 ```bash
 git status --short && git rev-parse --short HEAD
 git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts   # expect 0 files
+sha256sum STRATEGY_RULES.txt raw/*.csv                                            # compare with HANDOFF.md
 pip install pytest numpy pandas && python3 -m pytest tests -q                       # last run: 75 passed
 python3 src/orb/runner.py --prefix <tmp> --source axb0306   # diff vs artifacts/metrics_axb0306.json
 python3 src/orb/runner.py --prefix <tmp> --source kaggle    # diff vs artifacts/metrics_kaggle.json

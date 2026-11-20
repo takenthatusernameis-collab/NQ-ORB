@@ -7,8 +7,10 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-20 at HEAD `0c75f2ac`. Numbers below were re-read from `artifacts/` this session; the
-reported exit reasons and net-R figures were recomputed from `artifacts/trades_*.json`.
+Verified 2026-11-20 at HEAD `1f86ca58`. Every number below was re-read from `artifacts/metrics_*.json` and
+`artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
+table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed. Drift check
+`git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files.
 
 ## The one open item
 
@@ -25,8 +27,12 @@ Nothing in this repository advances the research on its own. Pick exactly one:
   contract months, timezone, timestamps, gaps, roll rule, adjustment, hashes), then frozen as a fresh
   untouched baseline before any tuning.
 
-If the next instruction is generic ("read the prior task and complete it"), the correct reply is: state the
-terminal status, the numbers table, and these four paths — **then stop, with no file edits**.
+If the next instruction is generic ("read the prior task and complete it", "continue", "update the handoff",
+"write the initial task") the correct reply is: state the terminal status, the numbers table, and these four
+paths — **then stop, with no file edits and no new commit**. Re-writing this file or
+`INITIAL_TASK_FOR_NEXT_AGENT.md` again produces a docs-only commit and changes no number; that is the loop
+failure mode. A handoff refresh is only warranted when the HEAD reference, a verified fact, or the data
+available has actually changed.
 
 ## Canonical results (verified from `artifacts/`)
 
@@ -64,6 +70,11 @@ Max drawdown $37,491.80 / $626,994.56.
 - **Provenance.** `STRATEGY_RULES.txt` frozen v1.0, SHA-256
   `6d3258c3f3af803fa1ef79a91bbb9a79c60a635aa73e692e9d77bcf8338ad2b1`. 4 raw CSVs, 35 canonical artifacts,
   0 research drift since the last substantive commit `a797773`. No paid/proprietary data, no credentials.
+  Raw data SHA-256 (re-verified 2026-11-20):
+  - `raw/MNQ_15min.csv` `f417f22d7c933920636b15ce1ac47a657149ecbe8c087300a029a0372fc4ce37`
+  - `raw/MNQ_15min_frontmonth.csv` `7e129ae37f1ae62bd8d8209b1e5ea90521ffbb847d58ff3a0a6f27afdd3a9ef4`
+  - `raw/MNQ_1min.csv` `129623f45308a98a1a345473ac5fe4d03d5d53f7dd177a608d946eb3d3d6ea99`
+  - `raw/MNQ_1min_frontmonth.csv` `edbadc731ed90c9e0425cf2f7d6c69e72c9f643c0b8c388dec009fb2e3e613e7`
 
 ## Hard constraints
 
@@ -81,11 +92,13 @@ Max drawdown $37,491.80 / $626,994.56.
 ```bash
 git status --short && git rev-parse --short HEAD
 git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts   # expect 0 files
-sha256sum STRATEGY_RULES.txt raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MNQ_1min_frontmonth.csv
-pip install pytest numpy pandas && python3 -m pytest tests -q                       # last run: 75 passed
+sha256sum STRATEGY_RULES.txt raw/MNQ_15min.csv raw/MNQ_1min.csv raw/MNQ_15min_frontmonth.csv raw/MNQ_1min_frontmonth.csv   # compare with hashes above
+pip install pytest numpy pandas && python3 -m pytest tests -q                       # last run 2026-11-20: 75 passed
 python3 src/orb/runner.py --prefix <tmp> --source axb0306   # diff vs artifacts/metrics_axb0306.json
 python3 src/orb/runner.py --prefix <tmp> --source kaggle    # diff vs artifacts/metrics_kaggle.json
 ```
+
+Do not run this block just to generate another checkpoint commit.
 
 Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 files. Both runners reproduced the
 canonical metrics byte-identically when last executed (session `f1a9e1ae`).
@@ -98,6 +111,8 @@ canonical metrics byte-identically when last executed (session `f1a9e1ae`).
   `INITIAL_TASK_FOR_NEXT_AGENT.md`, `research_state/workflow_run_diagnostics.jsonl`), 0 research drift. They
   re-confirmed identical invariants and added no evidence. `f1a9e1ae` was the last substantive refresh
   (75 tests executed, baselines reproduced byte-identically).
-- **2026-11-20 (this session, from `0c75f2ac`)** — re-read `artifacts/metrics_*.json` and recomputed exit
-  reasons and net R from `artifacts/trades_*.json` (all match the table above), then rewrote this file and
-  `INITIAL_TASK_FOR_NEXT_AGENT.md` to be shorter and self-contained. No strategy, config, data, or code change.
+- **2026-11-20 (this session, from `1f86ca58`)** — re-read `artifacts/metrics_*.json` and
+  `artifacts/trades_*.json`; confirmed trade counts, unique dates, L/S splits, exit reasons (42/12/6 and
+  478/130/80), and every table figure. Re-ran the suite (75 passed), the 0-file drift diff, and the hash
+  check; recorded the four raw-CSV SHA-256 values in this file and sharpened the "generic instruction"
+  wording. No strategy, config, data, code, or artifact change.
