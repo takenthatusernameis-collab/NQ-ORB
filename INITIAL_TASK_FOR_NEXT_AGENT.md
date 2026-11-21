@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `cffab70b` (2026-11-21): TERMINAL
+## State at HEAD `4e85e8f4` (2026-11-21): TERMINAL
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
 available. It is **negative-gross and negative-net on all of them**, and the free-data search is exhausted
@@ -27,7 +27,7 @@ supplies new data.
 | Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359/329 | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.068 | **-0.30** |
 
 Max drawdown $37,491.80 / $626,994.56. Source: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`
-(re-verified 2026-11-21 at HEAD `cffab70b`; `gross − net == costs` to the cent on both).
+(re-verified 2026-11-21 at HEAD `4e85e8f4`; `gross − net == costs` to the cent on both).
 
 ## The key finding
 
