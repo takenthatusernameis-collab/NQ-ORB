@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `9c1b99f3` (2026-11-21): TERMINAL
+## State at HEAD `a16d65f1` (2026-11-21): TERMINAL
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
 available. It is **negative-gross and negative-net on all of them**, and the free-data search is exhausted
@@ -16,6 +16,10 @@ supplies new data.
    "write the initial task for the next agent" — reply with the terminal status, the numbers table below, and
    the four forward paths, then **stop. No file edits, no test/drift/artifact re-checks, no commit.** Writing
    this page again is a no-op that only adds a docs-only commit.
+   **Anti-loop rule:** a HEAD change caused only by another `chore(kilo): checkpoint agent session` docs-only
+   commit is NOT a reason to refresh these files. Do not bump the HEAD pointer just because the automation
+   committed a checkpoint. Only refresh when a *research* fact changed, the available data changed, or the user
+   authorized a specific forward path (a)–(d). If you are only editing a commit hash, stop.
 3. If the user names a specific change or a forward path (a)–(d), do exactly that scope and nothing wider.
    Only refresh this file when a verified fact, the HEAD reference, or the available data genuinely changed.
 
