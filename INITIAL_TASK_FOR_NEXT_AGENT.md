@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `cf5f4e59` (2026-11-21): TERMINAL
+## State at HEAD `5c0ba8f5` (2026-11-21): TERMINAL
 
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
