@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-21 at HEAD `f2fba786` (re-read from `3b7d3ea3`, which is unchanged; `f2fba786` is a docs-only checkpoint touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Every number below was re-read from `artifacts/metrics_*.json` and `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
+Verified 2026-11-21 at HEAD `c16a5e6e` (re-read from `f2fba786`, which is unchanged; `c16a5e6e` is a docs-only checkpoint touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Every number below was re-read from `artifacts/metrics_*.json` and `artifacts/trades_*.json` this session; the exit-reason counts, unique-date counts, long/short splits, and all
 table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed (last executed `f1a9e1ae`).
 Drift check `git diff --name-only a797773..HEAD -- artifacts config src tests raw data scripts` → 0 files. All four raw-CSV SHA-256 values and `STRATEGY_RULES.txt` SHA-256 re-verified this session and unchanged.
 
@@ -103,6 +103,8 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 files. Both ru
 canonical metrics byte-identically when last executed (session `f1a9e1ae`).
 
 ## Session history (compressed)
+
+- **2026-11-21 (this session, from `f2fba786`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; re-confirmed 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, clean working tree, and all four raw-CSV hashes unchanged. HEAD had drifted to `c16a5e6e` (docs-only checkpoint touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`); per the rule that a refresh is warranted when the verified-HEAD reference genuinely changes, refreshed it to `c16a5e6e` in both files. Prior task complete and terminal; no strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
 - **2026-11-21 (this session, from `01c121ba`, generic "read the prior agent task from the durable handoff and complete it..." instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; re-confirmed 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, clean working tree. HEAD had drifted to `f2fba786` (docs-only checkpoint); refreshed verified-HEAD reference to `f2fba786` in both files. Prior task complete and terminal; no strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
