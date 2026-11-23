@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-23 at HEAD `2b660b83` (re-read from `e1bd17ad`, which is unchanged; the only commit since the last
+Verified 2026-11-23 at HEAD `e0faa82b` (re-read from `2b660b83`, which is unchanged; the only commit since the last
 substantive refresh is a docs-only "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and
 `INITIAL_TASK_FOR_NEXT_AGENT.md`; `dfa632bc` and earlier are docs-only checkpoints). Every number below was re-read
 from `artifacts/metrics_*.json` and `artifacts/trades_*.json`; the exit-reason counts, unique-date counts,
