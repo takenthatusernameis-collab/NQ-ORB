@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `9adebb71` (2026-11-21): TERMINAL
+## State at HEAD `dfa632bc` (2026-11-21): TERMINAL
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
 available. It is **negative-gross and negative-net on all of them**, and the free-data search is exhausted
@@ -73,3 +73,7 @@ python3 src/orb/runner.py --prefix <tmp> --source kaggle    # diff vs artifacts/
 ```
 
 Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical files.
+
+## Session history (compressed)
+
+- **2026-11-21 (this session, from `9adebb71`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), and 35 canonical artifacts. HEAD had drifted `9adebb71` → `dfa632bc` via two docs-only commits (`13b9df12` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; `dfa632bc` "chore: capture completed workflow run diagnostics" touching only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `dfa632bc` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
