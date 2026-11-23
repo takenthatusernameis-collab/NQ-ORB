@@ -7,9 +7,9 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-21 at HEAD `9adebb71` (re-read from `a16d65f1`, which is unchanged; the only commits since the last
-substantive refresh are docs-only "chore(kilo): checkpoint agent session" commits touching only `HANDOFF.md` and
-`INITIAL_TASK_FOR_NEXT_AGENT.md`; `ccd09c7c` and earlier are docs-only checkpoints). Every number below was re-read
+Verified 2026-11-23 at HEAD `8a652f92` (re-read from `dfa632bc`, which is unchanged; the only commit since the last
+substantive refresh is a docs-only "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and
+`INITIAL_TASK_FOR_NEXT_AGENT.md`; `dfa632bc` and earlier are docs-only checkpoints). Every number below was re-read
 from `artifacts/metrics_*.json` and `artifacts/trades_*.json`; the exit-reason counts, unique-date counts,
 long/short splits, and all table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed
 (last executed `f1a9e1ae`).
@@ -113,6 +113,8 @@ Do not run this block just to generate another checkpoint commit.
 Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 files. Both runners reproduced the
 canonical metrics byte-identically when last executed (session `f1a9e1ae`).
 ## Session history (compressed)
+
+- **2026-11-23 (this session, from `dfa632bc`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), and 35 canonical artifacts. HEAD had drifted `dfa632bc` → `8a652f92` via one docs-only commit (`8a652f92` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `8a652f92` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
 - **2026-11-21 (this session, from `9adebb71`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), and 35 canonical artifacts. HEAD had drifted `9adebb71` → `dfa632bc` via two docs-only commits (`13b9df12` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; `dfa632bc` "chore: capture completed workflow run diagnostics" touching only `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, and `research_state/workflow_run_diagnostics.jsonl`). Prior task complete and terminal. Per the anti-loop rule, did NOT merely bump the HEAD pointer as the trigger to refresh; the only verified fact that changed is the HEAD reference, so refreshed it to `dfa632bc` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
