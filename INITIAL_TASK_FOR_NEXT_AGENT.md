@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `54d213b2` (2026-11-24): TERMINAL
+## State at HEAD `a5102597` (2026-11-24): TERMINAL
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
 available. It is **negative-gross and negative-net on all of them**, and the free-data search is exhausted
@@ -31,7 +31,7 @@ supplies new data.
 | Kaggle front-month (2022-11-16..2025-11-12) | 688 | 359/329 | 64.83 | -140,899.00 | -626,525.96 | 485,626.96 | 0.2271 | -910.65 | -0.068 | **-0.30** |
 
 Max drawdown $37,491.80 / $626,994.56. Source: `artifacts/metrics_axb0306.json`, `artifacts/metrics_kaggle.json`
-(re-verified 2026-11-24 at HEAD `8b849b87`; `gross − net == costs` to the cent on both).
+(re-verified 2026-11-24 at HEAD `a5102597`; `gross − net == costs` to the cent on both).
 
 ## The key finding
 
@@ -76,7 +76,7 @@ Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical file
 
 ## Session history (compressed)
 
-- **2026-11-24 (this session, from `8b849b87`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `8b849b87` → `54d213b2` via one docs-only commit (`54d213b2` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `54d213b2` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
+- **2026-11-24 (this session, from `54d213b2`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. Re-verified both `metrics_*.json` (60/688 trades, gross −7,662.00/−140,899.00, net −31,637.98/−626,525.96, costs 23,975.98/485,626.96, `gross − net == costs` to the cent on both, PF 0.4917/0.2271, gross R −0.0431/−0.0684). HEAD had drifted `54d213b2` → `a5102597` via one docs-only commit (`a5102597` "docs: refresh verified-HEAD reference to 54d213b2 in handoff files" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `a5102597` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
 - **2026-11-24 (this session, from `5c7df0de`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `5c7df0de` → `8b849b87` via one docs-only commit (`8b849b87` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `8b849b87` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
