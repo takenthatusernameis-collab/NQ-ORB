@@ -7,8 +7,8 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-24 at HEAD `5c7df0de` (re-read from `42006451`, which is unchanged; the only commit since the last
-substantive refresh is docs-only: `5c7df0de` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and
+Verified 2026-11-24 at HEAD `8b849b87` (re-read from `5c7df0de`, which is unchanged; the only commit since the last
+substantive refresh is docs-only: `8b849b87` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and
 `INITIAL_TASK_FOR_NEXT_AGENT.md`). Every number below was re-read
 from `artifacts/metrics_*.json` and `artifacts/trades_*.json`; the exit-reason counts, unique-date counts,
 long/short splits, and all table figures match the artifacts exactly. `python3 -m pytest tests -q` → 75 passed
@@ -113,6 +113,8 @@ Do not run this block just to generate another checkpoint commit.
 Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 files. Both runners reproduced the
 canonical metrics byte-identically when last executed (session `f1a9e1ae`).
 ## Session history (compressed)
+
+- **2026-11-24 (this session, from `5c7df0de`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `5c7df0de` → `8b849b87` via one docs-only commit (`8b849b87` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `8b849b87` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
 - **2026-11-24 (this session, from `d3016d9f`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `d3016d9f` → `42006451` via two docs-only commits (`2d218733` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`; `42006451` "chore: capture completed workflow run diagnostics" touching only `research_state/workflow_run_diagnostics.jsonl`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `42006451` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
