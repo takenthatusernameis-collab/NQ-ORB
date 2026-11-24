@@ -2,7 +2,7 @@
 
 Read `HANDOFF.md` first — it is authoritative and complete. This page is the short version.
 
-## State at HEAD `6c1b9ac8` (2026-11-24): TERMINAL
+## State at HEAD `d3016d9f` (2026-11-24): TERMINAL
 There is **no pending code, data, pipeline, or experiment work**. The frozen MNQ 15-minute ORB baseline
 (`STRATEGY_RULES.txt` v1.0) is implemented, tested (75 passing), and evaluated on every free MNQ dataset
 available. It is **negative-gross and negative-net on all of them**, and the free-data search is exhausted
@@ -75,6 +75,8 @@ python3 src/orb/runner.py --prefix <tmp> --source kaggle    # diff vs artifacts/
 Delete the `<tmp>` outputs afterwards so `artifacts/` stays at 35 canonical files.
 
 ## Session history (compressed)
+
+- **2026-11-24 (this session, from `6c1b9ac8`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `6c1b9ac8` → `d3016d9f` via one docs-only commit (`d3016d9f` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `d3016d9f` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
 - **2026-11-24 (this session, from `2d23b45a`, generic "read the prior agent task from the durable handoff and complete it. Then update the handoff and write a clear initial task message for the next agent" instruction)** — re-read `HANDOFF.md`, `INITIAL_TASK_FOR_NEXT_AGENT.md`, `STRATEGY_RULES.txt`, `PROMPT.md`; confirmed clean working tree, 0-file research drift (`a797773..HEAD`), 35 canonical artifacts, strategy SHA-256 `6d3258c3…`, and all four raw-CSV hashes unchanged. HEAD had drifted `2d23b45a` → `6c1b9ac8` via one docs-only commit (`6c1b9ac8` "chore(kilo): checkpoint agent session" touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Prior task complete and terminal; the only verified fact that changed is the HEAD reference, so refreshed it to `6c1b9ac8` in both files. No strategy, config, data, code, artifact, or test change. No commit made by this agent.
 
