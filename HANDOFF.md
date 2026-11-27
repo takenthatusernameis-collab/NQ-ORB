@@ -7,7 +7,7 @@ available. It loses money **gross and net** on all of them, and the free-data se
 (`data/FEASIBILITY_REPORT.md`). No code, data, pipeline, or experiment work remains. The only thing that can
 change a number is a user decision below or newly supplied data.
 
-Verified 2026-11-24 at HEAD `1ed45d5d` (re-read from `54d213b2`, which is unchanged; the only commit since the last
+Verified 2026-11-27 at HEAD `d5981d2c` (re-read from `54d213b2`, which is unchanged; the only commit since the last
 substantive refresh is docs-only: `1ed45d5d` "docs: refresh verified-HEAD reference to 54d213b2 in handoff files"
 touching only `HANDOFF.md` and `INITIAL_TASK_FOR_NEXT_AGENT.md`). Every number below was re-read
 from `artifacts/metrics_*.json` and `artifacts/trades_*.json`; the exit-reason counts, unique-date counts,
